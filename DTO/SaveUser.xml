@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Account xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+  <User>
+    <UserName>quanghuybest2k2</UserName>
+    <Password>123</Password>
+  </User>
+  <User>
+    <UserName>
+    </UserName>
+    <Password>
+    </Password>
+  </User>
+</Account>
