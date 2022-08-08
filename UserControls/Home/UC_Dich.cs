@@ -151,18 +151,20 @@ namespace DictionaryAppForIT.UserControls.Home
             doc.Load(filePath);
             XmlNode nodeTiengAnh = doc.SelectSingleNode("/LichSu/Tu/TiengAnh");
             XmlNode nodeTiengViet = doc.SelectSingleNode("/LichSu/Tu/TiengViet");
-            TextBox txtTiengAnh = new TextBox();
-            txtTiengAnh.Name = "txtTiengAnh";
-            TextBox txtTiengViet = new TextBox();
-            txtTiengViet.Name = "txtTiengViet";
+            //TextBox txtTiengAnh = new TextBox();
+            //txtTiengAnh.Name = "txtTiengAnh";
+           // TextBox txtTiengViet = new TextBox();
+           // txtTiengViet.Name = "txtTiengViet";
 
-            txtTiengAnh.Text = nodeTiengAnh.InnerText;
-            txtTiengViet.Text = nodeTiengViet.InnerText;
+           // txtTiengAnh.Text = nodeTiengAnh.InnerText;
+            //txtTiengViet.Text = nodeTiengViet.InnerText;
 
-            List<string> list = new List<string>();
-            string[] arr = { txtTiengAnh.Text, txtTiengViet.Text };
-            list.AddRange(arr);
-            richTextBox1.Lines = list.ToArray();// richTextBox.Lines có thể xuống dòng
+           // List<string> list = new List<string>();
+            //string[] arr = { txtTiengAnh.Text, txtTiengViet.Text };
+            //list.AddRange(arr);
+            txtLichSu.Text = nodeTiengAnh.InnerText + Environment.NewLine + nodeTiengViet.InnerText + Environment.NewLine;
+            //txtLichSu.Lines = list.ToArray();
+            //richTextBox1.Lines = list.ToArray();// richTextBox.Lines có thể xuống dòng
         }
     }
 }

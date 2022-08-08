@@ -55,7 +55,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.flpnLichSu = new System.Windows.Forms.FlowLayoutPanel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtLichSu = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnLichSu = new Guna.UI2.WinForms.Guna2Button();
@@ -439,7 +439,7 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             // flpnLichSu
             // 
-            this.flpnLichSu.Controls.Add(this.richTextBox1);
+            this.flpnLichSu.Controls.Add(this.txtLichSu);
             this.flpnLichSu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpnLichSu.Location = new System.Drawing.Point(10, 53);
             this.flpnLichSu.Name = "flpnLichSu";
@@ -447,14 +447,25 @@ namespace DictionaryAppForIT.UserControls.Home
             this.flpnLichSu.Size = new System.Drawing.Size(235, 288);
             this.flpnLichSu.TabIndex = 3;
             // 
-            // richTextBox1
+            // txtLichSu
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(9, 3);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(223, 116);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.txtLichSu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLichSu.DefaultText = "";
+            this.txtLichSu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtLichSu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtLichSu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLichSu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLichSu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLichSu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtLichSu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLichSu.Location = new System.Drawing.Point(9, 3);
+            this.txtLichSu.Multiline = true;
+            this.txtLichSu.Name = "txtLichSu";
+            this.txtLichSu.PasswordChar = '\0';
+            this.txtLichSu.PlaceholderText = "";
+            this.txtLichSu.SelectedText = "";
+            this.txtLichSu.Size = new System.Drawing.Size(219, 57);
+            this.txtLichSu.TabIndex = 2;
             // 
             // panel5
             // 
@@ -590,6 +601,6 @@ namespace DictionaryAppForIT.UserControls.Home
         private System.IO.FileSystemWatcher fileSystemWatcher2;
         private System.Windows.Forms.FlowLayoutPanel flpnLichSu;
         private Guna.UI2.WinForms.Guna2Button btnMic;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtLichSu;
     }
 }
