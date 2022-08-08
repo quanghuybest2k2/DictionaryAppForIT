@@ -34,7 +34,7 @@ namespace DictionaryAppForIT.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.btnYeuThich = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDangNhapMain = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.btnTaiKhoan = new Guna.UI2.WinForms.Guna2Button();
             this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
             this.btnMiniGame = new Guna.UI2.WinForms.Guna2Button();
@@ -70,7 +70,7 @@ namespace DictionaryAppForIT.Forms
             // 
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.btnYeuThich);
-            this.panel1.Controls.Add(this.btnDangNhapMain);
+            this.panel1.Controls.Add(this.btnDangXuat);
             this.panel1.Controls.Add(this.btnTaiKhoan);
             this.panel1.Controls.Add(this.btnCaiDat);
             this.panel1.Controls.Add(this.btnMiniGame);
@@ -141,32 +141,31 @@ namespace DictionaryAppForIT.Forms
             this.btnYeuThich.CheckedChanged += new System.EventHandler(this.btnHome_CheckedChanged);
             this.btnYeuThich.Click += new System.EventHandler(this.btnYeuThich_Click);
             // 
-            // btnDangNhapMain
+            // btnDangXuat
             // 
-            this.btnDangNhapMain.BackColor = System.Drawing.Color.Transparent;
-            this.btnDangNhapMain.BorderRadius = 22;
-            this.btnDangNhapMain.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnDangNhapMain.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnDangNhapMain.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnDangNhapMain.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnDangNhapMain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDangNhapMain.FillColor = System.Drawing.Color.Transparent;
-            this.btnDangNhapMain.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangNhapMain.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhapMain.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhapMain.Image")));
-            this.btnDangNhapMain.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDangNhapMain.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnDangNhapMain.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnDangNhapMain.Location = new System.Drawing.Point(24, 451);
-            this.btnDangNhapMain.Name = "btnDangNhapMain";
-            this.btnDangNhapMain.Size = new System.Drawing.Size(149, 43);
-            this.btnDangNhapMain.TabIndex = 1;
-            this.btnDangNhapMain.Text = "Đăng nhập";
-            this.btnDangNhapMain.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDangNhapMain.TextOffset = new System.Drawing.Point(15, 0);
-            this.btnDangNhapMain.UseTransparentBackground = true;
-            this.btnDangNhapMain.CheckedChanged += new System.EventHandler(this.btnHome_CheckedChanged);
-            this.btnDangNhapMain.Click += new System.EventHandler(this.btnDangNhapMain_Click);
+            this.btnDangXuat.BackColor = System.Drawing.Color.Transparent;
+            this.btnDangXuat.BorderRadius = 22;
+            this.btnDangXuat.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDangXuat.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnDangXuat.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnDangXuat.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDangXuat.FillColor = System.Drawing.Color.Transparent;
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
+            this.btnDangXuat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangXuat.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnDangXuat.ImageSize = new System.Drawing.Size(18, 18);
+            this.btnDangXuat.Location = new System.Drawing.Point(24, 451);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(149, 43);
+            this.btnDangXuat.TabIndex = 1;
+            this.btnDangXuat.Text = "Đăng Xuất";
+            this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangXuat.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnDangXuat.UseTransparentBackground = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // btnTaiKhoan
             // 
@@ -565,6 +564,6 @@ namespace DictionaryAppForIT.Forms
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl3;
         private System.Windows.Forms.FlowLayoutPanel flpTabHome;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl4;
-        private Guna.UI2.WinForms.Guna2Button btnDangNhapMain;
+        private Guna.UI2.WinForms.Guna2Button btnDangXuat;
     }
 }

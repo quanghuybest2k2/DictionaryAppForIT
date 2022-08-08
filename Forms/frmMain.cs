@@ -137,6 +137,14 @@ namespace DictionaryAppForIT.Forms
         {
             ShowUC(ucYeuThich);
         }
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            MainBtn.Minnimize(this);
+        }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
         #endregion
 
         //Các tab của nút Home
@@ -163,27 +171,11 @@ namespace DictionaryAppForIT.Forms
         }
         #endregion
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            MainBtn.Minnimize(this);
-        }
-        private void frmLogin_FormClosed(object sender, EventArgs e)
-        {
-            //lblTenTaiKhoan.Visible = true; // hiện lable Tên tài khoản
-            //tsmiDangXuat.Visible = true; // hiện chữ đăng nhập
-            //tsmiLogin.Visible = false; // ẩn chữ đăng nhập
-            //lblTenTaiKhoan.Text = frmLogin.TenTaiKhoan;
-        }
-        private void btnDangNhapMain_Click(object sender, EventArgs e)
-        {
-            //frmLogin frmLogin = new frmLogin();
-            //frmLogin.FormClosed += new FormClosedEventHandler(frmLogin_FormClosed);
-            //frmLogin.ShowDialog();
+            this.Hide();
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
         }
     }
 }
