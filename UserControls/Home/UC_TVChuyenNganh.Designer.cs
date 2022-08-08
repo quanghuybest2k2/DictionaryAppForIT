@@ -37,9 +37,11 @@ namespace DictionaryAppForIT.UserControls.Home
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_TVChuyenNganh));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnTop = new System.Windows.Forms.Panel();
+            this.btnTimTheoCN = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.txtTuVungDoc = new System.Windows.Forms.TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTimTheoChuyenNganh = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +62,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.HSThanhTruotNgang = new Guna.UI2.WinForms.Guna2HScrollBar();
             this.pnContainer = new System.Windows.Forms.Panel();
             this.VSThanhTruotDoc = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.txtTuVungDoc = new System.Windows.Forms.TextBox();
             this.pnTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTuVung)).BeginInit();
             this.pnContainer.SuspendLayout();
@@ -73,10 +74,11 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             // pnTop
             // 
+            this.pnTop.Controls.Add(this.btnTimTheoCN);
             this.pnTop.Controls.Add(this.txtTuVungDoc);
             this.pnTop.Controls.Add(this.guna2Button1);
             this.pnTop.Controls.Add(this.guna2Button10);
-            this.pnTop.Controls.Add(this.guna2TextBox1);
+            this.pnTop.Controls.Add(this.txtTimTheoChuyenNganh);
             this.pnTop.Controls.Add(this.label2);
             this.pnTop.Controls.Add(this.label3);
             this.pnTop.Controls.Add(this.label1);
@@ -86,6 +88,31 @@ namespace DictionaryAppForIT.UserControls.Home
             this.pnTop.Name = "pnTop";
             this.pnTop.Size = new System.Drawing.Size(882, 61);
             this.pnTop.TabIndex = 1;
+            // 
+            // btnTimTheoCN
+            // 
+            this.btnTimTheoCN.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnTimTheoCN.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnTimTheoCN.Image = ((System.Drawing.Image)(resources.GetObject("btnTimTheoCN.Image")));
+            this.btnTimTheoCN.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnTimTheoCN.ImageRotate = 0F;
+            this.btnTimTheoCN.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnTimTheoCN.Location = new System.Drawing.Point(328, 20);
+            this.btnTimTheoCN.Name = "btnTimTheoCN";
+            this.btnTimTheoCN.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnTimTheoCN.Size = new System.Drawing.Size(35, 26);
+            this.btnTimTheoCN.TabIndex = 25;
+            this.btnTimTheoCN.Visible = false;
+            this.btnTimTheoCN.Click += new System.EventHandler(this.btnTimTheoCN_Click);
+            // 
+            // txtTuVungDoc
+            // 
+            this.txtTuVungDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTuVungDoc.Location = new System.Drawing.Point(346, 29);
+            this.txtTuVungDoc.Name = "txtTuVungDoc";
+            this.txtTuVungDoc.Size = new System.Drawing.Size(124, 13);
+            this.txtTuVungDoc.TabIndex = 24;
+            this.txtTuVungDoc.Visible = false;
             // 
             // guna2Button1
             // 
@@ -124,35 +151,37 @@ namespace DictionaryAppForIT.UserControls.Home
             this.guna2Button10.TextOffset = new System.Drawing.Point(3, 0);
             this.guna2Button10.UseTransparentBackground = true;
             // 
-            // guna2TextBox1
+            // txtTimTheoChuyenNganh
             // 
-            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox1.BorderRadius = 6;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.ForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox1.IconLeft")));
-            this.guna2TextBox1.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2TextBox1.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.guna2TextBox1.Location = new System.Drawing.Point(129, 20);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Nhập từ cần tìm kiếm";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2TextBox1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(50);
-            this.guna2TextBox1.Size = new System.Drawing.Size(193, 26);
-            this.guna2TextBox1.TabIndex = 5;
-            this.guna2TextBox1.TextOffset = new System.Drawing.Point(5, 0);
+            this.txtTimTheoChuyenNganh.BackColor = System.Drawing.Color.Transparent;
+            this.txtTimTheoChuyenNganh.BorderRadius = 6;
+            this.txtTimTheoChuyenNganh.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTimTheoChuyenNganh.DefaultText = "";
+            this.txtTimTheoChuyenNganh.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTimTheoChuyenNganh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTimTheoChuyenNganh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimTheoChuyenNganh.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimTheoChuyenNganh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimTheoChuyenNganh.FocusedState.ForeColor = System.Drawing.Color.Gray;
+            this.txtTimTheoChuyenNganh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimTheoChuyenNganh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimTheoChuyenNganh.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtTimTheoChuyenNganh.IconLeft")));
+            this.txtTimTheoChuyenNganh.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.txtTimTheoChuyenNganh.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.txtTimTheoChuyenNganh.IconLeftSize = new System.Drawing.Size(15, 15);
+            this.txtTimTheoChuyenNganh.Location = new System.Drawing.Point(129, 20);
+            this.txtTimTheoChuyenNganh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTimTheoChuyenNganh.Name = "txtTimTheoChuyenNganh";
+            this.txtTimTheoChuyenNganh.PasswordChar = '\0';
+            this.txtTimTheoChuyenNganh.PlaceholderText = "Nhập từ cần tìm kiếm";
+            this.txtTimTheoChuyenNganh.SelectedText = "";
+            this.txtTimTheoChuyenNganh.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.txtTimTheoChuyenNganh.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(50);
+            this.txtTimTheoChuyenNganh.Size = new System.Drawing.Size(193, 26);
+            this.txtTimTheoChuyenNganh.TabIndex = 5;
+            this.txtTimTheoChuyenNganh.TextOffset = new System.Drawing.Point(5, 0);
+            this.txtTimTheoChuyenNganh.TextChanged += new System.EventHandler(this.txtTimTheoChuyenNganh_TextChanged);
+            this.txtTimTheoChuyenNganh.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimTheoChuyenNganh_KeyDown);
             // 
             // label2
             // 
@@ -425,15 +454,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.VSThanhTruotDoc.TabIndex = 2;
             this.VSThanhTruotDoc.Scroll += new System.Windows.Forms.ScrollEventHandler(this.VSThanhTruotDoc_Scroll);
             // 
-            // txtTuVungDoc
-            // 
-            this.txtTuVungDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTuVungDoc.Location = new System.Drawing.Point(346, 26);
-            this.txtTuVungDoc.Name = "txtTuVungDoc";
-            this.txtTuVungDoc.Size = new System.Drawing.Size(124, 13);
-            this.txtTuVungDoc.TabIndex = 24;
-            this.txtTuVungDoc.Visible = false;
-            // 
             // UC_TVChuyenNganh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -460,7 +480,7 @@ namespace DictionaryAppForIT.UserControls.Home
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtTimTheoChuyenNganh;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button10;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
@@ -479,5 +499,6 @@ namespace DictionaryAppForIT.UserControls.Home
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.TextBox txtTuVungDoc;
+        private Guna.UI2.WinForms.Guna2ImageButton btnTimTheoCN;
     }
 }

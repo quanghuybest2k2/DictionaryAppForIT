@@ -189,15 +189,15 @@ go
 exec LayTheoChuyenNganh 2
 go
 create proc TimTheoChuyenNganh
-@chuyennganh INT,
-@tentu VARCHAR(100)
+@tentu VARCHAR(100),
+@chuyennganh INT
 as
 select t.ID, t.TenTu, tl.TenLoai, PhienAm, TenChuyenNganh, n.Nghia, n.MoTa, n.ViDu, DongNghia, TraiNghia
 from Tu t, TuLoai tl, ChuyenNganh cn, Nghia n 
-where t.ChuyenNganh = cn.ID and n.IDTu = t.ID and tl.ID = n.IDTuLoai and cn.ID = @chuyennganh and t.TenTu like @tentu
+where t.ChuyenNganh = cn.ID and n.IDTu = t.ID and tl.ID = n.IDTuLoai and  t.TenTu like @tentu and cn.ID = @chuyennganh
 group by t.ID,t.TenTu, tl.TenLoai, PhienAm, TenChuyenNganh, n.Nghia, n.MoTa, n.ViDu, DongNghia, TraiNghia
 go
-EXEC TimTheoChuyenNganh 2,'c%'
+EXEC TimTheoChuyenNganh 'v%', 2
 ------ Lay Tất cả mọi thứ hiển thị trên giao diện
 --go
 --create proc HienThiThongTin
@@ -288,5 +288,6 @@ go
 ----select w.ID, TenTu, PhienAm, wt.TenTuLoai, n.Nghia , MoTa, ViDu, DongNghia, TraiNghia, m.TenChuyenNganh from Tu w, TuLoai wt, ChuyenNganh m, Nghia n where wt.ID = w.TuLoai and m.ID = w.chuyennganh and n.ID = w.Nghia and TenTu like @tukhoa --'C%'
 ----go
 ----exec TimTu 'f%'
-select TenTu from Tu
+SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and TenTu like 'c%' and ChuyenNganh.ID = 1
+EXEC LayTheoChuyenNganh 2
 ----go

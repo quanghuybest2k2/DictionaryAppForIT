@@ -58,7 +58,6 @@ namespace DictionaryAppForIT.UserControls
         }
         private void btnTimKiemTu_Click(object sender, EventArgs e)
         {
-
             try
             {
                 SqlConnection Conn = new SqlConnection(@"Data Source=DESKTOP-M9DGN9B;Initial Catalog=EnglishDictionary;Integrated Security=True");
@@ -112,7 +111,7 @@ namespace DictionaryAppForIT.UserControls
 
         private void txtTimKiemTu_TextChanged(object sender, EventArgs e)
         {
-        
+
         }
         private void btnUS_Click(object sender, EventArgs e)
         {

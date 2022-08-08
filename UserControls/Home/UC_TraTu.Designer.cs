@@ -125,14 +125,15 @@ namespace DictionaryAppForIT.UserControls
             this.btnTimKiemTu.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnTimKiemTu.ImageRotate = 0F;
             this.btnTimKiemTu.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnTimKiemTu.Location = new System.Drawing.Point(363, 16);
+            this.btnTimKiemTu.Location = new System.Drawing.Point(363, 18);
             this.btnTimKiemTu.Name = "btnTimKiemTu";
             this.btnTimKiemTu.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnTimKiemTu.Size = new System.Drawing.Size(48, 34);
+            this.btnTimKiemTu.Size = new System.Drawing.Size(35, 32);
             this.btnTimKiemTu.TabIndex = 8;
             this.bunifuToolTip1.SetToolTip(this.btnTimKiemTu, "");
             this.bunifuToolTip1.SetToolTipIcon(this.btnTimKiemTu, null);
             this.bunifuToolTip1.SetToolTipTitle(this.btnTimKiemTu, "");
+            this.btnTimKiemTu.Visible = false;
             this.btnTimKiemTu.Click += new System.EventHandler(this.btnTimKiemTu_Click);
             // 
             // guna2Button6
@@ -219,7 +220,7 @@ namespace DictionaryAppForIT.UserControls
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
             this.guna2Button2.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button2.Location = new System.Drawing.Point(417, 16);
+            this.guna2Button2.Location = new System.Drawing.Point(404, 16);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.PressedDepth = 0;
             this.guna2Button2.ShadowDecoration.BorderRadius = 50;
@@ -641,7 +642,7 @@ namespace DictionaryAppForIT.UserControls
             this.txtTuVung.PlaceholderText = "";
             this.txtTuVung.ReadOnly = true;
             this.txtTuVung.SelectedText = "";
-            this.txtTuVung.Size = new System.Drawing.Size(186, 39);
+            this.txtTuVung.Size = new System.Drawing.Size(132, 39);
             this.txtTuVung.TabIndex = 27;
             this.bunifuToolTip1.SetToolTip(this.txtTuVung, "");
             this.bunifuToolTip1.SetToolTipIcon(this.txtTuVung, null);
