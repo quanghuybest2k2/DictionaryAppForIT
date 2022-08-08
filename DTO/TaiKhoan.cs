@@ -10,6 +10,8 @@ namespace DictionaryAppForIT.DTO
 {
     public class TaiKhoan
     {
+        public static string displayUsername;
+
         public TaiKhoan()
         {
 

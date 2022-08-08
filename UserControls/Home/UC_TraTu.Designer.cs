@@ -40,7 +40,7 @@ namespace DictionaryAppForIT.UserControls
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTenDangNhap = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.txtTimKiemTu = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -104,7 +104,7 @@ namespace DictionaryAppForIT.UserControls
             this.panel1.Controls.Add(this.guna2Button2);
             this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lblTenDangNhap);
             this.panel1.Controls.Add(this.guna2CirclePictureBox1);
             this.panel1.Controls.Add(this.txtTimKiemTu);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -274,20 +274,20 @@ namespace DictionaryAppForIT.UserControls
             this.bunifuToolTip1.SetToolTipIcon(this.label1, null);
             this.bunifuToolTip1.SetToolTipTitle(this.label1, "");
             // 
-            // label2
+            // lblTenDangNhap
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(756, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Sang Đỗ";
-            this.bunifuToolTip1.SetToolTip(this.label2, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.label2, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.label2, "");
+            this.lblTenDangNhap.AutoSize = true;
+            this.lblTenDangNhap.BackColor = System.Drawing.Color.Transparent;
+            this.lblTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenDangNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblTenDangNhap.Location = new System.Drawing.Point(756, 31);
+            this.lblTenDangNhap.Name = "lblTenDangNhap";
+            this.lblTenDangNhap.Size = new System.Drawing.Size(67, 20);
+            this.lblTenDangNhap.TabIndex = 3;
+            this.lblTenDangNhap.Text = "Sang Đỗ";
+            this.bunifuToolTip1.SetToolTip(this.lblTenDangNhap, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblTenDangNhap, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblTenDangNhap, "");
             // 
             // guna2CirclePictureBox1
             // 
@@ -641,7 +641,7 @@ namespace DictionaryAppForIT.UserControls
             this.txtTuVung.PlaceholderText = "";
             this.txtTuVung.ReadOnly = true;
             this.txtTuVung.SelectedText = "";
-            this.txtTuVung.Size = new System.Drawing.Size(267, 39);
+            this.txtTuVung.Size = new System.Drawing.Size(186, 39);
             this.txtTuVung.TabIndex = 27;
             this.bunifuToolTip1.SetToolTip(this.txtTuVung, "");
             this.bunifuToolTip1.SetToolTipIcon(this.txtTuVung, null);
@@ -669,6 +669,7 @@ namespace DictionaryAppForIT.UserControls
             this.bunifuToolTip1.SetToolTipIcon(this.btnSaoChep, null);
             this.bunifuToolTip1.SetToolTipTitle(this.btnSaoChep, "");
             this.btnSaoChep.UseTransparentBackground = true;
+            this.btnSaoChep.Click += new System.EventHandler(this.btnSaoChep_Click);
             // 
             // flpMeaning
             // 
@@ -1003,6 +1004,7 @@ namespace DictionaryAppForIT.UserControls
             this.bunifuToolTip1.SetToolTip(this, "");
             this.bunifuToolTip1.SetToolTipIcon(this, null);
             this.bunifuToolTip1.SetToolTipTitle(this, "");
+            this.Load += new System.EventHandler(this.UC_TraTu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
@@ -1032,7 +1034,7 @@ namespace DictionaryAppForIT.UserControls
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTenDangNhap;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox txtTimKiemTu;
         private System.Windows.Forms.PictureBox pictureBox1;

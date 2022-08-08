@@ -181,9 +181,9 @@ namespace DictionaryAppForIT.Forms
         }
         private void btnDangNhapMain_Click(object sender, EventArgs e)
         {
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.FormClosed += new FormClosedEventHandler(frmLogin_FormClosed);
-            frmLogin.ShowDialog();
+            //frmLogin frmLogin = new frmLogin();
+            //frmLogin.FormClosed += new FormClosedEventHandler(frmLogin_FormClosed);
+            //frmLogin.ShowDialog();
         }
     }
 }

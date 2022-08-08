@@ -28,7 +28,7 @@ namespace DictionaryAppForIT.DAL
 
         private DataProvider()
         {
-            connectionSTR = "Data Source=DESKTOP-M9DGN9B;Initial Catalog=TestDictionary2;Integrated Security=True";
+            connectionSTR = "Data Source=DESKTOP-M9DGN9B;Initial Catalog=EnglishDictionary;Integrated Security=True";
         }
         
         public DataTable ExecuteQuery(string query, object[] parameter = null)

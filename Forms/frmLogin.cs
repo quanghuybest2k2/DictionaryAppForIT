@@ -1,6 +1,7 @@
 ﻿using Bunifu.UI.WinForms;
 using DictionaryAppForIT.Forms;
 using DictionaryAppForIT.DAL;
+using DictionaryAppForIT.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,6 @@ namespace DictionaryAppForIT
 {
     public partial class frmLogin : Form
     {
-        public static string TenTaiKhoan = "";
         public frmLogin()
         {
             InitializeComponent();
@@ -158,22 +158,24 @@ namespace DictionaryAppForIT
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-
             try
             {
+                frmMain frmMain = new frmMain();
                 string query = "KiemTraDangNhap @tendangnhap , @matkhau";
                 object kq = DataProvider.Instance.ExecuteScalar(query, new object[] { txtTaiKhoanDN.Text, txtMatKhauDN.Text });
-                TenTaiKhoan = txtTaiKhoanDN.Text;
+                TaiKhoan.displayUsername = txtTaiKhoanDN.Text;
                 int code = Convert.ToInt32(kq);
                 if (code == 0)
                 {
-                    MessageBox.Show("Người dùng " + TenTaiKhoan + " đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnExit.PerformClick();
+                    this.Hide();
+                    frmMain.Show();
+                    //MessageBox.Show("Người dùng " + TenTaiKhoan + " đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (code == 1)
                 {
-                    MessageBox.Show("Admin " + TenTaiKhoan + " đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnExit.PerformClick();
+                    this.Hide();
+                    frmMain.Show();
+                    //MessageBox.Show("Admin " + TenTaiKhoan + " đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (code == 2)
                 {
@@ -189,6 +191,7 @@ namespace DictionaryAppForIT
                     txtTaiKhoanDN.Text = "";
                     txtTaiKhoanDN.Focus();
                 }
+
             }
             catch (Exception ex)
             {
@@ -197,20 +200,6 @@ namespace DictionaryAppForIT
             LuuMatKhau();
             SaveXml();
         }
-
-        //#region shadow
-        //private const int CS_DropShadow = 0x00020000; 
-
-        //protected override CreateParams CreateParams 
-        //{
-        //    get
-        //    {
-        //        CreateParams cp = base.CreateParams;
-        //        cp.ClassStyle |= CS_DropShadow;
-        //        return cp;
-        //    }
-        //}
-        //#endregion
-
+       
     }
 }

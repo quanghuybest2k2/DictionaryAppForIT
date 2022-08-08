@@ -1,5 +1,6 @@
 ﻿using DictionaryAppForIT.UserControls.Home;
 using DictionaryAppForIT.DAL;
+using DictionaryAppForIT.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,13 +25,18 @@ namespace DictionaryAppForIT.UserControls
             InitializeComponent();
             speech = new SpeechSynthesizer();
             // flpMeaning.Controls.Add(ucNghia);
+            KhoiTaoMacDinh();
+        }
+        private void KhoiTaoMacDinh()
+        {
             GoiYTimKiem();
         }
+
         private void GoiYTimKiem()
         {
             try
             {
-                SqlConnection Conn = new SqlConnection(@"Data Source=DESKTOP-M9DGN9B;Initial Catalog=TestDictionary2;Integrated Security=True");
+                SqlConnection Conn = new SqlConnection(@"Data Source=DESKTOP-M9DGN9B;Initial Catalog=EnglishDictionary;Integrated Security=True");
                 Conn.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = $"select TenTu from Tu";
@@ -55,7 +61,7 @@ namespace DictionaryAppForIT.UserControls
 
             try
             {
-                SqlConnection Conn = new SqlConnection(@"Data Source=DESKTOP-M9DGN9B;Initial Catalog=TestDictionary2;Integrated Security=True");
+                SqlConnection Conn = new SqlConnection(@"Data Source=DESKTOP-M9DGN9B;Initial Catalog=EnglishDictionary;Integrated Security=True");
                 SqlCommand cmd = new SqlCommand($"exec HienThiThongTin '{txtTimKiemTu.Text}%'", Conn);
                 Conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -119,6 +125,17 @@ namespace DictionaryAppForIT.UserControls
             speech.SelectVoice("Microsoft Hazel Desktop"); // giong anh
             speech.SpeakAsync(txtTuVung.Text);
 
+        }
+
+        private void btnSaoChep_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtTuVung.Text); // copy text
+            //Clipboard.GetText(); // paste text
+        }
+
+        private void UC_TraTu_Load(object sender, EventArgs e)
+        {
+            lblTenDangNhap.Text = TaiKhoan.displayUsername;
         }
     }
 }
