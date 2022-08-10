@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LichSu>
   <Tu>
-    <TiengAnh>Hello</TiengAnh>
-    <TiengViet>Xin chào</TiengViet>
+    <TiengAnh>
+    </TiengAnh>
+    <TiengViet>Chào</TiengViet>
   </Tu>
   <Tu>
     <TiengAnh>Data</TiengAnh>

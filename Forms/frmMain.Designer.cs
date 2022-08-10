@@ -50,7 +50,7 @@ namespace DictionaryAppForIT.Forms
             this.btnDichVB = new Guna.UI2.WinForms.Guna2Button();
             this.btnTVChuyenNganh = new Guna.UI2.WinForms.Guna2Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInformation = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -148,7 +148,7 @@ namespace DictionaryAppForIT.Forms
             this.btnDangXuat.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnDangXuat.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnDangXuat.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnDangXuat.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDangXuat.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDangXuat.FillColor = System.Drawing.Color.Transparent;
             this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -329,7 +329,7 @@ namespace DictionaryAppForIT.Forms
             // 
             this.pnContent.Controls.Add(this.flpTabHome);
             this.pnContent.Controls.Add(this.button2);
-            this.pnContent.Controls.Add(this.button1);
+            this.pnContent.Controls.Add(this.btnInformation);
             this.pnContent.Controls.Add(this.btnExit);
             this.pnContent.Controls.Add(this.btnMinimize);
             this.pnContent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -437,20 +437,21 @@ namespace DictionaryAppForIT.Forms
             this.button2.TabIndex = 32;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnInformation
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(737, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 30);
-            this.button1.TabIndex = 31;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnInformation.BackColor = System.Drawing.Color.Transparent;
+            this.btnInformation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInformation.FlatAppearance.BorderSize = 0;
+            this.btnInformation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnInformation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformation.Image = ((System.Drawing.Image)(resources.GetObject("btnInformation.Image")));
+            this.btnInformation.Location = new System.Drawing.Point(737, 7);
+            this.btnInformation.Name = "btnInformation";
+            this.btnInformation.Size = new System.Drawing.Size(30, 30);
+            this.btnInformation.TabIndex = 31;
+            this.btnInformation.UseVisualStyleBackColor = false;
+            this.btnInformation.Click += new System.EventHandler(this.btnInformation_Click);
             // 
             // btnExit
             // 
@@ -555,7 +556,7 @@ namespace DictionaryAppForIT.Forms
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInformation;
         private Guna.UI2.WinForms.Guna2Button btnTraTu;
         private Guna.UI2.WinForms.Guna2Button btnTVChuyenNganh;
         private Guna.UI2.WinForms.Guna2Button btnDichVB;

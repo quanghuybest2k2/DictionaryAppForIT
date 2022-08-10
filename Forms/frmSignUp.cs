@@ -35,7 +35,7 @@ namespace DictionaryAppForIT.Forms
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            MainBtn.Close(this);
+            MainBtn.Exit();
         }
         #endregion
 
@@ -108,6 +108,8 @@ namespace DictionaryAppForIT.Forms
                     if (rdNam.Checked) { gioiTinh = "1"; }
                     if (rdNu.Checked) { gioiTinh = "2"; }
                     if (rdKhac.Checked) { gioiTinh = "3"; }
+                    int numEmail = DataProvider.Instance.ExecuteNonQuery($"select * from TaiKhoan where Email = '@email'", new object[] { email });
+                    if (numEmail != 0) { MessageBox.Show("Email đã tồn tại! Vui lòng chọn email khác."); return; }
 
                     try
                     {
@@ -117,7 +119,9 @@ namespace DictionaryAppForIT.Forms
                         if (num > 0)
                         {
                             MessageBox.Show("Đăng ký thành công.");
-                            this.Close();
+                            this.Hide();
+                            frmLogin frmLogin = new frmLogin();
+                            frmLogin.Show();
                         }
                     }
                     catch (Exception ex)

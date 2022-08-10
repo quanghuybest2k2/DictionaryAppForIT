@@ -19,11 +19,14 @@ namespace DictionaryAppForIT
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new frmLogin());
-            
-           // Application.Run(new frmSignUp());
-            
-           // Application.Run(new frmMain());
+
+            // Application.Run(new frmSignUp());
+
+            // Application.Run(new frmMain());
             //Application.Run(new frmTest());
+
+            //Application.Run(new Form1());
+
         }
     }
 }

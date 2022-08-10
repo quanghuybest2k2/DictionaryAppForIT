@@ -67,7 +67,7 @@ namespace DictionaryAppForIT
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblQuenMK = new System.Windows.Forms.Label();
-            this.lblDangKy = new System.Windows.Forms.Label();
+            this.lblDangKyNgay = new System.Windows.Forms.Label();
             this.btnDangNhap = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.btnEyesOpen = new System.Windows.Forms.Button();
@@ -574,19 +574,20 @@ namespace DictionaryAppForIT
             this.lblQuenMK.Size = new System.Drawing.Size(109, 17);
             this.lblQuenMK.TabIndex = 5;
             this.lblQuenMK.Text = "Quên mật khẩu?";
+            this.lblQuenMK.Click += new System.EventHandler(this.lblQuenMK_Click);
             // 
-            // lblDangKy
+            // lblDangKyNgay
             // 
-            this.lblDangKy.AutoSize = true;
-            this.lblDangKy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblDangKy.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDangKy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(195)))), ((int)(((byte)(142)))));
-            this.lblDangKy.Location = new System.Drawing.Point(662, 387);
-            this.lblDangKy.Name = "lblDangKy";
-            this.lblDangKy.Size = new System.Drawing.Size(92, 17);
-            this.lblDangKy.TabIndex = 9;
-            this.lblDangKy.Text = "Đăng ký ngay";
-            this.lblDangKy.Click += new System.EventHandler(this.lblDangKy_Click);
+            this.lblDangKyNgay.AutoSize = true;
+            this.lblDangKyNgay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDangKyNgay.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDangKyNgay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(195)))), ((int)(((byte)(142)))));
+            this.lblDangKyNgay.Location = new System.Drawing.Point(662, 387);
+            this.lblDangKyNgay.Name = "lblDangKyNgay";
+            this.lblDangKyNgay.Size = new System.Drawing.Size(92, 17);
+            this.lblDangKyNgay.TabIndex = 9;
+            this.lblDangKyNgay.Text = "Đăng ký ngay";
+            this.lblDangKyNgay.Click += new System.EventHandler(this.lblDangKyNgay_Click);
             // 
             // btnDangNhap
             // 
@@ -654,7 +655,7 @@ namespace DictionaryAppForIT
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(853, 480);
             this.Controls.Add(this.btnDangNhap);
-            this.Controls.Add(this.lblDangKy);
+            this.Controls.Add(this.lblDangKyNgay);
             this.Controls.Add(this.lblQuenMK);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnEyesClose);
@@ -729,7 +730,7 @@ namespace DictionaryAppForIT
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lblQuenMK;
-        private System.Windows.Forms.Label lblDangKy;
+        private System.Windows.Forms.Label lblDangKyNgay;
         private Guna.UI2.WinForms.Guna2GradientButton btnDangNhap;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.Button btnEyesClose;

@@ -40,7 +40,7 @@ namespace DictionaryAppForIT
         #region Main button
         private void btnExit_Click(object sender, EventArgs e)
         {
-            MainBtn.Close(this);
+            MainBtn.Exit();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -50,15 +50,6 @@ namespace DictionaryAppForIT
             MainBtn.Minnimize(this);
         }
         #endregion
-
-
-        private void lblDangKy_Click(object sender, EventArgs e)
-        {
-            var form = new frmSignUp();
-            if (form.ShowDialog() == DialogResult.Cancel)
-            {
-            }
-        }
 
         private void btnEyesOpen_Click(object sender, EventArgs e)
         {
@@ -200,6 +191,18 @@ namespace DictionaryAppForIT
             LuuMatKhau();
             SaveXml();
         }
-       
+        #region đăng ký và quên mật khẩu
+        private void lblDangKyNgay_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmSignUp frmSign = new frmSignUp();
+            frmSign.Show();
+        }
+
+        private void lblQuenMK_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }

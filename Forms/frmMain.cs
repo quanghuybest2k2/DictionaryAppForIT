@@ -3,6 +3,7 @@ using DictionaryAppForIT.UserControls.GanDay;
 using DictionaryAppForIT.UserControls.Home;
 using DictionaryAppForIT.UserControls.YeuThich;
 using Guna.UI2.WinForms;
+using DictionaryAppForIT.Class;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -143,7 +144,18 @@ namespace DictionaryAppForIT.Forms
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var result = RJMessageBox.Show("Bạn có chắc muốn thoát?",
+             "Xác nhận",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
         #endregion
 
@@ -165,7 +177,7 @@ namespace DictionaryAppForIT.Forms
         }
 
         private void btnTVChuyenNganh_Click(object sender, EventArgs e)
-        { 
+        {
             HideUC(ucRecent);
             ShowUC(ucTVChuyen);
         }
@@ -173,9 +185,26 @@ namespace DictionaryAppForIT.Forms
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.Show();
+            var result = RJMessageBox.Show("Bạn thực sự muốn đăng xuất?",
+             "Xác nhận",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.Show();
+            }
+
+        }
+
+        private void btnInformation_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

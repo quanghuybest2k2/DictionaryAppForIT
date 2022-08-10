@@ -190,9 +190,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\RandomColor.cs" />
+    <Compile Include="Class\RJMessageBox.cs" />
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
     <Compile Include="DTO\User.cs" />
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMessageBox.designer.cs">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +294,12 @@
     <Compile Include="UserControls\YeuThich\UC_YT_VanBan.Designer.cs">
       <DependentUpon>UC_YT_VanBan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMessageBox.resx">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,12 +388,15 @@
     <Content Include="Resources\cat333.png" />
     <Content Include="Resources\catDongNghia2.png" />
     <Content Include="Resources\catTraiNghia.png" />
+    <Content Include="Resources\chat.png" />
     <Content Include="Resources\Close-icon-white.png" />
     <Content Include="Resources\Close-icon.png" />
     <Content Include="Resources\close.png" />
     <Content Include="Resources\close_111152.png" />
     <Content Include="Resources\copy1.png" />
     <Content Include="Resources\copy11.png" />
+    <Content Include="Resources\error.png" />
+    <Content Include="Resources\exclamation.png" />
     <Content Include="Resources\fb.png" />
     <Content Include="Resources\flag22.png" />
     <Content Include="Resources\game_!.png" />
@@ -391,6 +414,7 @@
     <Content Include="Resources\icon-search-more-dark.png" />
     <Content Include="Resources\icon.png" />
     <Content Include="Resources\info1.png" />
+    <Content Include="Resources\information.png" />
     <Content Include="Resources\lock_icon_148524.ico" />
     <Content Include="Resources\login-bg.png" />
     <Content Include="Resources\login-bg1.png" />
@@ -409,6 +433,7 @@
     <Content Include="Resources\panel.png" />
     <Content Include="Resources\pannel.png" />
     <Content Include="Resources\pass.png" />
+    <Content Include="Resources\question.png" />
     <Content Include="Resources\setting_1.png" />
     <Content Include="Resources\setting_11.png" />
     <Content Include="Resources\shteam.png" />
