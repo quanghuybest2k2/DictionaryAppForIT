@@ -255,6 +255,9 @@ EXEC DangKyTaiKhoan 'bede', 'bede123', 'bede@gmail.com', 3, ''
 EXEC DangKyTaiKhoan 'a','654321','test@gmail.com', 2,''
 go
 select * from TaiKhoan
+go
+--check email có tồn tại hay không
+select * from TaiKhoan where Email = 'quanghuybest@gmail.com'
 --create proc ThemNghia
 --    @IDTu int,
 --	@nghia nvarchar(200)
@@ -288,6 +291,19 @@ go
 ----select w.ID, TenTu, PhienAm, wt.TenTuLoai, n.Nghia , MoTa, ViDu, DongNghia, TraiNghia, m.TenChuyenNganh from Tu w, TuLoai wt, ChuyenNganh m, Nghia n where wt.ID = w.TuLoai and m.ID = w.chuyennganh and n.ID = w.Nghia and TenTu like @tukhoa --'C%'
 ----go
 ----exec TimTu 'f%'
-SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and TenTu like 'c%' and ChuyenNganh.ID = 1
+-- Tìm từ theo chuyên ngành
+SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and TenTu like 'c%' and ChuyenNganh.ID = 2
 EXEC LayTheoChuyenNganh 2
-----go
+go
+-- lấy từ ngẫu nhiên(random)
+create proc TuNgauNhien
+@id INT
+as
+select TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia, TraiNghia
+	from Tu t, TuLoai tl, ChuyenNganh cn, Nghia n
+	where n.IDTuLoai = tl.ID and t.ChuyenNganh = cn.ID and n.IDTu = t.ID and t.ID = @id
+	group by TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia, TraiNghia
+go
+EXEC TuNgauNhien 3
+go
+select * from Tu
