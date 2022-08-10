@@ -99,7 +99,6 @@ namespace DictionaryAppForIT.UserControls
         {
             if (e.KeyCode == Keys.Enter)
             {
-                //btnTimKiemTu_Click(this, new EventArgs());
                 btnTimKiemTu.PerformClick();
             }
         }
@@ -134,7 +133,49 @@ namespace DictionaryAppForIT.UserControls
 
         private void UC_TraTu_Load(object sender, EventArgs e)
         {
-            lblTenDangNhap.Text = TaiKhoan.displayUsername;
+            lblTenDangNhap.Text = TaiKhoan.displayUsername; // Hello Sang Đỗ
+        }
+
+        private void btnTuNgauNhien_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                object Wordlength = DataProvider.Instance.ExecuteScalar("select count(TenTu) from Tu");
+                Random rand = new Random();
+                int kqRand = rand.Next(1, Convert.ToInt32(Wordlength));
+                SqlConnection Conn = new SqlConnection(@"Data Source=DESKTOP-M9DGN9B;Initial Catalog=EnglishDictionary;Integrated Security=True");
+                SqlCommand cmd = new SqlCommand($"EXEC TuNgauNhien {kqRand}", Conn);
+                Conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    txtTuVung.Text = rdr["TenTu"].ToString();
+                    txtPhienAm.Text = rdr["PhienAm"].ToString();
+                    txtTuLoai.Text = rdr["TenLoai"].ToString();
+                    txtNghiaTV.Text = rdr["Nghia"].ToString();
+                    lblMoTa.Text = rdr["MoTa"].ToString();
+                    lblViDu.Text = rdr["ViDu"].ToString();
+                    txtDongNghia.Text = rdr["DongNghia"].ToString();
+                    if (txtDongNghia.Text != "")
+                    {
+                        pbKhongTimThay.Visible = false;
+                        txtDongNghia.Visible = true;
+                    }
+                    else
+                    {
+                        pbKhongTimThay.Visible = true;
+                        txtDongNghia.Visible = false;
+                    }
+                    txtTraiNghia.Text = rdr["TraiNghia"].ToString();
+                }
+                Conn.Close();
+                Conn.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -306,4 +306,4 @@ select TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia,
 go
 EXEC TuNgauNhien 3
 go
-select * from Tu
+select count(TenTu) from Tu
