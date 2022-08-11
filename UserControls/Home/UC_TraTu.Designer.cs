@@ -645,7 +645,7 @@ namespace DictionaryAppForIT.UserControls
             this.txtTuVung.PlaceholderText = "";
             this.txtTuVung.ReadOnly = true;
             this.txtTuVung.SelectedText = "";
-            this.txtTuVung.Size = new System.Drawing.Size(96, 39);
+            this.txtTuVung.Size = new System.Drawing.Size(284, 39);
             this.txtTuVung.TabIndex = 27;
             this.bunifuToolTip1.SetToolTip(this.txtTuVung, "");
             this.bunifuToolTip1.SetToolTipIcon(this.txtTuVung, null);

@@ -155,6 +155,22 @@ namespace DictionaryAppForIT.UserControls.Home
             txtUnder.Clear();
 
         }
+        private void btnXoaLichSu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int num = DataProvider.Instance.ExecuteNonQuery("DELETE FROM LichSuDich");
+                if (num > 0)
+                {
+                    RJMessageBox.Show("Đã xóa hết lịch sử");
+                    LoadLichSu();
+                }
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show(ex.Message);
+            }
+        }
         #endregion
         private void txtCopyText_Click(object sender, EventArgs e)
         {
@@ -188,41 +204,6 @@ namespace DictionaryAppForIT.UserControls.Home
             }
         }
 
-        //private void LuuLichSu()
-        //{
-        //    string filePath = Path.Combine(@"D:\Window Form\DictionaryAppForIT\DTO\LichSu.xml");
-        //    XmlDocument doc = new XmlDocument();
-        //    doc.Load(filePath);
-        //    XmlNode nodeTiengAnh = doc.SelectSingleNode("/LichSu/Tu/TiengAnh");
-        //    XmlNode nodeTiengViet = doc.SelectSingleNode("/LichSu/Tu/TiengViet");
 
-        //    nodeTiengAnh.InnerText = txtTop.Text;
-        //    nodeTiengViet.InnerText = txtUnder.Text;
-
-        //    doc.Save(filePath);
-        //}
-
-        //private void ReadXml()
-        //{
-        //    string filePath = Path.Combine(@"D:\Window Form\DictionaryAppForIT\DTO\LichSu.xml");
-        //    XmlDocument doc = new XmlDocument();
-        //    doc.Load(filePath);
-        //    XmlNode nodeTiengAnh = doc.SelectSingleNode("/LichSu/Tu/TiengAnh");
-        //    XmlNode nodeTiengViet = doc.SelectSingleNode("/LichSu/Tu/TiengViet");
-        //    //TextBox txtTiengAnh = new TextBox();
-        //    //txtTiengAnh.Name = "txtTiengAnh";
-        //    // TextBox txtTiengViet = new TextBox();
-        //    // txtTiengViet.Name = "txtTiengViet";
-
-        //    // txtTiengAnh.Text = nodeTiengAnh.InnerText;
-        //    //txtTiengViet.Text = nodeTiengViet.InnerText;
-
-        //    // List<string> list = new List<string>();
-        //    //string[] arr = { txtTiengAnh.Text, txtTiengViet.Text };
-        //    //list.AddRange(arr);
-        //    //txtLichSu.Text = nodeTiengAnh.InnerText + Environment.NewLine + nodeTiengViet.InnerText + Environment.NewLine;
-        //    //txtLichSu.Lines = list.ToArray();
-        //    //richTextBox1.Lines = list.ToArray();// richTextBox.Lines có thể xuống dòng
-        //}
     }
 }

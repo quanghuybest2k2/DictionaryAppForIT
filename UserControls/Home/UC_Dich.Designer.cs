@@ -74,6 +74,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
+            this.btnXoaLichSu = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -334,7 +335,7 @@ namespace DictionaryAppForIT.UserControls.Home
             // txtCopyText
             // 
             this.txtCopyText.BackColor = System.Drawing.Color.Transparent;
-            this.txtCopyText.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.txtCopyText.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.txtCopyText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtCopyText.FillColor = System.Drawing.Color.Transparent;
             this.txtCopyText.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -355,7 +356,7 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             this.btnLuuYeuThich.BackColor = System.Drawing.Color.Transparent;
             this.btnLuuYeuThich.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.btnLuuYeuThich.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnLuuYeuThich.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnLuuYeuThich.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuuYeuThich.FillColor = System.Drawing.Color.Transparent;
             this.btnLuuYeuThich.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -626,6 +627,7 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.btnXoaLichSu);
             this.panel6.Controls.Add(this.btnLichSu);
             this.panel6.Controls.Add(this.label5);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
@@ -680,6 +682,26 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             this.fileSystemWatcher2.EnableRaisingEvents = true;
             this.fileSystemWatcher2.SynchronizingObject = this;
+            // 
+            // btnXoaLichSu
+            // 
+            this.btnXoaLichSu.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoaLichSu.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnXoaLichSu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoaLichSu.FillColor = System.Drawing.Color.Transparent;
+            this.btnXoaLichSu.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaLichSu.ForeColor = System.Drawing.Color.Gray;
+            this.btnXoaLichSu.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnXoaLichSu.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaLichSu.Image")));
+            this.btnXoaLichSu.Location = new System.Drawing.Point(105, 6);
+            this.btnXoaLichSu.Name = "btnXoaLichSu";
+            this.btnXoaLichSu.PressedDepth = 0;
+            this.btnXoaLichSu.Size = new System.Drawing.Size(116, 24);
+            this.btnXoaLichSu.TabIndex = 30;
+            this.btnXoaLichSu.Text = "Xóa dữ liệu";
+            this.btnXoaLichSu.TextOffset = new System.Drawing.Point(3, 0);
+            this.btnXoaLichSu.UseTransparentBackground = true;
+            this.btnXoaLichSu.Click += new System.EventHandler(this.btnXoaLichSu_Click);
             // 
             // UC_Dich
             // 
@@ -758,5 +780,6 @@ namespace DictionaryAppForIT.UserControls.Home
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip ctxtChucNang;
         private ReaLTaiizor.Controls.MaterialToolStripMenuItem tsmiXoa;
+        private Guna.UI2.WinForms.Guna2Button btnXoaLichSu;
     }
 }

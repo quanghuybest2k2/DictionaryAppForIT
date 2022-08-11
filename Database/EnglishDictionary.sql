@@ -65,7 +65,10 @@ go
 -- xóa bản dịch đã lưu thông qua khóa chính là Tiếng anh
 delete from LichSuDich where TiengAnh = 'Hello'
 go
-SELECT TiengAnh from LichSuDich Where TiengAnh = N'hi'-- and TiengViet =  N'Xin chào.'
+SELECT TiengAnh from LichSuDich Where TiengAnh = N'hi'-- or TiengViet =  N'Xin chào.'
+-- xóa hết lịch sử
+DELETE FROM LichSuDich
+go
 select * from LichSuDich
 go
 ----------------------------------------- Thêm dữ liệu
