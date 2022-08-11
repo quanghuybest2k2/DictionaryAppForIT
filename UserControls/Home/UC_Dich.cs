@@ -1,4 +1,6 @@
-﻿using SpeechLib; // speak
+﻿using DictionaryAppForIT.DAL;
+using DictionaryAppForIT.Class;
+using SpeechLib; // speak
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,8 +25,7 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             InitializeComponent();
             speech = new SpeechSynthesizer();
-
-
+            LoadLichSu();
         }
         private string TranslateText(string input)
         {
@@ -85,14 +86,81 @@ namespace DictionaryAppForIT.UserControls.Home
             {
                 txtUnder.Text = TranslateText(txtTop.Text);
             }
-            LuuLichSu(); // lưu lịch sử
         }
+        #region Xử lý lịch sử
+        private void LoadLichSu()
+        {
+            try
+            {
+                dtgvLichSu.DataSource = DataProvider.Instance.ExecuteQuery("select * from LichSuDich");
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show(ex.Message);
+            }
+        }
+        private void LuuLichSuTu()
+        {
+            try
+            {
+                int num = DataProvider.Instance.ExecuteNonQuery($"insert into LichSuDich values(N'{txtTop.Text}', N'{txtUnder.Text}')");
+                if (num > 0)
+                {
+                    LoadLichSu();
+                }
+                else
+                {
+                    RJMessageBox.Show("Không thể đưa vào lịch sử dịch!");
+                }
+            }
+            catch (Exception)
+            {
+                // khóa chính không thể trùng
+                RJMessageBox.Show("Bản dịch này đã tồn tại.");
+            }
+        }
+        private void dtgvLichSu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgvLichSu.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dtgvLichSu.Rows[e.RowIndex];
+                txtTop.Text = row.Cells[0].Value.ToString();
+                txtUnder.Text = row.Cells[1].Value.ToString();
+            }
+        }
+        private void tsmiXoa_Click(object sender, EventArgs e)
+        {
+            string ChuMuonXoa = dtgvLichSu.SelectedCells[0].Value.ToString();
+            int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuDich where TiengAnh = N'{ChuMuonXoa}'");
+            if (num > 0)
+            {
+                RJMessageBox.Show("Xóa thành công.", "Thông báo");
+                LoadLichSu();
+            }
+            else
+            {
+                RJMessageBox.Show("Thất bại!",
+                "Thông báo lỗi",
+                MessageBoxButtons.RetryCancel,
+                MessageBoxIcon.Error);
+            }
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (txtTop.Text != "")
+            {
+                LuuLichSuTu();// lưu lịch sử
+            }
+            txtTop.Clear();
+            txtUnder.Clear();
 
+        }
+        #endregion
         private void txtCopyText_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(txtUnder.Text); // copy text
             //Clipboard.GetText(); // paste text
-            MessageBox.Show("Đã sao chép!");
+            RJMessageBox.Show("Đã sao chép!", "Thông báo");
         }
 
         private void btnMic_Click(object sender, EventArgs e)
@@ -103,7 +171,7 @@ namespace DictionaryAppForIT.UserControls.Home
             try
             {
                 soundPlayer.Play();
-                txtTop.Text = "I'm listening...";
+                txtTop.Text = "I am listening...";
                 sr.SetInputToDefaultAudioDevice();
                 RecognitionResult result = sr.Recognize();
                 txtTop.Clear();
@@ -112,59 +180,49 @@ namespace DictionaryAppForIT.UserControls.Home
             catch (Exception ex)
             {
                 txtTop.Text = "";
-                MessageBox.Show(ex.Message);
+                RJMessageBox.Show(ex.Message);
             }
             finally
             {
                 sr.UnloadAllGrammars();
             }
-
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            txtTop.Clear();
-        }
-        private void LuuLichSu()
-        {
-            string filePath = Path.Combine(@"D:\Window Form\DictionaryAppForIT\DTO\LichSu.xml");
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filePath);
-            XmlNode nodeTiengAnh = doc.SelectSingleNode("/LichSu/Tu/TiengAnh");
-            XmlNode nodeTiengViet = doc.SelectSingleNode("/LichSu/Tu/TiengViet");
+        //private void LuuLichSu()
+        //{
+        //    string filePath = Path.Combine(@"D:\Window Form\DictionaryAppForIT\DTO\LichSu.xml");
+        //    XmlDocument doc = new XmlDocument();
+        //    doc.Load(filePath);
+        //    XmlNode nodeTiengAnh = doc.SelectSingleNode("/LichSu/Tu/TiengAnh");
+        //    XmlNode nodeTiengViet = doc.SelectSingleNode("/LichSu/Tu/TiengViet");
 
-            nodeTiengAnh.InnerText = txtTop.Text;
-            nodeTiengViet.InnerText = txtUnder.Text;
+        //    nodeTiengAnh.InnerText = txtTop.Text;
+        //    nodeTiengViet.InnerText = txtUnder.Text;
 
-            doc.Save(filePath);
-        }
-        private void btnLichSu_Click(object sender, EventArgs e)
-        {
+        //    doc.Save(filePath);
+        //}
 
-            ReadXml();
-        }
+        //private void ReadXml()
+        //{
+        //    string filePath = Path.Combine(@"D:\Window Form\DictionaryAppForIT\DTO\LichSu.xml");
+        //    XmlDocument doc = new XmlDocument();
+        //    doc.Load(filePath);
+        //    XmlNode nodeTiengAnh = doc.SelectSingleNode("/LichSu/Tu/TiengAnh");
+        //    XmlNode nodeTiengViet = doc.SelectSingleNode("/LichSu/Tu/TiengViet");
+        //    //TextBox txtTiengAnh = new TextBox();
+        //    //txtTiengAnh.Name = "txtTiengAnh";
+        //    // TextBox txtTiengViet = new TextBox();
+        //    // txtTiengViet.Name = "txtTiengViet";
 
-        private void ReadXml()
-        {
-            string filePath = Path.Combine(@"D:\Window Form\DictionaryAppForIT\DTO\LichSu.xml");
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filePath);
-            XmlNode nodeTiengAnh = doc.SelectSingleNode("/LichSu/Tu/TiengAnh");
-            XmlNode nodeTiengViet = doc.SelectSingleNode("/LichSu/Tu/TiengViet");
-            //TextBox txtTiengAnh = new TextBox();
-            //txtTiengAnh.Name = "txtTiengAnh";
-           // TextBox txtTiengViet = new TextBox();
-           // txtTiengViet.Name = "txtTiengViet";
+        //    // txtTiengAnh.Text = nodeTiengAnh.InnerText;
+        //    //txtTiengViet.Text = nodeTiengViet.InnerText;
 
-           // txtTiengAnh.Text = nodeTiengAnh.InnerText;
-            //txtTiengViet.Text = nodeTiengViet.InnerText;
-
-           // List<string> list = new List<string>();
-            //string[] arr = { txtTiengAnh.Text, txtTiengViet.Text };
-            //list.AddRange(arr);
-            txtLichSu.Text = nodeTiengAnh.InnerText + Environment.NewLine + nodeTiengViet.InnerText + Environment.NewLine;
-            //txtLichSu.Lines = list.ToArray();
-            //richTextBox1.Lines = list.ToArray();// richTextBox.Lines có thể xuống dòng
-        }
+        //    // List<string> list = new List<string>();
+        //    //string[] arr = { txtTiengAnh.Text, txtTiengViet.Text };
+        //    //list.AddRange(arr);
+        //    //txtLichSu.Text = nodeTiengAnh.InnerText + Environment.NewLine + nodeTiengViet.InnerText + Environment.NewLine;
+        //    //txtLichSu.Lines = list.ToArray();
+        //    //richTextBox1.Lines = list.ToArray();// richTextBox.Lines có thể xuống dòng
+        //}
     }
 }

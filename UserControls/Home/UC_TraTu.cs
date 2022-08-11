@@ -135,11 +135,23 @@ namespace DictionaryAppForIT.UserControls
         {
             lblTenDangNhap.Text = TaiKhoan.displayUsername; // Hello Sang Đỗ
         }
+        #region BUTTON chọn chế độ tìm
+        // tìm bằng từ khóa tiếng anh
+        private void btnAnhViet_Click(object sender, EventArgs e)
+        {
 
+        }
+        // tìm bằng từ khóa tiếng việt
+        private void btnVietAnh_Click(object sender, EventArgs e)
+        {
+
+        }
+        // tìm từ ngẫu nhiên
         private void btnTuNgauNhien_Click(object sender, EventArgs e)
         {
             try
             {
+                //Wordlength: số từ có trong database
                 object Wordlength = DataProvider.Instance.ExecuteScalar("select count(TenTu) from Tu");
                 Random rand = new Random();
                 int kqRand = rand.Next(1, Convert.ToInt32(Wordlength));
@@ -177,5 +189,6 @@ namespace DictionaryAppForIT.UserControls
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
     }
 }

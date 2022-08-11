@@ -40,7 +40,6 @@ create table Nghia
 )
 select * from  Nghia
 go
-
 create table TaiKhoan
 (
 	ID INT IDENTITY(1,1) PRIMARY KEY,
@@ -50,6 +49,24 @@ create table TaiKhoan
 	GioiTinh INT NOT NULL,
 	Quyen INT NOT NULL DEFAULT 0
 )
+go
+create table LichSuDich
+(
+	TiengAnh NVARCHAR(1000) primary key,
+	TiengViet NVARCHAR(1000)
+)
+go
+insert into LichSuDich values
+(N'hello', N'Xin chào.'),
+(N'variable', N'Biến số.'),
+(N'constant', N'Hằng số.'),
+(N'firewall', N'Tường lửa.')
+go
+-- xóa bản dịch đã lưu thông qua khóa chính là Tiếng anh
+delete from LichSuDich where TiengAnh = 'Hello'
+go
+SELECT TiengAnh from LichSuDich Where TiengAnh = N'hi'-- and TiengViet =  N'Xin chào.'
+select * from LichSuDich
 go
 ----------------------------------------- Thêm dữ liệu
 -------- Chuyên ngành
@@ -306,4 +323,5 @@ select TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia,
 go
 EXEC TuNgauNhien 3
 go
+-- Lấy độ dài của từ
 select count(TenTu) from Tu

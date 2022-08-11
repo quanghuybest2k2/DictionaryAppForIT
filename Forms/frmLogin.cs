@@ -165,7 +165,7 @@ namespace DictionaryAppForIT
                 else if (code == 1)
                 {
                     this.Hide();
-                    frmMain.Show();
+                    frmMain.Show(); // show frmAdmin
                     //MessageBox.Show("Admin " + TenTaiKhoan + " đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (code == 2)
@@ -189,7 +189,6 @@ namespace DictionaryAppForIT
                 MessageBox.Show(ex.Message);
             }
             LuuMatKhau();
-            SaveXml();
         }
         #region đăng ký và quên mật khẩu
         private void lblDangKyNgay_Click(object sender, EventArgs e)

@@ -30,7 +30,7 @@ namespace DictionaryAppForIT.DAL
         {
             connectionSTR = "Data Source=DESKTOP-M9DGN9B;Initial Catalog=EnglishDictionary;Integrated Security=True";
         }
-        
+
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
