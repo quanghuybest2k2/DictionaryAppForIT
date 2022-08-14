@@ -328,3 +328,5 @@ EXEC TuNgauNhien 3
 go
 -- Lấy độ dài của từ
 select count(TenTu) from Tu
+select * from TaiKhoan
+select count(Email) from TaiKhoan where Email = 'quanghuybest@gmail.com'
