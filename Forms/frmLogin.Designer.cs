@@ -639,7 +639,7 @@ namespace DictionaryAppForIT
             this.btnEyesClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnEyesClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEyesClose.Image = ((System.Drawing.Image)(resources.GetObject("btnEyesClose.Image")));
-            this.btnEyesClose.Location = new System.Drawing.Point(753, 195);
+            this.btnEyesClose.Location = new System.Drawing.Point(752, 195);
             this.btnEyesClose.Name = "btnEyesClose";
             this.btnEyesClose.Size = new System.Drawing.Size(35, 19);
             this.btnEyesClose.TabIndex = 3;

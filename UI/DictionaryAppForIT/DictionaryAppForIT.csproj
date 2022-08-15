@@ -164,7 +164,7 @@
     <Compile Include="Class\RandomColor.cs" />
     <Compile Include="Class\RJMessageBox.cs" />
     <Compile Include="DAL\DataProvider.cs" />
-    <Compile Include="DTO\TaiKhoan.cs" />
+    <Compile Include="DTO\Class_TaiKhoan.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -98,7 +98,7 @@ namespace DictionaryAppForIT
             this.btnExit.Location = new System.Drawing.Point(805, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(30, 30);
-            this.btnExit.TabIndex = 2;
+            this.btnExit.TabIndex = 9;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -123,7 +123,7 @@ namespace DictionaryAppForIT
             this.btnMinimize.Location = new System.Drawing.Point(770, 12);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(30, 30);
-            this.btnMinimize.TabIndex = 3;
+            this.btnMinimize.TabIndex = 8;
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
@@ -204,7 +204,7 @@ namespace DictionaryAppForIT
             this.txtTaiKhoanDN.ShortcutsEnabled = true;
             this.txtTaiKhoanDN.Size = new System.Drawing.Size(330, 40);
             this.txtTaiKhoanDN.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtTaiKhoanDN.TabIndex = 6;
+            this.txtTaiKhoanDN.TabIndex = 0;
             this.txtTaiKhoanDN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTaiKhoanDN.TextMarginBottom = 0;
             this.txtTaiKhoanDN.TextMarginLeft = 3;
@@ -278,7 +278,7 @@ namespace DictionaryAppForIT
             this.txtMatKhauDN.ShortcutsEnabled = true;
             this.txtMatKhauDN.Size = new System.Drawing.Size(330, 40);
             this.txtMatKhauDN.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtMatKhauDN.TabIndex = 7;
+            this.txtMatKhauDN.TabIndex = 1;
             this.txtMatKhauDN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMatKhauDN.TextMarginBottom = 0;
             this.txtMatKhauDN.TextMarginLeft = 3;
@@ -359,7 +359,7 @@ namespace DictionaryAppForIT
             this.cbLuuDangNhap.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
             this.cbLuuDangNhap.Size = new System.Drawing.Size(17, 17);
             this.cbLuuDangNhap.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
-            this.cbLuuDangNhap.TabIndex = 11;
+            this.cbLuuDangNhap.TabIndex = 3;
             this.cbLuuDangNhap.ThreeState = false;
             this.cbLuuDangNhap.ToolTipText = null;
             // 
@@ -416,7 +416,7 @@ namespace DictionaryAppForIT
             this.btnFacebook.Location = new System.Drawing.Point(590, 333);
             this.btnFacebook.Name = "btnFacebook";
             this.btnFacebook.Size = new System.Drawing.Size(45, 45);
-            this.btnFacebook.TabIndex = 16;
+            this.btnFacebook.TabIndex = 5;
             this.btnFacebook.UseVisualStyleBackColor = false;
             // 
             // ilSocial
@@ -439,7 +439,7 @@ namespace DictionaryAppForIT
             this.btnGoogle.Location = new System.Drawing.Point(641, 333);
             this.btnGoogle.Name = "btnGoogle";
             this.btnGoogle.Size = new System.Drawing.Size(45, 45);
-            this.btnGoogle.TabIndex = 17;
+            this.btnGoogle.TabIndex = 6;
             this.btnGoogle.UseVisualStyleBackColor = false;
             // 
             // label4
@@ -572,7 +572,7 @@ namespace DictionaryAppForIT
             this.lblQuenMK.Location = new System.Drawing.Point(691, 285);
             this.lblQuenMK.Name = "lblQuenMK";
             this.lblQuenMK.Size = new System.Drawing.Size(109, 17);
-            this.lblQuenMK.TabIndex = 30;
+            this.lblQuenMK.TabIndex = 4;
             this.lblQuenMK.Text = "Quên mật khẩu?";
             // 
             // lblDangKyNgay
@@ -584,7 +584,7 @@ namespace DictionaryAppForIT
             this.lblDangKyNgay.Location = new System.Drawing.Point(662, 387);
             this.lblDangKyNgay.Name = "lblDangKyNgay";
             this.lblDangKyNgay.Size = new System.Drawing.Size(92, 17);
-            this.lblDangKyNgay.TabIndex = 31;
+            this.lblDangKyNgay.TabIndex = 7;
             this.lblDangKyNgay.Text = "Đăng ký ngay";
             this.lblDangKyNgay.Click += new System.EventHandler(this.lblDangKyNgay_Click);
             // 
@@ -602,7 +602,7 @@ namespace DictionaryAppForIT
             this.btnDangNhap.Location = new System.Drawing.Point(470, 235);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(330, 40);
-            this.btnDangNhap.TabIndex = 32;
+            this.btnDangNhap.TabIndex = 2;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseTransparentBackground = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);

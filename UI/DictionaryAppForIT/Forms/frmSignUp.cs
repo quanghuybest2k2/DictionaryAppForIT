@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DictionaryAppForIT.DAL;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using DictionaryAppForIT.Class;
 
 namespace DictionaryAppForIT.Forms
 {
@@ -34,7 +35,7 @@ namespace DictionaryAppForIT.Forms
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            MainBtn.Exit();
+            Application.Exit();
         }
         #endregion
 
@@ -88,7 +89,7 @@ namespace DictionaryAppForIT.Forms
         {
             if (!chkThoaThuan.Checked)
             {
-                MessageBox.Show("Bạn phải đồng ý các điều khoản mà chúng tôi đưa ra.");
+                RJMessageBox.Show("Bạn phải đồng ý các điều khoản mà chúng tôi đưa ra.");
                 return;
             }
             else
@@ -99,15 +100,15 @@ namespace DictionaryAppForIT.Forms
                     string tenTaiKhoan = txtTenDangNhapDK.Text;
                     string matkhau = txtMatKhauDK.Text;
                     string nhaplaiMK = txtNhapLaiMatKhauDK.Text;
-                    if (!checkEmail(email)) { MessageBox.Show("Emai không đúng định dạng!!!"); return; }
-                    if (!checkTaiKhoan(tenTaiKhoan)) { MessageBox.Show("Tên đăng nhập sai format!!!"); return; }
-                    if (!checkTaiKhoan(matkhau)) { MessageBox.Show("Mật khẩu sai format!!!"); return; }
-                    if (matkhau != nhaplaiMK) { MessageBox.Show("Mật khẩu không khớp!!!"); return; }
+                    if (!checkEmail(email)) { RJMessageBox.Show("Emai không đúng định dạng!!!"); return; }
+                    if (!checkTaiKhoan(tenTaiKhoan)) { RJMessageBox.Show("Tên đăng nhập sai format!!!"); return; }
+                    if (!checkTaiKhoan(matkhau)) { RJMessageBox.Show("Mật khẩu sai format!!!"); return; }
+                    if (matkhau != nhaplaiMK) { RJMessageBox.Show("Mật khẩu không khớp!!!"); return; }
                     if (rdNam.Checked) { gioiTinh = "1"; }
                     if (rdNu.Checked) { gioiTinh = "2"; }
                     if (rdKhac.Checked) { gioiTinh = "3"; }
-                    int numEmail = DataProvider.Instance.ExecuteNonQuery($"select count(Email) from TaiKhoan where Email = '@email'", new object[] { email });
-                    if (numEmail > 0) { MessageBox.Show("Email đã tồn tại! Vui lòng chọn email khác."); return; }
+                    //object numEmail = DataProvider.Instance.ExecuteScalar($"select count(*) from TaiKhoan where Email = '@email'", new object[] { email });
+                    //if (Convert.ToInt32(numEmail) > 0) { RJMessageBox.Show("Email đã tồn tại! Vui lòng chọn email khác."); return; }
 
                     try
                     {
@@ -116,21 +117,21 @@ namespace DictionaryAppForIT.Forms
                         int num = DataProvider.Instance.ExecuteNonQuery(query, new object[] { txtTenDangNhapDK.Text, txtMatKhauDK.Text, txtEmailDK.Text, gioiTinh });
                         if (num > 0)
                         {
-                            MessageBox.Show("Đăng ký thành công.");
+                            RJMessageBox.Show("Đăng ký thành công.");
                             this.Hide();
                             frmLogin frmLogin = new frmLogin();
                             frmLogin.Show();
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show(ex.Message);
+                        RJMessageBox.Show("Trùng email");
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    RJMessageBox.Show(ex.Message);
                 }
             }
 

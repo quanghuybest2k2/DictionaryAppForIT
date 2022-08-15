@@ -36,7 +36,8 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.flpContent = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.uC_LS_TuVung1 = new DictionaryAppForIT.UserControls.LichSu.UC_LS_TuVung();
+            this.uC_LS_VanBan2 = new DictionaryAppForIT.UserControls.LichSu.UC_LS_VanBan();
             this.label25 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -48,8 +49,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.uC_LS_TuVung1 = new DictionaryAppForIT.UserControls.LichSu.UC_LS_TuVung();
-            this.uC_LS_VanBan2 = new DictionaryAppForIT.UserControls.LichSu.UC_LS_VanBan();
             this.panel1.SuspendLayout();
             this.flpContent.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -67,7 +66,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.guna2Button2);
             this.panel1.Controls.Add(this.flpContent);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label25);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -86,22 +84,19 @@ namespace DictionaryAppForIT.UserControls.GanDay
             // guna2Button2
             // 
             this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.CheckedState.Image")));
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
             this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.Gray;
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.Location = new System.Drawing.Point(519, 23);
+            this.guna2Button2.Location = new System.Drawing.Point(485, 24);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.PressedDepth = 0;
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(35, 30);
+            this.guna2Button2.Size = new System.Drawing.Size(116, 30);
             this.guna2Button2.TabIndex = 28;
+            this.guna2Button2.Text = "Xóa dữ liệu ";
             this.guna2Button2.TextOffset = new System.Drawing.Point(3, 0);
             this.guna2Button2.UseTransparentBackground = true;
             // 
@@ -115,17 +110,30 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.flpContent.Size = new System.Drawing.Size(640, 450);
             this.flpContent.TabIndex = 27;
             // 
-            // label1
+            // uC_LS_TuVung1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(550, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 19);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Xóa dữ liệu ";
+            this.uC_LS_TuVung1.Location = new System.Drawing.Point(3, 0);
+            this.uC_LS_TuVung1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.uC_LS_TuVung1.Name = "uC_LS_TuVung1";
+            this.uC_LS_TuVung1.NgayThang = "22/06/2022";
+            this.uC_LS_TuVung1.Size = new System.Drawing.Size(610, 104);
+            this.uC_LS_TuVung1.TabIndex = 1;
+            this.uC_LS_TuVung1.ThoiGian = "00:39 AM";
+            this.uC_LS_TuVung1.TVPhienAm = "/ˈrɛʤɪstə/";
+            this.uC_LS_TuVung1.TVTiengAnh = "Register";
+            this.uC_LS_TuVung1.TVTiengViet = "Thanh ghi, đăng ký";
+            // 
+            // uC_LS_VanBan2
+            // 
+            this.uC_LS_VanBan2.Location = new System.Drawing.Point(3, 104);
+            this.uC_LS_VanBan2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.uC_LS_VanBan2.Name = "uC_LS_VanBan2";
+            this.uC_LS_VanBan2.NgayThang = "29/07/2022";
+            this.uC_LS_VanBan2.Size = new System.Drawing.Size(610, 104);
+            this.uC_LS_VanBan2.TabIndex = 3;
+            this.uC_LS_VanBan2.ThoiGian = "09:09 PM";
+            this.uC_LS_VanBan2.VBTiengAnh = "Your download should start automatically, if not Click here";
+            this.uC_LS_VanBan2.VBTiengViet = "Việc tải xuống sẽ tự động bắt đầu, nếu không hãy bấm vào đây";
             // 
             // label25
             // 
@@ -164,7 +172,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Panel1.ShadowDecoration.BorderRadius = 0;
             this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.LightGray;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
-            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.guna2Panel1.Size = new System.Drawing.Size(200, 553);
             this.guna2Panel1.TabIndex = 31;
@@ -188,14 +195,11 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
             this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.FocusedState.ForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
             this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
             this.guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox1.IconLeft")));
             this.guna2TextBox1.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.guna2TextBox1.IconLeftOffset = new System.Drawing.Point(5, 0);
@@ -207,7 +211,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2TextBox1.PlaceholderText = "Tìm kiếm";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
             this.guna2TextBox1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(50);
             this.guna2TextBox1.Size = new System.Drawing.Size(174, 33);
             this.guna2TextBox1.TabIndex = 28;
@@ -219,21 +222,17 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Button7.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.guna2Button7.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.guna2Button7.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button7.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button7.CheckedState.Image")));
-            this.guna2Button7.CheckedState.Parent = this.guna2Button7;
-            this.guna2Button7.CustomImages.Parent = this.guna2Button7;
+            this.guna2Button7.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.guna2Button7.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button7.ForeColor = System.Drawing.Color.DarkGray;
             this.guna2Button7.HoverState.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2Button7.HoverState.Parent = this.guna2Button7;
             this.guna2Button7.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button7.Image")));
             this.guna2Button7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button7.ImageOffset = new System.Drawing.Point(8, 0);
             this.guna2Button7.ImageSize = new System.Drawing.Size(17, 17);
             this.guna2Button7.Location = new System.Drawing.Point(13, 287);
             this.guna2Button7.Name = "guna2Button7";
-            this.guna2Button7.ShadowDecoration.Parent = this.guna2Button7;
             this.guna2Button7.Size = new System.Drawing.Size(174, 35);
             this.guna2Button7.TabIndex = 3;
             this.guna2Button7.Text = "Cũ hơn";
@@ -246,21 +245,17 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Button6.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.guna2Button6.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.guna2Button6.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button6.CheckedState.Image")));
-            this.guna2Button6.CheckedState.Parent = this.guna2Button6;
-            this.guna2Button6.CustomImages.Parent = this.guna2Button6;
+            this.guna2Button6.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.guna2Button6.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button6.ForeColor = System.Drawing.Color.DarkGray;
             this.guna2Button6.HoverState.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2Button6.HoverState.Parent = this.guna2Button6;
             this.guna2Button6.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button6.Image")));
             this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button6.ImageOffset = new System.Drawing.Point(8, 0);
             this.guna2Button6.ImageSize = new System.Drawing.Size(19, 19);
             this.guna2Button6.Location = new System.Drawing.Point(13, 244);
             this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
             this.guna2Button6.Size = new System.Drawing.Size(174, 35);
             this.guna2Button6.TabIndex = 3;
             this.guna2Button6.Text = "Tháng này";
@@ -273,21 +268,17 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Button5.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.guna2Button5.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.guna2Button5.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button5.CheckedState.Image")));
-            this.guna2Button5.CheckedState.Parent = this.guna2Button5;
-            this.guna2Button5.CustomImages.Parent = this.guna2Button5;
+            this.guna2Button5.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.guna2Button5.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button5.ForeColor = System.Drawing.Color.DarkGray;
             this.guna2Button5.HoverState.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2Button5.HoverState.Parent = this.guna2Button5;
             this.guna2Button5.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button5.Image")));
             this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button5.ImageOffset = new System.Drawing.Point(8, 0);
             this.guna2Button5.ImageSize = new System.Drawing.Size(19, 19);
             this.guna2Button5.Location = new System.Drawing.Point(13, 201);
             this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
             this.guna2Button5.Size = new System.Drawing.Size(174, 35);
             this.guna2Button5.TabIndex = 3;
             this.guna2Button5.Text = "Tuần này";
@@ -300,21 +291,17 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.guna2Button4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.guna2Button4.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.CheckedState.Image")));
-            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
-            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
+            this.guna2Button4.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.guna2Button4.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button4.ForeColor = System.Drawing.Color.DarkGray;
             this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2Button4.HoverState.Parent = this.guna2Button4;
             this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
             this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button4.ImageOffset = new System.Drawing.Point(8, 0);
             this.guna2Button4.ImageSize = new System.Drawing.Size(19, 19);
             this.guna2Button4.Location = new System.Drawing.Point(13, 158);
             this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
             this.guna2Button4.Size = new System.Drawing.Size(174, 35);
             this.guna2Button4.TabIndex = 3;
             this.guna2Button4.Text = "Hôm qua";
@@ -327,21 +314,17 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.guna2Button3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.guna2Button3.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.CheckedState.Image")));
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
+            this.guna2Button3.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.ForeColor = System.Drawing.Color.DarkGray;
             this.guna2Button3.HoverState.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
             this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.ImageOffset = new System.Drawing.Point(8, 0);
             this.guna2Button3.ImageSize = new System.Drawing.Size(18, 18);
             this.guna2Button3.Location = new System.Drawing.Point(13, 115);
             this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
             this.guna2Button3.Size = new System.Drawing.Size(174, 35);
             this.guna2Button3.TabIndex = 3;
             this.guna2Button3.Text = "Hôm nay";
@@ -355,52 +338,22 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Button1.Checked = true;
             this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.guna2Button1.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.CheckedState.Image")));
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.ImageOffset = new System.Drawing.Point(8, 0);
             this.guna2Button1.ImageSize = new System.Drawing.Size(14, 14);
             this.guna2Button1.Location = new System.Drawing.Point(13, 72);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(174, 35);
             this.guna2Button1.TabIndex = 3;
             this.guna2Button1.Text = "Tất cả";
             this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.TextOffset = new System.Drawing.Point(12, 0);
-            // 
-            // uC_LS_TuVung1
-            // 
-            this.uC_LS_TuVung1.Location = new System.Drawing.Point(3, 0);
-            this.uC_LS_TuVung1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.uC_LS_TuVung1.Name = "uC_LS_TuVung1";
-            this.uC_LS_TuVung1.NgayThang = "22/06/2022";
-            this.uC_LS_TuVung1.Size = new System.Drawing.Size(610, 104);
-            this.uC_LS_TuVung1.TabIndex = 1;
-            this.uC_LS_TuVung1.ThoiGian = "00:39 AM";
-            this.uC_LS_TuVung1.TVPhienAm = "/ˈrɛʤɪstə/";
-            this.uC_LS_TuVung1.TVTiengAnh = "Register";
-            this.uC_LS_TuVung1.TVTiengViet = "Thanh ghi, đăng ký";
-            // 
-            // uC_LS_VanBan2
-            // 
-            this.uC_LS_VanBan2.Location = new System.Drawing.Point(3, 104);
-            this.uC_LS_VanBan2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.uC_LS_VanBan2.Name = "uC_LS_VanBan2";
-            this.uC_LS_VanBan2.NgayThang = "29/07/2022";
-            this.uC_LS_VanBan2.Size = new System.Drawing.Size(610, 104);
-            this.uC_LS_VanBan2.TabIndex = 3;
-            this.uC_LS_VanBan2.ThoiGian = "09:09 PM";
-            
-            this.uC_LS_VanBan2.VBTiengAnh = "Your download should start automatically, if not Click here";
-            this.uC_LS_VanBan2.VBTiengViet = "Việc tải xuống sẽ tự động bắt đầu, nếu không hãy bấm vào đây";
             // 
             // UC_LichSu
             // 
@@ -438,7 +391,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private LichSu.UC_LS_TuVung uC_LS_TuVung1;
         private LichSu.UC_LS_VanBan uC_LS_VanBan2;

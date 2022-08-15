@@ -15,8 +15,7 @@ using DictionaryAppForIT.DTO;   // Add reference to System.Design
 using System.Data.SqlClient;
 using System.Xml;
 using System.IO;
-
-
+using DictionaryAppForIT.Class;
 
 namespace DictionaryAppForIT
 {
@@ -40,7 +39,7 @@ namespace DictionaryAppForIT
         #region Main button
         private void btnExit_Click(object sender, EventArgs e)
         {
-            MainBtn.Exit();
+            Application.Exit();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -92,7 +91,7 @@ namespace DictionaryAppForIT
                 frmMain frmMain = new frmMain();
                 string query = "KiemTraDangNhap @tendangnhap , @matkhau";
                 object kq = DataProvider.Instance.ExecuteScalar(query, new object[] { txtTaiKhoanDN.Text, txtMatKhauDN.Text });
-                TaiKhoan.displayUsername = txtTaiKhoanDN.Text;
+                Class_TaiKhoan.displayUsername = txtTaiKhoanDN.Text;
                 int code = Convert.ToInt32(kq);
                 if (code == 0)
                 {
@@ -108,14 +107,14 @@ namespace DictionaryAppForIT
                 }
                 else if (code == 2)
                 {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   RJMessageBox.Show("Tài khoản hoặc mật khẩu không đúng !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtMatKhauDN.Text = "";
                     txtTaiKhoanDN.Text = "";
                     txtTaiKhoanDN.Focus();
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản không tồn tại !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RJMessageBox.Show("Tài khoản không tồn tại !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtMatKhauDN.Text = "";
                     txtTaiKhoanDN.Text = "";
                     txtTaiKhoanDN.Focus();
@@ -124,7 +123,7 @@ namespace DictionaryAppForIT
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RJMessageBox.Show(ex.Message);
             }
             LuuMatKhau();
         }

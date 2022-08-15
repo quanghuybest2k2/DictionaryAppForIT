@@ -69,12 +69,12 @@ namespace DictionaryAppForIT.UserControls.Home
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnXoaLichSu = new Guna.UI2.WinForms.Guna2Button();
             this.btnLichSu = new Guna.UI2.WinForms.Guna2Button();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
-            this.btnXoaLichSu = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -636,6 +636,26 @@ namespace DictionaryAppForIT.UserControls.Home
             this.panel6.Size = new System.Drawing.Size(235, 33);
             this.panel6.TabIndex = 2;
             // 
+            // btnXoaLichSu
+            // 
+            this.btnXoaLichSu.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoaLichSu.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnXoaLichSu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoaLichSu.FillColor = System.Drawing.Color.Transparent;
+            this.btnXoaLichSu.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaLichSu.ForeColor = System.Drawing.Color.Gray;
+            this.btnXoaLichSu.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnXoaLichSu.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaLichSu.Image")));
+            this.btnXoaLichSu.Location = new System.Drawing.Point(105, 6);
+            this.btnXoaLichSu.Name = "btnXoaLichSu";
+            this.btnXoaLichSu.PressedDepth = 0;
+            this.btnXoaLichSu.Size = new System.Drawing.Size(116, 24);
+            this.btnXoaLichSu.TabIndex = 30;
+            this.btnXoaLichSu.Text = "Xóa lịch sử";
+            this.btnXoaLichSu.TextOffset = new System.Drawing.Point(3, 0);
+            this.btnXoaLichSu.UseTransparentBackground = true;
+            this.btnXoaLichSu.Click += new System.EventHandler(this.btnXoaLichSu_Click);
+            // 
             // btnLichSu
             // 
             this.btnLichSu.BackColor = System.Drawing.Color.Transparent;
@@ -682,26 +702,6 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             this.fileSystemWatcher2.EnableRaisingEvents = true;
             this.fileSystemWatcher2.SynchronizingObject = this;
-            // 
-            // btnXoaLichSu
-            // 
-            this.btnXoaLichSu.BackColor = System.Drawing.Color.Transparent;
-            this.btnXoaLichSu.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnXoaLichSu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoaLichSu.FillColor = System.Drawing.Color.Transparent;
-            this.btnXoaLichSu.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaLichSu.ForeColor = System.Drawing.Color.Gray;
-            this.btnXoaLichSu.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnXoaLichSu.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaLichSu.Image")));
-            this.btnXoaLichSu.Location = new System.Drawing.Point(105, 6);
-            this.btnXoaLichSu.Name = "btnXoaLichSu";
-            this.btnXoaLichSu.PressedDepth = 0;
-            this.btnXoaLichSu.Size = new System.Drawing.Size(116, 24);
-            this.btnXoaLichSu.TabIndex = 30;
-            this.btnXoaLichSu.Text = "Xóa dữ liệu";
-            this.btnXoaLichSu.TextOffset = new System.Drawing.Point(3, 0);
-            this.btnXoaLichSu.UseTransparentBackground = true;
-            this.btnXoaLichSu.Click += new System.EventHandler(this.btnXoaLichSu_Click);
             // 
             // UC_Dich
             // 

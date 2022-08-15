@@ -1,4 +1,5 @@
-﻿using DictionaryAppForIT.UserControls;
+﻿using DictionaryAppForIT.Class;
+using DictionaryAppForIT.UserControls;
 using DictionaryAppForIT.UserControls.CaiDat;
 using DictionaryAppForIT.UserControls.GanDay;
 using DictionaryAppForIT.UserControls.Home;
@@ -23,7 +24,6 @@ namespace DictionaryAppForIT.Forms
         //UserControl
         //--Control hiện hành
         Control ucRecent = new Control();
-
         //--Home
         UC_TraTu ucTraTu = new UC_TraTu();
         UC_Dich ucDich = new UC_Dich();
@@ -56,7 +56,6 @@ namespace DictionaryAppForIT.Forms
         public frmMain()
         {
             InitializeComponent();
-
             _listUC = new List<Control>() { ucTraTu, ucDich, ucTVChuyen, ucLichSu, ucYeuThich, ucMiniGame, ucCaiDat, ucQuanLyTK, ucThongBao, ucPhanHoi };
             _listFlpTab = new List<FlowLayoutPanel>() { flpTabHome, flpTabTaiKhoan };
 
@@ -200,7 +199,7 @@ namespace DictionaryAppForIT.Forms
         }
 
         private void btnTVChuyenNganh_Click(object sender, EventArgs e)
-        { 
+        {
             ShowUC(ucTVChuyen);
         }
         #endregion
@@ -230,7 +229,18 @@ namespace DictionaryAppForIT.Forms
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var result = RJMessageBox.Show("Bạn có chắc muốn thoát?",
+              "Xác nhận",
+              MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -240,6 +250,20 @@ namespace DictionaryAppForIT.Forms
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
+            var result = RJMessageBox.Show("Bạn thực sự muốn đăng xuất?",
+             "Xác nhận",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.Show();
+            }
 
         }
     }

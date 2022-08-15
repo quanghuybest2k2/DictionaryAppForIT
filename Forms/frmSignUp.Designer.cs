@@ -384,7 +384,7 @@ namespace DictionaryAppForIT.Forms
             this.rdNam.BackColor = System.Drawing.Color.White;
             this.rdNam.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
             this.rdNam.BorderThickness = 1;
-            this.rdNam.Checked = false;
+            this.rdNam.Checked = true;
             this.rdNam.Location = new System.Drawing.Point(185, 321);
             this.rdNam.Name = "rdNam";
             this.rdNam.OutlineColor = System.Drawing.Color.DodgerBlue;

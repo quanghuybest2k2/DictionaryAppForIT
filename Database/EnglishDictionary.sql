@@ -304,6 +304,8 @@ select * from Nghia
 select * from Tu
 select * from TaiKhoan
 go
+-- Xóa tài khoản
+Delete from TaiKhoan where ID = 9
 ---- Tìm từ
 ----create proc TimTu
 ----@tukhoa varchar(100)

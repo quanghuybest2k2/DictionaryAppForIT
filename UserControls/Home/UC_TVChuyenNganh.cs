@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DictionaryAppForIT.DAL;
 using System.Speech.Synthesis;
 using System.Data.SqlClient;
+using DictionaryAppForIT.DTO;
 
 namespace DictionaryAppForIT.UserControls.Home
 {
@@ -43,8 +44,8 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                string query = $"exec LayTheoChuyenNganh @chuyennganh";
-                dtgvTuVung.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { cbbChuyenNganh.SelectedValue });
+                string query = "exec LayTheoChuyenNganh @chuyennganh";//
+                dtgvTuVung.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { cbbChuyenNganh.SelectedValue });//
             }
             catch (Exception ex)
             {
@@ -69,6 +70,7 @@ namespace DictionaryAppForIT.UserControls.Home
             pnContainer.HorizontalScroll.Value = HSThanhTruotNgang.Value;
         }
         #endregion
+
         #region event
         private void dtgvTuVung_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

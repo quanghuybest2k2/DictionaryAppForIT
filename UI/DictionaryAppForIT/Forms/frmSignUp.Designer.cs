@@ -147,7 +147,7 @@ namespace DictionaryAppForIT.Forms
             this.chkThoaThuan.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
             this.chkThoaThuan.Size = new System.Drawing.Size(17, 17);
             this.chkThoaThuan.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
-            this.chkThoaThuan.TabIndex = 17;
+            this.chkThoaThuan.TabIndex = 8;
             this.chkThoaThuan.ThreeState = false;
             this.chkThoaThuan.ToolTipText = null;
             // 
@@ -159,7 +159,7 @@ namespace DictionaryAppForIT.Forms
             this.label1.Location = new System.Drawing.Point(368, 103);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 37);
-            this.label1.TabIndex = 15;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Đăng Ký";
             // 
             // btnExit
@@ -174,7 +174,7 @@ namespace DictionaryAppForIT.Forms
             this.btnExit.Location = new System.Drawing.Point(807, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(30, 30);
-            this.btnExit.TabIndex = 26;
+            this.btnExit.TabIndex = 11;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -190,7 +190,7 @@ namespace DictionaryAppForIT.Forms
             this.btnMinimize.Location = new System.Drawing.Point(771, 12);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(30, 30);
-            this.btnMinimize.TabIndex = 25;
+            this.btnMinimize.TabIndex = 10;
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
@@ -270,7 +270,7 @@ namespace DictionaryAppForIT.Forms
             this.txtMatKhauDK.ShortcutsEnabled = true;
             this.txtMatKhauDK.Size = new System.Drawing.Size(330, 40);
             this.txtMatKhauDK.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtMatKhauDK.TabIndex = 29;
+            this.txtMatKhauDK.TabIndex = 6;
             this.txtMatKhauDK.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMatKhauDK.TextMarginBottom = 0;
             this.txtMatKhauDK.TextMarginLeft = 3;
@@ -344,7 +344,7 @@ namespace DictionaryAppForIT.Forms
             this.txtTenDangNhapDK.ShortcutsEnabled = true;
             this.txtTenDangNhapDK.Size = new System.Drawing.Size(330, 40);
             this.txtTenDangNhapDK.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtTenDangNhapDK.TabIndex = 30;
+            this.txtTenDangNhapDK.TabIndex = 2;
             this.txtTenDangNhapDK.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTenDangNhapDK.TextMarginBottom = 0;
             this.txtTenDangNhapDK.TextMarginLeft = 3;
@@ -418,7 +418,7 @@ namespace DictionaryAppForIT.Forms
             this.txtEmailDK.ShortcutsEnabled = true;
             this.txtEmailDK.Size = new System.Drawing.Size(330, 40);
             this.txtEmailDK.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtEmailDK.TabIndex = 31;
+            this.txtEmailDK.TabIndex = 1;
             this.txtEmailDK.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtEmailDK.TextMarginBottom = 0;
             this.txtEmailDK.TextMarginLeft = 3;
@@ -478,7 +478,7 @@ namespace DictionaryAppForIT.Forms
             this.rdNam.RadioColor = System.Drawing.Color.DodgerBlue;
             this.rdNam.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
             this.rdNam.Size = new System.Drawing.Size(18, 18);
-            this.rdNam.TabIndex = 35;
+            this.rdNam.TabIndex = 3;
             this.rdNam.Text = null;
             // 
             // rdNu
@@ -496,7 +496,7 @@ namespace DictionaryAppForIT.Forms
             this.rdNu.RadioColor = System.Drawing.Color.DodgerBlue;
             this.rdNu.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
             this.rdNu.Size = new System.Drawing.Size(18, 18);
-            this.rdNu.TabIndex = 36;
+            this.rdNu.TabIndex = 4;
             this.rdNu.Text = null;
             // 
             // rdKhac
@@ -514,7 +514,7 @@ namespace DictionaryAppForIT.Forms
             this.rdKhac.RadioColor = System.Drawing.Color.DodgerBlue;
             this.rdKhac.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
             this.rdKhac.Size = new System.Drawing.Size(18, 18);
-            this.rdKhac.TabIndex = 37;
+            this.rdKhac.TabIndex = 5;
             this.rdKhac.Text = null;
             // 
             // label7
@@ -685,7 +685,7 @@ namespace DictionaryAppForIT.Forms
             this.txtNhapLaiMatKhauDK.ShortcutsEnabled = true;
             this.txtNhapLaiMatKhauDK.Size = new System.Drawing.Size(330, 40);
             this.txtNhapLaiMatKhauDK.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtNhapLaiMatKhauDK.TabIndex = 47;
+            this.txtNhapLaiMatKhauDK.TabIndex = 7;
             this.txtNhapLaiMatKhauDK.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtNhapLaiMatKhauDK.TextMarginBottom = 0;
             this.txtNhapLaiMatKhauDK.TextMarginLeft = 3;
@@ -709,7 +709,7 @@ namespace DictionaryAppForIT.Forms
             this.btnDangKy.Location = new System.Drawing.Point(261, 384);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(330, 46);
-            this.btnDangKy.TabIndex = 52;
+            this.btnDangKy.TabIndex = 9;
             this.btnDangKy.Text = "Đăng ký ngay";
             this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 

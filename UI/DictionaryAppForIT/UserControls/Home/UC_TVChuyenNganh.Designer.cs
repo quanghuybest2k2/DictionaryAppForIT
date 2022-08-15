@@ -30,10 +30,10 @@ namespace DictionaryAppForIT.UserControls.Home
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_TVChuyenNganh));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,9 +48,10 @@ namespace DictionaryAppForIT.UserControls.Home
             this.cbbChuyenNganh = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.dtgvTuVung = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.pnContainer = new System.Windows.Forms.Panel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loa = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTuVung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,9 +59,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VSThanhTruotDoc = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.pnContainer = new System.Windows.Forms.Panel();
-            this.HSThanhTruotNgang = new Guna.UI2.WinForms.Guna2HScrollBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTuVung)).BeginInit();
             this.pnContainer.SuspendLayout();
@@ -229,10 +227,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.cbbChuyenNganh.FormattingEnabled = true;
             this.cbbChuyenNganh.HoverState.BorderColor = System.Drawing.Color.DeepSkyBlue;
             this.cbbChuyenNganh.ItemHeight = 20;
-            this.cbbChuyenNganh.Items.AddRange(new object[] {
-            "Kỹ thuật phần mềm",
-            "Mạng máy tính",
-            "Trí tuệ nhân tạo"});
             this.cbbChuyenNganh.Location = new System.Drawing.Point(597, 20);
             this.cbbChuyenNganh.Name = "cbbChuyenNganh";
             this.cbbChuyenNganh.Size = new System.Drawing.Size(190, 26);
@@ -249,26 +243,26 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             this.dtgvTuVung.AllowUserToAddRows = false;
             this.dtgvTuVung.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dtgvTuVung.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.White;
+            this.dtgvTuVung.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
             this.dtgvTuVung.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvTuVung.BackgroundColor = System.Drawing.Color.White;
             this.dtgvTuVung.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvTuVung.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvTuVung.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvTuVung.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTuVung.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.dtgvTuVung.ColumnHeadersHeight = 40;
             this.dtgvTuVung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.loa,
-            this.Column3,
+            this.ColTuVung,
             this.Column4,
             this.Column5,
             this.Column6,
@@ -276,14 +270,14 @@ namespace DictionaryAppForIT.UserControls.Home
             this.Column9,
             this.Column7,
             this.Column8});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvTuVung.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Segoe UI", 11F);
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvTuVung.DefaultCellStyle = dataGridViewCellStyle36;
             this.dtgvTuVung.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvTuVung.EnableHeadersVisualStyles = false;
             this.dtgvTuVung.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -291,6 +285,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.dtgvTuVung.Name = "dtgvTuVung";
             this.dtgvTuVung.ReadOnly = true;
             this.dtgvTuVung.RowHeadersVisible = false;
+            this.dtgvTuVung.RowHeadersWidth = 10;
             this.dtgvTuVung.RowTemplate.Height = 35;
             this.dtgvTuVung.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvTuVung.Size = new System.Drawing.Size(852, 477);
@@ -318,41 +313,52 @@ namespace DictionaryAppForIT.UserControls.Home
             this.dtgvTuVung.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dtgvTuVung.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvTuVung_CellContentClick);
             // 
+            // pnContainer
+            // 
+            this.pnContainer.Controls.Add(this.dtgvTuVung);
+            this.pnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnContainer.Location = new System.Drawing.Point(0, 61);
+            this.pnContainer.Name = "pnContainer";
+            this.pnContainer.Padding = new System.Windows.Forms.Padding(15, 0, 15, 15);
+            this.pnContainer.Size = new System.Drawing.Size(882, 492);
+            this.pnContainer.TabIndex = 2;
+            // 
             // Column1
             // 
-            this.Column1.FillWeight = 19.99667F;
+            this.Column1.FillWeight = 26.89906F;
             this.Column1.HeaderText = "";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // loa
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
-            this.loa.DefaultCellStyle = dataGridViewCellStyle3;
-            this.loa.FillWeight = 121.8275F;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle35.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle35.NullValue")));
+            dataGridViewCellStyle35.Padding = new System.Windows.Forms.Padding(5);
+            this.loa.DefaultCellStyle = dataGridViewCellStyle35;
+            this.loa.FillWeight = 50.76147F;
             this.loa.HeaderText = "";
             this.loa.Image = ((System.Drawing.Image)(resources.GetObject("loa.Image")));
             this.loa.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.loa.Name = "loa";
             this.loa.ReadOnly = true;
             // 
-            // Column3
+            // ColTuVung
             // 
-            this.Column3.DataPropertyName = "TenTu";
-            this.Column3.FillWeight = 109.6961F;
-            this.Column3.HeaderText = "Từ vựng";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColTuVung.DataPropertyName = "TenTu";
+            this.ColTuVung.FillWeight = 117.8978F;
+            this.ColTuVung.HeaderText = "Từ vựng";
+            this.ColTuVung.Name = "ColTuVung";
+            this.ColTuVung.ReadOnly = true;
+            this.ColTuVung.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColTuVung.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "PhienAm";
-            this.Column4.FillWeight = 109.6961F;
+            this.Column4.FillWeight = 117.8978F;
             this.Column4.HeaderText = "Phiên âm";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -362,7 +368,7 @@ namespace DictionaryAppForIT.UserControls.Home
             // Column5
             // 
             this.Column5.DataPropertyName = "TenLoai";
-            this.Column5.FillWeight = 109.6961F;
+            this.Column5.FillWeight = 117.8978F;
             this.Column5.HeaderText = "Từ loại";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -372,7 +378,7 @@ namespace DictionaryAppForIT.UserControls.Home
             // Column6
             // 
             this.Column6.DataPropertyName = "Nghia";
-            this.Column6.FillWeight = 109.6961F;
+            this.Column6.FillWeight = 117.8978F;
             this.Column6.HeaderText = "Nghĩa";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -382,6 +388,7 @@ namespace DictionaryAppForIT.UserControls.Home
             // Column2
             // 
             this.Column2.DataPropertyName = "MoTa";
+            this.Column2.FillWeight = 107.4768F;
             this.Column2.HeaderText = "Mô tả";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -389,6 +396,7 @@ namespace DictionaryAppForIT.UserControls.Home
             // Column9
             // 
             this.Column9.DataPropertyName = "ViDu";
+            this.Column9.FillWeight = 107.4768F;
             this.Column9.HeaderText = "Ví dụ";
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
@@ -396,7 +404,7 @@ namespace DictionaryAppForIT.UserControls.Home
             // Column7
             // 
             this.Column7.DataPropertyName = "DongNghia";
-            this.Column7.FillWeight = 109.6961F;
+            this.Column7.FillWeight = 117.8978F;
             this.Column7.HeaderText = "Đồng nghĩa";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
@@ -406,48 +414,12 @@ namespace DictionaryAppForIT.UserControls.Home
             // Column8
             // 
             this.Column8.DataPropertyName = "TraiNghia";
-            this.Column8.FillWeight = 109.6961F;
+            this.Column8.FillWeight = 117.8978F;
             this.Column8.HeaderText = "Trái nghĩa";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // VSThanhTruotDoc
-            // 
-            this.VSThanhTruotDoc.BorderRadius = 3;
-            this.VSThanhTruotDoc.InUpdate = false;
-            this.VSThanhTruotDoc.LargeChange = 10;
-            this.VSThanhTruotDoc.Location = new System.Drawing.Point(855, 41);
-            this.VSThanhTruotDoc.Name = "VSThanhTruotDoc";
-            this.VSThanhTruotDoc.ScrollbarSize = 10;
-            this.VSThanhTruotDoc.Size = new System.Drawing.Size(10, 412);
-            this.VSThanhTruotDoc.TabIndex = 2;
-            this.VSThanhTruotDoc.Scroll += new System.Windows.Forms.ScrollEventHandler(this.VSThanhTruotDoc_Scroll);
-            // 
-            // pnContainer
-            // 
-            this.pnContainer.Controls.Add(this.HSThanhTruotNgang);
-            this.pnContainer.Controls.Add(this.VSThanhTruotDoc);
-            this.pnContainer.Controls.Add(this.dtgvTuVung);
-            this.pnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContainer.Location = new System.Drawing.Point(0, 61);
-            this.pnContainer.Name = "pnContainer";
-            this.pnContainer.Padding = new System.Windows.Forms.Padding(15, 0, 15, 15);
-            this.pnContainer.Size = new System.Drawing.Size(882, 492);
-            this.pnContainer.TabIndex = 2;
-            // 
-            // HSThanhTruotNgang
-            // 
-            this.HSThanhTruotNgang.BorderRadius = 3;
-            this.HSThanhTruotNgang.InUpdate = false;
-            this.HSThanhTruotNgang.LargeChange = 10;
-            this.HSThanhTruotNgang.Location = new System.Drawing.Point(22, 467);
-            this.HSThanhTruotNgang.Name = "HSThanhTruotNgang";
-            this.HSThanhTruotNgang.ScrollbarSize = 10;
-            this.HSThanhTruotNgang.Size = new System.Drawing.Size(842, 10);
-            this.HSThanhTruotNgang.TabIndex = 3;
-            this.HSThanhTruotNgang.Scroll += new System.Windows.Forms.ScrollEventHandler(this.HSThanhTruotNgang_Scroll);
             // 
             // UC_TVChuyenNganh
             // 
@@ -479,14 +451,12 @@ namespace DictionaryAppForIT.UserControls.Home
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button10;
         private System.Windows.Forms.Panel pnContainer;
-        private Guna.UI2.WinForms.Guna2HScrollBar HSThanhTruotNgang;
-        private Guna.UI2.WinForms.Guna2VScrollBar VSThanhTruotDoc;
         private Guna.UI2.WinForms.Guna2DataGridView dtgvTuVung;
         private Guna.UI2.WinForms.Guna2ImageButton btnTimTheoCN;
         private System.Windows.Forms.TextBox txtTuVungDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewImageColumn loa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColTuVung;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;

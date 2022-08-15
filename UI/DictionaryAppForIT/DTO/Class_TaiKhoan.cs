@@ -8,12 +8,14 @@ using DictionaryAppForIT.DAL;
 
 namespace DictionaryAppForIT.DTO
 {
-    class TaiKhoan
+    public class Class_TaiKhoan
     {
         public static string displayUsername;
-        public TaiKhoan()
+
+        public Class_TaiKhoan()
         {
 
         }
+
     }
 }

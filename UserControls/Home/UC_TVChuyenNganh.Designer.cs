@@ -48,20 +48,20 @@ namespace DictionaryAppForIT.UserControls.Home
             this.cbbChuyenNganh = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.dtgvTuVung = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.HSThanhTruotNgang = new Guna.UI2.WinForms.Guna2HScrollBar();
+            this.pnContainer = new System.Windows.Forms.Panel();
+            this.VSThanhTruotDoc = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loa = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColTuVung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.HSThanhTruotNgang = new Guna.UI2.WinForms.Guna2HScrollBar();
-            this.pnContainer = new System.Windows.Forms.Panel();
-            this.VSThanhTruotDoc = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.pnTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTuVung)).BeginInit();
             this.pnContainer.SuspendLayout();
@@ -109,7 +109,7 @@ namespace DictionaryAppForIT.UserControls.Home
             // txtTuVungDoc
             // 
             this.txtTuVungDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTuVungDoc.Location = new System.Drawing.Point(346, 29);
+            this.txtTuVungDoc.Location = new System.Drawing.Point(358, 29);
             this.txtTuVungDoc.Name = "txtTuVungDoc";
             this.txtTuVungDoc.Size = new System.Drawing.Size(124, 13);
             this.txtTuVungDoc.TabIndex = 24;
@@ -266,8 +266,8 @@ namespace DictionaryAppForIT.UserControls.Home
             this.Column1,
             this.loa,
             this.ColTuVung,
-            this.Column5,
             this.Column4,
+            this.Column5,
             this.Column6,
             this.Column7,
             this.Column8,
@@ -316,101 +316,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.dtgvTuVung.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dtgvTuVung.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvTuVung_CellContentClick);
             // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 19.99667F;
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // loa
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.NullValue = null;
-            this.loa.DefaultCellStyle = dataGridViewCellStyle3;
-            this.loa.FillWeight = 121.8275F;
-            this.loa.HeaderText = "";
-            this.loa.Image = ((System.Drawing.Image)(resources.GetObject("loa.Image")));
-            this.loa.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.loa.Name = "loa";
-            this.loa.ReadOnly = true;
-            // 
-            // ColTuVung
-            // 
-            this.ColTuVung.DataPropertyName = "TenTu";
-            this.ColTuVung.FillWeight = 109.6961F;
-            this.ColTuVung.HeaderText = "Từ vựng";
-            this.ColTuVung.Name = "ColTuVung";
-            this.ColTuVung.ReadOnly = true;
-            this.ColTuVung.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColTuVung.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "TenLoai";
-            this.Column5.FillWeight = 109.6961F;
-            this.Column5.HeaderText = "Từ loại";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "PhienAm";
-            this.Column4.FillWeight = 109.6961F;
-            this.Column4.HeaderText = "Phiên âm";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Nghia";
-            this.Column6.FillWeight = 109.6961F;
-            this.Column6.HeaderText = "Nghĩa";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "MoTa";
-            this.Column7.FillWeight = 109.6961F;
-            this.Column7.HeaderText = "Đồng nghĩa";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "ViDu";
-            this.Column8.FillWeight = 109.6961F;
-            this.Column8.HeaderText = "Trái nghĩa";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "DongNghia";
-            this.Column2.HeaderText = "Đồng nghĩa";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "TraiNghia";
-            this.Column9.HeaderText = "Trái nghĩa";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
             // guna2BorderlessForm1
             // 
             this.guna2BorderlessForm1.ContainerControl = this;
@@ -455,6 +360,101 @@ namespace DictionaryAppForIT.UserControls.Home
             this.VSThanhTruotDoc.TabIndex = 2;
             this.VSThanhTruotDoc.Scroll += new System.Windows.Forms.ScrollEventHandler(this.VSThanhTruotDoc_Scroll);
             // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 19.99667F;
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // loa
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.NullValue = null;
+            this.loa.DefaultCellStyle = dataGridViewCellStyle3;
+            this.loa.FillWeight = 121.8275F;
+            this.loa.HeaderText = "";
+            this.loa.Image = ((System.Drawing.Image)(resources.GetObject("loa.Image")));
+            this.loa.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.loa.Name = "loa";
+            this.loa.ReadOnly = true;
+            // 
+            // ColTuVung
+            // 
+            this.ColTuVung.DataPropertyName = "TenTu";
+            this.ColTuVung.FillWeight = 109.6961F;
+            this.ColTuVung.HeaderText = "Từ vựng";
+            this.ColTuVung.Name = "ColTuVung";
+            this.ColTuVung.ReadOnly = true;
+            this.ColTuVung.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColTuVung.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "PhienAm";
+            this.Column4.FillWeight = 109.6961F;
+            this.Column4.HeaderText = "Phiên âm";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "TenLoai";
+            this.Column5.FillWeight = 109.6961F;
+            this.Column5.HeaderText = "Từ loại";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Nghia";
+            this.Column6.FillWeight = 109.6961F;
+            this.Column6.HeaderText = "Nghĩa";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "MoTa";
+            this.Column7.FillWeight = 109.6961F;
+            this.Column7.HeaderText = "Mô tả";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "ViDu";
+            this.Column8.FillWeight = 109.6961F;
+            this.Column8.HeaderText = "Ví dụ";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "DongNghia";
+            this.Column2.HeaderText = "Đồng nghĩa";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "TraiNghia";
+            this.Column9.HeaderText = "Trái nghĩa";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
             // UC_TVChuyenNganh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,17 +489,17 @@ namespace DictionaryAppForIT.UserControls.Home
         private System.Windows.Forms.Panel pnContainer;
         private Guna.UI2.WinForms.Guna2HScrollBar HSThanhTruotNgang;
         private Guna.UI2.WinForms.Guna2VScrollBar VSThanhTruotDoc;
+        private System.Windows.Forms.TextBox txtTuVungDoc;
+        private Guna.UI2.WinForms.Guna2ImageButton btnTimTheoCN;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewImageColumn loa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTuVung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.TextBox txtTuVungDoc;
-        private Guna.UI2.WinForms.Guna2ImageButton btnTimTheoCN;
     }
 }

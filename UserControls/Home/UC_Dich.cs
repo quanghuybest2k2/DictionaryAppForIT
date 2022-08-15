@@ -203,7 +203,5 @@ namespace DictionaryAppForIT.UserControls.Home
                 sr.UnloadAllGrammars();
             }
         }
-
-
     }
 }

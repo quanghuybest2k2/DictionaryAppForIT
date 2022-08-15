@@ -1,4 +1,5 @@
 ﻿using System;
+using DictionaryAppForIT.DTO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -125,16 +126,5 @@ namespace DictionaryAppForIT.UserControls.Home
             }
         }
 
-        #region Thanh trượt
-        private void VSThanhTruotDoc_Scroll(object sender, ScrollEventArgs e)
-        {
-            pnContainer.VerticalScroll.Value = VSThanhTruotDoc.Value;
-        }
-
-        private void HSThanhTruotNgang_Scroll(object sender, ScrollEventArgs e)
-        {
-            pnContainer.HorizontalScroll.Value = HSThanhTruotNgang.Value;
-        }
-        #endregion
     }
 }

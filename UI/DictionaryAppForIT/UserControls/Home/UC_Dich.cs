@@ -1,5 +1,6 @@
 ﻿using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DAL;
+using DictionaryAppForIT.DTO;
 using SpeechLib; // speak
 using System;
 using System.Collections;
@@ -10,7 +11,6 @@ using System.Speech.Recognition;
 using System.Speech.Synthesis;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
-
 
 namespace DictionaryAppForIT.UserControls.Home
 {

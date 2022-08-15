@@ -122,7 +122,6 @@ namespace DictionaryAppForIT.UserControls
         {
             speech.SelectVoice("Microsoft Hazel Desktop"); // giong anh
             speech.SpeakAsync(txtTuVung.Text);
-
         }
 
         private void btnSaoChep_Click(object sender, EventArgs e)

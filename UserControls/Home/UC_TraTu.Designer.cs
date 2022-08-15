@@ -625,7 +625,6 @@ namespace DictionaryAppForIT.UserControls
             // 
             // txtTuVung
             // 
-            this.txtTuVung.AutoSize = true;
             this.txtTuVung.BorderThickness = 0;
             this.txtTuVung.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTuVung.DefaultText = "Variable";
@@ -645,7 +644,7 @@ namespace DictionaryAppForIT.UserControls
             this.txtTuVung.PlaceholderText = "";
             this.txtTuVung.ReadOnly = true;
             this.txtTuVung.SelectedText = "";
-            this.txtTuVung.Size = new System.Drawing.Size(284, 39);
+            this.txtTuVung.Size = new System.Drawing.Size(290, 39);
             this.txtTuVung.TabIndex = 27;
             this.bunifuToolTip1.SetToolTip(this.txtTuVung, "");
             this.bunifuToolTip1.SetToolTipIcon(this.txtTuVung, null);
@@ -1025,7 +1024,6 @@ namespace DictionaryAppForIT.UserControls
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.flpMeaning.ResumeLayout(false);
             this.ResumeLayout(false);
 
