@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DictionaryAppForIT.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +14,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
     public partial class UC_MiniGame : UserControl
     {
         UC_MG_BtnDieuHuong ucBtnDieuHuong;
-        int _phut;
-        int _giay;
 
         public UC_MiniGame()
         {
@@ -25,26 +24,21 @@ namespace DictionaryAppForIT.UserControls.MiniGame
                 ucBtnDieuHuong = new UC_MG_BtnDieuHuong(i);
                 flpDieuHuong.Controls.Add(ucBtnDieuHuong);
             }
-            _phut = 15;
-            //DemNguoc(_phut);
         }
 
-        private void timerGiay_Tick(object sender, EventArgs e)
+        private void btnThoatMiniGame_Click(object sender, EventArgs e)
         {
-            lblGiay.Text = _giay--.ToString();
+            
         }
 
-        private void DemNguoc(int num)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            int phut = num;
-            lblPhut.Text = phut--.ToString();
-            do
-            {
-                timerGiay.Start();
-                phut--;
-                _giay = 59;
-                lblPhut.Text = phut.ToString();
-            } while (phut >= 0);
+            CountDownTimer timer = new CountDownTimer();
+            timer.SetTime(Convert.ToInt32(30), 0);// (phút, giây)
+            timer.Start();
+            timer.TimeChanged += () => lblPhut.Text = timer.TimeLeftMsStr;
+            timer.CountDownFinished += () => lblPhut.Text = "Hết giờ!";
+            timer.StepMs = 77;
         }
     }
 }

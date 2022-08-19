@@ -36,12 +36,11 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblGiay = new System.Windows.Forms.Label();
             this.lblPhut = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThoatMiniGame = new Guna.UI2.WinForms.Guna2Button();
             this.flpDieuHuong = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -60,7 +59,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.timerGiay = new System.Windows.Forms.Timer(this.components);
             this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -96,7 +94,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Panel1.Controls.Add(this.panel3);
             this.guna2Panel1.Controls.Add(this.label7);
             this.guna2Panel1.Controls.Add(this.guna2Button4);
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
+            this.guna2Panel1.Controls.Add(this.btnThoatMiniGame);
             this.guna2Panel1.Controls.Add(this.flpDieuHuong);
             this.guna2Panel1.Controls.Add(this.pictureBox2);
             this.guna2Panel1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -106,7 +104,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Panel1.ShadowDecoration.BorderRadius = 0;
             this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.LightGray;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
-            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.guna2Panel1.Size = new System.Drawing.Size(276, 553);
             this.guna2Panel1.TabIndex = 31;
@@ -127,34 +124,19 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTip(this.pictureBox1, "");
             this.bunifuToolTip1.SetToolTipIcon(this.pictureBox1, null);
             this.bunifuToolTip1.SetToolTipTitle(this.pictureBox1, "");
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.lblGiay);
             this.panel3.Controls.Add(this.lblPhut);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Location = new System.Drawing.Point(178, 65);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(63, 25);
+            this.panel3.Size = new System.Drawing.Size(72, 25);
             this.panel3.TabIndex = 40;
             this.bunifuToolTip1.SetToolTip(this.panel3, "");
             this.bunifuToolTip1.SetToolTipIcon(this.panel3, null);
             this.bunifuToolTip1.SetToolTipTitle(this.panel3, "");
-            // 
-            // lblGiay
-            // 
-            this.lblGiay.AutoSize = true;
-            this.lblGiay.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lblGiay.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
-            this.lblGiay.ForeColor = System.Drawing.Color.Orange;
-            this.lblGiay.Location = new System.Drawing.Point(33, 0);
-            this.lblGiay.Name = "lblGiay";
-            this.lblGiay.Size = new System.Drawing.Size(30, 21);
-            this.lblGiay.TabIndex = 38;
-            this.lblGiay.Text = "00";
-            this.bunifuToolTip1.SetToolTip(this.lblGiay, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblGiay, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblGiay, "");
             // 
             // lblPhut
             // 
@@ -162,11 +144,11 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.lblPhut.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.lblPhut.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
             this.lblPhut.ForeColor = System.Drawing.Color.Orange;
-            this.lblPhut.Location = new System.Drawing.Point(0, 0);
+            this.lblPhut.Location = new System.Drawing.Point(4, 2);
             this.lblPhut.Name = "lblPhut";
-            this.lblPhut.Size = new System.Drawing.Size(30, 21);
+            this.lblPhut.Size = new System.Drawing.Size(55, 21);
             this.lblPhut.TabIndex = 38;
-            this.lblPhut.Text = "00";
+            this.lblPhut.Text = "00:00";
             this.bunifuToolTip1.SetToolTip(this.lblPhut, "");
             this.bunifuToolTip1.SetToolTipIcon(this.lblPhut, null);
             this.bunifuToolTip1.SetToolTipTitle(this.lblPhut, "");
@@ -206,18 +188,14 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Button4.BorderColor = System.Drawing.Color.DodgerBlue;
             this.guna2Button4.BorderRadius = 6;
             this.guna2Button4.BorderThickness = 2;
-            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
-            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
             this.guna2Button4.FillColor = System.Drawing.Color.White;
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button4.ForeColor = System.Drawing.Color.DodgerBlue;
             this.guna2Button4.HoverState.BorderColor = System.Drawing.Color.DodgerBlue;
             this.guna2Button4.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.HoverState.Parent = this.guna2Button4;
             this.guna2Button4.Location = new System.Drawing.Point(36, 446);
             this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
             this.guna2Button4.Size = new System.Drawing.Size(202, 34);
             this.guna2Button4.TabIndex = 3;
             this.guna2Button4.Text = "Hoàn thành";
@@ -225,29 +203,26 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTipIcon(this.guna2Button4, null);
             this.bunifuToolTip1.SetToolTipTitle(this.guna2Button4, "");
             // 
-            // guna2Button1
+            // btnThoatMiniGame
             // 
-            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(91)))), ((int)(((byte)(110)))));
-            this.guna2Button1.BorderRadius = 6;
-            this.guna2Button1.BorderThickness = 2;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.White;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(91)))), ((int)(((byte)(110)))));
-            this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(91)))), ((int)(((byte)(110)))));
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(91)))), ((int)(((byte)(110)))));
-            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(36, 490);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(202, 34);
-            this.guna2Button1.TabIndex = 3;
-            this.guna2Button1.Text = "Thoát ";
-            this.bunifuToolTip1.SetToolTip(this.guna2Button1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button1, "");
+            this.btnThoatMiniGame.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(91)))), ((int)(((byte)(110)))));
+            this.btnThoatMiniGame.BorderRadius = 6;
+            this.btnThoatMiniGame.BorderThickness = 2;
+            this.btnThoatMiniGame.FillColor = System.Drawing.Color.White;
+            this.btnThoatMiniGame.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoatMiniGame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(91)))), ((int)(((byte)(110)))));
+            this.btnThoatMiniGame.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(91)))), ((int)(((byte)(110)))));
+            this.btnThoatMiniGame.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(91)))), ((int)(((byte)(110)))));
+            this.btnThoatMiniGame.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnThoatMiniGame.Location = new System.Drawing.Point(36, 490);
+            this.btnThoatMiniGame.Name = "btnThoatMiniGame";
+            this.btnThoatMiniGame.Size = new System.Drawing.Size(202, 34);
+            this.btnThoatMiniGame.TabIndex = 3;
+            this.btnThoatMiniGame.Text = "Thoát ";
+            this.bunifuToolTip1.SetToolTip(this.btnThoatMiniGame, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnThoatMiniGame, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnThoatMiniGame, "");
+            this.btnThoatMiniGame.Click += new System.EventHandler(this.btnThoatMiniGame_Click);
             // 
             // flpDieuHuong
             // 
@@ -278,18 +253,14 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             // guna2Button3
             // 
             this.guna2Button3.BorderRadius = 6;
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
             this.guna2Button3.FillColor = System.Drawing.Color.DodgerBlue;
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.HoverState.FillColor = System.Drawing.Color.LightSkyBlue;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
             this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
             this.guna2Button3.ImageSize = new System.Drawing.Size(15, 15);
             this.guna2Button3.Location = new System.Drawing.Point(32, 19);
             this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
             this.guna2Button3.Size = new System.Drawing.Size(39, 28);
             this.guna2Button3.TabIndex = 3;
             this.bunifuToolTip1.SetToolTip(this.guna2Button3, "Quay về câu trước");
@@ -319,7 +290,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Panel5.FillColor = System.Drawing.Color.Orange;
             this.guna2Panel5.Location = new System.Drawing.Point(347, 23);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;
             this.guna2Panel5.Size = new System.Drawing.Size(10, 16);
             this.guna2Panel5.TabIndex = 39;
             this.bunifuToolTip1.SetToolTip(this.guna2Panel5, "");
@@ -385,7 +355,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Panel2.ShadowDecoration.BorderRadius = 20;
             this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.Gray;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
-            this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel2.Size = new System.Drawing.Size(538, 464);
             this.guna2Panel2.TabIndex = 1;
@@ -401,18 +370,14 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.btnD.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.btnD.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnD.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnD.CheckedState.Parent = this.btnD;
-            this.btnD.CustomImages.Parent = this.btnD;
             this.btnD.FillColor = System.Drawing.Color.White;
             this.btnD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnD.ForeColor = System.Drawing.Color.DimGray;
-            this.btnD.HoverState.Parent = this.btnD;
             this.btnD.Location = new System.Drawing.Point(32, 328);
             this.btnD.Name = "btnD";
             this.btnD.ShadowDecoration.BorderRadius = 10;
             this.btnD.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
             this.btnD.ShadowDecoration.Enabled = true;
-            this.btnD.ShadowDecoration.Parent = this.btnD;
             this.btnD.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.btnD.Size = new System.Drawing.Size(475, 45);
             this.btnD.TabIndex = 5;
@@ -430,18 +395,14 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.btnC.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.btnC.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnC.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnC.CheckedState.Parent = this.btnC;
-            this.btnC.CustomImages.Parent = this.btnC;
             this.btnC.FillColor = System.Drawing.Color.White;
             this.btnC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnC.ForeColor = System.Drawing.Color.DimGray;
-            this.btnC.HoverState.Parent = this.btnC;
             this.btnC.Location = new System.Drawing.Point(32, 267);
             this.btnC.Name = "btnC";
             this.btnC.ShadowDecoration.BorderRadius = 10;
             this.btnC.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
             this.btnC.ShadowDecoration.Enabled = true;
-            this.btnC.ShadowDecoration.Parent = this.btnC;
             this.btnC.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.btnC.Size = new System.Drawing.Size(475, 45);
             this.btnC.TabIndex = 5;
@@ -459,18 +420,14 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.btnB.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.btnB.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnB.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnB.CheckedState.Parent = this.btnB;
-            this.btnB.CustomImages.Parent = this.btnB;
             this.btnB.FillColor = System.Drawing.Color.White;
             this.btnB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnB.ForeColor = System.Drawing.Color.DimGray;
-            this.btnB.HoverState.Parent = this.btnB;
             this.btnB.Location = new System.Drawing.Point(32, 207);
             this.btnB.Name = "btnB";
             this.btnB.ShadowDecoration.BorderRadius = 10;
             this.btnB.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
             this.btnB.ShadowDecoration.Enabled = true;
-            this.btnB.ShadowDecoration.Parent = this.btnB;
             this.btnB.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.btnB.Size = new System.Drawing.Size(475, 45);
             this.btnB.TabIndex = 5;
@@ -488,18 +445,14 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.btnA.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.btnA.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnA.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnA.CheckedState.Parent = this.btnA;
-            this.btnA.CustomImages.Parent = this.btnA;
             this.btnA.FillColor = System.Drawing.Color.White;
             this.btnA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnA.ForeColor = System.Drawing.Color.DimGray;
-            this.btnA.HoverState.Parent = this.btnA;
             this.btnA.Location = new System.Drawing.Point(32, 147);
             this.btnA.Name = "btnA";
             this.btnA.ShadowDecoration.BorderRadius = 10;
             this.btnA.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
             this.btnA.ShadowDecoration.Enabled = true;
-            this.btnA.ShadowDecoration.Parent = this.btnA;
             this.btnA.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.btnA.Size = new System.Drawing.Size(475, 45);
             this.btnA.TabIndex = 5;
@@ -522,7 +475,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Panel3.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel3.ShadowDecoration.Color = System.Drawing.Color.DimGray;
             this.guna2Panel3.ShadowDecoration.Enabled = true;
-            this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
             this.guna2Panel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.guna2Panel3.Size = new System.Drawing.Size(68, 58);
             this.guna2Panel3.TabIndex = 3;
@@ -541,7 +493,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Panel4.ShadowDecoration.BorderRadius = 0;
             this.guna2Panel4.ShadowDecoration.Color = System.Drawing.Color.DimGray;
             this.guna2Panel4.ShadowDecoration.Enabled = true;
-            this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
             this.guna2Panel4.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.guna2Panel4.Size = new System.Drawing.Size(68, 15);
             this.guna2Panel4.TabIndex = 3;
@@ -583,28 +534,19 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             // guna2Button2
             // 
             this.guna2Button2.BorderRadius = 6;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
             this.guna2Button2.FillColor = System.Drawing.Color.DodgerBlue;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.LightSkyBlue;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
             this.guna2Button2.ImageSize = new System.Drawing.Size(15, 15);
             this.guna2Button2.Location = new System.Drawing.Point(76, 19);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(39, 28);
             this.guna2Button2.TabIndex = 3;
             this.bunifuToolTip1.SetToolTip(this.guna2Button2, "Chuyển đến câu sau");
             this.bunifuToolTip1.SetToolTipIcon(this.guna2Button2, null);
             this.bunifuToolTip1.SetToolTipTitle(this.guna2Button2, "");
-            // 
-            // timerGiay
-            // 
-            this.timerGiay.Interval = 1000;
-            this.timerGiay.Tick += new System.EventHandler(this.timerGiay_Tick);
             // 
             // bunifuToolTip1
             // 
@@ -686,18 +628,16 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         private Guna.UI2.WinForms.Guna2Button btnC;
         private Guna.UI2.WinForms.Guna2Button btnB;
         private System.Windows.Forms.FlowLayoutPanel flpDieuHuong;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnThoatMiniGame;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lblGiay;
         private System.Windows.Forms.Label lblPhut;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private System.Windows.Forms.Timer timerGiay;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.PictureBox pictureBox2;

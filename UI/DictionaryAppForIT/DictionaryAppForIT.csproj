@@ -161,6 +161,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\CountDownTimer.cs" />
     <Compile Include="Class\RandomColor.cs" />
     <Compile Include="Class\RJMessageBox.cs" />
     <Compile Include="DAL\DataProvider.cs" />
