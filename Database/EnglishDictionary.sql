@@ -191,6 +191,25 @@ select * from Nghia
 select * from ChuyenNganh
 go
 -------------------- Thủ tục
+---
+select * from ChuyenNganh
+select * from TuLoai
+select * from Nghia
+select * from Tu
+select * from TaiKhoan
+go
+-- Xem tat ca nghia cua 1 tu
+create proc XemTatCaNghiaCuaTu
+@TenTu VARCHAR(100)
+as
+	Select TenTu, TenLoai, Nghia, MoTa, ViDu
+	from TuLoai tl, Nghia n, Tu t
+	where tl.ID = n.IDTuLoai and t.ID = n.IDTu and TenTu = @TenTu
+go
+exec XemTatCaNghiaCuaTu 'Variable'
+go
+
+go
 -------- Lay all tu loai
 create proc LayTuLoai
 as
@@ -332,3 +351,4 @@ go
 select count(TenTu) from Tu
 select * from TaiKhoan
 select count(Email) from TaiKhoan where Email = 'quanghuybest@gmail.com'
+

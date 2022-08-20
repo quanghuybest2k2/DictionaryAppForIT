@@ -28,16 +28,16 @@ namespace DictionaryAppForIT.UserControls.MiniGame
 
         private void btnThoatMiniGame_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             CountDownTimer timer = new CountDownTimer();
-            timer.SetTime(Convert.ToInt32(30), 0);// (phút, giây)
+            timer.SetTime(Convert.ToInt32(00), 5);// (phút, giây)
             timer.Start();
             timer.TimeChanged += () => lblPhut.Text = timer.TimeLeftMsStr;
-            timer.CountDownFinished += () => lblPhut.Text = "Hết giờ!";
+            timer.CountDownFinished += () => RJMessageBox.Show("Hết giờ!"); //lblPhut.Text = "Hết giờ!";
             timer.StepMs = 77;
         }
     }

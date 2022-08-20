@@ -166,6 +166,8 @@
     <Compile Include="Class\RJMessageBox.cs" />
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DTO\Class_TaiKhoan.cs" />
+    <Compile Include="DTO\Tu.cs" />
+    <Compile Include="DTO\XemTatCaNghia.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

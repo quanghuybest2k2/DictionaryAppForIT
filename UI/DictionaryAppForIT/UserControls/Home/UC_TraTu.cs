@@ -16,15 +16,28 @@ namespace DictionaryAppForIT.UserControls
 {
     public partial class UC_TraTu : UserControl
     {
-        UC_Nghia ucNghia = new UC_Nghia();
+        XemTatCaNghia XemNghia;
+        UC_Nghia ucNghia;
         SpeechSynthesizer speech;
         public UC_TraTu()
         {
             InitializeComponent();
             speech = new SpeechSynthesizer();
-            flpMeaning.Controls.Add(ucNghia);
-            ucNghia.Dock = DockStyle.Top;
+           
+
             //textBox2.Text = "Vaixocncamoi okeoke";
+            XemNghia = new XemTatCaNghia();
+            XemNghia.XemTatCaNghiaTu("Variable");
+            foreach (var item in XemNghia._listTu)
+            {
+                ucNghia = new UC_Nghia();
+                ucNghia.LoaiTu = item.TenLoai;
+                ucNghia.Nghia = item.Nghia;
+                
+                flpMeaning.Controls.Add(ucNghia);
+                ucNghia.Dock = DockStyle.Top;
+            }
+            //MessageBox.Show(XemNghia._listTu[0].TenTu);
         }
         private void UC_TraTu_Load(object sender, EventArgs e)
         {

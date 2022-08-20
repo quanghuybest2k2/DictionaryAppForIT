@@ -633,6 +633,7 @@ namespace DictionaryAppForIT.UserControls
             // 
             // flpMeaning
             // 
+            this.flpMeaning.AutoScroll = true;
             this.flpMeaning.Location = new System.Drawing.Point(12, 76);
             this.flpMeaning.Name = "flpMeaning";
             this.flpMeaning.Size = new System.Drawing.Size(560, 344);

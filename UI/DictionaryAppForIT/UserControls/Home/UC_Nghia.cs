@@ -34,5 +34,10 @@ namespace DictionaryAppForIT.UserControls.Home
             get { return this.txtVD.Text; }
             set { this.txtVD.Text = value; }
         }
+
+        private void UC_Nghia_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

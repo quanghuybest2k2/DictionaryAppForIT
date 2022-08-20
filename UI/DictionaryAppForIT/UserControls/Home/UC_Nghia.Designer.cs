@@ -43,9 +43,14 @@ namespace DictionaryAppForIT.UserControls.Home
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -90,7 +95,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(120)))));
             this.guna2Panel1.Location = new System.Drawing.Point(2, 3);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(10, 16);
             this.guna2Panel1.TabIndex = 36;
             // 
@@ -100,7 +104,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.txtVD.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtVD.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
             this.txtVD.ForeColor = System.Drawing.Color.Gray;
-            this.txtVD.Location = new System.Drawing.Point(28, 140);
+            this.txtVD.Location = new System.Drawing.Point(28, 223);
             this.txtVD.Multiline = true;
             this.txtVD.Name = "txtVD";
             this.txtVD.ReadOnly = true;
@@ -114,7 +118,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
             this.textBox2.ForeColor = System.Drawing.Color.Gray;
-            this.textBox2.Location = new System.Drawing.Point(28, 166);
+            this.textBox2.Location = new System.Drawing.Point(28, 249);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -128,7 +132,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
             this.textBox3.ForeColor = System.Drawing.Color.Gray;
-            this.textBox3.Location = new System.Drawing.Point(28, 192);
+            this.textBox3.Location = new System.Drawing.Point(28, 275);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
@@ -164,7 +168,7 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.guna2Panel2);
-            this.panel3.Location = new System.Drawing.Point(9, 110);
+            this.panel3.Location = new System.Drawing.Point(9, 193);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 20);
             this.panel3.TabIndex = 42;
@@ -185,29 +189,75 @@ namespace DictionaryAppForIT.UserControls.Home
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(120)))));
             this.guna2Panel2.Location = new System.Drawing.Point(2, 3);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.Size = new System.Drawing.Size(10, 16);
             this.guna2Panel2.TabIndex = 36;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
+            this.textBox1.ForeColor = System.Drawing.Color.Gray;
+            this.textBox1.Location = new System.Drawing.Point(28, 143);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(478, 35);
+            this.textBox1.TabIndex = 41;
+            this.textBox1.Text = "Biến là giá trị có thể thay đổi trong chương trình, nó thường được gắn liền với c" +
+    "ác địa điểm lưu trữ dữ liệu.";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.guna2Panel3);
+            this.panel4.Location = new System.Drawing.Point(9, 113);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 20);
+            this.panel4.TabIndex = 42;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label2.Location = new System.Drawing.Point(18, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 20);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Mô tả";
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(120)))));
+            this.guna2Panel3.Location = new System.Drawing.Point(2, 3);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(10, 16);
+            this.guna2Panel3.TabIndex = 36;
             // 
             // UC_Nghia
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtNghiaTiengViet);
             this.Controls.Add(this.txtVD);
             this.Controls.Add(this.panel1);
             this.Name = "UC_Nghia";
-            this.Size = new System.Drawing.Size(537, 252);
-
+            this.Size = new System.Drawing.Size(537, 336);
+            this.Load += new System.EventHandler(this.UC_Nghia_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +277,9 @@ namespace DictionaryAppForIT.UserControls.Home
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
     }
 }
