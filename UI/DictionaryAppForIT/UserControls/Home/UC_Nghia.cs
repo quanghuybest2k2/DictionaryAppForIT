@@ -28,7 +28,11 @@ namespace DictionaryAppForIT.UserControls.Home
             get { return this.txtNghiaTiengViet.Text; }
             set { this.txtNghiaTiengViet.Text = value; }
         }
-
+        public string MoTa
+        {
+            get { return this.txtMoTa.Text; }
+            set { this.txtMoTa.Text = value; }
+        }
         public string ViDu
         {
             get { return this.txtVD.Text; }

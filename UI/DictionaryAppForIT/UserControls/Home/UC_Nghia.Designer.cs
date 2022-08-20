@@ -43,7 +43,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMoTa = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -192,19 +192,19 @@ namespace DictionaryAppForIT.UserControls.Home
             this.guna2Panel2.Size = new System.Drawing.Size(10, 16);
             this.guna2Panel2.TabIndex = 36;
             // 
-            // textBox1
+            // txtMoTa
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(28, 143);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(478, 35);
-            this.textBox1.TabIndex = 41;
-            this.textBox1.Text = "Biến là giá trị có thể thay đổi trong chương trình, nó thường được gắn liền với c" +
+            this.txtMoTa.BackColor = System.Drawing.Color.White;
+            this.txtMoTa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMoTa.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
+            this.txtMoTa.ForeColor = System.Drawing.Color.Gray;
+            this.txtMoTa.Location = new System.Drawing.Point(28, 143);
+            this.txtMoTa.Multiline = true;
+            this.txtMoTa.Name = "txtMoTa";
+            this.txtMoTa.ReadOnly = true;
+            this.txtMoTa.Size = new System.Drawing.Size(478, 35);
+            this.txtMoTa.TabIndex = 41;
+            this.txtMoTa.Text = "Biến là giá trị có thể thay đổi trong chương trình, nó thường được gắn liền với c" +
     "ác địa điểm lưu trữ dữ liệu.";
             // 
             // panel4
@@ -244,7 +244,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMoTa);
             this.Controls.Add(this.txtNghiaTiengViet);
             this.Controls.Add(this.txtVD);
             this.Controls.Add(this.panel1);
@@ -277,7 +277,7 @@ namespace DictionaryAppForIT.UserControls.Home
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMoTa;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;

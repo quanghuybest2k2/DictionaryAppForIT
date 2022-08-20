@@ -12,28 +12,34 @@ namespace DictionaryAppForIT.DTO
 {
     public class XemTatCaNghia
     {
+        string connString = @"Data Source=DESKTOP-M9DGN9B;Initial Catalog=EnglishDictionary;Integrated Security=True";
         public List<Tu> _listTu = new List<Tu>();
         public XemTatCaNghia()
         {
 
         }
-        public void XemTatCaNghiaTu(string tenTu)
+        public void HienThiThongTinTimKiem(string tenTu)
         {
             try
             {
-                SqlConnection Conn = new SqlConnection(@"Data Source=DESKTOP-M9DGN9B;Initial Catalog=EnglishDictionary;Integrated Security=True");
-                SqlCommand cmd = new SqlCommand($"exec XemTatCaNghiaCuaTu '{tenTu}'", Conn);
+                SqlConnection Conn = new SqlConnection(connString);
+                SqlCommand cmd = new SqlCommand($"EXEC HienThiThongTin '{tenTu}'", Conn);
                 Conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
-                //int i = 0;
                 while (rdr.Read())
                 {
                     Tu tu = new Tu();
                     tu.TenTu = rdr["TenTu"].ToString();
                     tu.TenLoai = rdr["TenLoai"].ToString();
+                    tu.PhienAm = rdr["PhienAm"].ToString();
+                    tu.TenChuyenNganh = rdr["TenChuyenNganh"].ToString();
                     tu.Nghia = rdr["Nghia"].ToString();
                     tu.MoTa = rdr["MoTa"].ToString();
                     tu.ViDu = rdr["ViDu"].ToString();
+
+                    tu.DongNghia = rdr["DongNghia"].ToString();
+                   
+                    tu.TraiNghia = rdr["TraiNghia"].ToString();
                     _listTu.Add(tu);
                 }
                 Conn.Close();
@@ -44,8 +50,6 @@ namespace DictionaryAppForIT.DTO
             {
                 MessageBox.Show(ex.Message);
             }
-            //DataTable tb = DataProvider.Instance.ExecuteQuery($"exec XemTatCaNghiaCuaTu '{tenTu}'");
-            //_listNghia.Add(tb);
         }
     }
 }

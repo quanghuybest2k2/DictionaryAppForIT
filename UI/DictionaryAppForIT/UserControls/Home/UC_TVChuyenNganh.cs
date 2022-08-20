@@ -57,7 +57,7 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                string query = $"TimTheoChuyenNganh '{txtTimTheoChuyenNganh.Text}%', @chuyennganh";
+                string query = $"TimTheoChuyenNganh '{txtTimTheoChuyenNganh.Text}', @chuyennganh";
                 dtgvTuVung.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { cbbChuyenNganh.SelectedValue });
             }
             catch (Exception ex)

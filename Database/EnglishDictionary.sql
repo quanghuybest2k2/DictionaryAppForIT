@@ -179,11 +179,10 @@ create proc HienThiThongTin
 as
 	select TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia, TraiNghia
 	from Tu t, TuLoai tl, ChuyenNganh cn, Nghia n 
-	where n.IDTuLoai = tl.ID and t.ChuyenNganh = cn.ID and n.IDTu = t.ID and t.TenTu like @tentu
+	where n.IDTuLoai = tl.ID and t.ChuyenNganh = cn.ID and n.IDTu = t.ID and t.TenTu = @tentu
 	group by TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia, TraiNghia
 go
-
-exec HienThiThongTin 'c%'
+exec HienThiThongTin 'Constant'
 go
 select * from tu
 select * from TuLoai
@@ -207,6 +206,7 @@ as
 	where tl.ID = n.IDTuLoai and t.ID = n.IDTu and TenTu = @TenTu
 go
 exec XemTatCaNghiaCuaTu 'Variable'
+EXEC HienThiThongTin 'Variable'
 go
 
 go
@@ -233,10 +233,10 @@ create proc TimTheoChuyenNganh
 as
 select t.ID, t.TenTu, tl.TenLoai, PhienAm, TenChuyenNganh, n.Nghia, n.MoTa, n.ViDu, DongNghia, TraiNghia
 from Tu t, TuLoai tl, ChuyenNganh cn, Nghia n 
-where t.ChuyenNganh = cn.ID and n.IDTu = t.ID and tl.ID = n.IDTuLoai and  t.TenTu like @tentu and cn.ID = @chuyennganh
+where t.ChuyenNganh = cn.ID and n.IDTu = t.ID and tl.ID = n.IDTuLoai and  t.TenTu = @tentu and cn.ID = @chuyennganh
 group by t.ID,t.TenTu, tl.TenLoai, PhienAm, TenChuyenNganh, n.Nghia, n.MoTa, n.ViDu, DongNghia, TraiNghia
 go
-EXEC TimTheoChuyenNganh 'v%', 2
+EXEC TimTheoChuyenNganh 'variable', 2
 ------ Lay Tất cả mọi thứ hiển thị trên giao diện
 --go
 --create proc HienThiThongTin
