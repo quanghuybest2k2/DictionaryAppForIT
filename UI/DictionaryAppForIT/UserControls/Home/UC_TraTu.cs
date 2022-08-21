@@ -84,8 +84,29 @@ namespace DictionaryAppForIT.UserControls
         private void HienThiNghia()
         {
             XemNghia.HienThiThongTinTimKiem(txtTimKiemTu.Text);
+            //ucNghia = new UC_Nghia();
             //txtTuVung.Text = XemNghia._listTu[0].TenTu;
             //txtPhienAm.Text = XemNghia._listTu[0].PhienAm;
+            //txtDongNghia.Text = XemNghia._listTu[0].DongNghia;
+            //if (txtDongNghia.Text != "")
+            //{
+            //    pbKhongTimThay.Visible = false;
+            //    txtDongNghia.Visible = true;
+            //}
+            //else
+            //{
+            //    pbKhongTimThay.Visible = true;
+            //    txtDongNghia.Visible = false;
+            //}
+            //txtTraiNghia.Text = XemNghia._listTu[0].TraiNghia;
+
+            //ucNghia.LoaiTu = XemNghia._listTu[0].TenLoai;
+            //ucNghia.Nghia = XemNghia._listTu[0].Nghia;
+            //ucNghia.MoTa = XemNghia._listTu[0].MoTa;
+            //ucNghia.ViDu = XemNghia._listTu[0].ViDu;
+            //flpMeaning.Controls.Add(ucNghia);
+            //ucNghia.Dock = DockStyle.Top;
+
             foreach (var item in XemNghia._listTu)
             {
                 txtTuVung.Text = item.TenTu;
@@ -103,6 +124,8 @@ namespace DictionaryAppForIT.UserControls
                 }
                 txtTraiNghia.Text = item.TraiNghia;
                 ucNghia = new UC_Nghia();
+                flpMeaning.Controls.Clear(); // clear những cái trước, lấy cái cuối cùng :((
+
                 ucNghia.LoaiTu = item.TenLoai;
                 ucNghia.Nghia = item.Nghia;
                 ucNghia.MoTa = item.MoTa;
@@ -118,7 +141,6 @@ namespace DictionaryAppForIT.UserControls
             try
             {
                 HienThiNghia();
-
             }
             catch (Exception ex)
             {

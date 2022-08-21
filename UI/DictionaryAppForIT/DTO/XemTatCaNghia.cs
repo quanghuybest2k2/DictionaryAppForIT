@@ -38,7 +38,7 @@ namespace DictionaryAppForIT.DTO
                     tu.ViDu = rdr["ViDu"].ToString();
 
                     tu.DongNghia = rdr["DongNghia"].ToString();
-                   
+
                     tu.TraiNghia = rdr["TraiNghia"].ToString();
                     _listTu.Add(tu);
                 }
