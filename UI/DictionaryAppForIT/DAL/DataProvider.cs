@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
+using System.Globalization;
 
 
 namespace DictionaryAppForIT.DAL
@@ -29,7 +30,7 @@ namespace DictionaryAppForIT.DAL
 
         private DataProvider()
         {
-            connectionSTR = "Data Source=DESKTOP-M9DGN9B;Initial Catalog=EnglishDictionary;Integrated Security=True";
+            connectionSTR = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         }
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)

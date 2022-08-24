@@ -33,7 +33,6 @@ namespace DictionaryAppForIT.UserControls
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_TraTu));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTimKiemTu = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnTuNgauNhien = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
@@ -89,7 +88,6 @@ namespace DictionaryAppForIT.UserControls
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnTimKiemTu);
             this.panel1.Controls.Add(this.btnTuNgauNhien);
             this.panel1.Controls.Add(this.guna2Button5);
             this.panel1.Controls.Add(this.guna2Button4);
@@ -108,25 +106,6 @@ namespace DictionaryAppForIT.UserControls
             this.bunifuToolTip1.SetToolTip(this.panel1, "");
             this.bunifuToolTip1.SetToolTipIcon(this.panel1, null);
             this.bunifuToolTip1.SetToolTipTitle(this.panel1, "");
-            // 
-            // btnTimKiemTu
-            // 
-            this.btnTimKiemTu.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnTimKiemTu.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnTimKiemTu.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemTu.Image")));
-            this.btnTimKiemTu.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnTimKiemTu.ImageRotate = 0F;
-            this.btnTimKiemTu.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnTimKiemTu.Location = new System.Drawing.Point(363, 18);
-            this.btnTimKiemTu.Name = "btnTimKiemTu";
-            this.btnTimKiemTu.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnTimKiemTu.Size = new System.Drawing.Size(32, 32);
-            this.btnTimKiemTu.TabIndex = 9;
-            this.bunifuToolTip1.SetToolTip(this.btnTimKiemTu, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.btnTimKiemTu, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.btnTimKiemTu, "");
-            this.btnTimKiemTu.Visible = false;
-            this.btnTimKiemTu.Click += new System.EventHandler(this.btnTimKiemTu_Click);
             // 
             // btnTuNgauNhien
             // 
@@ -213,7 +192,7 @@ namespace DictionaryAppForIT.UserControls
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
             this.guna2Button2.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button2.Location = new System.Drawing.Point(401, 18);
+            this.guna2Button2.Location = new System.Drawing.Point(363, 18);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.PressedDepth = 0;
             this.guna2Button2.ShadowDecoration.BorderRadius = 50;
@@ -239,7 +218,7 @@ namespace DictionaryAppForIT.UserControls
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
             this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button1.Location = new System.Drawing.Point(446, 18);
+            this.guna2Button1.Location = new System.Drawing.Point(405, 18);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.PressedDepth = 0;
             this.guna2Button1.ShadowDecoration.BorderRadius = 50;
@@ -870,6 +849,5 @@ namespace DictionaryAppForIT.UserControls
         private System.Windows.Forms.TextBox txtTuVung;
         private System.Windows.Forms.TextBox txtTraiNghia;
         private Guna.UI2.WinForms.Guna2TextBox txtDongNghia;
-        private Guna.UI2.WinForms.Guna2ImageButton btnTimKiemTu;
     }
 }

@@ -13,11 +13,14 @@ using System.Windows.Forms;
 using System.Speech.Synthesis;
 using System.Data.SqlClient;
 using DictionaryAppForIT.DAL;
+using System.Configuration;
 
 namespace DictionaryAppForIT.UserControls
 {
     public partial class UC_TraTu : UserControl
     {
+        string TuHienTai = ""; //-------------------------------------- Tạo thêm cái này vì nếu người ta gõ 1 từ xong rồi enter nhiều lần thì nó add lặp lại vô cái _listTu
+        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         XemTatCaNghia XemNghia;
         UC_Nghia ucNghia;
         SpeechSynthesizer speech;
@@ -26,7 +29,6 @@ namespace DictionaryAppForIT.UserControls
             InitializeComponent();
             speech = new SpeechSynthesizer();
             GoiYTimKiem();
-            //textBox2.Text = "Vaixocncamoi okeoke";
             XemNghia = new XemTatCaNghia();
         }
         private void UC_TraTu_Load(object sender, EventArgs e)
@@ -54,7 +56,7 @@ namespace DictionaryAppForIT.UserControls
         {
             try
             {
-                SqlConnection Conn = new SqlConnection(@"Data Source=DESKTOP-M9DGN9B;Initial Catalog=EnglishDictionary;Integrated Security=True");
+                SqlConnection Conn = new SqlConnection(connString);
                 Conn.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = $"select TenTu from Tu";
@@ -76,36 +78,16 @@ namespace DictionaryAppForIT.UserControls
         }
         private void txtTimKiemTu_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter && TuHienTai != txtTimKiemTu.Text)//--------------------------------------
             {
-                btnTimKiemTu.PerformClick();
+                flpMeaning.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
+                HienThiThongTin();
+                TuHienTai = txtTimKiemTu.Text;//--------------------------------------
             }
         }
-        private void HienThiNghia()
+        private void HienThiThongTin()
         {
             XemNghia.HienThiThongTinTimKiem(txtTimKiemTu.Text);
-            //ucNghia = new UC_Nghia();
-            //txtTuVung.Text = XemNghia._listTu[0].TenTu;
-            //txtPhienAm.Text = XemNghia._listTu[0].PhienAm;
-            //txtDongNghia.Text = XemNghia._listTu[0].DongNghia;
-            //if (txtDongNghia.Text != "")
-            //{
-            //    pbKhongTimThay.Visible = false;
-            //    txtDongNghia.Visible = true;
-            //}
-            //else
-            //{
-            //    pbKhongTimThay.Visible = true;
-            //    txtDongNghia.Visible = false;
-            //}
-            //txtTraiNghia.Text = XemNghia._listTu[0].TraiNghia;
-
-            //ucNghia.LoaiTu = XemNghia._listTu[0].TenLoai;
-            //ucNghia.Nghia = XemNghia._listTu[0].Nghia;
-            //ucNghia.MoTa = XemNghia._listTu[0].MoTa;
-            //ucNghia.ViDu = XemNghia._listTu[0].ViDu;
-            //flpMeaning.Controls.Add(ucNghia);
-            //ucNghia.Dock = DockStyle.Top;
 
             foreach (var item in XemNghia._listTu)
             {
@@ -124,7 +106,6 @@ namespace DictionaryAppForIT.UserControls
                 }
                 txtTraiNghia.Text = item.TraiNghia;
                 ucNghia = new UC_Nghia();
-                flpMeaning.Controls.Clear(); // clear những cái trước, lấy cái cuối cùng :((
 
                 ucNghia.LoaiTu = item.TenLoai;
                 ucNghia.Nghia = item.Nghia;
@@ -133,19 +114,9 @@ namespace DictionaryAppForIT.UserControls
 
                 flpMeaning.Controls.Add(ucNghia);
                 ucNghia.Dock = DockStyle.Top;
+
             }
             //MessageBox.Show(XemNghia._listTu[0].TenTu);
-        }
-        private void btnTimKiemTu_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                HienThiNghia();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
         #endregion
 
@@ -177,7 +148,7 @@ namespace DictionaryAppForIT.UserControls
                 object Wordlength = DataProvider.Instance.ExecuteScalar("select count(TenTu) from Tu");
                 Random rand = new Random();
                 int kqRand = rand.Next(1, Convert.ToInt32(Wordlength));
-                SqlConnection Conn = new SqlConnection(@"Data Source=DESKTOP-M9DGN9B;Initial Catalog=EnglishDictionary;Integrated Security=True");
+                SqlConnection Conn = new SqlConnection(connString);
                 SqlCommand cmd = new SqlCommand($"EXEC TuNgauNhien {kqRand}", Conn);
                 Conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -210,8 +181,7 @@ namespace DictionaryAppForIT.UserControls
 
         private void txtTimKiemTu_TextChanged(object sender, EventArgs e)
         {
-
-
+            
         }
     }
 }

@@ -11,11 +11,13 @@ using System.Windows.Forms;
 using DictionaryAppForIT.DAL;
 using System.Speech.Synthesis;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace DictionaryAppForIT.UserControls.Home
 {
     public partial class UC_TVChuyenNganh : UserControl
     {
+        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         SpeechSynthesizer speech;
         public UC_TVChuyenNganh()
         {
@@ -95,7 +97,7 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                SqlConnection Conn = new SqlConnection(@"Data Source=DESKTOP-M9DGN9B;Initial Catalog=EnglishDictionary;Integrated Security=True");
+                SqlConnection Conn = new SqlConnection(connString);
                 Conn.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = $"SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and TenTu like '{txtTimTheoChuyenNganh.Text}%' and ChuyenNganh.ID = {cbbChuyenNganh.SelectedValue}";

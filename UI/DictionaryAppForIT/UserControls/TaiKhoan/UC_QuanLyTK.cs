@@ -26,7 +26,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         {
             var result = RJMessageBox.Show("Bạn có thực sự muốn xóa tài khoản này vĩnh viễn?",
                 "Xác nhận xóa tài khoản",
-                MessageBoxButtons.YesNoCancel);
+                MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 // xóa tài khoản
@@ -51,10 +51,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 }
             }
             if (result == DialogResult.No)
-            {
-                return;
-            }
-            if (result == DialogResult.Cancel)
             {
                 return;
             }

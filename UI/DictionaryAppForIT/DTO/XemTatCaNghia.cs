@@ -7,12 +7,13 @@ using DictionaryAppForIT.DAL;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Configuration;
 
 namespace DictionaryAppForIT.DTO
 {
     public class XemTatCaNghia
     {
-        string connString = @"Data Source=DESKTOP-M9DGN9B;Initial Catalog=EnglishDictionary;Integrated Security=True";
+        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         public List<Tu> _listTu = new List<Tu>();
         public XemTatCaNghia()
         {
@@ -22,6 +23,7 @@ namespace DictionaryAppForIT.DTO
         {
             try
             {
+                _listTu.Clear();
                 SqlConnection Conn = new SqlConnection(connString);
                 SqlCommand cmd = new SqlCommand($"EXEC HienThiThongTin '{tenTu}'", Conn);
                 Conn.Open();
