@@ -178,7 +178,7 @@ namespace DictionaryAppForIT.UserControls.Home
 
         private void btnMic_Click(object sender, EventArgs e)
         {
-            soundPlayer = new SoundPlayer(@"D:\Window Form\DictionaryAppForIT\Resources\Sound\SiriOpen.wav");
+            soundPlayer = new SoundPlayer(@"D:\Window Form\DictionaryAppForIT\UI\DictionaryAppForIT\Resources\Sound\SiriOpen.wav");
             SpeechRecognitionEngine sr = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US"));
             sr.LoadGrammar(new DictationGrammar());
             try

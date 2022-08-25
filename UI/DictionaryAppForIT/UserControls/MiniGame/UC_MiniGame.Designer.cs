@@ -36,7 +36,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblPhut = new System.Windows.Forms.Label();
+            this.lblThoiGian = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
@@ -60,6 +60,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
+            this.timerCountDown = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -128,7 +129,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.lblPhut);
+            this.panel3.Controls.Add(this.lblThoiGian);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Location = new System.Drawing.Point(178, 65);
             this.panel3.Name = "panel3";
@@ -138,20 +139,20 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTipIcon(this.panel3, null);
             this.bunifuToolTip1.SetToolTipTitle(this.panel3, "");
             // 
-            // lblPhut
+            // lblThoiGian
             // 
-            this.lblPhut.AutoSize = true;
-            this.lblPhut.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lblPhut.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
-            this.lblPhut.ForeColor = System.Drawing.Color.Orange;
-            this.lblPhut.Location = new System.Drawing.Point(4, 2);
-            this.lblPhut.Name = "lblPhut";
-            this.lblPhut.Size = new System.Drawing.Size(55, 21);
-            this.lblPhut.TabIndex = 38;
-            this.lblPhut.Text = "00:00";
-            this.bunifuToolTip1.SetToolTip(this.lblPhut, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblPhut, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblPhut, "");
+            this.lblThoiGian.AutoSize = true;
+            this.lblThoiGian.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.lblThoiGian.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
+            this.lblThoiGian.ForeColor = System.Drawing.Color.Orange;
+            this.lblThoiGian.Location = new System.Drawing.Point(4, 2);
+            this.lblThoiGian.Name = "lblThoiGian";
+            this.lblThoiGian.Size = new System.Drawing.Size(55, 21);
+            this.lblThoiGian.TabIndex = 38;
+            this.lblThoiGian.Text = "00:00";
+            this.bunifuToolTip1.SetToolTip(this.lblThoiGian, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblThoiGian, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblThoiGian, "");
             // 
             // label10
             // 
@@ -583,6 +584,11 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
             this.bunifuToolTip1.ToolTipTitle = null;
             // 
+            // timerCountDown
+            // 
+            this.timerCountDown.Interval = 1000;
+            this.timerCountDown.Tick += new System.EventHandler(this.timerCountDown_Tick);
+            // 
             // UC_MiniGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,6 +601,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTip(this, "");
             this.bunifuToolTip1.SetToolTipIcon(this, null);
             this.bunifuToolTip1.SetToolTipTitle(this, "");
+            this.Load += new System.EventHandler(this.UC_MiniGame_Load);
             this.panel2.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
@@ -635,7 +642,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lblPhut;
+        private System.Windows.Forms.Label lblThoiGian;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -643,5 +650,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private System.Windows.Forms.Timer timerCountDown;
     }
 }

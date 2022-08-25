@@ -463,6 +463,24 @@
     <Content Include="Resources\setting_11.png" />
     <Content Include="Resources\shteam.png" />
     <Content Include="Resources\signup-bg.png" />
+    <Content Include="Resources\Sound\DemNguoc15s.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\HetThoiGian.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\NhacNenAiLaTrieuPhu.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\nhacTraLoi.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\SiriClose.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sound\SiriOpen.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\speaker-Gray.png" />
     <Content Include="Resources\speaker-White.png" />
     <Content Include="Resources\speaker.png" />
