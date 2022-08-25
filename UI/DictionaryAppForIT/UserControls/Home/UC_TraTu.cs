@@ -140,38 +140,46 @@ namespace DictionaryAppForIT.UserControls
         }
         #endregion
 
+        private void HienThiKqRandom()
+        {
+            XemNghia.HienThiThongTinRandom();
+
+            foreach (var item in XemNghia._listTu)
+            {
+                txtTuVung.Text = item.TenTu;
+                txtPhienAm.Text = item.PhienAm;
+                txtDongNghia.Text = item.DongNghia;
+                if (txtDongNghia.Text != "")
+                {
+                    pbKhongTimThay.Visible = false;
+                    txtDongNghia.Visible = true;
+                }
+                else
+                {
+                    pbKhongTimThay.Visible = true;
+                    txtDongNghia.Visible = false;
+                }
+                txtTraiNghia.Text = item.TraiNghia;
+                ucNghia = new UC_Nghia();
+
+                ucNghia.LoaiTu = item.TenLoai;
+                ucNghia.Nghia = item.Nghia;
+                ucNghia.MoTa = item.MoTa;
+                ucNghia.ViDu = item.ViDu;
+
+                flpMeaning.Controls.Add(ucNghia);
+                ucNghia.Dock = DockStyle.Top;
+
+            }
+            //MessageBox.Show(XemNghia._listTu[0].TenTu);
+        }
         private void btnTuNgauNhien_Click(object sender, EventArgs e)
         {
             try
             {
-                //Wordlength: số từ có trong database
-                object Wordlength = DataProvider.Instance.ExecuteScalar("select count(TenTu) from Tu");
-                Random rand = new Random();
-                int kqRand = rand.Next(1, Convert.ToInt32(Wordlength));
-                SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC TuNgauNhien {kqRand}", Conn);
-                Conn.Open();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    txtTuVung.Text = rdr["TenTu"].ToString();
-                    txtPhienAm.Text = rdr["PhienAm"].ToString();
-                    txtDongNghia.Text = rdr["DongNghia"].ToString();
-                    if (txtDongNghia.Text != "")
-                    {
-                        pbKhongTimThay.Visible = false;
-                        txtDongNghia.Visible = true;
-                    }
-                    else
-                    {
-                        pbKhongTimThay.Visible = true;
-                        txtDongNghia.Visible = false;
-                    }
-                    txtTraiNghia.Text = rdr["TraiNghia"].ToString();
-                }
-                Conn.Close();
-                Conn.Dispose();
-
+                flpMeaning.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
+                HienThiKqRandom();
+                TuHienTai = txtTimKiemTu.Text;
             }
             catch (Exception ex)
             {
@@ -181,7 +189,7 @@ namespace DictionaryAppForIT.UserControls
 
         private void txtTimKiemTu_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
