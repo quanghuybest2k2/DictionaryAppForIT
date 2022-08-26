@@ -14,6 +14,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
 {
     public partial class UC_CaiDat : UserControl
     {
+        bool cham, binhthuong, nhanh;
         public UC_CaiDat()
         {
             InitializeComponent();
@@ -43,20 +44,21 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             get { return this.btnTuDongPhatAm; }
             set { this.btnTuDongPhatAm = value; }
         }
-        public BunifuRadioButton RadioButtonChamHon
+        public bool RadioButtonChamHon
         {
-            get { return this.rdChamHon; }
-            set { this.rdChamHon = value; }
+            get { return this.rdChamHon.Checked; }
+            set { this.rdChamHon.Checked = value; }
         }
-        public BunifuRadioButton RadioButtonBinhThuong
+
+        public bool RadioButtonBinhThuong
         {
-            get { return this.rdBinhThuong; }
-            set { this.rdBinhThuong = value; }
+            get { return this.rdBinhThuong.Checked; }
+            set { this.rdBinhThuong.Checked = value; }
         }
-        public BunifuRadioButton RadioButtonNhanhHon
+        public bool RadioButtonNhanhHon
         {
-            get { return this.rdNhanhHon; }
-            set { this.rdNhanhHon = value; }
+            get { return this.rdNhanhHon.Checked; }
+            set { this.rdNhanhHon.Checked = value; }
         }
         #endregion
 
@@ -72,6 +74,11 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             set { this.btnNhacHocTuVung = value; }
         }
         #endregion
+
+        private void UC_CaiDat_Load(object sender, EventArgs e)
+        {
+            
+        }
 
     }
 }

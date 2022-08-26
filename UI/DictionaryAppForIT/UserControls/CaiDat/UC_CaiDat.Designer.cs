@@ -94,6 +94,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox23 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox24 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.lblThongTinPhienBan = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -589,7 +590,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.rdBinhThuong.BackColor = System.Drawing.Color.Transparent;
             this.rdBinhThuong.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
             this.rdBinhThuong.BorderThickness = 2;
-            this.rdBinhThuong.Checked = false;
+            this.rdBinhThuong.Checked = true;
             this.rdBinhThuong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Transition1.SetDecoration(this.rdBinhThuong, Guna.UI2.AnimatorNS.DecorationType.None);
             this.rdBinhThuong.Location = new System.Drawing.Point(178, 48);
@@ -1004,6 +1005,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel8.Controls.Add(this.guna2PictureBox23);
             this.guna2Panel8.Controls.Add(this.guna2PictureBox24);
             this.guna2Panel8.Controls.Add(this.label17);
+            this.guna2Panel8.Controls.Add(this.lblThongTinPhienBan);
             this.guna2Panel8.Controls.Add(this.label18);
             this.guna2Transition1.SetDecoration(this.guna2Panel8, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel8.FillColor = System.Drawing.Color.White;
@@ -1061,11 +1063,22 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this.label17, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label17.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label17.ForeColor = System.Drawing.Color.Gray;
-            this.label17.Location = new System.Drawing.Point(85, 37);
+            this.label17.Location = new System.Drawing.Point(85, 53);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(205, 39);
+            this.label17.Size = new System.Drawing.Size(287, 23);
             this.label17.TabIndex = 38;
-            this.label17.Text = "Phiên bản 1.0.0 BETA \r\nPhát triển bởi SHTeamCompany";
+            this.label17.Text = "Phát triển bởi SHTeam Company";
+            // 
+            // lblThongTinPhienBan
+            // 
+            this.guna2Transition1.SetDecoration(this.lblThongTinPhienBan, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblThongTinPhienBan.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblThongTinPhienBan.ForeColor = System.Drawing.Color.Gray;
+            this.lblThongTinPhienBan.Location = new System.Drawing.Point(85, 33);
+            this.lblThongTinPhienBan.Name = "lblThongTinPhienBan";
+            this.lblThongTinPhienBan.Size = new System.Drawing.Size(287, 20);
+            this.lblThongTinPhienBan.TabIndex = 38;
+            this.lblThongTinPhienBan.Text = "Phiên bản 1.0.0 BETA";
             // 
             // label18
             // 
@@ -1165,6 +1178,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.Name = "UC_CaiDat";
             this.Size = new System.Drawing.Size(882, 553);
+            this.Load += new System.EventHandler(this.UC_CaiDat_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
@@ -1259,7 +1273,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox22;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox23;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox24;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblThongTinPhienBan;
         private System.Windows.Forms.Label label18;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox7;
@@ -1283,5 +1297,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
         private Bunifu.UI.WinForms.BunifuRadioButton rdChamHon;
+        private System.Windows.Forms.Label label17;
     }
 }

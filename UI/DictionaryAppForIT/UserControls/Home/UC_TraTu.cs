@@ -1,4 +1,5 @@
 ﻿using DictionaryAppForIT.UserControls.Home;
+using DictionaryAppForIT.UserControls.CaiDat;
 using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DTO;
 using System;
@@ -14,6 +15,7 @@ using System.Speech.Synthesis;
 using System.Data.SqlClient;
 using DictionaryAppForIT.DAL;
 using System.Configuration;
+using System.Speech.AudioFormat;
 
 namespace DictionaryAppForIT.UserControls
 {
@@ -23,6 +25,7 @@ namespace DictionaryAppForIT.UserControls
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         XemTatCaNghia XemNghia;
         UC_Nghia ucNghia;
+        UC_CaiDat ucCaiDat;
         SpeechSynthesizer speech;
         public UC_TraTu()
         {
@@ -30,6 +33,21 @@ namespace DictionaryAppForIT.UserControls
             speech = new SpeechSynthesizer();
             GoiYTimKiem();
             XemNghia = new XemTatCaNghia();
+            ucCaiDat = new UC_CaiDat();
+            //speech.Rate = 3;
+            if (ucCaiDat.RadioButtonChamHon)
+            {
+                speech.Rate = -5; // tốc độ nói
+            }
+            if (ucCaiDat.RadioButtonNhanhHon)
+            {
+                speech.Rate = 3;
+            }
+            //TocDoNoi();
+        }
+        private void TocDoNoi()
+        {
+            
         }
         private void UC_TraTu_Load(object sender, EventArgs e)
         {

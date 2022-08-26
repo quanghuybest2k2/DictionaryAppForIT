@@ -384,9 +384,6 @@
         7oOEQXFXBb6Od/RdU9ckEMSd9f8BvQYYpGavVEMAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="bunifuToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>141, 17</value>
-  </metadata>
   <data name="guna2Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -1967,6 +1964,9 @@
         zQwCAIAk837y/wMWf38NDr32LAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="bunifuToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>141, 17</value>
+  </metadata>
   <data name="pbKhongTimThay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAjoAAAHOCAYAAACRo6NSAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
