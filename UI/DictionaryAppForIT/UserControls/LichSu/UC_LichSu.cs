@@ -28,5 +28,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
             flpContent.Controls.Add(ucTuVung);
         }
 
+        private void flpContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

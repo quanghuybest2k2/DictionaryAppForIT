@@ -34,7 +34,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CaiDat));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label4 = new System.Windows.Forms.Label();
-            this.guna2ToggleSwitch1 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.btnCheDoBanDem = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -48,20 +48,20 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox18 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.guna2ToggleSwitch5 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.btnTuDongCapNhat = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox19 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox20 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox21 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.guna2ToggleSwitch6 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.btnTuDongPhatAm = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox13 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox14 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.bunifuRadioButton3 = new Bunifu.UI.WinForms.BunifuRadioButton();
-            this.bunifuRadioButton1 = new Bunifu.UI.WinForms.BunifuRadioButton();
-            this.bunifuRadioButton2 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.rdNhanhHon = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.rdChamHon = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.rdBinhThuong = new Bunifu.UI.WinForms.BunifuRadioButton();
             this.guna2PictureBox15 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -72,23 +72,23 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox12 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.guna2ToggleSwitch4 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.btnThongBao = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox25 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pbCaiDatNhacHocTuVung = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2ToggleSwitch2 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.btnNhacHocTuVung = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox26 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pbCaiDatTuDongXoaLS = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.guna2ToggleSwitch3 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.btnTuDongXoaLS = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox22 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox23 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -122,12 +122,12 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).BeginInit();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCaiDatNhacHocTuVung)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
             this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCaiDatTuDongXoaLS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).BeginInit();
@@ -154,26 +154,23 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label4.TabIndex = 38;
             this.label4.Text = "Chế độ ban đêm";
             // 
-            // guna2ToggleSwitch1
+            // btnCheDoBanDem
             // 
-            this.guna2ToggleSwitch1.Animated = true;
-            this.guna2ToggleSwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch1.CheckedState.Parent = this.guna2ToggleSwitch1;
-            this.guna2ToggleSwitch1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.guna2ToggleSwitch1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2ToggleSwitch1.Location = new System.Drawing.Point(324, 15);
-            this.guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
-            this.guna2ToggleSwitch1.ShadowDecoration.Parent = this.guna2ToggleSwitch1;
-            this.guna2ToggleSwitch1.Size = new System.Drawing.Size(45, 20);
-            this.guna2ToggleSwitch1.TabIndex = 39;
-            this.guna2ToggleSwitch1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ToggleSwitch1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ToggleSwitch1.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch1.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch1.UncheckedState.Parent = this.guna2ToggleSwitch1;
+            this.btnCheDoBanDem.Animated = true;
+            this.btnCheDoBanDem.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCheDoBanDem.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnCheDoBanDem.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.btnCheDoBanDem.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.btnCheDoBanDem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnCheDoBanDem, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnCheDoBanDem.Location = new System.Drawing.Point(324, 15);
+            this.btnCheDoBanDem.Name = "btnCheDoBanDem";
+            this.btnCheDoBanDem.Size = new System.Drawing.Size(45, 20);
+            this.btnCheDoBanDem.TabIndex = 39;
+            this.btnCheDoBanDem.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btnCheDoBanDem.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btnCheDoBanDem.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.btnCheDoBanDem.UncheckedState.InnerColor = System.Drawing.Color.White;
             // 
             // guna2Transition1
             // 
@@ -207,7 +204,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
             this.guna2Panel1.Controls.Add(this.label15);
             this.guna2Panel1.Controls.Add(this.label4);
-            this.guna2Panel1.Controls.Add(this.guna2ToggleSwitch1);
+            this.guna2Panel1.Controls.Add(this.btnCheDoBanDem);
             this.guna2Transition1.SetDecoration(this.guna2Panel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(36, 55);
@@ -215,7 +212,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel1.ShadowDecoration.BorderRadius = 20;
             this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
-            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel1.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel1.TabIndex = 40;
@@ -225,9 +221,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.guna2PictureBox3, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
+            this.guna2PictureBox3.ImageRotate = 0F;
             this.guna2PictureBox3.Location = new System.Drawing.Point(14, 24);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
             this.guna2PictureBox3.Size = new System.Drawing.Size(44, 40);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox3.TabIndex = 41;
@@ -241,9 +237,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this.guna2PictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
             this.guna2PictureBox1.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox1.TabIndex = 41;
             this.guna2PictureBox1.TabStop = false;
@@ -253,9 +249,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             // 
             this.guna2Transition1.SetDecoration(this.guna2PictureBox2, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox2.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(34, 0);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
             this.guna2PictureBox2.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox2.TabIndex = 41;
             this.guna2PictureBox2.TabStop = false;
@@ -294,7 +290,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel6.Controls.Add(this.guna2PictureBox18);
             this.guna2Panel6.Controls.Add(this.label13);
             this.guna2Panel6.Controls.Add(this.label14);
-            this.guna2Panel6.Controls.Add(this.guna2ToggleSwitch5);
+            this.guna2Panel6.Controls.Add(this.btnTuDongCapNhat);
             this.guna2Transition1.SetDecoration(this.guna2Panel6, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel6.FillColor = System.Drawing.Color.White;
             this.guna2Panel6.Location = new System.Drawing.Point(455, 55);
@@ -302,7 +298,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel6.ShadowDecoration.BorderRadius = 20;
             this.guna2Panel6.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
             this.guna2Panel6.ShadowDecoration.Enabled = true;
-            this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
             this.guna2Panel6.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel6.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel6.TabIndex = 40;
@@ -312,9 +307,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox16.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.guna2PictureBox16, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox16.Image")));
+            this.guna2PictureBox16.ImageRotate = 0F;
             this.guna2PictureBox16.Location = new System.Drawing.Point(14, 24);
             this.guna2PictureBox16.Name = "guna2PictureBox16";
-            this.guna2PictureBox16.ShadowDecoration.Parent = this.guna2PictureBox16;
             this.guna2PictureBox16.Size = new System.Drawing.Size(44, 40);
             this.guna2PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox16.TabIndex = 41;
@@ -328,9 +323,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this.guna2PictureBox17, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox17.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2PictureBox17.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox17.ImageRotate = 0F;
             this.guna2PictureBox17.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox17.Name = "guna2PictureBox17";
-            this.guna2PictureBox17.ShadowDecoration.Parent = this.guna2PictureBox17;
             this.guna2PictureBox17.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox17.TabIndex = 41;
             this.guna2PictureBox17.TabStop = false;
@@ -340,9 +335,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             // 
             this.guna2Transition1.SetDecoration(this.guna2PictureBox18, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox18.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox18.ImageRotate = 0F;
             this.guna2PictureBox18.Location = new System.Drawing.Point(34, 0);
             this.guna2PictureBox18.Name = "guna2PictureBox18";
-            this.guna2PictureBox18.ShadowDecoration.Parent = this.guna2PictureBox18;
             this.guna2PictureBox18.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox18.TabIndex = 41;
             this.guna2PictureBox18.TabStop = false;
@@ -370,26 +365,23 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label14.TabIndex = 38;
             this.label14.Text = "Tự động cập nhật";
             // 
-            // guna2ToggleSwitch5
+            // btnTuDongCapNhat
             // 
-            this.guna2ToggleSwitch5.Animated = true;
-            this.guna2ToggleSwitch5.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.guna2ToggleSwitch5.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.guna2ToggleSwitch5.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch5.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch5.CheckedState.Parent = this.guna2ToggleSwitch5;
-            this.guna2ToggleSwitch5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.guna2ToggleSwitch5, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2ToggleSwitch5.Location = new System.Drawing.Point(328, 15);
-            this.guna2ToggleSwitch5.Name = "guna2ToggleSwitch5";
-            this.guna2ToggleSwitch5.ShadowDecoration.Parent = this.guna2ToggleSwitch5;
-            this.guna2ToggleSwitch5.Size = new System.Drawing.Size(45, 20);
-            this.guna2ToggleSwitch5.TabIndex = 39;
-            this.guna2ToggleSwitch5.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ToggleSwitch5.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ToggleSwitch5.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch5.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch5.UncheckedState.Parent = this.guna2ToggleSwitch5;
+            this.btnTuDongCapNhat.Animated = true;
+            this.btnTuDongCapNhat.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTuDongCapNhat.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnTuDongCapNhat.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.btnTuDongCapNhat.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.btnTuDongCapNhat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnTuDongCapNhat, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnTuDongCapNhat.Location = new System.Drawing.Point(328, 15);
+            this.btnTuDongCapNhat.Name = "btnTuDongCapNhat";
+            this.btnTuDongCapNhat.Size = new System.Drawing.Size(45, 20);
+            this.btnTuDongCapNhat.TabIndex = 39;
+            this.btnTuDongCapNhat.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btnTuDongCapNhat.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btnTuDongCapNhat.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.btnTuDongCapNhat.UncheckedState.InnerColor = System.Drawing.Color.White;
             // 
             // guna2Panel7
             // 
@@ -402,7 +394,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel7.Controls.Add(this.guna2PictureBox21);
             this.guna2Panel7.Controls.Add(this.label1);
             this.guna2Panel7.Controls.Add(this.label16);
-            this.guna2Panel7.Controls.Add(this.guna2ToggleSwitch6);
+            this.guna2Panel7.Controls.Add(this.btnTuDongPhatAm);
             this.guna2Transition1.SetDecoration(this.guna2Panel7, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel7.FillColor = System.Drawing.Color.White;
             this.guna2Panel7.Location = new System.Drawing.Point(36, 298);
@@ -410,7 +402,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel7.ShadowDecoration.BorderRadius = 20;
             this.guna2Panel7.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
             this.guna2Panel7.ShadowDecoration.Enabled = true;
-            this.guna2Panel7.ShadowDecoration.Parent = this.guna2Panel7;
             this.guna2Panel7.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel7.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel7.TabIndex = 40;
@@ -420,9 +411,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox19.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.guna2PictureBox19, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox19.Image")));
+            this.guna2PictureBox19.ImageRotate = 0F;
             this.guna2PictureBox19.Location = new System.Drawing.Point(14, 24);
             this.guna2PictureBox19.Name = "guna2PictureBox19";
-            this.guna2PictureBox19.ShadowDecoration.Parent = this.guna2PictureBox19;
             this.guna2PictureBox19.Size = new System.Drawing.Size(44, 40);
             this.guna2PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox19.TabIndex = 41;
@@ -436,9 +427,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this.guna2PictureBox20, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox20.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2PictureBox20.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox20.ImageRotate = 0F;
             this.guna2PictureBox20.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox20.Name = "guna2PictureBox20";
-            this.guna2PictureBox20.ShadowDecoration.Parent = this.guna2PictureBox20;
             this.guna2PictureBox20.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox20.TabIndex = 41;
             this.guna2PictureBox20.TabStop = false;
@@ -448,9 +439,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             // 
             this.guna2Transition1.SetDecoration(this.guna2PictureBox21, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox21.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox21.ImageRotate = 0F;
             this.guna2PictureBox21.Location = new System.Drawing.Point(34, 0);
             this.guna2PictureBox21.Name = "guna2PictureBox21";
-            this.guna2PictureBox21.ShadowDecoration.Parent = this.guna2PictureBox21;
             this.guna2PictureBox21.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox21.TabIndex = 41;
             this.guna2PictureBox21.TabStop = false;
@@ -478,26 +469,23 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label16.TabIndex = 38;
             this.label16.Text = "Tự động phát âm";
             // 
-            // guna2ToggleSwitch6
+            // btnTuDongPhatAm
             // 
-            this.guna2ToggleSwitch6.Animated = true;
-            this.guna2ToggleSwitch6.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.guna2ToggleSwitch6.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.guna2ToggleSwitch6.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch6.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch6.CheckedState.Parent = this.guna2ToggleSwitch6;
-            this.guna2ToggleSwitch6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.guna2ToggleSwitch6, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2ToggleSwitch6.Location = new System.Drawing.Point(324, 15);
-            this.guna2ToggleSwitch6.Name = "guna2ToggleSwitch6";
-            this.guna2ToggleSwitch6.ShadowDecoration.Parent = this.guna2ToggleSwitch6;
-            this.guna2ToggleSwitch6.Size = new System.Drawing.Size(45, 20);
-            this.guna2ToggleSwitch6.TabIndex = 39;
-            this.guna2ToggleSwitch6.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ToggleSwitch6.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ToggleSwitch6.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch6.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch6.UncheckedState.Parent = this.guna2ToggleSwitch6;
+            this.btnTuDongPhatAm.Animated = true;
+            this.btnTuDongPhatAm.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTuDongPhatAm.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnTuDongPhatAm.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.btnTuDongPhatAm.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.btnTuDongPhatAm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnTuDongPhatAm, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnTuDongPhatAm.Location = new System.Drawing.Point(324, 15);
+            this.btnTuDongPhatAm.Name = "btnTuDongPhatAm";
+            this.btnTuDongPhatAm.Size = new System.Drawing.Size(45, 20);
+            this.btnTuDongPhatAm.TabIndex = 39;
+            this.btnTuDongPhatAm.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btnTuDongPhatAm.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btnTuDongPhatAm.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.btnTuDongPhatAm.UncheckedState.InnerColor = System.Drawing.Color.White;
             // 
             // guna2Panel5
             // 
@@ -507,9 +495,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel5.BorderThickness = 2;
             this.guna2Panel5.Controls.Add(this.guna2PictureBox13);
             this.guna2Panel5.Controls.Add(this.guna2PictureBox14);
-            this.guna2Panel5.Controls.Add(this.bunifuRadioButton3);
-            this.guna2Panel5.Controls.Add(this.bunifuRadioButton1);
-            this.guna2Panel5.Controls.Add(this.bunifuRadioButton2);
+            this.guna2Panel5.Controls.Add(this.rdNhanhHon);
+            this.guna2Panel5.Controls.Add(this.rdChamHon);
+            this.guna2Panel5.Controls.Add(this.rdBinhThuong);
             this.guna2Panel5.Controls.Add(this.guna2PictureBox15);
             this.guna2Panel5.Controls.Add(this.label12);
             this.guna2Panel5.Controls.Add(this.label10);
@@ -522,7 +510,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel5.ShadowDecoration.BorderRadius = 20;
             this.guna2Panel5.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
             this.guna2Panel5.ShadowDecoration.Enabled = true;
-            this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;
             this.guna2Panel5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel5.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel5.TabIndex = 40;
@@ -532,9 +519,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox13.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.guna2PictureBox13, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox13.Image")));
+            this.guna2PictureBox13.ImageRotate = 0F;
             this.guna2PictureBox13.Location = new System.Drawing.Point(14, 24);
             this.guna2PictureBox13.Name = "guna2PictureBox13";
-            this.guna2PictureBox13.ShadowDecoration.Parent = this.guna2PictureBox13;
             this.guna2PictureBox13.Size = new System.Drawing.Size(44, 40);
             this.guna2PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox13.TabIndex = 41;
@@ -548,81 +535,81 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this.guna2PictureBox14, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox14.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2PictureBox14.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox14.ImageRotate = 0F;
             this.guna2PictureBox14.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox14.Name = "guna2PictureBox14";
-            this.guna2PictureBox14.ShadowDecoration.Parent = this.guna2PictureBox14;
             this.guna2PictureBox14.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox14.TabIndex = 41;
             this.guna2PictureBox14.TabStop = false;
             this.guna2PictureBox14.UseTransparentBackground = true;
             // 
-            // bunifuRadioButton3
+            // rdNhanhHon
             // 
-            this.bunifuRadioButton3.AllowBindingControlLocation = false;
-            this.bunifuRadioButton3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuRadioButton3.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
-            this.bunifuRadioButton3.BorderThickness = 2;
-            this.bunifuRadioButton3.Checked = false;
-            this.bunifuRadioButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.bunifuRadioButton3, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.bunifuRadioButton3.Location = new System.Drawing.Point(283, 48);
-            this.bunifuRadioButton3.Name = "bunifuRadioButton3";
-            this.bunifuRadioButton3.OutlineColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton3.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton3.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
-            this.bunifuRadioButton3.RadioColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton3.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton3.Size = new System.Drawing.Size(18, 18);
-            this.bunifuRadioButton3.TabIndex = 42;
-            this.bunifuRadioButton3.Text = null;
+            this.rdNhanhHon.AllowBindingControlLocation = false;
+            this.rdNhanhHon.BackColor = System.Drawing.Color.Transparent;
+            this.rdNhanhHon.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.rdNhanhHon.BorderThickness = 2;
+            this.rdNhanhHon.Checked = false;
+            this.rdNhanhHon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.rdNhanhHon, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.rdNhanhHon.Location = new System.Drawing.Point(283, 48);
+            this.rdNhanhHon.Name = "rdNhanhHon";
+            this.rdNhanhHon.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.rdNhanhHon.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.rdNhanhHon.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.rdNhanhHon.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.rdNhanhHon.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.rdNhanhHon.Size = new System.Drawing.Size(18, 18);
+            this.rdNhanhHon.TabIndex = 42;
+            this.rdNhanhHon.Text = null;
             // 
-            // bunifuRadioButton1
+            // rdChamHon
             // 
-            this.bunifuRadioButton1.AllowBindingControlLocation = false;
-            this.bunifuRadioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuRadioButton1.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
-            this.bunifuRadioButton1.BorderThickness = 2;
-            this.bunifuRadioButton1.Checked = false;
-            this.bunifuRadioButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.bunifuRadioButton1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.bunifuRadioButton1.Location = new System.Drawing.Point(86, 48);
-            this.bunifuRadioButton1.Name = "bunifuRadioButton1";
-            this.bunifuRadioButton1.OutlineColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton1.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton1.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
-            this.bunifuRadioButton1.RadioColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton1.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton1.Size = new System.Drawing.Size(18, 18);
-            this.bunifuRadioButton1.TabIndex = 42;
-            this.bunifuRadioButton1.Text = null;
+            this.rdChamHon.AllowBindingControlLocation = false;
+            this.rdChamHon.BackColor = System.Drawing.Color.Transparent;
+            this.rdChamHon.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.rdChamHon.BorderThickness = 2;
+            this.rdChamHon.Checked = false;
+            this.rdChamHon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.rdChamHon, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.rdChamHon.Location = new System.Drawing.Point(86, 48);
+            this.rdChamHon.Name = "rdChamHon";
+            this.rdChamHon.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.rdChamHon.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.rdChamHon.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.rdChamHon.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.rdChamHon.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.rdChamHon.Size = new System.Drawing.Size(18, 18);
+            this.rdChamHon.TabIndex = 42;
+            this.rdChamHon.Text = null;
             // 
-            // bunifuRadioButton2
+            // rdBinhThuong
             // 
-            this.bunifuRadioButton2.AllowBindingControlLocation = false;
-            this.bunifuRadioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuRadioButton2.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
-            this.bunifuRadioButton2.BorderThickness = 2;
-            this.bunifuRadioButton2.Checked = true;
-            this.bunifuRadioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.bunifuRadioButton2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.bunifuRadioButton2.Location = new System.Drawing.Point(178, 48);
-            this.bunifuRadioButton2.Name = "bunifuRadioButton2";
-            this.bunifuRadioButton2.OutlineColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton2.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton2.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
-            this.bunifuRadioButton2.RadioColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuRadioButton2.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuRadioButton2.Size = new System.Drawing.Size(18, 18);
-            this.bunifuRadioButton2.TabIndex = 42;
-            this.bunifuRadioButton2.Text = null;
+            this.rdBinhThuong.AllowBindingControlLocation = false;
+            this.rdBinhThuong.BackColor = System.Drawing.Color.Transparent;
+            this.rdBinhThuong.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.rdBinhThuong.BorderThickness = 2;
+            this.rdBinhThuong.Checked = false;
+            this.rdBinhThuong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.rdBinhThuong, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.rdBinhThuong.Location = new System.Drawing.Point(178, 48);
+            this.rdBinhThuong.Name = "rdBinhThuong";
+            this.rdBinhThuong.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.rdBinhThuong.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.rdBinhThuong.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.rdBinhThuong.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.rdBinhThuong.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.rdBinhThuong.Size = new System.Drawing.Size(18, 18);
+            this.rdBinhThuong.TabIndex = 42;
+            this.rdBinhThuong.Text = null;
             // 
             // guna2PictureBox15
             // 
             this.guna2Transition1.SetDecoration(this.guna2PictureBox15, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox15.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox15.ImageRotate = 0F;
             this.guna2PictureBox15.Location = new System.Drawing.Point(34, 0);
             this.guna2PictureBox15.Name = "guna2PictureBox15";
-            this.guna2PictureBox15.ShadowDecoration.Parent = this.guna2PictureBox15;
             this.guna2PictureBox15.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox15.TabIndex = 41;
             this.guna2PictureBox15.TabStop = false;
@@ -674,7 +661,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel4.Controls.Add(this.guna2PictureBox12);
             this.guna2Panel4.Controls.Add(this.label8);
             this.guna2Panel4.Controls.Add(this.label11);
-            this.guna2Panel4.Controls.Add(this.guna2ToggleSwitch4);
+            this.guna2Panel4.Controls.Add(this.btnThongBao);
             this.guna2Transition1.SetDecoration(this.guna2Panel4, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel4.FillColor = System.Drawing.Color.White;
             this.guna2Panel4.Location = new System.Drawing.Point(36, 435);
@@ -682,7 +669,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel4.ShadowDecoration.BorderRadius = 20;
             this.guna2Panel4.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
             this.guna2Panel4.ShadowDecoration.Enabled = true;
-            this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
             this.guna2Panel4.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel4.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel4.TabIndex = 40;
@@ -692,9 +678,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox10.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.guna2PictureBox10, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox10.Image")));
+            this.guna2PictureBox10.ImageRotate = 0F;
             this.guna2PictureBox10.Location = new System.Drawing.Point(14, 24);
             this.guna2PictureBox10.Name = "guna2PictureBox10";
-            this.guna2PictureBox10.ShadowDecoration.Parent = this.guna2PictureBox10;
             this.guna2PictureBox10.Size = new System.Drawing.Size(44, 40);
             this.guna2PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox10.TabIndex = 41;
@@ -708,9 +694,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this.guna2PictureBox11, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox11.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2PictureBox11.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox11.ImageRotate = 0F;
             this.guna2PictureBox11.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox11.Name = "guna2PictureBox11";
-            this.guna2PictureBox11.ShadowDecoration.Parent = this.guna2PictureBox11;
             this.guna2PictureBox11.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox11.TabIndex = 41;
             this.guna2PictureBox11.TabStop = false;
@@ -720,9 +706,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             // 
             this.guna2Transition1.SetDecoration(this.guna2PictureBox12, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox12.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox12.ImageRotate = 0F;
             this.guna2PictureBox12.Location = new System.Drawing.Point(34, 0);
             this.guna2PictureBox12.Name = "guna2PictureBox12";
-            this.guna2PictureBox12.ShadowDecoration.Parent = this.guna2PictureBox12;
             this.guna2PictureBox12.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox12.TabIndex = 41;
             this.guna2PictureBox12.TabStop = false;
@@ -750,26 +736,23 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label11.TabIndex = 38;
             this.label11.Text = "Thông báo";
             // 
-            // guna2ToggleSwitch4
+            // btnThongBao
             // 
-            this.guna2ToggleSwitch4.Animated = true;
-            this.guna2ToggleSwitch4.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.guna2ToggleSwitch4.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.guna2ToggleSwitch4.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch4.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch4.CheckedState.Parent = this.guna2ToggleSwitch4;
-            this.guna2ToggleSwitch4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.guna2ToggleSwitch4, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2ToggleSwitch4.Location = new System.Drawing.Point(324, 15);
-            this.guna2ToggleSwitch4.Name = "guna2ToggleSwitch4";
-            this.guna2ToggleSwitch4.ShadowDecoration.Parent = this.guna2ToggleSwitch4;
-            this.guna2ToggleSwitch4.Size = new System.Drawing.Size(45, 20);
-            this.guna2ToggleSwitch4.TabIndex = 39;
-            this.guna2ToggleSwitch4.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ToggleSwitch4.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ToggleSwitch4.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch4.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch4.UncheckedState.Parent = this.guna2ToggleSwitch4;
+            this.btnThongBao.Animated = true;
+            this.btnThongBao.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnThongBao.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnThongBao.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.btnThongBao.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.btnThongBao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnThongBao, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnThongBao.Location = new System.Drawing.Point(324, 15);
+            this.btnThongBao.Name = "btnThongBao";
+            this.btnThongBao.Size = new System.Drawing.Size(45, 20);
+            this.btnThongBao.TabIndex = 39;
+            this.btnThongBao.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btnThongBao.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btnThongBao.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.btnThongBao.UncheckedState.InnerColor = System.Drawing.Color.White;
             // 
             // guna2Panel2
             // 
@@ -777,13 +760,13 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel2.BorderColor = System.Drawing.Color.LightGray;
             this.guna2Panel2.BorderRadius = 20;
             this.guna2Panel2.BorderThickness = 2;
-            this.guna2Panel2.Controls.Add(this.guna2PictureBox25);
+            this.guna2Panel2.Controls.Add(this.pbCaiDatNhacHocTuVung);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox4);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox5);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox6);
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.Controls.Add(this.label3);
-            this.guna2Panel2.Controls.Add(this.guna2ToggleSwitch2);
+            this.guna2Panel2.Controls.Add(this.btnNhacHocTuVung);
             this.guna2Transition1.SetDecoration(this.guna2Panel2, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
             this.guna2Panel2.Location = new System.Drawing.Point(452, 435);
@@ -791,34 +774,33 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel2.ShadowDecoration.BorderRadius = 20;
             this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
-            this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel2.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel2.TabIndex = 40;
             // 
-            // guna2PictureBox25
+            // pbCaiDatNhacHocTuVung
             // 
-            this.guna2PictureBox25.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox25.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.guna2PictureBox25, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2PictureBox25.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox25.Image")));
-            this.guna2PictureBox25.Location = new System.Drawing.Point(347, 46);
-            this.guna2PictureBox25.Name = "guna2PictureBox25";
-            this.guna2PictureBox25.ShadowDecoration.Parent = this.guna2PictureBox25;
-            this.guna2PictureBox25.Size = new System.Drawing.Size(25, 25);
-            this.guna2PictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox25.TabIndex = 41;
-            this.guna2PictureBox25.TabStop = false;
-            this.guna2PictureBox25.UseTransparentBackground = true;
+            this.pbCaiDatNhacHocTuVung.BackColor = System.Drawing.Color.Transparent;
+            this.pbCaiDatNhacHocTuVung.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.pbCaiDatNhacHocTuVung, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pbCaiDatNhacHocTuVung.Image = ((System.Drawing.Image)(resources.GetObject("pbCaiDatNhacHocTuVung.Image")));
+            this.pbCaiDatNhacHocTuVung.ImageRotate = 0F;
+            this.pbCaiDatNhacHocTuVung.Location = new System.Drawing.Point(347, 46);
+            this.pbCaiDatNhacHocTuVung.Name = "pbCaiDatNhacHocTuVung";
+            this.pbCaiDatNhacHocTuVung.Size = new System.Drawing.Size(25, 25);
+            this.pbCaiDatNhacHocTuVung.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCaiDatNhacHocTuVung.TabIndex = 41;
+            this.pbCaiDatNhacHocTuVung.TabStop = false;
+            this.pbCaiDatNhacHocTuVung.UseTransparentBackground = true;
             // 
             // guna2PictureBox4
             // 
             this.guna2PictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.guna2PictureBox4, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
+            this.guna2PictureBox4.ImageRotate = 0F;
             this.guna2PictureBox4.Location = new System.Drawing.Point(14, 24);
             this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.ShadowDecoration.Parent = this.guna2PictureBox4;
             this.guna2PictureBox4.Size = new System.Drawing.Size(44, 40);
             this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox4.TabIndex = 41;
@@ -832,9 +814,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this.guna2PictureBox5, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2PictureBox5.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox5.ImageRotate = 0F;
             this.guna2PictureBox5.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.ShadowDecoration.Parent = this.guna2PictureBox5;
             this.guna2PictureBox5.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox5.TabIndex = 41;
             this.guna2PictureBox5.TabStop = false;
@@ -844,9 +826,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             // 
             this.guna2Transition1.SetDecoration(this.guna2PictureBox6, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox6.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox6.ImageRotate = 0F;
             this.guna2PictureBox6.Location = new System.Drawing.Point(34, 0);
             this.guna2PictureBox6.Name = "guna2PictureBox6";
-            this.guna2PictureBox6.ShadowDecoration.Parent = this.guna2PictureBox6;
             this.guna2PictureBox6.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox6.TabIndex = 41;
             this.guna2PictureBox6.TabStop = false;
@@ -874,26 +856,23 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label3.TabIndex = 38;
             this.label3.Text = "Nhắc nhở học từ vựng";
             // 
-            // guna2ToggleSwitch2
+            // btnNhacHocTuVung
             // 
-            this.guna2ToggleSwitch2.Animated = true;
-            this.guna2ToggleSwitch2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.guna2ToggleSwitch2.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.guna2ToggleSwitch2.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch2.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch2.CheckedState.Parent = this.guna2ToggleSwitch2;
-            this.guna2ToggleSwitch2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.guna2ToggleSwitch2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2ToggleSwitch2.Location = new System.Drawing.Point(328, 14);
-            this.guna2ToggleSwitch2.Name = "guna2ToggleSwitch2";
-            this.guna2ToggleSwitch2.ShadowDecoration.Parent = this.guna2ToggleSwitch2;
-            this.guna2ToggleSwitch2.Size = new System.Drawing.Size(45, 20);
-            this.guna2ToggleSwitch2.TabIndex = 39;
-            this.guna2ToggleSwitch2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ToggleSwitch2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ToggleSwitch2.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch2.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch2.UncheckedState.Parent = this.guna2ToggleSwitch2;
+            this.btnNhacHocTuVung.Animated = true;
+            this.btnNhacHocTuVung.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnNhacHocTuVung.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnNhacHocTuVung.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.btnNhacHocTuVung.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.btnNhacHocTuVung.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnNhacHocTuVung, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnNhacHocTuVung.Location = new System.Drawing.Point(328, 14);
+            this.btnNhacHocTuVung.Name = "btnNhacHocTuVung";
+            this.btnNhacHocTuVung.Size = new System.Drawing.Size(45, 20);
+            this.btnNhacHocTuVung.TabIndex = 39;
+            this.btnNhacHocTuVung.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btnNhacHocTuVung.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btnNhacHocTuVung.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.btnNhacHocTuVung.UncheckedState.InnerColor = System.Drawing.Color.White;
             // 
             // guna2Panel3
             // 
@@ -901,13 +880,13 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel3.BorderColor = System.Drawing.Color.LightGray;
             this.guna2Panel3.BorderRadius = 20;
             this.guna2Panel3.BorderThickness = 2;
-            this.guna2Panel3.Controls.Add(this.guna2PictureBox26);
+            this.guna2Panel3.Controls.Add(this.pbCaiDatTuDongXoaLS);
             this.guna2Panel3.Controls.Add(this.guna2PictureBox7);
             this.guna2Panel3.Controls.Add(this.guna2PictureBox8);
             this.guna2Panel3.Controls.Add(this.guna2PictureBox9);
             this.guna2Panel3.Controls.Add(this.label5);
             this.guna2Panel3.Controls.Add(this.label6);
-            this.guna2Panel3.Controls.Add(this.guna2ToggleSwitch3);
+            this.guna2Panel3.Controls.Add(this.btnTuDongXoaLS);
             this.guna2Transition1.SetDecoration(this.guna2Panel3, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel3.FillColor = System.Drawing.Color.White;
             this.guna2Panel3.Location = new System.Drawing.Point(36, 158);
@@ -915,34 +894,33 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel3.ShadowDecoration.BorderRadius = 20;
             this.guna2Panel3.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
             this.guna2Panel3.ShadowDecoration.Enabled = true;
-            this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
             this.guna2Panel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel3.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel3.TabIndex = 40;
             // 
-            // guna2PictureBox26
+            // pbCaiDatTuDongXoaLS
             // 
-            this.guna2PictureBox26.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox26.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.guna2PictureBox26, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2PictureBox26.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox26.Image")));
-            this.guna2PictureBox26.Location = new System.Drawing.Point(346, 44);
-            this.guna2PictureBox26.Name = "guna2PictureBox26";
-            this.guna2PictureBox26.ShadowDecoration.Parent = this.guna2PictureBox26;
-            this.guna2PictureBox26.Size = new System.Drawing.Size(25, 25);
-            this.guna2PictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox26.TabIndex = 41;
-            this.guna2PictureBox26.TabStop = false;
-            this.guna2PictureBox26.UseTransparentBackground = true;
+            this.pbCaiDatTuDongXoaLS.BackColor = System.Drawing.Color.Transparent;
+            this.pbCaiDatTuDongXoaLS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.pbCaiDatTuDongXoaLS, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pbCaiDatTuDongXoaLS.Image = ((System.Drawing.Image)(resources.GetObject("pbCaiDatTuDongXoaLS.Image")));
+            this.pbCaiDatTuDongXoaLS.ImageRotate = 0F;
+            this.pbCaiDatTuDongXoaLS.Location = new System.Drawing.Point(346, 44);
+            this.pbCaiDatTuDongXoaLS.Name = "pbCaiDatTuDongXoaLS";
+            this.pbCaiDatTuDongXoaLS.Size = new System.Drawing.Size(25, 25);
+            this.pbCaiDatTuDongXoaLS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCaiDatTuDongXoaLS.TabIndex = 41;
+            this.pbCaiDatTuDongXoaLS.TabStop = false;
+            this.pbCaiDatTuDongXoaLS.UseTransparentBackground = true;
             // 
             // guna2PictureBox7
             // 
             this.guna2PictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.guna2PictureBox7, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox7.Image")));
+            this.guna2PictureBox7.ImageRotate = 0F;
             this.guna2PictureBox7.Location = new System.Drawing.Point(14, 24);
             this.guna2PictureBox7.Name = "guna2PictureBox7";
-            this.guna2PictureBox7.ShadowDecoration.Parent = this.guna2PictureBox7;
             this.guna2PictureBox7.Size = new System.Drawing.Size(44, 40);
             this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox7.TabIndex = 41;
@@ -956,9 +934,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this.guna2PictureBox8, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox8.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2PictureBox8.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox8.ImageRotate = 0F;
             this.guna2PictureBox8.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox8.Name = "guna2PictureBox8";
-            this.guna2PictureBox8.ShadowDecoration.Parent = this.guna2PictureBox8;
             this.guna2PictureBox8.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox8.TabIndex = 41;
             this.guna2PictureBox8.TabStop = false;
@@ -968,9 +946,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             // 
             this.guna2Transition1.SetDecoration(this.guna2PictureBox9, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox9.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox9.ImageRotate = 0F;
             this.guna2PictureBox9.Location = new System.Drawing.Point(34, 0);
             this.guna2PictureBox9.Name = "guna2PictureBox9";
-            this.guna2PictureBox9.ShadowDecoration.Parent = this.guna2PictureBox9;
             this.guna2PictureBox9.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox9.TabIndex = 41;
             this.guna2PictureBox9.TabStop = false;
@@ -998,26 +976,23 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label6.TabIndex = 38;
             this.label6.Text = "Tự động xóa lịch sử";
             // 
-            // guna2ToggleSwitch3
+            // btnTuDongXoaLS
             // 
-            this.guna2ToggleSwitch3.Animated = true;
-            this.guna2ToggleSwitch3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.guna2ToggleSwitch3.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.guna2ToggleSwitch3.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch3.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch3.CheckedState.Parent = this.guna2ToggleSwitch3;
-            this.guna2ToggleSwitch3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.guna2ToggleSwitch3, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2ToggleSwitch3.Location = new System.Drawing.Point(327, 14);
-            this.guna2ToggleSwitch3.Name = "guna2ToggleSwitch3";
-            this.guna2ToggleSwitch3.ShadowDecoration.Parent = this.guna2ToggleSwitch3;
-            this.guna2ToggleSwitch3.Size = new System.Drawing.Size(45, 20);
-            this.guna2ToggleSwitch3.TabIndex = 39;
-            this.guna2ToggleSwitch3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ToggleSwitch3.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ToggleSwitch3.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch3.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2ToggleSwitch3.UncheckedState.Parent = this.guna2ToggleSwitch3;
+            this.btnTuDongXoaLS.Animated = true;
+            this.btnTuDongXoaLS.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTuDongXoaLS.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnTuDongXoaLS.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.btnTuDongXoaLS.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.btnTuDongXoaLS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnTuDongXoaLS, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnTuDongXoaLS.Location = new System.Drawing.Point(327, 14);
+            this.btnTuDongXoaLS.Name = "btnTuDongXoaLS";
+            this.btnTuDongXoaLS.Size = new System.Drawing.Size(45, 20);
+            this.btnTuDongXoaLS.TabIndex = 39;
+            this.btnTuDongXoaLS.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btnTuDongXoaLS.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.btnTuDongXoaLS.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.btnTuDongXoaLS.UncheckedState.InnerColor = System.Drawing.Color.White;
             // 
             // guna2Panel8
             // 
@@ -1037,7 +1012,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel8.ShadowDecoration.BorderRadius = 20;
             this.guna2Panel8.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
             this.guna2Panel8.ShadowDecoration.Enabled = true;
-            this.guna2Panel8.ShadowDecoration.Parent = this.guna2Panel8;
             this.guna2Panel8.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel8.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel8.TabIndex = 40;
@@ -1047,9 +1021,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox22.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.guna2PictureBox22, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox22.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox22.Image")));
+            this.guna2PictureBox22.ImageRotate = 0F;
             this.guna2PictureBox22.Location = new System.Drawing.Point(14, 24);
             this.guna2PictureBox22.Name = "guna2PictureBox22";
-            this.guna2PictureBox22.ShadowDecoration.Parent = this.guna2PictureBox22;
             this.guna2PictureBox22.Size = new System.Drawing.Size(44, 40);
             this.guna2PictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox22.TabIndex = 41;
@@ -1063,9 +1037,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this.guna2PictureBox23, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox23.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2PictureBox23.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox23.ImageRotate = 0F;
             this.guna2PictureBox23.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox23.Name = "guna2PictureBox23";
-            this.guna2PictureBox23.ShadowDecoration.Parent = this.guna2PictureBox23;
             this.guna2PictureBox23.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox23.TabIndex = 41;
             this.guna2PictureBox23.TabStop = false;
@@ -1075,9 +1049,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             // 
             this.guna2Transition1.SetDecoration(this.guna2PictureBox24, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox24.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox24.ImageRotate = 0F;
             this.guna2PictureBox24.Location = new System.Drawing.Point(34, 0);
             this.guna2PictureBox24.Name = "guna2PictureBox24";
-            this.guna2PictureBox24.ShadowDecoration.Parent = this.guna2PictureBox24;
             this.guna2PictureBox24.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox24.TabIndex = 41;
             this.guna2PictureBox24.TabStop = false;
@@ -1147,7 +1121,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this.guna2Panel9, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel9.Location = new System.Drawing.Point(36, 268);
             this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.ShadowDecoration.Parent = this.guna2Panel9;
             this.guna2Panel9.Size = new System.Drawing.Size(10, 16);
             this.guna2Panel9.TabIndex = 41;
             // 
@@ -1157,7 +1130,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this.guna2Panel10, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel10.Location = new System.Drawing.Point(36, 406);
             this.guna2Panel10.Name = "guna2Panel10";
-            this.guna2Panel10.ShadowDecoration.Parent = this.guna2Panel10;
             this.guna2Panel10.Size = new System.Drawing.Size(10, 16);
             this.guna2Panel10.TabIndex = 41;
             // 
@@ -1167,7 +1139,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this.guna2Panel11, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel11.Location = new System.Drawing.Point(37, 24);
             this.guna2Panel11.Name = "guna2Panel11";
-            this.guna2Panel11.ShadowDecoration.Parent = this.guna2Panel11;
             this.guna2Panel11.Size = new System.Drawing.Size(10, 16);
             this.guna2Panel11.TabIndex = 41;
             // 
@@ -1221,13 +1192,13 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCaiDatNhacHocTuVung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCaiDatTuDongXoaLS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
@@ -1244,7 +1215,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         #endregion
 
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch1;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch btnCheDoBanDem;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
@@ -1258,7 +1229,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox18;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch5;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch btnTuDongCapNhat;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox13;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox14;
@@ -1270,20 +1241,20 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox21;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label16;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch6;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch btnTuDongPhatAm;
         private System.Windows.Forms.Label label15;
-        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton3;
-        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton2;
+        private Bunifu.UI.WinForms.BunifuRadioButton rdNhanhHon;
+        private Bunifu.UI.WinForms.BunifuRadioButton rdBinhThuong;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox25;
+        private Guna.UI2.WinForms.Guna2PictureBox pbCaiDatNhacHocTuVung;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch2;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch btnNhacHocTuVung;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox22;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox23;
@@ -1296,21 +1267,21 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox9;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch3;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch btnTuDongXoaLS;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox10;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox11;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox12;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch4;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox26;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch btnThongBao;
+        private Guna.UI2.WinForms.Guna2PictureBox pbCaiDatTuDongXoaLS;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
-        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton1;
+        private Bunifu.UI.WinForms.BunifuRadioButton rdChamHon;
     }
 }
