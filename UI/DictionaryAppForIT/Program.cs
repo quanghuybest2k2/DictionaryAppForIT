@@ -23,6 +23,7 @@ namespace DictionaryAppForIT
             //Application.Run(new frmSignUp());
             
             Application.Run(new frmMain());
+            //Application.Run(new Form1());
         }
     }
 }

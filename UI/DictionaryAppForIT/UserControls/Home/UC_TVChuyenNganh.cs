@@ -19,6 +19,8 @@ namespace DictionaryAppForIT.UserControls.Home
     {
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         SpeechSynthesizer speech;
+        public bool thayDoiTocDo = false;
+        public int tocDo = 0;
         public UC_TVChuyenNganh()
         {
             InitializeComponent();
@@ -73,15 +75,21 @@ namespace DictionaryAppForIT.UserControls.Home
             HienThiTheoChuyenNganh();
             GoiYTimKiem();
         }
-
+        private void TocDoNoi()
+        {
+            if (thayDoiTocDo)
+            {
+                speech.Rate = tocDo;
+            }
+        }
         private void dtgvTuVung_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 1) //Cột thứ 2(hình cái loa)
             {
                 //MessageBox.Show("Bạn click vào loa hàng số " + e.RowIndex);
-                //speech.SelectVoice("Microsoft Hazel Desktop");
-                speech.SelectVoiceByHints(VoiceGender.Male); // giong nam
                 txtTuVungDoc.Text = dtgvTuVung.CurrentRow.Cells["ColTuVung"].Value.ToString();
+                speech.SelectVoice("Microsoft David Desktop"); //giong mỹ
+                TocDoNoi();
                 speech.SpeakAsync(txtTuVungDoc.Text);
             }
         }

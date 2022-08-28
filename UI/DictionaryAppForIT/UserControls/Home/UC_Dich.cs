@@ -18,6 +18,8 @@ namespace DictionaryAppForIT.UserControls.Home
     {
         SpeechSynthesizer speech;
         SoundPlayer soundPlayer;
+        public bool thayDoiTocDo = false;
+        public int tocDo = 0;
         public UC_Dich()
         {
             InitializeComponent();
@@ -53,12 +55,20 @@ namespace DictionaryAppForIT.UserControls.Home
             if (translation.Length > 1) { translation = translation.Substring(1); };
             return translation;
         }
+        private void TocDoNoi()
+        {
+            if (thayDoiTocDo)
+            {
+                speech.Rate = tocDo;
+            }
+        }
         private void btnSpeakEnglish_Click(object sender, EventArgs e)
         {
             if (txtTop.Text != null)
             {
-                SpVoice obj = new SpVoice();
-                obj.Speak(txtTop.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                speech.SelectVoice("Microsoft David Desktop"); //giong mỹ
+                TocDoNoi();
+                speech.SpeakAsync(txtTop.Text);
             }
         }
 
@@ -178,7 +188,7 @@ namespace DictionaryAppForIT.UserControls.Home
 
         private void btnMic_Click(object sender, EventArgs e)
         {
-            soundPlayer = new SoundPlayer(@"D:\Window Form\DictionaryAppForIT\UI\DictionaryAppForIT\Resources\Sound\SiriOpen.wav");
+            soundPlayer = new SoundPlayer(Application.StartupPath + "\\Resources\\Sound\\SiriOpen.wav");
             SpeechRecognitionEngine sr = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US"));
             sr.LoadGrammar(new DictationGrammar());
             try

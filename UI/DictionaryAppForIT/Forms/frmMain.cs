@@ -189,30 +189,47 @@ namespace DictionaryAppForIT.Forms
         //--Tab đầu tiên
         private void btnTraTu_Click(object sender, EventArgs e)
         {
-            KiemTraThayDoiTocDo();
+            KiemTraThayDoiTocDoTraTu();
             ShowUC(ucTraTu);
         }
-
-        //--Thay đổi tốc độ
-        private void KiemTraThayDoiTocDo()
+        //--Thay đổi tốc độ UC_TraTu
+        private void KiemTraThayDoiTocDoTraTu()
         {
             if (ucCaiDat.thayDoiTocDo)
             {
                 ucTraTu.thayDoiTocDo = true;
                 ucTraTu.tocDo = ucCaiDat.tocDo;
-                ucCaiDat.thayDoiTocDo = false;
             }
         }
-
         //--Các Tab còn lại
         private void btnDichVB_Click(object sender, EventArgs e)
         {
+            KiemTraThayDoiTocDoDich();
             ShowUC(ucDich);
         }
-
+        //--Thay đổi tốc độ UC_dich
+        private void KiemTraThayDoiTocDoDich()
+        {
+            if (ucCaiDat.thayDoiTocDo)
+            {
+                ucDich.thayDoiTocDo = true;
+                ucDich.tocDo = ucCaiDat.tocDo;
+            }
+        }
         private void btnTVChuyenNganh_Click(object sender, EventArgs e)
         {
+            KiemTraThayDoiTocDoChuyenNganh();
             ShowUC(ucTVChuyen);
+        }
+        //--Thay đổi tốc độ UC_Từ vựng chuyên ngành
+        private void KiemTraThayDoiTocDoChuyenNganh()
+        {
+            if (ucCaiDat.thayDoiTocDo)
+            {
+                ucTVChuyen.thayDoiTocDo = true;
+                ucTVChuyen.tocDo = ucCaiDat.tocDo;
+
+            }
         }
         #endregion
 

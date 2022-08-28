@@ -27,7 +27,6 @@ namespace DictionaryAppForIT.UserControls
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         XemTatCaNghia XemNghia;
         UC_Nghia ucNghia;
-        //UC_CaiDat ucCaiDat;
         SpeechSynthesizer speech;
         public UC_TraTu()
         {
@@ -39,7 +38,6 @@ namespace DictionaryAppForIT.UserControls
         private void UC_TraTu_Load(object sender, EventArgs e)
         {
             lblTenDangNhap.Text = Class_TaiKhoan.displayUsername; // Hello Sang Đỗ
-
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -132,7 +130,6 @@ namespace DictionaryAppForIT.UserControls
             if (thayDoiTocDo)
             {
                 speech.Rate = tocDo;
-                thayDoiTocDo = false;
             }
         }
         private void btnUS_Click(object sender, EventArgs e)
@@ -145,8 +142,7 @@ namespace DictionaryAppForIT.UserControls
         private void btnUK_Click(object sender, EventArgs e)
         {
             speech.SelectVoice("Microsoft Hazel Desktop"); // giong anh
-            
-            //speech.Rate = 3;
+            TocDoNoi();
             speech.SpeakAsync(txtTuVung.Text);
 
         }
