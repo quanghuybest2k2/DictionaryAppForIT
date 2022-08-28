@@ -30,7 +30,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CaiDat));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label4 = new System.Windows.Forms.Label();
@@ -102,6 +102,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -172,27 +173,28 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnCheDoBanDem.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnCheDoBanDem.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.btnCheDoBanDem.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.btnCheDoBanDem.Click += new System.EventHandler(this.btnCheDoBanDem_Click);
             // 
             // guna2Transition1
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Scale;
             this.guna2Transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation2;
             // 
             // guna2Panel1
             // 
@@ -383,6 +385,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnTuDongCapNhat.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnTuDongCapNhat.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.btnTuDongCapNhat.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.btnTuDongCapNhat.Click += new System.EventHandler(this.btnTuDongCapNhat_Click);
             // 
             // guna2Panel7
             // 
@@ -487,6 +490,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnTuDongPhatAm.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnTuDongPhatAm.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.btnTuDongPhatAm.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.btnTuDongPhatAm.Click += new System.EventHandler(this.btnTuDongPhatAm_Click);
             // 
             // guna2Panel5
             // 
@@ -563,6 +567,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.rdNhanhHon.Size = new System.Drawing.Size(18, 18);
             this.rdNhanhHon.TabIndex = 42;
             this.rdNhanhHon.Text = null;
+            this.rdNhanhHon.Click += new System.EventHandler(this.rdNhanhHon_Click);
             // 
             // rdChamHon
             // 
@@ -583,6 +588,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.rdChamHon.Size = new System.Drawing.Size(18, 18);
             this.rdChamHon.TabIndex = 42;
             this.rdChamHon.Text = null;
+            this.rdChamHon.Click += new System.EventHandler(this.rdChamHon_Click);
             // 
             // rdBinhThuong
             // 
@@ -603,6 +609,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.rdBinhThuong.Size = new System.Drawing.Size(18, 18);
             this.rdBinhThuong.TabIndex = 42;
             this.rdBinhThuong.Text = null;
+            this.rdBinhThuong.Click += new System.EventHandler(this.rdBinhThuong_Click);
             // 
             // guna2PictureBox15
             // 
@@ -754,6 +761,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnThongBao.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnThongBao.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.btnThongBao.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.btnThongBao.Click += new System.EventHandler(this.btnThongBao_Click);
             // 
             // guna2Panel2
             // 
@@ -874,6 +882,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnNhacHocTuVung.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnNhacHocTuVung.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.btnNhacHocTuVung.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.btnNhacHocTuVung.Click += new System.EventHandler(this.btnNhacHocTuVung_Click);
             // 
             // guna2Panel3
             // 
@@ -994,6 +1003,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnTuDongXoaLS.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnTuDongXoaLS.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.btnTuDongXoaLS.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.btnTuDongXoaLS.Click += new System.EventHandler(this.btnTuDongXoaLS_Click);
             // 
             // guna2Panel8
             // 
@@ -1155,11 +1165,24 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel11.Size = new System.Drawing.Size(10, 16);
             this.guna2Panel11.TabIndex = 41;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.radioButton1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.radioButton1.Location = new System.Drawing.Point(-15, -15);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.TabIndex = 42;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // UC_CaiDat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.guna2Panel10);
             this.Controls.Add(this.guna2Panel11);
             this.Controls.Add(this.guna2Panel9);
@@ -1298,5 +1321,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
         private Bunifu.UI.WinForms.BunifuRadioButton rdChamHon;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

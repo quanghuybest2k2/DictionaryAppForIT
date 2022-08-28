@@ -59,7 +59,8 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 
         private void LuuThayDoiTK_Click(object sender, EventArgs e)
         {
-
+            string query = "";
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { /* tham so */  });
         }
 
         private void btnSuaEmail_Click(object sender, EventArgs e)

@@ -21,11 +21,13 @@ namespace DictionaryAppForIT.UserControls
 {
     public partial class UC_TraTu : UserControl
     {
+        public bool thayDoiTocDo = false;
+        public int tocDo = 0;
         string TuHienTai = ""; //-------------------------------------- Tạo thêm cái này vì nếu người ta gõ 1 từ xong rồi enter nhiều lần thì nó add lặp lại vô cái _listTu
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         XemTatCaNghia XemNghia;
         UC_Nghia ucNghia;
-        UC_CaiDat ucCaiDat;
+        //UC_CaiDat ucCaiDat;
         SpeechSynthesizer speech;
         public UC_TraTu()
         {
@@ -33,25 +35,11 @@ namespace DictionaryAppForIT.UserControls
             speech = new SpeechSynthesizer();
             GoiYTimKiem();
             XemNghia = new XemTatCaNghia();
-            ucCaiDat = new UC_CaiDat();
-            //speech.Rate = 3;
-            if (ucCaiDat.RadioButtonChamHon)
-            {
-                speech.Rate = -5; // tốc độ nói
-            }
-            if (ucCaiDat.RadioButtonNhanhHon)
-            {
-                speech.Rate = 3;
-            }
-            //TocDoNoi();
-        }
-        private void TocDoNoi()
-        {
-            
         }
         private void UC_TraTu_Load(object sender, EventArgs e)
         {
             lblTenDangNhap.Text = Class_TaiKhoan.displayUsername; // Hello Sang Đỗ
+
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -139,16 +127,28 @@ namespace DictionaryAppForIT.UserControls
         #endregion
 
         #region btn us, uk, sao chep
+        private void TocDoNoi()
+        {
+            if (thayDoiTocDo)
+            {
+                speech.Rate = tocDo;
+                thayDoiTocDo = false;
+            }
+        }
         private void btnUS_Click(object sender, EventArgs e)
         {
             speech.SelectVoice("Microsoft David Desktop"); //giong mỹ
+            TocDoNoi();
             speech.SpeakAsync(txtTuVung.Text);
         }
 
         private void btnUK_Click(object sender, EventArgs e)
         {
             speech.SelectVoice("Microsoft Hazel Desktop"); // giong anh
+            
+            //speech.Rate = 3;
             speech.SpeakAsync(txtTuVung.Text);
+
         }
 
         private void btnSaoChep_Click(object sender, EventArgs e)

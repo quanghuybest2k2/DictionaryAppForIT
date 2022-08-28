@@ -18,7 +18,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         UC_MG_BtnDieuHuong ucBtnDieuHuong;
         SoundPlayer nhacNen;
         SoundPlayer nhacTraLoi;
-        //SoundPlayer DemNguoc15s;
+        SoundPlayer DemNguoc15s;
         SoundPlayer NhacHetGio;
         public UC_MiniGame()
         {
@@ -29,7 +29,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
                 ucBtnDieuHuong = new UC_MG_BtnDieuHuong(i);
                 flpDieuHuong.Controls.Add(ucBtnDieuHuong);
             }
-
         }
         private void UC_MiniGame_Load(object sender, EventArgs e)
         {
@@ -56,7 +55,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         {
             //Application.StartupPath: đường dẫn vào bin\\debug
             //property của tệp phải ở chế độ Copy if newer
-            //DemNguoc15s = new SoundPlayer(Application.StartupPath + "\\Resources\\Sound\\DemNguoc15s.wav");
+            DemNguoc15s = new SoundPlayer(Application.StartupPath + "\\Resources\\Sound\\DemNguoc15s.wav");
             NhacHetGio = new SoundPlayer(Application.StartupPath + "\\Resources\\Sound\\HetThoiGian.wav");
             if (toTalSecond > 0)
             {
@@ -66,7 +65,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
                 if (toTalSecond==15)
                 {
                     //nhacTraLoi.Play();
-                    //DemNguoc15s.Play();
+                    DemNguoc15s.Play();
                 }
                 this.lblThoiGian.Text = m.ToString() + ":" + s.ToString();
             }

@@ -1,5 +1,6 @@
 ﻿using Bunifu.UI.WinForms;
 using Guna.UI2.WinForms;
+using DictionaryAppForIT.Class;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,71 +16,67 @@ namespace DictionaryAppForIT.UserControls.CaiDat
 {
     public partial class UC_CaiDat : UserControl
     {
-        bool cham, binhthuong, nhanh;
+        public int tocDo = 0;
+        public bool thayDoiTocDo = false;
+
         public UC_CaiDat()
         {
             InitializeComponent();
         }
 
         #region cài đặt chung
-        public Guna2ToggleSwitch ButtonCheDoBanDem
+        private void btnCheDoBanDem_Click(object sender, EventArgs e)
         {
-            get { return this.btnCheDoBanDem; }
-            set { this.btnCheDoBanDem = value; }
+            // bật chế độ ban đêm
         }
-        public Guna2ToggleSwitch ButtonTuDongCapNhat
+        private void btnTuDongCapNhat_Click(object sender, EventArgs e)
         {
-            get { return this.btnTuDongCapNhat; }
-            set { this.btnTuDongCapNhat = value; }
+            // tự động cập nhật
         }
-        public Guna2ToggleSwitch ButtonTuDongXoaLS
+        private void btnTuDongXoaLS_Click(object sender, EventArgs e)
         {
-            get { return this.btnTuDongXoaLS; }
-            set { this.btnTuDongXoaLS = value; }
+            // tự động xóa lịch sử sau 1 khoảng thời gian
         }
         #endregion
 
         #region Âm thanh
-        public Guna2ToggleSwitch ButtonTuDongPhatAm
+        private void btnTuDongPhatAm_Click(object sender, EventArgs e)
         {
-            get { return this.btnTuDongPhatAm; }
-            set { this.btnTuDongPhatAm = value; }
+            // tự động phát âm
         }
-        public bool RadioButtonChamHon
+        private void rdChamHon_Click(object sender, EventArgs e)
         {
-            get { return this.rdChamHon.Checked; }
-            set { this.rdChamHon.Checked = value; }
+            tocDo = -3;
+            thayDoiTocDo = true;
+        }
+        private void rdBinhThuong_Click(object sender, EventArgs e)
+        {
+            tocDo = 0;
+            thayDoiTocDo = true;
         }
 
-        public bool RadioButtonBinhThuong
+        private void rdNhanhHon_Click(object sender, EventArgs e)
         {
-            get { return this.rdBinhThuong.Checked; }
-            set { this.rdBinhThuong.Checked = value; }
-        }
-        public bool RadioButtonNhanhHon
-        {
-            get { return this.rdNhanhHon.Checked; }
-            set { this.rdNhanhHon.Checked = value; }
+            tocDo = 3;
+            thayDoiTocDo = true;
         }
         #endregion
 
         #region Thông báo
-        public Guna2ToggleSwitch ButtonThongBao
+        private void btnThongBao_Click(object sender, EventArgs e)
         {
-            get { return this.btnThongBao; }
-            set { this.btnThongBao = value; }
+            // thông báo
         }
-        public Guna2ToggleSwitch ButtonNhacHocTuVung
+        private void btnNhacHocTuVung_Click(object sender, EventArgs e)
         {
-            get { return this.btnNhacHocTuVung; }
-            set { this.btnNhacHocTuVung = value; }
+            // nhắc học từ vựng
         }
         #endregion
 
         private void UC_CaiDat_Load(object sender, EventArgs e)
         {
-            
-        }
 
+        }
+        
     }
 }

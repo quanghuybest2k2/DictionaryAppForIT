@@ -189,7 +189,19 @@ namespace DictionaryAppForIT.Forms
         //--Tab đầu tiên
         private void btnTraTu_Click(object sender, EventArgs e)
         {
+            KiemTraThayDoiTocDo();
             ShowUC(ucTraTu);
+        }
+
+        //--Thay đổi tốc độ
+        private void KiemTraThayDoiTocDo()
+        {
+            if (ucCaiDat.thayDoiTocDo)
+            {
+                ucTraTu.thayDoiTocDo = true;
+                ucTraTu.tocDo = ucCaiDat.tocDo;
+                ucCaiDat.thayDoiTocDo = false;
+            }
         }
 
         //--Các Tab còn lại
