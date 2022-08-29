@@ -48,7 +48,7 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                string query = "exec LayTheoChuyenNganh @chuyennganh";//
+                string query = "exec LayTheoChuyenNganh @chuyennganh";
                 dtgvTuVung.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { cbbChuyenNganh.SelectedValue });//
                 lblSoTuHienCo.Text = dtgvTuVung.Rows.Count.ToString();// hiển thị số từ vựng
             }
@@ -68,12 +68,6 @@ namespace DictionaryAppForIT.UserControls.Home
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void cbbChuyenNganh_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            HienThiTheoChuyenNganh();
-            GoiYTimKiem();
         }
         private void TocDoNoi()
         {
@@ -136,5 +130,17 @@ namespace DictionaryAppForIT.UserControls.Home
             }
         }
 
+        private void UC_TVChuyenNganh_Load(object sender, EventArgs e)
+        {
+            cbbChuyenNganh.SelectedIndexChanged -= CbbChuyenNganh_SelectedIndexChanged;
+            loadChuyenNganh();
+            cbbChuyenNganh.SelectedIndexChanged += CbbChuyenNganh_SelectedIndexChanged; ;
+        }
+
+        private void CbbChuyenNganh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HienThiTheoChuyenNganh();
+            GoiYTimKiem();
+        }
     }
 }
