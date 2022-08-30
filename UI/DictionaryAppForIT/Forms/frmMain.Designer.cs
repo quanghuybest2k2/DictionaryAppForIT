@@ -64,6 +64,7 @@ namespace DictionaryAppForIT.Forms
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl4 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
+            this.btnThemTu = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -371,6 +372,7 @@ namespace DictionaryAppForIT.Forms
             this.flpTabTaiKhoan.Controls.Add(this.btnQuanLyTK);
             this.flpTabTaiKhoan.Controls.Add(this.btnThongBao);
             this.flpTabTaiKhoan.Controls.Add(this.btnPhanHoi);
+            this.flpTabTaiKhoan.Controls.Add(this.btnThemTu);
             this.guna2Transition1.SetDecoration(this.flpTabTaiKhoan, Guna.UI2.AnimatorNS.DecorationType.None);
             this.flpTabTaiKhoan.Location = new System.Drawing.Point(32, 10);
             this.flpTabTaiKhoan.Name = "flpTabTaiKhoan";
@@ -662,6 +664,31 @@ namespace DictionaryAppForIT.Forms
             animation1.TransparencyCoeff = 0F;
             this.guna2Transition1.DefaultAnimation = animation1;
             // 
+            // btnThemTu
+            // 
+            this.btnThemTu.Animated = true;
+            this.btnThemTu.BackColor = System.Drawing.Color.Transparent;
+            this.btnThemTu.BorderRadius = 16;
+            this.btnThemTu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnThemTu.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnThemTu.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnThemTu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnThemTu, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnThemTu.FillColor = System.Drawing.Color.Transparent;
+            this.btnThemTu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemTu.ForeColor = System.Drawing.Color.White;
+            this.btnThemTu.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnThemTu.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnThemTu.Location = new System.Drawing.Point(381, 3);
+            this.btnThemTu.Name = "btnThemTu";
+            this.btnThemTu.PressedDepth = 0;
+            this.btnThemTu.Size = new System.Drawing.Size(104, 53);
+            this.btnThemTu.TabIndex = 34;
+            this.btnThemTu.Text = "Thêm từ";
+            this.btnThemTu.TextOffset = new System.Drawing.Point(0, -10);
+            this.btnThemTu.UseTransparentBackground = true;
+            this.btnThemTu.Click += new System.EventHandler(this.btnThemTu_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -721,5 +748,6 @@ namespace DictionaryAppForIT.Forms
         private Guna.UI2.WinForms.Guna2Button btnThongBao;
         private Guna.UI2.WinForms.Guna2Button btnPhanHoi;
         private Guna.UI2.WinForms.Guna2Button btnDangXuat;
+        private Guna.UI2.WinForms.Guna2Button btnThemTu;
     }
 }

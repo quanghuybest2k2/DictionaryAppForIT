@@ -273,6 +273,12 @@
     <Compile Include="UserControls\TaiKhoan\UC_QuanLyTK.Designer.cs">
       <DependentUpon>UC_QuanLyTK.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TaiKhoan\UC_ThemTu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TaiKhoan\UC_ThemTu.Designer.cs">
+      <DependentUpon>UC_ThemTu.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TaiKhoan\UC_ThongBao.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -357,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TaiKhoan\UC_QuanLyTK.resx">
       <DependentUpon>UC_QuanLyTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TaiKhoan\UC_ThemTu.resx">
+      <DependentUpon>UC_ThemTu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TaiKhoan\UC_ThongBao.resx">
       <DependentUpon>UC_ThongBao.cs</DependentUpon>

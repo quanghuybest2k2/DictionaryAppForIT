@@ -45,6 +45,7 @@ namespace DictionaryAppForIT.Forms
         UC_QuanLyTK ucQuanLyTK = new UC_QuanLyTK();
         UC_PhanHoi ucPhanHoi = new UC_PhanHoi();
         UC_ThongBao ucThongBao = new UC_ThongBao();
+        UC_ThemTu ucThemTu = new UC_ThemTu();
 
         //FlowLayoutPanel Tab
         FlowLayoutPanel flpTabRecent = new FlowLayoutPanel();
@@ -56,7 +57,7 @@ namespace DictionaryAppForIT.Forms
         public frmMain()
         {
             InitializeComponent();
-            _listUC = new List<Control>() { ucTraTu, ucDich, ucTVChuyen, ucLichSu, ucYeuThich, ucMiniGame, ucCaiDat, ucQuanLyTK, ucThongBao, ucPhanHoi };
+            _listUC = new List<Control>() { ucTraTu, ucDich, ucTVChuyen, ucLichSu, ucYeuThich, ucMiniGame, ucCaiDat, ucQuanLyTK, ucThongBao, ucPhanHoi, ucThemTu };
             _listFlpTab = new List<FlowLayoutPanel>() { flpTabHome, flpTabTaiKhoan };
 
             //Thêm uc vào panelContent
@@ -253,7 +254,10 @@ namespace DictionaryAppForIT.Forms
         {
             ShowUC(ucPhanHoi);
         }
-
+        private void btnThemTu_Click(object sender, EventArgs e)
+        {
+            ShowUC(ucThemTu);
+        }
         #endregion
 
         private void btnExit_Click(object sender, EventArgs e)

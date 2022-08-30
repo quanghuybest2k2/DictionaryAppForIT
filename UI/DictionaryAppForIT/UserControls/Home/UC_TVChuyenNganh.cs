@@ -26,7 +26,6 @@ namespace DictionaryAppForIT.UserControls.Home
             InitializeComponent();
             speech = new SpeechSynthesizer();
             dtgvTuVung.AutoGenerateColumns = false;
-            loadChuyenNganh();
             //dtgvTuVung.ScrollBars = ScrollBars.Both;
         }
         private void loadChuyenNganh()
@@ -132,9 +131,9 @@ namespace DictionaryAppForIT.UserControls.Home
 
         private void UC_TVChuyenNganh_Load(object sender, EventArgs e)
         {
-            cbbChuyenNganh.SelectedIndexChanged -= CbbChuyenNganh_SelectedIndexChanged;
+            cbbChuyenNganh.SelectedIndexChanged -= CbbChuyenNganh_SelectedIndexChanged;// tách sự kiện
             loadChuyenNganh();
-            cbbChuyenNganh.SelectedIndexChanged += CbbChuyenNganh_SelectedIndexChanged; ;
+            cbbChuyenNganh.SelectedIndexChanged += CbbChuyenNganh_SelectedIndexChanged;//tạo lại
         }
 
         private void CbbChuyenNganh_SelectedIndexChanged(object sender, EventArgs e)

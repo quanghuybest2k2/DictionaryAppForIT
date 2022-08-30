@@ -18,6 +18,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
     {
         public int tocDo = 0;
         public bool thayDoiTocDo = false;
+        public bool tuDongCapNhat;
 
         public UC_CaiDat()
         {
@@ -43,8 +44,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         private void btnTuDongPhatAm_Click(object sender, EventArgs e)
         {
             // tự động phát âm
-
+            
         }
+
         private void rdChamHon_Click(object sender, EventArgs e)
         {
             tocDo = -3;
