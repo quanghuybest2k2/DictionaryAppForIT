@@ -19,10 +19,29 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         public int tocDo = 0;
         public bool thayDoiTocDo = false;
         public bool tuDongCapNhat;
-
+        private string phienBan = "1.0.0";
         public UC_CaiDat()
         {
             InitializeComponent();
+            ThongTinUngDung();
+        }
+        private void ThongTinUngDung()
+        {
+            RichTextBox rtb1 = new RichTextBox();
+            guna2Transition1.SetDecoration(rtb1, Guna.UI2.AnimatorNS.DecorationType.None);
+            rtb1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            rtb1.SelectionColor = Color.Gray;
+            rtb1.AppendText(" Phiên bản ");
+            rtb1.SelectionColor = ColorTranslator.FromHtml("#0098ff");
+            rtb1.AppendText(phienBan);
+            rtb1.SelectionColor = Color.Gray;
+            rtb1.AppendText(" BETA");
+            rtb1.Size = new System.Drawing.Size(287, 23);
+            rtb1.Location = new Point(30, 58);
+            rtb1.Name = "rtxtThongTinPhienBan";
+            rtb1.BorderStyle = BorderStyle.None;
+            rtb1.ReadOnly = true;
+            panelThongTinUngDung.Controls.Add(rtb1);
         }
 
         #region cài đặt chung
@@ -44,7 +63,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         private void btnTuDongPhatAm_Click(object sender, EventArgs e)
         {
             // tự động phát âm
-            
+
         }
 
         private void rdChamHon_Click(object sender, EventArgs e)
@@ -80,6 +99,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         {
 
         }
-        
+
     }
 }

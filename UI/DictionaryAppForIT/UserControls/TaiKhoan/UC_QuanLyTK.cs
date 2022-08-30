@@ -1,4 +1,5 @@
-﻿using DictionaryAppForIT.Class;
+﻿using Guna;
+using DictionaryAppForIT.Class;
 using DictionaryAppForIT.Forms;
 using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
@@ -16,12 +17,70 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 {
     public partial class UC_QuanLyTK : UserControl
     {
+        private int soNgayTao = 365;
+        private int soMucYeuThich = 9;
+        private int tgSuDung = 2;
         //Class_TaiKhoan TaiKhoan = new Class_TaiKhoan();
         public UC_QuanLyTK()
         {
             InitializeComponent();
         }
-
+        #region Xử lý richtextbox đổi màu chữ
+        private void ThoiGianTaoTaiKhoan()
+        {
+            RichTextBox rtb1 = new RichTextBox();
+            rtb1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            rtb1.SelectionColor = Color.Gray;
+            rtb1.AppendText(" Bạn đã tạo tài khoản được ");
+            rtb1.SelectionColor = ColorTranslator.FromHtml("#3776ab");
+            rtb1.AppendText(soNgayTao.ToString());
+            rtb1.SelectionColor = Color.Gray;
+            rtb1.AppendText(" ngày");
+            rtb1.Size = new System.Drawing.Size(287, 23);
+            rtb1.Location = new Point(69, 29);
+            rtb1.Name = "rtxtThoiGianTaoTK";
+            rtb1.BorderStyle = BorderStyle.None;
+            rtb1.ReadOnly = true;
+            rtb1.BackColor = System.Drawing.Color.LemonChiffon;
+            panelThoiGianTao.Controls.Add(rtb1);
+        }
+        private void SoMucYeuThich()
+        {
+            RichTextBox rtxtSoMucYeuThich = new RichTextBox();
+            rtxtSoMucYeuThich.Font = new System.Drawing.Font("Segoe UI", 10F);
+            rtxtSoMucYeuThich.SelectionColor = Color.Gray;
+            rtxtSoMucYeuThich.AppendText(" Hiện tại bạn có tất cả ");
+            rtxtSoMucYeuThich.SelectionColor = ColorTranslator.FromHtml("#3776ab");
+            rtxtSoMucYeuThich.AppendText(soMucYeuThich.ToString());
+            rtxtSoMucYeuThich.SelectionColor = Color.Gray;
+            rtxtSoMucYeuThich.AppendText(" mục yêu thích");
+            rtxtSoMucYeuThich.Size = new System.Drawing.Size(287, 23);
+            rtxtSoMucYeuThich.Location = new Point(69, 29);
+            rtxtSoMucYeuThich.Name = "rtxtMucYeuThich";
+            rtxtSoMucYeuThich.BorderStyle = BorderStyle.None;
+            rtxtSoMucYeuThich.ReadOnly = true;
+            rtxtSoMucYeuThich.BackColor = System.Drawing.Color.LemonChiffon;
+            panelSoMucYeuThich.Controls.Add(rtxtSoMucYeuThich);
+        }
+        private void ThoiGianSuDung()
+        {
+            RichTextBox rtb1 = new RichTextBox();
+            rtb1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            rtb1.SelectionColor = Color.Gray;
+            rtb1.AppendText(" Hôm nay bạn đã sử dụng từ điển trong ");
+            rtb1.SelectionColor = ColorTranslator.FromHtml("#3776ab");
+            rtb1.AppendText(tgSuDung.ToString());
+            rtb1.SelectionColor = Color.Gray;
+            rtb1.AppendText(" tiếng đồng hồ");
+            rtb1.Size = new System.Drawing.Size(250, 43);
+            rtb1.Location = new Point(68, 23);
+            rtb1.Name = "rtxtThoiGianSuDung";
+            rtb1.BorderStyle = BorderStyle.None;
+            rtb1.ReadOnly = true;
+            rtb1.BackColor = System.Drawing.Color.LemonChiffon;
+            panelThoiGianSuDung.Controls.Add(rtb1);
+        }
+        #endregion
         private void btnXoaTaiKhoan_Click(object sender, EventArgs e)
         {
             var result = RJMessageBox.Show("Bạn có thực sự muốn xóa tài khoản này vĩnh viễn?",
@@ -76,6 +135,13 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private void btnSuaMatKhau_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void UC_QuanLyTK_Load(object sender, EventArgs e)
+        {
+            ThoiGianTaoTaiKhoan();
+            SoMucYeuThich();
+            ThoiGianSuDung();
         }
     }
 }

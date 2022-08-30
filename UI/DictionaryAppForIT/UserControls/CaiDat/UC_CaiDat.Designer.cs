@@ -30,7 +30,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation6 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CaiDat));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label4 = new System.Windows.Forms.Label();
@@ -94,7 +94,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox23 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox24 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.lblThongTinPhienBan = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -103,6 +102,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.panelThongTinUngDung = new System.Windows.Forms.Panel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -137,6 +137,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox24)).BeginInit();
+            this.panelThongTinUngDung.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -179,22 +180,22 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Scale;
             this.guna2Transition1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation2;
+            animation6.AnimateOnlyDifferences = true;
+            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
+            animation6.LeafCoeff = 0F;
+            animation6.MaxTime = 1F;
+            animation6.MinTime = 0F;
+            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
+            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
+            animation6.MosaicSize = 0;
+            animation6.Padding = new System.Windows.Forms.Padding(0);
+            animation6.RotateCoeff = 0F;
+            animation6.RotateLimit = 0F;
+            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
+            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
+            animation6.TimeCoeff = 0F;
+            animation6.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation6;
             // 
             // guna2Panel1
             // 
@@ -1011,12 +1012,10 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel8.BorderColor = System.Drawing.Color.LightGray;
             this.guna2Panel8.BorderRadius = 20;
             this.guna2Panel8.BorderThickness = 2;
+            this.guna2Panel8.Controls.Add(this.panelThongTinUngDung);
             this.guna2Panel8.Controls.Add(this.guna2PictureBox22);
             this.guna2Panel8.Controls.Add(this.guna2PictureBox23);
             this.guna2Panel8.Controls.Add(this.guna2PictureBox24);
-            this.guna2Panel8.Controls.Add(this.label17);
-            this.guna2Panel8.Controls.Add(this.lblThongTinPhienBan);
-            this.guna2Panel8.Controls.Add(this.label18);
             this.guna2Transition1.SetDecoration(this.guna2Panel8, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel8.FillColor = System.Drawing.Color.White;
             this.guna2Panel8.Location = new System.Drawing.Point(452, 158);
@@ -1073,22 +1072,11 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this.label17, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label17.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label17.ForeColor = System.Drawing.Color.Gray;
-            this.label17.Location = new System.Drawing.Point(85, 53);
+            this.label17.Location = new System.Drawing.Point(30, 37);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(287, 23);
             this.label17.TabIndex = 38;
             this.label17.Text = "Phát triển bởi SHTeam Company";
-            // 
-            // lblThongTinPhienBan
-            // 
-            this.guna2Transition1.SetDecoration(this.lblThongTinPhienBan, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblThongTinPhienBan.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblThongTinPhienBan.ForeColor = System.Drawing.Color.Gray;
-            this.lblThongTinPhienBan.Location = new System.Drawing.Point(85, 33);
-            this.lblThongTinPhienBan.Name = "lblThongTinPhienBan";
-            this.lblThongTinPhienBan.Size = new System.Drawing.Size(287, 20);
-            this.lblThongTinPhienBan.TabIndex = 38;
-            this.lblThongTinPhienBan.Text = "Phiên bản 1.0.0 BETA";
             // 
             // label18
             // 
@@ -1096,7 +1084,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this.label18, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.label18.ForeColor = System.Drawing.Color.DimGray;
-            this.label18.Location = new System.Drawing.Point(85, 12);
+            this.label18.Location = new System.Drawing.Point(30, 12);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(155, 21);
             this.label18.TabIndex = 38;
@@ -1177,6 +1165,17 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.radioButton1.Text = "radioButton1";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // panelThongTinUngDung
+            // 
+            this.panelThongTinUngDung.Controls.Add(this.label17);
+            this.panelThongTinUngDung.Controls.Add(this.label18);
+            this.guna2Transition1.SetDecoration(this.panelThongTinUngDung, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.panelThongTinUngDung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelThongTinUngDung.Location = new System.Drawing.Point(58, 0);
+            this.panelThongTinUngDung.Name = "panelThongTinUngDung";
+            this.panelThongTinUngDung.Size = new System.Drawing.Size(334, 86);
+            this.panelThongTinUngDung.TabIndex = 42;
+            // 
             // UC_CaiDat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1240,10 +1239,11 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
             this.guna2Panel8.ResumeLayout(false);
-            this.guna2Panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox24)).EndInit();
+            this.panelThongTinUngDung.ResumeLayout(false);
+            this.panelThongTinUngDung.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1296,7 +1296,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox22;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox23;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox24;
-        private System.Windows.Forms.Label lblThongTinPhienBan;
         private System.Windows.Forms.Label label18;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox7;
@@ -1322,5 +1321,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         private Bunifu.UI.WinForms.BunifuRadioButton rdChamHon;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Panel panelThongTinUngDung;
     }
 }
