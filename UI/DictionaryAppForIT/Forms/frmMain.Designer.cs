@@ -31,7 +31,7 @@ namespace DictionaryAppForIT.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.btnYeuThich = new Guna.UI2.WinForms.Guna2Button();
@@ -50,11 +50,12 @@ namespace DictionaryAppForIT.Forms
             this.btnQuanLyTK = new Guna.UI2.WinForms.Guna2Button();
             this.btnThongBao = new Guna.UI2.WinForms.Guna2Button();
             this.btnPhanHoi = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThemTu = new Guna.UI2.WinForms.Guna2Button();
             this.flpTabHome = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTraTu = new Guna.UI2.WinForms.Guna2Button();
             this.btnDichVB = new Guna.UI2.WinForms.Guna2Button();
             this.btnTVChuyenNganh = new Guna.UI2.WinForms.Guna2Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnMaximum = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
@@ -64,7 +65,6 @@ namespace DictionaryAppForIT.Forms
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl4 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
-            this.btnThemTu = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -355,7 +355,7 @@ namespace DictionaryAppForIT.Forms
             // 
             this.pnContent.Controls.Add(this.flpTabTaiKhoan);
             this.pnContent.Controls.Add(this.flpTabHome);
-            this.pnContent.Controls.Add(this.button2);
+            this.pnContent.Controls.Add(this.btnMaximum);
             this.pnContent.Controls.Add(this.button1);
             this.pnContent.Controls.Add(this.btnExit);
             this.pnContent.Controls.Add(this.btnMinimize);
@@ -458,6 +458,31 @@ namespace DictionaryAppForIT.Forms
             this.btnPhanHoi.CheckedChanged += new System.EventHandler(this.btnTab_CheckedChanged);
             this.btnPhanHoi.Click += new System.EventHandler(this.btnPhanHoi_Click);
             // 
+            // btnThemTu
+            // 
+            this.btnThemTu.Animated = true;
+            this.btnThemTu.BackColor = System.Drawing.Color.Transparent;
+            this.btnThemTu.BorderRadius = 16;
+            this.btnThemTu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnThemTu.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnThemTu.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnThemTu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnThemTu, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnThemTu.FillColor = System.Drawing.Color.Transparent;
+            this.btnThemTu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemTu.ForeColor = System.Drawing.Color.White;
+            this.btnThemTu.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnThemTu.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnThemTu.Location = new System.Drawing.Point(381, 3);
+            this.btnThemTu.Name = "btnThemTu";
+            this.btnThemTu.PressedDepth = 0;
+            this.btnThemTu.Size = new System.Drawing.Size(104, 53);
+            this.btnThemTu.TabIndex = 34;
+            this.btnThemTu.Text = "Thêm từ";
+            this.btnThemTu.TextOffset = new System.Drawing.Point(0, -10);
+            this.btnThemTu.UseTransparentBackground = true;
+            this.btnThemTu.Click += new System.EventHandler(this.btnThemTu_Click);
+            // 
             // flpTabHome
             // 
             this.flpTabHome.Controls.Add(this.btnTraTu);
@@ -548,21 +573,22 @@ namespace DictionaryAppForIT.Forms
             this.btnTVChuyenNganh.CheckedChanged += new System.EventHandler(this.btnTab_CheckedChanged);
             this.btnTVChuyenNganh.Click += new System.EventHandler(this.btnTVChuyenNganh_Click);
             // 
-            // button2
+            // btnMaximum
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.button2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(809, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 30);
-            this.button2.TabIndex = 32;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnMaximum.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximum.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnMaximum, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnMaximum.FlatAppearance.BorderSize = 0;
+            this.btnMaximum.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMaximum.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMaximum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximum.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximum.Image")));
+            this.btnMaximum.Location = new System.Drawing.Point(809, 7);
+            this.btnMaximum.Name = "btnMaximum";
+            this.btnMaximum.Size = new System.Drawing.Size(30, 30);
+            this.btnMaximum.TabIndex = 32;
+            this.btnMaximum.UseVisualStyleBackColor = false;
+            this.btnMaximum.Click += new System.EventHandler(this.btnMaximum_Click);
             // 
             // button1
             // 
@@ -647,47 +673,22 @@ namespace DictionaryAppForIT.Forms
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.VertSlide;
             this.guna2Transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation1;
-            // 
-            // btnThemTu
-            // 
-            this.btnThemTu.Animated = true;
-            this.btnThemTu.BackColor = System.Drawing.Color.Transparent;
-            this.btnThemTu.BorderRadius = 16;
-            this.btnThemTu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnThemTu.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnThemTu.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnThemTu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.btnThemTu, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnThemTu.FillColor = System.Drawing.Color.Transparent;
-            this.btnThemTu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemTu.ForeColor = System.Drawing.Color.White;
-            this.btnThemTu.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnThemTu.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnThemTu.Location = new System.Drawing.Point(381, 3);
-            this.btnThemTu.Name = "btnThemTu";
-            this.btnThemTu.PressedDepth = 0;
-            this.btnThemTu.Size = new System.Drawing.Size(104, 53);
-            this.btnThemTu.TabIndex = 34;
-            this.btnThemTu.Text = "Thêm từ";
-            this.btnThemTu.TextOffset = new System.Drawing.Point(0, -10);
-            this.btnThemTu.UseTransparentBackground = true;
-            this.btnThemTu.Click += new System.EventHandler(this.btnThemTu_Click);
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation2;
             // 
             // frmMain
             // 
@@ -732,7 +733,7 @@ namespace DictionaryAppForIT.Forms
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnMinimize;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnMaximum;
         private System.Windows.Forms.Button button1;
         private Guna.UI2.WinForms.Guna2Button btnTraTu;
         private Guna.UI2.WinForms.Guna2Button btnTVChuyenNganh;

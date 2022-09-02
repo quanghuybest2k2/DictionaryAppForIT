@@ -144,6 +144,7 @@ namespace DictionaryAppForIT.Forms
         {
             HideUC(ucRecent);
         }
+
         #endregion
 
 
@@ -278,7 +279,7 @@ namespace DictionaryAppForIT.Forms
 
         private void btnMinimize_Click(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -298,6 +299,11 @@ namespace DictionaryAppForIT.Forms
                 frmLogin.Show();
             }
 
+        }
+
+        private void btnMaximum_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

@@ -2,7 +2,6 @@
 go
 use EnglishDictionary
 go
-
 ----------------------------------------- Tạo bảng
 create table ChuyenNganh
 (
@@ -114,6 +113,7 @@ select * from TuLoai
 go
 -------- Từ
 create proc ThemTu
+	@idTu int out,
 	@TenTu VARCHAR(100),
 	@PhienAm NVARCHAR(100),
 	@ChuyenNganh INT,
@@ -124,7 +124,8 @@ as
 		PRINT N'Đã có Từ Loại này trong CSDL'
 	ELSE
 		BEGIN
-			INSERT INTO Tu values (@TenTu, @PhienAm, @ChuyenNganh, @DongNghia, @TraiNghia)
+			INSERT INTO Tu values (@TenTu, @PhienAm, @ChuyenNganh, @DongNghia, @TraiNghia) set @idTu = SCOPE_IDENTITY()
+			return @idTu
 		END
 go
 -- drop proc ThemTu
@@ -184,6 +185,18 @@ as
 go
 exec HienThiThongTin 'Constant'
 go
+-- them tu vung cho moi tai khoan
+
+--			 TenTu		,PhienAm	  ,CN ,ĐN	, TraiNghia
+EXEC ThemTu 'Test', N'/´test/', 2, 'dong nghia', 'trai nghia'
+--			  IDTu,IDTuLoai,	Nghia	,		MoTa		,		ViDu
+EXEC ThemNghia  5,   2, N'kiểm tra', N'kiểm tra cái gì đó', 'The test is the best.'
+----
+go
+--create proc ThemTuVung
+	
+--as
+go
 select * from tu
 select * from TuLoai
 select * from Nghia
@@ -235,22 +248,6 @@ where t.ChuyenNganh = cn.ID and n.IDTu = t.ID and tl.ID = n.IDTuLoai and  t.TenT
 group by t.ID,t.TenTu, tl.TenLoai, PhienAm, TenChuyenNganh, n.Nghia, n.MoTa, n.ViDu, DongNghia, TraiNghia
 go
 EXEC TimTheoChuyenNganh 'variable', 2
------- Lay Tất cả mọi thứ hiển thị trên giao diện
---go
---create proc HienThiThongTin
---as
---	select w.ID, TenTu, PhienAm, wt.TenTuLoai, n.Nghia , MoTa, ViDu, DongNghia, TraiNghia, m.TenChuyenNganh 
---	from Tu w, TuLoai wt, ChuyenNganh m, Nghia n 
---	where wt.ID = w.TuLoai and m.ID = w.IDChuyenNganh
---go
---exec HienThiThongTin
---go
---create proc TimTheoId
---@ID INT
---as
---	select w.ID, TenTu, PhienAm, wt.TenTuLoai, Nghia, MoTa, ViDu, DongNghia, TraiNghia, m.TenChuyenNganh from Tu w, TuLoai wt, ChuyenNganh m where wt.ID = w.TuLoai and m.ID = w.chuyennganh and w.ID = @ID
---go
---exec TimTheoId 3
 go
 create proc KiemTraDangNhap
 @tendangnhap varchar(100),
@@ -295,24 +292,6 @@ select * from TaiKhoan
 go
 --check email có tồn tại hay không
 select * from TaiKhoan where Email = 'quanghuybest@gmail.com'
---create proc ThemNghia
---    @IDTu int,
---	@nghia nvarchar(200)
---as
---		IF EXISTS (	SELECT * FROM Nghia WHERE Nghia = @nghia and IDTu = @IDTu)
---			PRINT N'Đã có Nghĩa này trong CSDL'
---		ELSE
---			BEGIN
---				INSERT INTO Nghia values (@IDTu, @nghia)
---			END
---go
-
---exec ThemNghia 1, N'Biến'
---exec ThemNghia 2, N'Hằng'
---exec ThemNghia 1, N'Thành phần'
---exec ThemNghia 1, N'Tường lửa'
---select * from Tu
---select * from Nghia
 
 go
 select * from TuLoai
@@ -323,14 +302,7 @@ select * from TaiKhoan
 go
 -- Xóa tài khoản
 Delete from TaiKhoan where ID = 9
----- Tìm từ
-----create proc TimTu
-----@tukhoa varchar(100)
-----as
-----select w.ID, TenTu, PhienAm, wt.TenTuLoai, n.Nghia , MoTa, ViDu, DongNghia, TraiNghia, m.TenChuyenNganh from Tu w, TuLoai wt, ChuyenNganh m, Nghia n where wt.ID = w.TuLoai and m.ID = w.chuyennganh and n.ID = w.Nghia and TenTu like @tukhoa --'C%'
-----go
-----exec TimTu 'f%'
--- Tìm từ theo chuyên ngành
+-- lay theo chuyen nganh
 SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and TenTu like 'c%' and ChuyenNganh.ID = 2
 EXEC LayTheoChuyenNganh 2
 go
