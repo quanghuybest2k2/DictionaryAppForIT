@@ -617,9 +617,11 @@ namespace DictionaryAppForIT.UserControls
             // flpMeaning
             // 
             this.flpMeaning.AutoScroll = true;
+            this.flpMeaning.AutoSize = true;
+            this.flpMeaning.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flpMeaning.Location = new System.Drawing.Point(12, 76);
             this.flpMeaning.Name = "flpMeaning";
-            this.flpMeaning.Size = new System.Drawing.Size(560, 344);
+            this.flpMeaning.Size = new System.Drawing.Size(0, 0);
             this.flpMeaning.TabIndex = 23;
             this.bunifuToolTip1.SetToolTip(this.flpMeaning, "");
             this.bunifuToolTip1.SetToolTipIcon(this.flpMeaning, null);

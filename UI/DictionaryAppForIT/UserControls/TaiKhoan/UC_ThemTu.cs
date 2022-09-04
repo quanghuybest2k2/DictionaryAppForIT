@@ -98,8 +98,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 if (soDongThemTu > 0 && soDongThemNghia > 0)
                 {
                     RJMessageBox.Show("Thêm từ vựng thành công.");
-                    //frmMain frmMain = new frmMain();
-                    //frmMain.Load += new EventHandler(frmMain_Load);
                 }
                 else
                 {
@@ -111,12 +109,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 RJMessageBox.Show(ex.Message);
             }
         }
-
-        //private void frmMain_Load(object sender, EventArgs e)
-        //{
-
-        //}
-
         private void cbbChuyenNganh_SelectedIndexChanged(object sender, EventArgs e)
         {
 
