@@ -16,9 +16,11 @@ namespace DictionaryAppForIT.UserControls.CaiDat
 {
     public partial class UC_CaiDat : UserControl
     {
+        // tốc độ đọc nhanh chậm
         public int tocDo = 0;
         public bool thayDoiTocDo = false;
-        public bool tuDongCapNhat;
+        // tự động phát âm
+        public bool tuDongPhatAm = false;
         private string phienBan = "1.0.0";
         public UC_CaiDat()
         {
@@ -45,27 +47,38 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         }
 
         #region cài đặt chung
-        private void btnCheDoBanDem_Click(object sender, EventArgs e)
+
+        // bật chế độ ban đêm
+        private void btnCheDoBanDem_CheckedChanged(object sender, EventArgs e)
         {
-            // bật chế độ ban đêm
+
         }
-        private void btnTuDongCapNhat_Click(object sender, EventArgs e)
+        // tự động cập nhật
+        private void btnTuDongCapNhat_CheckedChanged(object sender, EventArgs e)
         {
-            // tự động cập nhật
+
         }
-        private void btnTuDongXoaLS_Click(object sender, EventArgs e)
+        // tự động xóa lịch sử sau 1 khoảng thời gian
+        private void btnTuDongXoaLS_CheckedChanged(object sender, EventArgs e)
         {
-            // tự động xóa lịch sử sau 1 khoảng thời gian
+
         }
         #endregion
 
         #region Âm thanh
-        private void btnTuDongPhatAm_Click(object sender, EventArgs e)
+
+        // tự động phát âm
+        private void btnTuDongPhatAm_CheckedChanged(object sender, EventArgs e)
         {
-            // tự động phát âm
-
+            if (btnTuDongPhatAm.Checked)
+            {
+                tuDongPhatAm = true;
+            }
+            else
+            {
+                tuDongPhatAm = false;
+            }
         }
-
         private void rdChamHon_Click(object sender, EventArgs e)
         {
             tocDo = -3;
@@ -85,13 +98,16 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         #endregion
 
         #region Thông báo
-        private void btnThongBao_Click(object sender, EventArgs e)
+
+        // thông báo
+        private void btnThongBao_CheckedChanged(object sender, EventArgs e)
         {
-            // thông báo
+
         }
-        private void btnNhacHocTuVung_Click(object sender, EventArgs e)
+        // nhắc học từ vựng
+        private void btnNhacHocTuVung_CheckedChanged(object sender, EventArgs e)
         {
-            // nhắc học từ vựng
+
         }
         #endregion
 
@@ -99,6 +115,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         {
 
         }
-
+        
     }
 }

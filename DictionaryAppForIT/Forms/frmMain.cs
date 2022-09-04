@@ -270,6 +270,8 @@ namespace DictionaryAppForIT.Forms
         private void btnTraTu_Click(object sender, EventArgs e)
         {
             KiemTraThayDoiTocDoTraTu();
+            // Nhấn tự động phát âm
+            ucTraTu.tocDoPhatAm = ucCaiDat.tuDongPhatAm;
             ShowUC(ucTraTu);
         }
         //--Thay đổi tốc độ UC_TraTu
@@ -346,8 +348,9 @@ namespace DictionaryAppForIT.Forms
         #region Các nút chính
         private void btnExit_Click(object sender, EventArgs e)
         {
-            var frm = new frmMSG_Exit();
-            frm.Show();
+            //var frm = new frmMSG_Exit();
+            //frm.Show();
+            Application.Exit();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)

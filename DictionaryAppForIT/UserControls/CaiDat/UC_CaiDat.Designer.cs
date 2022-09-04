@@ -30,7 +30,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation4 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation3 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CaiDat));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label4 = new System.Windows.Forms.Label();
@@ -174,28 +174,28 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnCheDoBanDem.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnCheDoBanDem.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.btnCheDoBanDem.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.btnCheDoBanDem.Click += new System.EventHandler(this.btnCheDoBanDem_Click);
+            this.btnCheDoBanDem.CheckedChanged += new System.EventHandler(this.btnCheDoBanDem_CheckedChanged);
             // 
             // guna2Transition1
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Scale;
             this.guna2Transition1.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation4;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation3;
             // 
             // guna2Panel1
             // 
@@ -386,7 +386,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnTuDongCapNhat.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnTuDongCapNhat.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.btnTuDongCapNhat.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.btnTuDongCapNhat.Click += new System.EventHandler(this.btnTuDongCapNhat_Click);
+            this.btnTuDongCapNhat.CheckedChanged += new System.EventHandler(this.btnTuDongCapNhat_CheckedChanged);
             // 
             // guna2Panel7
             // 
@@ -491,7 +491,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnTuDongPhatAm.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnTuDongPhatAm.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.btnTuDongPhatAm.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.btnTuDongPhatAm.Click += new System.EventHandler(this.btnTuDongPhatAm_Click);
+            this.btnTuDongPhatAm.CheckedChanged += new System.EventHandler(this.btnTuDongPhatAm_CheckedChanged);
             // 
             // guna2Panel5
             // 
@@ -762,7 +762,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnThongBao.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnThongBao.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.btnThongBao.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.btnThongBao.Click += new System.EventHandler(this.btnThongBao_Click);
+            this.btnThongBao.CheckedChanged += new System.EventHandler(this.btnThongBao_CheckedChanged);
             // 
             // guna2Panel2
             // 
@@ -883,7 +883,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnNhacHocTuVung.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnNhacHocTuVung.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.btnNhacHocTuVung.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.btnNhacHocTuVung.Click += new System.EventHandler(this.btnNhacHocTuVung_Click);
+            this.btnNhacHocTuVung.CheckedChanged += new System.EventHandler(this.btnNhacHocTuVung_CheckedChanged);
             // 
             // guna2Panel3
             // 
@@ -1004,7 +1004,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnTuDongXoaLS.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnTuDongXoaLS.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.btnTuDongXoaLS.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.btnTuDongXoaLS.Click += new System.EventHandler(this.btnTuDongXoaLS_Click);
+            this.btnTuDongXoaLS.CheckedChanged += new System.EventHandler(this.btnTuDongXoaLS_CheckedChanged);
             // 
             // guna2Panel8
             // 

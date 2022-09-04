@@ -22,8 +22,11 @@ namespace DictionaryAppForIT.UserControls
 {
     public partial class UC_TraTu : UserControl
     {
+        // toc do phat am
         public bool thayDoiTocDo = false;
         public int tocDo = 0;
+        // tu dong phat am
+        public bool tocDoPhatAm = false;
         string TuHienTai = ""; //-------------------------------------- Tạo thêm cái này vì nếu người ta gõ 1 từ xong rồi enter nhiều lần thì nó add lặp lại vô cái _listTu
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         XemTatCaNghia XemNghia;
@@ -36,16 +39,10 @@ namespace DictionaryAppForIT.UserControls
             GoiYTimKiem();
             XemNghia = new XemTatCaNghia();
 
-            //Tự động chỉnh lại width của label tên Đăng nhập
-            //lblTenDangNhap.Text = "Huy best 2k2 (fix xong bug)";
-            // Tối thiểu 7 kí tự
-            // Tối đa 15 kí tự
-            //pnXinChao.Width = pnXinChao.MinimumSize.Width + lblTenDangNhap.Width;
-
             //Tự động chỉnh lại width của label từ vựng
             txtTuVung.Text = "Variable (fix xong bug)";
             var textSize = getTextSize(txtTuVung.Text);
-            txtTuVung.Width = Convert.ToInt32(textSize) + 10;      
+            txtTuVung.Width = Convert.ToInt32(textSize) + 10;
         }
 
         private float getTextSize(string text)
@@ -59,7 +56,10 @@ namespace DictionaryAppForIT.UserControls
 
         private void UC_TraTu_Load(object sender, EventArgs e)
         {
+            //Tự động chỉnh lại width của label tên Đăng nhập
             lblTenDangNhap.Text = Class_TaiKhoan.displayUsername; // Hello Sang Đỗ
+            // Tối thiểu 7 kí tự
+            // Tối đa 15 kí tự
             pnXinChao.Width = pnXinChao.MinimumSize.Width + lblTenDangNhap.Width;
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -110,6 +110,11 @@ namespace DictionaryAppForIT.UserControls
                 flpMeaning.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
                 HienThiThongTin();
                 TuHienTai = txtTimKiemTu.Text;//--------------------------------------
+
+                if (tocDoPhatAm == true)
+                {
+                    btnUS.PerformClick(); // tự động phát âm sau khi tra từ
+                }
             }
         }
         private void HienThiThongTin()
@@ -132,6 +137,16 @@ namespace DictionaryAppForIT.UserControls
                     txtDongNghia.Visible = false;
                 }
                 txtTraiNghia.Text = item.TraiNghia;
+                if (txtTraiNghia.Text != "")
+                {
+                    pbTraiNghiaError.Visible = false;
+                    txtTraiNghia.Visible = true;
+                }
+                else
+                {
+                    pbTraiNghiaError.Visible = true;
+                    txtTraiNghia.Visible = false;
+                }
                 ucNghia = new UC_Nghia();
 
                 ucNghia.LoaiTu = item.TenLoai;
@@ -197,6 +212,16 @@ namespace DictionaryAppForIT.UserControls
                     txtDongNghia.Visible = false;
                 }
                 txtTraiNghia.Text = item.TraiNghia;
+                if (txtTraiNghia.Text != "")
+                {
+                    pbTraiNghiaError.Visible = false;
+                    txtTraiNghia.Visible = true;
+                }
+                else
+                {
+                    pbTraiNghiaError.Visible = true;
+                    txtTraiNghia.Visible = false;
+                }
                 ucNghia = new UC_Nghia();
 
                 ucNghia.LoaiTu = item.TenLoai;

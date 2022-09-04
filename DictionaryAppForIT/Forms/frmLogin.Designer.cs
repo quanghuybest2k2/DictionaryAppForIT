@@ -286,6 +286,7 @@ namespace DictionaryAppForIT
             this.txtMatKhauDN.TextPlaceholder = "Nhập mật khẩu";
             this.txtMatKhauDN.UseSystemPasswordChar = false;
             this.txtMatKhauDN.WordWrap = true;
+            this.txtMatKhauDN.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMatKhauDN_KeyDown);
             // 
             // label1
             // 

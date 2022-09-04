@@ -85,7 +85,6 @@ namespace DictionaryAppForIT
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-
             try
             {
                 frmMain frmMain = new frmMain();
@@ -107,7 +106,7 @@ namespace DictionaryAppForIT
                 }
                 else if (code == 2)
                 {
-                   RJMessageBox.Show("Tài khoản hoặc mật khẩu không đúng !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RJMessageBox.Show("Tài khoản hoặc mật khẩu không đúng !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtMatKhauDN.Text = "";
                     txtTaiKhoanDN.Text = "";
                     txtTaiKhoanDN.Focus();
@@ -133,6 +132,14 @@ namespace DictionaryAppForIT
             this.Hide();
             frmSignUp frmSign = new frmSignUp();
             frmSign.Show();
+        }
+
+        private void txtMatKhauDN_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnDangNhap.PerformClick();
+            }
         }
     }
 }
