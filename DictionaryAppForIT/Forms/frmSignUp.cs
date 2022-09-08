@@ -102,8 +102,8 @@ namespace DictionaryAppForIT.Forms
             {
                 try
                 {
-                    string email = txtEmailDK.Text;
-                    string tenTaiKhoan = txtTenDangNhapDK.Text;
+                    string email = txtEmailDK.Text.Trim();
+                    string tenTaiKhoan = txtTenDangNhapDK.Text.Trim();
                     string matkhau = txtMatKhauDK.Text;
                     string nhaplaiMK = txtNhapLaiMatKhauDK.Text;
                     if (!checkEmail(email)) { RJMessageBox.Show("Emai không đúng định dạng!!!"); return; }
@@ -113,12 +113,13 @@ namespace DictionaryAppForIT.Forms
                     if (rdNam.Checked) { gioiTinh = "1"; }
                     if (rdNu.Checked) { gioiTinh = "2"; }
                     if (rdKhac.Checked) { gioiTinh = "3"; }
-                    //object numEmail = DataProvider.Instance.ExecuteScalar($"select count(*) from TaiKhoan where Email = '@email'", new object[] { email });
-                    //if (Convert.ToInt32(numEmail) > 0) { RJMessageBox.Show("Email đã tồn tại! Vui lòng chọn email khác."); return; }
+                    //string queryEmail = $"select Email from TaiKhoan where Email = '{email}'";
+                    //int numEmail = DataProvider.Instance.ExecuteNonQuery(queryEmail);
+                    //if (numEmail > 0) { RJMessageBox.Show("Email đã tồn tại! Vui lòng chọn email khác."); return; }
 
                     try
                     {
-                        string query = "EXEC DangKyTaiKhoan @tendangnhap , @matkhau , @email , @gioitinh , '' ";
+                        string query = "EXEC DangKyTaiKhoan @tendangnhap , @matkhau , @email , @gioitinh";
 
                         int num = DataProvider.Instance.ExecuteNonQuery(query, new object[] { txtTenDangNhapDK.Text, txtMatKhauDK.Text, txtEmailDK.Text, gioiTinh });
                         if (num > 0)
@@ -129,9 +130,9 @@ namespace DictionaryAppForIT.Forms
                             frmLogin.Show();
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        RJMessageBox.Show("Trùng email");
+                        RJMessageBox.Show(ex.Message);
                     }
 
                 }

@@ -46,7 +46,6 @@ namespace DictionaryAppForIT.DTO
                 }
                 Conn.Close();
                 Conn.Dispose();
-
             }
             catch (Exception ex)
             {

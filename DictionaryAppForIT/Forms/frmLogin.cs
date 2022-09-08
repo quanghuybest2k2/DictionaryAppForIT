@@ -16,11 +16,13 @@ using System.Data.SqlClient;
 using System.Xml;
 using System.IO;
 using DictionaryAppForIT.Class;
+using System.Configuration;
 
 namespace DictionaryAppForIT
 {
     public partial class frmLogin : Form
     {
+        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         public frmLogin()
         {
             InitializeComponent();
@@ -92,17 +94,10 @@ namespace DictionaryAppForIT
                 object kq = DataProvider.Instance.ExecuteScalar(query, new object[] { txtTaiKhoanDN.Text, txtMatKhauDN.Text });
                 Class_TaiKhoan.displayUsername = txtTaiKhoanDN.Text;
                 int code = Convert.ToInt32(kq);
-                if (code == 0)
+                if (code == 1)
                 {
                     this.Hide();
-                    frmMain.Show();
-                    //MessageBox.Show("Người dùng " + TenTaiKhoan + " đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else if (code == 1)
-                {
-                    this.Hide();
-                    frmMain.Show(); // show frmAdmin
-                    //MessageBox.Show("Admin " + TenTaiKhoan + " đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmMain.Show(); // show form
                 }
                 else if (code == 2)
                 {
@@ -118,7 +113,7 @@ namespace DictionaryAppForIT
                     txtTaiKhoanDN.Text = "";
                     txtTaiKhoanDN.Focus();
                 }
-
+                getIDNguoiDung();
             }
             catch (Exception ex)
             {
@@ -126,7 +121,26 @@ namespace DictionaryAppForIT
             }
             LuuMatKhau();
         }
-
+        private void getIDNguoiDung()
+        {
+            try
+            {
+                SqlConnection Conn = new SqlConnection(connString);
+                SqlCommand cmd = new SqlCommand($"SELECT ID FROM TaiKhoan WHERE TenDangNhap = '{Class_TaiKhoan.displayUsername}'", Conn);
+                Conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Class_TaiKhoan.IdTaiKhoan = rdr["ID"].ToString();
+                }
+                Conn.Close();
+                Conn.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void lblDangKyNgay_Click(object sender, EventArgs e)
         {
             this.Hide();

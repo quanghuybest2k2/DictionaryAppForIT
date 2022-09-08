@@ -44,9 +44,8 @@ create table TaiKhoan
 	ID INT IDENTITY(1,1) PRIMARY KEY,
 	TenDangNhap varchar(100) NOT NULL UNIQUE,
 	MatKhau varchar(100) NOT NULL,
-	Email varchar(100) NOT NULL UNIQUE,
-	GioiTinh INT NOT NULL,
-	Quyen INT NOT NULL DEFAULT 0
+	Email varchar(100) NOT NULL,
+	GioiTinh INT NOT NULL
 )
 go
 create table LichSuDich
@@ -254,45 +253,54 @@ create proc KiemTraDangNhap
 @matkhau varchar(100)
 as
 begin
-    if exists (select * from TaiKhoan where TenDangNhap = @tendangnhap and MatKhau = @matkhau and [Quyen] = 1)
-        select 1 as code
-    else if exists (select * from TaiKhoan where TenDangNhap = @tendangnhap and MatKhau = @matkhau and [Quyen] = 0)
-        select 0 as code
+    if exists (select * from TaiKhoan where TenDangNhap = @tendangnhap and MatKhau = @matkhau)
+        select 1 as code -- đúng tài khoản và mật khẩu
     else if exists(select * from TaiKhoan where TenDangNhap = @tendangnhap and MatKhau != @matkhau) 
-        select 2 as code
-    else select 3 as code
+        select 2 as code -- không khớp tài khoản và mật khẩu
+    else select 3 as code -- tài khoản đã tồn tại
 end
 go
+exec KiemTraDangNhap 'quanghuybest2k2', '123456'
 select * from TaiKhoan
+go
+-- lấy id của tài khoản hiện tại
+SELECT ID FROM TaiKhoan WHERE TenDangNhap = 'quanghuybest2k2'
 go
 -------- Tài khoản				
 create proc DangKyTaiKhoan
 	@TenDangNhap varchar(100),
 	@MatKhau varchar(100),
 	@Email varchar(100),
-	@GioiTinh INT,
-	@Quyen INT
+	@GioiTinh INT
 as
 	IF EXISTS (	SELECT * FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap or Email = @Email)
 		PRINT N'Tài khoản đã tồn tại trong CSDL'
 	ELSE
 		BEGIN
-			INSERT INTO TaiKhoan values (@TenDangNhap, @MatKhau, @Email, @GioiTinh, @Quyen)
+			INSERT INTO TaiKhoan values (@TenDangNhap, @MatKhau, @Email, @GioiTinh)
 		END
 go
 --  1: Nam, 2: Nữ, 3: Khác
 -- Quyen = 1(admin)
 --- Quyen = null thì mặc định bằng 0 (user)
-EXEC DangKyTaiKhoan 'quanghuybest2k2', '123456', 'quanghuybest@gmail.com',1 , 1
-EXEC DangKyTaiKhoan 'sangvlog', 'sangsos', 'sangvlog@gmail.com', 1,''
-EXEC DangKyTaiKhoan 'bede', 'bede123', 'bede@gmail.com', 3, ''
-EXEC DangKyTaiKhoan 'a','654321','test@gmail.com', 2,''
+EXEC DangKyTaiKhoan 'quanghuybest2k2', '123456', 'quanghuybest@gmail.com',1
+EXEC DangKyTaiKhoan 'sangvlog', 'sangsos', 'sangvlog@gmail.com', 1
+EXEC DangKyTaiKhoan 'bede', 'bede123', 'bede@gmail.com', 3
+EXEC DangKyTaiKhoan 'a','654321','test@gmail.com', 2
 go
 select * from TaiKhoan
 go
 --check email có tồn tại hay không
 select * from TaiKhoan where Email = 'quanghuybest@gmail.com'
-
+go
+-- Hiển thị thông tin tài khoản trong phần quản lý tài khoản
+create proc HienThiThongTinTaiKhoan
+@Id int
+as
+begin
+	select * from TaiKhoan where ID =@Id
+end
+EXEC HienThiThongTinTaiKhoan 1
 go
 select * from TuLoai
 select * from ChuyenNganh

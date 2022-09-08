@@ -8,7 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-
+using DictionaryAppForIT.Properties;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -49,9 +49,21 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         #region cài đặt chung
 
         // bật chế độ ban đêm
+        
         private void btnCheDoBanDem_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (btnCheDoBanDem.Checked)
+            {
+                // Giao diện tối
+                this.BackColor = Color.FromArgb(32, 33, 36);
+                this.ForeColor = Color.White;
+            }
+            else
+            {
+                // Giao diện sáng
+                this.BackColor = Color.White;
+                this.ForeColor = Color.DimGray;
+            }
         }
         // tự động cập nhật
         private void btnTuDongCapNhat_CheckedChanged(object sender, EventArgs e)
@@ -115,6 +127,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         {
 
         }
-        
+
     }
 }

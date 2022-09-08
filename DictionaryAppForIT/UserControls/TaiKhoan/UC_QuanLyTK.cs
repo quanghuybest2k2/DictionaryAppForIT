@@ -12,11 +12,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace DictionaryAppForIT.UserControls.TaiKhoan
 {
     public partial class UC_QuanLyTK : UserControl
     {
+        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         private int soNgayTao = 365;
         private int soMucYeuThich = 9;
         private int tgSuDung = 2;
@@ -142,6 +145,48 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             ThoiGianTaoTaiKhoan();
             SoMucYeuThich();
             ThoiGianSuDung();
+            HienThiThongTinTaiKhoan(); // Hiển thị thông tin tài khoản
+        }
+        private void HienThiThongTinTaiKhoan()
+        {
+            try
+            {
+                SqlConnection Conn = new SqlConnection(connString);
+                SqlCommand cmd = new SqlCommand($"EXEC HienThiThongTinTaiKhoan {Class_TaiKhoan.IdTaiKhoan}", Conn);
+                Conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    txtUsername.Text = rdr["TenDangNhap"].ToString();
+                    txtPassword.Text = rdr["MatKhau"].ToString();
+                    txtEmail.Text = rdr["Email"].ToString();
+                    object gioiTinh = rdr["GioiTinh"].ToString();
+                    if (gioiTinh.ToString() == "1")
+                    {
+                        rdNam.Checked = true;
+                        rdNu.Checked = false;
+                        rdKhac.Checked = false;
+                    }
+                    if (gioiTinh.ToString() == "2")
+                    {
+                        rdNu.Checked = true;
+                        rdNam.Checked = false;
+                        rdKhac.Checked = false;
+                    }
+                    if (gioiTinh.ToString() == "3")
+                    {
+                        rdKhac.Checked = true;
+                        rdNam.Checked = false;
+                        rdNu.Checked = false;
+                    }
+                }
+                Conn.Close();
+                Conn.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

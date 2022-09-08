@@ -11,6 +11,7 @@ namespace DictionaryAppForIT.DTO
     public class Class_TaiKhoan
     {
         public static string displayUsername;
+        public static string IdTaiKhoan;
 
         public Class_TaiKhoan()
         {
