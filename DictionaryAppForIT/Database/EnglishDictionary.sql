@@ -42,7 +42,7 @@ go
 create table TaiKhoan
 (
 	ID INT IDENTITY(1,1) PRIMARY KEY,
-	TenDangNhap varchar(100) NOT NULL UNIQUE,
+	TenDangNhap varchar(100) NOT NULL,
 	MatKhau varchar(100) NOT NULL,
 	Email varchar(100) NOT NULL,
 	GioiTinh INT NOT NULL
@@ -301,6 +301,20 @@ begin
 	select * from TaiKhoan where ID =@Id
 end
 EXEC HienThiThongTinTaiKhoan 1
+go
+-- cập nhật thông tin tài khoản
+create proc CapNhatThongTinTaiKhoan
+@Id INT,
+@TenDangNhap varchar(100),
+@MatKhau varchar(100),
+@GioiTinh INT
+as
+begin
+	UPDATE TaiKhoan
+	SET TenDangNhap = @TenDangNhap, MatKhau = @MatKhau, GioiTinh = @GioiTinh
+	WHERE ID = @Id
+end
+EXEC CapNhatThongTinTaiKhoan 1, 'quanghuybest2k2', '123456', 1
 go
 select * from TuLoai
 select * from ChuyenNganh

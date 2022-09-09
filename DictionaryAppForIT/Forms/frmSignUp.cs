@@ -103,11 +103,11 @@ namespace DictionaryAppForIT.Forms
                 try
                 {
                     string email = txtEmailDK.Text.Trim();
-                    string tenTaiKhoan = txtTenDangNhapDK.Text.Trim();
+                    string tenDangNhap = txtTenDangNhapDK.Text.Trim();
                     string matkhau = txtMatKhauDK.Text;
                     string nhaplaiMK = txtNhapLaiMatKhauDK.Text;
                     if (!checkEmail(email)) { RJMessageBox.Show("Emai không đúng định dạng!!!"); return; }
-                    if (!checkUsername(tenTaiKhoan)) { RJMessageBox.Show("Tên đăng nhập sai format!!!"); return; }
+                    if (!checkUsername(tenDangNhap)) { RJMessageBox.Show("Tên đăng nhập sai format!!!"); return; }
                     if (!checkMatKhau(matkhau)) { RJMessageBox.Show("Mật khẩu sai format!!!"); return; }
                     if (matkhau != nhaplaiMK) { RJMessageBox.Show("Mật khẩu không khớp!!!"); return; }
                     if (rdNam.Checked) { gioiTinh = "1"; }
@@ -121,7 +121,7 @@ namespace DictionaryAppForIT.Forms
                     {
                         string query = "EXEC DangKyTaiKhoan @tendangnhap , @matkhau , @email , @gioitinh";
 
-                        int num = DataProvider.Instance.ExecuteNonQuery(query, new object[] { txtTenDangNhapDK.Text, txtMatKhauDK.Text, txtEmailDK.Text, gioiTinh });
+                        int num = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenDangNhap, matkhau, email, gioiTinh });
                         if (num > 0)
                         {
                             RJMessageBox.Show("Đăng ký thành công.");
@@ -130,7 +130,7 @@ namespace DictionaryAppForIT.Forms
                             frmLogin.Show();
                         }
                     }
-                    catch (Exception ex)
+                    catch (SqlException ex)
                     {
                         RJMessageBox.Show(ex.Message);
                     }
