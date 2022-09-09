@@ -128,26 +128,17 @@ as
 		END
 go
 -- drop proc ThemTu
-
-exec ThemTu 'Variable' , N'/´veə.ri.ə.bəl/', 2, 'Varying', 'Constant'
-exec ThemTu 'Constant', N'/´kɒn.stənt/', 1, 'InConstant', 'Variable'
-exec ThemTu 'Component', N'/kəm´pəʊ.nənt/', 2, 'Element', 'Whole'
-exec ThemTu 'Firewall', N'/´faiəwɔ:l/', 1, '', 'Cyber threat'
+INSERT INTO Tu values ('Variable', N'/´veə.ri.ə.bəl/', 2, 'Varying', 'Constant')
+INSERT INTO Tu values ('Constant', N'/´kɒn.stənt/', 1, 'InConstant', 'Variable')
+INSERT INTO Tu values ('Component', N'/kəm´pəʊ.nənt', 2, 'Element', 'Whole')
+INSERT INTO Tu values ('Firewall', N'/´faiəwɔ:l/', 1, '', 'Cyber threat')
+--exec ThemTu 'Variable' , N'/´veə.ri.ə.bəl/', 2, 'Varying', 'Constant'
+--exec ThemTu 'Constant', N'/´kɒn.stənt/', 1, 'InConstant', 'Variable'
+--exec ThemTu 'Component', N'/kəm´pəʊ.nənt/', 2, 'Element', 'Whole'
+--exec ThemTu 'Firewall', N'/´faiəwɔ:l/', 1, '', 'Cyber threat'
 select * from Tu
 go
 -------- Nghĩa
---drop table Nghia
-create table Nghia
-(
-	ID INT IDENTITY(1,1),
-	IDTu INT references Tu(ID),
-	IDTuLoai INT references TuLoai(ID),
-	Nghia nvarchar(200) not null,
-	MoTa NVARCHAR(1000),
-	ViDu VARCHAR(500),
-	primary key (IDTu, ID, IDTuLoai)
-)
-go
 create proc ThemNghia
 	@IDTu INT,
 	@IDTuLoai INT,
@@ -172,6 +163,7 @@ exec ThemNghia  1, 3, N'Có thể thay đổi', N'Đây là mô tả của Varia
 exec ThemNghia  2, 1, N'Hằng', N'Hằng số là giá trị không đổi xuyên suốt chương trình.', 'Constants can be marked as public, private, protected, internal, protected internal or private protected.'
 exec ThemNghia  3, 1, N'Thành phần', N'Đây là hệ thống của một quá trình, chương trình, tiện ích, hoặc bất kỳ phần nào của hệ điều hành.', 'An example of a component is an ingredient in a recipe.'
 exec ThemNghia  4, 1, N'Tường lửa', N'tường lửa làm màn chắn điều khiển luồng lưu thông giữa các mạng, thường là giữa mạng và Internet, và giữa các mạng con trong công ty.', 'The firewall traces back to an early period in the modern internet era when systems.'
+
 select * from Nghia
 go
 create proc HienThiThongTin
@@ -298,7 +290,7 @@ create proc HienThiThongTinTaiKhoan
 @Id int
 as
 begin
-	select * from TaiKhoan where ID =@Id
+	select * from TaiKhoan where ID = @Id
 end
 EXEC HienThiThongTinTaiKhoan 1
 go
