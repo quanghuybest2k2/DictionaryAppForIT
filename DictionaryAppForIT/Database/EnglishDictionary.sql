@@ -37,7 +37,6 @@ create table Nghia
 	ViDu VARCHAR(500),
 	primary key (IDTu, ID, IDTuLoai)
 )
-select * from  Nghia
 go
 create table TaiKhoan
 (
@@ -61,12 +60,12 @@ insert into LichSuDich values
 (N'firewall', N'Tường lửa.')
 go
 -- xóa bản dịch đã lưu thông qua khóa chính là Tiếng anh
-delete from LichSuDich where TiengAnh = 'Hello'
-go
-SELECT TiengAnh from LichSuDich Where TiengAnh = N'hi'-- or TiengViet =  N'Xin chào.'
+-- delete from LichSuDich where TiengAnh = 'Hello'
+-- go
+-- SELECT TiengAnh from LichSuDich Where TiengAnh = N'hi'-- or TiengViet =  N'Xin chào.'
 -- xóa hết lịch sử
-DELETE FROM LichSuDich
-go
+-- DELETE FROM LichSuDich
+-- go
 select * from LichSuDich
 go
 ----------------------------------------- Thêm dữ liệu
@@ -82,7 +81,6 @@ as
 		END
 go
 -- drop proc ThemChuyenNganh
-
 exec ThemChuyenNganh N'Mạng máy tính'
 exec ThemChuyenNganh N'Kỹ thuật phần mềm'
 exec ThemChuyenNganh N'Khoa học dữ liệu'
@@ -163,7 +161,7 @@ exec ThemNghia  1, 3, N'Có thể thay đổi', N'Đây là mô tả của Varia
 exec ThemNghia  2, 1, N'Hằng', N'Hằng số là giá trị không đổi xuyên suốt chương trình.', 'Constants can be marked as public, private, protected, internal, protected internal or private protected.'
 exec ThemNghia  3, 1, N'Thành phần', N'Đây là hệ thống của một quá trình, chương trình, tiện ích, hoặc bất kỳ phần nào của hệ điều hành.', 'An example of a component is an ingredient in a recipe.'
 exec ThemNghia  4, 1, N'Tường lửa', N'tường lửa làm màn chắn điều khiển luồng lưu thông giữa các mạng, thường là giữa mạng và Internet, và giữa các mạng con trong công ty.', 'The firewall traces back to an early period in the modern internet era when systems.'
-
+go
 select * from Nghia
 go
 create proc HienThiThongTin
@@ -179,22 +177,12 @@ go
 -- them tu vung cho moi tai khoan
 
 --			 TenTu		,PhienAm	  ,CN ,ĐN	, TraiNghia
-EXEC ThemTu 'Test', N'/´test/', 2, 'dong nghia', 'trai nghia'
+-- EXEC ThemTu 'Test', N'/´test/', 2, 'dong nghia', 'trai nghia'
 --			  IDTu,IDTuLoai,	Nghia	,		MoTa		,		ViDu
-EXEC ThemNghia  5,   2, N'kiểm tra', N'kiểm tra cái gì đó', 'The test is the best.'
+-- EXEC ThemNghia  5,   2, N'kiểm tra', N'kiểm tra cái gì đó', 'The test is the best.'
 ----
-go
---create proc ThemTuVung
-	
---as
-go
-select * from tu
-select * from TuLoai
-select * from Nghia
-select * from ChuyenNganh
-go
--------------------- Thủ tục
----
+-- go
+-------------------- Thủ tục ---------------------------
 select * from ChuyenNganh
 select * from TuLoai
 select * from Nghia
@@ -273,8 +261,6 @@ as
 		END
 go
 --  1: Nam, 2: Nữ, 3: Khác
--- Quyen = 1(admin)
---- Quyen = null thì mặc định bằng 0 (user)
 EXEC DangKyTaiKhoan 'quanghuybest2k2', '123456', 'quanghuybest@gmail.com',1
 EXEC DangKyTaiKhoan 'sangvlog', 'sangsos', 'sangvlog@gmail.com', 1
 EXEC DangKyTaiKhoan 'bede', 'bede123', 'bede@gmail.com', 3
@@ -315,7 +301,7 @@ select * from Tu
 select * from TaiKhoan
 go
 -- Xóa tài khoản
-Delete from TaiKhoan where ID = 9
+-- Delete from TaiKhoan where ID = 9
 -- lay theo chuyen nganh
 SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and TenTu like 'c%' and ChuyenNganh.ID = 2
 EXEC LayTheoChuyenNganh 2
