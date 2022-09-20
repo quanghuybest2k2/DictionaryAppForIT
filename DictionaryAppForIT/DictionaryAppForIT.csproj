@@ -330,11 +330,13 @@
     <Compile Include="UserControls\TaiKhoan\UC_QuanLyTK.Designer.cs">
       <DependentUpon>UC_QuanLyTK.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\TaiKhoan\UC_ThemTu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="UserControls\TaiKhoan\UC_ThemTu.cs" />
     <Compile Include="UserControls\TaiKhoan\UC_ThemTu.designer.cs">
       <DependentUpon>UC_ThemTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TaiKhoan\UC_TT_ThemNghia.cs" />
+    <Compile Include="UserControls\TaiKhoan\UC_TT_ThemNghia.Designer.cs">
+      <DependentUpon>UC_TT_ThemNghia.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ThongBao\UC_TB_NoiDung.cs">
       <SubType>UserControl</SubType>
@@ -405,6 +407,7 @@
     <EmbeddedResource Include="Forms\frmThongBao.resx">
       <DependentUpon>frmThongBao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -452,6 +455,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TaiKhoan\UC_ThemTu.resx">
       <DependentUpon>UC_ThemTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TaiKhoan\UC_TT_ThemNghia.resx">
+      <DependentUpon>UC_TT_ThemNghia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ThongBao\UC_TB_NoiDung.resx">
       <DependentUpon>UC_TB_NoiDung.cs</DependentUpon>

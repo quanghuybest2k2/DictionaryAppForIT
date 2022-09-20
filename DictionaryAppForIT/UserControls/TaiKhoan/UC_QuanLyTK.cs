@@ -94,8 +94,8 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 // xóa tài khoản
                 try
                 {
-                    string query = "Delete from TaiKhoan where Email = @email";
-                    int num = DataProvider.Instance.ExecuteNonQuery(query, new object[] { txtEmail.Text });
+                    string query = $"Delete from TaiKhoan where ID = {Class_TaiKhoan.IdTaiKhoan}";
+                    int num = DataProvider.Instance.ExecuteNonQuery(query);
                     if (num > 0)
                     {
                         RJMessageBox.Show("Đã xóa tài khoản vĩnh viễn!");
@@ -185,7 +185,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RJMessageBox.Show(ex.Message);
             }
         }
     }
