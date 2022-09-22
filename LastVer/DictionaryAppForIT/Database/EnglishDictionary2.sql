@@ -93,7 +93,7 @@ go
 -- go
 select * from LichSuDich
 go
-select ID, TiengAnh, PhienAm, TiengViet, NgayHienTai from LichSuTraTu
+select * from LichSuTraTu
 go
 -- delete from LichSuTraTu
 go
@@ -222,7 +222,7 @@ go
 --INSERT INTO LichSuTraTu values ('Variable', N'/´veə.ri.ə.bəl/', N'Biến',  GETDATE())
 --EXEC ThemLSTraTu 6 output, 'Variable', N'/´veə.ri.ə.bəl/', N'Biến',  GETDATE()
 select * from LichSuTraTu
-
+go
 -- them tu vung cho moi tai khoan
 
 --			 TenTu		,PhienAm	  ,CN ,ĐN	, TraiNghia
@@ -371,3 +371,4 @@ select count(TenTu) from Tu
 select * from TaiKhoan
 select count(Email) from TaiKhoan where Email = 'quanghuybest@gmail.com'
 select COUNT(ID) from LichSuTraTu
+select TiengAnh, TiengViet from LichSuDich

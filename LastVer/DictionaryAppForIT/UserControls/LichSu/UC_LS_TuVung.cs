@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bunifu.UI.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
 {
     public partial class UC_LS_TuVung : UserControl
     {
+        public bool CheckChonLSTraTu = false;
         public UC_LS_TuVung()
         {
             InitializeComponent();
@@ -55,6 +57,18 @@ namespace DictionaryAppForIT.UserControls.LichSu
         {
             get { return lblTiengViet.Text; }
             set { lblTiengViet.Text = value; }
+        }
+
+        private void chkChonLSTraTu_CheckedChanged(object sender, BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            if (chkChonLSTraTu.Checked)
+            {
+                CheckChonLSTraTu = true;
+            }
+            else
+            {
+                CheckChonLSTraTu = false;
+            }
         }
     }
 }

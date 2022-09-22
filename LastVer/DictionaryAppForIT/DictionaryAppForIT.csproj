@@ -273,6 +273,7 @@
     <Compile Include="UserControls\Home\UC_Dich.designer.cs">
       <DependentUpon>UC_Dich.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\LichSu\ThongTinLSTraTu.cs" />
     <Compile Include="UserControls\LichSu\UC_LichSu.cs">
       <SubType>UserControl</SubType>
     </Compile>

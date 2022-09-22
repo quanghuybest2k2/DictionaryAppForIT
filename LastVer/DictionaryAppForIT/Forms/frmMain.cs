@@ -239,6 +239,7 @@ namespace DictionaryAppForIT.Forms
         {
             ShowUC(ucLichSu);
             ucLichSu.HienThiLSTraTu();
+            ucLichSu.HienThiLSDich();
         }
 
         private void btnYeuThich_Click(object sender, EventArgs e)

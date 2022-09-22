@@ -36,7 +36,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.flpContent = new System.Windows.Forms.FlowLayoutPanel();
-            this.uC_LS_VanBan2 = new DictionaryAppForIT.UserControls.LichSu.UC_LS_VanBan();
             this.label1 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,7 +49,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
-            this.flpContent.SuspendLayout();
             this.panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,24 +101,11 @@ namespace DictionaryAppForIT.UserControls.GanDay
             // flpContent
             // 
             this.flpContent.AutoScroll = true;
-            this.flpContent.Controls.Add(this.uC_LS_VanBan2);
             this.flpContent.Location = new System.Drawing.Point(22, 72);
             this.flpContent.Name = "flpContent";
             this.flpContent.Size = new System.Drawing.Size(640, 450);
             this.flpContent.TabIndex = 27;
             this.flpContent.Paint += new System.Windows.Forms.PaintEventHandler(this.flpContent_Paint);
-            // 
-            // uC_LS_VanBan2
-            // 
-            this.uC_LS_VanBan2.Location = new System.Drawing.Point(3, 0);
-            this.uC_LS_VanBan2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.uC_LS_VanBan2.Name = "uC_LS_VanBan2";
-            this.uC_LS_VanBan2.NgayThang = "29/07/2022";
-            this.uC_LS_VanBan2.Size = new System.Drawing.Size(610, 104);
-            this.uC_LS_VanBan2.TabIndex = 3;
-            this.uC_LS_VanBan2.ThoiGian = "09:09 PM";
-            this.uC_LS_VanBan2.VBTiengAnh = "Your download should start automatically, if not Click here";
-            this.uC_LS_VanBan2.VBTiengViet = "Việc tải xuống sẽ tự động bắt đầu, nếu không hãy bấm vào đây";
             // 
             // label1
             // 
@@ -365,7 +350,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.Size = new System.Drawing.Size(882, 553);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.flpContent.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -392,6 +376,5 @@ namespace DictionaryAppForIT.UserControls.GanDay
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private LichSu.UC_LS_VanBan uC_LS_VanBan2;
     }
 }

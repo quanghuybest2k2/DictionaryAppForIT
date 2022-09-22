@@ -62,8 +62,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.flpnLichSu = new System.Windows.Forms.FlowLayoutPanel();
             this.dtgvLichSu = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ctxtChucNang = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.tsmiXoa = new ReaLTaiizor.Controls.MaterialToolStripMenuItem();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -75,6 +73,8 @@ namespace DictionaryAppForIT.UserControls.Home
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
+            this.ColTiengAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTiengViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -478,8 +478,8 @@ namespace DictionaryAppForIT.UserControls.Home
             this.dtgvLichSu.ColumnHeadersHeight = 21;
             this.dtgvLichSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dtgvLichSu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
+            this.ColTiengAnh,
+            this.ColTiengViet});
             this.dtgvLichSu.ContextMenuStrip = this.ctxtChucNang;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -517,18 +517,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.dtgvLichSu.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtgvLichSu.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dtgvLichSu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLichSu_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "TiengAnh";
-            this.Column1.HeaderText = "Tiếng Anh";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TiengViet";
-            this.Column2.HeaderText = "Tiếng Việt";
-            this.Column2.Name = "Column2";
             // 
             // ctxtChucNang
             // 
@@ -692,6 +680,18 @@ namespace DictionaryAppForIT.UserControls.Home
             this.fileSystemWatcher2.EnableRaisingEvents = true;
             this.fileSystemWatcher2.SynchronizingObject = this;
             // 
+            // ColTiengAnh
+            // 
+            this.ColTiengAnh.DataPropertyName = "TiengAnh";
+            this.ColTiengAnh.HeaderText = "Tiếng Anh";
+            this.ColTiengAnh.Name = "ColTiengAnh";
+            // 
+            // ColTiengViet
+            // 
+            this.ColTiengViet.DataPropertyName = "TiengViet";
+            this.ColTiengViet.HeaderText = "Tiếng Việt";
+            this.ColTiengViet.Name = "ColTiengViet";
+            // 
             // UC_Dich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -765,10 +765,10 @@ namespace DictionaryAppForIT.UserControls.Home
         private Guna.UI2.WinForms.Guna2Button btnMic;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Guna.UI2.WinForms.Guna2DataGridView dtgvLichSu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip ctxtChucNang;
         private ReaLTaiizor.Controls.MaterialToolStripMenuItem tsmiXoa;
         private Guna.UI2.WinForms.Guna2Button btnXoaLichSu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColTiengAnh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColTiengViet;
     }
 }

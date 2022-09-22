@@ -1,10 +1,12 @@
 ﻿using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
-using SpeechLib; // speak
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Media;
 using System.Net.Http;
 using System.Speech.Recognition;
@@ -99,7 +101,7 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                dtgvLichSu.DataSource = DataProvider.Instance.ExecuteQuery("select * from LichSuDich");
+                dtgvLichSu.DataSource = DataProvider.Instance.ExecuteQuery("select TiengAnh, TiengViet from LichSuDich");
             }
             catch (Exception ex)
             {
@@ -182,7 +184,7 @@ namespace DictionaryAppForIT.UserControls.Home
         private void txtCopyText_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(txtUnder.Text); // copy text
-            //Clipboard.GetText(); // paste text
+                                              //Clipboard.GetText(); // paste text
             RJMessageBox.Show("Đã sao chép!", "Thông báo");
         }
 
