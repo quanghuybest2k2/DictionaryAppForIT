@@ -48,6 +48,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.btnXoaLSTraTu = new Guna.UI2.WinForms.Guna2Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblIndex = new System.Windows.Forms.Label();
             this.chkChonLSTraTu = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2Panel1.SuspendLayout();
@@ -226,6 +227,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.btnPhatAmLS.Size = new System.Drawing.Size(29, 20);
             this.btnPhatAmLS.TabIndex = 16;
             this.btnPhatAmLS.UseTransparentBackground = true;
+            this.btnPhatAmLS.Click += new System.EventHandler(this.btnPhatAmLS_Click);
             // 
             // panel6
             // 
@@ -253,6 +255,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.btnXoaLSTraTu.Size = new System.Drawing.Size(25, 20);
             this.btnXoaLSTraTu.TabIndex = 17;
             this.btnXoaLSTraTu.UseTransparentBackground = true;
+            this.btnXoaLSTraTu.Click += new System.EventHandler(this.btnXoaLSTraTu_Click);
             // 
             // panel5
             // 
@@ -265,6 +268,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.lblIndex);
             this.panel2.Controls.Add(this.chkChonLSTraTu);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -272,6 +276,15 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(55, 96);
             this.panel2.TabIndex = 2;
+            // 
+            // lblIndex
+            // 
+            this.lblIndex.AutoSize = true;
+            this.lblIndex.Location = new System.Drawing.Point(19, 74);
+            this.lblIndex.Name = "lblIndex";
+            this.lblIndex.Size = new System.Drawing.Size(15, 13);
+            this.lblIndex.TabIndex = 5;
+            this.lblIndex.Text = "id";
             // 
             // chkChonLSTraTu
             // 
@@ -353,6 +366,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -379,5 +393,6 @@ namespace DictionaryAppForIT.UserControls.LichSu
         private System.Windows.Forms.Panel panel2;
         private Bunifu.UI.WinForms.BunifuCheckBox chkChonLSTraTu;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblIndex;
     }
 }

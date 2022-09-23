@@ -53,7 +53,7 @@ create table LichSuDich
 	ID INT IDENTITY(1,1),
 	TiengAnh VARCHAR(400),
 	TiengViet NVARCHAR(400),
-	NgayHienTai datetime,
+	NgayHienTai varchar(30),
 	primary key (ID, NgayHienTai)
 )
 go
@@ -64,7 +64,7 @@ create table LichSuTraTu
 	TiengAnh VARCHAR(400),
 	PhienAm NVARCHAR(400),
 	TiengViet NVARCHAR(400),
-	NgayHienTai datetime,
+	NgayHienTai varchar(30),
 	primary key (ID, NgayHienTai)
 )
 go
@@ -211,7 +211,7 @@ create proc ThemLSTraTu
 	@TiengAnh VARCHAR(400),
 	@PhienAm NVARCHAR(400),
 	@TiengViet NVARCHAR(400),
-	@NgayHienTai datetime
+	@NgayHienTai varchar(30)
 as
 	BEGIN
 		INSERT INTO LichSuTraTu values (@TiengAnh, @PhienAm, @TiengViet, @NgayHienTai) set @IDLS = SCOPE_IDENTITY()
@@ -372,3 +372,7 @@ select * from TaiKhoan
 select count(Email) from TaiKhoan where Email = 'quanghuybest@gmail.com'
 select COUNT(ID) from LichSuTraTu
 select TiengAnh, TiengViet from LichSuDich
+-- xoa tat ca 2 bang
+--delete from LichSuTraTu delete from LichSuDich
+--delete from LichSuTraTu where id = 16
+select TiengAnh from LichSuTraTu where id = 27

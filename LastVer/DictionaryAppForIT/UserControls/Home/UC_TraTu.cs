@@ -144,14 +144,14 @@ namespace DictionaryAppForIT.UserControls
                 cmd.Parameters.Add("@TiengAnh", SqlDbType.VarChar, 400);
                 cmd.Parameters.Add("@PhienAm", SqlDbType.NVarChar, 400);
                 cmd.Parameters.Add("@TiengViet", SqlDbType.NVarChar, 400);
-                cmd.Parameters.Add("@NgayHienTai", SqlDbType.DateTime);
+                cmd.Parameters.Add("@NgayHienTai", SqlDbType.VarChar, 30);
                 //Lấy id vừa thêm vào bảng LichSuTraTu
                 cmd.Parameters["@IDLS"].Direction = ParameterDirection.Output;
                 cmd.Parameters["@TiengAnh"].Value = tu.TenTu;
                 cmd.Parameters["@PhienAm"].Value = tu.PhienAm;
 
                 cmd.Parameters["@TiengViet"].Value = tu.Nghia;
-                DateTime today = DateTime.Today;
+                string today = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
                 cmd.Parameters["@NgayHienTai"].Value = today;
 
                 conn.Open();

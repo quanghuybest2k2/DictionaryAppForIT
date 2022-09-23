@@ -1,4 +1,6 @@
 ﻿using Bunifu.UI.WinForms;
+using Guna.UI2.WinForms;
+using DictionaryAppForIT.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,27 +10,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Synthesis;
+using DictionaryAppForIT.Class;
+using DictionaryAppForIT.UserControls.GanDay;
 
 namespace DictionaryAppForIT.UserControls.LichSu
 {
     public partial class UC_LS_TuVung : UserControl
     {
-        public bool CheckChonLSTraTu = false;
+
+        SpeechSynthesizer speech;
+        UC_LichSu uc_lichSu;
         public UC_LS_TuVung()
         {
             InitializeComponent();
+            speech = new SpeechSynthesizer();
         }
-
-        public UC_LS_TuVung(string thoiGian, string ngayThang, string tiengAnh, string phienAm, string tiengViet)
+        public UC_LS_TuVung(string index, string thoiGian, string ngayThang, string tiengAnh, string phienAm, string tiengViet)
         {
             InitializeComponent();
+            this.Index = index;
             this.ThoiGian = thoiGian;
             this.NgayThang = ngayThang;
             this.TVTiengAnh = tiengAnh;
             this.TVPhienAm = phienAm;
             this.TVTiengViet = tiengViet;
         }
-
+        public string Index
+        {
+            get { return lblIndex.Text; }
+            set { lblIndex.Text = value; }
+        }
         public string ThoiGian
         {
             get { return lblThoiGian.Text; }
@@ -57,18 +69,49 @@ namespace DictionaryAppForIT.UserControls.LichSu
         {
             get { return lblTiengViet.Text; }
             set { lblTiengViet.Text = value; }
+
+        }
+        public Guna2Button ButtonPhatAm
+        {
+            get { return btnPhatAmLS; }
+            set { btnPhatAmLS = value; }
         }
 
         private void chkChonLSTraTu_CheckedChanged(object sender, BunifuCheckBox.CheckedChangedEventArgs e)
         {
             if (chkChonLSTraTu.Checked)
             {
-                CheckChonLSTraTu = true;
+                RJMessageBox.Show("Bạn đã chọn cái này");
             }
-            else
+        }
+        public void PhatAm(string s)
+        {
+            //btnPhatAmLS.PerformClick();
+            speech.SelectVoiceByHints(VoiceGender.Male); // giong nam
+            speech.SpeakAsync(s);
+        }
+
+        private void btnXoaLSTraTu_Click(object sender, EventArgs e)
+        {
+            int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuTraTu where id = {this.Index}");
+            if (num > 0)
             {
-                CheckChonLSTraTu = false;
+                RJMessageBox.Show("Xóa thành công!");
+                //uc_lichSu.HienThiLSTraTu();
+                //uc_lichSu.HienThiLSDich();
             }
+            else { RJMessageBox.Show("Xóa không thành công!"); }
+        }
+
+        private void btnPhatAmLS_Click(object sender, EventArgs e)
+        {
+            //lblTiengAnh.Text = "ccccccccccccccccc";
+            //if (lblTiengAnh.Text != null)
+            //{
+            //    object DocTu = DataProvider.Instance.ExecuteScalar($"select TiengAnh from LichSuTraTu where id = {this.Index}");
+            //    speech.SelectVoiceByHints(VoiceGender.Male); // giong nam
+            //    speech.SpeakAsync(DocTu.ToString());
+            //}
         }
     }
 }

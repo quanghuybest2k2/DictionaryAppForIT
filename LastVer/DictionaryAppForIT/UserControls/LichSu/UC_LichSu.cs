@@ -1,4 +1,5 @@
-﻿using DictionaryAppForIT.Class;
+﻿using Bunifu.UI.WinForms;
+using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.UserControls.LichSu;
 using System;
@@ -12,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Synthesis;
 
 namespace DictionaryAppForIT.UserControls.GanDay
 {
@@ -19,13 +21,15 @@ namespace DictionaryAppForIT.UserControls.GanDay
     {
         UC_LS_TuVung ucLSTuVung;
         UC_LS_VanBan uc_LSVanBan;
-
+        SpeechSynthesizer speech;
+        public static string idHienTai;
 
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
 
         public UC_LichSu()
         {
             InitializeComponent();
+            speech = new SpeechSynthesizer();
         }
 
         public void HienThiLSTraTu()
@@ -40,29 +44,36 @@ namespace DictionaryAppForIT.UserControls.GanDay
                     SqlCommand cmd = new SqlCommand($"select * from LichSuTraTu", Conn);
                     Conn.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
-
                     while (rdr.Read())
                     {
                         //ThongTinLSTraTu.idTraTuLS = rdr["ID"].ToString();
+                        idHienTai = rdr["ID"].ToString();
                         string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
                         string ThoiGian = arrThoiGian[1] + " " + arrThoiGian[2];
                         string NgayThang = arrThoiGian[0];
                         string TVTiengAnh = rdr["TiengAnh"].ToString();
                         string TVPhienAm = rdr["PhienAm"].ToString();
                         string TVTiengViet = rdr["TiengViet"].ToString();
-                        ucLSTuVung = new UC_LS_TuVung(ThoiGian, NgayThang, TVTiengAnh, TVPhienAm, TVTiengViet);
+                        ucLSTuVung = new UC_LS_TuVung(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVPhienAm, TVTiengViet);
+                        //ucLSTuVung.CheckChonLSTraTu.CheckedChanged += new EventHandler<BunifuCheckBox.CheckedChangedEventArgs>(chkChonLSTraTu_CheckedChanged);
+                        //if (i==9)
+                        //{
+                            //speech.SelectVoiceByHints(VoiceGender.Male); // giong nam
+                            //speech.SpeakAsync(ucLSTuVung.TVTiengAnh);
+                        //}
                         flpContent.Controls.Add(ucLSTuVung);
                     }
+                    
                     Conn.Close();
                     Conn.Dispose();
-
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    RJMessageBox.Show(ex.Message);
                 }
             }
         }
+
         public void HienThiLSDich()
         {
             object num = DataProvider.Instance.ExecuteScalar("select COUNT(ID) from LichSuDich");
@@ -74,7 +85,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
                     SqlCommand cmd = new SqlCommand($"SELECT * FROM LichSuDich", Conn);
                     Conn.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
-
                     while (rdr.Read())
                     {
                         string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
@@ -100,5 +110,16 @@ namespace DictionaryAppForIT.UserControls.GanDay
 
         }
 
+        private void btnXoaDuLieu_Click(object sender, EventArgs e)
+        {
+            int num = DataProvider.Instance.ExecuteNonQuery("delete from LichSuTraTu delete from LichSuDich");
+            if (num > 0)
+            {
+                RJMessageBox.Show("Đã xóa tất cả lịch sử!");
+                HienThiLSTraTu();
+                HienThiLSDich();
+            }
+            else { RJMessageBox.Show("Xóa không thành công!"); }
+        }
     }
 }

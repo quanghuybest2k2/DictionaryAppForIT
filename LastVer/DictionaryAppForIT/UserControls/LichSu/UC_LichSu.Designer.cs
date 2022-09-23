@@ -34,9 +34,8 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXoaDuLieu = new Guna.UI2.WinForms.Guna2Button();
             this.flpContent = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -61,10 +60,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.guna2Button2);
             this.panel1.Controls.Add(this.flpContent);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.btnXoaDuLieu);
             this.panel1.Controls.Add(this.label25);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -80,23 +78,25 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.panel3.Size = new System.Drawing.Size(11, 27);
             this.panel3.TabIndex = 29;
             // 
-            // guna2Button2
+            // btnXoaDuLieu
             // 
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
-            this.guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.Gray;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.Location = new System.Drawing.Point(519, 23);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.PressedDepth = 0;
-            this.guna2Button2.Size = new System.Drawing.Size(35, 30);
-            this.guna2Button2.TabIndex = 28;
-            this.guna2Button2.TextOffset = new System.Drawing.Point(3, 0);
-            this.guna2Button2.UseTransparentBackground = true;
+            this.btnXoaDuLieu.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoaDuLieu.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.btnXoaDuLieu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoaDuLieu.FillColor = System.Drawing.Color.Transparent;
+            this.btnXoaDuLieu.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaDuLieu.ForeColor = System.Drawing.Color.Gray;
+            this.btnXoaDuLieu.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnXoaDuLieu.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaDuLieu.Image")));
+            this.btnXoaDuLieu.Location = new System.Drawing.Point(513, 24);
+            this.btnXoaDuLieu.Name = "btnXoaDuLieu";
+            this.btnXoaDuLieu.PressedDepth = 0;
+            this.btnXoaDuLieu.Size = new System.Drawing.Size(106, 30);
+            this.btnXoaDuLieu.TabIndex = 28;
+            this.btnXoaDuLieu.Text = "Xóa dữ liệu";
+            this.btnXoaDuLieu.TextOffset = new System.Drawing.Point(3, 0);
+            this.btnXoaDuLieu.UseTransparentBackground = true;
+            this.btnXoaDuLieu.Click += new System.EventHandler(this.btnXoaDuLieu_Click);
             // 
             // flpContent
             // 
@@ -106,18 +106,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.flpContent.Size = new System.Drawing.Size(640, 450);
             this.flpContent.TabIndex = 27;
             this.flpContent.Paint += new System.Windows.Forms.PaintEventHandler(this.flpContent_Paint);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(550, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 19);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Xóa dữ liệu ";
             // 
             // label25
             // 
@@ -364,7 +352,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
         private System.Windows.Forms.FlowLayoutPanel flpContent;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnXoaDuLieu;
         private System.Windows.Forms.Label label25;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
@@ -374,7 +362,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

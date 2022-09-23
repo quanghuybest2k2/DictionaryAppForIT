@@ -48,6 +48,6 @@ namespace DictionaryAppForIT.UserControls.LichSu
         {
             get { return lblTiengViet.Text; }
             set { lblTiengViet.Text = value; }
-        }   
+        }
     }
 }

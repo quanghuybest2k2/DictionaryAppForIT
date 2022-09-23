@@ -112,7 +112,8 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                int num = DataProvider.Instance.ExecuteNonQuery($"insert into LichSuDich values(N'{txtTop.Text}', N'{txtUnder.Text}',  GETDATE())");
+                string today = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
+                int num = DataProvider.Instance.ExecuteNonQuery($"insert into LichSuDich values(N'{txtTop.Text}', N'{txtUnder.Text}',  '{today}')");
                 if (num > 0)
                 {
                     LoadLichSu();
