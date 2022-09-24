@@ -1,6 +1,7 @@
 ﻿using Bunifu.UI.WinForms;
 using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DAL;
+using DictionaryAppForIT.DTO;
 using DictionaryAppForIT.UserControls.LichSu;
 using System;
 using System.Collections.Generic;
@@ -35,13 +36,13 @@ namespace DictionaryAppForIT.UserControls.GanDay
         public void HienThiLSTraTu()
         {
             flpContent.Controls.Clear();
-            object num = DataProvider.Instance.ExecuteScalar("select COUNT(ID) from LichSuTraTu");
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from LichSuTraTu where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
             if (Convert.ToInt32(num) > 0)
             {
                 try
                 {
                     SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"select * from LichSuTraTu", Conn);
+                    SqlCommand cmd = new SqlCommand($"select * from LichSuTraTu where IDTK = {Class_TaiKhoan.IdTaiKhoan}", Conn);
                     Conn.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())
@@ -76,13 +77,13 @@ namespace DictionaryAppForIT.UserControls.GanDay
 
         public void HienThiLSDich()
         {
-            object num = DataProvider.Instance.ExecuteScalar("select COUNT(ID) from LichSuDich");
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from LichSuDich where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
             if (Convert.ToInt32(num) > 0)
             {
                 try
                 {
                     SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"SELECT * FROM LichSuDich", Conn);
+                    SqlCommand cmd = new SqlCommand($"SELECT * FROM LichSuDich where IDTK = {Class_TaiKhoan.IdTaiKhoan}", Conn);
                     Conn.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())
@@ -112,7 +113,8 @@ namespace DictionaryAppForIT.UserControls.GanDay
 
         private void btnXoaDuLieu_Click(object sender, EventArgs e)
         {
-            int num = DataProvider.Instance.ExecuteNonQuery("delete from LichSuTraTu delete from LichSuDich");
+            int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuTraTu where IDTK = {Class_TaiKhoan.IdTaiKhoan} " +
+                $"delete from LichSuDich where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
             if (num > 0)
             {
                 RJMessageBox.Show("Đã xóa tất cả lịch sử!");

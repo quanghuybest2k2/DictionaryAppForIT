@@ -30,7 +30,7 @@ namespace DictionaryAppForIT.Forms
         #region Main button
         private void btnMinimize_Click(object sender, EventArgs e)
         {
-            MainBtn.Minnimize(this);
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -125,7 +125,7 @@ namespace DictionaryAppForIT.Forms
                         if (num > 0)
                         {
                             RJMessageBox.Show("Đăng ký thành công.");
-                            this.Hide();
+                            this.Close();
                             frmLogin frmLogin = new frmLogin();
                             frmLogin.Show();
                         }

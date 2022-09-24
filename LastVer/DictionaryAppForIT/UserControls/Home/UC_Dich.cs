@@ -26,7 +26,6 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             InitializeComponent();
             speech = new SpeechSynthesizer();
-            LoadLichSu();
         }
         private string TranslateText(string input)
         {
@@ -101,7 +100,7 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                dtgvLichSu.DataSource = DataProvider.Instance.ExecuteQuery("select TiengAnh, TiengViet from LichSuDich");
+                dtgvLichSu.DataSource = DataProvider.Instance.ExecuteQuery($"select TiengAnh, TiengViet from LichSuDich where idtk = {Class_TaiKhoan.IdTaiKhoan}");
             }
             catch (Exception ex)
             {
@@ -113,7 +112,7 @@ namespace DictionaryAppForIT.UserControls.Home
             try
             {
                 string today = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
-                int num = DataProvider.Instance.ExecuteNonQuery($"insert into LichSuDich values(N'{txtTop.Text}', N'{txtUnder.Text}',  '{today}')");
+                int num = DataProvider.Instance.ExecuteNonQuery($"insert into LichSuDich values(N'{txtTop.Text}', N'{txtUnder.Text}',  '{today}', {Class_TaiKhoan.IdTaiKhoan})");
                 if (num > 0)
                 {
                     LoadLichSu();
@@ -141,7 +140,7 @@ namespace DictionaryAppForIT.UserControls.Home
         private void tsmiXoa_Click(object sender, EventArgs e)
         {
             string ChuMuonXoa = dtgvLichSu.SelectedCells[0].Value.ToString();
-            int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuDich where TiengAnh = N'{ChuMuonXoa}'");
+            int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuDich where IDTK = {Class_TaiKhoan.IdTaiKhoan} and TiengAnh = '{ChuMuonXoa}'");
             if (num > 0)
             {
                 RJMessageBox.Show("Xóa thành công.", "Thông báo");
@@ -169,7 +168,7 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                int num = DataProvider.Instance.ExecuteNonQuery("DELETE FROM LichSuDich");
+                int num = DataProvider.Instance.ExecuteNonQuery($"DELETE FROM LichSuDich where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
                 if (num > 0)
                 {
                     RJMessageBox.Show("Đã xóa hết lịch sử");
@@ -212,6 +211,11 @@ namespace DictionaryAppForIT.UserControls.Home
             {
                 sr.UnloadAllGrammars();
             }
+        }
+
+        private void UC_Dich_Load(object sender, EventArgs e)
+        {
+            LoadLichSu();
         }
     }
 }

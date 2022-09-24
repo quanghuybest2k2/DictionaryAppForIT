@@ -54,7 +54,8 @@ create table LichSuDich
 	TiengAnh VARCHAR(400),
 	TiengViet NVARCHAR(400),
 	NgayHienTai varchar(30),
-	primary key (ID, NgayHienTai)
+	IDTK INT references TaiKhoan(ID),
+	primary key (ID, IDTK, NgayHienTai)
 )
 go
 
@@ -65,34 +66,37 @@ create table LichSuTraTu
 	PhienAm NVARCHAR(400),
 	TiengViet NVARCHAR(400),
 	NgayHienTai varchar(30),
-	primary key (ID, NgayHienTai)
+	IDTK INT references TaiKhoan(ID),
+	primary key (ID, IDTK, NgayHienTai)
 )
 go
 
 insert into LichSuDich values
-('hello', N'Xin chào.', GETDATE()),
-('variable', N'Biến số.', GETDATE()),
-('constant', N'Hằng số.', GETDATE()),
-('firewall', N'Tường lửa.', GETDATE())
+('hello', N'Xin chào.', '', 1),
+('variable', N'Biến số.', '', 2),
+('constant', N'Hằng số.', '',3),
+('firewall', N'Tường lửa.', '',1)
 go
-
 insert into LichSuTraTu values
-('Variable', N'/´veə.ri.ə.bəl/', N'Biến',  GETDATE()),
-('Variable', N'/´veə.ri.ə.bəl/', N'Có thể thay đổi',  GETDATE()),
-('Constant', N'/´kɒn.stənt/', N'Hằng',  GETDATE()),
-('Component', N'/kəm´pəʊ.nənt',  N'Thành phần',  GETDATE()),
-('Firewall', N'/´faiəwɔ:l/',   N'Tường lửa', GETDATE())
+('Variable', N'/´veə.ri.ə.bəl/', N'Biến', '', 1),
+('Variable', N'/´veə.ri.ə.bəl/', N'Có thể thay đổi', '', 2),
+('Constant', N'/´kɒn.stənt/', N'Hằng', '', 3),
+('Component', N'/kəm´pəʊ.nənt',  N'Thành phần', '', 4),
+('Firewall', N'/´faiəwɔ:l/',   N'Tường lửa', '',1)
 go
 
 -- xóa bản dịch đã lưu thông qua khóa chính là Tiếng anh
--- delete from LichSuDich where TiengAnh = 'Hello'
+-- delete from LichSuDich where IDTK = 1 and TiengAnh = 'hello'
+-- select TiengAnh, TiengViet from LichSuDich where idtk = 1
 -- go
 -- SELECT TiengAnh from LichSuDich Where TiengAnh = N'hi'-- or TiengViet =  N'Xin chào.'
 -- xóa hết lịch sử
 -- DELETE FROM LichSuDich
 -- go
 select * from LichSuDich
+delete from LichSuTraTu where idtk = 1 delete from LichSuDich where idtk = 1
 go
+-- select COUNT(ID) from LichSuTraTu where IDTK = 1
 select * from LichSuTraTu
 go
 -- delete from LichSuTraTu
@@ -211,10 +215,11 @@ create proc ThemLSTraTu
 	@TiengAnh VARCHAR(400),
 	@PhienAm NVARCHAR(400),
 	@TiengViet NVARCHAR(400),
-	@NgayHienTai varchar(30)
+	@NgayHienTai varchar(30),
+	@IDTK INT
 as
 	BEGIN
-		INSERT INTO LichSuTraTu values (@TiengAnh, @PhienAm, @TiengViet, @NgayHienTai) set @IDLS = SCOPE_IDENTITY()
+		INSERT INTO LichSuTraTu values (@TiengAnh, @PhienAm, @TiengViet, @NgayHienTai, @IDTK) set @IDLS = SCOPE_IDENTITY()
 		return @IDLS
 	END
 go

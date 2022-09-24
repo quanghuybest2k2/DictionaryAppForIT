@@ -139,12 +139,13 @@ namespace DictionaryAppForIT.UserControls
                 // them tu vao lich su
                 SqlConnection conn = new SqlConnection(connString);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "EXEC ThemLSTraTu @IDLS output, @TiengAnh, @PhienAm, @TiengViet, @NgayHienTai";
+                cmd.CommandText = "EXEC ThemLSTraTu @IDLS output, @TiengAnh, @PhienAm, @TiengViet, @NgayHienTai, @IDTK";
                 cmd.Parameters.Add("@IDLS", SqlDbType.Int);
                 cmd.Parameters.Add("@TiengAnh", SqlDbType.VarChar, 400);
                 cmd.Parameters.Add("@PhienAm", SqlDbType.NVarChar, 400);
                 cmd.Parameters.Add("@TiengViet", SqlDbType.NVarChar, 400);
                 cmd.Parameters.Add("@NgayHienTai", SqlDbType.VarChar, 30);
+                cmd.Parameters.Add("@IDTK", SqlDbType.Int);
                 //Lấy id vừa thêm vào bảng LichSuTraTu
                 cmd.Parameters["@IDLS"].Direction = ParameterDirection.Output;
                 cmd.Parameters["@TiengAnh"].Value = tu.TenTu;
@@ -153,6 +154,7 @@ namespace DictionaryAppForIT.UserControls
                 cmd.Parameters["@TiengViet"].Value = tu.Nghia;
                 string today = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
                 cmd.Parameters["@NgayHienTai"].Value = today;
+                cmd.Parameters["@IDTK"].Value = Class_TaiKhoan.IdTaiKhoan;
 
                 conn.Open();
                 int soDongThemTu = cmd.ExecuteNonQuery();

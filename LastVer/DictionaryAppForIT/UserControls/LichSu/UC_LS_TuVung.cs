@@ -106,12 +106,13 @@ namespace DictionaryAppForIT.UserControls.LichSu
         private void btnPhatAmLS_Click(object sender, EventArgs e)
         {
             //lblTiengAnh.Text = "ccccccccccccccccc";
-            //if (lblTiengAnh.Text != null)
-            //{
-            //    object DocTu = DataProvider.Instance.ExecuteScalar($"select TiengAnh from LichSuTraTu where id = {this.Index}");
-            //    speech.SelectVoiceByHints(VoiceGender.Male); // giong nam
-            //    speech.SpeakAsync(DocTu.ToString());
-            //}
+            if (lblTiengAnh.Text != null)
+            {
+                object DocTu = DataProvider.Instance.ExecuteScalar($"select TiengAnh from LichSuTraTu where id = {this.Index} and IDTK = 2");
+                speech.SelectVoiceByHints(VoiceGender.Male); // giong nam
+                speech.SpeakAsync(DocTu.ToString());
+            }
+            //MessageBox.Show(lblTiengAnh.Text, lblTiengViet.Text, MessageBoxButtons.OK);
         }
     }
 }

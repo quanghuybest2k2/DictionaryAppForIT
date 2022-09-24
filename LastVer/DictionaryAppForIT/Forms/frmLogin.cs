@@ -26,7 +26,6 @@ namespace DictionaryAppForIT
         public frmLogin()
         {
             InitializeComponent();
-            MainBtn.SetInitial(this);
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -48,7 +47,7 @@ namespace DictionaryAppForIT
         {
             //Button btn = (Button)sender;
             //MainBtn.DoMaximize(this, btn);
-            MainBtn.Minnimize(this);
+            this.WindowState = FormWindowState.Minimized;
         }
         #endregion
 
@@ -91,7 +90,7 @@ namespace DictionaryAppForIT
             {
                 frmMain frmMain = new frmMain();
                 string query = "KiemTraDangNhap @tendangnhap , @matkhau";
-                object kq = DataProvider.Instance.ExecuteScalar(query, new object[] { txtTaiKhoanDN.Text, txtMatKhauDN.Text });
+                object kq = DataProvider.Instance.ExecuteScalar(query, new object[] { txtTaiKhoanDN.Text.Trim(), txtMatKhauDN.Text.Trim() });
                 Class_TaiKhoan.displayUsername = txtTaiKhoanDN.Text;
                 int code = Convert.ToInt32(kq);
                 if (code == 1)
