@@ -33,9 +33,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_LichSu));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flpContent = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnXoaDuLieu = new Guna.UI2.WinForms.Guna2Button();
-            this.flpContent = new System.Windows.Forms.FlowLayoutPanel();
             this.label25 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -70,6 +70,15 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.panel1.Size = new System.Drawing.Size(882, 553);
             this.panel1.TabIndex = 29;
             // 
+            // flpContent
+            // 
+            this.flpContent.AutoScroll = true;
+            this.flpContent.Location = new System.Drawing.Point(22, 72);
+            this.flpContent.Name = "flpContent";
+            this.flpContent.Size = new System.Drawing.Size(640, 450);
+            this.flpContent.TabIndex = 27;
+            this.flpContent.Paint += new System.Windows.Forms.PaintEventHandler(this.flpContent_Paint);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(120)))));
@@ -97,15 +106,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.btnXoaDuLieu.TextOffset = new System.Drawing.Point(3, 0);
             this.btnXoaDuLieu.UseTransparentBackground = true;
             this.btnXoaDuLieu.Click += new System.EventHandler(this.btnXoaDuLieu_Click);
-            // 
-            // flpContent
-            // 
-            this.flpContent.AutoScroll = true;
-            this.flpContent.Location = new System.Drawing.Point(22, 72);
-            this.flpContent.Name = "flpContent";
-            this.flpContent.Size = new System.Drawing.Size(640, 450);
-            this.flpContent.TabIndex = 27;
-            this.flpContent.Paint += new System.Windows.Forms.PaintEventHandler(this.flpContent_Paint);
+            this.btnXoaDuLieu.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.btnXoaDuLieu_ControlRemoved);
             // 
             // label25
             // 

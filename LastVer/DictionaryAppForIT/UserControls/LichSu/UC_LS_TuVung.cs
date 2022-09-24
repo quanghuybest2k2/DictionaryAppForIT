@@ -18,7 +18,6 @@ namespace DictionaryAppForIT.UserControls.LichSu
 {
     public partial class UC_LS_TuVung : UserControl
     {
-
         SpeechSynthesizer speech;
         UC_LichSu uc_lichSu;
         public UC_LS_TuVung()
@@ -77,12 +76,27 @@ namespace DictionaryAppForIT.UserControls.LichSu
             set { btnPhatAmLS = value; }
         }
 
+        public BunifuCheckBox ChkChonLSTraTu
+        {
+            get { return chkChonLSTraTu; }
+            set { chkChonLSTraTu = value; }
+        }
+
         private void chkChonLSTraTu_CheckedChanged(object sender, BunifuCheckBox.CheckedChangedEventArgs e)
         {
+            //if (chkChonLSTraTu.Checked)
+            //{
+            //    RJMessageBox.Show("Bạn đã chọn cái này");
+            //}
             if (chkChonLSTraTu.Checked)
             {
-                RJMessageBox.Show("Bạn đã chọn cái này");
+                this.Name = "Check";
             }
+            else
+            {
+                this.Name = "unCheck";
+            }
+            //this.lblNgayThang.Text = this.Name;
         }
         public void PhatAm(string s)
         {
