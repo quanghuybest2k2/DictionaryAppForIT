@@ -77,7 +77,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.flpContent.Name = "flpContent";
             this.flpContent.Size = new System.Drawing.Size(640, 450);
             this.flpContent.TabIndex = 27;
-            this.flpContent.Paint += new System.Windows.Forms.PaintEventHandler(this.flpContent_Paint);
             // 
             // panel3
             // 

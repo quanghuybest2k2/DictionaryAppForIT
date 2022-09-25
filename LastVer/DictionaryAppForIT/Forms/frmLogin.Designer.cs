@@ -532,11 +532,11 @@ namespace DictionaryAppForIT
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(85, 413);
+            this.label8.Location = new System.Drawing.Point(104, 413);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(218, 21);
+            this.label8.Size = new System.Drawing.Size(175, 21);
             this.label8.TabIndex = 26;
-            this.label8.Text = " Khoa Công nghệ Thông tin";
+            this.label8.Text = " Công nghệ Thông tin";
             // 
             // bunifuPanel1
             // 
@@ -546,10 +546,10 @@ namespace DictionaryAppForIT
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel1.BorderRadius = 10;
             this.bunifuPanel1.BorderThickness = 1;
-            this.bunifuPanel1.Location = new System.Drawing.Point(89, 440);
+            this.bunifuPanel1.Location = new System.Drawing.Point(111, 441);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(214, 2);
+            this.bunifuPanel1.Size = new System.Drawing.Size(165, 2);
             this.bunifuPanel1.TabIndex = 27;
             // 
             // pictureBox3

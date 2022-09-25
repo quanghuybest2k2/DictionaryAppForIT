@@ -9,7 +9,9 @@ create table ChuyenNganh
 	TenChuyenNganh NVARCHAR(200) not null
 )
 go
-
+delete from LichSuTraTu where id = 56 or id = 60 and IDTK = 2
+select * from LichSuTraTu
+select * from LichSuDich
 create table TuLoai
 (
 	ID INT IDENTITY(1,1) PRIMARY KEY,

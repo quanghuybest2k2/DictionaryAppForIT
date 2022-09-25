@@ -43,7 +43,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.btnPhatAmLS = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDieuHuongLS = new Guna.UI2.WinForms.Guna2Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnXoaLSTraTu = new Guna.UI2.WinForms.Guna2Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -204,7 +204,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.btnPhatAmLS);
+            this.panel7.Controls.Add(this.btnDieuHuongLS);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 36);
             this.panel7.Name = "panel7";
@@ -212,22 +212,22 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel7.Size = new System.Drawing.Size(50, 39);
             this.panel7.TabIndex = 2;
             // 
-            // btnPhatAmLS
+            // btnDieuHuongLS
             // 
-            this.btnPhatAmLS.BackColor = System.Drawing.Color.Transparent;
-            this.btnPhatAmLS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPhatAmLS.FillColor = System.Drawing.Color.Transparent;
-            this.btnPhatAmLS.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnPhatAmLS.ForeColor = System.Drawing.Color.White;
-            this.btnPhatAmLS.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnPhatAmLS.Image = ((System.Drawing.Image)(resources.GetObject("btnPhatAmLS.Image")));
-            this.btnPhatAmLS.Location = new System.Drawing.Point(14, 11);
-            this.btnPhatAmLS.Name = "btnPhatAmLS";
-            this.btnPhatAmLS.PressedDepth = 0;
-            this.btnPhatAmLS.Size = new System.Drawing.Size(29, 20);
-            this.btnPhatAmLS.TabIndex = 16;
-            this.btnPhatAmLS.UseTransparentBackground = true;
-            this.btnPhatAmLS.Click += new System.EventHandler(this.btnPhatAmLS_Click);
+            this.btnDieuHuongLS.BackColor = System.Drawing.Color.Transparent;
+            this.btnDieuHuongLS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDieuHuongLS.FillColor = System.Drawing.Color.Transparent;
+            this.btnDieuHuongLS.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDieuHuongLS.ForeColor = System.Drawing.Color.White;
+            this.btnDieuHuongLS.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnDieuHuongLS.Image = ((System.Drawing.Image)(resources.GetObject("btnDieuHuongLS.Image")));
+            this.btnDieuHuongLS.Location = new System.Drawing.Point(13, 8);
+            this.btnDieuHuongLS.Name = "btnDieuHuongLS";
+            this.btnDieuHuongLS.PressedDepth = 0;
+            this.btnDieuHuongLS.Size = new System.Drawing.Size(29, 20);
+            this.btnDieuHuongLS.TabIndex = 16;
+            this.btnDieuHuongLS.UseTransparentBackground = true;
+            this.btnDieuHuongLS.Click += new System.EventHandler(this.btnDieuHuongLS_Click);
             // 
             // panel6
             // 
@@ -386,7 +386,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel7;
-        private Guna.UI2.WinForms.Guna2Button btnPhatAmLS;
+        private Guna.UI2.WinForms.Guna2Button btnDieuHuongLS;
         private System.Windows.Forms.Panel panel6;
         private Guna.UI2.WinForms.Guna2Button btnXoaLSTraTu;
         private System.Windows.Forms.Panel panel5;

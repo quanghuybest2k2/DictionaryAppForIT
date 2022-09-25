@@ -21,22 +21,27 @@ namespace DictionaryAppForIT.UserControls.GanDay
     public partial class UC_LichSu : UserControl
     {
         UC_LS_TuVung ucLSTuVung;
-        UC_LS_VanBan uc_LSVanBan;
+        UC_LS_VanBan ucLSVanBan;
         SpeechSynthesizer speech;
         public static string idHienTai;
 
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
-        List<UC_LS_TuVung> _list;
+        List<UC_LS_TuVung> _listUCLSTV;
+        List<UC_LS_VanBan> _listUCLSVB;
+
+        bool xoaTatCa;
+
         public UC_LichSu()
         {
             InitializeComponent();
             speech = new SpeechSynthesizer();
-            _list = new List<UC_LS_TuVung>();
+            _listUCLSTV = new List<UC_LS_TuVung>();
+            _listUCLSVB = new List<UC_LS_VanBan>();
         }
 
         public void HienThiLSTraTu()
         {
-            _list.Clear();
+            _listUCLSTV.Clear();
             flpContent.Controls.Clear();
             object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from LichSuTraTu where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
             if (Convert.ToInt32(num) > 0)
@@ -60,7 +65,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
                         ucLSTuVung = new UC_LS_TuVung(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVPhienAm, TVTiengViet);
 
                         flpContent.Controls.Add(ucLSTuVung);
-                        _list.Add(ucLSTuVung);
+                        _listUCLSTV.Add(ucLSTuVung);
                         ucLSTuVung.Name = "unCheck";
                     }
 
@@ -88,13 +93,17 @@ namespace DictionaryAppForIT.UserControls.GanDay
                     SqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())
                     {
+                        idHienTai = rdr["ID"].ToString();
                         string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
                         string ThoiGian = arrThoiGian[1] + " " + arrThoiGian[2];
                         string NgayThang = arrThoiGian[0];
                         string TVTiengAnh = rdr["TiengAnh"].ToString();
                         string TVTiengViet = rdr["TiengViet"].ToString();
-                        uc_LSVanBan = new UC_LS_VanBan(ThoiGian, NgayThang, TVTiengAnh, TVTiengViet);
-                        flpContent.Controls.Add(uc_LSVanBan);
+                        ucLSVanBan = new UC_LS_VanBan(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVTiengViet);
+                        flpContent.Controls.Add(ucLSVanBan);
+
+                        _listUCLSVB.Add(ucLSVanBan);
+                        ucLSVanBan.Name = "unCheck";
                     }
                     Conn.Close();
                     Conn.Dispose();
@@ -106,15 +115,10 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 }
             }
         }
-        private void flpContent_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void btnXoaDuLieu_Click(object sender, EventArgs e)
+        private void XoaUCLSTuVung()
         {
-            bool xoaTatCa = true;
-            foreach (var item in _list)
+            foreach (var item in _listUCLSTV)
             {
                 //MessageBox.Show(c.Name, "", MessageBoxButtons.OK);
                 //c as UC_LS_TuVung
@@ -122,16 +126,33 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 {
                     xoaTatCa = false;
                     flpContent.Controls.Remove(item);
-
+                    DataProvider.Instance.ExecuteNonQuery($"delete from LichSuTraTu where id = {item.Index} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
                 }
             }
-            _list.RemoveAll(x => x.Name == "Check");
-            //string name = "";
-            //foreach (Control item in flpContent.Controls)
-            //{
-            //    name += " " + item.Name;
-            //}
-            //MessageBox.Show(xoaTatCa.ToString(), "", MessageBoxButtons.OK);
+            _listUCLSTV.RemoveAll(x => x.Name == "Check");
+        }
+
+        private void XoaUCLSVanBan()
+        {
+            foreach (var item in _listUCLSVB)
+            {
+                //MessageBox.Show(c.Name, "", MessageBoxButtons.OK);
+                //c as UC_LS_TuVung
+                if (item.Name == "Check")//c.ChkChonLSTraTu.Checked
+                {
+                    xoaTatCa = false;
+                    flpContent.Controls.Remove(item);
+                    DataProvider.Instance.ExecuteNonQuery($"delete from LichSuDich where id = {item.Index} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+                }
+            }
+            _listUCLSVB.RemoveAll(x => x.Name == "Check");
+        }
+
+        private void btnXoaDuLieu_Click(object sender, EventArgs e)
+        {
+            xoaTatCa = true;
+            XoaUCLSTuVung();
+            XoaUCLSVanBan();
 
             if (xoaTatCa)
             {
@@ -142,11 +163,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 if (num > 0)
                 {
                     RJMessageBox.Show("Đã xóa tất cả lịch sử!");
-                    //HienThiLSTraTu();
-                    //HienThiLSDich();
                 }
                 else { RJMessageBox.Show("Xóa không thành công!"); }
-                _list.Clear();
+                _listUCLSTV.Clear();
             }
         }
 

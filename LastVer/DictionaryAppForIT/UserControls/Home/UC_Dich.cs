@@ -65,11 +65,11 @@ namespace DictionaryAppForIT.UserControls.Home
         }
         private void btnSpeakEnglish_Click(object sender, EventArgs e)
         {
-            if (txtTop.Text != null)
+            if (txtTop.Text.Trim() != null)
             {
                 speech.SelectVoice("Microsoft David Desktop"); //giong mỹ
                 TocDoNoi();
-                speech.SpeakAsync(txtTop.Text);
+                speech.SpeakAsync(txtTop.Text.Trim());
             }
         }
 
@@ -83,16 +83,16 @@ namespace DictionaryAppForIT.UserControls.Home
             lblENtxt.Text = lblVNtxt.Text;
             lblVNtxt.Text = swaplblTxt;
 
-            string swapTxt = txtTop.Text; // hoán dổi textbox
-            txtTop.Text = txtUnder.Text;
+            string swapTxt = txtTop.Text.Trim(); // hoán dổi textbox
+            txtTop.Text = txtUnder.Text.Trim();
             txtUnder.Text = swapTxt;
         }
 
         private void txtTop_TextChanged(object sender, EventArgs e)
         {
-            if (txtTop.Text != "")
+            if (txtTop.Text.Trim() != "")
             {
-                txtUnder.Text = TranslateText(txtTop.Text);
+                txtUnder.Text = TranslateText(txtTop.Text.Trim());
             }
         }
         #region Xử lý lịch sử
@@ -112,7 +112,7 @@ namespace DictionaryAppForIT.UserControls.Home
             try
             {
                 string today = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
-                int num = DataProvider.Instance.ExecuteNonQuery($"insert into LichSuDich values(N'{txtTop.Text}', N'{txtUnder.Text}',  '{today}', {Class_TaiKhoan.IdTaiKhoan})");
+                int num = DataProvider.Instance.ExecuteNonQuery($"insert into LichSuDich values(N'{txtTop.Text.Trim()}', N'{txtUnder.Text.Trim()}',  '{today}', {Class_TaiKhoan.IdTaiKhoan})");
                 if (num > 0)
                 {
                     LoadLichSu();
@@ -156,7 +156,7 @@ namespace DictionaryAppForIT.UserControls.Home
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
-            if (txtTop.Text != "")
+            if (txtTop.Text.Trim() != "")
             {
                 LuuLichSuTu();// lưu lịch sử
             }
@@ -183,7 +183,7 @@ namespace DictionaryAppForIT.UserControls.Home
         #endregion
         private void txtCopyText_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(txtUnder.Text); // copy text
+            Clipboard.SetText(txtUnder.Text.Trim()); // copy text
                                               //Clipboard.GetText(); // paste text
             RJMessageBox.Show("Đã sao chép!", "Thông báo");
         }

@@ -1,6 +1,7 @@
 ﻿using Bunifu.UI.WinForms;
 using Guna.UI2.WinForms;
 using DictionaryAppForIT.DAL;
+using DictionaryAppForIT.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -72,22 +73,12 @@ namespace DictionaryAppForIT.UserControls.LichSu
         }
         public Guna2Button ButtonPhatAm
         {
-            get { return btnPhatAmLS; }
-            set { btnPhatAmLS = value; }
-        }
-
-        public BunifuCheckBox ChkChonLSTraTu
-        {
-            get { return chkChonLSTraTu; }
-            set { chkChonLSTraTu = value; }
+            get { return btnDieuHuongLS; }
+            set { btnDieuHuongLS = value; }
         }
 
         private void chkChonLSTraTu_CheckedChanged(object sender, BunifuCheckBox.CheckedChangedEventArgs e)
         {
-            //if (chkChonLSTraTu.Checked)
-            //{
-            //    RJMessageBox.Show("Bạn đã chọn cái này");
-            //}
             if (chkChonLSTraTu.Checked)
             {
                 this.Name = "Check";
@@ -96,37 +87,33 @@ namespace DictionaryAppForIT.UserControls.LichSu
             {
                 this.Name = "unCheck";
             }
-            //this.lblNgayThang.Text = this.Name;
-        }
-        public void PhatAm(string s)
-        {
-            //btnPhatAmLS.PerformClick();
-            speech.SelectVoiceByHints(VoiceGender.Male); // giong nam
-            speech.SpeakAsync(s);
         }
 
         private void btnXoaLSTraTu_Click(object sender, EventArgs e)
         {
-            int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuTraTu where id = {this.Index}");
+            this.Name = "Check";
+            this.Visible = false;
+            int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuTraTu where id = {this.Index} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
             if (num > 0)
             {
                 RJMessageBox.Show("Xóa thành công!");
-                //uc_lichSu.HienThiLSTraTu();
-                //uc_lichSu.HienThiLSDich();
             }
             else { RJMessageBox.Show("Xóa không thành công!"); }
         }
 
-        private void btnPhatAmLS_Click(object sender, EventArgs e)
+        private void btnDieuHuongLS_Click(object sender, EventArgs e)
         {
-            //lblTiengAnh.Text = "ccccccccccccccccc";
-            if (lblTiengAnh.Text != null)
-            {
-                object DocTu = DataProvider.Instance.ExecuteScalar($"select TiengAnh from LichSuTraTu where id = {this.Index} and IDTK = 2");
-                speech.SelectVoiceByHints(VoiceGender.Male); // giong nam
-                speech.SpeakAsync(DocTu.ToString());
-            }
-            //MessageBox.Show(lblTiengAnh.Text, lblTiengViet.Text, MessageBoxButtons.OK);
+
         }
+
+        //private void btnPhatAmLS_Click(object sender, EventArgs e)
+        //{
+        //    //if (lblTiengAnh.Text != null)
+        //    //{
+        //    //    object DocTu = DataProvider.Instance.ExecuteScalar($"select TiengAnh from LichSuTraTu where id = {this.Index} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+        //    //    speech.SelectVoiceByHints(VoiceGender.Male); // giong nam
+        //    //    speech.SpeakAsync(DocTu.ToString());
+        //    //}
+        //}
     }
 }

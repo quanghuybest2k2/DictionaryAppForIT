@@ -43,11 +43,12 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel7 = new System.Windows.Forms.Panel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXoaLSVanBan = new Guna.UI2.WinForms.Guna2Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuCheckBox1 = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.chkChonLSVanBan = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblIndex = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -195,7 +196,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.Location = new System.Drawing.Point(14, 11);
+            this.guna2Button3.Location = new System.Drawing.Point(13, 8);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.PressedDepth = 0;
             this.guna2Button3.Size = new System.Drawing.Size(29, 20);
@@ -204,7 +205,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.guna2Button2);
+            this.panel6.Controls.Add(this.btnXoaLSVanBan);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 8);
             this.panel6.Name = "panel6";
@@ -212,22 +213,23 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel6.Size = new System.Drawing.Size(50, 28);
             this.panel6.TabIndex = 1;
             // 
-            // guna2Button2
+            // btnXoaLSVanBan
             // 
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2Button2.Location = new System.Drawing.Point(13, 4);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.PressedDepth = 0;
-            this.guna2Button2.Size = new System.Drawing.Size(25, 20);
-            this.guna2Button2.TabIndex = 17;
-            this.guna2Button2.UseTransparentBackground = true;
+            this.btnXoaLSVanBan.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoaLSVanBan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoaLSVanBan.FillColor = System.Drawing.Color.Transparent;
+            this.btnXoaLSVanBan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXoaLSVanBan.ForeColor = System.Drawing.Color.White;
+            this.btnXoaLSVanBan.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnXoaLSVanBan.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaLSVanBan.Image")));
+            this.btnXoaLSVanBan.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnXoaLSVanBan.Location = new System.Drawing.Point(13, 4);
+            this.btnXoaLSVanBan.Name = "btnXoaLSVanBan";
+            this.btnXoaLSVanBan.PressedDepth = 0;
+            this.btnXoaLSVanBan.Size = new System.Drawing.Size(25, 20);
+            this.btnXoaLSVanBan.TabIndex = 17;
+            this.btnXoaLSVanBan.UseTransparentBackground = true;
+            this.btnXoaLSVanBan.Click += new System.EventHandler(this.btnXoaLSVanBan_Click);
             // 
             // panel5
             // 
@@ -240,7 +242,8 @@ namespace DictionaryAppForIT.UserControls.LichSu
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.bunifuCheckBox1);
+            this.panel2.Controls.Add(this.lblIndex);
+            this.panel2.Controls.Add(this.chkChonLSVanBan);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -248,58 +251,59 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel2.Size = new System.Drawing.Size(55, 96);
             this.panel2.TabIndex = 2;
             // 
-            // bunifuCheckBox1
+            // chkChonLSVanBan
             // 
-            this.bunifuCheckBox1.AllowBindingControlAnimation = true;
-            this.bunifuCheckBox1.AllowBindingControlColorChanges = false;
-            this.bunifuCheckBox1.AllowBindingControlLocation = true;
-            this.bunifuCheckBox1.AllowCheckBoxAnimation = false;
-            this.bunifuCheckBox1.AllowCheckmarkAnimation = true;
-            this.bunifuCheckBox1.AllowOnHoverStates = true;
-            this.bunifuCheckBox1.AutoCheck = true;
-            this.bunifuCheckBox1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCheckBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCheckBox1.BackgroundImage")));
-            this.bunifuCheckBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bunifuCheckBox1.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
-            this.bunifuCheckBox1.BorderRadius = 12;
-            this.bunifuCheckBox1.Checked = false;
-            this.bunifuCheckBox1.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
-            this.bunifuCheckBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuCheckBox1.CustomCheckmarkImage = null;
-            this.bunifuCheckBox1.Location = new System.Drawing.Point(19, 34);
-            this.bunifuCheckBox1.MinimumSize = new System.Drawing.Size(17, 17);
-            this.bunifuCheckBox1.Name = "bunifuCheckBox1";
-            this.bunifuCheckBox1.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckBox1.OnCheck.BorderRadius = 12;
-            this.bunifuCheckBox1.OnCheck.BorderThickness = 2;
-            this.bunifuCheckBox1.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCheckBox1.OnCheck.CheckmarkColor = System.Drawing.Color.White;
-            this.bunifuCheckBox1.OnCheck.CheckmarkThickness = 2;
-            this.bunifuCheckBox1.OnDisable.BorderColor = System.Drawing.Color.LightGray;
-            this.bunifuCheckBox1.OnDisable.BorderRadius = 12;
-            this.bunifuCheckBox1.OnDisable.BorderThickness = 2;
-            this.bunifuCheckBox1.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.bunifuCheckBox1.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
-            this.bunifuCheckBox1.OnDisable.CheckmarkThickness = 2;
-            this.bunifuCheckBox1.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.bunifuCheckBox1.OnHoverChecked.BorderRadius = 12;
-            this.bunifuCheckBox1.OnHoverChecked.BorderThickness = 2;
-            this.bunifuCheckBox1.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.bunifuCheckBox1.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
-            this.bunifuCheckBox1.OnHoverChecked.CheckmarkThickness = 2;
-            this.bunifuCheckBox1.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.bunifuCheckBox1.OnHoverUnchecked.BorderRadius = 12;
-            this.bunifuCheckBox1.OnHoverUnchecked.BorderThickness = 1;
-            this.bunifuCheckBox1.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.bunifuCheckBox1.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
-            this.bunifuCheckBox1.OnUncheck.BorderRadius = 12;
-            this.bunifuCheckBox1.OnUncheck.BorderThickness = 1;
-            this.bunifuCheckBox1.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.bunifuCheckBox1.Size = new System.Drawing.Size(26, 26);
-            this.bunifuCheckBox1.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
-            this.bunifuCheckBox1.TabIndex = 4;
-            this.bunifuCheckBox1.ThreeState = false;
-            this.bunifuCheckBox1.ToolTipText = null;
+            this.chkChonLSVanBan.AllowBindingControlAnimation = true;
+            this.chkChonLSVanBan.AllowBindingControlColorChanges = false;
+            this.chkChonLSVanBan.AllowBindingControlLocation = true;
+            this.chkChonLSVanBan.AllowCheckBoxAnimation = false;
+            this.chkChonLSVanBan.AllowCheckmarkAnimation = true;
+            this.chkChonLSVanBan.AllowOnHoverStates = true;
+            this.chkChonLSVanBan.AutoCheck = true;
+            this.chkChonLSVanBan.BackColor = System.Drawing.Color.Transparent;
+            this.chkChonLSVanBan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chkChonLSVanBan.BackgroundImage")));
+            this.chkChonLSVanBan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.chkChonLSVanBan.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.chkChonLSVanBan.BorderRadius = 12;
+            this.chkChonLSVanBan.Checked = false;
+            this.chkChonLSVanBan.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.chkChonLSVanBan.Cursor = System.Windows.Forms.Cursors.Default;
+            this.chkChonLSVanBan.CustomCheckmarkImage = null;
+            this.chkChonLSVanBan.Location = new System.Drawing.Point(19, 34);
+            this.chkChonLSVanBan.MinimumSize = new System.Drawing.Size(17, 17);
+            this.chkChonLSVanBan.Name = "chkChonLSVanBan";
+            this.chkChonLSVanBan.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.chkChonLSVanBan.OnCheck.BorderRadius = 12;
+            this.chkChonLSVanBan.OnCheck.BorderThickness = 2;
+            this.chkChonLSVanBan.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
+            this.chkChonLSVanBan.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.chkChonLSVanBan.OnCheck.CheckmarkThickness = 2;
+            this.chkChonLSVanBan.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.chkChonLSVanBan.OnDisable.BorderRadius = 12;
+            this.chkChonLSVanBan.OnDisable.BorderThickness = 2;
+            this.chkChonLSVanBan.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.chkChonLSVanBan.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.chkChonLSVanBan.OnDisable.CheckmarkThickness = 2;
+            this.chkChonLSVanBan.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.chkChonLSVanBan.OnHoverChecked.BorderRadius = 12;
+            this.chkChonLSVanBan.OnHoverChecked.BorderThickness = 2;
+            this.chkChonLSVanBan.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.chkChonLSVanBan.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.chkChonLSVanBan.OnHoverChecked.CheckmarkThickness = 2;
+            this.chkChonLSVanBan.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.chkChonLSVanBan.OnHoverUnchecked.BorderRadius = 12;
+            this.chkChonLSVanBan.OnHoverUnchecked.BorderThickness = 1;
+            this.chkChonLSVanBan.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.chkChonLSVanBan.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.chkChonLSVanBan.OnUncheck.BorderRadius = 12;
+            this.chkChonLSVanBan.OnUncheck.BorderThickness = 1;
+            this.chkChonLSVanBan.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.chkChonLSVanBan.Size = new System.Drawing.Size(26, 26);
+            this.chkChonLSVanBan.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.chkChonLSVanBan.TabIndex = 4;
+            this.chkChonLSVanBan.ThreeState = false;
+            this.chkChonLSVanBan.ToolTipText = null;
+            this.chkChonLSVanBan.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.chkChonLSVanBan_CheckedChanged);
             // 
             // panel4
             // 
@@ -308,6 +312,15 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(55, 10);
             this.panel4.TabIndex = 3;
+            // 
+            // lblIndex
+            // 
+            this.lblIndex.AutoSize = true;
+            this.lblIndex.Location = new System.Drawing.Point(22, 72);
+            this.lblIndex.Name = "lblIndex";
+            this.lblIndex.Size = new System.Drawing.Size(15, 13);
+            this.lblIndex.TabIndex = 18;
+            this.lblIndex.Text = "id";
             // 
             // UC_LS_VanBan
             // 
@@ -325,6 +338,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -344,10 +358,11 @@ namespace DictionaryAppForIT.UserControls.LichSu
         private System.Windows.Forms.Panel panel7;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.Panel panel6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnXoaLSVanBan;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.UI.WinForms.BunifuCheckBox bunifuCheckBox1;
+        private Bunifu.UI.WinForms.BunifuCheckBox chkChonLSVanBan;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblIndex;
     }
 }
