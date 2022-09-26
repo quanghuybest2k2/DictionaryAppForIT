@@ -9,9 +9,6 @@ create table ChuyenNganh
 	TenChuyenNganh NVARCHAR(200) not null
 )
 go
-delete from LichSuTraTu where id = 56 or id = 60 and IDTK = 2
-select * from LichSuTraTu
-select * from LichSuDich
 create table TuLoai
 (
 	ID INT IDENTITY(1,1) PRIMARY KEY,
@@ -46,10 +43,12 @@ create table TaiKhoan
 	TenDangNhap varchar(100) NOT NULL,
 	MatKhau varchar(100) NOT NULL,
 	Email varchar(100) NOT NULL,
-	GioiTinh INT NOT NULL
+	GioiTinh INT NOT NULL,
+	NgayTaoTK varchar(30) NOT NULL
 )
 go
-
+select * from TaiKhoan
+go
 create table LichSuDich
 (
 	ID INT IDENTITY(1,1),
@@ -71,22 +70,22 @@ create table LichSuTraTu
 	IDTK INT references TaiKhoan(ID),
 	primary key (ID, IDTK, NgayHienTai)
 )
+-- go
+-- delete from LichSuTraTu where id = 56 or id = 60 and IDTK = 2
 go
-
-insert into LichSuDich values
-('hello', N'Xin chào.', '', 1),
-('variable', N'Biến số.', '', 2),
-('constant', N'Hằng số.', '',3),
-('firewall', N'Tường lửa.', '',1)
-go
-insert into LichSuTraTu values
-('Variable', N'/´veə.ri.ə.bəl/', N'Biến', '', 1),
-('Variable', N'/´veə.ri.ə.bəl/', N'Có thể thay đổi', '', 2),
-('Constant', N'/´kɒn.stənt/', N'Hằng', '', 3),
-('Component', N'/kəm´pəʊ.nənt',  N'Thành phần', '', 4),
-('Firewall', N'/´faiəwɔ:l/',   N'Tường lửa', '',1)
-go
-
+--insert into LichSuDich values
+--('hello', N'Xin chào.', '', 1),
+--('variable', N'Biến số.', '', 2),
+--('constant', N'Hằng số.', '',3),
+--('firewall', N'Tường lửa.', '',1)
+--go
+--insert into LichSuTraTu values
+--('Variable', N'/´veə.ri.ə.bəl/', N'Biến', '', 1),
+--('Variable', N'/´veə.ri.ə.bəl/', N'Có thể thay đổi', '', 2),
+--('Constant', N'/´kɒn.stənt/', N'Hằng', '', 3),
+--('Component', N'/kəm´pəʊ.nənt',  N'Thành phần', '', 4),
+--('Firewall', N'/´faiəwɔ:l/',   N'Tường lửa', '',1)
+--go
 -- xóa bản dịch đã lưu thông qua khóa chính là Tiếng anh
 -- delete from LichSuDich where IDTK = 1 and TiengAnh = 'hello'
 -- select TiengAnh, TiengViet from LichSuDich where idtk = 1
@@ -96,7 +95,7 @@ go
 -- DELETE FROM LichSuDich
 -- go
 select * from LichSuDich
-delete from LichSuTraTu where idtk = 1 delete from LichSuDich where idtk = 1
+-- delete from LichSuTraTu where idtk = 1 delete from LichSuDich where idtk = 1
 go
 -- select COUNT(ID) from LichSuTraTu where IDTK = 1
 select * from LichSuTraTu
@@ -210,7 +209,6 @@ as
 go
 exec HienThiThongTin 'Constant'
 go
-
 -------- Lịch sử tra từ
 create proc ThemLSTraTu
 	@IDLS INT out,
@@ -307,20 +305,21 @@ create proc DangKyTaiKhoan
 	@TenDangNhap varchar(100),
 	@MatKhau varchar(100),
 	@Email varchar(100),
-	@GioiTinh INT
+	@GioiTinh INT,
+	@NgayTaoTK varchar(30)
 as
 	IF EXISTS (	SELECT * FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap or Email = @Email)
 		PRINT N'Tài khoản đã tồn tại trong CSDL'
 	ELSE
 		BEGIN
-			INSERT INTO TaiKhoan values (@TenDangNhap, @MatKhau, @Email, @GioiTinh)
+			INSERT INTO TaiKhoan values (@TenDangNhap, @MatKhau, @Email, @GioiTinh, @NgayTaoTK)
 		END
 go
 --  1: Nam, 2: Nữ, 3: Khác
-EXEC DangKyTaiKhoan 'quanghuybest2k2', '123456', 'quanghuybest@gmail.com',1
-EXEC DangKyTaiKhoan 'sangvlog', 'sangsos', 'sangvlog@gmail.com', 1
-EXEC DangKyTaiKhoan 'bede', 'bede123', 'bede@gmail.com', 3
-EXEC DangKyTaiKhoan 'a','654321','test@gmail.com', 2
+EXEC DangKyTaiKhoan 'quanghuybest2k2', '123456', 'quanghuybest@gmail.com',1, ''
+EXEC DangKyTaiKhoan 'sangvlog', 'sangsos', 'sangvlog@gmail.com', 1, ''
+EXEC DangKyTaiKhoan 'bede', 'bede123', 'bede@gmail.com', 3, ''
+EXEC DangKyTaiKhoan 'a','654321','test@gmail.com', 2, ''
 go
 select * from TaiKhoan
 go
@@ -334,6 +333,7 @@ as
 begin
 	select * from TaiKhoan where ID = @Id
 end
+go
 EXEC HienThiThongTinTaiKhoan 1
 go
 -- cập nhật thông tin tài khoản
@@ -341,14 +341,16 @@ create proc CapNhatThongTinTaiKhoan
 @Id INT,
 @TenDangNhap varchar(100),
 @MatKhau varchar(100),
-@GioiTinh INT
+@GioiTinh INT,
+@NgayTaoTK varchar(30)
 as
 begin
 	UPDATE TaiKhoan
-	SET TenDangNhap = @TenDangNhap, MatKhau = @MatKhau, GioiTinh = @GioiTinh
+	SET TenDangNhap = @TenDangNhap, MatKhau = @MatKhau, GioiTinh = @GioiTinh, NgayTaoTK = @NgayTaoTK
 	WHERE ID = @Id
 end
-EXEC CapNhatThongTinTaiKhoan 1, 'quanghuybest2k2', '123456', 1
+go
+EXEC CapNhatThongTinTaiKhoan 1, 'quanghuybest2k2', '123456', 1, ''
 go
 select * from TuLoai
 select * from ChuyenNganh

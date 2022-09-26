@@ -20,7 +20,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
     public partial class UC_QuanLyTK : UserControl
     {
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
-        private int soNgayTao = 365;
+
         private int soMucYeuThich = 9;
         private int tgSuDung = 2;
         public UC_QuanLyTK()
@@ -30,12 +30,17 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         #region Xử lý richtextbox đổi màu chữ
         private void ThoiGianTaoTaiKhoan()
         {
+            DateTime hienTai = DateTime.Now;
+            DateTime end = new DateTime(2021,09,10);
+
             RichTextBox rtb1 = new RichTextBox();
             rtb1.Font = new System.Drawing.Font("Segoe UI", 10F);
             rtb1.SelectionColor = Color.Gray;
             rtb1.AppendText(" Bạn đã tạo tài khoản được ");
             rtb1.SelectionColor = ColorTranslator.FromHtml("#3776ab");
-            rtb1.AppendText(soNgayTao.ToString());
+            // tinh toan ngay tao tai khoan
+            TimeSpan soNgayTaoTK = hienTai - Class_TaiKhoan.ngayTaoTK; // số ngày tạo tài khoản
+            rtb1.AppendText(soNgayTaoTK.ToString(@"dd"));
             rtb1.SelectionColor = Color.Gray;
             rtb1.AppendText(" ngày");
             rtb1.Size = new System.Drawing.Size(242, 23);

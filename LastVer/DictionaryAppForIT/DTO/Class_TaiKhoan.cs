@@ -12,6 +12,7 @@ namespace DictionaryAppForIT.DTO
     {
         public static string displayUsername;
         public static string IdTaiKhoan;
+        public static DateTime ngayTaoTK;
 
         public Class_TaiKhoan()
         {
