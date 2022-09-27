@@ -121,9 +121,9 @@ namespace DictionaryAppForIT.Forms
                     try
                     {
                         string query = "EXEC DangKyTaiKhoan @TenDangNhap , @MatKhau , @Email , @GioiTinh , @NgayTaoTK";
-                        DateTime ngayTao = DateTime.Now;
+                        string ngayTao = DateTime.Now.ToString("dd/MM/yyyy");
                         Class_TaiKhoan.ngayTaoTK = ngayTao;
-                        int num = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenDangNhap, matkhau, email, gioiTinh, ngayTao.ToString("dd/MM/yyyy hh:mm tt") });
+                        int num = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenDangNhap, matkhau, email, gioiTinh, ngayTao });
                         if (num > 0)
                         {
                             RJMessageBox.Show("Đăng ký thành công.");

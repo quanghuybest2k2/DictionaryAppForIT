@@ -113,6 +113,7 @@ namespace DictionaryAppForIT
                     txtTaiKhoanDN.Focus();
                 }
                 getIDNguoiDung();
+                getNgayTaoTaiKhoan();
             }
             catch (Exception ex)
             {
@@ -131,6 +132,26 @@ namespace DictionaryAppForIT
                 while (rdr.Read())
                 {
                     Class_TaiKhoan.IdTaiKhoan = rdr["ID"].ToString();
+                }
+                Conn.Close();
+                Conn.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void getNgayTaoTaiKhoan()
+        {
+            try
+            {
+                SqlConnection Conn = new SqlConnection(connString);
+                SqlCommand cmd = new SqlCommand($"SELECT NgayTaoTK FROM TaiKhoan WHERE TenDangNhap = '{Class_TaiKhoan.displayUsername}'", Conn);
+                Conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Class_TaiKhoan.ngayTaoTK = rdr["NgayTaoTK"].ToString();
                 }
                 Conn.Close();
                 Conn.Dispose();

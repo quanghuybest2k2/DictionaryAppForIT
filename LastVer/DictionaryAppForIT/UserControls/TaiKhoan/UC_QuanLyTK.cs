@@ -31,7 +31,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private void ThoiGianTaoTaiKhoan()
         {
             DateTime hienTai = DateTime.Now;
-            DateTime end = new DateTime(2021,09,10);
+            DateTime end = new DateTime(2021, 09, 10);
 
             RichTextBox rtb1 = new RichTextBox();
             rtb1.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -39,7 +39,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             rtb1.AppendText(" Bạn đã tạo tài khoản được ");
             rtb1.SelectionColor = ColorTranslator.FromHtml("#3776ab");
             // tinh toan ngay tao tai khoan
-            TimeSpan soNgayTaoTK = hienTai - Class_TaiKhoan.ngayTaoTK; // số ngày tạo tài khoản
+            string ngayTao = Class_TaiKhoan.ngayTaoTK;
+            DateTime date = DateTime.ParseExact(ngayTao, "dd/MM/yyyy", null);
+            TimeSpan soNgayTaoTK = hienTai - date; // số ngày tạo tài khoản
             rtb1.AppendText(soNgayTaoTK.ToString(@"dd"));
             rtb1.SelectionColor = Color.Gray;
             rtb1.AppendText(" ngày");
