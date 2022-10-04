@@ -61,10 +61,10 @@ namespace DictionaryAppForIT.Forms
             this.btnDichVB = new Guna.UI2.WinForms.Guna2Button();
             this.btnTVChuyenNganh = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnMaximum = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnMaximum = new System.Windows.Forms.Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -172,6 +172,7 @@ namespace DictionaryAppForIT.Forms
             this.btnThemTuMini.PressedDepth = 0;
             this.btnThemTuMini.Size = new System.Drawing.Size(27, 28);
             this.btnThemTuMini.TabIndex = 37;
+            this.btnThemTuMini.Click += new System.EventHandler(this.btnThemTuMini_Click);
             // 
             // btnThongBao_Unchecked
             // 
@@ -656,33 +657,15 @@ namespace DictionaryAppForIT.Forms
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.btnMaximum);
             this.guna2Panel1.Controls.Add(this.btnMinimize);
             this.guna2Panel1.Controls.Add(this.btnExit);
             this.guna2Panel1.Controls.Add(this.button1);
+            this.guna2Panel1.Controls.Add(this.btnMaximum);
             this.guna2Transition1.SetDecoration(this.guna2Panel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel1.Location = new System.Drawing.Point(702, 4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(190, 39);
             this.guna2Panel1.TabIndex = 35;
-            // 
-            // btnMaximum
-            // 
-            this.btnMaximum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximum.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.btnMaximum, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnMaximum.FlatAppearance.BorderSize = 0;
-            this.btnMaximum.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnMaximum.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnMaximum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximum.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximum.Image")));
-            this.btnMaximum.Location = new System.Drawing.Point(102, 3);
-            this.btnMaximum.Name = "btnMaximum";
-            this.btnMaximum.Size = new System.Drawing.Size(30, 30);
-            this.btnMaximum.TabIndex = 32;
-            this.btnMaximum.UseVisualStyleBackColor = false;
-            this.btnMaximum.Click += new System.EventHandler(this.btnMaximum_Click);
             // 
             // btnMinimize
             // 
@@ -735,6 +718,24 @@ namespace DictionaryAppForIT.Forms
             this.button1.Size = new System.Drawing.Size(30, 30);
             this.button1.TabIndex = 31;
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnMaximum
+            // 
+            this.btnMaximum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximum.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximum.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnMaximum, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnMaximum.FlatAppearance.BorderSize = 0;
+            this.btnMaximum.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMaximum.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMaximum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximum.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximum.Image")));
+            this.btnMaximum.Location = new System.Drawing.Point(102, 3);
+            this.btnMaximum.Name = "btnMaximum";
+            this.btnMaximum.Size = new System.Drawing.Size(30, 30);
+            this.btnMaximum.TabIndex = 32;
+            this.btnMaximum.UseVisualStyleBackColor = false;
+            this.btnMaximum.Click += new System.EventHandler(this.btnMaximum_Click);
             // 
             // guna2Elipse1
             // 

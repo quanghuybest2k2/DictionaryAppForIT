@@ -98,7 +98,8 @@ select * from LichSuDich
 -- delete from LichSuTraTu where idtk = 1 delete from LichSuDich where idtk = 1
 go
 -- select COUNT(ID) from LichSuTraTu where IDTK = 1
-select * from LichSuTraTu
+select * from Tu
+select * from Nghia
 go
 -- delete from LichSuTraTu
 go
@@ -160,9 +161,9 @@ as
 		END
 go
 -- drop proc ThemTu
-INSERT INTO Tu values ('Variable', N'/´veə.ri.ə.bəl/', 2, 'Varying', 'Constant')
-INSERT INTO Tu values ('Constant', N'/´kɒn.stənt/', 1, 'InConstant', 'Variable')
-INSERT INTO Tu values ('Component', N'/kəm´pəʊ.nənt', 2, 'Element', 'Whole')
+INSERT INTO Tu values ('Variable', N'/`veə.ri.ə.bəl/', 2, 'Varying', 'Constant')
+INSERT INTO Tu values ('Constant', N'/`kɒn.stənt/', 1, 'InConstant', 'Variable')
+INSERT INTO Tu values ('Component', N'/kəm`pəʊ.nənt/', 2, 'Element', 'Whole')
 INSERT INTO Tu values ('Firewall', N'/´faiəwɔ:l/', 1, '', 'Cyber threat')
 --exec ThemTu 'Variable' , N'/´veə.ri.ə.bəl/', 2, 'Varying', 'Constant'
 --exec ThemTu 'Constant', N'/´kɒn.stənt/', 1, 'InConstant', 'Variable'
@@ -197,6 +198,7 @@ exec ThemNghia  2, 1, N'Hằng', N'Hằng số là giá trị không đổi xuy�
 exec ThemNghia  3, 1, N'Thành phần', N'Đây là hệ thống của một quá trình, chương trình, tiện ích, hoặc bất kỳ phần nào của hệ điều hành.', 'An example of a component is an ingredient in a recipe.'
 exec ThemNghia  4, 1, N'Tường lửa', N'tường lửa làm màn chắn điều khiển luồng lưu thông giữa các mạng, thường là giữa mạng và Internet, và giữa các mạng con trong công ty.', 'The firewall traces back to an early period in the modern internet era when systems.'
 go
+select * from Tu
 select * from Nghia
 go
 create proc HienThiThongTin

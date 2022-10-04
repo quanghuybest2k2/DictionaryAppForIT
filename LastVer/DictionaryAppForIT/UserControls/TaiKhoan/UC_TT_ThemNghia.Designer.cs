@@ -184,7 +184,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.txtNghia.Name = "txtNghia";
             this.txtNghia.PasswordChar = '\0';
             this.txtNghia.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtNghia.PlaceholderText = "Nhập nghĩa của từ vựng";
+            this.txtNghia.PlaceholderText = "Ví dụ: Thành phần";
             this.txtNghia.SelectedText = "";
             this.txtNghia.Size = new System.Drawing.Size(456, 41);
             this.txtNghia.TabIndex = 42;
@@ -247,7 +247,8 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.PasswordChar = '\0';
             this.txtMoTa.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtMoTa.PlaceholderText = "Nhập mô tả cho từ vựng";
+            this.txtMoTa.PlaceholderText = "Ví dụ: Đây là hệ thống của một quá trình, chương trình, tiện ích, hoặc bất kỳ phầ" +
+    "n nào của hệ điều hành.";
             this.txtMoTa.SelectedText = "";
             this.txtMoTa.Size = new System.Drawing.Size(723, 120);
             this.txtMoTa.TabIndex = 43;
@@ -274,7 +275,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.txtVD.Name = "txtVD";
             this.txtVD.PasswordChar = '\0';
             this.txtVD.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtVD.PlaceholderText = "Nhập ví dụ cho từ vựng";
+            this.txtVD.PlaceholderText = "Ví dụ: An example of a component is an ingredient in a recipe.";
             this.txtVD.SelectedText = "";
             this.txtVD.Size = new System.Drawing.Size(723, 120);
             this.txtVD.TabIndex = 44;
@@ -310,6 +311,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UC_TT_ThemNghia";
             this.Size = new System.Drawing.Size(795, 464);
+            this.Load += new System.EventHandler(this.UC_TT_ThemNghia_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);

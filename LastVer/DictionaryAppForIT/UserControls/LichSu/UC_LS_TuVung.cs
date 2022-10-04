@@ -20,7 +20,6 @@ namespace DictionaryAppForIT.UserControls.LichSu
     public partial class UC_LS_TuVung : UserControl
     {
         SpeechSynthesizer speech;
-        UC_LichSu uc_lichSu;
         public UC_LS_TuVung()
         {
             InitializeComponent();
@@ -105,15 +104,5 @@ namespace DictionaryAppForIT.UserControls.LichSu
         {
 
         }
-
-        //private void btnPhatAmLS_Click(object sender, EventArgs e)
-        //{
-        //    //if (lblTiengAnh.Text != null)
-        //    //{
-        //    //    object DocTu = DataProvider.Instance.ExecuteScalar($"select TiengAnh from LichSuTraTu where id = {this.Index} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
-        //    //    speech.SelectVoiceByHints(VoiceGender.Male); // giong nam
-        //    //    speech.SpeakAsync(DocTu.ToString());
-        //    //}
-        //}
     }
 }

@@ -375,5 +375,10 @@ namespace DictionaryAppForIT.Forms
         {
             btnTaiKhoan.PerformClick();
         }
+
+        private void btnThemTuMini_Click(object sender, EventArgs e)
+        {
+            btnThemTu.PerformClick();
+        }
     }
 }

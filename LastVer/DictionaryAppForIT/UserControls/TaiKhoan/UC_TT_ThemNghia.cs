@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DictionaryAppForIT.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
     {
         public bool XacNhanXoa = false;
         int textStt = 0;
+
         public UC_TT_ThemNghia(int stt)
         {
             InitializeComponent();
@@ -24,13 +26,40 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         public int Stt
         {
             get { return this.textStt; }
-            set { this.lblSTT.Text = "Nghĩa thứ " + value.ToString();}
+            set { this.lblSTT.Text = "Nghĩa thứ " + value.ToString(); }
         }
 
         public string Nghia
         {
             get { return this.txtNghia.Text; }
-            set { this.txtNghia.Text = value; }
+        }
+
+        public string TuLoai
+        {
+            get { return cbbTuLoai.SelectedValue.ToString(); }
+        }
+
+        public string MoTa
+        {
+            get { return txtMoTa.Text; }
+        }
+
+        public string ViDu
+        {
+            get { return txtVD.Text; }
+        }
+
+        public string[] LayGiaTriControl()
+        {
+            string[] arr = {TuLoai, Nghia, MoTa, ViDu };
+            return arr;
+        }
+
+        public void MacDinh()
+        {
+            txtNghia.Clear();
+            txtVD.Clear();
+            txtMoTa.Clear();
         }
 
         private void cbXoa_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
@@ -39,6 +68,25 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 XacNhanXoa = true;
             else
                 XacNhanXoa = false;
+        }
+        private void LoadTuLoai()
+        {
+            try
+            {
+                string query = "select * from TuLoai";
+                cbbTuLoai.DataSource = DataProvider.Instance.ExecuteQuery(query);
+                cbbTuLoai.DisplayMember = "TenLoai";
+                cbbTuLoai.ValueMember = "ID";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void UC_TT_ThemNghia_Load(object sender, EventArgs e)
+        {
+            LoadTuLoai();
+            cbbTuLoai.SelectedIndex = 0;
         }
     }
 }

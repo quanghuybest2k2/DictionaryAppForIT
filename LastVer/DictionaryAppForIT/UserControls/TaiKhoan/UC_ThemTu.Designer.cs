@@ -31,12 +31,12 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ThemTu));
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTraiNghia = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtDongNghia = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.LuuThayDoiTK = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThemTuMoi = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
@@ -47,10 +47,10 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.pnNghia = new Guna.UI2.WinForms.Guna2Panel();
             this.rdNu = new Bunifu.UI.WinForms.BunifuRadioButton();
             this.rdNam = new Bunifu.UI.WinForms.BunifuRadioButton();
-            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbbChuyenNganh = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtPhienAm = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTuVung = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -59,59 +59,59 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.pnBottom.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2TextBox3
+            // txtTraiNghia
             // 
-            this.guna2TextBox3.BorderColor = System.Drawing.Color.Silver;
-            this.guna2TextBox3.BorderRadius = 8;
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.IconLeftOffset = new System.Drawing.Point(5, -55);
-            this.guna2TextBox3.IconLeftSize = new System.Drawing.Size(18, 18);
-            this.guna2TextBox3.Location = new System.Drawing.Point(412, 29);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox3.Multiline = true;
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.guna2TextBox3.PlaceholderText = "Nhập từ trái nghĩa";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.Size = new System.Drawing.Size(357, 108);
-            this.guna2TextBox3.TabIndex = 44;
-            this.guna2TextBox3.TextOffset = new System.Drawing.Point(5, 0);
+            this.txtTraiNghia.BorderColor = System.Drawing.Color.Silver;
+            this.txtTraiNghia.BorderRadius = 8;
+            this.txtTraiNghia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTraiNghia.DefaultText = "";
+            this.txtTraiNghia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTraiNghia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTraiNghia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTraiNghia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTraiNghia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTraiNghia.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtTraiNghia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTraiNghia.IconLeftOffset = new System.Drawing.Point(5, -55);
+            this.txtTraiNghia.IconLeftSize = new System.Drawing.Size(18, 18);
+            this.txtTraiNghia.Location = new System.Drawing.Point(412, 29);
+            this.txtTraiNghia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTraiNghia.Multiline = true;
+            this.txtTraiNghia.Name = "txtTraiNghia";
+            this.txtTraiNghia.PasswordChar = '\0';
+            this.txtTraiNghia.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtTraiNghia.PlaceholderText = "Whole";
+            this.txtTraiNghia.SelectedText = "";
+            this.txtTraiNghia.Size = new System.Drawing.Size(357, 108);
+            this.txtTraiNghia.TabIndex = 44;
+            this.txtTraiNghia.TextOffset = new System.Drawing.Point(5, 0);
             // 
-            // guna2TextBox4
+            // txtDongNghia
             // 
-            this.guna2TextBox4.BorderColor = System.Drawing.Color.Silver;
-            this.guna2TextBox4.BorderRadius = 8;
-            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox4.DefaultText = "";
-            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.IconLeftOffset = new System.Drawing.Point(5, -55);
-            this.guna2TextBox4.IconLeftSize = new System.Drawing.Size(18, 18);
-            this.guna2TextBox4.Location = new System.Drawing.Point(21, 29);
-            this.guna2TextBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox4.Multiline = true;
-            this.guna2TextBox4.Name = "guna2TextBox4";
-            this.guna2TextBox4.PasswordChar = '\0';
-            this.guna2TextBox4.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.guna2TextBox4.PlaceholderText = "Nhập từ đồng nghĩa";
-            this.guna2TextBox4.SelectedText = "";
-            this.guna2TextBox4.Size = new System.Drawing.Size(357, 108);
-            this.guna2TextBox4.TabIndex = 44;
-            this.guna2TextBox4.TextOffset = new System.Drawing.Point(5, 0);
+            this.txtDongNghia.BorderColor = System.Drawing.Color.Silver;
+            this.txtDongNghia.BorderRadius = 8;
+            this.txtDongNghia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDongNghia.DefaultText = "";
+            this.txtDongNghia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDongNghia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDongNghia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDongNghia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDongNghia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDongNghia.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtDongNghia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDongNghia.IconLeftOffset = new System.Drawing.Point(5, -55);
+            this.txtDongNghia.IconLeftSize = new System.Drawing.Size(18, 18);
+            this.txtDongNghia.Location = new System.Drawing.Point(21, 29);
+            this.txtDongNghia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDongNghia.Multiline = true;
+            this.txtDongNghia.Name = "txtDongNghia";
+            this.txtDongNghia.PasswordChar = '\0';
+            this.txtDongNghia.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtDongNghia.PlaceholderText = "Element";
+            this.txtDongNghia.SelectedText = "";
+            this.txtDongNghia.Size = new System.Drawing.Size(357, 108);
+            this.txtDongNghia.TabIndex = 44;
+            this.txtDongNghia.TextOffset = new System.Drawing.Point(5, 0);
             // 
             // label9
             // 
@@ -139,8 +139,8 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.Controls.Add(this.guna2TextBox3);
-            this.guna2Panel2.Controls.Add(this.guna2TextBox4);
+            this.guna2Panel2.Controls.Add(this.txtTraiNghia);
+            this.guna2Panel2.Controls.Add(this.txtDongNghia);
             this.guna2Panel2.Controls.Add(this.label9);
             this.guna2Panel2.Controls.Add(this.label8);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -149,28 +149,29 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2Panel2.Size = new System.Drawing.Size(795, 155);
             this.guna2Panel2.TabIndex = 100;
             // 
-            // LuuThayDoiTK
+            // btnThemTuMoi
             // 
-            this.LuuThayDoiTK.Animated = true;
-            this.LuuThayDoiTK.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.LuuThayDoiTK.BorderRadius = 20;
-            this.LuuThayDoiTK.BorderThickness = 2;
-            this.LuuThayDoiTK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LuuThayDoiTK.FillColor = System.Drawing.Color.Empty;
-            this.LuuThayDoiTK.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.LuuThayDoiTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.LuuThayDoiTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.LuuThayDoiTK.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.LuuThayDoiTK.HoverState.ForeColor = System.Drawing.Color.White;
-            this.LuuThayDoiTK.Location = new System.Drawing.Point(278, 12);
-            this.LuuThayDoiTK.Name = "LuuThayDoiTK";
-            this.LuuThayDoiTK.Size = new System.Drawing.Size(227, 42);
-            this.LuuThayDoiTK.TabIndex = 11;
-            this.LuuThayDoiTK.Text = "Thêm từ";
+            this.btnThemTuMoi.Animated = true;
+            this.btnThemTuMoi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnThemTuMoi.BorderRadius = 20;
+            this.btnThemTuMoi.BorderThickness = 2;
+            this.btnThemTuMoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemTuMoi.FillColor = System.Drawing.Color.Empty;
+            this.btnThemTuMoi.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnThemTuMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnThemTuMoi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnThemTuMoi.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnThemTuMoi.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnThemTuMoi.Location = new System.Drawing.Point(278, 12);
+            this.btnThemTuMoi.Name = "btnThemTuMoi";
+            this.btnThemTuMoi.Size = new System.Drawing.Size(227, 42);
+            this.btnThemTuMoi.TabIndex = 11;
+            this.btnThemTuMoi.Text = "Thêm từ";
+            this.btnThemTuMoi.Click += new System.EventHandler(this.btnThemTuMoi_Click);
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.LuuThayDoiTK);
+            this.guna2Panel1.Controls.Add(this.btnThemTuMoi);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 619);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -240,6 +241,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.btnMacDinh.TabIndex = 108;
             this.btnMacDinh.Text = "Mặc định";
             this.btnMacDinh.TextOffset = new System.Drawing.Point(1, 0);
+            this.btnMacDinh.Click += new System.EventHandler(this.btnMacDinh_Click);
             // 
             // btnXoaNghia
             // 
@@ -320,54 +322,54 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.rdNam.TabIndex = 104;
             this.rdNam.Text = null;
             // 
-            // guna2ComboBox2
+            // cbbChuyenNganh
             // 
-            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox2.BorderColor = System.Drawing.Color.Silver;
-            this.guna2ComboBox2.BorderRadius = 8;
-            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.Empty;
-            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2ComboBox2.FormattingEnabled = true;
-            this.guna2ComboBox2.ItemHeight = 34;
-            this.guna2ComboBox2.Items.AddRange(new object[] {
+            this.cbbChuyenNganh.BackColor = System.Drawing.Color.Transparent;
+            this.cbbChuyenNganh.BorderColor = System.Drawing.Color.Silver;
+            this.cbbChuyenNganh.BorderRadius = 8;
+            this.cbbChuyenNganh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbChuyenNganh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbChuyenNganh.FocusedColor = System.Drawing.Color.Empty;
+            this.cbbChuyenNganh.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.cbbChuyenNganh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cbbChuyenNganh.FormattingEnabled = true;
+            this.cbbChuyenNganh.ItemHeight = 34;
+            this.cbbChuyenNganh.Items.AddRange(new object[] {
             "Khoa học dữ liệu",
             "Kỹ thuật phần mềm",
             "Mạng máy tính"});
-            this.guna2ComboBox2.Location = new System.Drawing.Point(567, 103);
-            this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.Size = new System.Drawing.Size(240, 40);
-            this.guna2ComboBox2.TabIndex = 103;
-            this.guna2ComboBox2.TextOffset = new System.Drawing.Point(10, 0);
+            this.cbbChuyenNganh.Location = new System.Drawing.Point(567, 103);
+            this.cbbChuyenNganh.Name = "cbbChuyenNganh";
+            this.cbbChuyenNganh.Size = new System.Drawing.Size(240, 40);
+            this.cbbChuyenNganh.TabIndex = 103;
+            this.cbbChuyenNganh.TextOffset = new System.Drawing.Point(10, 0);
             // 
-            // guna2TextBox2
+            // txtPhienAm
             // 
-            this.guna2TextBox2.BorderColor = System.Drawing.Color.Silver;
-            this.guna2TextBox2.BorderRadius = 8;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox2.IconLeft")));
-            this.guna2TextBox2.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.guna2TextBox2.IconLeftSize = new System.Drawing.Size(18, 18);
-            this.guna2TextBox2.Location = new System.Drawing.Point(310, 102);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.guna2TextBox2.PlaceholderText = "Nhập phiên âm";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(222, 41);
-            this.guna2TextBox2.TabIndex = 101;
-            this.guna2TextBox2.TextOffset = new System.Drawing.Point(5, 0);
+            this.txtPhienAm.BorderColor = System.Drawing.Color.Silver;
+            this.txtPhienAm.BorderRadius = 8;
+            this.txtPhienAm.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPhienAm.DefaultText = "";
+            this.txtPhienAm.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPhienAm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPhienAm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPhienAm.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPhienAm.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPhienAm.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtPhienAm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPhienAm.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtPhienAm.IconLeft")));
+            this.txtPhienAm.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.txtPhienAm.IconLeftSize = new System.Drawing.Size(18, 18);
+            this.txtPhienAm.Location = new System.Drawing.Point(310, 102);
+            this.txtPhienAm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPhienAm.Name = "txtPhienAm";
+            this.txtPhienAm.PasswordChar = '\0';
+            this.txtPhienAm.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtPhienAm.PlaceholderText = "Ví dụ: kəm´pəʊ.nənt";
+            this.txtPhienAm.SelectedText = "";
+            this.txtPhienAm.Size = new System.Drawing.Size(222, 41);
+            this.txtPhienAm.TabIndex = 101;
+            this.txtPhienAm.TextOffset = new System.Drawing.Point(5, 0);
             // 
             // label1
             // 
@@ -381,32 +383,32 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label1.TabIndex = 98;
             this.label1.Text = "Phiên âm";
             // 
-            // guna2TextBox1
+            // txtTuVung
             // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.guna2TextBox1.BorderRadius = 8;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox1.IconLeft")));
-            this.guna2TextBox1.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(18, 18);
-            this.guna2TextBox1.Location = new System.Drawing.Point(54, 102);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.guna2TextBox1.PlaceholderText = "Nhập từ vựng";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(222, 41);
-            this.guna2TextBox1.TabIndex = 102;
-            this.guna2TextBox1.TextOffset = new System.Drawing.Point(5, 0);
+            this.txtTuVung.BorderColor = System.Drawing.Color.Silver;
+            this.txtTuVung.BorderRadius = 8;
+            this.txtTuVung.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTuVung.DefaultText = "";
+            this.txtTuVung.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTuVung.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTuVung.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTuVung.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTuVung.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTuVung.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtTuVung.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTuVung.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtTuVung.IconLeft")));
+            this.txtTuVung.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.txtTuVung.IconLeftSize = new System.Drawing.Size(18, 18);
+            this.txtTuVung.Location = new System.Drawing.Point(54, 102);
+            this.txtTuVung.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTuVung.Name = "txtTuVung";
+            this.txtTuVung.PasswordChar = '\0';
+            this.txtTuVung.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtTuVung.PlaceholderText = "Ví dụ: Component";
+            this.txtTuVung.SelectedText = "";
+            this.txtTuVung.Size = new System.Drawing.Size(222, 41);
+            this.txtTuVung.TabIndex = 102;
+            this.txtTuVung.TextOffset = new System.Drawing.Point(5, 0);
             // 
             // label5
             // 
@@ -451,15 +453,16 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.Controls.Add(this.pnBottom);
             this.Controls.Add(this.rdNu);
             this.Controls.Add(this.rdNam);
-            this.Controls.Add(this.guna2ComboBox2);
-            this.Controls.Add(this.guna2TextBox2);
+            this.Controls.Add(this.cbbChuyenNganh);
+            this.Controls.Add(this.txtPhienAm);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.txtTuVung);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.MinimumSize = new System.Drawing.Size(882, 553);
             this.Name = "UC_ThemTu";
             this.Size = new System.Drawing.Size(865, 553);
+            this.Load += new System.EventHandler(this.UC_ThemTu_Load);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
@@ -472,12 +475,12 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private Guna.UI2.WinForms.Guna2TextBox txtTraiNghia;
+        private Guna.UI2.WinForms.Guna2TextBox txtDongNghia;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Button LuuThayDoiTK;
+        private Guna.UI2.WinForms.Guna2Button btnThemTuMoi;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label25;
@@ -489,10 +492,10 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private UC_TT_ThemNghia uC_TT_ThemNghia1;
         private Bunifu.UI.WinForms.BunifuRadioButton rdNu;
         private Bunifu.UI.WinForms.BunifuRadioButton rdNam;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbChuyenNganh;
+        private Guna.UI2.WinForms.Guna2TextBox txtPhienAm;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtTuVung;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
