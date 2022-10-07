@@ -284,6 +284,32 @@ group by t.ID,t.TenTu, tl.TenLoai, PhienAm, TenChuyenNganh, n.Nghia, n.MoTa, n.V
 go
 EXEC TimTheoChuyenNganh 'variable', 2
 go
+-- Tìm kiếm lịch sử
+create proc HienThiTimKiemLSTT
+@tentu varchar(100),
+@IDTK int
+as
+	select ID, TiengAnh, TiengViet, PhienAm, NgayHienTai, IDTK
+	from LichSuTraTu
+	where TiengAnh = @tentu and IDTK = @IDTK
+go
+EXEC HienThiTimKiemLSTT 'variable', 10
+go
+-- tim lich su dich
+create proc HienThiTimKiemLSD
+@tentu varchar(100),
+@IDTK int
+as
+	select ID, TiengAnh, TiengViet, NgayHienTai, IDTK
+	from LichSuDich
+	where TiengAnh like concat('%',@tentu,'%') and IDTK = @IDTK
+go
+EXEC HienThiTimKiemLSD 'e', 10
+Select DISTINCT * from LichSuTraTu lstt where lstt.IDTK = 10 and lstt.TiengAnh = 'Variable'
+go
+Select * from LichSuTraTu
+Select * from LichSuDich
+go
 create proc KiemTraDangNhap
 @tendangnhap varchar(100),
 @matkhau varchar(100)

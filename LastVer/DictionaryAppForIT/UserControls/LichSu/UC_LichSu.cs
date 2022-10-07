@@ -24,7 +24,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
         UC_LS_VanBan ucLSVanBan;
         SpeechSynthesizer speech;
         public static string idHienTai;
-
+        public string TuHienTai = "";
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         List<UC_LS_TuVung> _listUCLSTV;
         List<UC_LS_VanBan> _listUCLSVB;
@@ -76,7 +76,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 {
                     RJMessageBox.Show(ex.Message);
                 }
-
             }
         }
 
@@ -170,6 +169,91 @@ namespace DictionaryAppForIT.UserControls.GanDay
         }
 
         private void btnXoaDuLieu_ControlRemoved(object sender, ControlEventArgs e)
+        {
+
+        }
+
+        private void txtTimKiemLS_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && TuHienTai != txtTimKiemLS.Text)//--------------------------------------
+            {
+                flpContent.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
+                HienThiTimKiemLSTT();
+                HienThiTimKiemLSD();
+                TuHienTai = txtTimKiemLS.Text;//--------------------------------------
+
+            }
+        }
+        private void HienThiTimKiemLSTT()
+        {
+            try
+            {
+                SqlConnection Conn = new SqlConnection(connString);
+                SqlCommand cmd = new SqlCommand($"EXEC HienThiTimKiemLSTT '{txtTimKiemLS.Text.Trim()}', {Class_TaiKhoan.IdTaiKhoan}", Conn);
+                Conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    //ThongTinLSTraTu.idTraTuLS = rdr["ID"].ToString();
+                    idHienTai = rdr["ID"].ToString();
+                    string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
+                    string ThoiGian = arrThoiGian[1] + " " + arrThoiGian[2];
+                    string NgayThang = arrThoiGian[0];
+                    string TVTiengAnh = rdr["TiengAnh"].ToString();
+                    string TVPhienAm = rdr["PhienAm"].ToString();
+                    string TVTiengViet = rdr["TiengViet"].ToString();
+                    ucLSTuVung = new UC_LS_TuVung(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVPhienAm, TVTiengViet);
+
+                    flpContent.Controls.Add(ucLSTuVung);
+                    _listUCLSTV.Add(ucLSTuVung);
+                    ucLSTuVung.Name = "unCheck";
+                }
+                Conn.Close();
+                Conn.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void HienThiTimKiemLSD()
+        {
+            try
+            {
+                SqlConnection Conn = new SqlConnection(connString);
+                SqlCommand cmd = new SqlCommand($"EXEC HienThiTimKiemLSD '{txtTimKiemLS.Text.Trim()}', {Class_TaiKhoan.IdTaiKhoan}", Conn);
+                Conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    idHienTai = rdr["ID"].ToString();
+                    string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
+                    string ThoiGian = arrThoiGian[1] + " " + arrThoiGian[2];
+                    string NgayThang = arrThoiGian[0];
+                    string TVTiengAnh = rdr["TiengAnh"].ToString();
+                    string TVTiengViet = rdr["TiengViet"].ToString();
+                    ucLSVanBan = new UC_LS_VanBan(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVTiengViet);
+                    flpContent.Controls.Add(ucLSVanBan);
+
+                    _listUCLSVB.Add(ucLSVanBan);
+                    ucLSVanBan.Name = "unCheck";
+                }
+                Conn.Close();
+                Conn.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void UC_LichSu_Load(object sender, EventArgs e)
+        {
+            cbbChonLichSuTK.SelectedIndex = 0;
+        }
+
+        private void cbbChonLichSuTK_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

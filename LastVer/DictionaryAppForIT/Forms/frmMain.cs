@@ -238,6 +238,7 @@ namespace DictionaryAppForIT.Forms
         private void btnLichSu_Click(object sender, EventArgs e)
         {
             ShowUC(ucLichSu);
+            ucLichSu.TuHienTai = "";
             ucLichSu.HienThiLSTraTu();
             ucLichSu.HienThiLSDich();
         }
@@ -378,6 +379,7 @@ namespace DictionaryAppForIT.Forms
 
         private void btnThemTuMini_Click(object sender, EventArgs e)
         {
+            btnTaiKhoan.PerformClick();
             btnThemTu.PerformClick();
         }
     }
