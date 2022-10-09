@@ -30,12 +30,12 @@ namespace DictionaryAppForIT.UserControls.Home
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Dich));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -53,7 +53,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtUnder = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtCopyText = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCopyText = new Guna.UI2.WinForms.Guna2Button();
             this.btnLuuYeuThich = new Guna.UI2.WinForms.Guna2Button();
             this.btnSpeakVN = new Guna.UI2.WinForms.Guna2Button();
             this.lblVNtxt = new System.Windows.Forms.Label();
@@ -62,8 +62,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.flpnLichSu = new System.Windows.Forms.FlowLayoutPanel();
             this.dtgvLichSu = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ColTiengAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTiengViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ctxtChucNang = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.tsmiXoa = new ReaLTaiizor.Controls.MaterialToolStripMenuItem();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -75,6 +73,8 @@ namespace DictionaryAppForIT.UserControls.Home
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
+            this.ColTiengAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTiengViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -210,7 +210,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.btnMic.ForeColor = System.Drawing.Color.White;
             this.btnMic.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnMic.Image = ((System.Drawing.Image)(resources.GetObject("btnMic.Image")));
-            this.btnMic.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnMic.ImageSize = new System.Drawing.Size(18, 18);
             this.btnMic.Location = new System.Drawing.Point(431, 7);
             this.btnMic.Name = "btnMic";
             this.btnMic.PressedDepth = 0;
@@ -235,6 +235,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.btnClear.Size = new System.Drawing.Size(25, 20);
             this.btnClear.TabIndex = 16;
             this.btnClear.UseTransparentBackground = true;
+            this.btnClear.Visible = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSpeakEnglish
@@ -322,7 +323,7 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.txtCopyText);
+            this.panel4.Controls.Add(this.btnCopyText);
             this.panel4.Controls.Add(this.btnLuuYeuThich);
             this.panel4.Controls.Add(this.btnSpeakVN);
             this.panel4.Controls.Add(this.lblVNtxt);
@@ -332,30 +333,32 @@ namespace DictionaryAppForIT.UserControls.Home
             this.panel4.Size = new System.Drawing.Size(493, 33);
             this.panel4.TabIndex = 2;
             // 
-            // txtCopyText
+            // btnCopyText
             // 
-            this.txtCopyText.BackColor = System.Drawing.Color.Transparent;
-            this.txtCopyText.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.txtCopyText.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtCopyText.FillColor = System.Drawing.Color.Transparent;
-            this.txtCopyText.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCopyText.ForeColor = System.Drawing.Color.Gray;
-            this.txtCopyText.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.txtCopyText.Image = ((System.Drawing.Image)(resources.GetObject("txtCopyText.Image")));
-            this.txtCopyText.ImageSize = new System.Drawing.Size(18, 18);
-            this.txtCopyText.Location = new System.Drawing.Point(430, 3);
-            this.txtCopyText.Name = "txtCopyText";
-            this.txtCopyText.PressedDepth = 0;
-            this.txtCopyText.Size = new System.Drawing.Size(26, 27);
-            this.txtCopyText.TabIndex = 22;
-            this.txtCopyText.TextOffset = new System.Drawing.Point(3, 0);
-            this.txtCopyText.UseTransparentBackground = true;
-            this.txtCopyText.Click += new System.EventHandler(this.txtCopyText_Click);
+            this.btnCopyText.BackColor = System.Drawing.Color.Transparent;
+            this.btnCopyText.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnCopyText.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCopyText.FillColor = System.Drawing.Color.Transparent;
+            this.btnCopyText.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCopyText.ForeColor = System.Drawing.Color.Gray;
+            this.btnCopyText.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnCopyText.Image = ((System.Drawing.Image)(resources.GetObject("btnCopyText.Image")));
+            this.btnCopyText.ImageSize = new System.Drawing.Size(18, 18);
+            this.btnCopyText.Location = new System.Drawing.Point(430, 3);
+            this.btnCopyText.Name = "btnCopyText";
+            this.btnCopyText.PressedDepth = 0;
+            this.btnCopyText.Size = new System.Drawing.Size(26, 27);
+            this.btnCopyText.TabIndex = 22;
+            this.btnCopyText.TextOffset = new System.Drawing.Point(3, 0);
+            this.btnCopyText.UseTransparentBackground = true;
+            this.btnCopyText.Visible = false;
+            this.btnCopyText.Click += new System.EventHandler(this.txtCopyText_Click);
             // 
             // btnLuuYeuThich
             // 
             this.btnLuuYeuThich.BackColor = System.Drawing.Color.Transparent;
             this.btnLuuYeuThich.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btnLuuYeuThich.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.btnLuuYeuThich.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnLuuYeuThich.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuuYeuThich.FillColor = System.Drawing.Color.Transparent;
@@ -370,6 +373,8 @@ namespace DictionaryAppForIT.UserControls.Home
             this.btnLuuYeuThich.Size = new System.Drawing.Size(25, 20);
             this.btnLuuYeuThich.TabIndex = 16;
             this.btnLuuYeuThich.UseTransparentBackground = true;
+            this.btnLuuYeuThich.Visible = false;
+            this.btnLuuYeuThich.Click += new System.EventHandler(this.btnLuuYeuThich_Click);
             // 
             // btnSpeakVN
             // 
@@ -465,30 +470,30 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             // dtgvLichSu
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dtgvLichSu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvLichSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtgvLichSu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvLichSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvLichSu.ColumnHeadersHeight = 21;
             this.dtgvLichSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dtgvLichSu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColTiengAnh,
             this.ColTiengViet});
             this.dtgvLichSu.ContextMenuStrip = this.ctxtChucNang;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvLichSu.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvLichSu.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvLichSu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtgvLichSu.Location = new System.Drawing.Point(9, 3);
             this.dtgvLichSu.Name = "dtgvLichSu";
@@ -518,18 +523,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.dtgvLichSu.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dtgvLichSu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLichSu_CellContentClick);
             // 
-            // ColTiengAnh
-            // 
-            this.ColTiengAnh.DataPropertyName = "TiengAnh";
-            this.ColTiengAnh.HeaderText = "Tiếng Anh";
-            this.ColTiengAnh.Name = "ColTiengAnh";
-            // 
-            // ColTiengViet
-            // 
-            this.ColTiengViet.DataPropertyName = "TiengViet";
-            this.ColTiengViet.HeaderText = "Tiếng Việt";
-            this.ColTiengViet.Name = "ColTiengViet";
-            // 
             // ctxtChucNang
             // 
             this.ctxtChucNang.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -556,26 +549,26 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.guna2DataGridView1.ColumnHeadersHeight = 21;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.guna2DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(9, 291);
@@ -692,6 +685,20 @@ namespace DictionaryAppForIT.UserControls.Home
             this.fileSystemWatcher2.EnableRaisingEvents = true;
             this.fileSystemWatcher2.SynchronizingObject = this;
             // 
+            // ColTiengAnh
+            // 
+            this.ColTiengAnh.DataPropertyName = "TiengAnh";
+            this.ColTiengAnh.HeaderText = "Tiếng Anh";
+            this.ColTiengAnh.Name = "ColTiengAnh";
+            this.ColTiengAnh.ReadOnly = true;
+            // 
+            // ColTiengViet
+            // 
+            this.ColTiengViet.DataPropertyName = "TiengViet";
+            this.ColTiengViet.HeaderText = "Tiếng Việt";
+            this.ColTiengViet.Name = "ColTiengViet";
+            this.ColTiengViet.ReadOnly = true;
+            // 
             // UC_Dich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -746,7 +753,7 @@ namespace DictionaryAppForIT.UserControls.Home
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2TextBox txtUnder;
         private System.Windows.Forms.Panel panel4;
-        private Guna.UI2.WinForms.Guna2Button txtCopyText;
+        private Guna.UI2.WinForms.Guna2Button btnCopyText;
         private Guna.UI2.WinForms.Guna2Button btnLuuYeuThich;
         private Guna.UI2.WinForms.Guna2Button btnSpeakVN;
         private System.Windows.Forms.Label lblVNtxt;

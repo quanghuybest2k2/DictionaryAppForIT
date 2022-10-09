@@ -60,7 +60,7 @@ namespace DictionaryAppForIT.UserControls
             this.txtPhienAm = new System.Windows.Forms.TextBox();
             this.flpMeaning = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnYeuThich = new Guna.UI2.WinForms.Guna2Button();
             this.btnUK = new Guna.UI2.WinForms.Guna2Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -495,7 +495,7 @@ namespace DictionaryAppForIT.UserControls
             this.guna2Panel1.Controls.Add(this.txtPhienAm);
             this.guna2Panel1.Controls.Add(this.flpMeaning);
             this.guna2Panel1.Controls.Add(this.guna2Button9);
-            this.guna2Panel1.Controls.Add(this.guna2Button8);
+            this.guna2Panel1.Controls.Add(this.btnYeuThich);
             this.guna2Panel1.Controls.Add(this.btnUK);
             this.guna2Panel1.Controls.Add(this.label9);
             this.guna2Panel1.Controls.Add(this.label8);
@@ -619,30 +619,31 @@ namespace DictionaryAppForIT.UserControls
             this.bunifuToolTip1.SetToolTipTitle(this.guna2Button9, "");
             this.guna2Button9.UseTransparentBackground = true;
             // 
-            // guna2Button8
+            // btnYeuThich
             // 
-            this.guna2Button8.Animated = true;
-            this.guna2Button8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button8.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.guna2Button8.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2Button8.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.guna2Button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button8.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button8.ForeColor = System.Drawing.Color.Gray;
-            this.guna2Button8.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button8.Image")));
-            this.guna2Button8.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2Button8.Location = new System.Drawing.Point(528, 8);
-            this.guna2Button8.Name = "guna2Button8";
-            this.guna2Button8.PressedColor = System.Drawing.Color.Empty;
-            this.guna2Button8.PressedDepth = 0;
-            this.guna2Button8.Size = new System.Drawing.Size(29, 31);
-            this.guna2Button8.TabIndex = 21;
-            this.guna2Button8.TextOffset = new System.Drawing.Point(3, 0);
-            this.bunifuToolTip1.SetToolTip(this.guna2Button8, "Thêm vào mục yêu thích");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button8, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button8, "");
-            this.guna2Button8.UseTransparentBackground = true;
+            this.btnYeuThich.Animated = true;
+            this.btnYeuThich.BackColor = System.Drawing.Color.Transparent;
+            this.btnYeuThich.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btnYeuThich.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnYeuThich.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnYeuThich.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnYeuThich.FillColor = System.Drawing.Color.Transparent;
+            this.btnYeuThich.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnYeuThich.ForeColor = System.Drawing.Color.Gray;
+            this.btnYeuThich.Image = ((System.Drawing.Image)(resources.GetObject("btnYeuThich.Image")));
+            this.btnYeuThich.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnYeuThich.Location = new System.Drawing.Point(528, 8);
+            this.btnYeuThich.Name = "btnYeuThich";
+            this.btnYeuThich.PressedColor = System.Drawing.Color.Empty;
+            this.btnYeuThich.PressedDepth = 0;
+            this.btnYeuThich.Size = new System.Drawing.Size(29, 31);
+            this.btnYeuThich.TabIndex = 21;
+            this.btnYeuThich.TextOffset = new System.Drawing.Point(3, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnYeuThich, "Thêm vào mục yêu thích");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnYeuThich, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnYeuThich, "");
+            this.btnYeuThich.UseTransparentBackground = true;
+            this.btnYeuThich.Click += new System.EventHandler(this.btnYeuThich_Click);
             // 
             // btnUK
             // 
@@ -987,7 +988,7 @@ namespace DictionaryAppForIT.UserControls
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.FlowLayoutPanel flpMeaning;
         private Guna.UI2.WinForms.Guna2Button guna2Button9;
-        private Guna.UI2.WinForms.Guna2Button guna2Button8;
+        private Guna.UI2.WinForms.Guna2Button btnYeuThich;
         private Guna.UI2.WinForms.Guna2Button btnUK;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

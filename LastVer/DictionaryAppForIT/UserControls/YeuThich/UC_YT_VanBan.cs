@@ -17,12 +17,19 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             InitializeComponent();
         }
 
-        public UC_YT_VanBan(string stt, string tiengAnh, string tiengViet)
+        public UC_YT_VanBan(string stt, string index, string tiengAnh, string tiengViet)
         {
             InitializeComponent();
-            this.STT = stt;
+            this.STT = "No." + stt;
+            this.Index = index;
             this.VBTiengAnh = tiengAnh;
             this.VBTiengViet = tiengViet;
+        }
+
+        public string Index
+        {
+            get { return lblIndex.Text; }
+            set { lblIndex.Text = value; }
         }
 
         public string STT
@@ -48,6 +55,18 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             guna2pbNen1.FillColor = Color.FromName(color);
             guna2pbNen2.FillColor = Color.FromName(color);
             pnNen.BackColor = Color.FromName(color);
+        }
+
+        private void chkChonYTVanBan_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            if (chkChonYTVanBan.Checked)
+            {
+                this.Name = "Check";
+            }
+            else
+            {
+                this.Name = "unCheck";
+            }
         }
     }
 }

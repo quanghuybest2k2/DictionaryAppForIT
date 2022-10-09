@@ -17,13 +17,20 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             InitializeComponent();
         }
 
-        public UC_YT_TuVung(string stt, string tiengAnh, string phienAm, string tiengViet)
+        public UC_YT_TuVung(string stt, string index, string tiengAnh, string phienAm, string tiengViet)
         {
             InitializeComponent();
-            this.STT = stt;
+            this.STT = "No." + stt;
+            this.Index = index;
             this.TVTiengAnh = tiengAnh;
             this.TVPhienAm = phienAm;
             this.TVTiengViet = tiengViet;
+        }
+
+        public string Index
+        {
+            get { return lblIndex.Text; }
+            set { lblIndex.Text = value; }
         }
 
         public string STT
@@ -55,6 +62,18 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             guna2pbNen1.FillColor = Color.FromName(color);
             guna2pbNen2.FillColor = Color.FromName(color);
             pnNen.BackColor = Color.FromName(color);
+        }
+
+        private void chkChonYTTuVung_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            if (chkChonYTTuVung.Checked)
+            {
+                this.Name = "Check";
+            }
+            else
+            {
+                this.Name = "unCheck";
+            }
         }
     }
 }

@@ -39,7 +39,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.label25 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.cbbChonLichSuTK = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTimKiemLS = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
@@ -131,7 +130,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.Controls.Add(this.cbbChonLichSuTK);
             this.guna2Panel1.Controls.Add(this.pictureBox1);
             this.guna2Panel1.Controls.Add(this.txtTimKiemLS);
             this.guna2Panel1.Controls.Add(this.guna2Button7);
@@ -150,33 +148,10 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Panel1.Size = new System.Drawing.Size(200, 553);
             this.guna2Panel1.TabIndex = 31;
             // 
-            // cbbChonLichSuTK
-            // 
-            this.cbbChonLichSuTK.BackColor = System.Drawing.Color.Transparent;
-            this.cbbChonLichSuTK.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.cbbChonLichSuTK.BorderRadius = 16;
-            this.cbbChonLichSuTK.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbChonLichSuTK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbChonLichSuTK.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbChonLichSuTK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbChonLichSuTK.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.cbbChonLichSuTK.ForeColor = System.Drawing.Color.Gray;
-            this.cbbChonLichSuTK.ItemHeight = 30;
-            this.cbbChonLichSuTK.Items.AddRange(new object[] {
-            "Chọn kiểu tìm",
-            "Lịch sử tra từ",
-            "Lịch sử dịch"});
-            this.cbbChonLichSuTK.Location = new System.Drawing.Point(13, 24);
-            this.cbbChonLichSuTK.Name = "cbbChonLichSuTK";
-            this.cbbChonLichSuTK.Size = new System.Drawing.Size(174, 36);
-            this.cbbChonLichSuTK.TabIndex = 30;
-            this.cbbChonLichSuTK.TextOffset = new System.Drawing.Point(10, 0);
-            this.cbbChonLichSuTK.SelectedIndexChanged += new System.EventHandler(this.cbbChonLichSuTK_SelectedIndexChanged);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(27, 401);
+            this.pictureBox1.Location = new System.Drawing.Point(27, 393);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(148, 134);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -201,7 +176,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.txtTimKiemLS.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.txtTimKiemLS.IconLeftOffset = new System.Drawing.Point(5, 0);
             this.txtTimKiemLS.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.txtTimKiemLS.Location = new System.Drawing.Point(13, 74);
+            this.txtTimKiemLS.Location = new System.Drawing.Point(13, 25);
             this.txtTimKiemLS.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtTimKiemLS.Name = "txtTimKiemLS";
             this.txtTimKiemLS.PasswordChar = '\0';
@@ -229,7 +204,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Button7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button7.ImageOffset = new System.Drawing.Point(8, 0);
             this.guna2Button7.ImageSize = new System.Drawing.Size(17, 17);
-            this.guna2Button7.Location = new System.Drawing.Point(13, 337);
+            this.guna2Button7.Location = new System.Drawing.Point(13, 295);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.Size = new System.Drawing.Size(174, 35);
             this.guna2Button7.TabIndex = 3;
@@ -252,7 +227,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button6.ImageOffset = new System.Drawing.Point(8, 0);
             this.guna2Button6.ImageSize = new System.Drawing.Size(19, 19);
-            this.guna2Button6.Location = new System.Drawing.Point(13, 294);
+            this.guna2Button6.Location = new System.Drawing.Point(13, 252);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.Size = new System.Drawing.Size(174, 35);
             this.guna2Button6.TabIndex = 3;
@@ -275,7 +250,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button5.ImageOffset = new System.Drawing.Point(8, 0);
             this.guna2Button5.ImageSize = new System.Drawing.Size(19, 19);
-            this.guna2Button5.Location = new System.Drawing.Point(13, 251);
+            this.guna2Button5.Location = new System.Drawing.Point(13, 209);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(174, 35);
             this.guna2Button5.TabIndex = 3;
@@ -298,7 +273,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button4.ImageOffset = new System.Drawing.Point(8, 0);
             this.guna2Button4.ImageSize = new System.Drawing.Size(19, 19);
-            this.guna2Button4.Location = new System.Drawing.Point(13, 208);
+            this.guna2Button4.Location = new System.Drawing.Point(13, 166);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(174, 35);
             this.guna2Button4.TabIndex = 3;
@@ -321,7 +296,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.ImageOffset = new System.Drawing.Point(8, 0);
             this.guna2Button3.ImageSize = new System.Drawing.Size(18, 18);
-            this.guna2Button3.Location = new System.Drawing.Point(13, 165);
+            this.guna2Button3.Location = new System.Drawing.Point(13, 123);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(174, 35);
             this.guna2Button3.TabIndex = 3;
@@ -345,7 +320,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.ImageOffset = new System.Drawing.Point(8, 0);
             this.guna2Button1.ImageSize = new System.Drawing.Size(14, 14);
-            this.guna2Button1.Location = new System.Drawing.Point(13, 122);
+            this.guna2Button1.Location = new System.Drawing.Point(13, 80);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(174, 35);
             this.guna2Button1.TabIndex = 3;
@@ -390,6 +365,5 @@ namespace DictionaryAppForIT.UserControls.GanDay
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbChonLichSuTK;
     }
 }

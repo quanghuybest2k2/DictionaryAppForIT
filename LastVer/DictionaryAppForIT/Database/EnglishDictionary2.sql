@@ -70,6 +70,31 @@ create table LichSuTraTu
 	IDTK INT references TaiKhoan(ID),
 	primary key (ID, IDTK, NgayHienTai)
 )
+go
+
+create table YeuThichTuVung
+(
+	ID INT IDENTITY(1,1),
+	TiengAnh VARCHAR(400),
+	PhienAm NVARCHAR(400),
+	TiengViet NVARCHAR(400),
+	IDTK INT references TaiKhoan(ID),
+	primary key (ID, IDTK)
+)
+go
+select * from YeuThichTuVung
+create table YeuThichVanBan
+(
+	ID INT IDENTITY(1,1),
+	TiengAnh VARCHAR(400),
+	TiengViet NVARCHAR(400),
+	IDTK INT references TaiKhoan(ID),
+	primary key (ID, IDTK)
+)
+go
+select * from YeuThichVanBan
+-- INSERT INTO YeuThichVanBan VALUES('', '', 10)
+SELECT * FROM YeuThichVanBan
 -- go
 -- delete from LichSuTraTu where id = 56 or id = 60 and IDTK = 2
 go
@@ -238,6 +263,40 @@ go
 -- EXEC ThemNghia  5,   2, N'kiểm tra', N'kiểm tra cái gì đó', 'The test is the best.'
 ----
 -- go
+-- Lưu từ yêu thích
+create proc LuuTuYeuThich
+	@IDYT INT out,
+	@TiengAnh VARCHAR(400),
+	@PhienAm NVARCHAR(400),
+	@TiengViet NVARCHAR(400),
+	@IDTK INT
+as
+	IF NOT EXISTS (	SELECT * FROM YeuThichTuVung WHERE TiengAnh = @TiengAnh and TiengViet = @TiengViet and IDTK = @IDTK)
+		BEGIN
+			INSERT INTO YeuThichTuVung values (@TiengAnh, @PhienAm, @TiengViet, @IDTK) set @IDYT = SCOPE_IDENTITY()
+			return @IDYT
+		END
+go
+-- EXEC LuuTuYeuThich output, 'tienganh', N'phienam',N'tiengviet', 10
+select * from YeuThichTuVung
+select COUNT(ID) from YeuThichTuVung where TiengAnh = 'Component' and IDTK = 10
+-- DELETE FROM YeuThichTuVung
+-- DELETE FROM YeuThichTuVung WHERE TiengAnh = 'Component' AND IDTK = 10
+go
+-- Lưu từ văn bản yêu thích
+create proc LuuVanBanYeuThich
+	@IDYT INT out,
+	@TiengAnh VARCHAR(400),
+	@TiengViet NVARCHAR(400),
+	@IDTK INT
+as
+	IF NOT EXISTS (	SELECT * FROM YeuThichVanBan WHERE TiengAnh = @TiengAnh and IDTK = @IDTK)
+		BEGIN
+			INSERT INTO YeuThichVanBan values (@TiengAnh, @TiengViet, @IDTK) set @IDYT = SCOPE_IDENTITY()
+			return @IDYT
+		END
+go
+-- EXEC LuuVanBanYeuThich '', N'', 10
 -------------------- Thủ tục ---------------------------
 select * from ChuyenNganh
 select * from TuLoai

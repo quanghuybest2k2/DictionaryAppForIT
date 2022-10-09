@@ -246,6 +246,8 @@ namespace DictionaryAppForIT.Forms
         private void btnYeuThich_Click(object sender, EventArgs e)
         {
             ShowUC(ucYeuThich);
+            ucYeuThich.HienThiYTTraTu();
+            ucYeuThich.HienThiYTVanBan();
         }
 
         private void btnMiniGame_Click(object sender, EventArgs e)

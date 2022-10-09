@@ -21,6 +21,8 @@ namespace DictionaryAppForIT.UserControls.Home
         SpeechSynthesizer speech;
         SoundPlayer soundPlayer;
         public bool thayDoiTocDo = false;
+        public string idYeuThichVBVuaChon;
+        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         public int tocDo = 0;
         public UC_Dich()
         {
@@ -86,14 +88,33 @@ namespace DictionaryAppForIT.UserControls.Home
             string swapTxt = txtTop.Text.Trim(); // hoán dổi textbox
             txtTop.Text = txtUnder.Text.Trim();
             txtUnder.Text = swapTxt;
+            //
+
         }
 
         private void txtTop_TextChanged(object sender, EventArgs e)
         {
+            //
+            if (txtTop.Text == "")
+            {
+                txtUnder.Text = "";
+                btnLuuYeuThich.Visible = false;
+                btnCopyText.Visible = false;
+                //btnMic.Visible = false;
+                btnClear.Visible = false;
+            }
+            else
+            {
+                btnLuuYeuThich.Visible = true;
+                btnCopyText.Visible = true;
+                //btnMic.Visible = true;
+                btnClear.Visible = true;
+            }
             if (txtTop.Text.Trim() != "")
             {
                 txtUnder.Text = TranslateText(txtTop.Text.Trim());
             }
+            KiemTraTonTaiYeuThich();
         }
         #region Xử lý lịch sử
         private void LoadLichSu()
@@ -112,7 +133,7 @@ namespace DictionaryAppForIT.UserControls.Home
             try
             {
                 string today = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
-                int num = DataProvider.Instance.ExecuteNonQuery($"insert into LichSuDich values(N'{txtTop.Text.Trim()}', N'{txtUnder.Text.Trim()}',  '{today}', {Class_TaiKhoan.IdTaiKhoan})");
+                int num = DataProvider.Instance.ExecuteNonQuery($"insert into LichSuDich values('{txtTop.Text.Trim()}', N'{txtUnder.Text.Trim()}',  '{today}', {Class_TaiKhoan.IdTaiKhoan})");
                 if (num > 0)
                 {
                     LoadLichSu();
@@ -154,8 +175,23 @@ namespace DictionaryAppForIT.UserControls.Home
                 MessageBoxIcon.Error);
             }
         }
+
+        private void KiemTraTonTaiYeuThich()
+        {
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichVanBan where TiengAnh = '{txtTop.Text}' and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+            if (Convert.ToInt32(num) > 0)
+            {
+                btnLuuYeuThich.Checked = true;
+            }
+            else
+            {
+                btnLuuYeuThich.Checked = false;
+            }
+        }
+
         private void btnClear_Click(object sender, EventArgs e)
         {
+
             if (txtTop.Text.Trim() != "")
             {
                 LuuLichSuTu();// lưu lịch sử
@@ -184,7 +220,7 @@ namespace DictionaryAppForIT.UserControls.Home
         private void txtCopyText_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(txtUnder.Text.Trim()); // copy text
-                                              //Clipboard.GetText(); // paste text
+                                                     //Clipboard.GetText(); // paste text
             RJMessageBox.Show("Đã sao chép!", "Thông báo");
         }
 
@@ -216,6 +252,57 @@ namespace DictionaryAppForIT.UserControls.Home
         private void UC_Dich_Load(object sender, EventArgs e)
         {
             LoadLichSu();
+           
+        }
+
+        private void btnLuuYeuThich_Click(object sender, EventArgs e)
+        {
+            LuuVanBanYeuThich();
+        }
+        private void LuuVanBanYeuThich()
+        {
+            if (btnLuuYeuThich.Checked)
+            {
+                //int num = DataProvider.Instance.ExecuteNonQuery($"INSERT INTO YeuThichVanBan VALUES('{txtTop.Text.Trim()}', N'{txtUnder.Text.Trim()}', {Class_TaiKhoan.IdTaiKhoan})");
+                SqlConnection conn = new SqlConnection(connString);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "EXEC LuuVanBanYeuThich @IDYT output, @TiengAnh, @TiengViet, @IDTK";
+                cmd.Parameters.Add("@IDYT", SqlDbType.Int);
+                cmd.Parameters.Add("@TiengAnh", SqlDbType.VarChar, 400);
+                cmd.Parameters.Add("@TiengViet", SqlDbType.NVarChar, 400);
+                cmd.Parameters.Add("@IDTK", SqlDbType.Int);
+                //Lấy id vừa thêm vào bảng LichSuTraTu
+                cmd.Parameters["@IDYT"].Direction = ParameterDirection.Output;
+                cmd.Parameters["@TiengAnh"].Value = txtTop.Text.Trim();
+                cmd.Parameters["@TiengViet"].Value = txtUnder.Text.Trim();
+                cmd.Parameters["@IDTK"].Value = Class_TaiKhoan.IdTaiKhoan;
+
+                conn.Open();
+                int soDongThemTu = cmd.ExecuteNonQuery();
+                idYeuThichVBVuaChon = cmd.Parameters["@IDYT"].Value.ToString(); // id từ vừa tra
+                if (soDongThemTu > 0)
+                {
+                    RJMessageBox.Show("Thêm bản dịch thành công.");
+                }
+                else
+                {
+                    RJMessageBox.Show("Lỗi xảy ra!");
+                }
+
+                conn.Close();
+                conn.Dispose();
+            }
+            else
+            {
+                string query = $"DELETE FROM LuuVanBanYeuThich WHERE TiengAnh = '{txtTop.Text.Trim()}' AND IDTK = {Class_TaiKhoan.IdTaiKhoan}";
+                int num = DataProvider.Instance.ExecuteNonQuery(query);
+                if (num > 0)
+                {
+                    RJMessageBox.Show("Xóa thành công!");
+                }
+                else
+                    RJMessageBox.Show("Thất bại");
+            }
         }
     }
 }

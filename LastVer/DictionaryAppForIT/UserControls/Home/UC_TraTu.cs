@@ -34,6 +34,7 @@ namespace DictionaryAppForIT.UserControls
         SpeechSynthesizer speech;
         // lich su
         public static string idLSVuaTra;
+        public static string idYeuThichVuaChon;
         //string[] mangNghia;
 
         public UC_TraTu()
@@ -112,10 +113,23 @@ namespace DictionaryAppForIT.UserControls
                 MessageBox.Show(ex.Message);
             }
         }
+        private void KiemTraTonTaiYeuThich()
+        {
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichTuVung where TiengAnh = '{txtTuVung.Text}' and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+            if (Convert.ToInt32(num) > 0)
+            {
+                btnYeuThich.Checked = true;
+            }
+            else
+            {
+                btnYeuThich.Checked = false;
+            }
+        }
         private void txtTimKiemTu_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && TuHienTai != txtTimKiemTu.Text)//--------------------------------------
             {
+                //btnYeuThich.Checked = false;
                 flpMeaning.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
                 HienThiThongTin();
                 TuHienTai = txtTimKiemTu.Text;//--------------------------------------
@@ -124,6 +138,7 @@ namespace DictionaryAppForIT.UserControls
                 {
                     LuuLichSuTraTu(item);
                 }
+                KiemTraTonTaiYeuThich(); // kiểm tra xem từ yêu thích đã có chưa
 
                 if (tocDoPhatAm == true)
                 {
@@ -319,6 +334,71 @@ namespace DictionaryAppForIT.UserControls
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnYeuThich_Click(object sender, EventArgs e)
+        {
+            foreach (var item in XemNghia._listTu)
+            {
+                if (btnYeuThich.Checked)
+                {
+                    LuuTuYeuThich(item);
+                }
+                else
+                {
+                    string query = $"DELETE FROM YeuThichTuVung WHERE TiengAnh = '{txtTuVung.Text}' AND IDTK = {Class_TaiKhoan.IdTaiKhoan}";
+                    int num = DataProvider.Instance.ExecuteNonQuery(query);
+                    //if (num > 0)
+                    //{
+                    //    RJMessageBox.Show("Xóa thành công!");
+                    //}
+                    //else
+                    //    RJMessageBox.Show("Thất bại");
+                }
+            }
+
+        }
+
+        private void LuuTuYeuThich(Tu tu)
+        {
+            try
+            {
+                // them tu vao lich su
+                SqlConnection conn = new SqlConnection(connString);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "EXEC LuuTuYeuThich @IDYT output, @TiengAnh, @PhienAm, @TiengViet, @IDTK";
+                cmd.Parameters.Add("@IDYT", SqlDbType.Int);
+                cmd.Parameters.Add("@TiengAnh", SqlDbType.VarChar, 400);
+                cmd.Parameters.Add("@PhienAm", SqlDbType.NVarChar, 400);
+                cmd.Parameters.Add("@TiengViet", SqlDbType.NVarChar, 400);
+                cmd.Parameters.Add("@IDTK", SqlDbType.Int);
+                //Lấy id vừa thêm vào bảng LichSuTraTu
+                cmd.Parameters["@IDYT"].Direction = ParameterDirection.Output;
+                cmd.Parameters["@TiengAnh"].Value = tu.TenTu;
+                cmd.Parameters["@PhienAm"].Value = tu.PhienAm;
+
+                cmd.Parameters["@TiengViet"].Value = tu.Nghia;
+                cmd.Parameters["@IDTK"].Value = Class_TaiKhoan.IdTaiKhoan;
+
+                conn.Open();
+                int soDongThemTu = cmd.ExecuteNonQuery();
+                idYeuThichVuaChon = cmd.Parameters["@IDYT"].Value.ToString(); // id từ vừa tra
+                //if (soDongThemTu > 0)
+                //{
+                //    RJMessageBox.Show("Thêm Yêu thích thành công.");
+                //}
+                //else
+                //{
+                //    RJMessageBox.Show("Lỗi xảy ra!");
+                //}
+
+                conn.Close();
+                conn.Dispose();
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show(ex.Message);
+            }
         }
     }
 }

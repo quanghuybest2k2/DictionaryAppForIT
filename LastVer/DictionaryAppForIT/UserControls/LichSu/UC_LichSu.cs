@@ -250,7 +250,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
 
         private void UC_LichSu_Load(object sender, EventArgs e)
         {
-            cbbChonLichSuTK.SelectedIndex = 0;
+           
         }
 
         private void cbbChonLichSuTK_SelectedIndexChanged(object sender, EventArgs e)
