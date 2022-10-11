@@ -15,7 +15,6 @@ create table TuLoai
 	TenLoai NVARCHAR(100) NOT NULL UNIQUE
 )
 go
-
 create table Tu
 (
 	ID INT IDENTITY(1,1) PRIMARY KEY,
@@ -59,7 +58,6 @@ create table LichSuDich
 	primary key (ID, IDTK, NgayHienTai)
 )
 go
-
 create table LichSuTraTu
 (
 	ID INT IDENTITY(1,1),
@@ -71,7 +69,6 @@ create table LichSuTraTu
 	primary key (ID, IDTK, NgayHienTai)
 )
 go
-
 create table YeuThichTuVung
 (
 	ID INT IDENTITY(1,1),
@@ -92,40 +89,25 @@ create table YeuThichVanBan
 	primary key (ID, IDTK)
 )
 go
+SELECT * FROM LichSuTraTu
+SELECT * FROM LichSuDich
+-- Từ vựng phổ biến nhất
+SELECT MAX(TiengAnh) FROM LichSuTraTu
+-- Bản dịch phổ biến nhất
+SELECT MAX(TiengAnh) FROM LichSuDich
 select * from YeuThichVanBan
 -- INSERT INTO YeuThichVanBan VALUES('', '', 10)
 SELECT * FROM YeuThichVanBan
 -- go
 -- delete from LichSuTraTu where id = 56 or id = 60 and IDTK = 2
 go
---insert into LichSuDich values
---('hello', N'Xin chào.', '', 1),
---('variable', N'Biến số.', '', 2),
---('constant', N'Hằng số.', '',3),
---('firewall', N'Tường lửa.', '',1)
---go
---insert into LichSuTraTu values
---('Variable', N'/´veə.ri.ə.bəl/', N'Biến', '', 1),
---('Variable', N'/´veə.ri.ə.bəl/', N'Có thể thay đổi', '', 2),
---('Constant', N'/´kɒn.stənt/', N'Hằng', '', 3),
---('Component', N'/kəm´pəʊ.nənt',  N'Thành phần', '', 4),
---('Firewall', N'/´faiəwɔ:l/',   N'Tường lửa', '',1)
---go
--- xóa bản dịch đã lưu thông qua khóa chính là Tiếng anh
--- delete from LichSuDich where IDTK = 1 and TiengAnh = 'hello'
--- select TiengAnh, TiengViet from LichSuDich where idtk = 1
--- go
--- SELECT TiengAnh from LichSuDich Where TiengAnh = N'hi'-- or TiengViet =  N'Xin chào.'
--- xóa hết lịch sử
--- DELETE FROM LichSuDich
--- go
 select * from LichSuDich
 -- delete from LichSuTraTu where idtk = 1 delete from LichSuDich where idtk = 1
 go
 -- select COUNT(ID) from LichSuTraTu where IDTK = 1
 select * from Tu
 select * from Nghia
-go
+--go
 -- delete from LichSuTraTu
 go
 ----------------------------------------- Thêm dữ liệu
@@ -190,11 +172,6 @@ INSERT INTO Tu values ('Variable', N'/`veə.ri.ə.bəl/', 2, 'Varying', 'Constan
 INSERT INTO Tu values ('Constant', N'/`kɒn.stənt/', 1, 'InConstant', 'Variable')
 INSERT INTO Tu values ('Component', N'/kəm`pəʊ.nənt/', 2, 'Element', 'Whole')
 INSERT INTO Tu values ('Firewall', N'/´faiəwɔ:l/', 1, '', 'Cyber threat')
---exec ThemTu 'Variable' , N'/´veə.ri.ə.bəl/', 2, 'Varying', 'Constant'
---exec ThemTu 'Constant', N'/´kɒn.stənt/', 1, 'InConstant', 'Variable'
---exec ThemTu 'Component', N'/kəm´pəʊ.nənt/', 2, 'Element', 'Whole'
---exec ThemTu 'Firewall', N'/´faiəwɔ:l/', 1, '', 'Cyber threat'
---exec ThemTu @idtu output,'test', N'/´gfaga:l/', 2, 'gaga', 'afag'
 select * from Tu
 go
 -------- Nghĩa
@@ -381,11 +358,11 @@ begin
     else select 3 as code -- tài khoản đã tồn tại
 end
 go
-exec KiemTraDangNhap 'quanghuybest2k2', '123456'
+-- exec KiemTraDangNhap 'quanghuybest2k2', '123456'
 select * from TaiKhoan
 go
 -- lấy id của tài khoản hiện tại
-SELECT ID FROM TaiKhoan WHERE TenDangNhap = 'quanghuybest2k2'
+-- SELECT ID FROM TaiKhoan WHERE TenDangNhap = 'quanghuybest2k2'
 go
 -------- Tài khoản				
 create proc DangKyTaiKhoan
@@ -403,10 +380,10 @@ as
 		END
 go
 --  1: Nam, 2: Nữ, 3: Khác
-EXEC DangKyTaiKhoan 'quanghuybest2k2', '123456', 'quanghuybest@gmail.com',1, ''
-EXEC DangKyTaiKhoan 'sangvlog', 'sangsos', 'sangvlog@gmail.com', 1, ''
-EXEC DangKyTaiKhoan 'bede', 'bede123', 'bede@gmail.com', 3, ''
-EXEC DangKyTaiKhoan 'a','654321','test@gmail.com', 2, ''
+EXEC DangKyTaiKhoan 'quanghuybest2k2', '123456', 'quanghuybest@gmail.com',1, '27/09/2022'
+EXEC DangKyTaiKhoan 'sangvlog', 'sangsos', 'sangvlog@gmail.com', 1, '25/09/2022'
+EXEC DangKyTaiKhoan 'bocute', 'bocute123', 'bocute@gmail.com', 3, '25/09/2022'
+EXEC DangKyTaiKhoan 'virusday','123456','test@gmail.com', 2, '26/09/2022'
 go
 select * from TaiKhoan
 go
@@ -437,7 +414,7 @@ begin
 	WHERE ID = @Id
 end
 go
-EXEC CapNhatThongTinTaiKhoan 1, 'quanghuybest2k2', '123456', 1, ''
+-- EXEC CapNhatThongTinTaiKhoan 1, 'quanghuybest2k2', '123456', 1, ''
 go
 select * from TuLoai
 select * from ChuyenNganh

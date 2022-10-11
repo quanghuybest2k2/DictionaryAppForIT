@@ -347,8 +347,11 @@ namespace DictionaryAppForIT.Forms
         //Nút đăng xuất
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            var frm = new frmMSG_DangXuat();
-            frm.Show();
+            //var frm = new frmMSG_DangXuat();
+            //frm.Show();
+            this.Hide();
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
         }
 
 
