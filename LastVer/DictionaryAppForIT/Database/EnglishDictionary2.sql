@@ -91,10 +91,20 @@ create table YeuThichVanBan
 go
 SELECT * FROM LichSuTraTu
 SELECT * FROM LichSuDich
--- Từ vựng phổ biến nhất
+-- Từ vựng phổ biến nhất (từ vựng hot)
 SELECT MAX(TiengAnh) FROM LichSuTraTu
--- Bản dịch phổ biến nhất
+-- Từ vựng phổ biến (khoảng 7 từ)
+SELECT TiengAnh, COUNT(ID) as soLanXuatHien
+FROM LichSuTraTu
+GROUP BY TiengAnh
+ORDER BY COUNT(ID) DESC
+-- Bản dịch phổ biến nhất (bản dịch hot)
 SELECT MAX(TiengAnh) FROM LichSuDich
+-- Bản dịch phổ biến (khoảng 7 bản dịch)
+SELECT TiengAnh, COUNT(ID) as soLanXuatHien
+FROM LichSuDich
+GROUP BY TiengAnh
+ORDER BY COUNT(ID) DESC
 select * from YeuThichVanBan
 -- INSERT INTO YeuThichVanBan VALUES('', '', 10)
 SELECT * FROM YeuThichVanBan
