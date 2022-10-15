@@ -75,5 +75,10 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 this.Name = "unCheck";
             }
         }
+
+        private void btnGhiChu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

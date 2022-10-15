@@ -22,12 +22,12 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         List<UC_YT_TuVung> _listTuVung;
         List<UC_YT_VanBan> _listVanBan;
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
-        bool xoaTatCa;
+        //bool xoaTatCa;
         public static string idHienTai;
         UC_YT_TuVung ucYTTuVung;
         UC_YT_VanBan ucYTVanBan;
         int stt = 1;
-
+        bool xoaTatCaYT;
         public UC_YeuThich()
         {
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             //var ucTuVung = new UC_YT_TuVung("No.1", "Multiplication", "/ mʌltɪplɪˈkeɪʃən/", "Phép nhân");
             //ucTuVung.TVBackColor(rd.GetColor());
             //flpContent.Controls.Add(ucTuVung);
-            
+
             //ucTuVung = new UC_YT_TuVung("No.2", "Operation", "/ɒpəˈreɪʃən/", "Thao tác");
             //ucTuVung.TVBackColor(rd.GetColor());
             //flpContent.Controls.Add(ucTuVung);
@@ -152,7 +152,56 @@ namespace DictionaryAppForIT.UserControls.YeuThich
 
         private void UC_YeuThich_Load(object sender, EventArgs e)
         {
-            
+
+        }
+        // xoa tra tu yeu thich
+        private void XoaUCYeuThichTuVung()
+        {
+            foreach (var item in _listTuVung)
+            {
+                if (item.Name == "Check")//c.ChkChonLSTraTu.Checked
+                {
+                    xoaTatCaYT = false;
+                    flpContent.Controls.Remove(item);
+                    DataProvider.Instance.ExecuteNonQuery($"delete from YeuThichTuVung where id = {item.Index} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+                }
+            }
+            _listTuVung.RemoveAll(x => x.Name == "Check");
+        }
+        //xoa van ban yeu thich
+        private void XoaUCYeuThichVanBan()
+        {
+            foreach (var item in _listVanBan)
+            {
+                if (item.Name == "Check")//c.ChkChonLSTraTu.Checked
+                {
+                    xoaTatCaYT = false;
+                    flpContent.Controls.Remove(item);
+                    DataProvider.Instance.ExecuteNonQuery($"delete from YeuThichVanBan where id = {item.Index} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+                }
+            }
+            _listVanBan.RemoveAll(x => x.Name == "Check");
+        }
+        // xoa muc yeu thich
+        private void btnXoaMucYeuThich_Click(object sender, EventArgs e)
+        {
+            xoaTatCaYT = true;
+            XoaUCYeuThichTuVung();
+            XoaUCYeuThichVanBan();
+
+            if (xoaTatCaYT)
+            {
+
+                flpContent.Controls.Clear();
+                int num = DataProvider.Instance.ExecuteNonQuery($"delete from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan} " +
+                  $"delete from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+                if (num > 0)
+                {
+                    RJMessageBox.Show("Đã xóa tất cả mục yêu thích!");
+                }
+                else { RJMessageBox.Show("Xóa không thành công!"); }
+                _listTuVung.Clear();
+            }
         }
     }
 }

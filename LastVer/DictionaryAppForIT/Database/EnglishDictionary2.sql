@@ -270,6 +270,8 @@ select COUNT(ID) from YeuThichTuVung where TiengAnh = 'Component' and IDTK = 10
 -- DELETE FROM YeuThichTuVung
 -- DELETE FROM YeuThichTuVung WHERE TiengAnh = 'Component' AND IDTK = 10
 go
+-- xoa lich su tra tu yeu thich
+-- delete from YeuThichTuVung where id = 3 and IDTK = 2
 -- Lưu từ văn bản yêu thích
 create proc LuuVanBanYeuThich
 	@IDYT INT out,
@@ -284,6 +286,9 @@ as
 		END
 go
 -- EXEC LuuVanBanYeuThich '', N'', 10
+SELECT * FROM YeuThichVanBan
+-- xoa van ban yeu thich
+--delete from YeuThichVanBan where id = 1 and IDTK = 2
 -------------------- Thủ tục ---------------------------
 select * from ChuyenNganh
 select * from TuLoai

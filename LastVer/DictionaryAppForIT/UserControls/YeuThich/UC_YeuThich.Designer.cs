@@ -38,7 +38,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.label3 = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXoaMucYeuThich = new Guna.UI2.WinForms.Guna2Button();
             this.flpContent = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +55,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.guna2TextBox1);
             this.panel2.Controls.Add(this.guna2Button1);
-            this.panel2.Controls.Add(this.guna2Button2);
+            this.panel2.Controls.Add(this.btnXoaMucYeuThich);
             this.panel2.Controls.Add(this.flpContent);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -152,24 +152,25 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.guna2Button1.TextOffset = new System.Drawing.Point(3, 0);
             this.guna2Button1.UseTransparentBackground = true;
             // 
-            // guna2Button2
+            // btnXoaMucYeuThich
             // 
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.Gray;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2Button2.Location = new System.Drawing.Point(816, 25);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.PressedDepth = 0;
-            this.guna2Button2.Size = new System.Drawing.Size(35, 30);
-            this.guna2Button2.TabIndex = 29;
-            this.guna2Button2.TextOffset = new System.Drawing.Point(3, 0);
-            this.guna2Button2.UseTransparentBackground = true;
+            this.btnXoaMucYeuThich.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoaMucYeuThich.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnXoaMucYeuThich.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoaMucYeuThich.FillColor = System.Drawing.Color.Transparent;
+            this.btnXoaMucYeuThich.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaMucYeuThich.ForeColor = System.Drawing.Color.Gray;
+            this.btnXoaMucYeuThich.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnXoaMucYeuThich.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaMucYeuThich.Image")));
+            this.btnXoaMucYeuThich.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnXoaMucYeuThich.Location = new System.Drawing.Point(816, 25);
+            this.btnXoaMucYeuThich.Name = "btnXoaMucYeuThich";
+            this.btnXoaMucYeuThich.PressedDepth = 0;
+            this.btnXoaMucYeuThich.Size = new System.Drawing.Size(35, 30);
+            this.btnXoaMucYeuThich.TabIndex = 29;
+            this.btnXoaMucYeuThich.TextOffset = new System.Drawing.Point(3, 0);
+            this.btnXoaMucYeuThich.UseTransparentBackground = true;
+            this.btnXoaMucYeuThich.Click += new System.EventHandler(this.btnXoaMucYeuThich_Click);
             // 
             // flpContent
             // 
@@ -200,7 +201,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flpContent;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnXoaMucYeuThich;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button10;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;

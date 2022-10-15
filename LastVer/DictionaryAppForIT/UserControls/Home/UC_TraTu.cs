@@ -71,6 +71,7 @@ namespace DictionaryAppForIT.UserControls
             // Tối thiểu 7 kí tự
             // Tối đa 15 kí tự
             pnXinChao.Width = pnXinChao.MinimumSize.Width + lblTenDangNhap.Width;
+            btnAnhViet.FillColor = Color.FromArgb(223, 10, 10);
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -399,6 +400,11 @@ namespace DictionaryAppForIT.UserControls
             {
                 RJMessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnVietAnh_Click(object sender, EventArgs e)
+        {
+            RJMessageBox.Show("Chức năng đang phát triển!");
         }
     }
 }

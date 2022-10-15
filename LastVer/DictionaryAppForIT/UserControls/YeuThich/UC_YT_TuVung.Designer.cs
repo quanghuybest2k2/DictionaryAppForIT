@@ -33,7 +33,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblIndex = new System.Windows.Forms.Label();
             this.btnDieuHuongLS = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGhiChu = new Guna.UI2.WinForms.Guna2Button();
             this.guna2pbNen1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.chkChonYTTuVung = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.guna2pbNen2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -57,7 +57,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.guna2Panel1.BorderThickness = 2;
             this.guna2Panel1.Controls.Add(this.lblIndex);
             this.guna2Panel1.Controls.Add(this.btnDieuHuongLS);
-            this.guna2Panel1.Controls.Add(this.guna2Button2);
+            this.guna2Panel1.Controls.Add(this.btnGhiChu);
             this.guna2Panel1.Controls.Add(this.guna2pbNen1);
             this.guna2Panel1.Controls.Add(this.chkChonYTTuVung);
             this.guna2Panel1.Controls.Add(this.guna2pbNen2);
@@ -104,24 +104,25 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.btnDieuHuongLS.TabIndex = 22;
             this.btnDieuHuongLS.UseTransparentBackground = true;
             // 
-            // guna2Button2
+            // btnGhiChu
             // 
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button2.FillColor = System.Drawing.Color.Empty;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.ImageSize = new System.Drawing.Size(16, 16);
-            this.guna2Button2.Location = new System.Drawing.Point(5, 120);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.PressedDepth = 0;
-            this.guna2Button2.Size = new System.Drawing.Size(94, 22);
-            this.guna2Button2.TabIndex = 9;
-            this.guna2Button2.Text = "Ghi chú";
-            this.guna2Button2.TextOffset = new System.Drawing.Point(3, 0);
-            this.guna2Button2.UseTransparentBackground = true;
+            this.btnGhiChu.BackColor = System.Drawing.Color.Transparent;
+            this.btnGhiChu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGhiChu.FillColor = System.Drawing.Color.Empty;
+            this.btnGhiChu.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGhiChu.ForeColor = System.Drawing.Color.White;
+            this.btnGhiChu.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnGhiChu.Image = ((System.Drawing.Image)(resources.GetObject("btnGhiChu.Image")));
+            this.btnGhiChu.ImageSize = new System.Drawing.Size(16, 16);
+            this.btnGhiChu.Location = new System.Drawing.Point(5, 120);
+            this.btnGhiChu.Name = "btnGhiChu";
+            this.btnGhiChu.PressedDepth = 0;
+            this.btnGhiChu.Size = new System.Drawing.Size(94, 22);
+            this.btnGhiChu.TabIndex = 9;
+            this.btnGhiChu.Text = "Ghi chú";
+            this.btnGhiChu.TextOffset = new System.Drawing.Point(3, 0);
+            this.btnGhiChu.UseTransparentBackground = true;
+            this.btnGhiChu.Click += new System.EventHandler(this.btnGhiChu_Click);
             // 
             // guna2pbNen1
             // 
@@ -286,7 +287,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnGhiChu;
         private Guna.UI2.WinForms.Guna2PictureBox guna2pbNen1;
         private Bunifu.UI.WinForms.BunifuCheckBox chkChonYTTuVung;
         private System.Windows.Forms.Label lblPhienAm;
