@@ -23,11 +23,12 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         List<UC_YT_VanBan> _listVanBan;
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         //bool xoaTatCa;
+        bool xoaTatCaYT;
+        public string TuHienTai = "";
         public static string idHienTai;
         UC_YT_TuVung ucYTTuVung;
         UC_YT_VanBan ucYTVanBan;
         int stt = 1;
-        bool xoaTatCaYT;
         public UC_YeuThich()
         {
             InitializeComponent();
@@ -203,5 +204,81 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 _listTuVung.Clear();
             }
         }
+
+        #region xử lý tìm kiếm yêu thích
+        private void HienThiTimKiemYTTraTu()
+        {
+            try
+            {
+                _listTuVung.Clear();
+                flpContent.Controls.Clear();
+                SqlConnection Conn = new SqlConnection(connString);
+                SqlCommand cmd = new SqlCommand($"EXEC HienThiTimKiemYTTraTu '{txtTimKiemYeuThich.Text.Trim()}', {Class_TaiKhoan.IdTaiKhoan}", Conn);
+                Conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    idHienTai = rdr["ID"].ToString();
+                    string TVTiengAnh = rdr["TiengAnh"].ToString();
+                    string TVPhienAm = rdr["PhienAm"].ToString();
+                    string TVTiengViet = rdr["TiengViet"].ToString();
+                    ucYTTuVung = new UC_YT_TuVung(stt.ToString(), idHienTai, TVTiengAnh, TVPhienAm, TVTiengViet);
+                    ucYTTuVung.TVBackColor(rd.GetColor());
+                    flpContent.Controls.Add(ucYTTuVung);
+                    _listTuVung.Add(ucYTTuVung);
+                    ucYTTuVung.Name = "unCheck";
+                    stt++;
+                }
+                Conn.Close();
+                Conn.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void HienThiTimKiemYTVanBan()
+        {
+            try
+            {
+                _listVanBan.Clear();
+                SqlConnection Conn = new SqlConnection(connString);
+                SqlCommand cmd = new SqlCommand($"EXEC HienThiTimKiemYTVanBan '{txtTimKiemYeuThich.Text.Trim()}', {Class_TaiKhoan.IdTaiKhoan}", Conn);
+                Conn.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    idHienTai = rdr["ID"].ToString();
+                    string TVTiengAnh = rdr["TiengAnh"].ToString();
+                    string TVTiengViet = rdr["TiengViet"].ToString();
+                    ucYTVanBan = new UC_YT_VanBan(stt.ToString(), idHienTai, TVTiengAnh, TVTiengViet);
+                    ucYTVanBan.VBBackColor(rd.GetColor());
+                    flpContent.Controls.Add(ucYTVanBan);
+                    _listVanBan.Add(ucYTVanBan);
+                    ucYTVanBan.Name = "unCheck";
+                    stt++;
+                }
+                Conn.Close();
+                Conn.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void txtTimKiemYeuThich_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && TuHienTai != txtTimKiemYeuThich.Text)//--------------------------------------
+            {
+                flpContent.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
+                HienThiTimKiemYTTraTu();
+                HienThiTimKiemYTVanBan();
+                TuHienTai = txtTimKiemYeuThich.Text;//--------------------------------------
+
+            }
+        }
+        #endregion
+
     }
 }

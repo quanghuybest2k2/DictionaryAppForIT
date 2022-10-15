@@ -252,10 +252,5 @@ namespace DictionaryAppForIT.UserControls.GanDay
         {
            
         }
-
-        private void cbbChonLichSuTK_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

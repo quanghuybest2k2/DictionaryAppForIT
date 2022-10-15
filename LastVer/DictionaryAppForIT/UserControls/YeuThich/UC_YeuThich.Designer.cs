@@ -36,7 +36,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTimKiemYeuThich = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoaMucYeuThich = new Guna.UI2.WinForms.Guna2Button();
             this.flpContent = new System.Windows.Forms.FlowLayoutPanel();
@@ -53,7 +53,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.guna2Button10);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.guna2TextBox1);
+            this.panel2.Controls.Add(this.txtTimKiemYeuThich);
             this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Controls.Add(this.btnXoaMucYeuThich);
             this.panel2.Controls.Add(this.flpContent);
@@ -103,35 +103,36 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.label3.TabIndex = 36;
             this.label3.Text = "12";
             // 
-            // guna2TextBox1
+            // txtTimKiemYeuThich
             // 
-            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox1.BorderRadius = 15;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.ForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox1.IconLeft")));
-            this.guna2TextBox1.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2TextBox1.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(18, 18);
-            this.guna2TextBox1.Location = new System.Drawing.Point(183, 24);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Tìm kiếm...";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2TextBox1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(50);
-            this.guna2TextBox1.Size = new System.Drawing.Size(550, 35);
-            this.guna2TextBox1.TabIndex = 30;
-            this.guna2TextBox1.TextOffset = new System.Drawing.Point(5, 0);
+            this.txtTimKiemYeuThich.BackColor = System.Drawing.Color.Transparent;
+            this.txtTimKiemYeuThich.BorderRadius = 15;
+            this.txtTimKiemYeuThich.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTimKiemYeuThich.DefaultText = "";
+            this.txtTimKiemYeuThich.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTimKiemYeuThich.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTimKiemYeuThich.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimKiemYeuThich.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimKiemYeuThich.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimKiemYeuThich.FocusedState.ForeColor = System.Drawing.Color.Gray;
+            this.txtTimKiemYeuThich.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtTimKiemYeuThich.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimKiemYeuThich.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtTimKiemYeuThich.IconLeft")));
+            this.txtTimKiemYeuThich.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.txtTimKiemYeuThich.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.txtTimKiemYeuThich.IconLeftSize = new System.Drawing.Size(18, 18);
+            this.txtTimKiemYeuThich.Location = new System.Drawing.Point(183, 24);
+            this.txtTimKiemYeuThich.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTimKiemYeuThich.Name = "txtTimKiemYeuThich";
+            this.txtTimKiemYeuThich.PasswordChar = '\0';
+            this.txtTimKiemYeuThich.PlaceholderText = "Tìm kiếm...";
+            this.txtTimKiemYeuThich.SelectedText = "";
+            this.txtTimKiemYeuThich.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.txtTimKiemYeuThich.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(50);
+            this.txtTimKiemYeuThich.Size = new System.Drawing.Size(550, 35);
+            this.txtTimKiemYeuThich.TabIndex = 30;
+            this.txtTimKiemYeuThich.TextOffset = new System.Drawing.Point(5, 0);
+            this.txtTimKiemYeuThich.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKiemYeuThich_KeyDown);
             // 
             // guna2Button1
             // 
@@ -202,7 +203,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flpContent;
         private Guna.UI2.WinForms.Guna2Button btnXoaMucYeuThich;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtTimKiemYeuThich;
         private Guna.UI2.WinForms.Guna2Button guna2Button10;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label label2;

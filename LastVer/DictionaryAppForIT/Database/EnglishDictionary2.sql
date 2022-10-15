@@ -356,10 +356,32 @@ as
 	where TiengAnh like concat('%',@tentu,'%') and IDTK = @IDTK
 go
 EXEC HienThiTimKiemLSD 'e', 10
-Select DISTINCT * from LichSuTraTu lstt where lstt.IDTK = 10 and lstt.TiengAnh = 'Variable'
 go
+-- Select DISTINCT * from LichSuTraTu lstt where lstt.IDTK = 10 and lstt.TiengAnh = 'Variable'
 Select * from LichSuTraTu
 Select * from LichSuDich
+go
+-- Tìm kiếm yêu thích từ vựng
+create proc HienThiTimKiemYTTraTu
+@tentu varchar(100),
+@IDTK int
+as
+	select ID, TiengAnh, PhienAm, TiengViet, IDTK
+	from YeuThichTuVung
+	where TiengAnh = @tentu and IDTK = @IDTK
+go
+EXEC HienThiTimKiemYTTraTu 'Variable', 2
+go
+-- Tìm kiếm yêu thích văn bản
+create proc HienThiTimKiemYTVanBan
+@tentu varchar(100),
+@IDTK int
+as
+	select ID, TiengAnh, TiengViet, IDTK
+	from YeuThichVanBan
+	where TiengAnh like concat('%',@tentu,'%') and IDTK = @IDTK
+go
+EXEC HienThiTimKiemYTVanBan 'e', 2
 go
 create proc KiemTraDangNhap
 @tendangnhap varchar(100),
