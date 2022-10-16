@@ -214,7 +214,6 @@ exec ThemNghia  1, 3, N'Có thể thay đổi', N'Đây là mô tả của Varia
 exec ThemNghia  2, 1, N'Hằng', N'Hằng số là giá trị không đổi xuyên suốt chương trình.', 'Constants can be marked as public, private, protected, internal, protected internal or private protected.'
 exec ThemNghia  3, 1, N'Thành phần', N'Đây là hệ thống của một quá trình, chương trình, tiện ích, hoặc bất kỳ phần nào của hệ điều hành.', 'An example of a component is an ingredient in a recipe.'
 exec ThemNghia  4, 1, N'Tường lửa', N'tường lửa làm màn chắn điều khiển luồng lưu thông giữa các mạng, thường là giữa mạng và Internet, và giữa các mạng con trong công ty.', 'The firewall traces back to an early period in the modern internet era when systems.'
-
 exec ThemNghia  6, 1, N'adasd', N'asdsad.', 'asdsadasd'
 
 go
@@ -230,7 +229,7 @@ as
 	from Tu t, TuLoai tl, ChuyenNganh cn, Nghia n 
 	where n.IDTuLoai = tl.ID and t.ChuyenNganh = cn.ID and n.IDTu = t.ID
 	group by TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia, TraiNghia,  IDTK
-	having t.TenTu = @tentu and IDTK = @idtk -- or IDTK = 0
+	having t.TenTu = @tentu and IDTK = @idtk  or IDTK = 0 and t.TenTu = @tentu
 go
 exec HienThiThongTin 'back', 2
 go
@@ -355,10 +354,11 @@ go
 EXEC TimTheoChuyenNganh 'variable', 2, 1
 go
 --
-SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and TenTu like 'b%' and ChuyenNganh.ID = 1 and IDTK = 0
-go
+SELECT * FROM Tu
 
-SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and TenTu like 'b%' and ChuyenNganh.ID = 1 and IDTK = 2 
+SELECT TenTu 
+FROM Tu, ChuyenNganh 
+WHERE tu.ChuyenNganh = ChuyenNganh.ID and ChuyenNganh.ID = 2 and IDTK = 2 and TenTu like 'c%' or tu.ChuyenNganh = ChuyenNganh.ID and IDTK = 0 and TenTu like 'c%' and ChuyenNganh.ID = 2
 go
 -- Tìm kiếm lịch sử
 create proc HienThiTimKiemLSTT
@@ -491,15 +491,18 @@ SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and TenT
 EXEC LayTheoChuyenNganh 2
 go
 -- lấy từ ngẫu nhiên(random)
+-- drop proc TuNgauNhien
 create proc TuNgauNhien
-@id INT
+@id INT,
+@idtk INT
 as
-select TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia, TraiNghia
+select TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia, TraiNghia, IDTK
 	from Tu t, TuLoai tl, ChuyenNganh cn, Nghia n
 	where n.IDTuLoai = tl.ID and t.ChuyenNganh = cn.ID and n.IDTu = t.ID and t.ID = @id
-	group by TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia, TraiNghia
+	group by TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia, TraiNghia, IDTK
+	HAVING IDTK = @idtk or IDTK = 0
 go
-EXEC TuNgauNhien 3
+EXEC TuNgauNhien 3, 2
 go
 -- goi y tim kiem
 select TenTu from Tu where IDTK = 2 or IDTK = 0

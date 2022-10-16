@@ -26,7 +26,7 @@ namespace DictionaryAppForIT.DTO
             {
                 _listTu.Clear();
                 SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC HienThiThongTin '{tenTu}'", Conn);
+                SqlCommand cmd = new SqlCommand($"EXEC HienThiThongTin '{tenTu}', {Class_TaiKhoan.IdTaiKhoan}", Conn);
                 Conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
@@ -69,7 +69,7 @@ namespace DictionaryAppForIT.DTO
                 } while (Convert.ToInt32(ktId) < 1);
                 _listTu.Clear();
                 SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC TuNgauNhien {kqRand}", Conn);
+                SqlCommand cmd = new SqlCommand($"EXEC TuNgauNhien {kqRand}, {Class_TaiKhoan.IdTaiKhoan}", Conn);
                 Conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
