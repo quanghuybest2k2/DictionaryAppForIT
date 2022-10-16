@@ -1,4 +1,6 @@
-﻿create database EnglishDictionary2
+﻿-- use master
+-- drop database EnglishDictionary2
+create database EnglishDictionary2
 go
 use EnglishDictionary2
 go
@@ -22,7 +24,8 @@ create table Tu
 	PhienAm NVARCHAR(100) not null,
 	ChuyenNganh INT references ChuyenNganh(ID),
 	DongNghia  VARCHAR(1000),
-	TraiNghia  VARCHAR(1000)
+	TraiNghia  VARCHAR(1000),
+	IDTK INT DEFAULT 0
 )
 go
 create table Nghia
@@ -167,21 +170,23 @@ create proc ThemTu
 	@PhienAm NVARCHAR(100),
 	@ChuyenNganh INT,
 	@DongNghia  VARCHAR(1000),
-	@TraiNghia  VARCHAR(1000)
+	@TraiNghia  VARCHAR(1000),
+	@IDTK INT
 as
 	IF EXISTS (	SELECT * FROM Tu WHERE TenTu = @TenTu)
 		PRINT N'Đã có Từ Loại này trong CSDL'
 	ELSE
 		BEGIN
-			INSERT INTO Tu values (@TenTu, @PhienAm, @ChuyenNganh, @DongNghia, @TraiNghia) set @idTu = SCOPE_IDENTITY()
+			INSERT INTO Tu values (@TenTu, @PhienAm, @ChuyenNganh, @DongNghia, @TraiNghia, @IDTK) set @idTu = SCOPE_IDENTITY()
 			return @idTu
 		END
 go
 -- drop proc ThemTu
-INSERT INTO Tu values ('Variable', N'/`veə.ri.ə.bəl/', 2, 'Varying', 'Constant')
-INSERT INTO Tu values ('Constant', N'/`kɒn.stənt/', 1, 'InConstant', 'Variable')
-INSERT INTO Tu values ('Component', N'/kəm`pəʊ.nənt/', 2, 'Element', 'Whole')
-INSERT INTO Tu values ('Firewall', N'/´faiəwɔ:l/', 1, '', 'Cyber threat')
+INSERT INTO Tu values ('Variable', N'/`veə.ri.ə.bəl/', 2, 'Varying', 'Constant', '')
+INSERT INTO Tu values ('Constant', N'/`kɒn.stənt/', 1, 'InConstant', 'Variable', '')
+INSERT INTO Tu values ('Component', N'/kəm`pəʊ.nənt/', 2, 'Element', 'Whole', '')
+INSERT INTO Tu values ('Firewall', N'/´faiəwɔ:l/', 1, '', 'Cyber threat', '')
+INSERT INTO Tu values ('back', N'/´ba:ck/', 1, 'ggg', 'aat', 2)
 select * from Tu
 go
 -------- Nghĩa
@@ -209,19 +214,25 @@ exec ThemNghia  1, 3, N'Có thể thay đổi', N'Đây là mô tả của Varia
 exec ThemNghia  2, 1, N'Hằng', N'Hằng số là giá trị không đổi xuyên suốt chương trình.', 'Constants can be marked as public, private, protected, internal, protected internal or private protected.'
 exec ThemNghia  3, 1, N'Thành phần', N'Đây là hệ thống của một quá trình, chương trình, tiện ích, hoặc bất kỳ phần nào của hệ điều hành.', 'An example of a component is an ingredient in a recipe.'
 exec ThemNghia  4, 1, N'Tường lửa', N'tường lửa làm màn chắn điều khiển luồng lưu thông giữa các mạng, thường là giữa mạng và Internet, và giữa các mạng con trong công ty.', 'The firewall traces back to an early period in the modern internet era when systems.'
+
+exec ThemNghia  6, 1, N'adasd', N'asdsad.', 'asdsadasd'
+
 go
 select * from Tu
 select * from Nghia
 go
+-- drop proc HienThiThongTin
 create proc HienThiThongTin
-@tentu varchar(100)
+@tentu varchar(100),
+@idtk INT
 as
-	select TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia, TraiNghia
+	select TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia, TraiNghia, IDTK
 	from Tu t, TuLoai tl, ChuyenNganh cn, Nghia n 
-	where n.IDTuLoai = tl.ID and t.ChuyenNganh = cn.ID and n.IDTu = t.ID and t.TenTu = @tentu
-	group by TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia, TraiNghia
+	where n.IDTuLoai = tl.ID and t.ChuyenNganh = cn.ID and n.IDTu = t.ID
+	group by TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia, TraiNghia,  IDTK
+	having t.TenTu = @tentu and IDTK = @idtk -- or IDTK = 0
 go
-exec HienThiThongTin 'Constant'
+exec HienThiThongTin 'back', 2
 go
 -------- Lịch sử tra từ
 create proc ThemLSTraTu
@@ -314,26 +325,40 @@ as
 go
 exec LayTuLoai
 go
+
+--drop proc LayTheoChuyenNganh
 create proc LayTheoChuyenNganh
-@chuyennganh INT
+@chuyennganh INT,
+@idtk INT
 as
-select t.ID, t.TenTu, tl.TenLoai, PhienAm, TenChuyenNganh, n.Nghia, n.MoTa, n.ViDu, DongNghia, TraiNghia
+select t.ID, t.TenTu, tl.TenLoai, PhienAm, TenChuyenNganh, n.Nghia, n.MoTa, n.ViDu, DongNghia, TraiNghia, IDTK
 from Tu t, TuLoai tl, ChuyenNganh cn, Nghia n 
 where t.ChuyenNganh = cn.ID and n.IDTu = t.ID and tl.ID = n.IDTuLoai and cn.ID = @chuyennganh
-group by t.ID,t.TenTu, tl.TenLoai, PhienAm, TenChuyenNganh, n.Nghia, n.MoTa, n.ViDu, DongNghia, TraiNghia
+group by t.ID,t.TenTu, tl.TenLoai, PhienAm, TenChuyenNganh, n.Nghia, n.MoTa, n.ViDu, DongNghia, TraiNghia, IDTK
+having IDTK = @idtk or IDTK = 0
 go
-exec LayTheoChuyenNganh 2
+exec LayTheoChuyenNganh 1, 1
 go
+-- tim theo chuyen nganh
+-- drop proc TimTheoChuyenNganh
 create proc TimTheoChuyenNganh
 @tentu VARCHAR(100),
-@chuyennganh INT
+@chuyennganh INT,
+@idtk INT
 as
-select t.ID, t.TenTu, tl.TenLoai, PhienAm, TenChuyenNganh, n.Nghia, n.MoTa, n.ViDu, DongNghia, TraiNghia
+select t.ID, t.TenTu, tl.TenLoai, PhienAm, TenChuyenNganh, n.Nghia, n.MoTa, n.ViDu, DongNghia, TraiNghia, IDTK
 from Tu t, TuLoai tl, ChuyenNganh cn, Nghia n 
 where t.ChuyenNganh = cn.ID and n.IDTu = t.ID and tl.ID = n.IDTuLoai and  t.TenTu = @tentu and cn.ID = @chuyennganh
-group by t.ID,t.TenTu, tl.TenLoai, PhienAm, TenChuyenNganh, n.Nghia, n.MoTa, n.ViDu, DongNghia, TraiNghia
+group by t.ID,t.TenTu, tl.TenLoai, PhienAm, TenChuyenNganh, n.Nghia, n.MoTa, n.ViDu, DongNghia, TraiNghia, IDTK
+having IDTK = @idtk or IDTK = 0
 go
-EXEC TimTheoChuyenNganh 'variable', 2
+EXEC TimTheoChuyenNganh 'variable', 2, 1
+go
+--
+SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and TenTu like 'b%' and ChuyenNganh.ID = 1 and IDTK = 0
+go
+
+SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and TenTu like 'b%' and ChuyenNganh.ID = 1 and IDTK = 2 
 go
 -- Tìm kiếm lịch sử
 create proc HienThiTimKiemLSTT
@@ -476,6 +501,8 @@ select TenTu, TenLoai, PhienAm, cn.TenChuyenNganh, Nghia, MoTa, ViDu, DongNghia,
 go
 EXEC TuNgauNhien 3
 go
+-- goi y tim kiem
+select TenTu from Tu where IDTK = 2 or IDTK = 0
 -- Lấy độ dài của từ
 select count(TenTu) from Tu
 select * from TaiKhoan
@@ -486,3 +513,9 @@ select TiengAnh, TiengViet from LichSuDich
 --delete from LichSuTraTu delete from LichSuDich
 --delete from LichSuTraTu where id = 16
 select TiengAnh from LichSuTraTu where id = 27
+-- Đếm số mục yêu thích
+select sum(AllCount) AS Tong_SoMucYeuThich
+from((select count(*) AS AllCount
+	  from YeuThichTuVung) union all (select count(*) AS AllCount from YeuThichVanBan))t
+
+	  select * from Tu where IDTK = 2 or IDTK = 0

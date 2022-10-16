@@ -97,6 +97,8 @@ namespace DictionaryAppForIT
                 {
                     this.Hide();
                     frmMain.Show(); // show form
+                    //this.DialogResult = DialogResult.OK;
+
                 }
                 else if (code == 2)
                 {

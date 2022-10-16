@@ -57,11 +57,16 @@ namespace DictionaryAppForIT.DTO
         {
             try
             {
+                int kqRand;
+                object ktId;
                 //Wordlength: số từ có trong database
-                object Wordlength = DataProvider.Instance.ExecuteScalar("select count(TenTu) from Tu");
-                Random rand = new Random();
-                int kqRand = rand.Next(1, Convert.ToInt32(Wordlength));
-
+                do
+                {
+                    object Wordlength = DataProvider.Instance.ExecuteScalar("select count(TenTu) from Tu");
+                    Random rand = new Random();
+                    kqRand = rand.Next(1, Convert.ToInt32(Wordlength));
+                    ktId = DataProvider.Instance.ExecuteScalar($"select * from Tu where id = {kqRand}");
+                } while (Convert.ToInt32(ktId) < 1);
                 _listTu.Clear();
                 SqlConnection Conn = new SqlConnection(connString);
                 SqlCommand cmd = new SqlCommand($"EXEC TuNgauNhien {kqRand}", Conn);

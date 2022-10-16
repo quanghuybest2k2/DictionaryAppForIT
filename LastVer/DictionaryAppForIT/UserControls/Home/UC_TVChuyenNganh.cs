@@ -47,8 +47,8 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                string query = "exec LayTheoChuyenNganh @chuyennganh";
-                dtgvTuVung.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { cbbChuyenNganh.SelectedValue });//
+                string query = $"exec LayTheoChuyenNganh {cbbChuyenNganh.SelectedValue} , {Class_TaiKhoan.IdTaiKhoan}";
+                dtgvTuVung.DataSource = DataProvider.Instance.ExecuteQuery(query);//
                 lblSoTuHienCo.Text = dtgvTuVung.Rows.Count.ToString();// hiển thị số từ vựng
             }
             catch (Exception ex)
@@ -60,8 +60,8 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                string query = $"TimTheoChuyenNganh '{txtTimTheoChuyenNganh.Text}', @chuyennganh";
-                dtgvTuVung.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { cbbChuyenNganh.SelectedValue });
+                string query = $"EXEC TimTheoChuyenNganh '{txtTimTheoChuyenNganh.Text}', {cbbChuyenNganh.SelectedValue}, {Class_TaiKhoan.IdTaiKhoan}";
+                dtgvTuVung.DataSource = DataProvider.Instance.ExecuteQuery(query);
             }
             catch (Exception ex)
             {
@@ -101,7 +101,7 @@ namespace DictionaryAppForIT.UserControls.Home
                 SqlConnection Conn = new SqlConnection(connString);
                 Conn.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = $"SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and TenTu like '{txtTimTheoChuyenNganh.Text}%' and ChuyenNganh.ID = {cbbChuyenNganh.SelectedValue}";
+                cmd.CommandText = $"SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and TenTu like '{txtTimTheoChuyenNganh.Text}%' and ChuyenNganh.ID = {cbbChuyenNganh.SelectedValue} and IDTK = {Class_TaiKhoan.IdTaiKhoan} or IDTK = 0";
                 cmd.Connection = Conn;
                 SqlDataReader rdr = cmd.ExecuteReader();
                 AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();

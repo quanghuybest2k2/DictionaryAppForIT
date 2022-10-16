@@ -33,8 +33,8 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         {
             InitializeComponent();
 
-            _listTuVung = new List<UC_YT_TuVung>();
-            _listVanBan = new List<UC_YT_VanBan>();
+            //_listTuVung = new List<UC_YT_TuVung>();
+            //_listVanBan = new List<UC_YT_VanBan>();
 
             #region code demo
             //var ucTuVung = new UC_YT_TuVung("No.1", "Multiplication", "/ mʌltɪplɪˈkeɪʃən/", "Phép nhân");
@@ -153,7 +153,16 @@ namespace DictionaryAppForIT.UserControls.YeuThich
 
         private void UC_YeuThich_Load(object sender, EventArgs e)
         {
-
+            _listTuVung = new List<UC_YT_TuVung>();
+            _listVanBan = new List<UC_YT_VanBan>();
+            Tong_So_Muc_Yeu_Thich();
+        }
+        // Dem tong so muc yeu thich
+        public void Tong_So_Muc_Yeu_Thich()
+        {
+            string query = $"select sum(AllCount) AS Tong_SoMucYeuThich from((select count(*) AS AllCount from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan}) union all (select count(*) AS AllCount from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan}))t";
+            object soMuc = DataProvider.Instance.ExecuteScalar(query);
+            lblSoMucYeuThich.Text = soMuc.ToString();
         }
         // xoa tra tu yeu thich
         private void XoaUCYeuThichTuVung()
@@ -182,6 +191,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 }
             }
             _listVanBan.RemoveAll(x => x.Name == "Check");
+            Tong_So_Muc_Yeu_Thich();
         }
         // xoa muc yeu thich
         private void btnXoaMucYeuThich_Click(object sender, EventArgs e)
@@ -274,11 +284,14 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 flpContent.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
                 HienThiTimKiemYTTraTu();
                 HienThiTimKiemYTVanBan();
+                // select sum(AllCount) AS Tong_SoMucYeuThich from((select count(*) AS AllCount from YeuThichTuVung where IDTK = 2 and TiengAnh = 'Component') union all (select count(*) AS AllCount from YeuThichVanBan where IDTK = 2 and TiengAnh LIKE '%Component%'))t
+                string query = $"select sum(AllCount) AS Tong_SoMucYeuThich from((select count(*) AS AllCount from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan} and TiengAnh = '{txtTimKiemYeuThich.Text}') union all (select count(*) AS AllCount from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan} and TiengAnh LIKE '%{txtTimKiemYeuThich.Text}%'))t";
+                object soMucTK = DataProvider.Instance.ExecuteScalar(query);
+                lblSoMucYeuThich.Text = soMucTK.ToString();
                 TuHienTai = txtTimKiemYeuThich.Text;//--------------------------------------
 
             }
         }
         #endregion
-
     }
 }

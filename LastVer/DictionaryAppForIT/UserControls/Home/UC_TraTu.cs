@@ -97,7 +97,7 @@ namespace DictionaryAppForIT.UserControls
                 SqlConnection Conn = new SqlConnection(connString);
                 Conn.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = $"select TenTu from Tu";
+                cmd.CommandText = $"select TenTu from Tu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' or IDTK = 0";
                 cmd.Connection = Conn;
                 SqlDataReader rdr = cmd.ExecuteReader();
                 AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();

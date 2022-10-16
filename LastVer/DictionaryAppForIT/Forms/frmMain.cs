@@ -82,6 +82,13 @@ namespace DictionaryAppForIT.Forms
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
+            //this.Show();
+            //frmLogin dlg = new frmLogin();
+            //if (dlg.ShowDialog() != DialogResult.OK)
+            //{
+            //    Application.Exit();
+            //    return;
+            //}
             //Tự động chỉnh lại width của label tên tài khoản
             lblTenTaiKhoan.Text = Class_TaiKhoan.displayUsername;
             // Tối thiểu 7 kí tự
@@ -248,6 +255,7 @@ namespace DictionaryAppForIT.Forms
             ShowUC(ucYeuThich);
             ucYeuThich.HienThiYTTraTu();
             ucYeuThich.HienThiYTVanBan();
+            ucYeuThich.Tong_So_Muc_Yeu_Thich();
         }
 
         private void btnMiniGame_Click(object sender, EventArgs e)

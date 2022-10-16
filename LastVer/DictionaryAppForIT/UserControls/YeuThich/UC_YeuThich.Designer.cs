@@ -35,7 +35,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSoMucYeuThich = new System.Windows.Forms.Label();
             this.txtTimKiemYeuThich = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoaMucYeuThich = new Guna.UI2.WinForms.Guna2Button();
@@ -52,7 +52,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             // 
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.guna2Button10);
-            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.lblSoMucYeuThich);
             this.panel2.Controls.Add(this.txtTimKiemYeuThich);
             this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Controls.Add(this.btnXoaMucYeuThich);
@@ -92,16 +92,16 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.guna2Button10.TextOffset = new System.Drawing.Point(3, 0);
             this.guna2Button10.UseTransparentBackground = true;
             // 
-            // label3
+            // lblSoMucYeuThich
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.Salmon;
-            this.label3.Location = new System.Drawing.Point(25, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 30);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "12";
+            this.lblSoMucYeuThich.AutoSize = true;
+            this.lblSoMucYeuThich.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Bold);
+            this.lblSoMucYeuThich.ForeColor = System.Drawing.Color.Salmon;
+            this.lblSoMucYeuThich.Location = new System.Drawing.Point(25, 25);
+            this.lblSoMucYeuThich.Name = "lblSoMucYeuThich";
+            this.lblSoMucYeuThich.Size = new System.Drawing.Size(37, 30);
+            this.lblSoMucYeuThich.TabIndex = 36;
+            this.lblSoMucYeuThich.Text = "12";
             // 
             // txtTimKiemYeuThich
             // 
@@ -207,6 +207,6 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         private Guna.UI2.WinForms.Guna2Button guna2Button10;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSoMucYeuThich;
     }
 }
