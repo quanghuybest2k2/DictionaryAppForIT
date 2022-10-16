@@ -30,7 +30,7 @@ namespace DictionaryAppForIT.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation4 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnTaiKhoan = new Guna.UI2.WinForms.Guna2Panel();
@@ -73,6 +73,7 @@ namespace DictionaryAppForIT.Forms
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.timerMoRong_pnTaiKhoan = new System.Windows.Forms.Timer(this.components);
             this.timerThuGon_pnTaiKhoan = new System.Windows.Forms.Timer(this.components);
+            this.btnTVHot = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.pnTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTaiKhoan)).BeginInit();
@@ -482,7 +483,7 @@ namespace DictionaryAppForIT.Forms
             this.flpTabTaiKhoan.Controls.Add(this.btnPhanHoi);
             this.flpTabTaiKhoan.Controls.Add(this.btnThemTu);
             this.guna2Transition1.SetDecoration(this.flpTabTaiKhoan, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.flpTabTaiKhoan.Location = new System.Drawing.Point(32, 10);
+            this.flpTabTaiKhoan.Location = new System.Drawing.Point(31, 10);
             this.flpTabTaiKhoan.Name = "flpTabTaiKhoan";
             this.flpTabTaiKhoan.Size = new System.Drawing.Size(665, 53);
             this.flpTabTaiKhoan.TabIndex = 34;
@@ -570,6 +571,7 @@ namespace DictionaryAppForIT.Forms
             this.flpTabHome.Controls.Add(this.btnTraTu);
             this.flpTabHome.Controls.Add(this.btnDichVB);
             this.flpTabHome.Controls.Add(this.btnTVChuyenNganh);
+            this.flpTabHome.Controls.Add(this.btnTVHot);
             this.guna2Transition1.SetDecoration(this.flpTabHome, Guna.UI2.AnimatorNS.DecorationType.None);
             this.flpTabHome.Location = new System.Drawing.Point(31, 10);
             this.flpTabHome.Name = "flpTabHome";
@@ -770,22 +772,22 @@ namespace DictionaryAppForIT.Forms
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.VertSlide;
             this.guna2Transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation1;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation4;
             // 
             // timerMoRong_pnTaiKhoan
             // 
@@ -796,6 +798,31 @@ namespace DictionaryAppForIT.Forms
             // 
             this.timerThuGon_pnTaiKhoan.Interval = 10;
             this.timerThuGon_pnTaiKhoan.Tick += new System.EventHandler(this.timerThuGon_pnTaiKhoan_Tick);
+            // 
+            // btnTVHot
+            // 
+            this.btnTVHot.Animated = true;
+            this.btnTVHot.BackColor = System.Drawing.Color.Transparent;
+            this.btnTVHot.BorderRadius = 16;
+            this.btnTVHot.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnTVHot.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnTVHot.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTVHot.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnTVHot, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnTVHot.FillColor = System.Drawing.Color.Transparent;
+            this.btnTVHot.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTVHot.ForeColor = System.Drawing.Color.White;
+            this.btnTVHot.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnTVHot.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnTVHot.Location = new System.Drawing.Point(477, 3);
+            this.btnTVHot.Name = "btnTVHot";
+            this.btnTVHot.PressedDepth = 0;
+            this.btnTVHot.Size = new System.Drawing.Size(145, 53);
+            this.btnTVHot.TabIndex = 34;
+            this.btnTVHot.Text = "Từ vựng HOT";
+            this.btnTVHot.TextOffset = new System.Drawing.Point(0, -10);
+            this.btnTVHot.UseTransparentBackground = true;
+            this.btnTVHot.Click += new System.EventHandler(this.btnTVHot_Click);
             // 
             // frmMain
             // 
@@ -870,5 +897,6 @@ namespace DictionaryAppForIT.Forms
         private System.Windows.Forms.Timer timerMoRong_pnTaiKhoan;
         private System.Windows.Forms.Timer timerThuGon_pnTaiKhoan;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Button btnTVHot;
     }
 }

@@ -18,6 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DictionaryAppForIT.UserControls.TuVungHot;
 
 namespace DictionaryAppForIT.Forms
 {
@@ -36,6 +37,7 @@ namespace DictionaryAppForIT.Forms
         UC_TraTu ucTraTu = new UC_TraTu();
         UC_Dich ucDich = new UC_Dich();
         UC_TVChuyenNganh ucTVChuyen = new UC_TVChuyenNganh();
+        UC_TVHot ucTVHot = new UC_TVHot();
 
         //--Lịch sử
         UC_LichSu ucLichSu = new UC_LichSu();
@@ -65,9 +67,9 @@ namespace DictionaryAppForIT.Forms
         public frmMain()
         {
             InitializeComponent();
-            _listUC = new List<Control>() { ucTraTu, ucDich, ucTVChuyen, ucLichSu, ucYeuThich, ucLayoutMiniGame, ucCaiDat, ucQuanLyTK, ucPhanHoi, ucThemTu };
+            _listUC = new List<Control>() { ucTraTu, ucDich, ucTVChuyen, ucLichSu, ucYeuThich, ucLayoutMiniGame, ucCaiDat, ucQuanLyTK, ucPhanHoi, ucThemTu, ucTVHot };
             _listFlpTab = new List<FlowLayoutPanel>() { flpTabHome, flpTabTaiKhoan };
-
+            
             //Thêm uc vào panelContent
             foreach (var item in _listUC)
             {
@@ -285,6 +287,7 @@ namespace DictionaryAppForIT.Forms
         //--Tab đầu tiên
         private void btnTraTu_Click(object sender, EventArgs e)
         {
+            ucTraTu.GoiYTimKiem();
             KiemTraThayDoiTocDoTraTu();
             // Nhấn tự động phát âm
             ucTraTu.tocDoPhatAm = ucCaiDat.tuDongPhatAm;
@@ -394,6 +397,11 @@ namespace DictionaryAppForIT.Forms
         {
             btnTaiKhoan.PerformClick();
             btnThemTu.PerformClick();
+        }
+
+        private void btnTVHot_Click(object sender, EventArgs e)
+        {
+            ShowUC(ucTVHot);
         }
     }
 }

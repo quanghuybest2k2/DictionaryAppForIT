@@ -97,14 +97,14 @@ SELECT * FROM LichSuDich
 -- Từ vựng phổ biến nhất (từ vựng hot)
 SELECT MAX(TiengAnh) FROM LichSuTraTu
 -- Từ vựng phổ biến (khoảng 7 từ)
-SELECT TiengAnh, COUNT(ID) as soLanXuatHien
+SELECT TOP 5 TiengAnh, COUNT(ID) as soLanXuatHien
 FROM LichSuTraTu
 GROUP BY TiengAnh
 ORDER BY COUNT(ID) DESC
 -- Bản dịch phổ biến nhất (bản dịch hot)
 SELECT MAX(TiengAnh) FROM LichSuDich
 -- Bản dịch phổ biến (khoảng 7 bản dịch)
-SELECT TiengAnh, COUNT(ID) as soLanXuatHien
+SELECT TOP 5 TiengAnh, COUNT(ID) as soLanXuatHien
 FROM LichSuDich
 GROUP BY TiengAnh
 ORDER BY COUNT(ID) DESC
@@ -164,6 +164,7 @@ exec ThemTuLoai N'Thán từ'
 select * from TuLoai
 go
 -------- Từ
+-- drop proc ThemTu
 create proc ThemTu
 	@idTu int out,
 	@TenTu VARCHAR(100),
@@ -181,12 +182,12 @@ as
 			return @idTu
 		END
 go
--- drop proc ThemTu
 INSERT INTO Tu values ('Variable', N'/`veə.ri.ə.bəl/', 2, 'Varying', 'Constant', '')
 INSERT INTO Tu values ('Constant', N'/`kɒn.stənt/', 1, 'InConstant', 'Variable', '')
 INSERT INTO Tu values ('Component', N'/kəm`pəʊ.nənt/', 2, 'Element', 'Whole', '')
 INSERT INTO Tu values ('Firewall', N'/´faiəwɔ:l/', 1, '', 'Cyber threat', '')
 INSERT INTO Tu values ('back', N'/´ba:ck/', 1, 'ggg', 'aat', 2)
+INSERT INTO Tu values ('huy', N'/´huy:y/', 1, 'huy best', 'best', 1)
 select * from Tu
 go
 -------- Nghĩa
@@ -215,7 +216,10 @@ exec ThemNghia  2, 1, N'Hằng', N'Hằng số là giá trị không đổi xuy�
 exec ThemNghia  3, 1, N'Thành phần', N'Đây là hệ thống của một quá trình, chương trình, tiện ích, hoặc bất kỳ phần nào của hệ điều hành.', 'An example of a component is an ingredient in a recipe.'
 exec ThemNghia  4, 1, N'Tường lửa', N'tường lửa làm màn chắn điều khiển luồng lưu thông giữa các mạng, thường là giữa mạng và Internet, và giữa các mạng con trong công ty.', 'The firewall traces back to an early period in the modern internet era when systems.'
 exec ThemNghia  6, 1, N'adasd', N'asdsad.', 'asdsadasd'
+exec ThemNghia  14, 1, N'grwgw', N'wgwg.', 'wgwgwg'
 
+--
+select TenTu from Tu where IDTK = 1 or IDTK = 0
 go
 select * from Tu
 select * from Nghia

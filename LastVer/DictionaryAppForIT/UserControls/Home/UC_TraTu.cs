@@ -41,12 +41,13 @@ namespace DictionaryAppForIT.UserControls
         {
             InitializeComponent();
             speech = new SpeechSynthesizer();
-            GoiYTimKiem();
             XemNghia = new XemTatCaNghia();
+            //GoiYTimKiem();
 
             //Tự động chỉnh lại width của label từ vựng
             //txtTuVung.Text = "Variable (fix xong bug)";
             ChinhLaiTuLoai();
+            GoiYTimKiem();
         }
 
         private void ChinhLaiTuLoai()
@@ -66,6 +67,7 @@ namespace DictionaryAppForIT.UserControls
 
         private void UC_TraTu_Load(object sender, EventArgs e)
         {
+            GoiYTimKiem();
             //Tự động chỉnh lại width của label tên Đăng nhập
             lblTenDangNhap.Text = Class_TaiKhoan.displayUsername; // Hello Sang Đỗ
             // Tối thiểu 7 kí tự
@@ -90,7 +92,7 @@ namespace DictionaryAppForIT.UserControls
             }
         }
         #region xử lý tìm kiếm
-        private void GoiYTimKiem()
+        public void GoiYTimKiem()
         {
             try
             {
@@ -327,10 +329,7 @@ namespace DictionaryAppForIT.UserControls
             }
         }
         #endregion
-        private void txtTimKiemTu_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DAL;
+using DictionaryAppForIT.DTO;
 
 namespace DictionaryAppForIT.UserControls.TaiKhoan
 {
@@ -85,14 +86,14 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 // them nghia
                 string themNghia = "EXEC ThemNghia @IdTuMoi , @IdTuLoai , @Nghia , @MoTa , @ViDu";
                 int soDongThemNghia = DataProvider.Instance.ExecuteNonQuery(themNghia, new object[] { idTuMoi, arr[0], arr[1], arr[2], arr[3] });
-                if (soDongThemNghia > 0)
-                {
-                    RJMessageBox.Show("Thêm nghĩa thành công.");
-                }
-                else
-                {
-                    RJMessageBox.Show("Lỗi xảy ra!");
-                }
+                //if (soDongThemNghia > 0)
+                //{
+                //    RJMessageBox.Show("Thêm nghĩa thành công.");
+                //}
+                //else
+                //{
+                //    RJMessageBox.Show("Lỗi xảy ra!");
+                //}
             }
             catch (Exception ex)
             {
@@ -106,7 +107,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             {
                 SqlConnection conn = new SqlConnection(connString);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "EXEC ThemTu @idTu output, @TenTu, @PhienAm, @ChuyenNganh, @DongNghia, @TraiNghia";
+                cmd.CommandText = "EXEC ThemTu @idTu output, @TenTu, @PhienAm, @ChuyenNganh, @DongNghia, @TraiNghia, @IDTK";
                 cmd.Parameters.Add("@idTu", SqlDbType.Int);
 
                 cmd.Parameters.Add("@TenTu", SqlDbType.VarChar, 100);
@@ -114,6 +115,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 cmd.Parameters.Add("@ChuyenNganh", SqlDbType.Int);
                 cmd.Parameters.Add("@DongNghia", SqlDbType.VarChar, 1000);
                 cmd.Parameters.Add("@TraiNghia", SqlDbType.VarChar, 1000);
+                cmd.Parameters.Add("@IDTK", SqlDbType.Int);
 
                 cmd.Parameters["@idTu"].Direction = ParameterDirection.Output;
                 //
@@ -122,6 +124,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 cmd.Parameters["@ChuyenNganh"].Value = cbbChuyenNganh.SelectedValue;
                 cmd.Parameters["@DongNghia"].Value = txtDongNghia.Text;
                 cmd.Parameters["@TraiNghia"].Value = txtTraiNghia.Text;
+                cmd.Parameters["@IDTK"].Value = Class_TaiKhoan.IdTaiKhoan;
 
                 conn.Open();
                 int soDongThemTu = cmd.ExecuteNonQuery();
@@ -129,15 +132,15 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 conn.Close();
                 conn.Dispose();
 
-                if (soDongThemTu > 0)
-                {
-                    RJMessageBox.Show("Thêm từ thành công.");
+                //if (soDongThemTu > 0)
+                //{
+                //    RJMessageBox.Show("Thêm từ thành công.");
                     
-                }
-                else
-                {
-                    RJMessageBox.Show("Lỗi xảy ra!");
-                }
+                //}
+                //else
+                //{
+                //    RJMessageBox.Show("Lỗi xảy ra!");
+                //}
             }
             catch (Exception ex)
             {

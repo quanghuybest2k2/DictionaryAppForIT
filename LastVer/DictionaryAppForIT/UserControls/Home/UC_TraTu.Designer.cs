@@ -470,7 +470,6 @@ namespace DictionaryAppForIT.UserControls
             this.bunifuToolTip1.SetToolTip(this.txtTimKiemTu, "");
             this.bunifuToolTip1.SetToolTipIcon(this.txtTimKiemTu, null);
             this.bunifuToolTip1.SetToolTipTitle(this.txtTimKiemTu, "");
-            this.txtTimKiemTu.TextChanged += new System.EventHandler(this.txtTimKiemTu_TextChanged);
             this.txtTimKiemTu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKiemTu_KeyDown);
             // 
             // panel3

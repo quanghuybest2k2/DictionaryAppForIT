@@ -369,6 +369,18 @@
     <Compile Include="UserControls\ThongBao\UC_TB_NoiDung.designer.cs">
       <DependentUpon>UC_TB_NoiDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TuVungHot\UC_TVHot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TuVungHot\UC_TVHot.Designer.cs">
+      <DependentUpon>UC_TVHot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TuVungHot\UC_TVH_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TuVungHot\UC_TVH_Item.Designer.cs">
+      <DependentUpon>UC_TVH_Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\YeuThich\UC_YeuThich.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -495,6 +507,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ThongBao\UC_TB_NoiDung.resx">
       <DependentUpon>UC_TB_NoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TuVungHot\UC_TVHot.resx">
+      <DependentUpon>UC_TVHot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TuVungHot\UC_TVH_Item.resx">
+      <DependentUpon>UC_TVH_Item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\YeuThich\UC_YeuThich.resx">
       <DependentUpon>UC_YeuThich.cs</DependentUpon>
