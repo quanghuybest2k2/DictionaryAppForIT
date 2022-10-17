@@ -68,6 +68,11 @@ namespace DictionaryAppForIT.UserControls
         private void UC_TraTu_Load(object sender, EventArgs e)
         {
             GoiYTimKiem();
+            pnTitle.Visible = false;
+            txtDongNghia.Visible = false;
+            txtTraiNghia.Visible = false;
+            pbDongNghiaError.Visible = true;
+            pbTraiNghiaError.Visible = true;
             //Tự động chỉnh lại width của label tên Đăng nhập
             lblTenDangNhap.Text = Class_TaiKhoan.displayUsername; // Hello Sang Đỗ
             // Tối thiểu 7 kí tự
@@ -197,46 +202,59 @@ namespace DictionaryAppForIT.UserControls
 
         private void HienThiThongTin()
         {
-            XemNghia.HienThiThongTinTimKiem(txtTimKiemTu.Text);
-            foreach (var item in XemNghia._listTu)
+            object num = DataProvider.Instance.ExecuteScalar($"SELECT COUNT(TenTu) FROM Tu where TenTu = '{txtTimKiemTu.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}' or IDTK = 0 and TenTu = '{txtTimKiemTu.Text}'");
+            if (Convert.ToInt32(num) > 0)
             {
-                txtTuVung.Text = item.TenTu;
-                ChinhLaiTuLoai();
-                txtPhienAm.Text = item.PhienAm;
-                txtDongNghia.Text = item.DongNghia;
-                if (txtDongNghia.Text != "")
+                pnTitle.Visible = true;
+                XemNghia.HienThiThongTinTimKiem(txtTimKiemTu.Text);
+                foreach (var item in XemNghia._listTu)
                 {
-                    pbDongNghiaError.Visible = false;
-                    txtDongNghia.Visible = true;
-                }
-                else
-                {
-                    pbDongNghiaError.Visible = true;
-                    txtDongNghia.Visible = false;
-                }
-                txtTraiNghia.Text = item.TraiNghia;
-                if (txtTraiNghia.Text != "")
-                {
-                    pbTraiNghiaError.Visible = false;
-                    txtTraiNghia.Visible = true;
-                }
-                else
-                {
-                    pbTraiNghiaError.Visible = true;
-                    txtTraiNghia.Visible = false;
-                }
-                ucNghia = new UC_Nghia();
+                    txtTuVung.Text = item.TenTu;
+                    ChinhLaiTuLoai();
+                    txtPhienAm.Text = item.PhienAm;
+                    txtDongNghia.Text = item.DongNghia;
+                    if (txtDongNghia.Text != "")
+                    {
+                        pbDongNghiaError.Visible = false;
+                        txtDongNghia.Visible = true;
+                    }
+                    else
+                    {
+                        pbDongNghiaError.Visible = true;
+                        txtDongNghia.Visible = false;
+                    }
+                    txtTraiNghia.Text = item.TraiNghia;
+                    if (txtTraiNghia.Text != "")
+                    {
+                        pbTraiNghiaError.Visible = false;
+                        txtTraiNghia.Visible = true;
+                    }
+                    else
+                    {
+                        pbTraiNghiaError.Visible = true;
+                        txtTraiNghia.Visible = false;
+                    }
+                    ucNghia = new UC_Nghia();
 
-                ucNghia.LoaiTu = item.TenLoai;
-                ucNghia.Nghia = item.Nghia;
+                    ucNghia.LoaiTu = item.TenLoai;
+                    ucNghia.Nghia = item.Nghia;
 
-                ucNghia.MoTa = item.MoTa;
-                ucNghia.ViDu = item.ViDu;
+                    ucNghia.MoTa = item.MoTa;
+                    ucNghia.ViDu = item.ViDu;
 
-                flpMeaning.Controls.Add(ucNghia);
-                ucNghia.Dock = DockStyle.Top;
+                    flpMeaning.Controls.Add(ucNghia);
+                    ucNghia.Dock = DockStyle.Top;
+
+                }
             }
-            //MessageBox.Show(XemNghia._listTu[0].TenTu);
+            else
+            {
+                pnTitle.Visible = false;
+                txtDongNghia.Visible = false;
+                txtTraiNghia.Visible = false;
+                pbDongNghiaError.Visible = true;
+                pbTraiNghiaError.Visible = true;
+            }
         }
         #endregion
 

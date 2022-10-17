@@ -162,6 +162,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\MucYeuThich.cs" />
     <Compile Include="Class\RandomColor.cs" />
     <Compile Include="Class\RJMessageBox.cs" />
     <Compile Include="CustomMessageBox\frmMSG_DangXuat.cs">
@@ -372,13 +373,13 @@
     <Compile Include="UserControls\TuVungHot\UC_TVHot.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\TuVungHot\UC_TVHot.Designer.cs">
+    <Compile Include="UserControls\TuVungHot\UC_TVHot.designer.cs">
       <DependentUpon>UC_TVHot.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\TuVungHot\UC_TVH_Item.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\TuVungHot\UC_TVH_Item.Designer.cs">
+    <Compile Include="UserControls\TuVungHot\UC_TVH_Item.designer.cs">
       <DependentUpon>UC_TVH_Item.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\YeuThich\UC_YeuThich.cs">

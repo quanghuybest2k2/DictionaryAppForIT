@@ -32,7 +32,6 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         public UC_YeuThich()
         {
             InitializeComponent();
-
             //_listTuVung = new List<UC_YT_TuVung>();
             //_listVanBan = new List<UC_YT_VanBan>();
 
@@ -80,6 +79,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         {
             _listTuVung.Clear();
             flpContent.Controls.Clear();
+            stt = 1;
             object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
             if (Convert.ToInt32(num) > 0)
             {
@@ -163,6 +163,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             string query = $"select sum(AllCount) AS Tong_SoMucYeuThich from((select count(*) AS AllCount from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan}) union all (select count(*) AS AllCount from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan}))t";
             object soMuc = DataProvider.Instance.ExecuteScalar(query);
             lblSoMucYeuThich.Text = soMuc.ToString();
+            MucYeuThich._tongSoMucYeuThich = soMuc.ToString();
         }
         // xoa tra tu yeu thich
         private void XoaUCYeuThichTuVung()

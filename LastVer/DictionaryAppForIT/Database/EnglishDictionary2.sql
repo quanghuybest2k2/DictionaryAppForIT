@@ -94,21 +94,19 @@ create table YeuThichVanBan
 go
 SELECT * FROM LichSuTraTu
 SELECT * FROM LichSuDich
--- Từ vựng phổ biến nhất (từ vựng hot)
-SELECT MAX(TiengAnh) FROM LichSuTraTu
--- Từ vựng phổ biến (khoảng 7 từ)
-SELECT TOP 5 TiengAnh, COUNT(ID) as soLanXuatHien
-FROM LichSuTraTu
-GROUP BY TiengAnh
-ORDER BY COUNT(ID) DESC
--- Bản dịch phổ biến nhất (bản dịch hot)
-SELECT MAX(TiengAnh) FROM LichSuDich
--- Bản dịch phổ biến (khoảng 7 bản dịch)
-SELECT TOP 5 TiengAnh, COUNT(ID) as soLanXuatHien
-FROM LichSuDich
-GROUP BY TiengAnh
-ORDER BY COUNT(ID) DESC
-select * from YeuThichVanBan
+-- Từ vựng phổ biến (khoảng 8 từ)
+go
+
+-- DROP PROC HienThiTuVungHot
+CREATE PROC HienThiTuVungHot
+AS
+		SELECT TOP 8 TiengAnh, PhienAm, TiengViet,COUNT(ID) as soLanXuatHien
+		FROM LichSuTraTu
+		GROUP BY TiengAnh, TiengViet, PhienAm
+		ORDER BY COUNT(ID) DESC
+go
+EXEC HienThiTuVungHot
+----------------------------------------------------------------------------------------------
 -- INSERT INTO YeuThichVanBan VALUES('', '', 10)
 SELECT * FROM YeuThichVanBan
 -- go
@@ -236,6 +234,10 @@ as
 	having t.TenTu = @tentu and IDTK = @idtk  or IDTK = 0 and t.TenTu = @tentu
 go
 exec HienThiThongTin 'back', 2
+go
+-- Kiểm tra xem từ có tồn tại hay không
+SELECT TenTu FROM Tu where TenTu = 'back' and IDTK = 2 or IDTK = 0 and TenTu = 'back'
+SELECT * FROM Tu
 go
 -------- Lịch sử tra từ
 create proc ThemLSTraTu

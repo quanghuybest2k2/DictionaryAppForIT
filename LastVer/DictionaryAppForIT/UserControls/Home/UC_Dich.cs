@@ -221,7 +221,7 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             Clipboard.SetText(txtUnder.Text.Trim()); // copy text
                                                      //Clipboard.GetText(); // paste text
-            RJMessageBox.Show("Đã sao chép!", "Thông báo");
+            //RJMessageBox.Show("Đã sao chép!", "Thông báo");
         }
 
         private void btnMic_Click(object sender, EventArgs e)
@@ -280,14 +280,14 @@ namespace DictionaryAppForIT.UserControls.Home
                 conn.Open();
                 int soDongThemTu = cmd.ExecuteNonQuery();
                 idYeuThichVBVuaChon = cmd.Parameters["@IDYT"].Value.ToString(); // id từ vừa tra
-                if (soDongThemTu > 0)
-                {
-                    RJMessageBox.Show("Thêm bản dịch thành công.");
-                }
-                else
-                {
-                    RJMessageBox.Show("Lỗi xảy ra!");
-                }
+                //if (soDongThemTu > 0)
+                //{
+                //    RJMessageBox.Show("Thêm bản dịch thành công.");
+                //}
+                //else
+                //{
+                //    RJMessageBox.Show("Lỗi xảy ra!");
+                //}
 
                 conn.Close();
                 conn.Dispose();

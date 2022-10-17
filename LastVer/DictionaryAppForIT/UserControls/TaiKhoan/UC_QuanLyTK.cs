@@ -21,8 +21,8 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
     {
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
 
-        private int soMucYeuThich = 9;
         private int tgSuDung = 2;
+        public string _soMuc;
         public UC_QuanLyTK()
         {
             InitializeComponent();
@@ -60,7 +60,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             rtxtSoMucYeuThich.SelectionColor = Color.Gray;
             rtxtSoMucYeuThich.AppendText(" Hiện tại bạn có tất cả ");
             rtxtSoMucYeuThich.SelectionColor = ColorTranslator.FromHtml("#3776ab");
-            rtxtSoMucYeuThich.AppendText(soMucYeuThich.ToString());
+            rtxtSoMucYeuThich.AppendText(MucYeuThich._tongSoMucYeuThich);
             rtxtSoMucYeuThich.SelectionColor = Color.Gray;
             rtxtSoMucYeuThich.AppendText(" mục yêu thích");
             rtxtSoMucYeuThich.Size = new System.Drawing.Size(242, 23);
@@ -148,6 +148,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 
         private void UC_QuanLyTK_Load(object sender, EventArgs e)
         {
+
             ThoiGianTaoTaiKhoan();
             SoMucYeuThich();
             ThoiGianSuDung();

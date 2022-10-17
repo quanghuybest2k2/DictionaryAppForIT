@@ -24,6 +24,7 @@ namespace DictionaryAppForIT.Forms
 {
     public partial class frmMain : Form
     {
+        //public string soMucYeuThich;
         //pnTaiKhoan
         int width_pnTaiKhoan;
 
@@ -69,7 +70,6 @@ namespace DictionaryAppForIT.Forms
             InitializeComponent();
             _listUC = new List<Control>() { ucTraTu, ucDich, ucTVChuyen, ucLichSu, ucYeuThich, ucLayoutMiniGame, ucCaiDat, ucQuanLyTK, ucPhanHoi, ucThemTu, ucTVHot };
             _listFlpTab = new List<FlowLayoutPanel>() { flpTabHome, flpTabTaiKhoan };
-            
             //Thêm uc vào panelContent
             foreach (var item in _listUC)
             {
@@ -264,7 +264,7 @@ namespace DictionaryAppForIT.Forms
         {
             //ShowUC(ucMiniGame);
             ShowUC(ucLayoutMiniGame);
-            
+
         }
 
         private void btnCaiDat_Click(object sender, EventArgs e)
@@ -341,6 +341,8 @@ namespace DictionaryAppForIT.Forms
         //--Tab đầu tiên
         private void btnQuanLyTK_Click(object sender, EventArgs e)
         {
+            //ucQuanLyTK._soMuc = MucYeuThich._tongSoMucYeuThich;
+
             ShowUC(ucQuanLyTK);
         }
 
@@ -402,6 +404,7 @@ namespace DictionaryAppForIT.Forms
         private void btnTVHot_Click(object sender, EventArgs e)
         {
             ShowUC(ucTVHot);
+            ucTVHot.HienThiTuVungHot();
         }
     }
 }

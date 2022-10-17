@@ -55,7 +55,7 @@ namespace DictionaryAppForIT.UserControls
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSaoChep = new Guna.UI2.WinForms.Guna2Button();
             this.txtTuVung = new System.Windows.Forms.TextBox();
             this.txtPhienAm = new System.Windows.Forms.TextBox();
             this.flpMeaning = new System.Windows.Forms.FlowLayoutPanel();
@@ -77,6 +77,7 @@ namespace DictionaryAppForIT.UserControls
             this.txtDongNghia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pbDongNghiaError = new System.Windows.Forms.PictureBox();
+            this.pnTitle = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel9.SuspendLayout();
@@ -96,6 +97,7 @@ namespace DictionaryAppForIT.UserControls
             this.panel4.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDongNghiaError)).BeginInit();
+            this.pnTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -491,15 +493,8 @@ namespace DictionaryAppForIT.UserControls
             this.guna2Panel1.BorderColor = System.Drawing.Color.Silver;
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.panel7);
-            this.guna2Panel1.Controls.Add(this.txtPhienAm);
+            this.guna2Panel1.Controls.Add(this.pnTitle);
             this.guna2Panel1.Controls.Add(this.flpMeaning);
-            this.guna2Panel1.Controls.Add(this.guna2Button9);
-            this.guna2Panel1.Controls.Add(this.btnYeuThich);
-            this.guna2Panel1.Controls.Add(this.btnUK);
-            this.guna2Panel1.Controls.Add(this.label9);
-            this.guna2Panel1.Controls.Add(this.label8);
-            this.guna2Panel1.Controls.Add(this.btnUS);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(10, 10);
@@ -517,9 +512,9 @@ namespace DictionaryAppForIT.UserControls
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.guna2Button10);
+            this.panel7.Controls.Add(this.btnSaoChep);
             this.panel7.Controls.Add(this.txtTuVung);
-            this.panel7.Location = new System.Drawing.Point(13, 10);
+            this.panel7.Location = new System.Drawing.Point(5, 12);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(470, 36);
             this.panel7.TabIndex = 28;
@@ -527,29 +522,29 @@ namespace DictionaryAppForIT.UserControls
             this.bunifuToolTip1.SetToolTipIcon(this.panel7, null);
             this.bunifuToolTip1.SetToolTipTitle(this.panel7, "");
             // 
-            // guna2Button10
+            // btnSaoChep
             // 
-            this.guna2Button10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button10.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.guna2Button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Button10.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button10.ForeColor = System.Drawing.Color.Gray;
-            this.guna2Button10.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button10.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button10.Image")));
-            this.guna2Button10.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2Button10.Location = new System.Drawing.Point(289, 0);
-            this.guna2Button10.Name = "guna2Button10";
-            this.guna2Button10.PressedDepth = 0;
-            this.guna2Button10.Size = new System.Drawing.Size(35, 36);
-            this.guna2Button10.TabIndex = 31;
-            this.guna2Button10.TextOffset = new System.Drawing.Point(3, 0);
-            this.bunifuToolTip1.SetToolTip(this.guna2Button10, "Sao chép");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button10, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button10, "");
-            this.guna2Button10.UseTransparentBackground = true;
-            this.guna2Button10.Click += new System.EventHandler(this.btnSaoChep_Click);
+            this.btnSaoChep.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaoChep.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnSaoChep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaoChep.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSaoChep.FillColor = System.Drawing.Color.Transparent;
+            this.btnSaoChep.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaoChep.ForeColor = System.Drawing.Color.Gray;
+            this.btnSaoChep.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnSaoChep.Image = ((System.Drawing.Image)(resources.GetObject("btnSaoChep.Image")));
+            this.btnSaoChep.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnSaoChep.Location = new System.Drawing.Point(289, 0);
+            this.btnSaoChep.Name = "btnSaoChep";
+            this.btnSaoChep.PressedDepth = 0;
+            this.btnSaoChep.Size = new System.Drawing.Size(35, 36);
+            this.btnSaoChep.TabIndex = 31;
+            this.btnSaoChep.TextOffset = new System.Drawing.Point(3, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnSaoChep, "Sao chép");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnSaoChep, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnSaoChep, "");
+            this.btnSaoChep.UseTransparentBackground = true;
+            this.btnSaoChep.Click += new System.EventHandler(this.btnSaoChep_Click);
             // 
             // txtTuVung
             // 
@@ -575,7 +570,7 @@ namespace DictionaryAppForIT.UserControls
             this.txtPhienAm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPhienAm.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtPhienAm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtPhienAm.Location = new System.Drawing.Point(21, 50);
+            this.txtPhienAm.Location = new System.Drawing.Point(13, 52);
             this.txtPhienAm.Name = "txtPhienAm";
             this.txtPhienAm.ReadOnly = true;
             this.txtPhienAm.Size = new System.Drawing.Size(171, 20);
@@ -608,7 +603,7 @@ namespace DictionaryAppForIT.UserControls
             this.guna2Button9.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button9.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button9.Image")));
             this.guna2Button9.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2Button9.Location = new System.Drawing.Point(489, 10);
+            this.guna2Button9.Location = new System.Drawing.Point(481, 12);
             this.guna2Button9.Name = "guna2Button9";
             this.guna2Button9.PressedDepth = 0;
             this.guna2Button9.Size = new System.Drawing.Size(38, 31);
@@ -632,7 +627,7 @@ namespace DictionaryAppForIT.UserControls
             this.btnYeuThich.ForeColor = System.Drawing.Color.Gray;
             this.btnYeuThich.Image = ((System.Drawing.Image)(resources.GetObject("btnYeuThich.Image")));
             this.btnYeuThich.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnYeuThich.Location = new System.Drawing.Point(528, 8);
+            this.btnYeuThich.Location = new System.Drawing.Point(520, 10);
             this.btnYeuThich.Name = "btnYeuThich";
             this.btnYeuThich.PressedColor = System.Drawing.Color.Empty;
             this.btnYeuThich.PressedDepth = 0;
@@ -654,7 +649,7 @@ namespace DictionaryAppForIT.UserControls
             this.btnUK.ForeColor = System.Drawing.Color.White;
             this.btnUK.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnUK.Image = ((System.Drawing.Image)(resources.GetObject("btnUK.Image")));
-            this.btnUK.Location = new System.Drawing.Point(498, 50);
+            this.btnUK.Location = new System.Drawing.Point(490, 52);
             this.btnUK.Name = "btnUK";
             this.btnUK.PressedDepth = 0;
             this.btnUK.Size = new System.Drawing.Size(29, 20);
@@ -671,7 +666,7 @@ namespace DictionaryAppForIT.UserControls
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Gray;
-            this.label9.Location = new System.Drawing.Point(528, 49);
+            this.label9.Location = new System.Drawing.Point(520, 51);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(32, 21);
             this.label9.TabIndex = 19;
@@ -686,7 +681,7 @@ namespace DictionaryAppForIT.UserControls
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Gray;
-            this.label8.Location = new System.Drawing.Point(461, 49);
+            this.label8.Location = new System.Drawing.Point(453, 51);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(31, 21);
             this.label8.TabIndex = 18;
@@ -704,7 +699,7 @@ namespace DictionaryAppForIT.UserControls
             this.btnUS.ForeColor = System.Drawing.Color.White;
             this.btnUS.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnUS.Image = ((System.Drawing.Image)(resources.GetObject("btnUS.Image")));
-            this.btnUS.Location = new System.Drawing.Point(436, 50);
+            this.btnUS.Location = new System.Drawing.Point(428, 52);
             this.btnUS.Name = "btnUS";
             this.btnUS.PressedDepth = 0;
             this.btnUS.Size = new System.Drawing.Size(29, 20);
@@ -931,6 +926,25 @@ namespace DictionaryAppForIT.UserControls
             this.bunifuToolTip1.SetToolTipIcon(this.pbDongNghiaError, null);
             this.bunifuToolTip1.SetToolTipTitle(this.pbDongNghiaError, "");
             // 
+            // pnTitle
+            // 
+            this.pnTitle.Controls.Add(this.panel7);
+            this.pnTitle.Controls.Add(this.txtPhienAm);
+            this.pnTitle.Controls.Add(this.btnUS);
+            this.pnTitle.Controls.Add(this.label8);
+            this.pnTitle.Controls.Add(this.guna2Button9);
+            this.pnTitle.Controls.Add(this.label9);
+            this.pnTitle.Controls.Add(this.btnYeuThich);
+            this.pnTitle.Controls.Add(this.btnUK);
+            this.pnTitle.Location = new System.Drawing.Point(12, -4);
+            this.pnTitle.Name = "pnTitle";
+            this.pnTitle.Size = new System.Drawing.Size(557, 82);
+            this.pnTitle.TabIndex = 0;
+            this.bunifuToolTip1.SetToolTip(this.pnTitle, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pnTitle, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pnTitle, "");
+            this.pnTitle.UseTransparentBackground = true;
+            // 
             // UC_TraTu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -958,7 +972,6 @@ namespace DictionaryAppForIT.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -970,6 +983,8 @@ namespace DictionaryAppForIT.UserControls
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDongNghiaError)).EndInit();
+            this.pnTitle.ResumeLayout(false);
+            this.pnTitle.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -996,7 +1011,7 @@ namespace DictionaryAppForIT.UserControls
         private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
         private System.Windows.Forms.TextBox txtPhienAm;
         private System.Windows.Forms.Panel panel7;
-        private Guna.UI2.WinForms.Guna2Button guna2Button10;
+        private Guna.UI2.WinForms.Guna2Button btnSaoChep;
         private System.Windows.Forms.TextBox txtTuVung;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
@@ -1022,5 +1037,6 @@ namespace DictionaryAppForIT.UserControls
         private System.Windows.Forms.TextBox txtDongNghia;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbDongNghiaError;
+        private Guna.UI2.WinForms.Guna2Panel pnTitle;
     }
 }
