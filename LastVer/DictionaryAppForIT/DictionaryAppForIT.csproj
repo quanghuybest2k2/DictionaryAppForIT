@@ -388,6 +388,12 @@
     <Compile Include="UserControls\YeuThich\UC_YeuThich.Designer.cs">
       <DependentUpon>UC_YeuThich.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\YeuThich\UC_YT_GhiChu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\YeuThich\UC_YT_GhiChu.Designer.cs">
+      <DependentUpon>UC_YT_GhiChu.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\YeuThich\UC_YT_TuVung.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -399,6 +405,12 @@
     </Compile>
     <Compile Include="UserControls\YeuThich\UC_YT_VanBan.Designer.cs">
       <DependentUpon>UC_YT_VanBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\YeuThich\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\YeuThich\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CustomMessageBox\frmMSG_DangXuat.resx">
       <DependentUpon>frmMSG_DangXuat.cs</DependentUpon>
@@ -518,6 +530,9 @@
     <EmbeddedResource Include="UserControls\YeuThich\UC_YeuThich.resx">
       <DependentUpon>UC_YeuThich.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\YeuThich\UC_YT_GhiChu.resx">
+      <DependentUpon>UC_YT_GhiChu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\YeuThich\UC_YT_TuVung.resx">
       <DependentUpon>UC_YT_TuVung.cs</DependentUpon>
     </EmbeddedResource>
@@ -529,6 +544,9 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <EmbeddedResource Include="UserControls\YeuThich\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

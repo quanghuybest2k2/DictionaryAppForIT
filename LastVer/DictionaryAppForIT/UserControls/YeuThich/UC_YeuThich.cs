@@ -208,6 +208,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                   $"delete from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
                 if (num > 0)
                 {
+                    lblSoMucYeuThich.Text = "0";
                     RJMessageBox.Show("Đã xóa tất cả mục yêu thích!");
                 }
                 else { RJMessageBox.Show("Xóa không thành công!"); }

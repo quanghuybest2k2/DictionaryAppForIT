@@ -12,6 +12,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
 {
     public partial class UC_YT_VanBan : UserControl
     {
+        UC_YT_GhiChu ucYTTGhiChu;
         public UC_YT_VanBan()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.Index = index;
             this.VBTiengAnh = tiengAnh;
             this.VBTiengViet = tiengViet;
+            ThemGhiChu();
         }
 
         public string Index
@@ -55,11 +57,12 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             guna2pbNen1.FillColor = Color.FromName(color);
             guna2pbNen2.FillColor = Color.FromName(color);
             pnNen.BackColor = Color.FromName(color);
+            lblChiTietGhiChu.BackColor = Color.FromName(color);
         }
 
         private void chkChonYTVanBan_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
         {
-            if (chkChonYTVanBan.Checked)
+            if (chkChonYTVanBan.Checked || chkFakeChonYTVanBan.Checked)
             {
                 this.Name = "Check";
             }
@@ -67,6 +70,26 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             {
                 this.Name = "unCheck";
             }
+        }
+
+        public bool GhiChu
+        {
+            get { return pnGhiChu.Visible; }
+            set { pnGhiChu.Visible = value; }
+        }
+
+        private void ThemGhiChu()
+        {
+            ucYTTGhiChu = new UC_YT_GhiChu();
+            pnGhiChu.Controls.Add(ucYTTGhiChu);
+            ucYTTGhiChu.Dock = DockStyle.Fill;
+            ucYTTGhiChu.BringToFront();
+        }
+
+        private void btnGhiChu_Click(object sender, EventArgs e)
+        {
+            ucYTTGhiChu.Visible = true;
+            pnGhiChu.Visible = true;
         }
     }
 }
