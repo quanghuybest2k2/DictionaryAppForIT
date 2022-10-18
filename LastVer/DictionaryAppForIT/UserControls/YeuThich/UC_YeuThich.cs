@@ -1,6 +1,7 @@
 ﻿using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
+using DictionaryAppForIT.Forms;
 using DictionaryAppForIT.UserControls.LichSu;
 using System;
 using System.Collections.Generic;
@@ -73,6 +74,12 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             //flpContent.Controls.Add(ucVanBan);
             #endregion
 
+        }
+
+        public string SoMuc
+        {
+            get { return lblSoMucYeuThich.Text; }
+            set { lblSoMucYeuThich.Text = value; }
         }
 
         public void HienThiYTTraTu()
@@ -155,15 +162,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         {
             _listTuVung = new List<UC_YT_TuVung>();
             _listVanBan = new List<UC_YT_VanBan>();
-            Tong_So_Muc_Yeu_Thich();
-        }
-        // Dem tong so muc yeu thich
-        public void Tong_So_Muc_Yeu_Thich()
-        {
-            string query = $"select sum(AllCount) AS Tong_SoMucYeuThich from((select count(*) AS AllCount from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan}) union all (select count(*) AS AllCount from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan}))t";
-            object soMuc = DataProvider.Instance.ExecuteScalar(query);
-            lblSoMucYeuThich.Text = soMuc.ToString();
-            MucYeuThich._tongSoMucYeuThich = soMuc.ToString();
+            lblSoMucYeuThich.Text =  frmMain.Tong_So_Muc_Yeu_Thich();
         }
         // xoa tra tu yeu thich
         private void XoaUCYeuThichTuVung()
@@ -192,7 +191,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 }
             }
             _listVanBan.RemoveAll(x => x.Name == "Check");
-            Tong_So_Muc_Yeu_Thich();
+            lblSoMucYeuThich.Text = frmMain.Tong_So_Muc_Yeu_Thich();
         }
         // xoa muc yeu thich
         private void btnXoaMucYeuThich_Click(object sender, EventArgs e)

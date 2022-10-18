@@ -331,12 +331,12 @@ namespace DictionaryAppForIT.UserControls
                 ucNghia.Dock = DockStyle.Top;
 
             }
-            //MessageBox.Show(XemNghia._listTu[0].TenTu);
         }
         private void btnTuNgauNhien_Click(object sender, EventArgs e)
         {
             try
             {
+                pnTitle.Visible = true;
                 flpMeaning.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
                 HienThiKqRandom();
                 TuHienTai = txtTimKiemTu.Text;

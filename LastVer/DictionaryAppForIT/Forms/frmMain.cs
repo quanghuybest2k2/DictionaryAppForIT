@@ -19,6 +19,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DictionaryAppForIT.UserControls.TuVungHot;
+using DictionaryAppForIT.DAL;
 
 namespace DictionaryAppForIT.Forms
 {
@@ -257,7 +258,7 @@ namespace DictionaryAppForIT.Forms
             ShowUC(ucYeuThich);
             ucYeuThich.HienThiYTTraTu();
             ucYeuThich.HienThiYTVanBan();
-            ucYeuThich.Tong_So_Muc_Yeu_Thich();
+            ucYeuThich.SoMuc = Tong_So_Muc_Yeu_Thich();
         }
 
         private void btnMiniGame_Click(object sender, EventArgs e)
@@ -339,10 +340,15 @@ namespace DictionaryAppForIT.Forms
         #region TaiKhoan button tab click event
 
         //--Tab đầu tiên
+        public static string Tong_So_Muc_Yeu_Thich()
+        {
+            string query = $"select sum(AllCount) AS Tong_SoMucYeuThich from((select count(*) AS AllCount from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan}) union all (select count(*) AS AllCount from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan}))t";
+            object soMuc = DataProvider.Instance.ExecuteScalar(query);
+            return soMuc.ToString();
+        }
         private void btnQuanLyTK_Click(object sender, EventArgs e)
         {
-            //ucQuanLyTK._soMuc = MucYeuThich._tongSoMucYeuThich;
-
+            ucQuanLyTK.SoMuc = Tong_So_Muc_Yeu_Thich();
             ShowUC(ucQuanLyTK);
         }
 

@@ -30,8 +30,8 @@ namespace DictionaryAppForIT.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation4 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnTaiKhoan = new Guna.UI2.WinForms.Guna2Panel();
             this.pbTaiKhoan = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -60,6 +60,7 @@ namespace DictionaryAppForIT.Forms
             this.btnTraTu = new Guna.UI2.WinForms.Guna2Button();
             this.btnDichVB = new Guna.UI2.WinForms.Guna2Button();
             this.btnTVChuyenNganh = new Guna.UI2.WinForms.Guna2Button();
+            this.btnTVHot = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -73,7 +74,6 @@ namespace DictionaryAppForIT.Forms
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.timerMoRong_pnTaiKhoan = new System.Windows.Forms.Timer(this.components);
             this.timerThuGon_pnTaiKhoan = new System.Windows.Forms.Timer(this.components);
-            this.btnTVHot = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.pnTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTaiKhoan)).BeginInit();
@@ -244,7 +244,7 @@ namespace DictionaryAppForIT.Forms
             this.btnYeuThich.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnYeuThich.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnYeuThich.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnYeuThich.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnYeuThich.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnYeuThich.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Transition1.SetDecoration(this.btnYeuThich, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnYeuThich.FillColor = System.Drawing.Color.Transparent;
@@ -657,6 +657,31 @@ namespace DictionaryAppForIT.Forms
             this.btnTVChuyenNganh.CheckedChanged += new System.EventHandler(this.btnTab_CheckedChanged);
             this.btnTVChuyenNganh.Click += new System.EventHandler(this.btnTVChuyenNganh_Click);
             // 
+            // btnTVHot
+            // 
+            this.btnTVHot.Animated = true;
+            this.btnTVHot.BackColor = System.Drawing.Color.Transparent;
+            this.btnTVHot.BorderRadius = 16;
+            this.btnTVHot.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnTVHot.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnTVHot.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTVHot.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnTVHot, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnTVHot.FillColor = System.Drawing.Color.Transparent;
+            this.btnTVHot.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTVHot.ForeColor = System.Drawing.Color.White;
+            this.btnTVHot.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnTVHot.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnTVHot.Location = new System.Drawing.Point(477, 3);
+            this.btnTVHot.Name = "btnTVHot";
+            this.btnTVHot.PressedDepth = 0;
+            this.btnTVHot.Size = new System.Drawing.Size(145, 53);
+            this.btnTVHot.TabIndex = 34;
+            this.btnTVHot.Text = "Từ vựng HOT";
+            this.btnTVHot.TextOffset = new System.Drawing.Point(0, -10);
+            this.btnTVHot.UseTransparentBackground = true;
+            this.btnTVHot.Click += new System.EventHandler(this.btnTVHot_Click);
+            // 
             // guna2Panel1
             // 
             this.guna2Panel1.Controls.Add(this.btnMinimize);
@@ -772,22 +797,22 @@ namespace DictionaryAppForIT.Forms
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.VertSlide;
             this.guna2Transition1.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation4;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation2;
             // 
             // timerMoRong_pnTaiKhoan
             // 
@@ -798,31 +823,6 @@ namespace DictionaryAppForIT.Forms
             // 
             this.timerThuGon_pnTaiKhoan.Interval = 10;
             this.timerThuGon_pnTaiKhoan.Tick += new System.EventHandler(this.timerThuGon_pnTaiKhoan_Tick);
-            // 
-            // btnTVHot
-            // 
-            this.btnTVHot.Animated = true;
-            this.btnTVHot.BackColor = System.Drawing.Color.Transparent;
-            this.btnTVHot.BorderRadius = 16;
-            this.btnTVHot.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnTVHot.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnTVHot.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnTVHot.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.btnTVHot, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnTVHot.FillColor = System.Drawing.Color.Transparent;
-            this.btnTVHot.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTVHot.ForeColor = System.Drawing.Color.White;
-            this.btnTVHot.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnTVHot.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnTVHot.Location = new System.Drawing.Point(477, 3);
-            this.btnTVHot.Name = "btnTVHot";
-            this.btnTVHot.PressedDepth = 0;
-            this.btnTVHot.Size = new System.Drawing.Size(145, 53);
-            this.btnTVHot.TabIndex = 34;
-            this.btnTVHot.Text = "Từ vựng HOT";
-            this.btnTVHot.TextOffset = new System.Drawing.Point(0, -10);
-            this.btnTVHot.UseTransparentBackground = true;
-            this.btnTVHot.Click += new System.EventHandler(this.btnTVHot_Click);
             // 
             // frmMain
             // 

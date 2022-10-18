@@ -105,6 +105,7 @@ AS
 		GROUP BY TiengAnh, TiengViet, PhienAm
 		ORDER BY COUNT(ID) DESC
 go
+select * from LichSuTraTu
 EXEC HienThiTuVungHot
 ----------------------------------------------------------------------------------------------
 -- INSERT INTO YeuThichVanBan VALUES('', '', 10)

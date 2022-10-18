@@ -31,18 +31,18 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QuanLyTK));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties97 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties98 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties99 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties100 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties101 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties102 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties103 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties104 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties105 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties106 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties107 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties108 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.LuuThayDoiTK = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoaTaiKhoan = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -95,6 +95,10 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.btnSuaEmail = new Guna.UI2.WinForms.Guna2Button();
             this.btnSuaTenDangNhap = new Guna.UI2.WinForms.Guna2Button();
             this.btnSuaAvt = new Guna.UI2.WinForms.Guna2Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblSoMucTest = new System.Windows.Forms.Label();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -120,6 +124,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            this.guna2Panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // LuuThayDoiTK
@@ -349,26 +354,26 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.txtEmail.Modified = false;
             this.txtEmail.Multiline = false;
             this.txtEmail.Name = "txtEmail";
-            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtEmail.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtEmail.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtEmail.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            stateProperties4.ForeColor = System.Drawing.Color.DarkGray;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtEmail.OnIdleState = stateProperties4;
+            stateProperties97.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            stateProperties97.FillColor = System.Drawing.Color.Empty;
+            stateProperties97.ForeColor = System.Drawing.Color.Empty;
+            stateProperties97.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtEmail.OnActiveState = stateProperties97;
+            stateProperties98.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties98.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties98.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties98.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtEmail.OnDisabledState = stateProperties98;
+            stateProperties99.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            stateProperties99.FillColor = System.Drawing.Color.Empty;
+            stateProperties99.ForeColor = System.Drawing.Color.Empty;
+            stateProperties99.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtEmail.OnHoverState = stateProperties99;
+            stateProperties100.BorderColor = System.Drawing.Color.Silver;
+            stateProperties100.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            stateProperties100.ForeColor = System.Drawing.Color.DarkGray;
+            stateProperties100.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtEmail.OnIdleState = stateProperties100;
             this.txtEmail.Padding = new System.Windows.Forms.Padding(3);
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -425,26 +430,26 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.txtUsername.Modified = false;
             this.txtUsername.Multiline = false;
             this.txtUsername.Name = "txtUsername";
-            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtUsername.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
-            stateProperties8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            stateProperties8.ForeColor = System.Drawing.Color.DarkGray;
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnIdleState = stateProperties8;
+            stateProperties101.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            stateProperties101.FillColor = System.Drawing.Color.Empty;
+            stateProperties101.ForeColor = System.Drawing.Color.Empty;
+            stateProperties101.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsername.OnActiveState = stateProperties101;
+            stateProperties102.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties102.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties102.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties102.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtUsername.OnDisabledState = stateProperties102;
+            stateProperties103.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            stateProperties103.FillColor = System.Drawing.Color.Empty;
+            stateProperties103.ForeColor = System.Drawing.Color.Empty;
+            stateProperties103.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsername.OnHoverState = stateProperties103;
+            stateProperties104.BorderColor = System.Drawing.Color.Silver;
+            stateProperties104.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            stateProperties104.ForeColor = System.Drawing.Color.DarkGray;
+            stateProperties104.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsername.OnIdleState = stateProperties104;
             this.txtUsername.Padding = new System.Windows.Forms.Padding(3);
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -501,26 +506,26 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.txtPassword.Modified = false;
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
-            stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            stateProperties9.FillColor = System.Drawing.Color.Empty;
-            stateProperties9.ForeColor = System.Drawing.Color.Empty;
-            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPassword.OnActiveState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtPassword.OnDisabledState = stateProperties10;
-            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            stateProperties11.FillColor = System.Drawing.Color.Empty;
-            stateProperties11.ForeColor = System.Drawing.Color.Empty;
-            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPassword.OnHoverState = stateProperties11;
-            stateProperties12.BorderColor = System.Drawing.Color.Silver;
-            stateProperties12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            stateProperties12.ForeColor = System.Drawing.Color.DarkGray;
-            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPassword.OnIdleState = stateProperties12;
+            stateProperties105.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            stateProperties105.FillColor = System.Drawing.Color.Empty;
+            stateProperties105.ForeColor = System.Drawing.Color.Empty;
+            stateProperties105.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPassword.OnActiveState = stateProperties105;
+            stateProperties106.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties106.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties106.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties106.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtPassword.OnDisabledState = stateProperties106;
+            stateProperties107.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            stateProperties107.FillColor = System.Drawing.Color.Empty;
+            stateProperties107.ForeColor = System.Drawing.Color.Empty;
+            stateProperties107.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPassword.OnHoverState = stateProperties107;
+            stateProperties108.BorderColor = System.Drawing.Color.Silver;
+            stateProperties108.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            stateProperties108.ForeColor = System.Drawing.Color.DarkGray;
+            stateProperties108.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPassword.OnIdleState = stateProperties108;
             this.txtPassword.Padding = new System.Windows.Forms.Padding(3);
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -696,6 +701,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             // 
             this.panelSoMucYeuThich.BackColor = System.Drawing.Color.Transparent;
             this.panelSoMucYeuThich.BorderRadius = 15;
+            this.panelSoMucYeuThich.Controls.Add(this.guna2Panel8);
             this.panelSoMucYeuThich.Controls.Add(this.guna2PictureBox11);
             this.panelSoMucYeuThich.Controls.Add(this.guna2PictureBox10);
             this.panelSoMucYeuThich.Controls.Add(this.label13);
@@ -1018,6 +1024,58 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.btnSuaAvt.TabIndex = 11;
             this.btnSuaAvt.UseTransparentBackground = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Gray;
+            this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(130, 22);
+            this.label10.TabIndex = 106;
+            this.label10.Text = "Hiện tại bạn có tất cả";
+            this.label10.UseCompatibleTextRendering = true;
+            // 
+            // lblSoMucTest
+            // 
+            this.lblSoMucTest.AutoSize = true;
+            this.lblSoMucTest.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblSoMucTest.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoMucTest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(118)))), ((int)(((byte)(171)))));
+            this.lblSoMucTest.Location = new System.Drawing.Point(130, 0);
+            this.lblSoMucTest.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSoMucTest.Name = "lblSoMucTest";
+            this.lblSoMucTest.Size = new System.Drawing.Size(12, 22);
+            this.lblSoMucTest.TabIndex = 106;
+            this.lblSoMucTest.Text = "9";
+            this.lblSoMucTest.UseCompatibleTextRendering = true;
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel8.Controls.Add(this.label14);
+            this.guna2Panel8.Controls.Add(this.lblSoMucTest);
+            this.guna2Panel8.Controls.Add(this.label10);
+            this.guna2Panel8.Location = new System.Drawing.Point(71, 30);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.Size = new System.Drawing.Size(259, 24);
+            this.guna2Panel8.TabIndex = 107;
+            this.guna2Panel8.UseTransparentBackground = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Gray;
+            this.label14.Location = new System.Drawing.Point(142, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(88, 22);
+            this.label14.TabIndex = 107;
+            this.label14.Text = "mục yêu thích";
+            this.label14.UseCompatibleTextRendering = true;
+            // 
             // UC_QuanLyTK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1084,6 +1142,8 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            this.guna2Panel8.ResumeLayout(false);
+            this.guna2Panel8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1142,5 +1202,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private Guna.UI2.WinForms.Guna2Button btnSuaTenDangNhap;
         private Guna.UI2.WinForms.Guna2Button btnSuaEmail;
         private Guna.UI2.WinForms.Guna2Button btnSuaMatKhau;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblSoMucTest;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private System.Windows.Forms.Label label14;
     }
 }

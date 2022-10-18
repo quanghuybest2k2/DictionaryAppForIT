@@ -22,12 +22,19 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
 
         private int tgSuDung = 2;
-        public string _soMuc;
         public UC_QuanLyTK()
         {
             InitializeComponent();
         }
         #region Xử lý richtextbox đổi màu chữ
+
+        public string SoMuc
+        {
+            get { return lblSoMucTest.Text; }
+            set { lblSoMucTest.Text = value; }
+        }
+
+
         private void ThoiGianTaoTaiKhoan()
         {
             DateTime hienTai = DateTime.Now;
@@ -53,24 +60,27 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             rtb1.BackColor = System.Drawing.Color.LemonChiffon;
             panelThoiGianTao.Controls.Add(rtb1);
         }
-        private void SoMucYeuThich()
-        {
-            RichTextBox rtxtSoMucYeuThich = new RichTextBox();
-            rtxtSoMucYeuThich.Font = new System.Drawing.Font("Segoe UI", 10F);
-            rtxtSoMucYeuThich.SelectionColor = Color.Gray;
-            rtxtSoMucYeuThich.AppendText(" Hiện tại bạn có tất cả ");
-            rtxtSoMucYeuThich.SelectionColor = ColorTranslator.FromHtml("#3776ab");
-            rtxtSoMucYeuThich.AppendText(MucYeuThich._tongSoMucYeuThich);
-            rtxtSoMucYeuThich.SelectionColor = Color.Gray;
-            rtxtSoMucYeuThich.AppendText(" mục yêu thích");
-            rtxtSoMucYeuThich.Size = new System.Drawing.Size(242, 23);
-            rtxtSoMucYeuThich.Location = new Point(69, 29);
-            rtxtSoMucYeuThich.Name = "rtxtMucYeuThich";
-            rtxtSoMucYeuThich.BorderStyle = BorderStyle.None;
-            rtxtSoMucYeuThich.ReadOnly = true;
-            rtxtSoMucYeuThich.BackColor = System.Drawing.Color.LemonChiffon;
-            panelSoMucYeuThich.Controls.Add(rtxtSoMucYeuThich);
-        }
+        //
+        //public void SoMucYeuThich()
+        //{
+        //    RichTextBox rtxtSoMucYeuThich = new RichTextBox();
+        //    rtxtSoMucYeuThich.Font = new System.Drawing.Font("Segoe UI", 10F);
+        //    rtxtSoMucYeuThich.SelectionColor = Color.Gray;
+        //    rtxtSoMucYeuThich.AppendText(" Hiện tại bạn có tất cả ");
+        //    rtxtSoMucYeuThich.SelectionColor = ColorTranslator.FromHtml("#3776ab");
+        //    //rtxtSoMucYeuThich.AppendText(frmMain.Tong_So_Muc_Yeu_Thich());
+        //    rtxtSoMucYeuThich.AppendText(lblSoMucTest.Text);
+        //    rtxtSoMucYeuThich.SelectionColor = Color.Gray;
+        //    rtxtSoMucYeuThich.AppendText(" mục yêu thích");
+        //    rtxtSoMucYeuThich.Size = new System.Drawing.Size(242, 23);
+        //    rtxtSoMucYeuThich.Location = new Point(69, 29);
+        //    rtxtSoMucYeuThich.Name = "rtxtMucYeuThich";
+        //    rtxtSoMucYeuThich.BorderStyle = BorderStyle.None;
+        //    rtxtSoMucYeuThich.ReadOnly = true;
+        //    rtxtSoMucYeuThich.BackColor = System.Drawing.Color.LemonChiffon;
+        //    rtxtSoMucYeuThich.BringToFront();
+        //    panelSoMucYeuThich.Controls.Add(rtxtSoMucYeuThich);
+        //}
         private void ThoiGianSuDung()
         {
             RichTextBox rtb1 = new RichTextBox();
@@ -148,9 +158,8 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 
         private void UC_QuanLyTK_Load(object sender, EventArgs e)
         {
-
             ThoiGianTaoTaiKhoan();
-            SoMucYeuThich();
+            //SoMucYeuThich();
             ThoiGianSuDung();
             HienThiThongTinTaiKhoan(); // Hiển thị thông tin tài khoản
         }
