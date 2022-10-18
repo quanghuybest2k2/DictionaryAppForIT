@@ -135,25 +135,106 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 
         }
 
+        private string KTGioiTinh()
+        {
+            string gt = "";
+            if (rdNam.Checked)
+            {
+                gt = "1";
+            }
+            else if (rdNu.Checked)
+            {
+                gt = "2";
+
+            }
+            else
+            {
+                gt = "3";
+            }
+            return gt;
+        }
+
         private void LuuThayDoiTK_Click(object sender, EventArgs e)
         {
-            string query = "";
-            DataProvider.Instance.ExecuteNonQuery(query, new object[] { /* tham so */  });
+            string query = $"EXEC CapNhatThongTinTaiKhoan '{Class_TaiKhoan.IdTaiKhoan}', '{txtUsername.Text.Trim()}', '{txtPassword.Text.Trim()}', '{txtEmail.Text.Trim()}', '{KTGioiTinh()}'";
+            int num = DataProvider.Instance.ExecuteNonQuery(query);
+            if (num > 0)
+            {
+                RJMessageBox.Show("Cập nhật thiing tin tài khoản thành công!");
+            }else
+            {
+                RJMessageBox.Show("Không thể cập nhật tài khoản!");
+            }
         }
 
         private void btnSuaEmail_Click(object sender, EventArgs e)
         {
-
+            if (btnSuaEmail.Checked)
+            {
+                txtEmail.ReadOnly = false;
+                txtEmail.FillColor = Color.White;
+                pbNenEmail1.FillColor = Color.MediumSpringGreen;
+                pbNenEmail2.FillColor = Color.MediumSpringGreen;
+                btnLuuThayDoiTK.Enabled = true;
+            }
+            else
+            {
+                txtEmail.ReadOnly = true;
+                txtEmail.FillColor = Color.FromArgb(251, 251, 251);
+                pbNenEmail1.FillColor = Color.Tomato;
+                pbNenEmail2.FillColor = Color.Tomato;
+            }
+            
         }
 
         private void btnSuaTenDangNhap_Click(object sender, EventArgs e)
         {
+            if (btnSuaTenDangNhap.Checked)
+            {
+                txtUsername.ReadOnly = false;
+                txtUsername.FillColor = Color.White;
+                pbNenUsername1.FillColor = Color.MediumSpringGreen;
+                pbNenUsername2.FillColor = Color.MediumSpringGreen;
+                btnLuuThayDoiTK.Enabled = true;
+            }
+            else
+            {
+                txtUsername.ReadOnly = true;
+                txtUsername.FillColor = Color.FromArgb(251, 251, 251);
+                pbNenUsername1.FillColor = Color.Tomato;
+                pbNenUsername2.FillColor = Color.Tomato;
+            }
 
         }
 
         private void btnSuaMatKhau_Click(object sender, EventArgs e)
         {
+            if (btnSuaMatKhau.Checked)
+            {
+                txtPassword.ReadOnly = false;
+                txtPassword.FillColor = Color.White;
+                pbNenPassword1.FillColor = Color.MediumSpringGreen;
+                pbNenPassword2.FillColor = Color.MediumSpringGreen;
+                ///
+                if (txtPassword.PasswordChar == '●')
+                {
+                    txtPassword.PasswordChar = '\0';
+                }
+                btnLuuThayDoiTK.Enabled = true;
 
+            }
+            else
+            {
+                txtPassword.ReadOnly = true;
+                txtPassword.FillColor = Color.FromArgb(251, 251, 251);
+                pbNenPassword1.FillColor = Color.Tomato;
+                pbNenPassword2.FillColor = Color.Tomato;
+                ///
+                if (txtPassword.PasswordChar == '\0')
+                {
+                    txtPassword.PasswordChar = '●';
+                }
+            }
         }
 
         private void UC_QuanLyTK_Load(object sender, EventArgs e)

@@ -474,16 +474,16 @@ create proc CapNhatThongTinTaiKhoan
 @Id INT,
 @TenDangNhap varchar(100),
 @MatKhau varchar(100),
-@GioiTinh INT,
-@NgayTaoTK varchar(30)
+@Email VARCHAR(100),
+@GioiTinh INT
 as
 begin
 	UPDATE TaiKhoan
-	SET TenDangNhap = @TenDangNhap, MatKhau = @MatKhau, GioiTinh = @GioiTinh, NgayTaoTK = @NgayTaoTK
+	SET TenDangNhap = @TenDangNhap, MatKhau = @MatKhau, Email = @Email,GioiTinh = @GioiTinh
 	WHERE ID = @Id
 end
 go
--- EXEC CapNhatThongTinTaiKhoan 1, 'quanghuybest2k2', '123456', 1, ''
+-- EXEC CapNhatThongTinTaiKhoan '1', 'quanghuybest2k2', '123456', 'quanghuybest@gmail.com', '1'
 go
 select * from TuLoai
 select * from ChuyenNganh
