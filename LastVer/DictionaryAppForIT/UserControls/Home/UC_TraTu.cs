@@ -384,11 +384,12 @@ namespace DictionaryAppForIT.UserControls
                 // them tu vao lich su
                 SqlConnection conn = new SqlConnection(connString);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "EXEC LuuTuYeuThich @IDYT output, @TiengAnh, @PhienAm, @TiengViet, @IDTK";
+                cmd.CommandText = "EXEC LuuTuYeuThich @IDYT output, @TiengAnh, @PhienAm, @TiengViet, @GhiChu, @IDTK";
                 cmd.Parameters.Add("@IDYT", SqlDbType.Int);
                 cmd.Parameters.Add("@TiengAnh", SqlDbType.VarChar, 400);
                 cmd.Parameters.Add("@PhienAm", SqlDbType.NVarChar, 400);
                 cmd.Parameters.Add("@TiengViet", SqlDbType.NVarChar, 400);
+                cmd.Parameters.Add("@GhiChu", SqlDbType.NVarChar, 400);
                 cmd.Parameters.Add("@IDTK", SqlDbType.Int);
                 //Lấy id vừa thêm vào bảng LichSuTraTu
                 cmd.Parameters["@IDYT"].Direction = ParameterDirection.Output;
@@ -396,6 +397,7 @@ namespace DictionaryAppForIT.UserControls
                 cmd.Parameters["@PhienAm"].Value = tu.PhienAm;
 
                 cmd.Parameters["@TiengViet"].Value = tu.Nghia;
+                cmd.Parameters["@GhiChu"].Value = "";
                 cmd.Parameters["@IDTK"].Value = Class_TaiKhoan.IdTaiKhoan;
 
                 conn.Open();

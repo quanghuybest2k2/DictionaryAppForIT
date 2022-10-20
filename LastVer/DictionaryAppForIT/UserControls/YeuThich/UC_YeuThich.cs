@@ -103,11 +103,13 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                         string TVTiengAnh = rdr["TiengAnh"].ToString();
                         string TVPhienAm = rdr["PhienAm"].ToString();
                         string TVTiengViet = rdr["TiengViet"].ToString();
+                        string GhiChu = rdr["GhiChu"].ToString();
                         ucYTTuVung = new UC_YT_TuVung(stt.ToString(), idHienTai, TVTiengAnh, TVPhienAm, TVTiengViet);
                         ucYTTuVung.TVBackColor(rd.GetColor());
                         flpContent.Controls.Add(ucYTTuVung);
                         _listTuVung.Add(ucYTTuVung);
                         ucYTTuVung.Name = "unCheck";
+                        ucYTTuVung.ThemGhiChu(idHienTai, GhiChu, 1);
                         stt++;
                     }
 
@@ -140,11 +142,13 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                         idHienTai = rdr["ID"].ToString();
                         string TVTiengAnh = rdr["TiengAnh"].ToString();
                         string TVTiengViet = rdr["TiengViet"].ToString();
+                        string GhiChu = rdr["GhiChu"].ToString();
                         ucYTVanBan = new UC_YT_VanBan(stt.ToString(), idHienTai, TVTiengAnh, TVTiengViet);
                         ucYTVanBan.VBBackColor(rd.GetColor());
                         flpContent.Controls.Add(ucYTVanBan);
                         _listVanBan.Add(ucYTVanBan);
                         ucYTVanBan.Name = "unCheck";
+                        ucYTVanBan.ThemGhiChu(idHienTai, GhiChu, 2);
                         stt++;
                     }
 
@@ -233,11 +237,13 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                     string TVTiengAnh = rdr["TiengAnh"].ToString();
                     string TVPhienAm = rdr["PhienAm"].ToString();
                     string TVTiengViet = rdr["TiengViet"].ToString();
+                    string GhiChu = rdr["GhiChu"].ToString();
                     ucYTTuVung = new UC_YT_TuVung(stt.ToString(), idHienTai, TVTiengAnh, TVPhienAm, TVTiengViet);
                     ucYTTuVung.TVBackColor(rd.GetColor());
                     flpContent.Controls.Add(ucYTTuVung);
                     _listTuVung.Add(ucYTTuVung);
                     ucYTTuVung.Name = "unCheck";
+                    ucYTTuVung.ThemGhiChu(idHienTai, GhiChu, 1);
                     stt++;
                 }
                 Conn.Close();
@@ -263,11 +269,13 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                     idHienTai = rdr["ID"].ToString();
                     string TVTiengAnh = rdr["TiengAnh"].ToString();
                     string TVTiengViet = rdr["TiengViet"].ToString();
+                    string GhiChu = rdr["GhiChu"].ToString();
                     ucYTVanBan = new UC_YT_VanBan(stt.ToString(), idHienTai, TVTiengAnh, TVTiengViet);
                     ucYTVanBan.VBBackColor(rd.GetColor());
                     flpContent.Controls.Add(ucYTVanBan);
                     _listVanBan.Add(ucYTVanBan);
                     ucYTVanBan.Name = "unCheck";
+                    ucYTVanBan.ThemGhiChu(idHienTai, GhiChu, 2);
                     stt++;
                 }
                 Conn.Close();

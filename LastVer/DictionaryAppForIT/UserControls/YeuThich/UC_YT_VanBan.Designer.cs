@@ -36,8 +36,6 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.pnGhiChu = new Guna.UI2.WinForms.Guna2Panel();
             this.btnFakeGhiChu = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox0 = new System.Windows.Forms.PictureBox();
-            this.lblChiTietGhiChu = new System.Windows.Forms.Label();
             this.lblIndex = new System.Windows.Forms.Label();
             this.btnDieuHuong = new Guna.UI2.WinForms.Guna2Button();
             this.guna2pbNen1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -47,11 +45,12 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.lblTiengAnh = new System.Windows.Forms.Label();
             this.lblSo = new System.Windows.Forms.Label();
             this.pnNen = new System.Windows.Forms.Panel();
+            this.pictureBox0 = new System.Windows.Forms.PictureBox();
             this.pnGhiChu.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2pbNen1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2pbNen2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox0)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGhiChu
@@ -184,7 +183,6 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.BorderThickness = 2;
             this.guna2Panel1.Controls.Add(this.pnGhiChu);
-            this.guna2Panel1.Controls.Add(this.lblChiTietGhiChu);
             this.guna2Panel1.Controls.Add(this.lblIndex);
             this.guna2Panel1.Controls.Add(this.btnDieuHuong);
             this.guna2Panel1.Controls.Add(this.btnGhiChu);
@@ -208,29 +206,6 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.guna2Panel1.Size = new System.Drawing.Size(268, 151);
             this.guna2Panel1.TabIndex = 11;
             // 
-            // pictureBox0
-            // 
-            this.pictureBox0.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox0.Image")));
-            this.pictureBox0.Location = new System.Drawing.Point(15, 21);
-            this.pictureBox0.Name = "pictureBox0";
-            this.pictureBox0.Size = new System.Drawing.Size(40, 41);
-            this.pictureBox0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox0.TabIndex = 25;
-            this.pictureBox0.TabStop = false;
-            // 
-            // lblChiTietGhiChu
-            // 
-            this.lblChiTietGhiChu.AutoEllipsis = true;
-            this.lblChiTietGhiChu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblChiTietGhiChu.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblChiTietGhiChu.ForeColor = System.Drawing.Color.White;
-            this.lblChiTietGhiChu.Location = new System.Drawing.Point(98, 122);
-            this.lblChiTietGhiChu.Name = "lblChiTietGhiChu";
-            this.lblChiTietGhiChu.Size = new System.Drawing.Size(157, 18);
-            this.lblChiTietGhiChu.TabIndex = 24;
-            this.lblChiTietGhiChu.Text = "Nhạc bạn đăng rất hay.Nó làm tôi có động lực học tiếng anh vì nhạc rất cuốn Nhạc " +
-    "bạn đăng rất hay.Nó làm tôi có động lực học tiếng anh vì nhạc rất cuốn";
-            // 
             // lblIndex
             // 
             this.lblIndex.AutoSize = true;
@@ -239,6 +214,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.lblIndex.Size = new System.Drawing.Size(15, 13);
             this.lblIndex.TabIndex = 23;
             this.lblIndex.Text = "id";
+            this.lblIndex.Visible = false;
             // 
             // btnDieuHuong
             // 
@@ -356,6 +332,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.lblTiengAnh.Size = new System.Drawing.Size(154, 57);
             this.lblTiengAnh.TabIndex = 15;
             this.lblTiengAnh.Text = "President Joe Biden tested positive for Covid again late Saturday";
+            this.lblTiengAnh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblSo
             // 
@@ -377,6 +354,16 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.pnNen.Size = new System.Drawing.Size(2, 112);
             this.pnNen.TabIndex = 0;
             // 
+            // pictureBox0
+            // 
+            this.pictureBox0.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox0.Image")));
+            this.pictureBox0.Location = new System.Drawing.Point(15, 21);
+            this.pictureBox0.Name = "pictureBox0";
+            this.pictureBox0.Size = new System.Drawing.Size(40, 41);
+            this.pictureBox0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox0.TabIndex = 25;
+            this.pictureBox0.TabStop = false;
+            // 
             // UC_YT_VanBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,9 +375,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.pnGhiChu.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2pbNen1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2pbNen2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox0)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -403,7 +390,6 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         private Guna.UI2.WinForms.Guna2Panel pnGhiChu;
         private Guna.UI2.WinForms.Guna2Button btnFakeGhiChu;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label lblChiTietGhiChu;
         private System.Windows.Forms.Label lblIndex;
         private Guna.UI2.WinForms.Guna2Button btnDieuHuong;
         private Guna.UI2.WinForms.Guna2PictureBox guna2pbNen1;

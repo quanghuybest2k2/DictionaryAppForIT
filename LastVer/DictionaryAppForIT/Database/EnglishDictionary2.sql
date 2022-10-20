@@ -78,6 +78,7 @@ create table YeuThichTuVung
 	TiengAnh VARCHAR(400),
 	PhienAm NVARCHAR(400),
 	TiengViet NVARCHAR(400),
+	GhiChu NVARCHAR(400),
 	IDTK INT references TaiKhoan(ID),
 	primary key (ID, IDTK)
 )
@@ -88,9 +89,12 @@ create table YeuThichVanBan
 	ID INT IDENTITY(1,1),
 	TiengAnh VARCHAR(400),
 	TiengViet NVARCHAR(400),
+	GhiChu NVARCHAR(400),
 	IDTK INT references TaiKhoan(ID),
 	primary key (ID, IDTK)
 )
+go
+SELECT * FROM YeuThichVanBan
 go
 SELECT * FROM LichSuTraTu
 SELECT * FROM LichSuDich
@@ -273,19 +277,21 @@ create proc LuuTuYeuThich
 	@TiengAnh VARCHAR(400),
 	@PhienAm NVARCHAR(400),
 	@TiengViet NVARCHAR(400),
+	@GhiChu NVARCHAR(400),
 	@IDTK INT
 as
 	IF NOT EXISTS (	SELECT * FROM YeuThichTuVung WHERE TiengAnh = @TiengAnh and TiengViet = @TiengViet and IDTK = @IDTK)
 		BEGIN
-			INSERT INTO YeuThichTuVung values (@TiengAnh, @PhienAm, @TiengViet, @IDTK) set @IDYT = SCOPE_IDENTITY()
+			INSERT INTO YeuThichTuVung values (@TiengAnh, @PhienAm, @TiengViet, @GhiChu,@IDTK) set @IDYT = SCOPE_IDENTITY()
 			return @IDYT
 		END
 go
--- EXEC LuuTuYeuThich output, 'tienganh', N'phienam',N'tiengviet', 10
+-- EXEC LuuTuYeuThich output, 'tienganh', N'phienam',N'tiengviet', N'',10
 select * from YeuThichTuVung
 select COUNT(ID) from YeuThichTuVung where TiengAnh = 'Component' and IDTK = 10
 -- DELETE FROM YeuThichTuVung
 -- DELETE FROM YeuThichTuVung WHERE TiengAnh = 'Component' AND IDTK = 10
+-- UPDATE YeuThichTuVung SET GhiChu = N'abc' WHERE ID = 4 and IDTK = 1
 go
 -- xoa lich su tra tu yeu thich
 -- delete from YeuThichTuVung where id = 3 and IDTK = 2
@@ -294,18 +300,21 @@ create proc LuuVanBanYeuThich
 	@IDYT INT out,
 	@TiengAnh VARCHAR(400),
 	@TiengViet NVARCHAR(400),
+	@GhiChu NVARCHAR(400),
 	@IDTK INT
 as
 	IF NOT EXISTS (	SELECT * FROM YeuThichVanBan WHERE TiengAnh = @TiengAnh and IDTK = @IDTK)
 		BEGIN
-			INSERT INTO YeuThichVanBan values (@TiengAnh, @TiengViet, @IDTK) set @IDYT = SCOPE_IDENTITY()
+			INSERT INTO YeuThichVanBan values (@TiengAnh, @TiengViet, @GhiChu, @IDTK) set @IDYT = SCOPE_IDENTITY()
 			return @IDYT
 		END
 go
--- EXEC LuuVanBanYeuThich '', N'', 10
+-- EXEC LuuVanBanYeuThich '', N'', N'', 10
 SELECT * FROM YeuThichVanBan
+SELECT * FROM YeuThichTuVung
 -- xoa van ban yeu thich
 --delete from YeuThichVanBan where id = 1 and IDTK = 2
+-- UPDATE YeuThichVanBan SET GhiChu = N'abc' WHERE ID = 10 and IDTK = 1
 -------------------- Thủ tục ---------------------------
 select * from ChuyenNganh
 select * from TuLoai
@@ -376,7 +385,7 @@ as
 	from LichSuTraTu
 	where TiengAnh = @tentu and IDTK = @IDTK
 go
-EXEC HienThiTimKiemLSTT 'variable', 10
+EXEC HienThiTimKiemLSTT 'component', 2
 go
 -- tim lich su dich
 create proc HienThiTimKiemLSD
@@ -398,22 +407,22 @@ create proc HienThiTimKiemYTTraTu
 @tentu varchar(100),
 @IDTK int
 as
-	select ID, TiengAnh, PhienAm, TiengViet, IDTK
+	select ID, TiengAnh, PhienAm, TiengViet, GhiChu, IDTK
 	from YeuThichTuVung
 	where TiengAnh = @tentu and IDTK = @IDTK
 go
-EXEC HienThiTimKiemYTTraTu 'Variable', 2
+EXEC HienThiTimKiemYTTraTu 'component', 1
 go
 -- Tìm kiếm yêu thích văn bản
 create proc HienThiTimKiemYTVanBan
 @tentu varchar(100),
 @IDTK int
 as
-	select ID, TiengAnh, TiengViet, IDTK
+	select ID, TiengAnh, TiengViet, GhiChu,IDTK
 	from YeuThichVanBan
 	where TiengAnh like concat('%',@tentu,'%') and IDTK = @IDTK
 go
-EXEC HienThiTimKiemYTVanBan 'e', 2
+EXEC HienThiTimKiemYTVanBan 'sang', 1
 go
 create proc KiemTraDangNhap
 @tendangnhap varchar(100),

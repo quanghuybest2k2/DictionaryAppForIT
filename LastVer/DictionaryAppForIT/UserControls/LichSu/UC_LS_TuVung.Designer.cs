@@ -285,6 +285,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.lblIndex.Size = new System.Drawing.Size(15, 13);
             this.lblIndex.TabIndex = 5;
             this.lblIndex.Text = "id";
+            this.lblIndex.Visible = false;
             // 
             // chkChonLSTraTu
             // 

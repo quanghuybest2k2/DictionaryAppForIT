@@ -46,9 +46,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.btnXoaLSVanBan = new Guna.UI2.WinForms.Guna2Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblIndex = new System.Windows.Forms.Label();
             this.chkChonLSVanBan = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lblIndex = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -251,6 +251,16 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel2.Size = new System.Drawing.Size(55, 96);
             this.panel2.TabIndex = 2;
             // 
+            // lblIndex
+            // 
+            this.lblIndex.AutoSize = true;
+            this.lblIndex.Location = new System.Drawing.Point(22, 72);
+            this.lblIndex.Name = "lblIndex";
+            this.lblIndex.Size = new System.Drawing.Size(15, 13);
+            this.lblIndex.TabIndex = 18;
+            this.lblIndex.Text = "id";
+            this.lblIndex.Visible = false;
+            // 
             // chkChonLSVanBan
             // 
             this.chkChonLSVanBan.AllowBindingControlAnimation = true;
@@ -312,15 +322,6 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(55, 10);
             this.panel4.TabIndex = 3;
-            // 
-            // lblIndex
-            // 
-            this.lblIndex.AutoSize = true;
-            this.lblIndex.Location = new System.Drawing.Point(22, 72);
-            this.lblIndex.Name = "lblIndex";
-            this.lblIndex.Size = new System.Drawing.Size(15, 13);
-            this.lblIndex.TabIndex = 18;
-            this.lblIndex.Text = "id";
             // 
             // UC_LS_VanBan
             // 

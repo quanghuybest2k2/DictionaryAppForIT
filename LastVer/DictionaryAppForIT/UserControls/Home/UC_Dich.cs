@@ -221,7 +221,7 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             Clipboard.SetText(txtUnder.Text.Trim()); // copy text
                                                      //Clipboard.GetText(); // paste text
-            //RJMessageBox.Show("Đã sao chép!", "Thông báo");
+                                                     //RJMessageBox.Show("Đã sao chép!", "Thông báo");
         }
 
         private void btnMic_Click(object sender, EventArgs e)
@@ -252,7 +252,7 @@ namespace DictionaryAppForIT.UserControls.Home
         private void UC_Dich_Load(object sender, EventArgs e)
         {
             LoadLichSu();
-           
+
         }
 
         private void btnLuuYeuThich_Click(object sender, EventArgs e)
@@ -266,15 +266,17 @@ namespace DictionaryAppForIT.UserControls.Home
                 //int num = DataProvider.Instance.ExecuteNonQuery($"INSERT INTO YeuThichVanBan VALUES('{txtTop.Text.Trim()}', N'{txtUnder.Text.Trim()}', {Class_TaiKhoan.IdTaiKhoan})");
                 SqlConnection conn = new SqlConnection(connString);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "EXEC LuuVanBanYeuThich @IDYT output, @TiengAnh, @TiengViet, @IDTK";
+                cmd.CommandText = "EXEC LuuVanBanYeuThich @IDYT output, @TiengAnh, @TiengViet, @GhiChu, @IDTK";
                 cmd.Parameters.Add("@IDYT", SqlDbType.Int);
                 cmd.Parameters.Add("@TiengAnh", SqlDbType.VarChar, 400);
                 cmd.Parameters.Add("@TiengViet", SqlDbType.NVarChar, 400);
+                cmd.Parameters.Add("@GhiChu", SqlDbType.NVarChar, 400);
                 cmd.Parameters.Add("@IDTK", SqlDbType.Int);
                 //Lấy id vừa thêm vào bảng LichSuTraTu
                 cmd.Parameters["@IDYT"].Direction = ParameterDirection.Output;
                 cmd.Parameters["@TiengAnh"].Value = txtTop.Text.Trim();
                 cmd.Parameters["@TiengViet"].Value = txtUnder.Text.Trim();
+                cmd.Parameters["@GhiChu"].Value = "";
                 cmd.Parameters["@IDTK"].Value = Class_TaiKhoan.IdTaiKhoan;
 
                 conn.Open();
@@ -294,14 +296,15 @@ namespace DictionaryAppForIT.UserControls.Home
             }
             else
             {
-                string query = $"DELETE FROM LuuVanBanYeuThich WHERE TiengAnh = '{txtTop.Text.Trim()}' AND IDTK = {Class_TaiKhoan.IdTaiKhoan}";
+                string query = $"DELETE FROM YeuThichVanBan WHERE TiengAnh = '{txtTop.Text.Trim()}' AND IDTK = {Class_TaiKhoan.IdTaiKhoan}";
                 int num = DataProvider.Instance.ExecuteNonQuery(query);
-                if (num > 0)
-                {
-                    RJMessageBox.Show("Xóa thành công!");
-                }
-                else
-                    RJMessageBox.Show("Thất bại");
+                //if (num > 0)
+                //{
+                //    RJMessageBox.Show("Xóa thành công!");
+                //    LoadLichSu();
+                //}
+                //else
+                //    RJMessageBox.Show("Thất bại");
             }
         }
     }
