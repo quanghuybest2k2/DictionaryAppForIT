@@ -538,3 +538,4 @@ from((select count(*) AS AllCount
 	  from YeuThichTuVung) union all (select count(*) AS AllCount from YeuThichVanBan))t
 
 	  select * from Tu where IDTK = 2 or IDTK = 0
+SELECT TOP 1 ID FROM Tu where IDTK = 1 or IDTK = 0 ORDER  BY NEWID()

@@ -58,15 +58,7 @@ namespace DictionaryAppForIT.UserControls.Home
         }
         private void btnTimTheoCN_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string query = $"EXEC TimTheoChuyenNganh '{txtTimTheoChuyenNganh.Text}', {cbbChuyenNganh.SelectedValue}, {Class_TaiKhoan.IdTaiKhoan}";
-                dtgvTuVung.DataSource = DataProvider.Instance.ExecuteQuery(query);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
         private void TocDoNoi()
         {
@@ -91,7 +83,15 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnTimTheoCN.PerformClick();
+                try
+                {
+                    string query = $"EXEC TimTheoChuyenNganh '{txtTimTheoChuyenNganh.Text}', {cbbChuyenNganh.SelectedValue}, {Class_TaiKhoan.IdTaiKhoan}";
+                    dtgvTuVung.DataSource = DataProvider.Instance.ExecuteQuery(query);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         private void GoiYTimKiem()

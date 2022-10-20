@@ -406,12 +406,6 @@
     <Compile Include="UserControls\YeuThich\UC_YT_VanBan.Designer.cs">
       <DependentUpon>UC_YT_VanBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\YeuThich\UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\YeuThich\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="CustomMessageBox\frmMSG_DangXuat.resx">
       <DependentUpon>frmMSG_DangXuat.cs</DependentUpon>
     </EmbeddedResource>
@@ -544,9 +538,6 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
-    <EmbeddedResource Include="UserControls\YeuThich\UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

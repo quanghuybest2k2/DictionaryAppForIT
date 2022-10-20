@@ -103,6 +103,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -156,6 +157,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label4.Size = new System.Drawing.Size(130, 21);
             this.label4.TabIndex = 38;
             this.label4.Text = "Chế độ ban đêm";
+            this.bunifuToolTip1.SetToolTip(this.label4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label4, "");
             // 
             // btnCheDoBanDem
             // 
@@ -170,6 +174,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnCheDoBanDem.Name = "btnCheDoBanDem";
             this.btnCheDoBanDem.Size = new System.Drawing.Size(45, 20);
             this.btnCheDoBanDem.TabIndex = 39;
+            this.bunifuToolTip1.SetToolTip(this.btnCheDoBanDem, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnCheDoBanDem, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnCheDoBanDem, "");
             this.btnCheDoBanDem.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnCheDoBanDem.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnCheDoBanDem.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
@@ -219,6 +226,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel1.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel1.TabIndex = 40;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel1, "");
             // 
             // guna2PictureBox3
             // 
@@ -232,6 +242,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox3.TabIndex = 41;
             this.guna2PictureBox3.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox3, "");
             this.guna2PictureBox3.UseTransparentBackground = true;
             // 
             // guna2PictureBox1
@@ -247,6 +260,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox1.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox1.TabIndex = 41;
             this.guna2PictureBox1.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox1, "");
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
             // guna2PictureBox2
@@ -259,6 +275,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox2.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox2.TabIndex = 41;
             this.guna2PictureBox2.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox2, "");
             // 
             // label15
             // 
@@ -270,6 +289,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label15.Size = new System.Drawing.Size(233, 39);
             this.label15.TabIndex = 38;
             this.label15.Text = "Chuyển san giao diện tối để bảo vệ mắt khi sử dụng ứng dụng";
+            this.bunifuToolTip1.SetToolTip(this.label15, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label15, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label15, "");
             // 
             // label7
             // 
@@ -282,6 +304,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label7.Size = new System.Drawing.Size(73, 19);
             this.label7.TabIndex = 38;
             this.label7.Text = "Chậm hơn";
+            this.bunifuToolTip1.SetToolTip(this.label7, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label7, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label7, "");
             // 
             // guna2Panel6
             // 
@@ -305,6 +330,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel6.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel6.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel6.TabIndex = 40;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel6, "");
             // 
             // guna2PictureBox16
             // 
@@ -318,6 +346,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox16.TabIndex = 41;
             this.guna2PictureBox16.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox16, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox16, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox16, "");
             this.guna2PictureBox16.UseTransparentBackground = true;
             // 
             // guna2PictureBox17
@@ -333,6 +364,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox17.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox17.TabIndex = 41;
             this.guna2PictureBox17.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox17, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox17, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox17, "");
             this.guna2PictureBox17.UseTransparentBackground = true;
             // 
             // guna2PictureBox18
@@ -345,6 +379,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox18.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox18.TabIndex = 41;
             this.guna2PictureBox18.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox18, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox18, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox18, "");
             // 
             // label13
             // 
@@ -356,6 +393,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label13.Size = new System.Drawing.Size(233, 39);
             this.label13.TabIndex = 38;
             this.label13.Text = "Tự động tải về và cập nhật ứng dụng khi có phiên bản mới";
+            this.bunifuToolTip1.SetToolTip(this.label13, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label13, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label13, "");
             // 
             // label14
             // 
@@ -368,6 +408,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label14.Size = new System.Drawing.Size(138, 21);
             this.label14.TabIndex = 38;
             this.label14.Text = "Tự động cập nhật";
+            this.bunifuToolTip1.SetToolTip(this.label14, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label14, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label14, "");
             // 
             // btnTuDongCapNhat
             // 
@@ -382,6 +425,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnTuDongCapNhat.Name = "btnTuDongCapNhat";
             this.btnTuDongCapNhat.Size = new System.Drawing.Size(45, 20);
             this.btnTuDongCapNhat.TabIndex = 39;
+            this.bunifuToolTip1.SetToolTip(this.btnTuDongCapNhat, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnTuDongCapNhat, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnTuDongCapNhat, "");
             this.btnTuDongCapNhat.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnTuDongCapNhat.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnTuDongCapNhat.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
@@ -410,6 +456,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel7.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel7.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel7.TabIndex = 40;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel7, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel7, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel7, "");
             // 
             // guna2PictureBox19
             // 
@@ -423,6 +472,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox19.TabIndex = 41;
             this.guna2PictureBox19.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox19, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox19, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox19, "");
             this.guna2PictureBox19.UseTransparentBackground = true;
             // 
             // guna2PictureBox20
@@ -438,6 +490,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox20.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox20.TabIndex = 41;
             this.guna2PictureBox20.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox20, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox20, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox20, "");
             this.guna2PictureBox20.UseTransparentBackground = true;
             // 
             // guna2PictureBox21
@@ -450,6 +505,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox21.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox21.TabIndex = 41;
             this.guna2PictureBox21.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox21, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox21, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox21, "");
             // 
             // label1
             // 
@@ -461,6 +519,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label1.Size = new System.Drawing.Size(233, 39);
             this.label1.TabIndex = 38;
             this.label1.Text = "Phát âm tự động khi bạn tra nghĩa từ vựng hoặc văn bản";
+            this.bunifuToolTip1.SetToolTip(this.label1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label1, "");
             // 
             // label16
             // 
@@ -473,6 +534,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label16.Size = new System.Drawing.Size(135, 21);
             this.label16.TabIndex = 38;
             this.label16.Text = "Tự động phát âm";
+            this.bunifuToolTip1.SetToolTip(this.label16, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label16, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label16, "");
             // 
             // btnTuDongPhatAm
             // 
@@ -487,6 +551,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnTuDongPhatAm.Name = "btnTuDongPhatAm";
             this.btnTuDongPhatAm.Size = new System.Drawing.Size(45, 20);
             this.btnTuDongPhatAm.TabIndex = 39;
+            this.bunifuToolTip1.SetToolTip(this.btnTuDongPhatAm, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnTuDongPhatAm, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnTuDongPhatAm, "");
             this.btnTuDongPhatAm.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnTuDongPhatAm.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnTuDongPhatAm.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
@@ -519,6 +586,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel5.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel5.TabIndex = 40;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel5, "");
             // 
             // guna2PictureBox13
             // 
@@ -532,6 +602,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox13.TabIndex = 41;
             this.guna2PictureBox13.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox13, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox13, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox13, "");
             this.guna2PictureBox13.UseTransparentBackground = true;
             // 
             // guna2PictureBox14
@@ -547,6 +620,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox14.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox14.TabIndex = 41;
             this.guna2PictureBox14.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox14, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox14, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox14, "");
             this.guna2PictureBox14.UseTransparentBackground = true;
             // 
             // rdNhanhHon
@@ -568,6 +644,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.rdNhanhHon.Size = new System.Drawing.Size(18, 18);
             this.rdNhanhHon.TabIndex = 42;
             this.rdNhanhHon.Text = null;
+            this.bunifuToolTip1.SetToolTip(this.rdNhanhHon, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.rdNhanhHon, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.rdNhanhHon, "");
             this.rdNhanhHon.Click += new System.EventHandler(this.rdNhanhHon_Click);
             // 
             // rdChamHon
@@ -589,6 +668,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.rdChamHon.Size = new System.Drawing.Size(18, 18);
             this.rdChamHon.TabIndex = 42;
             this.rdChamHon.Text = null;
+            this.bunifuToolTip1.SetToolTip(this.rdChamHon, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.rdChamHon, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.rdChamHon, "");
             this.rdChamHon.Click += new System.EventHandler(this.rdChamHon_Click);
             // 
             // rdBinhThuong
@@ -610,6 +692,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.rdBinhThuong.Size = new System.Drawing.Size(18, 18);
             this.rdBinhThuong.TabIndex = 42;
             this.rdBinhThuong.Text = null;
+            this.bunifuToolTip1.SetToolTip(this.rdBinhThuong, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.rdBinhThuong, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.rdBinhThuong, "");
             this.rdBinhThuong.Click += new System.EventHandler(this.rdBinhThuong_Click);
             // 
             // guna2PictureBox15
@@ -622,6 +707,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox15.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox15.TabIndex = 41;
             this.guna2PictureBox15.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox15, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox15, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox15, "");
             // 
             // label12
             // 
@@ -634,6 +722,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label12.Size = new System.Drawing.Size(124, 21);
             this.label12.TabIndex = 38;
             this.label12.Text = "Tốc độ phát âm";
+            this.bunifuToolTip1.SetToolTip(this.label12, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label12, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label12, "");
             // 
             // label10
             // 
@@ -646,6 +737,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label10.Size = new System.Drawing.Size(78, 19);
             this.label10.TabIndex = 38;
             this.label10.Text = "Nhanh hơn";
+            this.bunifuToolTip1.SetToolTip(this.label10, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label10, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label10, "");
             // 
             // label9
             // 
@@ -658,6 +752,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label9.Size = new System.Drawing.Size(85, 19);
             this.label9.TabIndex = 38;
             this.label9.Text = "Bình thường";
+            this.bunifuToolTip1.SetToolTip(this.label9, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label9, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label9, "");
             // 
             // guna2Panel4
             // 
@@ -681,6 +778,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel4.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel4.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel4.TabIndex = 40;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel4, "");
             // 
             // guna2PictureBox10
             // 
@@ -694,6 +794,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox10.TabIndex = 41;
             this.guna2PictureBox10.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox10, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox10, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox10, "");
             this.guna2PictureBox10.UseTransparentBackground = true;
             // 
             // guna2PictureBox11
@@ -709,6 +812,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox11.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox11.TabIndex = 41;
             this.guna2PictureBox11.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox11, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox11, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox11, "");
             this.guna2PictureBox11.UseTransparentBackground = true;
             // 
             // guna2PictureBox12
@@ -721,6 +827,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox12.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox12.TabIndex = 41;
             this.guna2PictureBox12.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox12, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox12, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox12, "");
             // 
             // label8
             // 
@@ -732,6 +841,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label8.Size = new System.Drawing.Size(233, 39);
             this.label8.TabIndex = 38;
             this.label8.Text = "Nhận thông báo liên quan về ứng dụng từ nhà phát triển";
+            this.bunifuToolTip1.SetToolTip(this.label8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label8, "");
             // 
             // label11
             // 
@@ -744,6 +856,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label11.Size = new System.Drawing.Size(89, 21);
             this.label11.TabIndex = 38;
             this.label11.Text = "Thông báo";
+            this.bunifuToolTip1.SetToolTip(this.label11, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label11, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label11, "");
             // 
             // btnThongBao
             // 
@@ -758,6 +873,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnThongBao.Name = "btnThongBao";
             this.btnThongBao.Size = new System.Drawing.Size(45, 20);
             this.btnThongBao.TabIndex = 39;
+            this.bunifuToolTip1.SetToolTip(this.btnThongBao, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnThongBao, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnThongBao, "");
             this.btnThongBao.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnThongBao.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnThongBao.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
@@ -787,6 +905,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel2.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel2.TabIndex = 40;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel2, "");
             // 
             // pbCaiDatNhacHocTuVung
             // 
@@ -801,6 +922,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.pbCaiDatNhacHocTuVung.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCaiDatNhacHocTuVung.TabIndex = 41;
             this.pbCaiDatNhacHocTuVung.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pbCaiDatNhacHocTuVung, "Thiết lập thời gian");
+            this.bunifuToolTip1.SetToolTipIcon(this.pbCaiDatNhacHocTuVung, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pbCaiDatNhacHocTuVung, "");
             this.pbCaiDatNhacHocTuVung.UseTransparentBackground = true;
             // 
             // guna2PictureBox4
@@ -815,6 +939,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox4.TabIndex = 41;
             this.guna2PictureBox4.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox4, "");
             this.guna2PictureBox4.UseTransparentBackground = true;
             // 
             // guna2PictureBox5
@@ -830,6 +957,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox5.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox5.TabIndex = 41;
             this.guna2PictureBox5.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox5, "");
             this.guna2PictureBox5.UseTransparentBackground = true;
             // 
             // guna2PictureBox6
@@ -842,6 +972,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox6.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox6.TabIndex = 41;
             this.guna2PictureBox6.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox6, "");
             // 
             // label2
             // 
@@ -853,6 +986,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label2.Size = new System.Drawing.Size(189, 39);
             this.label2.TabIndex = 38;
             this.label2.Text = "Nhận thông báo về việc học từ vựng mỗi ngày";
+            this.bunifuToolTip1.SetToolTip(this.label2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label2, "");
             // 
             // label3
             // 
@@ -865,6 +1001,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label3.Size = new System.Drawing.Size(171, 21);
             this.label3.TabIndex = 38;
             this.label3.Text = "Nhắc nhở học từ vựng";
+            this.bunifuToolTip1.SetToolTip(this.label3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label3, "");
             // 
             // btnNhacHocTuVung
             // 
@@ -879,6 +1018,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnNhacHocTuVung.Name = "btnNhacHocTuVung";
             this.btnNhacHocTuVung.Size = new System.Drawing.Size(45, 20);
             this.btnNhacHocTuVung.TabIndex = 39;
+            this.bunifuToolTip1.SetToolTip(this.btnNhacHocTuVung, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnNhacHocTuVung, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnNhacHocTuVung, "");
             this.btnNhacHocTuVung.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnNhacHocTuVung.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnNhacHocTuVung.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
@@ -908,6 +1050,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel3.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel3.TabIndex = 40;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel3, "");
             // 
             // pbCaiDatTuDongXoaLS
             // 
@@ -922,6 +1067,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.pbCaiDatTuDongXoaLS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCaiDatTuDongXoaLS.TabIndex = 41;
             this.pbCaiDatTuDongXoaLS.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pbCaiDatTuDongXoaLS, "Thiết lập thời gian");
+            this.bunifuToolTip1.SetToolTipIcon(this.pbCaiDatTuDongXoaLS, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pbCaiDatTuDongXoaLS, "");
             this.pbCaiDatTuDongXoaLS.UseTransparentBackground = true;
             // 
             // guna2PictureBox7
@@ -936,6 +1084,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox7.TabIndex = 41;
             this.guna2PictureBox7.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox7, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox7, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox7, "");
             this.guna2PictureBox7.UseTransparentBackground = true;
             // 
             // guna2PictureBox8
@@ -951,6 +1102,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox8.Size = new System.Drawing.Size(58, 86);
             this.guna2PictureBox8.TabIndex = 41;
             this.guna2PictureBox8.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox8, "");
             this.guna2PictureBox8.UseTransparentBackground = true;
             // 
             // guna2PictureBox9
@@ -963,6 +1117,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox9.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox9.TabIndex = 41;
             this.guna2PictureBox9.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox9, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox9, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox9, "");
             // 
             // label5
             // 
@@ -974,6 +1131,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label5.Size = new System.Drawing.Size(200, 39);
             this.label5.TabIndex = 38;
             this.label5.Text = "Xóa lịch sử sau một khoảng thời gian nhất định";
+            this.bunifuToolTip1.SetToolTip(this.label5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label5, "");
             // 
             // label6
             // 
@@ -986,6 +1146,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label6.Size = new System.Drawing.Size(152, 21);
             this.label6.TabIndex = 38;
             this.label6.Text = "Tự động xóa lịch sử";
+            this.bunifuToolTip1.SetToolTip(this.label6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label6, "");
             // 
             // btnTuDongXoaLS
             // 
@@ -1000,6 +1163,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.btnTuDongXoaLS.Name = "btnTuDongXoaLS";
             this.btnTuDongXoaLS.Size = new System.Drawing.Size(45, 20);
             this.btnTuDongXoaLS.TabIndex = 39;
+            this.bunifuToolTip1.SetToolTip(this.btnTuDongXoaLS, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnTuDongXoaLS, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnTuDongXoaLS, "");
             this.btnTuDongXoaLS.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnTuDongXoaLS.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.btnTuDongXoaLS.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
@@ -1026,6 +1192,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel8.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel8.Size = new System.Drawing.Size(392, 86);
             this.guna2Panel8.TabIndex = 40;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel8, "");
             // 
             // panelThongTinUngDung
             // 
@@ -1037,6 +1206,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.panelThongTinUngDung.Name = "panelThongTinUngDung";
             this.panelThongTinUngDung.Size = new System.Drawing.Size(322, 86);
             this.panelThongTinUngDung.TabIndex = 42;
+            this.bunifuToolTip1.SetToolTip(this.panelThongTinUngDung, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panelThongTinUngDung, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panelThongTinUngDung, "");
             // 
             // label17
             // 
@@ -1048,6 +1220,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label17.Size = new System.Drawing.Size(287, 23);
             this.label17.TabIndex = 38;
             this.label17.Text = "Phát triển bởi SHTeam\r\n";
+            this.bunifuToolTip1.SetToolTip(this.label17, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label17, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label17, "");
             // 
             // label18
             // 
@@ -1060,6 +1235,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label18.Size = new System.Drawing.Size(155, 21);
             this.label18.TabIndex = 38;
             this.label18.Text = "Thông tin ứng dụng";
+            this.bunifuToolTip1.SetToolTip(this.label18, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label18, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label18, "");
             // 
             // guna2PictureBox22
             // 
@@ -1073,6 +1251,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox22.TabIndex = 41;
             this.guna2PictureBox22.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox22, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox22, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox22, "");
             this.guna2PictureBox22.UseTransparentBackground = true;
             // 
             // guna2PictureBox23
@@ -1088,6 +1269,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox23.Size = new System.Drawing.Size(70, 86);
             this.guna2PictureBox23.TabIndex = 41;
             this.guna2PictureBox23.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox23, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox23, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox23, "");
             this.guna2PictureBox23.UseTransparentBackground = true;
             // 
             // guna2PictureBox24
@@ -1100,6 +1284,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2PictureBox24.Size = new System.Drawing.Size(36, 92);
             this.guna2PictureBox24.TabIndex = 41;
             this.guna2PictureBox24.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox24, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox24, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox24, "");
             // 
             // label19
             // 
@@ -1112,6 +1299,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label19.Size = new System.Drawing.Size(109, 21);
             this.label19.TabIndex = 38;
             this.label19.Text = "Cài đặt chung";
+            this.bunifuToolTip1.SetToolTip(this.label19, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label19, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label19, "");
             // 
             // label20
             // 
@@ -1124,6 +1314,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label20.Size = new System.Drawing.Size(80, 21);
             this.label20.TabIndex = 38;
             this.label20.Text = "Âm thanh";
+            this.bunifuToolTip1.SetToolTip(this.label20, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label20, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label20, "");
             // 
             // label21
             // 
@@ -1136,6 +1329,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.label21.Size = new System.Drawing.Size(89, 21);
             this.label21.TabIndex = 38;
             this.label21.Text = "Thông báo";
+            this.bunifuToolTip1.SetToolTip(this.label21, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label21, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label21, "");
             // 
             // guna2Panel9
             // 
@@ -1145,6 +1341,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel9.Name = "guna2Panel9";
             this.guna2Panel9.Size = new System.Drawing.Size(10, 16);
             this.guna2Panel9.TabIndex = 41;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel9, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel9, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel9, "");
             // 
             // guna2Panel10
             // 
@@ -1154,6 +1353,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel10.Name = "guna2Panel10";
             this.guna2Panel10.Size = new System.Drawing.Size(10, 16);
             this.guna2Panel10.TabIndex = 41;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel10, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel10, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel10, "");
             // 
             // guna2Panel11
             // 
@@ -1163,6 +1365,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Panel11.Name = "guna2Panel11";
             this.guna2Panel11.Size = new System.Drawing.Size(10, 16);
             this.guna2Panel11.TabIndex = 41;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel11, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel11, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel11, "");
             // 
             // radioButton1
             // 
@@ -1174,7 +1379,45 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.radioButton1.TabIndex = 42;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "radioButton1";
+            this.bunifuToolTip1.SetToolTip(this.radioButton1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.radioButton1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.radioButton1, "");
             this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // bunifuToolTip1
+            // 
+            this.bunifuToolTip1.Active = true;
+            this.bunifuToolTip1.AlignTextWithTitle = false;
+            this.bunifuToolTip1.AllowAutoClose = false;
+            this.bunifuToolTip1.AllowFading = true;
+            this.bunifuToolTip1.AutoCloseDuration = 5000;
+            this.bunifuToolTip1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuToolTip1.BorderColor = System.Drawing.Color.DarkGray;
+            this.bunifuToolTip1.ClickToShowDisplayControl = false;
+            this.bunifuToolTip1.ConvertNewlinesToBreakTags = true;
+            this.bunifuToolTip1.DisplayControl = null;
+            this.bunifuToolTip1.EntryAnimationSpeed = 350;
+            this.bunifuToolTip1.ExitAnimationSpeed = 200;
+            this.bunifuToolTip1.GenerateAutoCloseDuration = false;
+            this.bunifuToolTip1.IconMargin = 6;
+            this.bunifuToolTip1.InitialDelay = 0;
+            this.bunifuToolTip1.Name = "bunifuToolTip1";
+            this.bunifuToolTip1.Opacity = 1D;
+            this.bunifuToolTip1.OverrideToolTipTitles = false;
+            this.bunifuToolTip1.Padding = new System.Windows.Forms.Padding(10);
+            this.bunifuToolTip1.ReshowDelay = 100;
+            this.bunifuToolTip1.ShowAlways = true;
+            this.bunifuToolTip1.ShowBorders = true;
+            this.bunifuToolTip1.ShowIcons = true;
+            this.bunifuToolTip1.ShowShadows = true;
+            this.bunifuToolTip1.Tag = null;
+            this.bunifuToolTip1.TextFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip1.TextForeColor = System.Drawing.Color.DimGray;
+            this.bunifuToolTip1.TextMargin = 2;
+            this.bunifuToolTip1.TitleFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip1.TitleForeColor = System.Drawing.Color.Black;
+            this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
+            this.bunifuToolTip1.ToolTipTitle = null;
             // 
             // UC_CaiDat
             // 
@@ -1200,6 +1443,9 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.Name = "UC_CaiDat";
             this.Size = new System.Drawing.Size(882, 553);
+            this.bunifuToolTip1.SetToolTip(this, "");
+            this.bunifuToolTip1.SetToolTipIcon(this, null);
+            this.bunifuToolTip1.SetToolTipTitle(this, "");
             this.Load += new System.EventHandler(this.UC_CaiDat_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
@@ -1322,5 +1568,6 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel panelThongTinUngDung;
+        private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
     }
 }

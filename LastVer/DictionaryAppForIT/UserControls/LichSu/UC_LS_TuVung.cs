@@ -93,11 +93,11 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.Name = "Check";
             this.Visible = false;
             int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuTraTu where id = {this.Index} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
-            if (num > 0)
-            {
-                RJMessageBox.Show("Xóa thành công!");
-            }
-            else { RJMessageBox.Show("Xóa không thành công!"); }
+            //if (num > 0)
+            //{
+            //    RJMessageBox.Show("Xóa thành công!");
+            //}
+            //else { RJMessageBox.Show("Xóa không thành công!"); }
         }
 
         private void btnDieuHuongLS_Click(object sender, EventArgs e)

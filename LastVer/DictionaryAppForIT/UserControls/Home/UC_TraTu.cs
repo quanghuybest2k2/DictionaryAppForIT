@@ -35,8 +35,7 @@ namespace DictionaryAppForIT.UserControls
         // lich su
         public static string idLSVuaTra;
         public static string idYeuThichVuaChon;
-        //string[] mangNghia;
-
+        
         public UC_TraTu()
         {
             InitializeComponent();
@@ -339,7 +338,6 @@ namespace DictionaryAppForIT.UserControls
                 pnTitle.Visible = true;
                 flpMeaning.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
                 HienThiKqRandom();
-                TuHienTai = txtTimKiemTu.Text;
             }
             catch (Exception ex)
             {
@@ -348,11 +346,6 @@ namespace DictionaryAppForIT.UserControls
         }
         #endregion
 
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnYeuThich_Click(object sender, EventArgs e)
         {

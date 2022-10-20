@@ -59,10 +59,7 @@ namespace DictionaryAppForIT.UserControls
             this.btnSaoChep = new Guna.UI2.WinForms.Guna2Button();
             this.txtTuVung = new System.Windows.Forms.TextBox();
             this.txtPhienAm = new System.Windows.Forms.TextBox();
-            this.btnUS = new Guna.UI2.WinForms.Guna2Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.btnYeuThich = new Guna.UI2.WinForms.Guna2Button();
             this.btnUK = new Guna.UI2.WinForms.Guna2Button();
             this.flpMeaning = new System.Windows.Forms.FlowLayoutPanel();
@@ -78,6 +75,7 @@ namespace DictionaryAppForIT.UserControls
             this.txtDongNghia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pbDongNghiaError = new System.Windows.Forms.PictureBox();
+            this.btnUS = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel9.SuspendLayout();
@@ -123,7 +121,6 @@ namespace DictionaryAppForIT.UserControls
             this.bunifuToolTip1.SetToolTip(this.panel1, "");
             this.bunifuToolTip1.SetToolTipIcon(this.panel1, null);
             this.bunifuToolTip1.SetToolTipTitle(this.panel1, "");
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // guna2Button3
             // 
@@ -334,7 +331,7 @@ namespace DictionaryAppForIT.UserControls
             this.btnTuNgauNhien.Size = new System.Drawing.Size(130, 35);
             this.btnTuNgauNhien.TabIndex = 7;
             this.btnTuNgauNhien.Text = "Từ ngẫu nhiên";
-            this.bunifuToolTip1.SetToolTip(this.btnTuNgauNhien, "");
+            this.bunifuToolTip1.SetToolTip(this.btnTuNgauNhien, "Hiển thị từ ngẫu nhiên");
             this.bunifuToolTip1.SetToolTipIcon(this.btnTuNgauNhien, null);
             this.bunifuToolTip1.SetToolTipTitle(this.btnTuNgauNhien, "");
             this.btnTuNgauNhien.Click += new System.EventHandler(this.btnTuNgauNhien_Click);
@@ -359,7 +356,7 @@ namespace DictionaryAppForIT.UserControls
             this.btnVietAnh.Size = new System.Drawing.Size(130, 35);
             this.btnVietAnh.TabIndex = 7;
             this.btnVietAnh.Text = "Việt → Anh";
-            this.bunifuToolTip1.SetToolTip(this.btnVietAnh, "");
+            this.bunifuToolTip1.SetToolTip(this.btnVietAnh, "Dịch từ tiếng Việt sang tiếng Anh");
             this.bunifuToolTip1.SetToolTipIcon(this.btnVietAnh, null);
             this.bunifuToolTip1.SetToolTipTitle(this.btnVietAnh, "");
             this.btnVietAnh.Click += new System.EventHandler(this.btnVietAnh_Click);
@@ -384,7 +381,7 @@ namespace DictionaryAppForIT.UserControls
             this.btnAnhViet.Size = new System.Drawing.Size(130, 35);
             this.btnAnhViet.TabIndex = 7;
             this.btnAnhViet.Text = "Anh → Việt";
-            this.bunifuToolTip1.SetToolTip(this.btnAnhViet, "");
+            this.bunifuToolTip1.SetToolTip(this.btnAnhViet, "Dịch từ tiếng Anh sang tiếng Việt");
             this.bunifuToolTip1.SetToolTipIcon(this.btnAnhViet, null);
             this.bunifuToolTip1.SetToolTipTitle(this.btnAnhViet, "");
             // 
@@ -515,9 +512,7 @@ namespace DictionaryAppForIT.UserControls
             this.pnTitle.Controls.Add(this.panel7);
             this.pnTitle.Controls.Add(this.txtPhienAm);
             this.pnTitle.Controls.Add(this.btnUS);
-            this.pnTitle.Controls.Add(this.label8);
             this.pnTitle.Controls.Add(this.guna2Button9);
-            this.pnTitle.Controls.Add(this.label9);
             this.pnTitle.Controls.Add(this.btnYeuThich);
             this.pnTitle.Controls.Add(this.btnUK);
             this.pnTitle.Location = new System.Drawing.Point(12, -4);
@@ -600,41 +595,6 @@ namespace DictionaryAppForIT.UserControls
             this.bunifuToolTip1.SetToolTipIcon(this.txtPhienAm, null);
             this.bunifuToolTip1.SetToolTipTitle(this.txtPhienAm, "");
             // 
-            // btnUS
-            // 
-            this.btnUS.BackColor = System.Drawing.Color.Transparent;
-            this.btnUS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUS.FillColor = System.Drawing.Color.Transparent;
-            this.btnUS.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnUS.ForeColor = System.Drawing.Color.White;
-            this.btnUS.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnUS.Image = ((System.Drawing.Image)(resources.GetObject("btnUS.Image")));
-            this.btnUS.Location = new System.Drawing.Point(428, 52);
-            this.btnUS.Name = "btnUS";
-            this.btnUS.PressedDepth = 0;
-            this.btnUS.Size = new System.Drawing.Size(29, 20);
-            this.btnUS.TabIndex = 14;
-            this.bunifuToolTip1.SetToolTip(this.btnUS, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.btnUS, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.btnUS, "");
-            this.btnUS.UseTransparentBackground = true;
-            this.btnUS.Click += new System.EventHandler(this.btnUS_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Gray;
-            this.label8.Location = new System.Drawing.Point(453, 51);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 21);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "US";
-            this.bunifuToolTip1.SetToolTip(this.label8, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.label8, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.label8, "");
-            // 
             // guna2Button9
             // 
             this.guna2Button9.BackColor = System.Drawing.Color.Transparent;
@@ -656,21 +616,6 @@ namespace DictionaryAppForIT.UserControls
             this.bunifuToolTip1.SetToolTipIcon(this.guna2Button9, null);
             this.bunifuToolTip1.SetToolTipTitle(this.guna2Button9, "");
             this.guna2Button9.UseTransparentBackground = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Gray;
-            this.label9.Location = new System.Drawing.Point(520, 51);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 21);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "UK";
-            this.bunifuToolTip1.SetToolTip(this.label9, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.label9, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.label9, "");
             // 
             // btnYeuThich
             // 
@@ -703,16 +648,18 @@ namespace DictionaryAppForIT.UserControls
             this.btnUK.BackColor = System.Drawing.Color.Transparent;
             this.btnUK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUK.FillColor = System.Drawing.Color.Transparent;
-            this.btnUK.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnUK.ForeColor = System.Drawing.Color.White;
+            this.btnUK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnUK.ForeColor = System.Drawing.Color.Gray;
             this.btnUK.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnUK.Image = ((System.Drawing.Image)(resources.GetObject("btnUK.Image")));
-            this.btnUK.Location = new System.Drawing.Point(490, 52);
+            this.btnUK.ImageOffset = new System.Drawing.Point(-1, 0);
+            this.btnUK.Location = new System.Drawing.Point(491, 48);
             this.btnUK.Name = "btnUK";
             this.btnUK.PressedDepth = 0;
-            this.btnUK.Size = new System.Drawing.Size(29, 20);
+            this.btnUK.Size = new System.Drawing.Size(59, 27);
             this.btnUK.TabIndex = 20;
-            this.bunifuToolTip1.SetToolTip(this.btnUK, "");
+            this.btnUK.Text = "UK";
+            this.bunifuToolTip1.SetToolTip(this.btnUK, "Giọng Anh");
             this.bunifuToolTip1.SetToolTipIcon(this.btnUK, null);
             this.bunifuToolTip1.SetToolTipTitle(this.btnUK, "");
             this.btnUK.UseTransparentBackground = true;
@@ -752,7 +699,7 @@ namespace DictionaryAppForIT.UserControls
             this.bunifuToolTip1.Padding = new System.Windows.Forms.Padding(10);
             this.bunifuToolTip1.ReshowDelay = 100;
             this.bunifuToolTip1.ShowAlways = true;
-            this.bunifuToolTip1.ShowBorders = false;
+            this.bunifuToolTip1.ShowBorders = true;
             this.bunifuToolTip1.ShowIcons = true;
             this.bunifuToolTip1.ShowShadows = true;
             this.bunifuToolTip1.Tag = null;
@@ -945,6 +892,27 @@ namespace DictionaryAppForIT.UserControls
             this.bunifuToolTip1.SetToolTipIcon(this.pbDongNghiaError, null);
             this.bunifuToolTip1.SetToolTipTitle(this.pbDongNghiaError, "");
             // 
+            // btnUS
+            // 
+            this.btnUS.BackColor = System.Drawing.Color.Transparent;
+            this.btnUS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUS.FillColor = System.Drawing.Color.Transparent;
+            this.btnUS.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnUS.ForeColor = System.Drawing.Color.Gray;
+            this.btnUS.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnUS.Image = ((System.Drawing.Image)(resources.GetObject("btnUS.Image")));
+            this.btnUS.Location = new System.Drawing.Point(428, 48);
+            this.btnUS.Name = "btnUS";
+            this.btnUS.PressedDepth = 0;
+            this.btnUS.Size = new System.Drawing.Size(59, 27);
+            this.btnUS.TabIndex = 14;
+            this.btnUS.Text = "US";
+            this.bunifuToolTip1.SetToolTip(this.btnUS, "Giọng Mỹ");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnUS, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnUS, "");
+            this.btnUS.UseTransparentBackground = true;
+            this.btnUS.Click += new System.EventHandler(this.btnUS_Click);
+            // 
             // UC_TraTu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1005,9 +973,6 @@ namespace DictionaryAppForIT.UserControls
         private Guna.UI2.WinForms.Guna2Button guna2Button9;
         private Guna.UI2.WinForms.Guna2Button btnYeuThich;
         private Guna.UI2.WinForms.Guna2Button btnUK;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2Button btnUS;
         private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
         private System.Windows.Forms.TextBox txtPhienAm;
         private System.Windows.Forms.Panel panel7;
@@ -1038,5 +1003,6 @@ namespace DictionaryAppForIT.UserControls
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbDongNghiaError;
         private Guna.UI2.WinForms.Guna2Panel pnTitle;
+        private Guna.UI2.WinForms.Guna2Button btnUS;
     }
 }

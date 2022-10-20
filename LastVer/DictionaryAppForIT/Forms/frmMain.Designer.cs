@@ -30,8 +30,8 @@ namespace DictionaryAppForIT.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnTaiKhoan = new Guna.UI2.WinForms.Guna2Panel();
             this.pbTaiKhoan = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -74,6 +74,7 @@ namespace DictionaryAppForIT.Forms
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.timerMoRong_pnTaiKhoan = new System.Windows.Forms.Timer(this.components);
             this.timerThuGon_pnTaiKhoan = new System.Windows.Forms.Timer(this.components);
+            this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.panel1.SuspendLayout();
             this.pnTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTaiKhoan)).BeginInit();
@@ -110,6 +111,9 @@ namespace DictionaryAppForIT.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(180, 608);
             this.panel1.TabIndex = 0;
+            this.bunifuToolTip1.SetToolTip(this.panel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel1, "");
             // 
             // pnTaiKhoan
             // 
@@ -124,6 +128,9 @@ namespace DictionaryAppForIT.Forms
             this.pnTaiKhoan.Name = "pnTaiKhoan";
             this.pnTaiKhoan.Size = new System.Drawing.Size(40, 57);
             this.pnTaiKhoan.TabIndex = 36;
+            this.bunifuToolTip1.SetToolTip(this.pnTaiKhoan, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pnTaiKhoan, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pnTaiKhoan, "");
             this.pnTaiKhoan.MouseLeave += new System.EventHandler(this.pnTaiKhoan_MouseLeave);
             this.pnTaiKhoan.MouseHover += new System.EventHandler(this.pnTaiKhoan_MouseHover);
             // 
@@ -142,6 +149,9 @@ namespace DictionaryAppForIT.Forms
             this.pbTaiKhoan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbTaiKhoan.TabIndex = 6;
             this.pbTaiKhoan.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pbTaiKhoan, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pbTaiKhoan, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pbTaiKhoan, "");
             this.pbTaiKhoan.UseTransparentBackground = true;
             this.pbTaiKhoan.Click += new System.EventHandler(this.pbTaiKhoan_Click);
             this.pbTaiKhoan.MouseHover += new System.EventHandler(this.pnTaiKhoan_MouseHover);
@@ -158,6 +168,9 @@ namespace DictionaryAppForIT.Forms
             this.lblTenTaiKhoan.Size = new System.Drawing.Size(60, 17);
             this.lblTenTaiKhoan.TabIndex = 7;
             this.lblTenTaiKhoan.Text = "Sang Đỗ";
+            this.bunifuToolTip1.SetToolTip(this.lblTenTaiKhoan, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblTenTaiKhoan, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblTenTaiKhoan, "");
             // 
             // btnThemTuMini
             // 
@@ -173,6 +186,9 @@ namespace DictionaryAppForIT.Forms
             this.btnThemTuMini.PressedDepth = 0;
             this.btnThemTuMini.Size = new System.Drawing.Size(27, 28);
             this.btnThemTuMini.TabIndex = 37;
+            this.bunifuToolTip1.SetToolTip(this.btnThemTuMini, "Thêm từ");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnThemTuMini, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnThemTuMini, "");
             this.btnThemTuMini.Click += new System.EventHandler(this.btnThemTuMini_Click);
             // 
             // btnThongBao_Unchecked
@@ -189,6 +205,9 @@ namespace DictionaryAppForIT.Forms
             this.btnThongBao_Unchecked.PressedDepth = 0;
             this.btnThongBao_Unchecked.Size = new System.Drawing.Size(27, 28);
             this.btnThongBao_Unchecked.TabIndex = 38;
+            this.bunifuToolTip1.SetToolTip(this.btnThongBao_Unchecked, "Thông báo");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnThongBao_Unchecked, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnThongBao_Unchecked, "");
             this.btnThongBao_Unchecked.Visible = false;
             this.btnThongBao_Unchecked.Click += new System.EventHandler(this.btnThongBao_Click);
             // 
@@ -206,6 +225,9 @@ namespace DictionaryAppForIT.Forms
             this.btnThongBao_Checked.PressedDepth = 0;
             this.btnThongBao_Checked.Size = new System.Drawing.Size(27, 28);
             this.btnThongBao_Checked.TabIndex = 39;
+            this.bunifuToolTip1.SetToolTip(this.btnThongBao_Checked, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnThongBao_Checked, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnThongBao_Checked, "");
             this.btnThongBao_Checked.Click += new System.EventHandler(this.btnThongBao_Click);
             // 
             // btnHome
@@ -233,6 +255,9 @@ namespace DictionaryAppForIT.Forms
             this.btnHome.Text = "Trang chủ";
             this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHome.TextOffset = new System.Drawing.Point(15, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnHome, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnHome, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnHome, "");
             this.btnHome.UseTransparentBackground = true;
             this.btnHome.CheckedChanged += new System.EventHandler(this.btnSidebar_CheckedChanged);
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -244,7 +269,7 @@ namespace DictionaryAppForIT.Forms
             this.btnYeuThich.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnYeuThich.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnYeuThich.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnYeuThich.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnYeuThich.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnYeuThich.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Transition1.SetDecoration(this.btnYeuThich, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnYeuThich.FillColor = System.Drawing.Color.Transparent;
@@ -261,6 +286,9 @@ namespace DictionaryAppForIT.Forms
             this.btnYeuThich.Text = "Yêu thích";
             this.btnYeuThich.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnYeuThich.TextOffset = new System.Drawing.Point(15, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnYeuThich, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnYeuThich, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnYeuThich, "");
             this.btnYeuThich.UseTransparentBackground = true;
             this.btnYeuThich.CheckedChanged += new System.EventHandler(this.btnSidebar_CheckedChanged);
             this.btnYeuThich.Click += new System.EventHandler(this.btnYeuThich_Click);
@@ -291,6 +319,9 @@ namespace DictionaryAppForIT.Forms
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDangXuat.TextOffset = new System.Drawing.Point(12, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnDangXuat, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnDangXuat, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnDangXuat, "");
             this.btnDangXuat.UseTransparentBackground = true;
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
@@ -318,6 +349,9 @@ namespace DictionaryAppForIT.Forms
             this.btnTaiKhoan.Text = "Tài khoản";
             this.btnTaiKhoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTaiKhoan.TextOffset = new System.Drawing.Point(15, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnTaiKhoan, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnTaiKhoan, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnTaiKhoan, "");
             this.btnTaiKhoan.UseTransparentBackground = true;
             this.btnTaiKhoan.CheckedChanged += new System.EventHandler(this.btnSidebar_CheckedChanged);
             this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
@@ -346,6 +380,9 @@ namespace DictionaryAppForIT.Forms
             this.btnCaiDat.Text = "Cài đặt";
             this.btnCaiDat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCaiDat.TextOffset = new System.Drawing.Point(15, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnCaiDat, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnCaiDat, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnCaiDat, "");
             this.btnCaiDat.UseTransparentBackground = true;
             this.btnCaiDat.CheckedChanged += new System.EventHandler(this.btnSidebar_CheckedChanged);
             this.btnCaiDat.Click += new System.EventHandler(this.btnCaiDat_Click);
@@ -374,6 +411,9 @@ namespace DictionaryAppForIT.Forms
             this.btnMiniGame.Text = "Mini game";
             this.btnMiniGame.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMiniGame.TextOffset = new System.Drawing.Point(15, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnMiniGame, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnMiniGame, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnMiniGame, "");
             this.btnMiniGame.UseTransparentBackground = true;
             this.btnMiniGame.CheckedChanged += new System.EventHandler(this.btnSidebar_CheckedChanged);
             this.btnMiniGame.Click += new System.EventHandler(this.btnMiniGame_Click);
@@ -402,6 +442,9 @@ namespace DictionaryAppForIT.Forms
             this.btnLichSu.Text = "Lịch sử";
             this.btnLichSu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLichSu.TextOffset = new System.Drawing.Point(15, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnLichSu, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnLichSu, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnLichSu, "");
             this.btnLichSu.UseTransparentBackground = true;
             this.btnLichSu.CheckedChanged += new System.EventHandler(this.btnSidebar_CheckedChanged);
             this.btnLichSu.Click += new System.EventHandler(this.btnLichSu_Click);
@@ -416,6 +459,9 @@ namespace DictionaryAppForIT.Forms
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pictureBox3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pictureBox3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pictureBox3, "");
             // 
             // label2
             // 
@@ -428,6 +474,9 @@ namespace DictionaryAppForIT.Forms
             this.label2.Size = new System.Drawing.Size(103, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tiếng Anh";
+            this.bunifuToolTip1.SetToolTip(this.label2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label2, "");
             // 
             // label1
             // 
@@ -440,6 +489,9 @@ namespace DictionaryAppForIT.Forms
             this.label1.Size = new System.Drawing.Size(62, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Từ điển";
+            this.bunifuToolTip1.SetToolTip(this.label1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label1, "");
             // 
             // pictureBox1
             // 
@@ -451,6 +503,9 @@ namespace DictionaryAppForIT.Forms
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pictureBox1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pictureBox1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pictureBox1, "");
             // 
             // pbImageSlide
             // 
@@ -463,6 +518,9 @@ namespace DictionaryAppForIT.Forms
             this.pbImageSlide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImageSlide.TabIndex = 3;
             this.pbImageSlide.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pbImageSlide, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pbImageSlide, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pbImageSlide, "");
             // 
             // pnContent
             // 
@@ -476,6 +534,9 @@ namespace DictionaryAppForIT.Forms
             this.pnContent.Padding = new System.Windows.Forms.Padding(0, 45, 10, 10);
             this.pnContent.Size = new System.Drawing.Size(892, 608);
             this.pnContent.TabIndex = 29;
+            this.bunifuToolTip1.SetToolTip(this.pnContent, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pnContent, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pnContent, "");
             // 
             // flpTabTaiKhoan
             // 
@@ -487,6 +548,9 @@ namespace DictionaryAppForIT.Forms
             this.flpTabTaiKhoan.Name = "flpTabTaiKhoan";
             this.flpTabTaiKhoan.Size = new System.Drawing.Size(665, 53);
             this.flpTabTaiKhoan.TabIndex = 34;
+            this.bunifuToolTip1.SetToolTip(this.flpTabTaiKhoan, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.flpTabTaiKhoan, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.flpTabTaiKhoan, "");
             this.flpTabTaiKhoan.Visible = false;
             // 
             // btnQuanLyTK
@@ -511,6 +575,9 @@ namespace DictionaryAppForIT.Forms
             this.btnQuanLyTK.TabIndex = 33;
             this.btnQuanLyTK.Text = "Quản lý tài khoản";
             this.btnQuanLyTK.TextOffset = new System.Drawing.Point(0, -10);
+            this.bunifuToolTip1.SetToolTip(this.btnQuanLyTK, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnQuanLyTK, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnQuanLyTK, "");
             this.btnQuanLyTK.UseTransparentBackground = true;
             this.btnQuanLyTK.CheckedChanged += new System.EventHandler(this.btnTab_CheckedChanged);
             this.btnQuanLyTK.Click += new System.EventHandler(this.btnQuanLyTK_Click);
@@ -537,6 +604,9 @@ namespace DictionaryAppForIT.Forms
             this.btnPhanHoi.TabIndex = 33;
             this.btnPhanHoi.Text = "Phản hồi";
             this.btnPhanHoi.TextOffset = new System.Drawing.Point(0, -10);
+            this.bunifuToolTip1.SetToolTip(this.btnPhanHoi, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnPhanHoi, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnPhanHoi, "");
             this.btnPhanHoi.UseTransparentBackground = true;
             this.btnPhanHoi.CheckedChanged += new System.EventHandler(this.btnTab_CheckedChanged);
             this.btnPhanHoi.Click += new System.EventHandler(this.btnPhanHoi_Click);
@@ -563,6 +633,9 @@ namespace DictionaryAppForIT.Forms
             this.btnThemTu.TabIndex = 34;
             this.btnThemTu.Text = "Thêm từ";
             this.btnThemTu.TextOffset = new System.Drawing.Point(0, -10);
+            this.bunifuToolTip1.SetToolTip(this.btnThemTu, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnThemTu, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnThemTu, "");
             this.btnThemTu.UseTransparentBackground = true;
             this.btnThemTu.Click += new System.EventHandler(this.btnThemTu_Click);
             // 
@@ -577,6 +650,9 @@ namespace DictionaryAppForIT.Forms
             this.flpTabHome.Name = "flpTabHome";
             this.flpTabHome.Size = new System.Drawing.Size(665, 53);
             this.flpTabHome.TabIndex = 34;
+            this.bunifuToolTip1.SetToolTip(this.flpTabHome, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.flpTabHome, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.flpTabHome, "");
             this.flpTabHome.Visible = false;
             // 
             // btnTraTu
@@ -601,6 +677,9 @@ namespace DictionaryAppForIT.Forms
             this.btnTraTu.TabIndex = 33;
             this.btnTraTu.Text = "Tra từ";
             this.btnTraTu.TextOffset = new System.Drawing.Point(0, -10);
+            this.bunifuToolTip1.SetToolTip(this.btnTraTu, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnTraTu, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnTraTu, "");
             this.btnTraTu.UseTransparentBackground = true;
             this.btnTraTu.CheckedChanged += new System.EventHandler(this.btnTab_CheckedChanged);
             this.btnTraTu.Click += new System.EventHandler(this.btnTraTu_Click);
@@ -627,6 +706,9 @@ namespace DictionaryAppForIT.Forms
             this.btnDichVB.TabIndex = 33;
             this.btnDichVB.Text = "Dịch văn bản";
             this.btnDichVB.TextOffset = new System.Drawing.Point(0, -10);
+            this.bunifuToolTip1.SetToolTip(this.btnDichVB, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnDichVB, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnDichVB, "");
             this.btnDichVB.UseTransparentBackground = true;
             this.btnDichVB.CheckedChanged += new System.EventHandler(this.btnTab_CheckedChanged);
             this.btnDichVB.Click += new System.EventHandler(this.btnDichVB_Click);
@@ -653,6 +735,9 @@ namespace DictionaryAppForIT.Forms
             this.btnTVChuyenNganh.TabIndex = 33;
             this.btnTVChuyenNganh.Text = "Từ vựng theo chuyên ngành";
             this.btnTVChuyenNganh.TextOffset = new System.Drawing.Point(0, -10);
+            this.bunifuToolTip1.SetToolTip(this.btnTVChuyenNganh, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnTVChuyenNganh, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnTVChuyenNganh, "");
             this.btnTVChuyenNganh.UseTransparentBackground = true;
             this.btnTVChuyenNganh.CheckedChanged += new System.EventHandler(this.btnTab_CheckedChanged);
             this.btnTVChuyenNganh.Click += new System.EventHandler(this.btnTVChuyenNganh_Click);
@@ -679,6 +764,9 @@ namespace DictionaryAppForIT.Forms
             this.btnTVHot.TabIndex = 34;
             this.btnTVHot.Text = "Từ vựng HOT";
             this.btnTVHot.TextOffset = new System.Drawing.Point(0, -10);
+            this.bunifuToolTip1.SetToolTip(this.btnTVHot, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnTVHot, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnTVHot, "");
             this.btnTVHot.UseTransparentBackground = true;
             this.btnTVHot.Click += new System.EventHandler(this.btnTVHot_Click);
             // 
@@ -693,6 +781,9 @@ namespace DictionaryAppForIT.Forms
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(190, 39);
             this.guna2Panel1.TabIndex = 35;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel1, "");
             // 
             // btnMinimize
             // 
@@ -709,6 +800,9 @@ namespace DictionaryAppForIT.Forms
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(30, 30);
             this.btnMinimize.TabIndex = 29;
+            this.bunifuToolTip1.SetToolTip(this.btnMinimize, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnMinimize, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnMinimize, "");
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
@@ -726,6 +820,9 @@ namespace DictionaryAppForIT.Forms
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(30, 30);
             this.btnExit.TabIndex = 30;
+            this.bunifuToolTip1.SetToolTip(this.btnExit, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnExit, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnExit, "");
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -744,6 +841,9 @@ namespace DictionaryAppForIT.Forms
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(30, 30);
             this.button1.TabIndex = 31;
+            this.bunifuToolTip1.SetToolTip(this.button1, "Giới thiệu về SHTeam");
+            this.bunifuToolTip1.SetToolTipIcon(this.button1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.button1, "");
             this.button1.UseVisualStyleBackColor = false;
             // 
             // btnMaximum
@@ -761,6 +861,9 @@ namespace DictionaryAppForIT.Forms
             this.btnMaximum.Name = "btnMaximum";
             this.btnMaximum.Size = new System.Drawing.Size(30, 30);
             this.btnMaximum.TabIndex = 32;
+            this.bunifuToolTip1.SetToolTip(this.btnMaximum, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnMaximum, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnMaximum, "");
             this.btnMaximum.UseVisualStyleBackColor = false;
             this.btnMaximum.Click += new System.EventHandler(this.btnMaximum_Click);
             // 
@@ -797,22 +900,22 @@ namespace DictionaryAppForIT.Forms
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.VertSlide;
             this.guna2Transition1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation1;
             // 
             // timerMoRong_pnTaiKhoan
             // 
@@ -823,6 +926,41 @@ namespace DictionaryAppForIT.Forms
             // 
             this.timerThuGon_pnTaiKhoan.Interval = 10;
             this.timerThuGon_pnTaiKhoan.Tick += new System.EventHandler(this.timerThuGon_pnTaiKhoan_Tick);
+            // 
+            // bunifuToolTip1
+            // 
+            this.bunifuToolTip1.Active = true;
+            this.bunifuToolTip1.AlignTextWithTitle = false;
+            this.bunifuToolTip1.AllowAutoClose = false;
+            this.bunifuToolTip1.AllowFading = true;
+            this.bunifuToolTip1.AutoCloseDuration = 5000;
+            this.bunifuToolTip1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuToolTip1.BorderColor = System.Drawing.Color.DarkGray;
+            this.bunifuToolTip1.ClickToShowDisplayControl = false;
+            this.bunifuToolTip1.ConvertNewlinesToBreakTags = true;
+            this.bunifuToolTip1.DisplayControl = null;
+            this.bunifuToolTip1.EntryAnimationSpeed = 350;
+            this.bunifuToolTip1.ExitAnimationSpeed = 200;
+            this.bunifuToolTip1.GenerateAutoCloseDuration = false;
+            this.bunifuToolTip1.IconMargin = 6;
+            this.bunifuToolTip1.InitialDelay = 0;
+            this.bunifuToolTip1.Name = "bunifuToolTip1";
+            this.bunifuToolTip1.Opacity = 1D;
+            this.bunifuToolTip1.OverrideToolTipTitles = false;
+            this.bunifuToolTip1.Padding = new System.Windows.Forms.Padding(10);
+            this.bunifuToolTip1.ReshowDelay = 100;
+            this.bunifuToolTip1.ShowAlways = true;
+            this.bunifuToolTip1.ShowBorders = true;
+            this.bunifuToolTip1.ShowIcons = true;
+            this.bunifuToolTip1.ShowShadows = true;
+            this.bunifuToolTip1.Tag = null;
+            this.bunifuToolTip1.TextFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip1.TextForeColor = System.Drawing.Color.DimGray;
+            this.bunifuToolTip1.TextMargin = 2;
+            this.bunifuToolTip1.TitleFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip1.TitleForeColor = System.Drawing.Color.Black;
+            this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
+            this.bunifuToolTip1.ToolTipTitle = null;
             // 
             // frmMain
             // 
@@ -898,5 +1036,6 @@ namespace DictionaryAppForIT.Forms
         private System.Windows.Forms.Timer timerThuGon_pnTaiKhoan;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button btnTVHot;
+        private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
     }
 }

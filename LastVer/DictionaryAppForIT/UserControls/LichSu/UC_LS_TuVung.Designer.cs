@@ -29,6 +29,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_LS_TuVung));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -51,6 +52,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.lblIndex = new System.Windows.Forms.Label();
             this.chkChonLSTraTu = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.guna2Panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -80,6 +82,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel1.Size = new System.Drawing.Size(610, 96);
             this.guna2Panel1.TabIndex = 6;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel1, "");
             // 
             // panel3
             // 
@@ -92,6 +97,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel3.Padding = new System.Windows.Forms.Padding(10);
             this.panel3.Size = new System.Drawing.Size(505, 96);
             this.panel3.TabIndex = 5;
+            this.bunifuToolTip1.SetToolTip(this.panel3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel3, "");
             // 
             // panel11
             // 
@@ -102,6 +110,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(485, 64);
             this.panel11.TabIndex = 1;
+            this.bunifuToolTip1.SetToolTip(this.panel11, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel11, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel11, "");
             // 
             // lblTiengViet
             // 
@@ -114,6 +125,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.lblTiengViet.Size = new System.Drawing.Size(485, 31);
             this.lblTiengViet.TabIndex = 15;
             this.lblTiengViet.Text = "Thanh ghi, đăng ký";
+            this.bunifuToolTip1.SetToolTip(this.lblTiengViet, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblTiengViet, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblTiengViet, "");
             // 
             // panel8
             // 
@@ -124,6 +138,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(485, 25);
             this.panel8.TabIndex = 0;
+            this.bunifuToolTip1.SetToolTip(this.panel8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel8, "");
             // 
             // lblPhienAm
             // 
@@ -136,6 +153,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.lblPhienAm.Size = new System.Drawing.Size(86, 21);
             this.lblPhienAm.TabIndex = 15;
             this.lblPhienAm.Text = "/ˈrɛʤɪstə/";
+            this.bunifuToolTip1.SetToolTip(this.lblPhienAm, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblPhienAm, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblPhienAm, "");
             // 
             // lblTiengAnh
             // 
@@ -148,6 +168,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.lblTiengAnh.Size = new System.Drawing.Size(71, 21);
             this.lblTiengAnh.TabIndex = 14;
             this.lblTiengAnh.Text = "Register";
+            this.bunifuToolTip1.SetToolTip(this.lblTiengAnh, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblTiengAnh, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblTiengAnh, "");
             // 
             // panel10
             // 
@@ -158,6 +181,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(485, 22);
             this.panel10.TabIndex = 0;
+            this.bunifuToolTip1.SetToolTip(this.panel10, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel10, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel10, "");
             // 
             // lblNgayThang
             // 
@@ -169,6 +195,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.lblNgayThang.Size = new System.Drawing.Size(130, 22);
             this.lblNgayThang.TabIndex = 13;
             this.lblNgayThang.Text = "22/06/2022";
+            this.bunifuToolTip1.SetToolTip(this.lblNgayThang, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblNgayThang, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblNgayThang, "");
             // 
             // lblThoiGian
             // 
@@ -180,6 +209,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.lblThoiGian.Size = new System.Drawing.Size(60, 22);
             this.lblThoiGian.TabIndex = 12;
             this.lblThoiGian.Text = "00:39 AM";
+            this.bunifuToolTip1.SetToolTip(this.lblThoiGian, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblThoiGian, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblThoiGian, "");
             // 
             // panel1
             // 
@@ -193,6 +225,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(50, 96);
             this.panel1.TabIndex = 3;
+            this.bunifuToolTip1.SetToolTip(this.panel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel1, "");
             // 
             // panel9
             // 
@@ -201,6 +236,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(50, 21);
             this.panel9.TabIndex = 4;
+            this.bunifuToolTip1.SetToolTip(this.panel9, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel9, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel9, "");
             // 
             // panel7
             // 
@@ -211,6 +249,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel7.Padding = new System.Windows.Forms.Padding(5);
             this.panel7.Size = new System.Drawing.Size(50, 39);
             this.panel7.TabIndex = 2;
+            this.bunifuToolTip1.SetToolTip(this.panel7, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel7, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel7, "");
             // 
             // btnDieuHuongLS
             // 
@@ -226,6 +267,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.btnDieuHuongLS.PressedDepth = 0;
             this.btnDieuHuongLS.Size = new System.Drawing.Size(29, 20);
             this.btnDieuHuongLS.TabIndex = 16;
+            this.bunifuToolTip1.SetToolTip(this.btnDieuHuongLS, "Chuyển đến Tra từ");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnDieuHuongLS, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnDieuHuongLS, "");
             this.btnDieuHuongLS.UseTransparentBackground = true;
             this.btnDieuHuongLS.Click += new System.EventHandler(this.btnDieuHuongLS_Click);
             // 
@@ -238,6 +282,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel6.Padding = new System.Windows.Forms.Padding(5);
             this.panel6.Size = new System.Drawing.Size(50, 28);
             this.panel6.TabIndex = 1;
+            this.bunifuToolTip1.SetToolTip(this.panel6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel6, "");
             // 
             // btnXoaLSTraTu
             // 
@@ -254,6 +301,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.btnXoaLSTraTu.PressedDepth = 0;
             this.btnXoaLSTraTu.Size = new System.Drawing.Size(25, 20);
             this.btnXoaLSTraTu.TabIndex = 17;
+            this.bunifuToolTip1.SetToolTip(this.btnXoaLSTraTu, "Xóa mục hiện tại");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnXoaLSTraTu, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnXoaLSTraTu, "");
             this.btnXoaLSTraTu.UseTransparentBackground = true;
             this.btnXoaLSTraTu.Click += new System.EventHandler(this.btnXoaLSTraTu_Click);
             // 
@@ -264,6 +314,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(50, 8);
             this.panel5.TabIndex = 0;
+            this.bunifuToolTip1.SetToolTip(this.panel5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel5, "");
             // 
             // panel2
             // 
@@ -276,6 +329,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(55, 96);
             this.panel2.TabIndex = 2;
+            this.bunifuToolTip1.SetToolTip(this.panel2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel2, "");
             // 
             // lblIndex
             // 
@@ -285,6 +341,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.lblIndex.Size = new System.Drawing.Size(15, 13);
             this.lblIndex.TabIndex = 5;
             this.lblIndex.Text = "id";
+            this.bunifuToolTip1.SetToolTip(this.lblIndex, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblIndex, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblIndex, "");
             this.lblIndex.Visible = false;
             // 
             // chkChonLSTraTu
@@ -338,7 +397,10 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.chkChonLSTraTu.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
             this.chkChonLSTraTu.TabIndex = 4;
             this.chkChonLSTraTu.ThreeState = false;
+            this.bunifuToolTip1.SetToolTip(this.chkChonLSTraTu, "Chọn mục");
+            this.bunifuToolTip1.SetToolTipIcon(this.chkChonLSTraTu, null);
             this.chkChonLSTraTu.ToolTipText = null;
+            this.bunifuToolTip1.SetToolTipTitle(this.chkChonLSTraTu, "");
             this.chkChonLSTraTu.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.chkChonLSTraTu_CheckedChanged);
             // 
             // panel4
@@ -348,6 +410,44 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(55, 10);
             this.panel4.TabIndex = 3;
+            this.bunifuToolTip1.SetToolTip(this.panel4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel4, "");
+            // 
+            // bunifuToolTip1
+            // 
+            this.bunifuToolTip1.Active = true;
+            this.bunifuToolTip1.AlignTextWithTitle = false;
+            this.bunifuToolTip1.AllowAutoClose = false;
+            this.bunifuToolTip1.AllowFading = true;
+            this.bunifuToolTip1.AutoCloseDuration = 5000;
+            this.bunifuToolTip1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuToolTip1.BorderColor = System.Drawing.Color.DarkGray;
+            this.bunifuToolTip1.ClickToShowDisplayControl = false;
+            this.bunifuToolTip1.ConvertNewlinesToBreakTags = true;
+            this.bunifuToolTip1.DisplayControl = null;
+            this.bunifuToolTip1.EntryAnimationSpeed = 350;
+            this.bunifuToolTip1.ExitAnimationSpeed = 200;
+            this.bunifuToolTip1.GenerateAutoCloseDuration = false;
+            this.bunifuToolTip1.IconMargin = 6;
+            this.bunifuToolTip1.InitialDelay = 0;
+            this.bunifuToolTip1.Name = "bunifuToolTip1";
+            this.bunifuToolTip1.Opacity = 1D;
+            this.bunifuToolTip1.OverrideToolTipTitles = false;
+            this.bunifuToolTip1.Padding = new System.Windows.Forms.Padding(10);
+            this.bunifuToolTip1.ReshowDelay = 100;
+            this.bunifuToolTip1.ShowAlways = true;
+            this.bunifuToolTip1.ShowBorders = true;
+            this.bunifuToolTip1.ShowIcons = true;
+            this.bunifuToolTip1.ShowShadows = true;
+            this.bunifuToolTip1.Tag = null;
+            this.bunifuToolTip1.TextFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip1.TextForeColor = System.Drawing.Color.DimGray;
+            this.bunifuToolTip1.TextMargin = 2;
+            this.bunifuToolTip1.TitleFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip1.TitleForeColor = System.Drawing.Color.Black;
+            this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
+            this.bunifuToolTip1.ToolTipTitle = null;
             // 
             // UC_LS_TuVung
             // 
@@ -357,6 +457,9 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.Name = "UC_LS_TuVung";
             this.Size = new System.Drawing.Size(610, 104);
+            this.bunifuToolTip1.SetToolTip(this, "");
+            this.bunifuToolTip1.SetToolTipIcon(this, null);
+            this.bunifuToolTip1.SetToolTipTitle(this, "");
             this.guna2Panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
@@ -395,5 +498,6 @@ namespace DictionaryAppForIT.UserControls.LichSu
         private Bunifu.UI.WinForms.BunifuCheckBox chkChonLSTraTu;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblIndex;
+        private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
     }
 }

@@ -30,17 +30,16 @@ namespace DictionaryAppForIT.UserControls.Home
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_TVChuyenNganh));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTuVungDoc = new System.Windows.Forms.TextBox();
-            this.btnTimTheoCN = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLoc = new Guna.UI2.WinForms.Guna2Button();
             this.txtTimTheoChuyenNganh = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblSoTuHienCo = new System.Windows.Forms.Label();
@@ -59,6 +58,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnContainer = new System.Windows.Forms.Panel();
+            this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTuVung)).BeginInit();
             this.pnContainer.SuspendLayout();
@@ -72,9 +72,8 @@ namespace DictionaryAppForIT.UserControls.Home
             // panel1
             // 
             this.panel1.Controls.Add(this.txtTuVungDoc);
-            this.panel1.Controls.Add(this.btnTimTheoCN);
             this.panel1.Controls.Add(this.guna2Button1);
-            this.panel1.Controls.Add(this.guna2Button10);
+            this.panel1.Controls.Add(this.btnLoc);
             this.panel1.Controls.Add(this.txtTimTheoChuyenNganh);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblSoTuHienCo);
@@ -85,6 +84,9 @@ namespace DictionaryAppForIT.UserControls.Home
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(882, 61);
             this.panel1.TabIndex = 1;
+            this.bunifuToolTip1.SetToolTip(this.panel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel1, "");
             // 
             // txtTuVungDoc
             // 
@@ -93,24 +95,10 @@ namespace DictionaryAppForIT.UserControls.Home
             this.txtTuVungDoc.Name = "txtTuVungDoc";
             this.txtTuVungDoc.Size = new System.Drawing.Size(124, 13);
             this.txtTuVungDoc.TabIndex = 27;
+            this.bunifuToolTip1.SetToolTip(this.txtTuVungDoc, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.txtTuVungDoc, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.txtTuVungDoc, "");
             this.txtTuVungDoc.Visible = false;
-            // 
-            // btnTimTheoCN
-            // 
-            this.btnTimTheoCN.BackColor = System.Drawing.Color.Transparent;
-            this.btnTimTheoCN.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnTimTheoCN.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnTimTheoCN.Image = ((System.Drawing.Image)(resources.GetObject("btnTimTheoCN.Image")));
-            this.btnTimTheoCN.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnTimTheoCN.ImageRotate = 0F;
-            this.btnTimTheoCN.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnTimTheoCN.Location = new System.Drawing.Point(328, 20);
-            this.btnTimTheoCN.Name = "btnTimTheoCN";
-            this.btnTimTheoCN.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnTimTheoCN.Size = new System.Drawing.Size(35, 26);
-            this.btnTimTheoCN.TabIndex = 26;
-            this.btnTimTheoCN.Visible = false;
-            this.btnTimTheoCN.Click += new System.EventHandler(this.btnTimTheoCN_Click);
             // 
             // guna2Button1
             // 
@@ -129,25 +117,31 @@ namespace DictionaryAppForIT.UserControls.Home
             this.guna2Button1.Size = new System.Drawing.Size(35, 30);
             this.guna2Button1.TabIndex = 23;
             this.guna2Button1.TextOffset = new System.Drawing.Point(3, 0);
+            this.bunifuToolTip1.SetToolTip(this.guna2Button1, "Sắp xếp [A - Z]");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button1, "");
             this.guna2Button1.UseTransparentBackground = true;
             // 
-            // guna2Button10
+            // btnLoc
             // 
-            this.guna2Button10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button10.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.guna2Button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button10.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button10.ForeColor = System.Drawing.Color.Gray;
-            this.guna2Button10.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button10.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button10.Image")));
-            this.guna2Button10.Location = new System.Drawing.Point(795, 18);
-            this.guna2Button10.Name = "guna2Button10";
-            this.guna2Button10.PressedDepth = 0;
-            this.guna2Button10.Size = new System.Drawing.Size(35, 30);
-            this.guna2Button10.TabIndex = 22;
-            this.guna2Button10.TextOffset = new System.Drawing.Point(3, 0);
-            this.guna2Button10.UseTransparentBackground = true;
+            this.btnLoc.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoc.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnLoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoc.FillColor = System.Drawing.Color.Transparent;
+            this.btnLoc.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoc.ForeColor = System.Drawing.Color.Gray;
+            this.btnLoc.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnLoc.Image = ((System.Drawing.Image)(resources.GetObject("btnLoc.Image")));
+            this.btnLoc.Location = new System.Drawing.Point(795, 18);
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.PressedDepth = 0;
+            this.btnLoc.Size = new System.Drawing.Size(35, 30);
+            this.btnLoc.TabIndex = 22;
+            this.btnLoc.TextOffset = new System.Drawing.Point(3, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnLoc, "Lọc theo điều kiện");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnLoc, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnLoc, "");
+            this.btnLoc.UseTransparentBackground = true;
             // 
             // txtTimTheoChuyenNganh
             // 
@@ -178,6 +172,9 @@ namespace DictionaryAppForIT.UserControls.Home
             this.txtTimTheoChuyenNganh.Size = new System.Drawing.Size(193, 26);
             this.txtTimTheoChuyenNganh.TabIndex = 5;
             this.txtTimTheoChuyenNganh.TextOffset = new System.Drawing.Point(5, 0);
+            this.bunifuToolTip1.SetToolTip(this.txtTimTheoChuyenNganh, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.txtTimTheoChuyenNganh, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.txtTimTheoChuyenNganh, "");
             this.txtTimTheoChuyenNganh.TextChanged += new System.EventHandler(this.txtTimTheoChuyenNganh_TextChanged);
             this.txtTimTheoChuyenNganh.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimTheoChuyenNganh_KeyDown);
             // 
@@ -191,6 +188,9 @@ namespace DictionaryAppForIT.UserControls.Home
             this.label2.Size = new System.Drawing.Size(62, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "Từ vựng";
+            this.bunifuToolTip1.SetToolTip(this.label2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label2, "");
             // 
             // lblSoTuHienCo
             // 
@@ -202,6 +202,9 @@ namespace DictionaryAppForIT.UserControls.Home
             this.lblSoTuHienCo.Size = new System.Drawing.Size(37, 30);
             this.lblSoTuHienCo.TabIndex = 4;
             this.lblSoTuHienCo.Text = "12";
+            this.bunifuToolTip1.SetToolTip(this.lblSoTuHienCo, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblSoTuHienCo, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblSoTuHienCo, "");
             // 
             // label1
             // 
@@ -213,6 +216,9 @@ namespace DictionaryAppForIT.UserControls.Home
             this.label1.Size = new System.Drawing.Size(99, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "Chuyên ngành";
+            this.bunifuToolTip1.SetToolTip(this.label1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label1, "");
             // 
             // cbbChuyenNganh
             // 
@@ -232,6 +238,9 @@ namespace DictionaryAppForIT.UserControls.Home
             this.cbbChuyenNganh.Size = new System.Drawing.Size(190, 26);
             this.cbbChuyenNganh.TabIndex = 0;
             this.cbbChuyenNganh.TextOffset = new System.Drawing.Point(5, 0);
+            this.bunifuToolTip1.SetToolTip(this.cbbChuyenNganh, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.cbbChuyenNganh, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.cbbChuyenNganh, "");
             // 
             // guna2Elipse2
             // 
@@ -242,16 +251,16 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             this.dtgvTuVung.AllowUserToAddRows = false;
             this.dtgvTuVung.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.dtgvTuVung.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvTuVung.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtgvTuVung.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTuVung.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvTuVung.ColumnHeadersHeight = 40;
             this.dtgvTuVung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dtgvTuVung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -265,14 +274,14 @@ namespace DictionaryAppForIT.UserControls.Home
             this.Column9,
             this.Column7,
             this.Column8});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvTuVung.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvTuVung.DefaultCellStyle = dataGridViewCellStyle4;
             this.dtgvTuVung.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvTuVung.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtgvTuVung.Location = new System.Drawing.Point(15, 0);
@@ -304,6 +313,9 @@ namespace DictionaryAppForIT.UserControls.Home
             this.dtgvTuVung.ThemeStyle.RowsStyle.Height = 35;
             this.dtgvTuVung.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtgvTuVung.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.bunifuToolTip1.SetToolTip(this.dtgvTuVung, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.dtgvTuVung, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.dtgvTuVung, "");
             this.dtgvTuVung.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvTuVung_CellContentClick);
             // 
             // Column1
@@ -315,12 +327,12 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             // loa
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle7.NullValue")));
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5);
-            this.loa.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            this.loa.DefaultCellStyle = dataGridViewCellStyle3;
             this.loa.FillWeight = 50.76147F;
             this.loa.HeaderText = "";
             this.loa.Image = ((System.Drawing.Image)(resources.GetObject("loa.Image")));
@@ -413,6 +425,44 @@ namespace DictionaryAppForIT.UserControls.Home
             this.pnContainer.Padding = new System.Windows.Forms.Padding(15, 0, 15, 15);
             this.pnContainer.Size = new System.Drawing.Size(882, 492);
             this.pnContainer.TabIndex = 2;
+            this.bunifuToolTip1.SetToolTip(this.pnContainer, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pnContainer, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pnContainer, "");
+            // 
+            // bunifuToolTip1
+            // 
+            this.bunifuToolTip1.Active = true;
+            this.bunifuToolTip1.AlignTextWithTitle = false;
+            this.bunifuToolTip1.AllowAutoClose = false;
+            this.bunifuToolTip1.AllowFading = true;
+            this.bunifuToolTip1.AutoCloseDuration = 5000;
+            this.bunifuToolTip1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuToolTip1.BorderColor = System.Drawing.Color.DarkGray;
+            this.bunifuToolTip1.ClickToShowDisplayControl = false;
+            this.bunifuToolTip1.ConvertNewlinesToBreakTags = true;
+            this.bunifuToolTip1.DisplayControl = null;
+            this.bunifuToolTip1.EntryAnimationSpeed = 350;
+            this.bunifuToolTip1.ExitAnimationSpeed = 200;
+            this.bunifuToolTip1.GenerateAutoCloseDuration = false;
+            this.bunifuToolTip1.IconMargin = 6;
+            this.bunifuToolTip1.InitialDelay = 0;
+            this.bunifuToolTip1.Name = "bunifuToolTip1";
+            this.bunifuToolTip1.Opacity = 1D;
+            this.bunifuToolTip1.OverrideToolTipTitles = false;
+            this.bunifuToolTip1.Padding = new System.Windows.Forms.Padding(10);
+            this.bunifuToolTip1.ReshowDelay = 100;
+            this.bunifuToolTip1.ShowAlways = true;
+            this.bunifuToolTip1.ShowBorders = true;
+            this.bunifuToolTip1.ShowIcons = true;
+            this.bunifuToolTip1.ShowShadows = true;
+            this.bunifuToolTip1.Tag = null;
+            this.bunifuToolTip1.TextFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip1.TextForeColor = System.Drawing.Color.DimGray;
+            this.bunifuToolTip1.TextMargin = 2;
+            this.bunifuToolTip1.TitleFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip1.TitleForeColor = System.Drawing.Color.Black;
+            this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
+            this.bunifuToolTip1.ToolTipTitle = null;
             // 
             // UC_TVChuyenNganh
             // 
@@ -423,6 +473,9 @@ namespace DictionaryAppForIT.UserControls.Home
             this.Controls.Add(this.panel1);
             this.Name = "UC_TVChuyenNganh";
             this.Size = new System.Drawing.Size(882, 553);
+            this.bunifuToolTip1.SetToolTip(this, "");
+            this.bunifuToolTip1.SetToolTipIcon(this, null);
+            this.bunifuToolTip1.SetToolTipTitle(this, "");
             this.Load += new System.EventHandler(this.UC_TVChuyenNganh_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -443,10 +496,9 @@ namespace DictionaryAppForIT.UserControls.Home
         private System.Windows.Forms.Label lblSoTuHienCo;
         private Guna.UI2.WinForms.Guna2TextBox txtTimTheoChuyenNganh;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button10;
+        private Guna.UI2.WinForms.Guna2Button btnLoc;
         private System.Windows.Forms.Panel pnContainer;
         private Guna.UI2.WinForms.Guna2DataGridView dtgvTuVung;
-        private Guna.UI2.WinForms.Guna2ImageButton btnTimTheoCN;
         private System.Windows.Forms.TextBox txtTuVungDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewImageColumn loa;
@@ -458,5 +510,6 @@ namespace DictionaryAppForIT.UserControls.Home
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
     }
 }

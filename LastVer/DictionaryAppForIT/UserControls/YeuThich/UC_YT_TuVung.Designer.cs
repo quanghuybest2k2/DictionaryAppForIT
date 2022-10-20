@@ -29,6 +29,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_YT_TuVung));
             this.pnNen = new System.Windows.Forms.Panel();
             this.pictureBox0 = new System.Windows.Forms.PictureBox();
@@ -47,6 +48,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.btnFakeGhiChu = new Guna.UI2.WinForms.Guna2Button();
             this.guna2pbNen1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2pbNen2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox0)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.pnGhiChu.SuspendLayout();
@@ -61,6 +63,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.pnNen.Name = "pnNen";
             this.pnNen.Size = new System.Drawing.Size(2, 112);
             this.pnNen.TabIndex = 0;
+            this.bunifuToolTip1.SetToolTip(this.pnNen, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pnNen, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pnNen, "");
             // 
             // pictureBox0
             // 
@@ -71,6 +76,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.pictureBox0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox0.TabIndex = 2;
             this.pictureBox0.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pictureBox0, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pictureBox0, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pictureBox0, "");
             // 
             // lblSo
             // 
@@ -83,6 +91,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.lblSo.Size = new System.Drawing.Size(40, 19);
             this.lblSo.TabIndex = 3;
             this.lblSo.Text = "No.1";
+            this.bunifuToolTip1.SetToolTip(this.lblSo, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblSo, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblSo, "");
             // 
             // lblTiengAnh
             // 
@@ -96,6 +107,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.lblTiengAnh.Size = new System.Drawing.Size(153, 25);
             this.lblTiengAnh.TabIndex = 15;
             this.lblTiengAnh.Text = "Register";
+            this.bunifuToolTip1.SetToolTip(this.lblTiengAnh, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblTiengAnh, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblTiengAnh, "");
             // 
             // lblTiengViet
             // 
@@ -108,6 +122,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.lblTiengViet.Size = new System.Drawing.Size(178, 39);
             this.lblTiengViet.TabIndex = 16;
             this.lblTiengViet.Text = "Thanh ghi, đăng ký";
+            this.bunifuToolTip1.SetToolTip(this.lblTiengViet, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblTiengViet, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblTiengViet, "");
             // 
             // lblPhienAm
             // 
@@ -120,6 +137,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.lblPhienAm.Size = new System.Drawing.Size(153, 20);
             this.lblPhienAm.TabIndex = 17;
             this.lblPhienAm.Text = "[ˈrɛʤɪstə]";
+            this.bunifuToolTip1.SetToolTip(this.lblPhienAm, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblPhienAm, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblPhienAm, "");
             // 
             // chkChonYTTuVung
             // 
@@ -172,7 +192,10 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.chkChonYTTuVung.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
             this.chkChonYTTuVung.TabIndex = 4;
             this.chkChonYTTuVung.ThreeState = false;
+            this.bunifuToolTip1.SetToolTip(this.chkChonYTTuVung, "Chọn mục hiện tại");
+            this.bunifuToolTip1.SetToolTipIcon(this.chkChonYTTuVung, null);
             this.chkChonYTTuVung.ToolTipText = null;
+            this.bunifuToolTip1.SetToolTipTitle(this.chkChonYTTuVung, "");
             this.chkChonYTTuVung.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.chkChonYTTuVung_CheckedChanged);
             // 
             // btnGhiChu
@@ -192,6 +215,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.btnGhiChu.TabIndex = 9;
             this.btnGhiChu.Text = "Ghi chú";
             this.btnGhiChu.TextOffset = new System.Drawing.Point(3, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnGhiChu, "Xem ghi chú");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnGhiChu, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnGhiChu, "");
             this.btnGhiChu.UseTransparentBackground = true;
             this.btnGhiChu.Click += new System.EventHandler(this.btnGhiChu_Click);
             // 
@@ -209,6 +235,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.btnDieuHuong.PressedDepth = 0;
             this.btnDieuHuong.Size = new System.Drawing.Size(29, 20);
             this.btnDieuHuong.TabIndex = 22;
+            this.bunifuToolTip1.SetToolTip(this.btnDieuHuong, "Chuyển đến Tra từ");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnDieuHuong, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnDieuHuong, "");
             this.btnDieuHuong.UseTransparentBackground = true;
             // 
             // lblIndex
@@ -219,6 +248,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.lblIndex.Size = new System.Drawing.Size(15, 13);
             this.lblIndex.TabIndex = 23;
             this.lblIndex.Text = "id";
+            this.bunifuToolTip1.SetToolTip(this.lblIndex, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblIndex, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblIndex, "");
             this.lblIndex.Visible = false;
             // 
             // guna2Panel1
@@ -251,6 +283,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel1.Size = new System.Drawing.Size(268, 151);
             this.guna2Panel1.TabIndex = 10;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel1, "");
             // 
             // pnGhiChu
             // 
@@ -262,6 +297,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.pnGhiChu.Name = "pnGhiChu";
             this.pnGhiChu.Size = new System.Drawing.Size(268, 169);
             this.pnGhiChu.TabIndex = 13;
+            this.bunifuToolTip1.SetToolTip(this.pnGhiChu, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pnGhiChu, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pnGhiChu, "");
             this.pnGhiChu.UseTransparentBackground = true;
             this.pnGhiChu.Visible = false;
             // 
@@ -279,6 +317,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.btnFakeDieuHuong.PressedDepth = 0;
             this.btnFakeDieuHuong.Size = new System.Drawing.Size(29, 20);
             this.btnFakeDieuHuong.TabIndex = 24;
+            this.bunifuToolTip1.SetToolTip(this.btnFakeDieuHuong, "Chuyển đến Tra từ");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnFakeDieuHuong, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnFakeDieuHuong, "");
             this.btnFakeDieuHuong.UseTransparentBackground = true;
             // 
             // chkFakeChonYTTuVung
@@ -332,7 +373,10 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.chkFakeChonYTTuVung.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
             this.chkFakeChonYTTuVung.TabIndex = 23;
             this.chkFakeChonYTTuVung.ThreeState = false;
+            this.bunifuToolTip1.SetToolTip(this.chkFakeChonYTTuVung, "Chọn mục hiện tại");
+            this.bunifuToolTip1.SetToolTipIcon(this.chkFakeChonYTTuVung, null);
             this.chkFakeChonYTTuVung.ToolTipText = null;
+            this.bunifuToolTip1.SetToolTipTitle(this.chkFakeChonYTTuVung, "");
             this.chkFakeChonYTTuVung.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.chkChonYTTuVung_CheckedChanged);
             // 
             // btnFakeGhiChu
@@ -352,6 +396,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.btnFakeGhiChu.TabIndex = 10;
             this.btnFakeGhiChu.Text = "Ghi chú";
             this.btnFakeGhiChu.TextOffset = new System.Drawing.Point(3, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnFakeGhiChu, "Xem ghi chú");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnFakeGhiChu, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnFakeGhiChu, "");
             this.btnFakeGhiChu.UseTransparentBackground = true;
             this.btnFakeGhiChu.Click += new System.EventHandler(this.btnGhiChu_Click);
             // 
@@ -364,6 +411,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.guna2pbNen1.Size = new System.Drawing.Size(268, 20);
             this.guna2pbNen1.TabIndex = 21;
             this.guna2pbNen1.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2pbNen1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2pbNen1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2pbNen1, "");
             // 
             // guna2pbNen2
             // 
@@ -376,6 +426,44 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.guna2pbNen2.Size = new System.Drawing.Size(268, 37);
             this.guna2pbNen2.TabIndex = 21;
             this.guna2pbNen2.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2pbNen2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2pbNen2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2pbNen2, "");
+            // 
+            // bunifuToolTip1
+            // 
+            this.bunifuToolTip1.Active = true;
+            this.bunifuToolTip1.AlignTextWithTitle = false;
+            this.bunifuToolTip1.AllowAutoClose = false;
+            this.bunifuToolTip1.AllowFading = true;
+            this.bunifuToolTip1.AutoCloseDuration = 5000;
+            this.bunifuToolTip1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bunifuToolTip1.BorderColor = System.Drawing.Color.DarkGray;
+            this.bunifuToolTip1.ClickToShowDisplayControl = false;
+            this.bunifuToolTip1.ConvertNewlinesToBreakTags = true;
+            this.bunifuToolTip1.DisplayControl = null;
+            this.bunifuToolTip1.EntryAnimationSpeed = 350;
+            this.bunifuToolTip1.ExitAnimationSpeed = 200;
+            this.bunifuToolTip1.GenerateAutoCloseDuration = false;
+            this.bunifuToolTip1.IconMargin = 6;
+            this.bunifuToolTip1.InitialDelay = 0;
+            this.bunifuToolTip1.Name = "bunifuToolTip1";
+            this.bunifuToolTip1.Opacity = 1D;
+            this.bunifuToolTip1.OverrideToolTipTitles = false;
+            this.bunifuToolTip1.Padding = new System.Windows.Forms.Padding(10);
+            this.bunifuToolTip1.ReshowDelay = 100;
+            this.bunifuToolTip1.ShowAlways = true;
+            this.bunifuToolTip1.ShowBorders = true;
+            this.bunifuToolTip1.ShowIcons = true;
+            this.bunifuToolTip1.ShowShadows = true;
+            this.bunifuToolTip1.Tag = null;
+            this.bunifuToolTip1.TextFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip1.TextForeColor = System.Drawing.Color.DimGray;
+            this.bunifuToolTip1.TextMargin = 2;
+            this.bunifuToolTip1.TitleFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip1.TitleForeColor = System.Drawing.Color.Black;
+            this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
+            this.bunifuToolTip1.ToolTipTitle = null;
             // 
             // UC_YT_TuVung
             // 
@@ -385,6 +473,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "UC_YT_TuVung";
             this.Size = new System.Drawing.Size(268, 169);
+            this.bunifuToolTip1.SetToolTip(this, "");
+            this.bunifuToolTip1.SetToolTipIcon(this, null);
+            this.bunifuToolTip1.SetToolTipTitle(this, "");
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox0)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
@@ -414,5 +505,6 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         private Bunifu.UI.WinForms.BunifuCheckBox chkFakeChonYTTuVung;
         private Guna.UI2.WinForms.Guna2Button btnFakeGhiChu;
         private Guna.UI2.WinForms.Guna2PictureBox guna2pbNen2;
+        private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
     }
 }

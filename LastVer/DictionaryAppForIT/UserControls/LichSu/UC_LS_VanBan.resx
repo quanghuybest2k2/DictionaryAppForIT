@@ -118,6 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="chkChonLSVanBan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEmSURBVEhL7ZYhc8JAEIUjK5GVlZXISiQSyU+orETWRSKR
+        UZlLYk5WIpFIZCQSWUm/tz1KOzCUhMtg8mbe5N5mb19uYWYvuRuyLHsoiuKtLEsHa7hvQOV759zMez8I
+        JU9BwgiTNclznlP0U3h1FZTPvgn7U7iB4/DqCAVlkuf5cwjdhKqqHqm51AeH0He79AVNT/Af1D7VlakF
+        1FMCqYnIoO4rp1ochFdvTUQGpxnqJzHBYnfxX3IjOMj+76Ij9Eat0Ru1Rm/UGncx+tSoMNEBfhstNV1N
+        RIZmHPVrEyxSzSQTkaEJS31nIrhuumgfdVeYvQRpznbziWlGvTk8ndwE3zUN4eRnzjdEuCeM4eqsyQG6
+        BZGg0b7lee7udpHs28EPeGxXkiRf6fxCfd4QetkAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="bunifuToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="bunifuToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="guna2Button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFQAAABMCAYAAADz7pA3AAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -260,17 +277,6 @@
         3/m5T70nce0v7k8VmBq4Jf7hi7Y5n+Tel3Yoaf4KLb0SfpTlv5iC4Wxq5DXxz9X4DdHz/HM1XnJco2t9
         OX6uZqeG/INNPic8zz/Y5Prs+p6vhmHJwbDkYFhyMCw5GJYcDEsOhiUHw5KDYcnBsORgWHIwLDkYlhwM
         Sw6GJQfDkoNhycGw5GBYcjAsORiWHAxLDoYl5eKV/wCCUQvFRjb9awAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="chkChonLSVanBan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEmSURBVEhL7ZYhc8JAEIUjK5GVlZXISiQSyU+orETWRSKR
-        UZlLYk5WIpFIZCQSWUm/tz1KOzCUhMtg8mbe5N5mb19uYWYvuRuyLHsoiuKtLEsHa7hvQOV759zMez8I
-        JU9BwgiTNclznlP0U3h1FZTPvgn7U7iB4/DqCAVlkuf5cwjdhKqqHqm51AeH0He79AVNT/Af1D7VlakF
-        1FMCqYnIoO4rp1ochFdvTUQGpxnqJzHBYnfxX3IjOMj+76Ij9Eat0Ru1Rm/UGncx+tSoMNEBfhstNV1N
-        RIZmHPVrEyxSzSQTkaEJS31nIrhuumgfdVeYvQRpznbziWlGvTk8ndwE3zUN4eRnzjdEuCeM4eqsyQG6
-        BZGg0b7lee7udpHs28EPeGxXkiRf6fxCfd4QetkAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

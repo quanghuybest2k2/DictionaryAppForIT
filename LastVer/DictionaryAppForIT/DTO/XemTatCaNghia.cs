@@ -15,7 +15,6 @@ namespace DictionaryAppForIT.DTO
     {
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         public List<Tu> _listTu = new List<Tu>();
-
         public XemTatCaNghia()
         {
 
@@ -57,19 +56,10 @@ namespace DictionaryAppForIT.DTO
         {
             try
             {
-                int kqRand;
-                object ktId;
-                //Wordlength: số từ có trong database
-                do
-                {
-                    object Wordlength = DataProvider.Instance.ExecuteScalar("select count(TenTu) from Tu");
-                    Random rand = new Random();
-                    kqRand = rand.Next(1, Convert.ToInt32(Wordlength));
-                    ktId = DataProvider.Instance.ExecuteScalar($"select * from Tu where id = {kqRand}");
-                } while (Convert.ToInt32(ktId) < 1);
+                object kqRand = DataProvider.Instance.ExecuteScalar($"SELECT TOP 1 ID FROM Tu where IDTK = {Class_TaiKhoan.IdTaiKhoan} or IDTK = 0 ORDER  BY NEWID()");
                 _listTu.Clear();
                 SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC TuNgauNhien {kqRand}, {Class_TaiKhoan.IdTaiKhoan}", Conn);
+                SqlCommand cmd = new SqlCommand($"EXEC TuNgauNhien {Convert.ToInt32(kqRand)}, {Class_TaiKhoan.IdTaiKhoan}", Conn);
                 Conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
