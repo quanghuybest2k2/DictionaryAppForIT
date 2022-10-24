@@ -166,7 +166,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         {
             _listTuVung = new List<UC_YT_TuVung>();
             _listVanBan = new List<UC_YT_VanBan>();
-            lblSoMucYeuThich.Text =  frmMain.Tong_So_Muc_Yeu_Thich();
+            lblSoMucYeuThich.Text = frmMain.Tong_So_Muc_Yeu_Thich();
         }
         // xoa tra tu yeu thich
         private void XoaUCYeuThichTuVung()
@@ -302,5 +302,90 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             }
         }
         #endregion
+
+        public void SapXepYTTraTu()
+        {
+            _listTuVung.Clear();
+            flpContent.Controls.Clear();
+            stt = 1;
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+            if (Convert.ToInt32(num) > 0)
+            {
+                try
+                {
+                    SqlConnection Conn = new SqlConnection(connString);
+                    SqlCommand cmd = new SqlCommand($"select * from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan} order by TiengAnh ASC", Conn);
+                    Conn.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        //ThongTinLSTraTu.idTraTuLS = rdr["ID"].ToString();
+                        idHienTai = rdr["ID"].ToString();
+                        string TVTiengAnh = rdr["TiengAnh"].ToString();
+                        string TVPhienAm = rdr["PhienAm"].ToString();
+                        string TVTiengViet = rdr["TiengViet"].ToString();
+                        string GhiChu = rdr["GhiChu"].ToString();
+                        ucYTTuVung = new UC_YT_TuVung(stt.ToString(), idHienTai, TVTiengAnh, TVPhienAm, TVTiengViet);
+                        ucYTTuVung.TVBackColor(rd.GetColor());
+                        flpContent.Controls.Add(ucYTTuVung);
+                        _listTuVung.Add(ucYTTuVung);
+                        ucYTTuVung.Name = "unCheck";
+                        ucYTTuVung.ThemGhiChu(idHienTai, GhiChu, 1);
+                        stt++;
+                    }
+
+                    Conn.Close();
+                    Conn.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    RJMessageBox.Show(ex.Message);
+                }
+            }
+        }
+        public void SapXepYTVanBan()
+        {
+            _listVanBan.Clear();
+            //flpContent.Controls.Clear();
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+            if (Convert.ToInt32(num) > 0)
+            {
+                try
+                {
+                    SqlConnection Conn = new SqlConnection(connString);
+                    SqlCommand cmd = new SqlCommand($"select * from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan} order by TiengAnh ASC", Conn);
+                    Conn.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        //ThongTinLSTraTu.idTraTuLS = rdr["ID"].ToString();
+                        idHienTai = rdr["ID"].ToString();
+                        string TVTiengAnh = rdr["TiengAnh"].ToString();
+                        string TVTiengViet = rdr["TiengViet"].ToString();
+                        string GhiChu = rdr["GhiChu"].ToString();
+                        ucYTVanBan = new UC_YT_VanBan(stt.ToString(), idHienTai, TVTiengAnh, TVTiengViet);
+                        ucYTVanBan.VBBackColor(rd.GetColor());
+                        flpContent.Controls.Add(ucYTVanBan);
+                        _listVanBan.Add(ucYTVanBan);
+                        ucYTVanBan.Name = "unCheck";
+                        ucYTVanBan.ThemGhiChu(idHienTai, GhiChu, 2);
+                        stt++;
+                    }
+
+                    Conn.Close();
+                    Conn.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    RJMessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void btnSapXepYeuThich_Click(object sender, EventArgs e)
+        {
+            SapXepYTTraTu();
+            SapXepYTVanBan();
+        }
     }
 }

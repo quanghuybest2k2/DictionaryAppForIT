@@ -120,4 +120,7 @@
   <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="txtMoTa.Text" xml:space="preserve">
+    <value>Biến (variable) là một vùng chứa (container) chứa một giá trị (value), chẳng hạn như một đoạn văn bản (text ) hoặc một số (number). Giá trị của nó có thể thay đổi đó là lý do tại sao nó được gọi là biến (variable)</value>
+  </data>
 </root>

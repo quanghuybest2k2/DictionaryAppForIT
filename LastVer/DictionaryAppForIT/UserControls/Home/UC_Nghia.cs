@@ -39,9 +39,17 @@ namespace DictionaryAppForIT.UserControls.Home
             set { this.txtVD.Text = value; }
         }
 
+        public void DoiMauNen(int mot, int hai, int ba)
+        {
+            this.BackColor = Color.FromArgb(mot, hai, ba);
+            txtMoTa.BackColor = Color.FromArgb(mot, hai, ba);
+            txtNghiaTiengViet.BackColor = Color.FromArgb(mot, hai, ba);
+            txtVD.BackColor = Color.FromArgb(mot, hai, ba);
+        }
+
         private void UC_Nghia_Load(object sender, EventArgs e)
         {
-
+           
         }
     }
 }

@@ -30,14 +30,13 @@ namespace DictionaryAppForIT.UserControls.Home
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Nghia));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLoaiTu = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtVD = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.txtNghiaTiengViet = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -104,42 +103,14 @@ namespace DictionaryAppForIT.UserControls.Home
             this.txtVD.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtVD.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
             this.txtVD.ForeColor = System.Drawing.Color.Gray;
-            this.txtVD.Location = new System.Drawing.Point(28, 223);
+            this.txtVD.Location = new System.Drawing.Point(28, 240);
             this.txtVD.Multiline = true;
             this.txtVD.Name = "txtVD";
             this.txtVD.ReadOnly = true;
-            this.txtVD.Size = new System.Drawing.Size(478, 20);
+            this.txtVD.Size = new System.Drawing.Size(478, 61);
             this.txtVD.TabIndex = 41;
-            this.txtVD.Text = "The variables in the equation are X, Y, and Z.";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
-            this.textBox2.ForeColor = System.Drawing.Color.Gray;
-            this.textBox2.Location = new System.Drawing.Point(28, 249);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(478, 20);
-            this.textBox2.TabIndex = 41;
-            this.textBox2.Text = "When you assign a variables, you use the = symbol.";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
-            this.textBox3.ForeColor = System.Drawing.Color.Gray;
-            this.textBox3.Location = new System.Drawing.Point(28, 275);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(478, 43);
-            this.textBox3.TabIndex = 41;
-            this.textBox3.Text = "Naming variables is known as one of the most difficult tasks in computer programm" +
-    "ing";
+            this.txtVD.Text = "The variables in the equation are X, Y, and Z. The variables in the equation are " +
+    "X, Y, and Z. The variables in the equation are X, Y, and Z.";
             // 
             // txtNghiaTiengViet
             // 
@@ -168,7 +139,7 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.guna2Panel2);
-            this.panel3.Location = new System.Drawing.Point(9, 193);
+            this.panel3.Location = new System.Drawing.Point(9, 210);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 20);
             this.panel3.TabIndex = 42;
@@ -202,10 +173,9 @@ namespace DictionaryAppForIT.UserControls.Home
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.ReadOnly = true;
-            this.txtMoTa.Size = new System.Drawing.Size(478, 35);
+            this.txtMoTa.Size = new System.Drawing.Size(478, 61);
             this.txtMoTa.TabIndex = 41;
-            this.txtMoTa.Text = "Biến là giá trị có thể thay đổi trong chương trình, nó thường được gắn liền với c" +
-    "ác địa điểm lưu trữ dữ liệu.";
+            this.txtMoTa.Text = resources.GetString("txtMoTa.Text");
             // 
             // panel4
             // 
@@ -242,14 +212,12 @@ namespace DictionaryAppForIT.UserControls.Home
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.txtMoTa);
             this.Controls.Add(this.txtNghiaTiengViet);
             this.Controls.Add(this.txtVD);
             this.Controls.Add(this.panel1);
             this.Name = "UC_Nghia";
-            this.Size = new System.Drawing.Size(537, 336);
+            this.Size = new System.Drawing.Size(537, 323);
             this.Load += new System.EventHandler(this.UC_Nghia_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -270,8 +238,6 @@ namespace DictionaryAppForIT.UserControls.Home
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.TextBox txtVD;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox txtNghiaTiengViet;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

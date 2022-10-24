@@ -31,18 +31,18 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QuanLyTK));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.btnLuuThayDoiTK = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoaTaiKhoan = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -150,6 +150,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.btnLuuThayDoiTK.Size = new System.Drawing.Size(189, 42);
             this.btnLuuThayDoiTK.TabIndex = 10;
             this.btnLuuThayDoiTK.Text = "Lưu thay đổi";
+            this.bunifuToolTip1.SetToolTip(this.btnLuuThayDoiTK, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnLuuThayDoiTK, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnLuuThayDoiTK, "");
             this.btnLuuThayDoiTK.Click += new System.EventHandler(this.LuuThayDoiTK_Click);
             // 
             // btnXoaTaiKhoan
@@ -165,6 +168,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.btnXoaTaiKhoan.Size = new System.Drawing.Size(114, 36);
             this.btnXoaTaiKhoan.TabIndex = 0;
             this.btnXoaTaiKhoan.Text = "Xóa vĩnh viễn";
+            this.bunifuToolTip1.SetToolTip(this.btnXoaTaiKhoan, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnXoaTaiKhoan, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnXoaTaiKhoan, "");
             this.btnXoaTaiKhoan.Click += new System.EventHandler(this.btnXoaTaiKhoan_Click);
             // 
             // label2
@@ -177,6 +183,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label2.TabIndex = 93;
             this.label2.Text = "Xóa tài khoản sẽ gỡ bỏ hoàn toàn các nội dung có liên quan đến tài khoản này. Chú" +
     "ng tôi sẽ không giải quyết các vấn đề về dữ liệu khi bạn xóa tài khoản.";
+            this.bunifuToolTip1.SetToolTip(this.label2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label2, "");
             // 
             // label1
             // 
@@ -188,6 +197,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label1.Size = new System.Drawing.Size(108, 21);
             this.label1.TabIndex = 92;
             this.label1.Text = "Xóa tài khoản";
+            this.bunifuToolTip1.SetToolTip(this.label1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label1, "");
             // 
             // label9
             // 
@@ -199,6 +211,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label9.Size = new System.Drawing.Size(37, 17);
             this.label9.TabIndex = 87;
             this.label9.Text = "Khác";
+            this.bunifuToolTip1.SetToolTip(this.label9, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label9, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label9, "");
             // 
             // label8
             // 
@@ -210,6 +225,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label8.Size = new System.Drawing.Size(26, 17);
             this.label8.TabIndex = 86;
             this.label8.Text = "Nữ";
+            this.bunifuToolTip1.SetToolTip(this.label8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label8, "");
             // 
             // label7
             // 
@@ -221,6 +239,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label7.Size = new System.Drawing.Size(37, 17);
             this.label7.TabIndex = 85;
             this.label7.Text = "Nam";
+            this.bunifuToolTip1.SetToolTip(this.label7, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label7, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label7, "");
             // 
             // rdKhac
             // 
@@ -296,6 +317,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label3.Size = new System.Drawing.Size(74, 20);
             this.label3.TabIndex = 81;
             this.label3.Text = "Mật khẩu";
+            this.bunifuToolTip1.SetToolTip(this.label3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label3, "");
             // 
             // label6
             // 
@@ -308,6 +332,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label6.Size = new System.Drawing.Size(67, 20);
             this.label6.TabIndex = 80;
             this.label6.Text = "Giới tính";
+            this.bunifuToolTip1.SetToolTip(this.label6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label6, "");
             // 
             // label4
             // 
@@ -320,6 +347,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label4.Size = new System.Drawing.Size(46, 20);
             this.label4.TabIndex = 77;
             this.label4.Text = "Email";
+            this.bunifuToolTip1.SetToolTip(this.label4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label4, "");
             // 
             // label5
             // 
@@ -332,6 +362,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label5.Size = new System.Drawing.Size(111, 20);
             this.label5.TabIndex = 76;
             this.label5.Text = "Tên đăng nhập";
+            this.bunifuToolTip1.SetToolTip(this.label5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label5, "");
             // 
             // txtEmail
             // 
@@ -368,26 +401,26 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.txtEmail.Modified = false;
             this.txtEmail.Multiline = false;
             this.txtEmail.Name = "txtEmail";
-            stateProperties13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            stateProperties13.FillColor = System.Drawing.Color.Empty;
-            stateProperties13.ForeColor = System.Drawing.Color.Empty;
-            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtEmail.OnActiveState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtEmail.OnDisabledState = stateProperties14;
-            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            stateProperties15.FillColor = System.Drawing.Color.Empty;
-            stateProperties15.ForeColor = System.Drawing.Color.Empty;
-            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtEmail.OnHoverState = stateProperties15;
-            stateProperties16.BorderColor = System.Drawing.Color.Silver;
-            stateProperties16.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            stateProperties16.ForeColor = System.Drawing.Color.DarkGray;
-            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtEmail.OnIdleState = stateProperties16;
+            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtEmail.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtEmail.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtEmail.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            stateProperties4.ForeColor = System.Drawing.Color.DarkGray;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtEmail.OnIdleState = stateProperties4;
             this.txtEmail.Padding = new System.Windows.Forms.Padding(3);
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -447,26 +480,26 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.txtUsername.Modified = false;
             this.txtUsername.Multiline = false;
             this.txtUsername.Name = "txtUsername";
-            stateProperties17.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            stateProperties17.FillColor = System.Drawing.Color.Empty;
-            stateProperties17.ForeColor = System.Drawing.Color.Empty;
-            stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnActiveState = stateProperties17;
-            stateProperties18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties18.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtUsername.OnDisabledState = stateProperties18;
-            stateProperties19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            stateProperties19.FillColor = System.Drawing.Color.Empty;
-            stateProperties19.ForeColor = System.Drawing.Color.Empty;
-            stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnHoverState = stateProperties19;
-            stateProperties20.BorderColor = System.Drawing.Color.Silver;
-            stateProperties20.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            stateProperties20.ForeColor = System.Drawing.Color.DarkGray;
-            stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnIdleState = stateProperties20;
+            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsername.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtUsername.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsername.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            stateProperties8.ForeColor = System.Drawing.Color.DarkGray;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsername.OnIdleState = stateProperties8;
             this.txtUsername.Padding = new System.Windows.Forms.Padding(3);
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -526,26 +559,26 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.txtPassword.Modified = false;
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
-            stateProperties21.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            stateProperties21.FillColor = System.Drawing.Color.Empty;
-            stateProperties21.ForeColor = System.Drawing.Color.Empty;
-            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPassword.OnActiveState = stateProperties21;
-            stateProperties22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties22.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtPassword.OnDisabledState = stateProperties22;
-            stateProperties23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            stateProperties23.FillColor = System.Drawing.Color.Empty;
-            stateProperties23.ForeColor = System.Drawing.Color.Empty;
-            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPassword.OnHoverState = stateProperties23;
-            stateProperties24.BorderColor = System.Drawing.Color.Silver;
-            stateProperties24.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            stateProperties24.ForeColor = System.Drawing.Color.DarkGray;
-            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPassword.OnIdleState = stateProperties24;
+            stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            stateProperties9.FillColor = System.Drawing.Color.Empty;
+            stateProperties9.ForeColor = System.Drawing.Color.Empty;
+            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPassword.OnActiveState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtPassword.OnDisabledState = stateProperties10;
+            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            stateProperties11.FillColor = System.Drawing.Color.Empty;
+            stateProperties11.ForeColor = System.Drawing.Color.Empty;
+            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPassword.OnHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.Silver;
+            stateProperties12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            stateProperties12.ForeColor = System.Drawing.Color.DarkGray;
+            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPassword.OnIdleState = stateProperties12;
             this.txtPassword.Padding = new System.Windows.Forms.Padding(3);
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -592,6 +625,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2Panel6.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel6.Size = new System.Drawing.Size(788, 93);
             this.guna2Panel6.TabIndex = 101;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel6, "");
             // 
             // guna2Panel2
             // 
@@ -605,6 +641,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2Panel2.Padding = new System.Windows.Forms.Padding(8);
             this.guna2Panel2.Size = new System.Drawing.Size(120, 120);
             this.guna2Panel2.TabIndex = 95;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel2, "");
             this.guna2Panel2.UseTransparentBackground = true;
             // 
             // guna2CirclePictureBox1
@@ -621,6 +660,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox1.TabIndex = 67;
             this.guna2CirclePictureBox1.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2CirclePictureBox1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2CirclePictureBox1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2CirclePictureBox1, "");
             this.guna2CirclePictureBox1.UseTransparentBackground = true;
             // 
             // guna2Panel1
@@ -640,6 +682,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel1.Size = new System.Drawing.Size(421, 272);
             this.guna2Panel1.TabIndex = 101;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel1, "");
             // 
             // panelThoiGianTao
             // 
@@ -659,6 +704,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.panelThoiGianTao.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.panelThoiGianTao.Size = new System.Drawing.Size(375, 56);
             this.panelThoiGianTao.TabIndex = 0;
+            this.bunifuToolTip1.SetToolTip(this.panelThoiGianTao, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panelThoiGianTao, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panelThoiGianTao, "");
             // 
             // guna2PictureBox8
             // 
@@ -669,6 +717,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox8.Size = new System.Drawing.Size(21, 56);
             this.guna2PictureBox8.TabIndex = 104;
             this.guna2PictureBox8.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox8, "");
             // 
             // guna2PictureBox9
             // 
@@ -681,6 +732,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox9.Size = new System.Drawing.Size(35, 56);
             this.guna2PictureBox9.TabIndex = 103;
             this.guna2PictureBox9.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox9, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox9, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox9, "");
             this.guna2PictureBox9.UseTransparentBackground = true;
             // 
             // label12
@@ -694,6 +748,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label12.Size = new System.Drawing.Size(167, 20);
             this.label12.TabIndex = 80;
             this.label12.Text = "Thời gian tạo tài khoản";
+            this.bunifuToolTip1.SetToolTip(this.label12, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label12, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label12, "");
             // 
             // guna2Panel3
             // 
@@ -707,6 +764,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2Panel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel3.Size = new System.Drawing.Size(62, 53);
             this.guna2Panel3.TabIndex = 0;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel3, "");
             // 
             // guna2PictureBox5
             // 
@@ -719,6 +779,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox5.TabIndex = 94;
             this.guna2PictureBox5.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox5, "");
             // 
             // panelSoMucYeuThich
             // 
@@ -739,6 +802,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.panelSoMucYeuThich.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.panelSoMucYeuThich.Size = new System.Drawing.Size(375, 56);
             this.panelSoMucYeuThich.TabIndex = 0;
+            this.bunifuToolTip1.SetToolTip(this.panelSoMucYeuThich, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panelSoMucYeuThich, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panelSoMucYeuThich, "");
             // 
             // guna2Panel8
             // 
@@ -750,6 +816,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2Panel8.Name = "guna2Panel8";
             this.guna2Panel8.Size = new System.Drawing.Size(259, 24);
             this.guna2Panel8.TabIndex = 107;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel8, "");
             this.guna2Panel8.UseTransparentBackground = true;
             // 
             // label14
@@ -763,6 +832,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label14.Size = new System.Drawing.Size(88, 22);
             this.label14.TabIndex = 107;
             this.label14.Text = "mục yêu thích";
+            this.bunifuToolTip1.SetToolTip(this.label14, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label14, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label14, "");
             this.label14.UseCompatibleTextRendering = true;
             // 
             // lblSoMucTest
@@ -777,6 +849,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.lblSoMucTest.Size = new System.Drawing.Size(12, 22);
             this.lblSoMucTest.TabIndex = 106;
             this.lblSoMucTest.Text = "9";
+            this.bunifuToolTip1.SetToolTip(this.lblSoMucTest, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblSoMucTest, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblSoMucTest, "");
             this.lblSoMucTest.UseCompatibleTextRendering = true;
             // 
             // label10
@@ -790,6 +865,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label10.Size = new System.Drawing.Size(130, 22);
             this.label10.TabIndex = 106;
             this.label10.Text = "Hiện tại bạn có tất cả";
+            this.bunifuToolTip1.SetToolTip(this.label10, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label10, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label10, "");
             this.label10.UseCompatibleTextRendering = true;
             // 
             // guna2PictureBox11
@@ -801,6 +879,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox11.Size = new System.Drawing.Size(21, 56);
             this.guna2PictureBox11.TabIndex = 104;
             this.guna2PictureBox11.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox11, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox11, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox11, "");
             // 
             // guna2PictureBox10
             // 
@@ -813,6 +894,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox10.Size = new System.Drawing.Size(35, 56);
             this.guna2PictureBox10.TabIndex = 103;
             this.guna2PictureBox10.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox10, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox10, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox10, "");
             this.guna2PictureBox10.UseTransparentBackground = true;
             // 
             // label13
@@ -826,6 +910,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label13.Size = new System.Drawing.Size(126, 20);
             this.label13.TabIndex = 95;
             this.label13.Text = "Số mục yêu thích";
+            this.bunifuToolTip1.SetToolTip(this.label13, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label13, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label13, "");
             // 
             // guna2Panel4
             // 
@@ -840,6 +927,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2Panel4.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel4.Size = new System.Drawing.Size(62, 53);
             this.guna2Panel4.TabIndex = 94;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel4, "");
             // 
             // guna2PictureBox6
             // 
@@ -852,6 +942,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox6.TabIndex = 94;
             this.guna2PictureBox6.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox6, "");
             // 
             // panelThoiGianSuDung
             // 
@@ -871,6 +964,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.panelThoiGianSuDung.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.panelThoiGianSuDung.Size = new System.Drawing.Size(375, 67);
             this.panelThoiGianSuDung.TabIndex = 0;
+            this.bunifuToolTip1.SetToolTip(this.panelThoiGianSuDung, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panelThoiGianSuDung, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panelThoiGianSuDung, "");
             // 
             // guna2PictureBox13
             // 
@@ -881,6 +977,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox13.Size = new System.Drawing.Size(21, 66);
             this.guna2PictureBox13.TabIndex = 104;
             this.guna2PictureBox13.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox13, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox13, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox13, "");
             // 
             // guna2PictureBox12
             // 
@@ -893,6 +992,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox12.Size = new System.Drawing.Size(35, 66);
             this.guna2PictureBox12.TabIndex = 103;
             this.guna2PictureBox12.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox12, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox12, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox12, "");
             this.guna2PictureBox12.UseTransparentBackground = true;
             // 
             // label15
@@ -906,6 +1008,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label15.Size = new System.Drawing.Size(212, 20);
             this.label15.TabIndex = 95;
             this.label15.Text = "Thời gian sử dụng trong ngày";
+            this.bunifuToolTip1.SetToolTip(this.label15, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label15, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label15, "");
             // 
             // guna2Panel5
             // 
@@ -920,6 +1025,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2Panel5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.guna2Panel5.Size = new System.Drawing.Size(62, 53);
             this.guna2Panel5.TabIndex = 97;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel5, "");
             // 
             // guna2PictureBox7
             // 
@@ -932,6 +1040,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox7.TabIndex = 94;
             this.guna2PictureBox7.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox7, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox7, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox7, "");
             // 
             // pbNenUsername2
             // 
@@ -942,6 +1053,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.pbNenUsername2.Size = new System.Drawing.Size(21, 40);
             this.pbNenUsername2.TabIndex = 104;
             this.pbNenUsername2.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pbNenUsername2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pbNenUsername2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pbNenUsername2, "");
             // 
             // pbNenEmail2
             // 
@@ -953,6 +1067,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.pbNenEmail2.Size = new System.Drawing.Size(21, 40);
             this.pbNenEmail2.TabIndex = 104;
             this.pbNenEmail2.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pbNenEmail2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pbNenEmail2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pbNenEmail2, "");
             // 
             // pbNenEmail1
             // 
@@ -967,6 +1084,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.pbNenEmail1.Size = new System.Drawing.Size(48, 40);
             this.pbNenEmail1.TabIndex = 103;
             this.pbNenEmail1.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pbNenEmail1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pbNenEmail1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pbNenEmail1, "");
             this.pbNenEmail1.UseTransparentBackground = true;
             // 
             // pbNenPassword1
@@ -982,6 +1102,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.pbNenPassword1.Size = new System.Drawing.Size(48, 40);
             this.pbNenPassword1.TabIndex = 103;
             this.pbNenPassword1.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pbNenPassword1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pbNenPassword1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pbNenPassword1, "");
             this.pbNenPassword1.UseTransparentBackground = true;
             // 
             // label11
@@ -995,6 +1118,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label11.Size = new System.Drawing.Size(215, 30);
             this.label11.TabIndex = 80;
             this.label11.Text = "Thông tin tài khoản";
+            this.bunifuToolTip1.SetToolTip(this.label11, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label11, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label11, "");
             // 
             // guna2CircleButton1
             // 
@@ -1008,6 +1134,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.Size = new System.Drawing.Size(35, 35);
             this.guna2CircleButton1.TabIndex = 105;
+            this.bunifuToolTip1.SetToolTip(this.guna2CircleButton1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2CircleButton1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2CircleButton1, "");
             this.guna2CircleButton1.UseTransparentBackground = true;
             // 
             // pbNenPassword2
@@ -1020,6 +1149,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.pbNenPassword2.Size = new System.Drawing.Size(21, 40);
             this.pbNenPassword2.TabIndex = 104;
             this.pbNenPassword2.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pbNenPassword2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pbNenPassword2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pbNenPassword2, "");
             // 
             // btnSuaMatKhau
             // 
@@ -1105,6 +1237,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.btnSuaAvt.PressedDepth = 0;
             this.btnSuaAvt.Size = new System.Drawing.Size(35, 31);
             this.btnSuaAvt.TabIndex = 11;
+            this.bunifuToolTip1.SetToolTip(this.btnSuaAvt, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnSuaAvt, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnSuaAvt, "");
             this.btnSuaAvt.UseTransparentBackground = true;
             // 
             // pbNenUsername1
@@ -1119,6 +1254,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.pbNenUsername1.Size = new System.Drawing.Size(48, 40);
             this.pbNenUsername1.TabIndex = 103;
             this.pbNenUsername1.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pbNenUsername1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pbNenUsername1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pbNenUsername1, "");
             this.pbNenUsername1.UseTransparentBackground = true;
             // 
             // bunifuToolTip1

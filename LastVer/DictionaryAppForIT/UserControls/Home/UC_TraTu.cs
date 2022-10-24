@@ -35,12 +35,14 @@ namespace DictionaryAppForIT.UserControls
         // lich su
         public static string idLSVuaTra;
         public static string idYeuThichVuaChon;
+        private List<UC_Nghia> _listNghia;
         
         public UC_TraTu()
         {
             InitializeComponent();
             speech = new SpeechSynthesizer();
             XemNghia = new XemTatCaNghia();
+            _listNghia = new List<UC_Nghia>();
             //GoiYTimKiem();
 
             //Tự động chỉnh lại width của label từ vựng
@@ -204,6 +206,7 @@ namespace DictionaryAppForIT.UserControls
             object num = DataProvider.Instance.ExecuteScalar($"SELECT COUNT(TenTu) FROM Tu where TenTu = '{txtTimKiemTu.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}' or IDTK = 0 and TenTu = '{txtTimKiemTu.Text}'");
             if (Convert.ToInt32(num) > 0)
             {
+                _listNghia = new List<UC_Nghia>();
                 pnTitle.Visible = true;
                 XemNghia.HienThiThongTinTimKiem(txtTimKiemTu.Text);
                 foreach (var item in XemNghia._listTu)
@@ -242,6 +245,7 @@ namespace DictionaryAppForIT.UserControls
                     ucNghia.ViDu = item.ViDu;
 
                     flpMeaning.Controls.Add(ucNghia);
+                    _listNghia.Add(ucNghia);
                     ucNghia.Dock = DockStyle.Top;
 
                 }
@@ -338,6 +342,10 @@ namespace DictionaryAppForIT.UserControls
                 pnTitle.Visible = true;
                 flpMeaning.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
                 HienThiKqRandom();
+                if (tocDoPhatAm == true)
+                {
+                    btnUS.PerformClick(); // tự động phát âm sau khi tra từ
+                }
             }
             catch (Exception ex)
             {
@@ -418,5 +426,74 @@ namespace DictionaryAppForIT.UserControls
         {
             RJMessageBox.Show("Chức năng đang phát triển!");
         }
+
+        #region Xử lý giao diện sáng tối
+
+        public void ThayDoiMauGiaoDien(bool check)
+        {
+            if (check)
+            {
+                GiaoDienToi();
+                ThayDoiMauUC(32, 33, 36);
+            }
+            else
+            {
+                GiaoDienSang();
+                ThayDoiMauUC(255, 255, 255);
+            }
+        }
+
+        public void ThayDoiMauUC(int mot, int hai, int ba)
+        {
+            foreach (var item in _listNghia)
+            {
+                item.DoiMauNen(mot,hai,ba);
+            }
+        }
+
+        private void GiaoDienSang()
+        {
+            //Whitesmoke: 245,245,245 
+            //Black: 32, 33, 36
+            //White: 255,255,255
+            int mot = 245;
+            int hai = 255;
+            pnNen4.FillColor = Color.FromArgb(mot, mot, mot);
+            pnNen6.FillColor = Color.FromArgb(mot, mot, mot);
+            pnNen1.FillColor = Color.FromArgb(hai, hai, hai);
+            pnNen2.BackColor = Color.FromArgb(hai, hai, hai);
+            pnNen3.BackColor = Color.FromArgb(hai, hai, hai);
+            pnNen5.BackColor = Color.FromArgb(hai, hai, hai);
+            pnNen7.BackColor = Color.FromArgb(hai, hai, hai);
+            txtTuVung.BackColor = Color.FromArgb(hai, hai, hai);
+            txtPhienAm.BackColor = Color.FromArgb(hai, hai, hai);
+            txtDongNghia.BackColor = Color.FromArgb(mot, mot, mot);
+            txtTraiNghia.BackColor = Color.FromArgb(mot, mot, mot);
+        }
+
+        private void GiaoDienToi()
+        {
+            //Whitesmoke: 245,245,245 
+            //Black: 32, 33, 36
+            //White: 255,255,255
+            int mot = 32;
+            int hai = 33;
+            int ba = 36;
+            pnNen4.FillColor = Color.FromArgb(mot, hai, ba);
+            pnNen6.FillColor = Color.FromArgb(mot, hai, ba);
+            pnNen1.FillColor = Color.FromArgb(mot, hai, ba);
+            pnNen2.BackColor = Color.FromArgb(mot, hai, ba);
+            pnNen3.BackColor = Color.FromArgb(mot, hai, ba);
+            pnNen5.BackColor = Color.FromArgb(mot, hai, ba);
+            pnNen7.BackColor = Color.FromArgb(mot, hai, ba);
+            txtTuVung.BackColor = Color.FromArgb(mot, hai, ba);
+            txtPhienAm.BackColor = Color.FromArgb(mot, hai, ba);
+            txtDongNghia.BackColor = Color.FromArgb(mot, hai, ba);
+            txtTraiNghia.BackColor = Color.FromArgb(mot, hai, ba);
+        }
+
+
+
+        #endregion
     }
 }

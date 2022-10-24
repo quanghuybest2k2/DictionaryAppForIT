@@ -30,12 +30,12 @@ namespace DictionaryAppForIT.UserControls.Home
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Dich));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -62,8 +62,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.flpnLichSu = new System.Windows.Forms.FlowLayoutPanel();
             this.dtgvLichSu = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ColTiengAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTiengViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ctxtChucNang = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.tsmiXoa = new ReaLTaiizor.Controls.MaterialToolStripMenuItem();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -76,6 +74,8 @@ namespace DictionaryAppForIT.UserControls.Home
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
             this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
+            this.ColTiengViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTiengAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -408,7 +408,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.btnLuuYeuThich.BackColor = System.Drawing.Color.Transparent;
             this.btnLuuYeuThich.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
             this.btnLuuYeuThich.CheckedState.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnLuuYeuThich.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnLuuYeuThich.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnLuuYeuThich.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuuYeuThich.FillColor = System.Drawing.Color.Transparent;
             this.btnLuuYeuThich.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -511,6 +511,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.guna2Panel5.Controls.Add(this.panel5);
             this.guna2Panel5.Controls.Add(this.panel6);
             this.guna2Panel5.FillColor = System.Drawing.Color.White;
+            this.guna2Panel5.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.guna2Panel5.Location = new System.Drawing.Point(584, 31);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Padding = new System.Windows.Forms.Padding(10);
@@ -540,30 +541,30 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             // dtgvLichSu
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dtgvLichSu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvLichSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtgvLichSu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvLichSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvLichSu.ColumnHeadersHeight = 21;
             this.dtgvLichSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dtgvLichSu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColTiengAnh,
             this.ColTiengViet});
             this.dtgvLichSu.ContextMenuStrip = this.ctxtChucNang;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvLichSu.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvLichSu.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvLichSu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtgvLichSu.Location = new System.Drawing.Point(9, 3);
             this.dtgvLichSu.Name = "dtgvLichSu";
@@ -596,20 +597,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.bunifuToolTip1.SetToolTipTitle(this.dtgvLichSu, "");
             this.dtgvLichSu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLichSu_CellContentClick);
             // 
-            // ColTiengAnh
-            // 
-            this.ColTiengAnh.DataPropertyName = "TiengAnh";
-            this.ColTiengAnh.HeaderText = "Tiếng Anh";
-            this.ColTiengAnh.Name = "ColTiengAnh";
-            this.ColTiengAnh.ReadOnly = true;
-            // 
-            // ColTiengViet
-            // 
-            this.ColTiengViet.DataPropertyName = "TiengViet";
-            this.ColTiengViet.HeaderText = "Tiếng Việt";
-            this.ColTiengViet.Name = "ColTiengViet";
-            this.ColTiengViet.ReadOnly = true;
-            // 
             // ctxtChucNang
             // 
             this.ctxtChucNang.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -639,26 +626,26 @@ namespace DictionaryAppForIT.UserControls.Home
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.guna2DataGridView1.ColumnHeadersHeight = 21;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.guna2DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(9, 291);
@@ -831,6 +818,20 @@ namespace DictionaryAppForIT.UserControls.Home
             this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
             this.bunifuToolTip1.ToolTipTitle = null;
             // 
+            // ColTiengViet
+            // 
+            this.ColTiengViet.DataPropertyName = "TiengViet";
+            this.ColTiengViet.HeaderText = "Tiếng Việt";
+            this.ColTiengViet.Name = "ColTiengViet";
+            this.ColTiengViet.ReadOnly = true;
+            // 
+            // ColTiengAnh
+            // 
+            this.ColTiengAnh.DataPropertyName = "TiengAnh";
+            this.ColTiengAnh.HeaderText = "Tiếng Anh";
+            this.ColTiengAnh.Name = "ColTiengAnh";
+            this.ColTiengAnh.ReadOnly = true;
+            // 
             // UC_Dich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -911,8 +912,8 @@ namespace DictionaryAppForIT.UserControls.Home
         private Guna.UI2.WinForms.Guna2ContextMenuStrip ctxtChucNang;
         private ReaLTaiizor.Controls.MaterialToolStripMenuItem tsmiXoa;
         private Guna.UI2.WinForms.Guna2Button btnXoaLichSu;
+        private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTiengAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTiengViet;
-        private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
     }
 }

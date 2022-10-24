@@ -11,6 +11,7 @@ using System.Text;
 using DictionaryAppForIT.Properties;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DictionaryAppForIT.Forms;
 
 namespace DictionaryAppForIT.UserControls.CaiDat
 {
@@ -49,7 +50,12 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         #region cài đặt chung
 
         // bật chế độ ban đêm
-        
+
+        public bool ButtonCheDoBanDem
+        {
+            get { return btnCheDoBanDem.Checked; }
+            set { btnCheDoBanDem.Checked = value; }
+        }
         private void btnCheDoBanDem_CheckedChanged(object sender, EventArgs e)
         {
             if (btnCheDoBanDem.Checked)
@@ -65,6 +71,7 @@ namespace DictionaryAppForIT.UserControls.CaiDat
                 this.ForeColor = Color.DimGray;
             }
         }
+
         // tự động cập nhật
         private void btnTuDongCapNhat_CheckedChanged(object sender, EventArgs e)
         {

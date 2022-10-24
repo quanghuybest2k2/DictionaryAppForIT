@@ -288,6 +288,7 @@ namespace DictionaryAppForIT.Forms
         //--Tab đầu tiên
         private void btnTraTu_Click(object sender, EventArgs e)
         {
+            ucTraTu.ThayDoiMauGiaoDien(ucCaiDat.ButtonCheDoBanDem);
             ucTraTu.GoiYTimKiem();
             KiemTraThayDoiTocDoTraTu();
             // Nhấn tự động phát âm
@@ -368,9 +369,21 @@ namespace DictionaryAppForIT.Forms
         {
             //var frm = new frmMSG_DangXuat();
             //frm.Show();
-            this.Hide();
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.Show();
+         
+
+            var result = RJMessageBox.Show("Bạn có chắc muốn đăng xuất?",
+               "Đăng xuất",
+               MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.Show();
+            }
+            if (result == DialogResult.No)
+            {
+                return;
+            }
         }
 
 

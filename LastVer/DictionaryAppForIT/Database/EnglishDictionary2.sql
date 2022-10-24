@@ -109,8 +109,15 @@ AS
 		GROUP BY TiengAnh, TiengViet, PhienAm
 		ORDER BY COUNT(ID) DESC
 go
-select * from LichSuTraTu
+select  * from LichSuTraTu
 EXEC HienThiTuVungHot
+---
+--SELECT DISTINCT T1.TiengAnh, T1.PhienAm, T2.COUNTER
+--FROM LichSuTraTu T1
+--INNER JOIN (SELECT TiengAnh, PhienAm, COUNT(1) AS COUNTER
+--            FROM LichSuTraTu
+--            GROUP BY TiengAnh, PhienAm) AS T2
+--ON T1.TiengAnh = T2.TiengAnh
 ----------------------------------------------------------------------------------------------
 -- INSERT INTO YeuThichVanBan VALUES('', '', 10)
 SELECT * FROM YeuThichVanBan
@@ -289,6 +296,16 @@ go
 -- EXEC LuuTuYeuThich output, 'tienganh', N'phienam',N'tiengviet', N'',10
 select * from YeuThichTuVung
 select COUNT(ID) from YeuThichTuVung where TiengAnh = 'Component' and IDTK = 10
+-- sap xep yeu thich
+select * from YeuThichTuVung where IDTK = 2
+order by TiengAnh ASC
+select * from YeuThichVanBan where IDTK = 2
+order by TiengAnh ASC
+---
+select * from YeuThichTuVung where IDTK = 2 order by TiengAnh ASC
+select * from YeuThichVanBan where IDTK = 2 order by TiengAnh ASC
+select * from YeuThichTuVung where IDTK = 2 order by TiengAnh DESC
+select * from YeuThichVanBan where IDTK = 2 order by TiengAnh DESC
 -- DELETE FROM YeuThichTuVung
 -- DELETE FROM YeuThichTuVung WHERE TiengAnh = 'Component' AND IDTK = 10
 -- UPDATE YeuThichTuVung SET GhiChu = N'abc' WHERE ID = 4 and IDTK = 1
@@ -539,3 +556,23 @@ from((select count(*) AS AllCount
 
 	  select * from Tu where IDTK = 2 or IDTK = 0
 SELECT TOP 1 ID FROM Tu where IDTK = 1 or IDTK = 0 ORDER  BY NEWID()
+-- Mini game
+Select distinct(TiengAnh) from LichSuTraTu
+Select * from LichSuTraTu
+-- n, adj
+-- random tu_vung
+select top 1 TiengAnh from LichSuTraTu where IDTK = 1 ORDER  BY NEWID()
+-- lay nghia tu_vung
+select top 1 TiengViet from LichSuTraTu where TiengAnh = 'Component'and IDTK = 2 ORDER  BY NEWID()
+go
+-- drop proc RandomDapAn
+Create proc RandomDapAn
+@nghia VARCHAR(400)
+AS
+		select top 3 TiengViet
+		from (select distinct TiengViet from LichSuTraTu) as TiengViet
+		where TiengViet NOT IN (SELECT TiengViet FROM LichSuTraTu WHERE TiengAnh = @nghia)
+		ORDER  BY NEWID()
+go
+select distinct TiengViet from LichSuTraTu
+EXEC RandomDapAn 'variable'
