@@ -12,6 +12,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
 {
     public partial class UC_StartMiniGame : UserControl
     {
+        UC_MiniGame ucMiniGame = new UC_MiniGame();
         public UC_StartMiniGame()
         {
             InitializeComponent();
@@ -19,7 +20,9 @@ namespace DictionaryAppForIT.UserControls.MiniGame
 
         private void btnBatDau_Click(object sender, EventArgs e)
         {
-            this.SendToBack();
+            pnStartMiniGame.Visible = false;
+            this.Controls.Add(ucMiniGame);
+            ucMiniGame.Dock = DockStyle.Fill;
         }
     }
 }

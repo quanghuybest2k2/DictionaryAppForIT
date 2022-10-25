@@ -48,8 +48,9 @@ namespace DictionaryAppForIT.Forms
         UC_YeuThich ucYeuThich = new UC_YeuThich();
 
         //--Mini game
+        UC_StartMiniGame ucStartMiniGame = new UC_StartMiniGame();
         //UC_MiniGame ucMiniGame = new UC_MiniGame();
-        UC_LayoutMiniGame ucLayoutMiniGame = new UC_LayoutMiniGame();
+        //UC_LayoutMiniGame ucLayoutMiniGame = new UC_LayoutMiniGame();
 
         //--Cài đặt
         UC_CaiDat ucCaiDat = new UC_CaiDat();
@@ -69,7 +70,7 @@ namespace DictionaryAppForIT.Forms
         public frmMain()
         {
             InitializeComponent();
-            _listUC = new List<Control>() { ucTraTu, ucDich, ucTVChuyen, ucLichSu, ucYeuThich, ucLayoutMiniGame, ucCaiDat, ucQuanLyTK, ucPhanHoi, ucThemTu, ucTVHot };
+            _listUC = new List<Control>() { ucTraTu, ucDich, ucTVChuyen, ucLichSu, ucYeuThich, ucStartMiniGame, ucCaiDat, ucQuanLyTK, ucPhanHoi, ucThemTu, ucTVHot };
             _listFlpTab = new List<FlowLayoutPanel>() { flpTabHome, flpTabTaiKhoan };
             //Thêm uc vào panelContent
             foreach (var item in _listUC)
@@ -264,7 +265,7 @@ namespace DictionaryAppForIT.Forms
         private void btnMiniGame_Click(object sender, EventArgs e)
         {
             //ShowUC(ucMiniGame);
-            ShowUC(ucLayoutMiniGame);
+            ShowUC(ucStartMiniGame);
 
         }
 

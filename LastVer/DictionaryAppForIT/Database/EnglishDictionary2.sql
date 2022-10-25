@@ -558,12 +558,12 @@ from((select count(*) AS AllCount
 SELECT TOP 1 ID FROM Tu where IDTK = 1 or IDTK = 0 ORDER  BY NEWID()
 -- Mini game
 Select distinct(TiengAnh) from LichSuTraTu
-Select * from LichSuTraTu
+Select * from LichSuTraTu where IDTK = 1 or IDTK = 0
 -- n, adj
 -- random tu_vung
 select top 1 TiengAnh from LichSuTraTu where IDTK = 1 ORDER  BY NEWID()
 -- lay nghia tu_vung
-select top 1 TiengViet from LichSuTraTu where TiengAnh = 'Component'and IDTK = 2 ORDER  BY NEWID()
+select top 1 TiengViet from LichSuTraTu where TiengAnh = 'Component'and IDTK = 1 ORDER  BY NEWID()
 go
 -- drop proc RandomDapAn
 Create proc RandomDapAn
@@ -575,4 +575,4 @@ AS
 		ORDER  BY NEWID()
 go
 select distinct TiengViet from LichSuTraTu
-EXEC RandomDapAn 'variable'
+EXEC RandomDapAn 'component'

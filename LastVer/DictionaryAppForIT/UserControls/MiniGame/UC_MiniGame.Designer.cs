@@ -45,6 +45,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,11 +58,10 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCauHoi = new System.Windows.Forms.TextBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.timerCountDown = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -289,6 +289,19 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTipIcon(this.panel1, null);
             this.bunifuToolTip1.SetToolTipTitle(this.panel1, "");
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(245, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "button";
+            this.bunifuToolTip1.SetToolTip(this.button1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.button1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.button1, "");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // guna2Panel5
             // 
             this.guna2Panel5.FillColor = System.Drawing.Color.Orange;
@@ -352,7 +365,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Panel2.Controls.Add(this.btnB);
             this.guna2Panel2.Controls.Add(this.btnA);
             this.guna2Panel2.Controls.Add(this.guna2Panel3);
-            this.guna2Panel2.Controls.Add(this.textBox1);
+            this.guna2Panel2.Controls.Add(this.txtCauHoi);
             this.guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel2.Location = new System.Drawing.Point(30, 60);
             this.guna2Panel2.Name = "guna2Panel2";
@@ -518,22 +531,21 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTipIcon(this.label1, null);
             this.bunifuToolTip1.SetToolTipTitle(this.label1, "");
             // 
-            // textBox1
+            // txtCauHoi
             // 
-            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(32, 79);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(475, 53);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "In programming, a ___ is a value that can change, depending on conditions or on i" +
-    "nformation passed to the program.";
-            this.bunifuToolTip1.SetToolTip(this.textBox1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.textBox1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.textBox1, "");
+            this.txtCauHoi.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtCauHoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCauHoi.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.txtCauHoi.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCauHoi.Location = new System.Drawing.Point(32, 91);
+            this.txtCauHoi.Multiline = true;
+            this.txtCauHoi.Name = "txtCauHoi";
+            this.txtCauHoi.Size = new System.Drawing.Size(475, 30);
+            this.txtCauHoi.TabIndex = 1;
+            this.txtCauHoi.Text = "Bạn còn nhớ nghĩa của từ ___ không?";
+            this.bunifuToolTip1.SetToolTip(this.txtCauHoi, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.txtCauHoi, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.txtCauHoi, "");
             // 
             // guna2Button2
             // 
@@ -592,19 +604,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.timerCountDown.Interval = 1000;
             this.timerCountDown.Tick += new System.EventHandler(this.timerCountDown_Tick);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(245, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "button";
-            this.bunifuToolTip1.SetToolTip(this.button1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.button1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.button1, "");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // UC_MiniGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -642,7 +641,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCauHoi;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private System.Windows.Forms.Label label1;

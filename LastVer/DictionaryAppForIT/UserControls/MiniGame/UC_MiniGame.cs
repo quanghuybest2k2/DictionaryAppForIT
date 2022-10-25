@@ -1,4 +1,5 @@
 ﻿using DictionaryAppForIT.Class;
+using DictionaryAppForIT.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,10 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         SoundPlayer nhacTraLoi;
         SoundPlayer DemNguoc15s;
         SoundPlayer NhacHetGio;
+
+        CauHoiVaDapAn ClassCauHoiVaDapAn = new CauHoiVaDapAn();
+        DanhSachCauHoi ClassDanhSachCauHoi = new DanhSachCauHoi();
+
         public UC_MiniGame()
         {
             InitializeComponent();
@@ -33,9 +38,16 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         }
         private void UC_MiniGame_Load(object sender, EventArgs e)
         {
-            nhacNen = new SoundPlayer(Application.StartupPath + "\\Resources\\Sound\\NhacNenAiLaTrieuPhu.wav");
-            nhacNen.PlayLooping();
+            //nhacNen = new SoundPlayer(Application.StartupPath + "\\Resources\\Sound\\NhacNenAiLaTrieuPhu.wav");
+            //nhacNen.PlayLooping();
+
         }
+
+        private void LoadCauHoi()
+        {
+            
+        }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -43,7 +55,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             int s = 20;// giay
             toTalSecond = (m * 60) + s;
             this.timerCountDown.Enabled = true;
-            nhacNen.Stop();// dung nhac nen
+            //nhacNen.Stop();// dung nhac nen
             nhacTraLoi = new SoundPlayer(Application.StartupPath + "\\Resources\\Sound\\nhacTraLoi.wav");
             nhacTraLoi.PlayLooping();
         }
@@ -118,7 +130,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             if (frmXacNhan.ShowDialog() == DialogResult.OK)
             {
                 frmXacNhan.Close();
-                //this.Visible = false;
                 this.SendToBack();
             }
         }

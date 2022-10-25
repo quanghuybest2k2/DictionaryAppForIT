@@ -58,18 +58,19 @@ namespace DictionaryAppForIT.UserControls.CaiDat
         }
         private void btnCheDoBanDem_CheckedChanged(object sender, EventArgs e)
         {
-            if (btnCheDoBanDem.Checked)
-            {
-                // Giao diện tối
-                this.BackColor = Color.FromArgb(32, 33, 36);
-                this.ForeColor = Color.White;
-            }
-            else
-            {
-                // Giao diện sáng
-                this.BackColor = Color.White;
-                this.ForeColor = Color.DimGray;
-            }
+            //if (btnCheDoBanDem.Checked)
+            //{
+            //    // Giao diện tối
+            //    this.BackColor = Color.FromArgb(32, 33, 36);
+            //    this.ForeColor = Color.White;
+            //}
+            //else
+            //{
+            //    // Giao diện sáng
+            //    this.BackColor = Color.White;
+            //    this.ForeColor = Color.DimGray;
+            //}
+            RJMessageBox.Show("Chức năng đang phát triển");
         }
 
         // tự động cập nhật

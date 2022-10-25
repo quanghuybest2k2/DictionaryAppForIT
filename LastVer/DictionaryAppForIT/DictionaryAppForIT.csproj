@@ -310,6 +310,8 @@
     <Compile Include="UserControls\LichSu\UC_LS_VanBan.Designer.cs">
       <DependentUpon>UC_LS_VanBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\MiniGame\CauHoiVaDapAn.cs" />
+    <Compile Include="UserControls\MiniGame\DanhSachCauHoi.cs" />
     <Compile Include="UserControls\MiniGame\UC_DanhSachMiniGame.cs">
       <SubType>UserControl</SubType>
     </Compile>
