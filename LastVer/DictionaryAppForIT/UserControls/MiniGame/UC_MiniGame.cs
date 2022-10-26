@@ -14,6 +14,7 @@ using System.Media; // thư viện âm thanh
 using DictionaryAppForIT.CustomMessageBox;
 using System.Data.SqlClient;
 using System.Configuration;
+using Guna.UI2.WinForms;
 
 namespace DictionaryAppForIT.UserControls.MiniGame
 {
@@ -21,24 +22,19 @@ namespace DictionaryAppForIT.UserControls.MiniGame
     {
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         private int toTalSecond;
-        UC_MG_BtnDieuHuong ucBtnDieuHuong;
-        SoundPlayer nhacNen;
+        //SoundPlayer nhacNen;
         SoundPlayer nhacTraLoi;
         SoundPlayer DemNguoc15s;
         SoundPlayer NhacHetGio;
-
+        // tra loi
+        public int diem = 0;
+        public string traLoi = ""; //((Button)sender).Text;
         //CauHoiVaDapAn ClassCauHoiVaDapAn = new CauHoiVaDapAn();
         DanhSachCauHoi ClassDanhSachCauHoi = new DanhSachCauHoi();
 
         public UC_MiniGame()
         {
             InitializeComponent();
-         
-            //for (int i = 1; i <= 30; i++)
-            //{
-            //    ucBtnDieuHuong = new UC_MG_BtnDieuHuong(i);
-            //    flpDieuHuong.Controls.Add(ucBtnDieuHuong);
-            //}
         }
         private void UC_MiniGame_Load(object sender, EventArgs e)
         {
@@ -46,51 +42,9 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             //nhacNen.PlayLooping();
             //LoadCauHoi();
             ClassDanhSachCauHoi.LoadDSCauHoi();
+            lblCau1_Click(sender, e);
 
         }
-
-        //private void LoadCauHoi()
-        //{
-        //    ClassCauHoiVaDapAn = new CauHoiVaDapAn();
-        //    // lay tu vung
-        //    object tv =  DataProvider.Instance.ExecuteScalar($"select top 1 TiengAnh from LichSuTraTu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' ORDER  BY NEWID()");
-        //    ClassCauHoiVaDapAn.TuVung = tv.ToString();
-        //    txtCauHoi.Text = "Bạn còn nhớ nghĩa của từ " + ClassCauHoiVaDapAn.TuVung.ToUpper() + " không?";
-        //    // lay nghia
-        //    object da = DataProvider.Instance.ExecuteScalar($"select top 1 TiengViet from LichSuTraTu where TiengAnh = '{ClassCauHoiVaDapAn.TuVung}'and IDTK = '{Class_TaiKhoan.IdTaiKhoan}' ORDER  BY NEWID()");
-        //    ClassCauHoiVaDapAn.DapAnDung = da.ToString();
-        //    //object rdDa = DataProvider.Instance.ExecuteQuery($"EXEC RandomDapAn '{ClassCauHoiVaDapAn.DapAnDung}'");
-        //    RandomDapAnSai();
-
-        //    ClassDanhSachCauHoi._list.Add(ClassCauHoiVaDapAn);
-        //    //MessageBox.Show("", ClassDanhSachCauHoi.ToString());
-        //    //var rnd = new Random();
-        //    //var numbers = Enumerable.Range(0, 3).OrderBy(x => rnd.Next()).Take(4).ToList();
-        //}
-        //public void RandomDapAnSai()
-        //{
-        //    ClassCauHoiVaDapAn.DapAnRandom = new List<string>();
-        //    try
-        //    {
-        //        SqlConnection Conn = new SqlConnection(connString);
-        //        SqlCommand cmd = new SqlCommand($"EXEC RandomDapAn '{ClassCauHoiVaDapAn.DapAnDung}'", Conn);
-        //        Conn.Open();
-        //        SqlDataReader rdr = cmd.ExecuteReader();
-        //        string dapAn;
-        //        while (rdr.Read())
-        //        {
-        //            dapAn = rdr["TiengViet"].ToString();
-        //            ClassCauHoiVaDapAn.DapAnRandom.Add(dapAn);
-        //        }
-        //        Conn.Close();
-        //        Conn.Dispose();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             int m = 0;// phut
@@ -113,7 +67,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
                 toTalSecond--;
                 int m = toTalSecond / 60;
                 int s = toTalSecond - (m * 60);
-                if (toTalSecond==15)
+                if (toTalSecond == 15)
                 {
                     //nhacTraLoi.Play();
                     DemNguoc15s.Play();
@@ -189,8 +143,10 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             btnB.Text = ClassDanhSachCauHoi._list[index].DapAnRandom[numbers[1]];
             btnC.Text = ClassDanhSachCauHoi._list[index].DapAnRandom[numbers[2]];
             btnD.Text = ClassDanhSachCauHoi._list[index].DapAnRandom[numbers[3]];
+            lblFake.Text = ClassDanhSachCauHoi._list[index].DapAnDung;
+            
         }
- 
+
         private void lblCau1_Click(object sender, EventArgs e)
         {
             HienThiCauHoi(0);
@@ -199,13 +155,11 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         private void lblCau2_Click(object sender, EventArgs e)
         {
             HienThiCauHoi(1);
-
         }
 
         private void lblCau3_Click(object sender, EventArgs e)
         {
             HienThiCauHoi(2);
-
         }
 
         private void lblCau4_Click(object sender, EventArgs e)
@@ -243,5 +197,20 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             HienThiCauHoi(9);
         }
 
+        private void traloi_click(object sender, EventArgs e)
+        {
+            traLoi = (sender as Guna2Button).Text;// gắn text của button chọn
+            // kiem tra cau tra loi
+            if (traLoi == lblFake.Text)
+            {
+                lblKetQuaTraLoi.Visible = true;
+                lblKetQuaTraLoi.Text = "Câu trả lời chính xác!";
+            }
+            else
+            {
+                lblKetQuaTraLoi.Visible = true;
+                lblKetQuaTraLoi.Text = "Sai rồi, tiếc thật!";
+            }
+        }
     }
 }
