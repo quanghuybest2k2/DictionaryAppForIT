@@ -39,12 +39,13 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Tomato;
+            this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(3, 2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
             this.guna2PictureBox1.Size = new System.Drawing.Size(37, 10);
             this.guna2PictureBox1.TabIndex = 9;
             this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // pnNen
             // 
@@ -56,10 +57,9 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.pnNen.Location = new System.Drawing.Point(3, 3);
             this.pnNen.Name = "pnNen";
             this.pnNen.Padding = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.pnNen.ShadowDecoration.Parent = this.pnNen;
             this.pnNen.Size = new System.Drawing.Size(37, 36);
             this.pnNen.TabIndex = 8;
-
+            this.pnNen.Paint += new System.Windows.Forms.PaintEventHandler(this.pnNen_Paint);
             // 
             // lblSo
             // 
@@ -74,6 +74,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.lblSo.TabIndex = 0;
             this.lblSo.Text = "01";
             this.lblSo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSo.Click += new System.EventHandler(this.lblSo_Click);
             // 
             // UC_MG_BtnDieuHuong
             // 
