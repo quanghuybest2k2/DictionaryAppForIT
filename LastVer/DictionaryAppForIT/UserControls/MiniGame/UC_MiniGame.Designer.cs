@@ -42,56 +42,29 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.btnHoanThanh = new Guna.UI2.WinForms.Guna2Button();
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             this.flpDieuHuong = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pnNen = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblCau1 = new System.Windows.Forms.Label();
-            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblCau2 = new System.Windows.Forms.Label();
-            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblCau3 = new System.Windows.Forms.Label();
-            this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblCau4 = new System.Windows.Forms.Label();
-            this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblCau5 = new System.Windows.Forms.Label();
-            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.panel19 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblCau6 = new System.Windows.Forms.Label();
-            this.guna2Panel17 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel18 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblCau7 = new System.Windows.Forms.Label();
-            this.guna2Panel19 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel20 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblCau8 = new System.Windows.Forms.Label();
-            this.guna2Panel21 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel22 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblCau9 = new System.Windows.Forms.Label();
-            this.guna2Panel23 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox10 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel24 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblCau10 = new System.Windows.Forms.Label();
+            this.btnCau1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCauTruoc = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblSoCauHoanThanh = new System.Windows.Forms.Label();
+            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblKetQuaTraLoi = new System.Windows.Forms.Label();
+            this.lblDapAnDung = new System.Windows.Forms.Label();
             this.btnD = new Guna.UI2.WinForms.Guna2Button();
             this.btnC = new Guna.UI2.WinForms.Guna2Button();
             this.btnB = new Guna.UI2.WinForms.Guna2Button();
@@ -100,47 +73,19 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblStt = new System.Windows.Forms.Label();
             this.txtCauHoi = new System.Windows.Forms.TextBox();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCauSau = new Guna.UI2.WinForms.Guna2Button();
             this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.timerCountDown = new System.Windows.Forms.Timer(this.components);
-            this.lblFake = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.flpDieuHuong.SuspendLayout();
-            this.guna2Panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.pnNen.SuspendLayout();
-            this.guna2Panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            this.guna2Panel8.SuspendLayout();
-            this.guna2Panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            this.guna2Panel10.SuspendLayout();
-            this.guna2Panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
-            this.guna2Panel12.SuspendLayout();
-            this.guna2Panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
-            this.guna2Panel14.SuspendLayout();
-            this.guna2Panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
-            this.panel19.SuspendLayout();
-            this.guna2Panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
-            this.guna2Panel18.SuspendLayout();
-            this.guna2Panel19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).BeginInit();
-            this.guna2Panel20.SuspendLayout();
-            this.guna2Panel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).BeginInit();
-            this.guna2Panel22.SuspendLayout();
-            this.guna2Panel23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
-            this.guna2Panel24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
+            this.guna2Panel8.SuspendLayout();
+            this.guna2Panel6.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.SuspendLayout();
@@ -303,16 +248,16 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             // flpDieuHuong
             // 
             this.flpDieuHuong.AutoScroll = true;
-            this.flpDieuHuong.Controls.Add(this.guna2Panel6);
-            this.flpDieuHuong.Controls.Add(this.guna2Panel7);
-            this.flpDieuHuong.Controls.Add(this.guna2Panel9);
-            this.flpDieuHuong.Controls.Add(this.guna2Panel11);
-            this.flpDieuHuong.Controls.Add(this.guna2Panel13);
-            this.flpDieuHuong.Controls.Add(this.guna2Panel15);
-            this.flpDieuHuong.Controls.Add(this.guna2Panel17);
-            this.flpDieuHuong.Controls.Add(this.guna2Panel19);
-            this.flpDieuHuong.Controls.Add(this.guna2Panel21);
-            this.flpDieuHuong.Controls.Add(this.guna2Panel23);
+            this.flpDieuHuong.Controls.Add(this.btnCau1);
+            this.flpDieuHuong.Controls.Add(this.guna2Button4);
+            this.flpDieuHuong.Controls.Add(this.guna2Button5);
+            this.flpDieuHuong.Controls.Add(this.guna2Button6);
+            this.flpDieuHuong.Controls.Add(this.guna2Button7);
+            this.flpDieuHuong.Controls.Add(this.guna2Button8);
+            this.flpDieuHuong.Controls.Add(this.guna2Button9);
+            this.flpDieuHuong.Controls.Add(this.guna2Button10);
+            this.flpDieuHuong.Controls.Add(this.guna2Button11);
+            this.flpDieuHuong.Controls.Add(this.guna2Button12);
             this.flpDieuHuong.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.flpDieuHuong.Location = new System.Drawing.Point(36, 100);
             this.flpDieuHuong.Name = "flpDieuHuong";
@@ -322,595 +267,335 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTipIcon(this.flpDieuHuong, null);
             this.bunifuToolTip1.SetToolTipTitle(this.flpDieuHuong, "");
             // 
-            // guna2Panel6
-            // 
-            this.guna2Panel6.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel6.Controls.Add(this.pnNen);
-            this.guna2Panel6.Location = new System.Drawing.Point(3, 3);
-            this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(43, 41);
-            this.guna2Panel6.TabIndex = 10;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel6, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel6, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel6, "");
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Tomato;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 2);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(37, 10);
-            this.guna2PictureBox1.TabIndex = 11;
-            this.guna2PictureBox1.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox1, "");
-            // 
-            // pnNen
-            // 
-            this.pnNen.BorderColor = System.Drawing.Color.Tomato;
-            this.pnNen.BorderRadius = 10;
-            this.pnNen.BorderThickness = 2;
-            this.pnNen.Controls.Add(this.lblCau1);
-            this.pnNen.FillColor = System.Drawing.Color.White;
-            this.pnNen.Location = new System.Drawing.Point(3, 3);
-            this.pnNen.Name = "pnNen";
-            this.pnNen.Padding = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.pnNen.Size = new System.Drawing.Size(37, 36);
-            this.pnNen.TabIndex = 10;
-            this.bunifuToolTip1.SetToolTip(this.pnNen, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.pnNen, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.pnNen, "");
-            // 
-            // lblCau1
-            // 
-            this.lblCau1.BackColor = System.Drawing.Color.Transparent;
-            this.lblCau1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCau1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCau1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCau1.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCau1.Location = new System.Drawing.Point(3, 6);
-            this.lblCau1.Name = "lblCau1";
-            this.lblCau1.Size = new System.Drawing.Size(31, 27);
-            this.lblCau1.TabIndex = 0;
-            this.lblCau1.Text = "01";
-            this.lblCau1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuToolTip1.SetToolTip(this.lblCau1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblCau1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblCau1, "");
-            this.lblCau1.Click += new System.EventHandler(this.lblCau1_Click);
-            // 
-            // guna2Panel7
-            // 
-            this.guna2Panel7.Controls.Add(this.guna2PictureBox2);
-            this.guna2Panel7.Controls.Add(this.guna2Panel8);
-            this.guna2Panel7.Location = new System.Drawing.Point(52, 3);
-            this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(43, 41);
-            this.guna2Panel7.TabIndex = 11;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel7, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel7, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel7, "");
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.FillColor = System.Drawing.Color.Tomato;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(3, 2);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(37, 10);
-            this.guna2PictureBox2.TabIndex = 11;
-            this.guna2PictureBox2.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox2, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox2, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox2, "");
-            // 
-            // guna2Panel8
-            // 
-            this.guna2Panel8.BorderColor = System.Drawing.Color.Tomato;
-            this.guna2Panel8.BorderRadius = 10;
-            this.guna2Panel8.BorderThickness = 2;
-            this.guna2Panel8.Controls.Add(this.lblCau2);
-            this.guna2Panel8.FillColor = System.Drawing.Color.White;
-            this.guna2Panel8.Location = new System.Drawing.Point(3, 3);
-            this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Padding = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.guna2Panel8.Size = new System.Drawing.Size(37, 36);
-            this.guna2Panel8.TabIndex = 10;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel8, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel8, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel8, "");
-            // 
-            // lblCau2
-            // 
-            this.lblCau2.BackColor = System.Drawing.Color.Transparent;
-            this.lblCau2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCau2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCau2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCau2.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCau2.Location = new System.Drawing.Point(3, 6);
-            this.lblCau2.Name = "lblCau2";
-            this.lblCau2.Size = new System.Drawing.Size(31, 27);
-            this.lblCau2.TabIndex = 0;
-            this.lblCau2.Text = "02";
-            this.lblCau2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuToolTip1.SetToolTip(this.lblCau2, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblCau2, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblCau2, "");
-            this.lblCau2.Click += new System.EventHandler(this.lblCau2_Click);
-            // 
-            // guna2Panel9
-            // 
-            this.guna2Panel9.Controls.Add(this.guna2PictureBox3);
-            this.guna2Panel9.Controls.Add(this.guna2Panel10);
-            this.guna2Panel9.Location = new System.Drawing.Point(101, 3);
-            this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(43, 41);
-            this.guna2Panel9.TabIndex = 12;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel9, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel9, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel9, "");
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.FillColor = System.Drawing.Color.Tomato;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(3, 2);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(37, 10);
-            this.guna2PictureBox3.TabIndex = 11;
-            this.guna2PictureBox3.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox3, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox3, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox3, "");
-            // 
-            // guna2Panel10
-            // 
-            this.guna2Panel10.BorderColor = System.Drawing.Color.Tomato;
-            this.guna2Panel10.BorderRadius = 10;
-            this.guna2Panel10.BorderThickness = 2;
-            this.guna2Panel10.Controls.Add(this.lblCau3);
-            this.guna2Panel10.FillColor = System.Drawing.Color.White;
-            this.guna2Panel10.Location = new System.Drawing.Point(3, 3);
-            this.guna2Panel10.Name = "guna2Panel10";
-            this.guna2Panel10.Padding = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.guna2Panel10.Size = new System.Drawing.Size(37, 36);
-            this.guna2Panel10.TabIndex = 10;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel10, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel10, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel10, "");
-            // 
-            // lblCau3
-            // 
-            this.lblCau3.BackColor = System.Drawing.Color.Transparent;
-            this.lblCau3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCau3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCau3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCau3.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCau3.Location = new System.Drawing.Point(3, 6);
-            this.lblCau3.Name = "lblCau3";
-            this.lblCau3.Size = new System.Drawing.Size(31, 27);
-            this.lblCau3.TabIndex = 0;
-            this.lblCau3.Text = "03";
-            this.lblCau3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuToolTip1.SetToolTip(this.lblCau3, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblCau3, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblCau3, "");
-            this.lblCau3.Click += new System.EventHandler(this.lblCau3_Click);
-            // 
-            // guna2Panel11
-            // 
-            this.guna2Panel11.Controls.Add(this.guna2PictureBox4);
-            this.guna2Panel11.Controls.Add(this.guna2Panel12);
-            this.guna2Panel11.Location = new System.Drawing.Point(150, 3);
-            this.guna2Panel11.Name = "guna2Panel11";
-            this.guna2Panel11.Size = new System.Drawing.Size(43, 41);
-            this.guna2Panel11.TabIndex = 13;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel11, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel11, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel11, "");
-            // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.FillColor = System.Drawing.Color.Tomato;
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(3, 2);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(37, 10);
-            this.guna2PictureBox4.TabIndex = 11;
-            this.guna2PictureBox4.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox4, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox4, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox4, "");
-            // 
-            // guna2Panel12
-            // 
-            this.guna2Panel12.BorderColor = System.Drawing.Color.Tomato;
-            this.guna2Panel12.BorderRadius = 10;
-            this.guna2Panel12.BorderThickness = 2;
-            this.guna2Panel12.Controls.Add(this.lblCau4);
-            this.guna2Panel12.FillColor = System.Drawing.Color.White;
-            this.guna2Panel12.Location = new System.Drawing.Point(3, 3);
-            this.guna2Panel12.Name = "guna2Panel12";
-            this.guna2Panel12.Padding = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.guna2Panel12.Size = new System.Drawing.Size(37, 36);
-            this.guna2Panel12.TabIndex = 10;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel12, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel12, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel12, "");
-            // 
-            // lblCau4
-            // 
-            this.lblCau4.BackColor = System.Drawing.Color.Transparent;
-            this.lblCau4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCau4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCau4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCau4.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCau4.Location = new System.Drawing.Point(3, 6);
-            this.lblCau4.Name = "lblCau4";
-            this.lblCau4.Size = new System.Drawing.Size(31, 27);
-            this.lblCau4.TabIndex = 0;
-            this.lblCau4.Text = "04";
-            this.lblCau4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuToolTip1.SetToolTip(this.lblCau4, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblCau4, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblCau4, "");
-            this.lblCau4.Click += new System.EventHandler(this.lblCau4_Click);
-            // 
-            // guna2Panel13
-            // 
-            this.guna2Panel13.Controls.Add(this.guna2PictureBox5);
-            this.guna2Panel13.Controls.Add(this.guna2Panel14);
-            this.guna2Panel13.Location = new System.Drawing.Point(3, 50);
-            this.guna2Panel13.Name = "guna2Panel13";
-            this.guna2Panel13.Size = new System.Drawing.Size(43, 41);
-            this.guna2Panel13.TabIndex = 14;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel13, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel13, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel13, "");
-            // 
-            // guna2PictureBox5
-            // 
-            this.guna2PictureBox5.FillColor = System.Drawing.Color.Tomato;
-            this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(3, 2);
-            this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(37, 10);
-            this.guna2PictureBox5.TabIndex = 11;
-            this.guna2PictureBox5.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox5, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox5, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox5, "");
-            // 
-            // guna2Panel14
-            // 
-            this.guna2Panel14.BorderColor = System.Drawing.Color.Tomato;
-            this.guna2Panel14.BorderRadius = 10;
-            this.guna2Panel14.BorderThickness = 2;
-            this.guna2Panel14.Controls.Add(this.lblCau5);
-            this.guna2Panel14.FillColor = System.Drawing.Color.White;
-            this.guna2Panel14.Location = new System.Drawing.Point(3, 3);
-            this.guna2Panel14.Name = "guna2Panel14";
-            this.guna2Panel14.Padding = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.guna2Panel14.Size = new System.Drawing.Size(37, 36);
-            this.guna2Panel14.TabIndex = 10;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel14, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel14, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel14, "");
-            // 
-            // lblCau5
-            // 
-            this.lblCau5.BackColor = System.Drawing.Color.Transparent;
-            this.lblCau5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCau5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCau5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCau5.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCau5.Location = new System.Drawing.Point(3, 6);
-            this.lblCau5.Name = "lblCau5";
-            this.lblCau5.Size = new System.Drawing.Size(31, 27);
-            this.lblCau5.TabIndex = 0;
-            this.lblCau5.Text = "05";
-            this.lblCau5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuToolTip1.SetToolTip(this.lblCau5, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblCau5, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblCau5, "");
-            this.lblCau5.Click += new System.EventHandler(this.lblCau5_Click);
-            // 
-            // guna2Panel15
-            // 
-            this.guna2Panel15.Controls.Add(this.guna2PictureBox6);
-            this.guna2Panel15.Controls.Add(this.panel19);
-            this.guna2Panel15.Location = new System.Drawing.Point(52, 50);
-            this.guna2Panel15.Name = "guna2Panel15";
-            this.guna2Panel15.Size = new System.Drawing.Size(43, 41);
-            this.guna2Panel15.TabIndex = 15;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel15, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel15, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel15, "");
-            // 
-            // guna2PictureBox6
-            // 
-            this.guna2PictureBox6.FillColor = System.Drawing.Color.Tomato;
-            this.guna2PictureBox6.ImageRotate = 0F;
-            this.guna2PictureBox6.Location = new System.Drawing.Point(3, 2);
-            this.guna2PictureBox6.Name = "guna2PictureBox6";
-            this.guna2PictureBox6.Size = new System.Drawing.Size(37, 10);
-            this.guna2PictureBox6.TabIndex = 11;
-            this.guna2PictureBox6.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox6, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox6, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox6, "");
-            // 
-            // panel19
-            // 
-            this.panel19.BorderColor = System.Drawing.Color.Tomato;
-            this.panel19.BorderRadius = 10;
-            this.panel19.BorderThickness = 2;
-            this.panel19.Controls.Add(this.lblCau6);
-            this.panel19.FillColor = System.Drawing.Color.White;
-            this.panel19.Location = new System.Drawing.Point(3, 3);
-            this.panel19.Name = "panel19";
-            this.panel19.Padding = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.panel19.Size = new System.Drawing.Size(37, 36);
-            this.panel19.TabIndex = 10;
-            this.bunifuToolTip1.SetToolTip(this.panel19, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.panel19, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.panel19, "");
-            // 
-            // lblCau6
-            // 
-            this.lblCau6.BackColor = System.Drawing.Color.Transparent;
-            this.lblCau6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCau6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCau6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCau6.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCau6.Location = new System.Drawing.Point(3, 6);
-            this.lblCau6.Name = "lblCau6";
-            this.lblCau6.Size = new System.Drawing.Size(31, 27);
-            this.lblCau6.TabIndex = 0;
-            this.lblCau6.Text = "06";
-            this.lblCau6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuToolTip1.SetToolTip(this.lblCau6, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblCau6, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblCau6, "");
-            this.lblCau6.Click += new System.EventHandler(this.lblCau6_Click);
-            // 
-            // guna2Panel17
-            // 
-            this.guna2Panel17.Controls.Add(this.guna2PictureBox7);
-            this.guna2Panel17.Controls.Add(this.guna2Panel18);
-            this.guna2Panel17.Location = new System.Drawing.Point(101, 50);
-            this.guna2Panel17.Name = "guna2Panel17";
-            this.guna2Panel17.Size = new System.Drawing.Size(43, 41);
-            this.guna2Panel17.TabIndex = 16;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel17, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel17, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel17, "");
-            // 
-            // guna2PictureBox7
-            // 
-            this.guna2PictureBox7.FillColor = System.Drawing.Color.Tomato;
-            this.guna2PictureBox7.ImageRotate = 0F;
-            this.guna2PictureBox7.Location = new System.Drawing.Point(3, 2);
-            this.guna2PictureBox7.Name = "guna2PictureBox7";
-            this.guna2PictureBox7.Size = new System.Drawing.Size(37, 10);
-            this.guna2PictureBox7.TabIndex = 11;
-            this.guna2PictureBox7.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox7, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox7, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox7, "");
-            // 
-            // guna2Panel18
-            // 
-            this.guna2Panel18.BorderColor = System.Drawing.Color.Tomato;
-            this.guna2Panel18.BorderRadius = 10;
-            this.guna2Panel18.BorderThickness = 2;
-            this.guna2Panel18.Controls.Add(this.lblCau7);
-            this.guna2Panel18.FillColor = System.Drawing.Color.White;
-            this.guna2Panel18.Location = new System.Drawing.Point(3, 3);
-            this.guna2Panel18.Name = "guna2Panel18";
-            this.guna2Panel18.Padding = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.guna2Panel18.Size = new System.Drawing.Size(37, 36);
-            this.guna2Panel18.TabIndex = 10;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel18, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel18, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel18, "");
-            // 
-            // lblCau7
-            // 
-            this.lblCau7.BackColor = System.Drawing.Color.Transparent;
-            this.lblCau7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCau7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCau7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCau7.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCau7.Location = new System.Drawing.Point(3, 6);
-            this.lblCau7.Name = "lblCau7";
-            this.lblCau7.Size = new System.Drawing.Size(31, 27);
-            this.lblCau7.TabIndex = 0;
-            this.lblCau7.Text = "07";
-            this.lblCau7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuToolTip1.SetToolTip(this.lblCau7, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblCau7, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblCau7, "");
-            this.lblCau7.Click += new System.EventHandler(this.lblCau7_Click);
-            // 
-            // guna2Panel19
-            // 
-            this.guna2Panel19.Controls.Add(this.guna2PictureBox8);
-            this.guna2Panel19.Controls.Add(this.guna2Panel20);
-            this.guna2Panel19.Location = new System.Drawing.Point(150, 50);
-            this.guna2Panel19.Name = "guna2Panel19";
-            this.guna2Panel19.Size = new System.Drawing.Size(43, 41);
-            this.guna2Panel19.TabIndex = 17;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel19, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel19, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel19, "");
-            // 
-            // guna2PictureBox8
-            // 
-            this.guna2PictureBox8.FillColor = System.Drawing.Color.Tomato;
-            this.guna2PictureBox8.ImageRotate = 0F;
-            this.guna2PictureBox8.Location = new System.Drawing.Point(3, 2);
-            this.guna2PictureBox8.Name = "guna2PictureBox8";
-            this.guna2PictureBox8.Size = new System.Drawing.Size(37, 10);
-            this.guna2PictureBox8.TabIndex = 11;
-            this.guna2PictureBox8.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox8, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox8, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox8, "");
-            // 
-            // guna2Panel20
-            // 
-            this.guna2Panel20.BorderColor = System.Drawing.Color.Tomato;
-            this.guna2Panel20.BorderRadius = 10;
-            this.guna2Panel20.BorderThickness = 2;
-            this.guna2Panel20.Controls.Add(this.lblCau8);
-            this.guna2Panel20.FillColor = System.Drawing.Color.White;
-            this.guna2Panel20.Location = new System.Drawing.Point(3, 3);
-            this.guna2Panel20.Name = "guna2Panel20";
-            this.guna2Panel20.Padding = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.guna2Panel20.Size = new System.Drawing.Size(37, 36);
-            this.guna2Panel20.TabIndex = 10;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel20, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel20, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel20, "");
-            // 
-            // lblCau8
-            // 
-            this.lblCau8.BackColor = System.Drawing.Color.Transparent;
-            this.lblCau8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCau8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCau8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCau8.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCau8.Location = new System.Drawing.Point(3, 6);
-            this.lblCau8.Name = "lblCau8";
-            this.lblCau8.Size = new System.Drawing.Size(31, 27);
-            this.lblCau8.TabIndex = 0;
-            this.lblCau8.Text = "08";
-            this.lblCau8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuToolTip1.SetToolTip(this.lblCau8, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblCau8, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblCau8, "");
-            this.lblCau8.Click += new System.EventHandler(this.lblCau8_Click);
-            // 
-            // guna2Panel21
-            // 
-            this.guna2Panel21.Controls.Add(this.guna2PictureBox9);
-            this.guna2Panel21.Controls.Add(this.guna2Panel22);
-            this.guna2Panel21.Location = new System.Drawing.Point(3, 97);
-            this.guna2Panel21.Name = "guna2Panel21";
-            this.guna2Panel21.Size = new System.Drawing.Size(43, 41);
-            this.guna2Panel21.TabIndex = 18;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel21, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel21, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel21, "");
-            // 
-            // guna2PictureBox9
-            // 
-            this.guna2PictureBox9.FillColor = System.Drawing.Color.Tomato;
-            this.guna2PictureBox9.ImageRotate = 0F;
-            this.guna2PictureBox9.Location = new System.Drawing.Point(3, 2);
-            this.guna2PictureBox9.Name = "guna2PictureBox9";
-            this.guna2PictureBox9.Size = new System.Drawing.Size(37, 10);
-            this.guna2PictureBox9.TabIndex = 11;
-            this.guna2PictureBox9.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox9, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox9, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox9, "");
-            // 
-            // guna2Panel22
-            // 
-            this.guna2Panel22.BorderColor = System.Drawing.Color.Tomato;
-            this.guna2Panel22.BorderRadius = 10;
-            this.guna2Panel22.BorderThickness = 2;
-            this.guna2Panel22.Controls.Add(this.lblCau9);
-            this.guna2Panel22.FillColor = System.Drawing.Color.White;
-            this.guna2Panel22.Location = new System.Drawing.Point(3, 3);
-            this.guna2Panel22.Name = "guna2Panel22";
-            this.guna2Panel22.Padding = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.guna2Panel22.Size = new System.Drawing.Size(37, 36);
-            this.guna2Panel22.TabIndex = 10;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel22, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel22, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel22, "");
-            // 
-            // lblCau9
-            // 
-            this.lblCau9.BackColor = System.Drawing.Color.Transparent;
-            this.lblCau9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCau9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCau9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCau9.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCau9.Location = new System.Drawing.Point(3, 6);
-            this.lblCau9.Name = "lblCau9";
-            this.lblCau9.Size = new System.Drawing.Size(31, 27);
-            this.lblCau9.TabIndex = 0;
-            this.lblCau9.Text = "09";
-            this.lblCau9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuToolTip1.SetToolTip(this.lblCau9, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblCau9, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblCau9, "");
-            this.lblCau9.Click += new System.EventHandler(this.lblCau9_Click);
-            // 
-            // guna2Panel23
-            // 
-            this.guna2Panel23.Controls.Add(this.guna2PictureBox10);
-            this.guna2Panel23.Controls.Add(this.guna2Panel24);
-            this.guna2Panel23.Location = new System.Drawing.Point(52, 97);
-            this.guna2Panel23.Name = "guna2Panel23";
-            this.guna2Panel23.Size = new System.Drawing.Size(43, 41);
-            this.guna2Panel23.TabIndex = 19;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel23, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel23, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel23, "");
-            // 
-            // guna2PictureBox10
-            // 
-            this.guna2PictureBox10.FillColor = System.Drawing.Color.Tomato;
-            this.guna2PictureBox10.ImageRotate = 0F;
-            this.guna2PictureBox10.Location = new System.Drawing.Point(3, 2);
-            this.guna2PictureBox10.Name = "guna2PictureBox10";
-            this.guna2PictureBox10.Size = new System.Drawing.Size(37, 10);
-            this.guna2PictureBox10.TabIndex = 11;
-            this.guna2PictureBox10.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.guna2PictureBox10, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2PictureBox10, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2PictureBox10, "");
-            // 
-            // guna2Panel24
-            // 
-            this.guna2Panel24.BorderColor = System.Drawing.Color.Tomato;
-            this.guna2Panel24.BorderRadius = 10;
-            this.guna2Panel24.BorderThickness = 2;
-            this.guna2Panel24.Controls.Add(this.lblCau10);
-            this.guna2Panel24.FillColor = System.Drawing.Color.White;
-            this.guna2Panel24.Location = new System.Drawing.Point(3, 3);
-            this.guna2Panel24.Name = "guna2Panel24";
-            this.guna2Panel24.Padding = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.guna2Panel24.Size = new System.Drawing.Size(37, 36);
-            this.guna2Panel24.TabIndex = 10;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel24, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel24, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel24, "");
-            // 
-            // lblCau10
-            // 
-            this.lblCau10.BackColor = System.Drawing.Color.Transparent;
-            this.lblCau10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCau10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCau10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCau10.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCau10.Location = new System.Drawing.Point(3, 6);
-            this.lblCau10.Name = "lblCau10";
-            this.lblCau10.Size = new System.Drawing.Size(31, 27);
-            this.lblCau10.TabIndex = 0;
-            this.lblCau10.Text = "10";
-            this.lblCau10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuToolTip1.SetToolTip(this.lblCau10, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblCau10, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblCau10, "");
-            this.lblCau10.Click += new System.EventHandler(this.lblCau10_Click);
+            // btnCau1
+            // 
+            this.btnCau1.BackColor = System.Drawing.Color.Transparent;
+            this.btnCau1.BorderColor = System.Drawing.Color.Tomato;
+            this.btnCau1.BorderRadius = 10;
+            this.btnCau1.BorderThickness = 3;
+            this.btnCau1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnCau1.CheckedState.BorderColor = System.Drawing.Color.Tomato;
+            this.btnCau1.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.btnCau1.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCau1.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnCau1.FillColor = System.Drawing.Color.White;
+            this.btnCau1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCau1.ForeColor = System.Drawing.Color.DimGray;
+            this.btnCau1.HoverState.BorderColor = System.Drawing.Color.Salmon;
+            this.btnCau1.HoverState.FillColor = System.Drawing.Color.Salmon;
+            this.btnCau1.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnCau1.Location = new System.Drawing.Point(5, 5);
+            this.btnCau1.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCau1.Name = "btnCau1";
+            this.btnCau1.ShadowDecoration.BorderRadius = 10;
+            this.btnCau1.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
+            this.btnCau1.ShadowDecoration.Enabled = true;
+            this.btnCau1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.btnCau1.Size = new System.Drawing.Size(56, 48);
+            this.btnCau1.TabIndex = 23;
+            this.btnCau1.Text = "01";
+            this.bunifuToolTip1.SetToolTip(this.btnCau1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnCau1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnCau1, "");
+            this.btnCau1.UseTransparentBackground = true;
+            this.btnCau1.Click += new System.EventHandler(this.btnDieuHuong_Click);
+            // 
+            // guna2Button4
+            // 
+            this.guna2Button4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button4.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button4.BorderRadius = 10;
+            this.guna2Button4.BorderThickness = 3;
+            this.guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button4.CheckedState.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button4.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.guna2Button4.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button4.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button4.FillColor = System.Drawing.Color.White;
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button4.ForeColor = System.Drawing.Color.DimGray;
+            this.guna2Button4.HoverState.BorderColor = System.Drawing.Color.Salmon;
+            this.guna2Button4.HoverState.FillColor = System.Drawing.Color.Salmon;
+            this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button4.Location = new System.Drawing.Point(71, 5);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.ShadowDecoration.BorderRadius = 10;
+            this.guna2Button4.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
+            this.guna2Button4.ShadowDecoration.Enabled = true;
+            this.guna2Button4.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.guna2Button4.Size = new System.Drawing.Size(56, 48);
+            this.guna2Button4.TabIndex = 24;
+            this.guna2Button4.Text = "02";
+            this.bunifuToolTip1.SetToolTip(this.guna2Button4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button4, "");
+            this.guna2Button4.UseTransparentBackground = true;
+            this.guna2Button4.Click += new System.EventHandler(this.btnDieuHuong_Click);
+            // 
+            // guna2Button5
+            // 
+            this.guna2Button5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button5.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button5.BorderRadius = 10;
+            this.guna2Button5.BorderThickness = 3;
+            this.guna2Button5.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button5.CheckedState.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button5.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.guna2Button5.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button5.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button5.FillColor = System.Drawing.Color.White;
+            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button5.ForeColor = System.Drawing.Color.DimGray;
+            this.guna2Button5.HoverState.BorderColor = System.Drawing.Color.Salmon;
+            this.guna2Button5.HoverState.FillColor = System.Drawing.Color.Salmon;
+            this.guna2Button5.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button5.Location = new System.Drawing.Point(137, 5);
+            this.guna2Button5.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.ShadowDecoration.BorderRadius = 10;
+            this.guna2Button5.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
+            this.guna2Button5.ShadowDecoration.Enabled = true;
+            this.guna2Button5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.guna2Button5.Size = new System.Drawing.Size(56, 48);
+            this.guna2Button5.TabIndex = 25;
+            this.guna2Button5.Text = "03";
+            this.bunifuToolTip1.SetToolTip(this.guna2Button5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button5, "");
+            this.guna2Button5.UseTransparentBackground = true;
+            this.guna2Button5.Click += new System.EventHandler(this.btnDieuHuong_Click);
+            // 
+            // guna2Button6
+            // 
+            this.guna2Button6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button6.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button6.BorderRadius = 10;
+            this.guna2Button6.BorderThickness = 3;
+            this.guna2Button6.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button6.CheckedState.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button6.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.guna2Button6.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button6.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button6.FillColor = System.Drawing.Color.White;
+            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button6.ForeColor = System.Drawing.Color.DimGray;
+            this.guna2Button6.HoverState.BorderColor = System.Drawing.Color.Salmon;
+            this.guna2Button6.HoverState.FillColor = System.Drawing.Color.Salmon;
+            this.guna2Button6.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button6.Location = new System.Drawing.Point(5, 63);
+            this.guna2Button6.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button6.Name = "guna2Button6";
+            this.guna2Button6.ShadowDecoration.BorderRadius = 10;
+            this.guna2Button6.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
+            this.guna2Button6.ShadowDecoration.Enabled = true;
+            this.guna2Button6.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.guna2Button6.Size = new System.Drawing.Size(56, 48);
+            this.guna2Button6.TabIndex = 26;
+            this.guna2Button6.Text = "04";
+            this.bunifuToolTip1.SetToolTip(this.guna2Button6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button6, "");
+            this.guna2Button6.UseTransparentBackground = true;
+            this.guna2Button6.Click += new System.EventHandler(this.btnDieuHuong_Click);
+            // 
+            // guna2Button7
+            // 
+            this.guna2Button7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button7.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button7.BorderRadius = 10;
+            this.guna2Button7.BorderThickness = 3;
+            this.guna2Button7.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button7.CheckedState.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button7.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.guna2Button7.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button7.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button7.FillColor = System.Drawing.Color.White;
+            this.guna2Button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button7.ForeColor = System.Drawing.Color.DimGray;
+            this.guna2Button7.HoverState.BorderColor = System.Drawing.Color.Salmon;
+            this.guna2Button7.HoverState.FillColor = System.Drawing.Color.Salmon;
+            this.guna2Button7.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button7.Location = new System.Drawing.Point(71, 63);
+            this.guna2Button7.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button7.Name = "guna2Button7";
+            this.guna2Button7.ShadowDecoration.BorderRadius = 10;
+            this.guna2Button7.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
+            this.guna2Button7.ShadowDecoration.Enabled = true;
+            this.guna2Button7.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.guna2Button7.Size = new System.Drawing.Size(56, 48);
+            this.guna2Button7.TabIndex = 27;
+            this.guna2Button7.Text = "05";
+            this.bunifuToolTip1.SetToolTip(this.guna2Button7, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button7, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button7, "");
+            this.guna2Button7.UseTransparentBackground = true;
+            this.guna2Button7.Click += new System.EventHandler(this.btnDieuHuong_Click);
+            // 
+            // guna2Button8
+            // 
+            this.guna2Button8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button8.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button8.BorderRadius = 10;
+            this.guna2Button8.BorderThickness = 3;
+            this.guna2Button8.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button8.CheckedState.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button8.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.guna2Button8.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button8.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button8.FillColor = System.Drawing.Color.White;
+            this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button8.ForeColor = System.Drawing.Color.DimGray;
+            this.guna2Button8.HoverState.BorderColor = System.Drawing.Color.Salmon;
+            this.guna2Button8.HoverState.FillColor = System.Drawing.Color.Salmon;
+            this.guna2Button8.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button8.Location = new System.Drawing.Point(137, 63);
+            this.guna2Button8.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button8.Name = "guna2Button8";
+            this.guna2Button8.ShadowDecoration.BorderRadius = 10;
+            this.guna2Button8.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
+            this.guna2Button8.ShadowDecoration.Enabled = true;
+            this.guna2Button8.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.guna2Button8.Size = new System.Drawing.Size(56, 48);
+            this.guna2Button8.TabIndex = 28;
+            this.guna2Button8.Text = "06";
+            this.bunifuToolTip1.SetToolTip(this.guna2Button8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button8, "");
+            this.guna2Button8.UseTransparentBackground = true;
+            this.guna2Button8.Click += new System.EventHandler(this.btnDieuHuong_Click);
+            // 
+            // guna2Button9
+            // 
+            this.guna2Button9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button9.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button9.BorderRadius = 10;
+            this.guna2Button9.BorderThickness = 3;
+            this.guna2Button9.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button9.CheckedState.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button9.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.guna2Button9.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button9.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button9.FillColor = System.Drawing.Color.White;
+            this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button9.ForeColor = System.Drawing.Color.DimGray;
+            this.guna2Button9.HoverState.BorderColor = System.Drawing.Color.Salmon;
+            this.guna2Button9.HoverState.FillColor = System.Drawing.Color.Salmon;
+            this.guna2Button9.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button9.Location = new System.Drawing.Point(5, 121);
+            this.guna2Button9.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button9.Name = "guna2Button9";
+            this.guna2Button9.ShadowDecoration.BorderRadius = 10;
+            this.guna2Button9.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
+            this.guna2Button9.ShadowDecoration.Enabled = true;
+            this.guna2Button9.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.guna2Button9.Size = new System.Drawing.Size(56, 48);
+            this.guna2Button9.TabIndex = 29;
+            this.guna2Button9.Text = "07";
+            this.bunifuToolTip1.SetToolTip(this.guna2Button9, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button9, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button9, "");
+            this.guna2Button9.UseTransparentBackground = true;
+            this.guna2Button9.Click += new System.EventHandler(this.btnDieuHuong_Click);
+            // 
+            // guna2Button10
+            // 
+            this.guna2Button10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button10.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button10.BorderRadius = 10;
+            this.guna2Button10.BorderThickness = 3;
+            this.guna2Button10.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button10.CheckedState.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button10.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.guna2Button10.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button10.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button10.FillColor = System.Drawing.Color.White;
+            this.guna2Button10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button10.ForeColor = System.Drawing.Color.DimGray;
+            this.guna2Button10.HoverState.BorderColor = System.Drawing.Color.Salmon;
+            this.guna2Button10.HoverState.FillColor = System.Drawing.Color.Salmon;
+            this.guna2Button10.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button10.Location = new System.Drawing.Point(71, 121);
+            this.guna2Button10.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button10.Name = "guna2Button10";
+            this.guna2Button10.ShadowDecoration.BorderRadius = 10;
+            this.guna2Button10.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
+            this.guna2Button10.ShadowDecoration.Enabled = true;
+            this.guna2Button10.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.guna2Button10.Size = new System.Drawing.Size(56, 48);
+            this.guna2Button10.TabIndex = 30;
+            this.guna2Button10.Text = "08";
+            this.bunifuToolTip1.SetToolTip(this.guna2Button10, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button10, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button10, "");
+            this.guna2Button10.UseTransparentBackground = true;
+            this.guna2Button10.Click += new System.EventHandler(this.btnDieuHuong_Click);
+            // 
+            // guna2Button11
+            // 
+            this.guna2Button11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button11.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button11.BorderRadius = 10;
+            this.guna2Button11.BorderThickness = 3;
+            this.guna2Button11.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button11.CheckedState.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button11.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.guna2Button11.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button11.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button11.FillColor = System.Drawing.Color.White;
+            this.guna2Button11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button11.ForeColor = System.Drawing.Color.DimGray;
+            this.guna2Button11.HoverState.BorderColor = System.Drawing.Color.Salmon;
+            this.guna2Button11.HoverState.FillColor = System.Drawing.Color.Salmon;
+            this.guna2Button11.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button11.Location = new System.Drawing.Point(137, 121);
+            this.guna2Button11.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button11.Name = "guna2Button11";
+            this.guna2Button11.ShadowDecoration.BorderRadius = 10;
+            this.guna2Button11.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
+            this.guna2Button11.ShadowDecoration.Enabled = true;
+            this.guna2Button11.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.guna2Button11.Size = new System.Drawing.Size(56, 48);
+            this.guna2Button11.TabIndex = 31;
+            this.guna2Button11.Text = "09";
+            this.bunifuToolTip1.SetToolTip(this.guna2Button11, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button11, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button11, "");
+            this.guna2Button11.UseTransparentBackground = true;
+            this.guna2Button11.Click += new System.EventHandler(this.btnDieuHuong_Click);
+            // 
+            // guna2Button12
+            // 
+            this.guna2Button12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button12.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button12.BorderRadius = 10;
+            this.guna2Button12.BorderThickness = 3;
+            this.guna2Button12.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button12.CheckedState.BorderColor = System.Drawing.Color.Tomato;
+            this.guna2Button12.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.guna2Button12.CheckedState.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button12.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button12.FillColor = System.Drawing.Color.White;
+            this.guna2Button12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button12.ForeColor = System.Drawing.Color.DimGray;
+            this.guna2Button12.HoverState.BorderColor = System.Drawing.Color.Salmon;
+            this.guna2Button12.HoverState.FillColor = System.Drawing.Color.Salmon;
+            this.guna2Button12.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button12.Location = new System.Drawing.Point(5, 179);
+            this.guna2Button12.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Button12.Name = "guna2Button12";
+            this.guna2Button12.ShadowDecoration.BorderRadius = 10;
+            this.guna2Button12.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
+            this.guna2Button12.ShadowDecoration.Enabled = true;
+            this.guna2Button12.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.guna2Button12.Size = new System.Drawing.Size(56, 48);
+            this.guna2Button12.TabIndex = 32;
+            this.guna2Button12.Text = "10";
+            this.bunifuToolTip1.SetToolTip(this.guna2Button12, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button12, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button12, "");
+            this.guna2Button12.UseTransparentBackground = true;
+            this.guna2Button12.Click += new System.EventHandler(this.btnDieuHuong_Click);
             // 
             // pictureBox2
             // 
@@ -926,33 +611,31 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTipIcon(this.pictureBox2, null);
             this.bunifuToolTip1.SetToolTipTitle(this.pictureBox2, "");
             // 
-            // guna2Button3
+            // btnCauTruoc
             // 
-            this.guna2Button3.BorderRadius = 6;
-            this.guna2Button3.FillColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.LightSkyBlue;
-            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.ImageSize = new System.Drawing.Size(15, 15);
-            this.guna2Button3.Location = new System.Drawing.Point(32, 19);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(39, 28);
-            this.guna2Button3.TabIndex = 3;
-            this.bunifuToolTip1.SetToolTip(this.guna2Button3, "Quay về câu trước");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button3, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button3, "");
+            this.btnCauTruoc.BorderRadius = 6;
+            this.btnCauTruoc.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnCauTruoc.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
+            this.btnCauTruoc.ForeColor = System.Drawing.Color.White;
+            this.btnCauTruoc.HoverState.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.btnCauTruoc.Image = ((System.Drawing.Image)(resources.GetObject("btnCauTruoc.Image")));
+            this.btnCauTruoc.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnCauTruoc.Location = new System.Drawing.Point(32, 19);
+            this.btnCauTruoc.Name = "btnCauTruoc";
+            this.btnCauTruoc.Size = new System.Drawing.Size(39, 28);
+            this.btnCauTruoc.TabIndex = 3;
+            this.bunifuToolTip1.SetToolTip(this.btnCauTruoc, "Quay về câu trước");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnCauTruoc, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnCauTruoc, "");
+            this.btnCauTruoc.Click += new System.EventHandler(this.btnCauTruoc_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.guna2Panel7);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.guna2Panel5);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.guna2Panel2);
-            this.panel1.Controls.Add(this.guna2Button2);
-            this.panel1.Controls.Add(this.guna2Button3);
+            this.panel1.Controls.Add(this.btnCauSau);
+            this.panel1.Controls.Add(this.btnCauTruoc);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -961,6 +644,99 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTip(this.panel1, "");
             this.bunifuToolTip1.SetToolTipIcon(this.panel1, null);
             this.bunifuToolTip1.SetToolTipTitle(this.panel1, "");
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.Controls.Add(this.guna2Panel8);
+            this.guna2Panel7.Controls.Add(this.lblSoCauHoanThanh);
+            this.guna2Panel7.Controls.Add(this.guna2Panel6);
+            this.guna2Panel7.Location = new System.Drawing.Point(347, 19);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(248, 24);
+            this.guna2Panel7.TabIndex = 44;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel7, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel7, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel7, "");
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.Controls.Add(this.label6);
+            this.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2Panel8.Location = new System.Drawing.Point(192, 0);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.Size = new System.Drawing.Size(39, 24);
+            this.guna2Panel8.TabIndex = 43;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel8, "");
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.Gray;
+            this.label6.Location = new System.Drawing.Point(0, 1);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 19);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "câu";
+            this.bunifuToolTip1.SetToolTip(this.label6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label6, "");
+            // 
+            // lblSoCauHoanThanh
+            // 
+            this.lblSoCauHoanThanh.AutoSize = true;
+            this.lblSoCauHoanThanh.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblSoCauHoanThanh.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSoCauHoanThanh.ForeColor = System.Drawing.Color.Orange;
+            this.lblSoCauHoanThanh.Location = new System.Drawing.Point(146, 0);
+            this.lblSoCauHoanThanh.Name = "lblSoCauHoanThanh";
+            this.lblSoCauHoanThanh.Size = new System.Drawing.Size(46, 21);
+            this.lblSoCauHoanThanh.TabIndex = 46;
+            this.lblSoCauHoanThanh.Text = "0/10";
+            this.lblSoCauHoanThanh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuToolTip1.SetToolTip(this.lblSoCauHoanThanh, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblSoCauHoanThanh, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblSoCauHoanThanh, "");
+            // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.Controls.Add(this.label4);
+            this.guna2Panel6.Controls.Add(this.guna2Panel5);
+            this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2Panel6.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.Size = new System.Drawing.Size(146, 24);
+            this.guna2Panel6.TabIndex = 45;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel6, "");
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(18, 2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 19);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "Bạn đã hoàn thành";
+            this.bunifuToolTip1.SetToolTip(this.label4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label4, "");
+            // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.FillColor = System.Drawing.Color.Orange;
+            this.guna2Panel5.Location = new System.Drawing.Point(3, 4);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.Size = new System.Drawing.Size(10, 16);
+            this.guna2Panel5.TabIndex = 39;
+            this.bunifuToolTip1.SetToolTip(this.guna2Panel5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel5, "");
             // 
             // button1
             // 
@@ -975,66 +751,12 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // guna2Panel5
-            // 
-            this.guna2Panel5.FillColor = System.Drawing.Color.Orange;
-            this.guna2Panel5.Location = new System.Drawing.Point(347, 23);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(10, 16);
-            this.guna2Panel5.TabIndex = 39;
-            this.bunifuToolTip1.SetToolTip(this.guna2Panel5, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel5, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel5, "");
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(534, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 19);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "câu";
-            this.bunifuToolTip1.SetToolTip(this.label6, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.label6, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.label6, "");
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(362, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 19);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "Bạn đã hoàn thành";
-            this.bunifuToolTip1.SetToolTip(this.label4, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.label4, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.label4, "");
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.Orange;
-            this.label3.Location = new System.Drawing.Point(487, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 21);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "0/30";
-            this.bunifuToolTip1.SetToolTip(this.label3, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.label3, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.label3, "");
-            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.guna2Panel2.BorderRadius = 20;
-            this.guna2Panel2.Controls.Add(this.lblFake);
-            this.guna2Panel2.Controls.Add(this.lblKetQuaTraLoi);
+            this.guna2Panel2.Controls.Add(this.lblDapAnDung);
             this.guna2Panel2.Controls.Add(this.btnD);
             this.guna2Panel2.Controls.Add(this.btnC);
             this.guna2Panel2.Controls.Add(this.btnB);
@@ -1054,22 +776,17 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel2, null);
             this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel2, "");
             // 
-            // lblKetQuaTraLoi
+            // lblDapAnDung
             // 
-            this.lblKetQuaTraLoi.AutoSize = true;
-            this.lblKetQuaTraLoi.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblKetQuaTraLoi.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.lblKetQuaTraLoi.ForeColor = System.Drawing.Color.DimGray;
-            this.lblKetQuaTraLoi.Location = new System.Drawing.Point(159, 407);
-            this.lblKetQuaTraLoi.Name = "lblKetQuaTraLoi";
-            this.lblKetQuaTraLoi.Size = new System.Drawing.Size(130, 25);
-            this.lblKetQuaTraLoi.TabIndex = 41;
-            this.lblKetQuaTraLoi.Text = "Kết quả trả lời";
-            this.lblKetQuaTraLoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuToolTip1.SetToolTip(this.lblKetQuaTraLoi, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblKetQuaTraLoi, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblKetQuaTraLoi, "");
-            this.lblKetQuaTraLoi.Visible = false;
+            this.lblDapAnDung.AutoSize = true;
+            this.lblDapAnDung.Location = new System.Drawing.Point(29, 415);
+            this.lblDapAnDung.Name = "lblDapAnDung";
+            this.lblDapAnDung.Size = new System.Drawing.Size(10, 13);
+            this.lblDapAnDung.TabIndex = 42;
+            this.lblDapAnDung.Text = ".";
+            this.bunifuToolTip1.SetToolTip(this.lblDapAnDung, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblDapAnDung, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblDapAnDung, "");
             // 
             // btnD
             // 
@@ -1244,22 +961,23 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTipIcon(this.txtCauHoi, null);
             this.bunifuToolTip1.SetToolTipTitle(this.txtCauHoi, "");
             // 
-            // guna2Button2
+            // btnCauSau
             // 
-            this.guna2Button2.BorderRadius = 6;
-            this.guna2Button2.FillColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.LightSkyBlue;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.ImageSize = new System.Drawing.Size(15, 15);
-            this.guna2Button2.Location = new System.Drawing.Point(76, 19);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(39, 28);
-            this.guna2Button2.TabIndex = 3;
-            this.bunifuToolTip1.SetToolTip(this.guna2Button2, "Chuyển đến câu sau");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button2, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button2, "");
+            this.btnCauSau.BorderRadius = 6;
+            this.btnCauSau.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnCauSau.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
+            this.btnCauSau.ForeColor = System.Drawing.Color.White;
+            this.btnCauSau.HoverState.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.btnCauSau.Image = ((System.Drawing.Image)(resources.GetObject("btnCauSau.Image")));
+            this.btnCauSau.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnCauSau.Location = new System.Drawing.Point(76, 19);
+            this.btnCauSau.Name = "btnCauSau";
+            this.btnCauSau.Size = new System.Drawing.Size(39, 28);
+            this.btnCauSau.TabIndex = 3;
+            this.bunifuToolTip1.SetToolTip(this.btnCauSau, "Chuyển đến câu sau");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnCauSau, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnCauSau, "");
+            this.btnCauSau.Click += new System.EventHandler(this.btnCauSau_Click);
             // 
             // bunifuToolTip1
             // 
@@ -1301,19 +1019,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.timerCountDown.Interval = 1000;
             this.timerCountDown.Tick += new System.EventHandler(this.timerCountDown_Tick);
             // 
-            // lblFake
-            // 
-            this.lblFake.AutoSize = true;
-            this.lblFake.Location = new System.Drawing.Point(29, 415);
-            this.lblFake.Name = "lblFake";
-            this.lblFake.Size = new System.Drawing.Size(10, 13);
-            this.lblFake.TabIndex = 42;
-            this.lblFake.Text = ".";
-            this.bunifuToolTip1.SetToolTip(this.lblFake, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblFake, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblFake, "");
-            this.lblFake.Visible = false;
-            // 
             // UC_MiniGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1334,39 +1039,14 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.flpDieuHuong.ResumeLayout(false);
-            this.guna2Panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.pnNen.ResumeLayout(false);
-            this.guna2Panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            this.guna2Panel8.ResumeLayout(false);
-            this.guna2Panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            this.guna2Panel10.ResumeLayout(false);
-            this.guna2Panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
-            this.guna2Panel12.ResumeLayout(false);
-            this.guna2Panel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
-            this.guna2Panel14.ResumeLayout(false);
-            this.guna2Panel15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
-            this.panel19.ResumeLayout(false);
-            this.guna2Panel17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).EndInit();
-            this.guna2Panel18.ResumeLayout(false);
-            this.guna2Panel19.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
-            this.guna2Panel20.ResumeLayout(false);
-            this.guna2Panel21.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
-            this.guna2Panel22.ResumeLayout(false);
-            this.guna2Panel23.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).EndInit();
-            this.guna2Panel24.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.guna2Panel7.ResumeLayout(false);
+            this.guna2Panel7.PerformLayout();
+            this.guna2Panel8.ResumeLayout(false);
+            this.guna2Panel8.PerformLayout();
+            this.guna2Panel6.ResumeLayout(false);
+            this.guna2Panel6.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
@@ -1392,63 +1072,35 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         private Guna.UI2.WinForms.Guna2Button btnB;
         private System.Windows.Forms.FlowLayoutPanel flpDieuHuong;
         private Guna.UI2.WinForms.Guna2Button btnThoat;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2Button btnCauTruoc;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblThoiGian;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2Button btnHoanThanh;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnCauSau;
         private System.Windows.Forms.Timer timerCountDown;
         private System.Windows.Forms.Button button1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2Panel pnNen;
-        private System.Windows.Forms.Label lblCau1;
+        private System.Windows.Forms.Label lblDapAnDung;
+        private Guna.UI2.WinForms.Guna2Button btnCau1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private Guna.UI2.WinForms.Guna2Button guna2Button7;
+        private Guna.UI2.WinForms.Guna2Button guna2Button8;
+        private Guna.UI2.WinForms.Guna2Button guna2Button9;
+        private Guna.UI2.WinForms.Guna2Button guna2Button10;
+        private Guna.UI2.WinForms.Guna2Button guna2Button11;
+        private Guna.UI2.WinForms.Guna2Button guna2Button12;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private System.Windows.Forms.Label lblSoCauHoanThanh;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        private System.Windows.Forms.Label lblCau2;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
-        private System.Windows.Forms.Label lblCau3;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
-        private System.Windows.Forms.Label lblCau4;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel14;
-        private System.Windows.Forms.Label lblCau5;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
-        private Guna.UI2.WinForms.Guna2Panel panel19;
-        private System.Windows.Forms.Label lblCau6;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel17;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox7;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel18;
-        private System.Windows.Forms.Label lblCau7;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel19;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox8;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel20;
-        private System.Windows.Forms.Label lblCau8;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel21;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox9;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel22;
-        private System.Windows.Forms.Label lblCau9;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel23;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox10;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel24;
-        private System.Windows.Forms.Label lblCau10;
-        private System.Windows.Forms.Label lblKetQuaTraLoi;
-        private System.Windows.Forms.Label lblFake;
+        private System.Windows.Forms.Label label6;
     }
 }

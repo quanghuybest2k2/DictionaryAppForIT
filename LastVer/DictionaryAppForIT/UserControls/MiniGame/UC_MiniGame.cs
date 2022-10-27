@@ -27,8 +27,9 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         SoundPlayer DemNguoc15s;
         SoundPlayer NhacHetGio;
         // tra loi
-        public int diem = 0;
-        public string traLoi = ""; //((Button)sender).Text;
+        public int soCauHoanThanh = 0;
+        public string dapAnDung = "";
+        public string cauTraLoi = "";
         //CauHoiVaDapAn ClassCauHoiVaDapAn = new CauHoiVaDapAn();
         DanhSachCauHoi ClassDanhSachCauHoi = new DanhSachCauHoi();
 
@@ -42,7 +43,8 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             //nhacNen.PlayLooping();
             //LoadCauHoi();
             ClassDanhSachCauHoi.LoadDSCauHoi();
-            lblCau1_Click(sender, e);
+            btnDieuHuong_Click(btnCau1, e);
+            btnCau1.Checked = true;
 
         }
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -110,11 +112,13 @@ namespace DictionaryAppForIT.UserControls.MiniGame
 
         private void btnHoanThanh_Click(object sender, EventArgs e)
         {
+
             var frmXacNhan = new frmMSG_XacNhan("Bạn có chắc chắn là muốn hoàn thành lượt chơi không?");
             if (frmXacNhan.ShowDialog() == DialogResult.OK)
             {
                 frmXacNhan.Close();
-                var frmHoanThanh = new frmMSG_HoanThanh("Bạn đã hoàn thành lượt chơi!");
+                //var frmHoanThanh = new frmMSG_HoanThanh("Bạn đã hoàn thành lượt chơi!");
+                var frmHoanThanh = new frmMSG_HoanThanh("Tổng điểm: " + TongDiem());
                 frmHoanThanh.HoanThanh = true;
                 frmHoanThanh.Show();
             }
@@ -132,84 +136,114 @@ namespace DictionaryAppForIT.UserControls.MiniGame
 
         private void HienThiCauHoi(int index)
         {
-            lblStt.Text = "0" + ClassDanhSachCauHoi._list[index].Stt.ToString();
+            if (ClassDanhSachCauHoi._list[index].Stt < 10)
+            {
+                lblStt.Text = "0" + ClassDanhSachCauHoi._list[index].Stt.ToString();
+            }
+            else
+            {
+                lblStt.Text = ClassDanhSachCauHoi._list[index].Stt.ToString();
+
+            }
             txtCauHoi.Text = $"Bạn còn nhớ nghĩa của từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()} không?";
             var rnd = new Random();
             var numbers = Enumerable.Range(0, 4).OrderBy(x => rnd.Next()).Take(4).ToList();
             // them dap an dung vao list
             ClassDanhSachCauHoi._list[index].DapAnRandom.Add(ClassDanhSachCauHoi._list[index].DapAnDung);
             // 4 dap an
+
             btnA.Text = ClassDanhSachCauHoi._list[index].DapAnRandom[numbers[0]];
+            HienThiCauTraLoi(btnA, ClassDanhSachCauHoi._list[index].CauTraLoi);
             btnB.Text = ClassDanhSachCauHoi._list[index].DapAnRandom[numbers[1]];
+            HienThiCauTraLoi(btnB, ClassDanhSachCauHoi._list[index].CauTraLoi);
             btnC.Text = ClassDanhSachCauHoi._list[index].DapAnRandom[numbers[2]];
+            HienThiCauTraLoi(btnC, ClassDanhSachCauHoi._list[index].CauTraLoi);
             btnD.Text = ClassDanhSachCauHoi._list[index].DapAnRandom[numbers[3]];
-            lblFake.Text = ClassDanhSachCauHoi._list[index].DapAnDung;
-            
+            HienThiCauTraLoi(btnD, ClassDanhSachCauHoi._list[index].CauTraLoi);
+            lblDapAnDung.Text = ClassDanhSachCauHoi._list[index].DapAnDung;
+
         }
 
-        private void lblCau1_Click(object sender, EventArgs e)
-        {
-            HienThiCauHoi(0);
-        }
 
-        private void lblCau2_Click(object sender, EventArgs e)
-        {
-            HienThiCauHoi(1);
-        }
 
-        private void lblCau3_Click(object sender, EventArgs e)
+        private void HienThiCauTraLoi(Guna2Button btn, string cauTraLoi)
         {
-            HienThiCauHoi(2);
-        }
-
-        private void lblCau4_Click(object sender, EventArgs e)
-        {
-            HienThiCauHoi(3);
-        }
-
-        private void lblCau5_Click(object sender, EventArgs e)
-        {
-            HienThiCauHoi(4);
-        }
-
-        private void lblCau6_Click(object sender, EventArgs e)
-        {
-            HienThiCauHoi(5);
-        }
-
-        private void lblCau7_Click(object sender, EventArgs e)
-        {
-            HienThiCauHoi(6);
-        }
-
-        private void lblCau8_Click(object sender, EventArgs e)
-        {
-            HienThiCauHoi(7);
-        }
-
-        private void lblCau9_Click(object sender, EventArgs e)
-        {
-            HienThiCauHoi(8);
-        }
-
-        private void lblCau10_Click(object sender, EventArgs e)
-        {
-            HienThiCauHoi(9);
+            if (btn.Text == cauTraLoi)
+            {
+                btn.Checked = true;
+            }
+            else
+            {
+                btn.Checked = false;
+            }
         }
 
         private void traloi_click(object sender, EventArgs e)
         {
-            traLoi = (sender as Guna2Button).Text;// gắn text của button chọn
-            // kiem tra cau tra loi
-            if (traLoi == lblFake.Text)
+
+            string num = lblStt.Text;
+            int index = Convert.ToInt32(num);
+            index--;
+            dapAnDung = (sender as Guna2Button).Text;// gắn text của button chọn
+            ClassDanhSachCauHoi._list[index].CauTraLoi = (sender as Guna2Button).Text;// gắn text của button chọn
+            ClassDanhSachCauHoi._list[index].DaTraLoi = true;
+            if (dapAnDung == lblDapAnDung.Text)
             {
-                lblKetQuaTraLoi.Visible = true;
-                lblKetQuaTraLoi.Text = "Câu trả lời chính xác!";
+                ClassDanhSachCauHoi._list[index].TraLoiDung = true;
             }
             else
             {
-                lblKetQuaTraLoi.Visible = true;
-                lblKetQuaTraLoi.Text = "Sai rồi, tiếc thật!";
+                ClassDanhSachCauHoi._list[index].TraLoiDung = false;
+            }
+            lblSoCauHoanThanh.Text = SoCauHoanThanh() + "/10";
+        }
+
+        private string TongDiem()
+        {
+            int sum = 0;
+            foreach (var item in ClassDanhSachCauHoi._list)
+            {
+                if (item.TraLoiDung)
+                {
+                    sum += 1;
+                }
+            }
+            return sum.ToString();
+        }
+
+        private string SoCauHoanThanh()
+        {
+            int sum = 0;
+            foreach (var item in ClassDanhSachCauHoi._list)
+            {
+                if (item.DaTraLoi)
+                {
+                    sum += 1;
+                }
+            }
+            return sum.ToString();
+        }
+
+        private void btnDieuHuong_Click(object sender, EventArgs e)
+        {
+            int num = Convert.ToInt32((sender as Guna2Button).Text);
+            HienThiCauHoi(--num);
+            //MessageBox.Show(num.ToString(), ClassDanhSachCauHoi._list.Count().ToString());
+        }
+        private void btnCauTruoc_Click(object sender, EventArgs e)
+        {
+            int num = Convert.ToInt32(lblStt.Text);
+            if (num >= 2)
+            {
+                HienThiCauHoi(num - 2);
+            }
+        }
+        private void btnCauSau_Click(object sender, EventArgs e)
+        {
+            int num = Convert.ToInt32(lblStt.Text);
+            if (num < 10)
+            {
+                HienThiCauHoi(num);
             }
         }
     }

@@ -13,6 +13,9 @@ namespace DictionaryAppForIT.UserControls.MiniGame
 {
     public class CauHoiVaDapAn
     {
+        public bool DaTraLoi;
+        public bool TraLoiDung;
+        public string CauTraLoi { get; set; }
         public int Stt { get; set; }
         public string TuVung { get; set; }
         public string DapAnDung { get; set; }
@@ -22,6 +25,9 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         public CauHoiVaDapAn()
         {
             DapAnRandom = new List<string>();
+            CauTraLoi = "";
+            TraLoiDung = false;
+            DaTraLoi = false;
         }
 
         public CauHoiVaDapAn(int stt, string tuVung, string dapAnDung)

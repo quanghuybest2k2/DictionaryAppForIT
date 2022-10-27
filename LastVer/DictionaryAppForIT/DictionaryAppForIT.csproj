@@ -312,12 +312,6 @@
     </Compile>
     <Compile Include="UserControls\MiniGame\CauHoiVaDapAn.cs" />
     <Compile Include="UserControls\MiniGame\DanhSachCauHoi.cs" />
-    <Compile Include="UserControls\MiniGame\UC_DanhSachMiniGame.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\MiniGame\UC_DanhSachMiniGame.Designer.cs">
-      <DependentUpon>UC_DanhSachMiniGame.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\MiniGame\UC_MG_BtnDieuHuong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -329,12 +323,6 @@
     </Compile>
     <Compile Include="UserControls\MiniGame\UC_MiniGame.Designer.cs">
       <DependentUpon>UC_MiniGame.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\MiniGame\UC_LayoutMiniGame.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\MiniGame\UC_LayoutMiniGame.Designer.cs">
-      <DependentUpon>UC_LayoutMiniGame.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MiniGame\UC_StartMiniGame.cs">
       <SubType>UserControl</SubType>
@@ -487,17 +475,11 @@
     <EmbeddedResource Include="UserControls\LichSu\UC_LS_VanBan.resx">
       <DependentUpon>UC_LS_VanBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MiniGame\UC_DanhSachMiniGame.resx">
-      <DependentUpon>UC_DanhSachMiniGame.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MiniGame\UC_MG_BtnDieuHuong.resx">
       <DependentUpon>UC_MG_BtnDieuHuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MiniGame\UC_MiniGame.resx">
       <DependentUpon>UC_MiniGame.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MiniGame\UC_LayoutMiniGame.resx">
-      <DependentUpon>UC_LayoutMiniGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MiniGame\UC_StartMiniGame.resx">
       <DependentUpon>UC_StartMiniGame.cs</DependentUpon>
