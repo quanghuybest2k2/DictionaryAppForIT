@@ -44,14 +44,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         private void txtGhiChu_TextChanged(object sender, EventArgs e)
         {
             txtGhiChu.Text = txtGhiChu.Text.Replace(Environment.NewLine, "");
-            if(txtGhiChu.Text.Length > 115)
-            {
-                RJMessageBox.Show("Vượt quá số ký tự nhập! Vui lòng thử lại.");
-            }
-            else
-            {
-                tsslSoKyTuNhap.Text = "Số ký tự nhập: " + txtGhiChu.Text.Length.ToString() + "/" + maxKiTuNhap;
-            }
+            tsslSoKyTuNhap.Text = "Số ký tự nhập: " + txtGhiChu.Text.Length.ToString() + "/" + maxKiTuNhap;
         }
 
         private void UC_YT_GhiChu_Load(object sender, EventArgs e)
@@ -92,7 +85,15 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         {
             if (e.KeyCode == Keys.Enter)
             {
-                CapNhatGhiChu();
+                if (txtGhiChu.Text.Length > 115)
+                {
+                    RJMessageBox.Show("Vượt quá số ký tự nhập! Vui lòng thử lại.");
+                    return;
+                }
+                else
+                {
+                    CapNhatGhiChu();
+                }
             }
         }
 

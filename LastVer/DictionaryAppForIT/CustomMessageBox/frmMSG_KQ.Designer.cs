@@ -39,22 +39,23 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.pnThanhTich = new System.Windows.Forms.Panel();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblTongDiem = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblThoiGianLam = new System.Windows.Forms.Label();
+            this.lblSoCauChuaLam = new System.Windows.Forms.Label();
+            this.lblSoCauSai = new System.Windows.Forms.Label();
+            this.lblSoCauDung = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblDanhGia = new System.Windows.Forms.Label();
-            this.btnOK = new Guna.UI2.WinForms.Guna2Button();
+            this.btnChoiLai = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -89,17 +90,18 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.guna2Panel1.Controls.Add(this.pnThanhTich);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox4);
             this.guna2Panel1.Controls.Add(this.lblTongDiem);
-            this.guna2Panel1.Controls.Add(this.label11);
-            this.guna2Panel1.Controls.Add(this.label9);
-            this.guna2Panel1.Controls.Add(this.label8);
-            this.guna2Panel1.Controls.Add(this.label3);
+            this.guna2Panel1.Controls.Add(this.lblThoiGianLam);
+            this.guna2Panel1.Controls.Add(this.lblSoCauChuaLam);
+            this.guna2Panel1.Controls.Add(this.lblSoCauSai);
+            this.guna2Panel1.Controls.Add(this.lblSoCauDung);
             this.guna2Panel1.Controls.Add(this.label13);
             this.guna2Panel1.Controls.Add(this.label10);
             this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.Controls.Add(this.label5);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.lblDanhGia);
-            this.guna2Panel1.Controls.Add(this.btnOK);
+            this.guna2Panel1.Controls.Add(this.btnThoat);
+            this.guna2Panel1.Controls.Add(this.btnChoiLai);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox5);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(218, 77);
@@ -179,49 +181,49 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.lblTongDiem.Text = "Điểm";
             this.lblTongDiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label11
+            // lblThoiGianLam
             // 
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Tomato;
-            this.label11.Location = new System.Drawing.Point(319, 157);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 26);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "20m45s";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblThoiGianLam.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThoiGianLam.ForeColor = System.Drawing.Color.Tomato;
+            this.lblThoiGianLam.Location = new System.Drawing.Point(319, 157);
+            this.lblThoiGianLam.Name = "lblThoiGianLam";
+            this.lblThoiGianLam.Size = new System.Drawing.Size(102, 26);
+            this.lblThoiGianLam.TabIndex = 1;
+            this.lblThoiGianLam.Text = "20m45s";
+            this.lblThoiGianLam.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label9
+            // lblSoCauChuaLam
             // 
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Tomato;
-            this.label9.Location = new System.Drawing.Point(388, 130);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(33, 26);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "0";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSoCauChuaLam.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoCauChuaLam.ForeColor = System.Drawing.Color.Tomato;
+            this.lblSoCauChuaLam.Location = new System.Drawing.Point(388, 130);
+            this.lblSoCauChuaLam.Name = "lblSoCauChuaLam";
+            this.lblSoCauChuaLam.Size = new System.Drawing.Size(33, 26);
+            this.lblSoCauChuaLam.TabIndex = 1;
+            this.lblSoCauChuaLam.Text = "0";
+            this.lblSoCauChuaLam.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label8
+            // lblSoCauSai
             // 
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Tomato;
-            this.label8.Location = new System.Drawing.Point(388, 104);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 26);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "0";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSoCauSai.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoCauSai.ForeColor = System.Drawing.Color.Tomato;
+            this.lblSoCauSai.Location = new System.Drawing.Point(388, 104);
+            this.lblSoCauSai.Name = "lblSoCauSai";
+            this.lblSoCauSai.Size = new System.Drawing.Size(33, 26);
+            this.lblSoCauSai.TabIndex = 1;
+            this.lblSoCauSai.Text = "0";
+            this.lblSoCauSai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label3
+            // lblSoCauDung
             // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Tomato;
-            this.label3.Location = new System.Drawing.Point(388, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 26);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "50";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSoCauDung.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoCauDung.ForeColor = System.Drawing.Color.Tomato;
+            this.lblSoCauDung.Location = new System.Drawing.Point(388, 78);
+            this.lblSoCauDung.Name = "lblSoCauDung";
+            this.lblSoCauDung.Size = new System.Drawing.Size(33, 26);
+            this.lblSoCauDung.TabIndex = 1;
+            this.lblSoCauDung.Text = "10";
+            this.lblSoCauDung.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label13
             // 
@@ -284,21 +286,21 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.lblDanhGia.Text = "Đánh giá";
             this.lblDanhGia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnOK
+            // btnChoiLai
             // 
-            this.btnOK.Animated = true;
-            this.btnOK.BorderRadius = 10;
-            this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.HoverState.FillColor = System.Drawing.Color.Orange;
-            this.btnOK.Location = new System.Drawing.Point(177, 284);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(103, 38);
-            this.btnOK.TabIndex = 0;
-            this.btnOK.Text = "OK";
-            this.btnOK.Click += new System.EventHandler(this.pbClose_Click);
+            this.btnChoiLai.Animated = true;
+            this.btnChoiLai.BorderRadius = 10;
+            this.btnChoiLai.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChoiLai.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnChoiLai.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChoiLai.ForeColor = System.Drawing.Color.White;
+            this.btnChoiLai.HoverState.FillColor = System.Drawing.Color.Orange;
+            this.btnChoiLai.Location = new System.Drawing.Point(119, 284);
+            this.btnChoiLai.Name = "btnChoiLai";
+            this.btnChoiLai.Size = new System.Drawing.Size(103, 38);
+            this.btnChoiLai.TabIndex = 0;
+            this.btnChoiLai.Text = "Chơi lại";
+            this.btnChoiLai.Click += new System.EventHandler(this.btnChoiLai_Click);
             // 
             // guna2PictureBox5
             // 
@@ -339,6 +341,22 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.guna2DragControl3.TargetControl = this.guna2Panel1;
             this.guna2DragControl3.UseTransparentDrag = true;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Animated = true;
+            this.btnThoat.BorderRadius = 10;
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThoat.FillColor = System.Drawing.Color.DarkGray;
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.HoverState.FillColor = System.Drawing.Color.Gray;
+            this.btnThoat.Location = new System.Drawing.Point(241, 284);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(103, 38);
+            this.btnThoat.TabIndex = 0;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.pbClose_Click);
+            // 
             // frmMSG_KQ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,6 +371,7 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMSG_Score";
             this.TransparencyKey = System.Drawing.Color.Pink;
+            this.Load += new System.EventHandler(this.frmMSG_KQ_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
@@ -369,16 +388,16 @@ namespace DictionaryAppForIT.CustomMessageBox
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private System.Windows.Forms.Label lblTongDiem;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblThoiGianLam;
+        private System.Windows.Forms.Label lblSoCauChuaLam;
+        private System.Windows.Forms.Label lblSoCauSai;
+        private System.Windows.Forms.Label lblSoCauDung;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblDanhGia;
-        private Guna.UI2.WinForms.Guna2Button btnOK;
+        private Guna.UI2.WinForms.Guna2Button btnChoiLai;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label14;
@@ -389,5 +408,6 @@ namespace DictionaryAppForIT.CustomMessageBox
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private System.Windows.Forms.Panel pnThanhTich;
+        private Guna.UI2.WinForms.Guna2Button btnThoat;
     }
 }

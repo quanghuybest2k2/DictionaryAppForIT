@@ -43,18 +43,18 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2CirclePictureBox6 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.guna2CirclePictureBox5 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnBatDau = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.pnStartMiniGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -168,17 +168,17 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Panel1.BorderColor = System.Drawing.Color.Orange;
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.BorderThickness = 5;
+            this.guna2Panel1.Controls.Add(this.label6);
+            this.guna2Panel1.Controls.Add(this.label5);
+            this.guna2Panel1.Controls.Add(this.label4);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox6);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox4);
-            this.guna2Panel1.Controls.Add(this.textBox3);
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Controls.Add(this.textBox2);
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox5);
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox1);
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox3);
-            this.guna2Panel1.Controls.Add(this.textBox1);
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox2);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox6);
             this.guna2Panel1.FillColor = System.Drawing.Color.LemonChiffon;
@@ -235,20 +235,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2CirclePictureBox4.TabStop = false;
             this.guna2CirclePictureBox4.UseTransparentBackground = true;
             // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.LemonChiffon;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(85, 164);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(276, 57);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "Bạn nên sử dụng trí nhớ của mình, không nên sử dụng chức năng Tra từ và Dịch của " +
-    "ứng dụng";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -260,19 +246,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.label1.Size = new System.Drawing.Size(27, 20);
             this.label1.TabIndex = 83;
             this.label1.Text = "01";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.LemonChiffon;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(85, 111);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(276, 39);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "Có tổng cộng 10 câu hỏi dạng trắc nghiệm và bạn có 5 phút để hoàn thành";
             // 
             // guna2CirclePictureBox5
             // 
@@ -311,19 +284,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2CirclePictureBox3.TabIndex = 1;
             this.guna2CirclePictureBox3.TabStop = false;
             this.guna2CirclePictureBox3.UseTransparentBackground = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.LemonChiffon;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(85, 51);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(276, 39);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "Minigame bao gồm các câu hỏi về nghĩa của những từ mà bạn đã tra gần đây";
             // 
             // guna2CirclePictureBox2
             // 
@@ -400,6 +360,40 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2PictureBox4.TabStop = false;
             this.guna2PictureBox4.UseTransparentBackground = true;
             // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(85, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(276, 39);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Minigame bao gồm các câu hỏi về nghĩa của những từ mà bạn đã tra gần đây";
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(85, 111);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(276, 39);
+            this.label5.TabIndex = 84;
+            this.label5.Text = "Có tổng cộng 10 câu hỏi dạng trắc nghiệm và bạn có 2 phút để hoàn thành";
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(85, 164);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(276, 57);
+            this.label6.TabIndex = 85;
+            this.label6.Text = "Bạn nên sử dụng trí nhớ của mình, không nên sử dụng chức năng Tra từ và Dịch của " +
+    "ứng dụng";
+            // 
             // UC_StartMiniGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,7 +427,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
 
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Panel pnStartMiniGame;
-        private System.Windows.Forms.TextBox textBox1;
         private Guna.UI2.WinForms.Guna2Button btnBatDau;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
@@ -447,13 +440,14 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox6;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox4;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox5;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

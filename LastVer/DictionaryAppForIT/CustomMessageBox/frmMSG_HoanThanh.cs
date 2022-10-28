@@ -16,13 +16,18 @@ namespace DictionaryAppForIT.CustomMessageBox
         {
             InitializeComponent();
         }
+        public string _DiemTongCong;
+        public string _SoCauChuaLam;
+        public string _ThoiGianLam;
 
-        public frmMSG_HoanThanh(string thongBao)
+        public frmMSG_HoanThanh(string _thongBao, string _diemTong, string _soCauChuaLam, string thoiGianLam)
         {
             InitializeComponent();
-            this.ThongBao = thongBao;
+            this.ThongBao = _thongBao;
+            this._DiemTongCong = _diemTong;
+            this._SoCauChuaLam = _soCauChuaLam;
+            this._ThoiGianLam = thoiGianLam;
         }
-
         public bool GameOver
         {
             get { return pnGameOver.Visible; }
@@ -35,6 +40,24 @@ namespace DictionaryAppForIT.CustomMessageBox
             set { pbHoanThanh.Visible = value; }
         }
 
+        public string DiemTong
+        {
+            get { return _DiemTongCong; }
+            set { _DiemTongCong = value; }
+        }
+
+        public string SoCauChuaLam
+        {
+            get { return _SoCauChuaLam; }
+            set { _SoCauChuaLam = value; }
+        }
+
+        public string ThoiGianLam
+        {
+            get { return _ThoiGianLam; }
+            set { _ThoiGianLam = value; }
+        }
+
         public string ThongBao
         {
             get { return lblThongBao.Text; }
@@ -43,14 +66,22 @@ namespace DictionaryAppForIT.CustomMessageBox
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult = DialogResult.OK;
         }
 
         private void btnXemKQ_Click(object sender, EventArgs e)
         {
-            var frm = new frmMSG_KQ();
+            var frm = new frmMSG_KQ(DiemTong, SoCauChuaLam, ThoiGianLam);
             btnClose.PerformClick();
-            frm.Show();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                frm.Close();
+            }
+        }
+
+        private void frmMSG_HoanThanh_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -62,7 +62,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblDapAnDung = new System.Windows.Forms.Label();
             this.btnD = new Guna.UI2.WinForms.Guna2Button();
@@ -144,7 +143,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTip(this.pictureBox1, "");
             this.bunifuToolTip1.SetToolTipIcon(this.pictureBox1, null);
             this.bunifuToolTip1.SetToolTipTitle(this.pictureBox1, "");
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel3
             // 
@@ -632,7 +630,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             // panel1
             // 
             this.panel1.Controls.Add(this.guna2Panel7);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.guna2Panel2);
             this.panel1.Controls.Add(this.btnCauSau);
             this.panel1.Controls.Add(this.btnCauTruoc);
@@ -737,19 +734,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTip(this.guna2Panel5, "");
             this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel5, null);
             this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel5, "");
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(245, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "button";
-            this.bunifuToolTip1.SetToolTip(this.button1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.button1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.button1, "");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // guna2Panel2
             // 
@@ -1083,7 +1067,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
         private Guna.UI2.WinForms.Guna2Button btnCauSau;
         private System.Windows.Forms.Timer timerCountDown;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblDapAnDung;
         private Guna.UI2.WinForms.Guna2Button btnCau1;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;

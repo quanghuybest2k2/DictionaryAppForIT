@@ -273,7 +273,6 @@
     <Compile Include="UserControls\Home\UC_Dich.designer.cs">
       <DependentUpon>UC_Dich.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\LichSu\ThongTinLSTraTu.cs" />
     <Compile Include="UserControls\LichSu\UC_LichSu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -553,11 +552,13 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Resources\back-next.png" />
     <Content Include="Resources\back-next1.png" />
+    <Content Include="Resources\bookminigame.png" />
     <Content Include="Resources\button.png" />
     <Content Include="Resources\cat.png" />
     <Content Include="Resources\cat2.png" />
     <Content Include="Resources\cat333.png" />
     <Content Include="Resources\catDongNghia2.png" />
+    <Content Include="Resources\catgame.png" />
     <Content Include="Resources\catTraiNghia.png" />
     <Content Include="Resources\chat.png" />
     <Content Include="Resources\Close-icon-white.png" />
@@ -568,6 +569,7 @@
     <Content Include="Resources\copy11.png" />
     <Content Include="Resources\error.png" />
     <Content Include="Resources\exclamation.png" />
+    <Content Include="Resources\eye.png" />
     <Content Include="Resources\fb.png" />
     <Content Include="Resources\flag22.png" />
     <Content Include="Resources\game_!.png" />
@@ -582,6 +584,7 @@
     <Content Include="Resources\history_icon_333.png" />
     <Content Include="Resources\home_orange3.png" />
     <Content Include="Resources\home_white3.png" />
+    <Content Include="Resources\hot-item.png" />
     <Content Include="Resources\icon-search-more-dark.png" />
     <Content Include="Resources\icon.png" />
     <Content Include="Resources\info1.png" />
@@ -597,6 +600,7 @@
     <Content Include="Resources\mail.png" />
     <Content Include="Resources\main-logo.png" />
     <Content Include="Resources\main-logo2.png" />
+    <Content Include="Resources\mainminigame.png" />
     <Content Include="Resources\max3.png" />
     <Content Include="Resources\mini6.png" />
     <Content Include="Resources\minimize-8-16-white.png" />
@@ -607,6 +611,7 @@
     <Content Include="Resources\question.png" />
     <Content Include="Resources\setting_1.png" />
     <Content Include="Resources\setting_11.png" />
+    <Content Include="Resources\share.png" />
     <Content Include="Resources\shteam.png" />
     <Content Include="Resources\signup-bg.png" />
     <Content Include="Resources\Sound\DemNguoc15s.wav">

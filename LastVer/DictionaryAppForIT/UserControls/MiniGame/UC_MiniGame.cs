@@ -32,10 +32,11 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         public string cauTraLoi = "";
         //CauHoiVaDapAn ClassCauHoiVaDapAn = new CauHoiVaDapAn();
         DanhSachCauHoi ClassDanhSachCauHoi = new DanhSachCauHoi();
-
+        public static bool XacNhanChoiLai;
         public UC_MiniGame()
         {
             InitializeComponent();
+            XacNhanChoiLai = false;
         }
         private void UC_MiniGame_Load(object sender, EventArgs e)
         {
@@ -45,12 +46,12 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             ClassDanhSachCauHoi.LoadDSCauHoi();
             btnDieuHuong_Click(btnCau1, e);
             btnCau1.Checked = true;
-
+            LoadThoiGian();
         }
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void LoadThoiGian()
         {
-            int m = 0;// phut
-            int s = 20;// giay
+            int m = 1;// phut
+            int s = 0;// giay
             toTalSecond = (m * 60) + s;
             this.timerCountDown.Enabled = true;
             //nhacNen.Stop();// dung nhac nen
@@ -80,47 +81,72 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             {
                 this.timerCountDown.Stop();
                 NhacHetGio.Play();
-                var result = RJMessageBox.Show("Bạn có muốn làm lại không?", "Hết giờ", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    try
-                    {
-                        // btn BatDauChoi.performclick();
-                    }
-                    catch (Exception ex)
-                    {
-                        RJMessageBox.Show(ex.Message);
-                    }
-                }
-                if (result == DialogResult.No)
-                {
-                    // Quay về giao diện Bắt đầu chơi
-                }
+                //var result = RJMessageBox.Show("Bạn có muốn làm lại không?", "Hết giờ", MessageBoxButtons.YesNo);
+                //if (result == DialogResult.Yes)
+                //{
+                //    try
+                //    {
+                //        // btn BatDauChoi.performclick();
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        RJMessageBox.Show(ex.Message);
+                //    }
+                //}
+                //if (result == DialogResult.No)
+                //{
+                //    // Quay về giao diện Bắt đầu chơi
+                //}
+                var frm = new frmMSG_HoanThanh("Bạn đã hết thời gian!", TongDiem(), SoCauChuaLam(), "1m0s");
+                frm.GameOver = true;
+                frm.Show();
+
             }
         }
 
-
-
-
-        //Cái này có j ông gắn nó vô cái hết h hộ tui
-        private void button1_Click(object sender, EventArgs e)
+        private string ThoiGianHoanThanh()
         {
-            var frm = new frmMSG_HoanThanh("Bạn đã hết thời gian!");
-            frm.GameOver = true;
-            frm.Show();
+            string[] kq = new string[2];
+            string[] arr = lblThoiGian.Text.Split(':');
+            int thoiGianCon = int.Parse(arr[0]) * 60 + int.Parse(arr[1]);
+            int thoiGianLam = 60 - thoiGianCon; //Thời gian cho phép làm là 60s
+            int phut = thoiGianLam / 60 - thoiGianLam % 60 / 60;
+            kq[0] = phut.ToString() + "m";
+            int giay = thoiGianLam % 60;
+            kq[1] = giay.ToString() + "s";
+            return kq[0] + kq[1];
         }
 
         private void btnHoanThanh_Click(object sender, EventArgs e)
         {
-
-            var frmXacNhan = new frmMSG_XacNhan("Bạn có chắc chắn là muốn hoàn thành lượt chơi không?");
+            var frmXacNhan = new frmMSG_XacNhan("Bạn có chắc chắn là muốn hoàn thành lượt chơi không?", ThoiGianHoanThanh());
             if (frmXacNhan.ShowDialog() == DialogResult.OK)
             {
+                this.timerCountDown.Stop();
+                DemNguoc15s.Stop();
                 frmXacNhan.Close();
-                //var frmHoanThanh = new frmMSG_HoanThanh("Bạn đã hoàn thành lượt chơi!");
-                var frmHoanThanh = new frmMSG_HoanThanh("Tổng điểm: " + TongDiem());
+                var frmHoanThanh = new frmMSG_HoanThanh("Bạn đã hoàn thành lượt chơi!", TongDiem(), SoCauChuaLam(), ThoiGianHoanThanh());
                 frmHoanThanh.HoanThanh = true;
-                frmHoanThanh.Show();
+                if (frmHoanThanh.ShowDialog() == DialogResult.OK)
+                {
+                    frmHoanThanh.Close();
+                    ChoiLai(XacNhanChoiLai);
+                }
+
+            }
+        }
+
+        public void ChoiLai(bool xacNhanChoiLai)
+        {
+            if (xacNhanChoiLai)
+            {
+                ClassDanhSachCauHoi = new DanhSachCauHoi();
+                ClassDanhSachCauHoi.LoadDSCauHoi();
+                HienThiCauHoi(0);
+                lblSoCauHoanThanh.Text = "0/10";
+                btnCau1.Checked = true;
+                LoadThoiGian();
+
             }
         }
 
@@ -129,6 +155,8 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             var frmXacNhan = new frmMSG_XacNhan("Bạn có chắc chắn là muốn kết thúc lượt chơi và quay trở về không?");
             if (frmXacNhan.ShowDialog() == DialogResult.OK)
             {
+                this.timerCountDown.Stop();
+                DemNguoc15s.Stop();
                 frmXacNhan.Close();
                 this.SendToBack();
             }
@@ -145,8 +173,19 @@ namespace DictionaryAppForIT.UserControls.MiniGame
                 lblStt.Text = ClassDanhSachCauHoi._list[index].Stt.ToString();
 
             }
-            txtCauHoi.Text = $"Bạn còn nhớ nghĩa của từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()} không?";
             var rnd = new Random();
+            string[] DangCauHoi =
+            {
+                $"Bạn còn nhớ nghĩa của từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()} không?",
+                $"Từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()} có nghĩa là gì?",
+                $"Hãy chọn nghĩa đúng của từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()}",
+                $"Chọn nghĩa tương ứng với từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()}",
+                $"{ClassDanhSachCauHoi._list[index].TuVung.ToUpper()} có nghĩa là:",
+                $"Trong các đáp án bên dưới, đâu là nghĩa của từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()}"
+            };
+            var num = Enumerable.Range(0, 6).OrderBy(x => rnd.Next()).Take(1).ToList();
+            txtCauHoi.Text = DangCauHoi[num[0]];
+
             var numbers = Enumerable.Range(0, 4).OrderBy(x => rnd.Next()).Take(4).ToList();
             // them dap an dung vao list
             ClassDanhSachCauHoi._list[index].DapAnRandom.Add(ClassDanhSachCauHoi._list[index].DapAnDung);
@@ -198,7 +237,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             lblSoCauHoanThanh.Text = SoCauHoanThanh() + "/10";
         }
 
-        private string TongDiem()
+        public string TongDiem()
         {
             int sum = 0;
             foreach (var item in ClassDanhSachCauHoi._list)
@@ -210,6 +249,20 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             }
             return sum.ToString();
         }
+
+        public string SoCauChuaLam()
+        {
+            int sum = 0;
+            foreach (var item in ClassDanhSachCauHoi._list)
+            {
+                if (!item.DaTraLoi)
+                {
+                    sum += 1;
+                }
+            }
+            return sum.ToString();
+        }
+
 
         private string SoCauHoanThanh()
         {

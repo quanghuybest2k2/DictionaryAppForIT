@@ -54,7 +54,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
                     SqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())
                     {
-                        //ThongTinLSTraTu.idTraTuLS = rdr["ID"].ToString();
                         idHienTai = rdr["ID"].ToString();
                         string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
                         string ThoiGian = arrThoiGian[1] + " " + arrThoiGian[2];
