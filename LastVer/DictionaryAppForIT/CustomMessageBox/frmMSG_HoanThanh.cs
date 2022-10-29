@@ -66,13 +66,13 @@ namespace DictionaryAppForIT.CustomMessageBox
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            btnXemKQ.PerformClick();
         }
 
         private void btnXemKQ_Click(object sender, EventArgs e)
         {
             var frm = new frmMSG_KQ(DiemTong, SoCauChuaLam, ThoiGianLam);
-            btnClose.PerformClick();
+            DialogResult = DialogResult.OK;
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 frm.Close();

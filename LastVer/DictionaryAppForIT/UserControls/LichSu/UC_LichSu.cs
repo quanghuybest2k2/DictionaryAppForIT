@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Speech.Synthesis;
+using Guna.UI2.WinForms;
 
 namespace DictionaryAppForIT.UserControls.GanDay
 {
@@ -230,6 +231,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
                     string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
                     string ThoiGian = arrThoiGian[1] + " " + arrThoiGian[2];
                     string NgayThang = arrThoiGian[0];
+
                     string TVTiengAnh = rdr["TiengAnh"].ToString();
                     string TVTiengViet = rdr["TiengViet"].ToString();
                     ucLSVanBan = new UC_LS_VanBan(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVTiengViet);
@@ -249,7 +251,149 @@ namespace DictionaryAppForIT.UserControls.GanDay
 
         private void UC_LichSu_Load(object sender, EventArgs e)
         {
-           
+
+        }
+
+        public void HienThiLSDichTheoThoiGian(string thoiGian)
+        {
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from LichSuDich where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
+            if (Convert.ToInt32(num) > 0)
+            {
+                try
+                {
+                    SqlConnection Conn = new SqlConnection(connString);
+                    SqlCommand cmd = new SqlCommand($"select * from LichSuDich where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'  and NgayHienTai like '%{thoiGian}%'", Conn);
+                    Conn.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        idHienTai = rdr["ID"].ToString();
+                        string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
+                        string ThoiGian = arrThoiGian[1] + " " + arrThoiGian[2];
+                        string NgayThang = arrThoiGian[0];
+                        string TVTiengAnh = rdr["TiengAnh"].ToString();
+                        string TVTiengViet = rdr["TiengViet"].ToString();
+                        ucLSVanBan = new UC_LS_VanBan(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVTiengViet);
+                        flpContent.Controls.Add(ucLSVanBan);
+                        _listUCLSVB.Add(ucLSVanBan);
+                        ucLSVanBan.Name = "unCheck";
+                    }
+                    Conn.Close();
+                    Conn.Dispose();
+
+                }
+                catch (Exception ex)
+                {
+                    RJMessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+
+        public void HienThiLSTraTuTheoThoiGian(string thoiGian)
+        {
+            //_listUCLSTV.Clear();
+            //flpContent.Controls.Clear();
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from LichSuTraTu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
+            if (Convert.ToInt32(num) > 0)
+            {
+                try
+                {
+                    SqlConnection Conn = new SqlConnection(connString);
+                    SqlCommand cmd = new SqlCommand($"select * from LichSuTraTu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'  and NgayHienTai like '%{thoiGian}%'", Conn);
+                    Conn.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        idHienTai = rdr["ID"].ToString();
+                        string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
+                        string ThoiGian = arrThoiGian[1] + " " + arrThoiGian[2];
+                        string NgayThang = arrThoiGian[0];
+                        string TVTiengAnh = rdr["TiengAnh"].ToString();
+                        string TVPhienAm = rdr["PhienAm"].ToString();
+                        string TVTiengViet = rdr["TiengViet"].ToString();
+                        ucLSTuVung = new UC_LS_TuVung(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVPhienAm, TVTiengViet);
+
+                        flpContent.Controls.Add(ucLSTuVung);
+                        _listUCLSTV.Add(ucLSTuVung);
+                        ucLSTuVung.Name = "unCheck";
+                    }
+
+                    Conn.Close();
+                    Conn.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    RJMessageBox.Show(ex.Message);
+                }
+            }
+        }
+        private void btnTatCa_Click(object sender, EventArgs e)
+        {
+            HienThiLSTraTu();
+            HienThiLSDich();
+        }
+
+        private void btnThoiGian_Click(object sender, EventArgs e)
+        {
+            DateTime today = DateTime.Today;
+            int currentDayOfWeek = (int)today.DayOfWeek;
+            DateTime sunday = today.AddDays(-currentDayOfWeek);
+            DateTime monday = sunday.AddDays(1);
+            Console.WriteLine(currentDayOfWeek);
+            if (currentDayOfWeek == 0)
+            {
+                monday = monday.AddDays(-7);
+            }
+            var dates = Enumerable.Range(0, 7).Select(days => monday.AddDays(days)).ToList();
+
+            
+
+            string loai = (sender as Guna2Button).Name;
+            switch (loai)
+            {
+                case "btnHomNay":
+                    _listUCLSTV.Clear();
+                    flpContent.Controls.Clear();
+                    HienThiLSTraTuTheoThoiGian(DateTime.Today.ToString("dd/MM/yyyy"));
+                    HienThiLSDichTheoThoiGian(DateTime.Today.ToString("dd/MM/yyyy"));
+                    break;
+                case "btnHomQua":
+                    _listUCLSTV.Clear();
+                    flpContent.Controls.Clear();
+                    HienThiLSTraTuTheoThoiGian(DateTime.Today.AddDays(-1).ToString("dd/MM/yyyy"));
+                    HienThiLSDichTheoThoiGian(DateTime.Today.AddDays(-1).ToString("dd/MM/yyyy"));
+                    break;
+                case "btnTuanNay":
+                    _listUCLSTV.Clear();
+                    flpContent.Controls.Clear();
+                    foreach (var item in dates)
+                    {
+                        HienThiLSTraTuTheoThoiGian(item.ToString("dd/MM/yyyy"));
+                        HienThiLSDichTheoThoiGian(item.ToString("dd/MM/yyyy"));
+                    }
+                    break;
+                case "btnThangNay":
+                    _listUCLSTV.Clear();
+                    flpContent.Controls.Clear();
+                    HienThiLSTraTuTheoThoiGian(DateTime.Today.ToString("MM/yyyy"));
+                    HienThiLSDichTheoThoiGian(DateTime.Today.ToString("MM/yyyy"));
+                    break;
+                case "btnCuHon":
+                    _listUCLSTV.Clear();
+                    flpContent.Controls.Clear();
+                    //tra tu
+                    HienThiLSTraTuTheoThoiGian(DateTime.Today.AddMonths(-1).ToString("MM/yyyy"));
+                    HienThiLSTraTuTheoThoiGian(DateTime.Today.AddMonths(-2).ToString("MM/yyyy"));
+                    HienThiLSTraTuTheoThoiGian(DateTime.Today.AddMonths(-3).ToString("MM/yyyy"));
+                    HienThiLSTraTuTheoThoiGian(DateTime.Today.AddMonths(-4).ToString("MM/yyyy"));
+                    // dich
+                    HienThiLSDichTheoThoiGian(DateTime.Today.AddMonths(-1).ToString("MM/yyyy"));
+                    HienThiLSDichTheoThoiGian(DateTime.Today.AddMonths(-2).ToString("MM/yyyy"));
+                    HienThiLSDichTheoThoiGian(DateTime.Today.AddMonths(-3).ToString("MM/yyyy"));
+                    HienThiLSDichTheoThoiGian(DateTime.Today.AddMonths(-4).ToString("MM/yyyy"));
+                    break;
+            }
         }
     }
 }

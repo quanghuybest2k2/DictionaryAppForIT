@@ -1,4 +1,4 @@
-﻿-- use master
+﻿use master
 -- drop database EnglishDictionary2
 create database EnglishDictionary2
 go
@@ -576,3 +576,19 @@ AS
 go
 select distinct TiengViet from LichSuTraTu
 EXEC RandomDapAn 'component'
+----
+go
+select * from LichSuTraTu where IDTK = 1  and NgayHienTai like '%29/10/2022%'
+go
+select * from LichSuDich where IDTK = 1  and NgayHienTai like '%29/10/2022%'
+go
+--update LichSuTraTu set NgayHienTai = '28/10/2022 03:58 PM' where ID = 1 and IDTK = 1
+--update LichSuTraTu set NgayHienTai = '28/09/2022 03:58 PM' where ID = 3 and IDTK = 1
+--update LichSuTraTu set NgayHienTai = '28/08/2022 03:58 PM' where ID = 4 and IDTK = 1
+--update LichSuTraTu set NgayHienTai = '31/10/2022 03:58 PM' where ID = 6 and IDTK = 1
+--update LichSuTraTu set NgayHienTai = '05/11/2022 03:58 PM' where ID = 7 and IDTK = 1
+--update LichSuTraTu set NgayHienTai = '22/10/2022 03:58 PM' where ID = 8 and IDTK = 1
+update LichSuDich set NgayHienTai = '28/10/2022 03:58 PM' where ID = 4 and IDTK = 1
+update LichSuDich set NgayHienTai = '28/09/2022 03:58 PM' where ID = 5 and IDTK = 1
+update LichSuDich set NgayHienTai = '28/08/2022 03:58 PM' where ID = 6 and IDTK = 1
+update LichSuDich set NgayHienTai = '22/10/2022 03:58 PM' where ID = 7 and IDTK = 1

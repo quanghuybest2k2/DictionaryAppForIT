@@ -40,8 +40,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         }
         private void UC_MiniGame_Load(object sender, EventArgs e)
         {
-            //nhacNen = new SoundPlayer(Application.StartupPath + "\\Resources\\Sound\\NhacNenAiLaTrieuPhu.wav");
-            //nhacNen.PlayLooping();
             //LoadCauHoi();
             ClassDanhSachCauHoi.LoadDSCauHoi();
             btnDieuHuong_Click(btnCau1, e);
@@ -54,7 +52,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             int s = 0;// giay
             toTalSecond = (m * 60) + s;
             this.timerCountDown.Enabled = true;
-            //nhacNen.Stop();// dung nhac nen
             nhacTraLoi = new SoundPlayer(Application.StartupPath + "\\Resources\\Sound\\nhacTraLoi.wav");
             nhacTraLoi.PlayLooping();
         }
@@ -81,25 +78,13 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             {
                 this.timerCountDown.Stop();
                 NhacHetGio.Play();
-                //var result = RJMessageBox.Show("Bạn có muốn làm lại không?", "Hết giờ", MessageBoxButtons.YesNo);
-                //if (result == DialogResult.Yes)
-                //{
-                //    try
-                //    {
-                //        // btn BatDauChoi.performclick();
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        RJMessageBox.Show(ex.Message);
-                //    }
-                //}
-                //if (result == DialogResult.No)
-                //{
-                //    // Quay về giao diện Bắt đầu chơi
-                //}
-                var frm = new frmMSG_HoanThanh("Bạn đã hết thời gian!", TongDiem(), SoCauChuaLam(), "1m0s");
+                var frm = new frmMSG_HoanThanh("Bạn đã hết thời gian!", TongDiem(), SoCauChuaLam(), "1 phút 0 giây");
                 frm.GameOver = true;
-                frm.Show();
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    frm.Close();
+                    ChoiLai(XacNhanChoiLai);
+                }
 
             }
         }
@@ -111,9 +96,9 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             int thoiGianCon = int.Parse(arr[0]) * 60 + int.Parse(arr[1]);
             int thoiGianLam = 60 - thoiGianCon; //Thời gian cho phép làm là 60s
             int phut = thoiGianLam / 60 - thoiGianLam % 60 / 60;
-            kq[0] = phut.ToString() + "m";
+            kq[0] = phut.ToString() + " phút ";
             int giay = thoiGianLam % 60;
-            kq[1] = giay.ToString() + "s";
+            kq[1] = giay.ToString() + " giây";
             return kq[0] + kq[1];
         }
 
@@ -146,7 +131,11 @@ namespace DictionaryAppForIT.UserControls.MiniGame
                 lblSoCauHoanThanh.Text = "0/10";
                 btnCau1.Checked = true;
                 LoadThoiGian();
-
+                btnHoanThanh.Visible = true;
+            }
+            else
+            {
+                btnHoanThanh.Visible = false;
             }
         }
 
@@ -281,7 +270,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         {
             int num = Convert.ToInt32((sender as Guna2Button).Text);
             HienThiCauHoi(--num);
-            //MessageBox.Show(num.ToString(), ClassDanhSachCauHoi._list.Count().ToString());
         }
         private void btnCauTruoc_Click(object sender, EventArgs e)
         {

@@ -58,7 +58,7 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.guna2PictureBox3.BorderRadius = 20;
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(320, 46);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(333, 52);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.Size = new System.Drawing.Size(214, 26);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -80,7 +80,7 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.guna2Panel1.Controls.Add(this.guna2PictureBox5);
             this.guna2Panel1.Controls.Add(this.pnGameOver);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(205, 72);
+            this.guna2Panel1.Location = new System.Drawing.Point(218, 77);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.BorderRadius = 20;
             this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.Gray;
@@ -207,7 +207,7 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.guna2PictureBox1.BorderRadius = 20;
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Tomato;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(320, 43);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(333, 48);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(214, 56);
             this.guna2PictureBox1.TabIndex = 4;
@@ -218,7 +218,7 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(876, 462);
+            this.ClientSize = new System.Drawing.Size(892, 464);
             this.Controls.Add(this.guna2PictureBox3);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2PictureBox1);

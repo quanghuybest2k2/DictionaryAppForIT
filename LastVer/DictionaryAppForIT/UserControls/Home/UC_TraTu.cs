@@ -36,7 +36,7 @@ namespace DictionaryAppForIT.UserControls
         public static string idLSVuaTra;
         public static string idYeuThichVuaChon;
         private List<UC_Nghia> _listNghia;
-        
+
         public UC_TraTu()
         {
             InitializeComponent();
@@ -332,7 +332,7 @@ namespace DictionaryAppForIT.UserControls
 
                 flpMeaning.Controls.Add(ucNghia);
                 ucNghia.Dock = DockStyle.Top;
-
+                KiemTraTonTaiYeuThich();
             }
         }
         private void btnTuNgauNhien_Click(object sender, EventArgs e)
@@ -342,6 +342,10 @@ namespace DictionaryAppForIT.UserControls
                 pnTitle.Visible = true;
                 flpMeaning.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
                 HienThiKqRandom();
+                foreach (var item in XemNghia._listTu)
+                {
+                    LuuLichSuTraTu(item);
+                }
                 if (tocDoPhatAm == true)
                 {
                     btnUS.PerformClick(); // tự động phát âm sau khi tra từ
@@ -447,7 +451,7 @@ namespace DictionaryAppForIT.UserControls
         {
             foreach (var item in _listNghia)
             {
-                item.DoiMauNen(mot,hai,ba);
+                item.DoiMauNen(mot, hai, ba);
             }
         }
 
@@ -495,5 +499,15 @@ namespace DictionaryAppForIT.UserControls
 
 
         #endregion
+
+        private void btnTuTruoc_Click(object sender, EventArgs e)
+        {
+            RJMessageBox.Show("Chức năng đang phát triển!");
+        }
+
+        private void btnTuSau_Click(object sender, EventArgs e)
+        {
+            RJMessageBox.Show("Chức năng đang phát triển!");
+        }
     }
 }

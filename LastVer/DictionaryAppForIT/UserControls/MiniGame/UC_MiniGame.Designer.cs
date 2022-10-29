@@ -771,6 +771,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTip(this.lblDapAnDung, "");
             this.bunifuToolTip1.SetToolTipIcon(this.lblDapAnDung, null);
             this.bunifuToolTip1.SetToolTipTitle(this.lblDapAnDung, "");
+            this.lblDapAnDung.Visible = false;
             // 
             // btnD
             // 
@@ -934,11 +935,11 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.txtCauHoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCauHoi.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
             this.txtCauHoi.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCauHoi.Location = new System.Drawing.Point(32, 91);
+            this.txtCauHoi.Location = new System.Drawing.Point(32, 90);
             this.txtCauHoi.Multiline = true;
             this.txtCauHoi.Name = "txtCauHoi";
             this.txtCauHoi.ReadOnly = true;
-            this.txtCauHoi.Size = new System.Drawing.Size(475, 30);
+            this.txtCauHoi.Size = new System.Drawing.Size(475, 50);
             this.txtCauHoi.TabIndex = 1;
             this.txtCauHoi.Text = "Bạn còn nhớ nghĩa của từ ___ không?";
             this.bunifuToolTip1.SetToolTip(this.txtCauHoi, "");

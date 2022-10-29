@@ -49,13 +49,13 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblDanhGia = new System.Windows.Forms.Label();
+            this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             this.btnChoiLai = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -70,7 +70,7 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.guna2PictureBox3.BorderRadius = 20;
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(333, 51);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(333, 52);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.Size = new System.Drawing.Size(214, 26);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -90,7 +90,6 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.guna2Panel1.Controls.Add(this.pnThanhTich);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox4);
             this.guna2Panel1.Controls.Add(this.lblTongDiem);
-            this.guna2Panel1.Controls.Add(this.lblThoiGianLam);
             this.guna2Panel1.Controls.Add(this.lblSoCauChuaLam);
             this.guna2Panel1.Controls.Add(this.lblSoCauSai);
             this.guna2Panel1.Controls.Add(this.lblSoCauDung);
@@ -103,6 +102,7 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.guna2Panel1.Controls.Add(this.btnThoat);
             this.guna2Panel1.Controls.Add(this.btnChoiLai);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox5);
+            this.guna2Panel1.Controls.Add(this.lblThoiGianLam);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(218, 77);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -183,18 +183,18 @@ namespace DictionaryAppForIT.CustomMessageBox
             // 
             // lblThoiGianLam
             // 
-            this.lblThoiGianLam.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThoiGianLam.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblThoiGianLam.ForeColor = System.Drawing.Color.Tomato;
-            this.lblThoiGianLam.Location = new System.Drawing.Point(319, 157);
+            this.lblThoiGianLam.Location = new System.Drawing.Point(288, 156);
             this.lblThoiGianLam.Name = "lblThoiGianLam";
-            this.lblThoiGianLam.Size = new System.Drawing.Size(102, 26);
+            this.lblThoiGianLam.Size = new System.Drawing.Size(133, 26);
             this.lblThoiGianLam.TabIndex = 1;
-            this.lblThoiGianLam.Text = "20m45s";
+            this.lblThoiGianLam.Text = "10 phút 10 giây";
             this.lblThoiGianLam.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblSoCauChuaLam
             // 
-            this.lblSoCauChuaLam.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoCauChuaLam.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblSoCauChuaLam.ForeColor = System.Drawing.Color.Tomato;
             this.lblSoCauChuaLam.Location = new System.Drawing.Point(388, 130);
             this.lblSoCauChuaLam.Name = "lblSoCauChuaLam";
@@ -205,7 +205,7 @@ namespace DictionaryAppForIT.CustomMessageBox
             // 
             // lblSoCauSai
             // 
-            this.lblSoCauSai.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoCauSai.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblSoCauSai.ForeColor = System.Drawing.Color.Tomato;
             this.lblSoCauSai.Location = new System.Drawing.Point(388, 104);
             this.lblSoCauSai.Name = "lblSoCauSai";
@@ -216,7 +216,7 @@ namespace DictionaryAppForIT.CustomMessageBox
             // 
             // lblSoCauDung
             // 
-            this.lblSoCauDung.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoCauDung.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblSoCauDung.ForeColor = System.Drawing.Color.Tomato;
             this.lblSoCauDung.Location = new System.Drawing.Point(388, 78);
             this.lblSoCauDung.Name = "lblSoCauDung";
@@ -286,6 +286,22 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.lblDanhGia.Text = "Đánh giá";
             this.lblDanhGia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Animated = true;
+            this.btnThoat.BorderRadius = 10;
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThoat.FillColor = System.Drawing.Color.DarkGray;
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.HoverState.FillColor = System.Drawing.Color.Gray;
+            this.btnThoat.Location = new System.Drawing.Point(241, 284);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(103, 38);
+            this.btnThoat.TabIndex = 0;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.pbClose_Click);
+            // 
             // btnChoiLai
             // 
             this.btnChoiLai.Animated = true;
@@ -340,22 +356,6 @@ namespace DictionaryAppForIT.CustomMessageBox
             this.guna2DragControl3.DockIndicatorTransparencyValue = 0.6D;
             this.guna2DragControl3.TargetControl = this.guna2Panel1;
             this.guna2DragControl3.UseTransparentDrag = true;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Animated = true;
-            this.btnThoat.BorderRadius = 10;
-            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThoat.FillColor = System.Drawing.Color.DarkGray;
-            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.btnThoat.Location = new System.Drawing.Point(241, 284);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(103, 38);
-            this.btnThoat.TabIndex = 0;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.pbClose_Click);
             // 
             // frmMSG_KQ
             // 

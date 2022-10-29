@@ -796,7 +796,7 @@ namespace DictionaryAppForIT.Forms
             this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(66, 3);
+            this.btnMinimize.Location = new System.Drawing.Point(102, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(30, 30);
             this.btnMinimize.TabIndex = 29;
@@ -837,7 +837,7 @@ namespace DictionaryAppForIT.Forms
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(30, 3);
+            this.button1.Location = new System.Drawing.Point(66, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(30, 30);
             this.button1.TabIndex = 31;
@@ -857,7 +857,7 @@ namespace DictionaryAppForIT.Forms
             this.btnMaximum.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMaximum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximum.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximum.Image")));
-            this.btnMaximum.Location = new System.Drawing.Point(102, 3);
+            this.btnMaximum.Location = new System.Drawing.Point(31, 4);
             this.btnMaximum.Name = "btnMaximum";
             this.btnMaximum.Size = new System.Drawing.Size(30, 30);
             this.btnMaximum.TabIndex = 32;
@@ -865,6 +865,7 @@ namespace DictionaryAppForIT.Forms
             this.bunifuToolTip1.SetToolTipIcon(this.btnMaximum, null);
             this.bunifuToolTip1.SetToolTipTitle(this.btnMaximum, "");
             this.btnMaximum.UseVisualStyleBackColor = false;
+            this.btnMaximum.Visible = false;
             this.btnMaximum.Click += new System.EventHandler(this.btnMaximum_Click);
             // 
             // guna2Elipse1

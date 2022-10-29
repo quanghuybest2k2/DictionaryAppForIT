@@ -53,6 +53,7 @@ namespace DictionaryAppForIT.CustomMessageBox
 
         private void pbClose_Click(object sender, EventArgs e)
         {
+            UC_MiniGame.XacNhanChoiLai = false;
             DialogResult = DialogResult.OK;
         }
 
