@@ -1,25 +1,20 @@
 ﻿using DictionaryAppForIT.Class;
+using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
-using DictionaryAppForIT.CustomMessageBox;
 using DictionaryAppForIT.UserControls;
 using DictionaryAppForIT.UserControls.CaiDat;
 using DictionaryAppForIT.UserControls.GanDay;
 using DictionaryAppForIT.UserControls.Home;
 using DictionaryAppForIT.UserControls.MiniGame;
 using DictionaryAppForIT.UserControls.TaiKhoan;
+using DictionaryAppForIT.UserControls.TuVungHot;
 using DictionaryAppForIT.UserControls.YeuThich;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DictionaryAppForIT.UserControls.TuVungHot;
-using DictionaryAppForIT.DAL;
 
 namespace DictionaryAppForIT.Forms
 {
@@ -370,7 +365,7 @@ namespace DictionaryAppForIT.Forms
         {
             //var frm = new frmMSG_DangXuat();
             //frm.Show();
-         
+
 
             var result = RJMessageBox.Show("Bạn có chắc muốn đăng xuất?",
                "Đăng xuất",
@@ -425,6 +420,11 @@ namespace DictionaryAppForIT.Forms
         {
             ShowUC(ucTVHot);
             ucTVHot.HienThiTuVungHot();
+        }
+
+        private void btnThongTinTacGia_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://quanghuybest2k2.github.io/TimEmailGiangVien.github.io/");
         }
     }
 }

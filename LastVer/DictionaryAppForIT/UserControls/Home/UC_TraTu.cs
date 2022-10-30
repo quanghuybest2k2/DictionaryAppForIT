@@ -143,9 +143,12 @@ namespace DictionaryAppForIT.UserControls
                 HienThiThongTin();
                 TuHienTai = txtTimKiemTu.Text;//--------------------------------------
 
-                foreach (var item in XemNghia._listTu)
+                if (txtTimKiemTu.Text!="")
                 {
-                    LuuLichSuTraTu(item);
+                    foreach (var item in XemNghia._listTu)
+                    {
+                        LuuLichSuTraTu(item);
+                    }
                 }
                 KiemTraTonTaiYeuThich(); // kiểm tra xem từ yêu thích đã có chưa
 

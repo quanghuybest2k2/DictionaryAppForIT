@@ -23,6 +23,8 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         UC_TT_ThemNghia ucThemNghia;
         int stt = 1;
         List<UC_TT_ThemNghia> _list;
+        private int soDongThemTu;
+        private int soDongThemNghia;
         public UC_ThemTu()
         {
             InitializeComponent();
@@ -45,7 +47,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         }
         private void btnThemNghia_Click(object sender, EventArgs e)
         {
-            
+
             ucThemNghia = new UC_TT_ThemNghia(stt);
             ucThemNghia.Dock = DockStyle.Top;
             pnNghia.Controls.Add(ucThemNghia);
@@ -75,6 +77,15 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                     ThemNghia(item);
                 }
             }
+            if (soDongThemTu > 0 && soDongThemNghia > 0)
+            {
+                RJMessageBox.Show("Thêm từ vựng thành công.");
+
+            }
+            else
+            {
+                RJMessageBox.Show("Không thể thêm từ vựng.");
+            }
             btnMacDinh.PerformClick();
         }
 
@@ -85,15 +96,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             {
                 // them nghia
                 string themNghia = "EXEC ThemNghia @IdTuMoi , @IdTuLoai , @Nghia , @MoTa , @ViDu";
-                int soDongThemNghia = DataProvider.Instance.ExecuteNonQuery(themNghia, new object[] { idTuMoi, arr[0], arr[1], arr[2], arr[3] });
-                //if (soDongThemNghia > 0)
-                //{
-                //    RJMessageBox.Show("Thêm nghĩa thành công.");
-                //}
-                //else
-                //{
-                //    RJMessageBox.Show("Lỗi xảy ra!");
-                //}
+                soDongThemNghia = DataProvider.Instance.ExecuteNonQuery(themNghia, new object[] { idTuMoi, arr[0], arr[1], arr[2], arr[3] });
             }
             catch (Exception ex)
             {
@@ -119,28 +122,18 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 
                 cmd.Parameters["@idTu"].Direction = ParameterDirection.Output;
                 //
-                cmd.Parameters["@TenTu"].Value = txtTuVung.Text;
-                cmd.Parameters["@PhienAm"].Value = $"/{txtPhienAm.Text}/";
+                cmd.Parameters["@TenTu"].Value = txtTuVung.Text.Trim();
+                cmd.Parameters["@PhienAm"].Value = $"/{txtPhienAm.Text.Trim()}/";
                 cmd.Parameters["@ChuyenNganh"].Value = cbbChuyenNganh.SelectedValue;
-                cmd.Parameters["@DongNghia"].Value = txtDongNghia.Text;
-                cmd.Parameters["@TraiNghia"].Value = txtTraiNghia.Text;
+                cmd.Parameters["@DongNghia"].Value = txtDongNghia.Text.Trim();
+                cmd.Parameters["@TraiNghia"].Value = txtTraiNghia.Text.Trim();
                 cmd.Parameters["@IDTK"].Value = Class_TaiKhoan.IdTaiKhoan;
 
                 conn.Open();
-                int soDongThemTu = cmd.ExecuteNonQuery();
+                soDongThemTu = cmd.ExecuteNonQuery();
                 idTuMoi = cmd.Parameters["@idTu"].Value.ToString();
                 conn.Close();
                 conn.Dispose();
-
-                //if (soDongThemTu > 0)
-                //{
-                //    RJMessageBox.Show("Thêm từ thành công.");
-                    
-                //}
-                //else
-                //{
-                //    RJMessageBox.Show("Lỗi xảy ra!");
-                //}
             }
             catch (Exception ex)
             {

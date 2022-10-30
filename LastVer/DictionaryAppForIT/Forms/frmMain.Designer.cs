@@ -64,7 +64,7 @@ namespace DictionaryAppForIT.Forms
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnThongTinTacGia = new System.Windows.Forms.Button();
             this.btnMaximum = new System.Windows.Forms.Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -774,7 +774,7 @@ namespace DictionaryAppForIT.Forms
             // 
             this.guna2Panel1.Controls.Add(this.btnMinimize);
             this.guna2Panel1.Controls.Add(this.btnExit);
-            this.guna2Panel1.Controls.Add(this.button1);
+            this.guna2Panel1.Controls.Add(this.btnThongTinTacGia);
             this.guna2Panel1.Controls.Add(this.btnMaximum);
             this.guna2Transition1.SetDecoration(this.guna2Panel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel1.Location = new System.Drawing.Point(702, 4);
@@ -826,25 +826,26 @@ namespace DictionaryAppForIT.Forms
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // button1
+            // btnThongTinTacGia
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.button1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(66, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 30);
-            this.button1.TabIndex = 31;
-            this.bunifuToolTip1.SetToolTip(this.button1, "Giới thiệu về SHTeam");
-            this.bunifuToolTip1.SetToolTipIcon(this.button1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.button1, "");
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnThongTinTacGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThongTinTacGia.BackColor = System.Drawing.Color.Transparent;
+            this.btnThongTinTacGia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnThongTinTacGia, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnThongTinTacGia.FlatAppearance.BorderSize = 0;
+            this.btnThongTinTacGia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnThongTinTacGia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnThongTinTacGia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongTinTacGia.Image = ((System.Drawing.Image)(resources.GetObject("btnThongTinTacGia.Image")));
+            this.btnThongTinTacGia.Location = new System.Drawing.Point(66, 3);
+            this.btnThongTinTacGia.Name = "btnThongTinTacGia";
+            this.btnThongTinTacGia.Size = new System.Drawing.Size(30, 30);
+            this.btnThongTinTacGia.TabIndex = 31;
+            this.bunifuToolTip1.SetToolTip(this.btnThongTinTacGia, "Giới thiệu về SHTeam");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnThongTinTacGia, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnThongTinTacGia, "");
+            this.btnThongTinTacGia.UseVisualStyleBackColor = false;
+            this.btnThongTinTacGia.Click += new System.EventHandler(this.btnThongTinTacGia_Click);
             // 
             // btnMaximum
             // 
@@ -1012,7 +1013,7 @@ namespace DictionaryAppForIT.Forms
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnMaximum;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnThongTinTacGia;
         private Guna.UI2.WinForms.Guna2Button btnTraTu;
         private Guna.UI2.WinForms.Guna2Button btnTVChuyenNganh;
         private Guna.UI2.WinForms.Guna2Button btnDichVB;

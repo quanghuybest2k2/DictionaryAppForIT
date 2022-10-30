@@ -31,7 +31,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 
         public string Nghia
         {
-            get { return this.txtNghia.Text; }
+            get { return this.txtNghia.Text.Trim(); }
         }
 
         public string TuLoai
@@ -41,12 +41,12 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 
         public string MoTa
         {
-            get { return txtMoTa.Text; }
+            get { return txtMoTa.Text.Trim(); }
         }
 
         public string ViDu
         {
-            get { return txtVD.Text; }
+            get { return txtVD.Text.Trim(); }
         }
 
         public string[] LayGiaTriControl()

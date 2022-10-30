@@ -1,8 +1,8 @@
 ﻿use master
--- drop database EnglishDictionary2
-create database EnglishDictionary2
+-- drop database EnglishDictionary
+create database EnglishDictionary
 go
-use EnglishDictionary2
+use EnglishDictionary
 go
 ----------------------------------------- Tạo bảng
 create table ChuyenNganh
@@ -521,7 +521,7 @@ go
 -- Delete from TaiKhoan where ID = 9
 -- lay theo chuyen nganh
 SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and TenTu like 'c%' and ChuyenNganh.ID = 2
-EXEC LayTheoChuyenNganh 2
+-- EXEC LayTheoChuyenNganh 2
 go
 -- lấy từ ngẫu nhiên(random)
 -- drop proc TuNgauNhien
@@ -588,7 +588,23 @@ go
 --update LichSuTraTu set NgayHienTai = '31/10/2022 03:58 PM' where ID = 6 and IDTK = 1
 --update LichSuTraTu set NgayHienTai = '05/11/2022 03:58 PM' where ID = 7 and IDTK = 1
 --update LichSuTraTu set NgayHienTai = '22/10/2022 03:58 PM' where ID = 8 and IDTK = 1
-update LichSuDich set NgayHienTai = '28/10/2022 03:58 PM' where ID = 4 and IDTK = 1
-update LichSuDich set NgayHienTai = '28/09/2022 03:58 PM' where ID = 5 and IDTK = 1
-update LichSuDich set NgayHienTai = '28/08/2022 03:58 PM' where ID = 6 and IDTK = 1
-update LichSuDich set NgayHienTai = '22/10/2022 03:58 PM' where ID = 7 and IDTK = 1
+--update LichSuDich set NgayHienTai = '28/10/2022 03:58 PM' where ID = 4 and IDTK = 1
+--update LichSuDich set NgayHienTai = '28/09/2022 03:58 PM' where ID = 5 and IDTK = 1
+--update LichSuDich set NgayHienTai = '28/08/2022 03:58 PM' where ID = 6 and IDTK = 1
+--update LichSuDich set NgayHienTai = '22/10/2022 03:58 PM' where ID = 7 and IDTK = 1
+go
+-- kiểm tra xem lịch sử tra tra từ có đủ 10 từ hay không
+CREATE PROC KiemTraTRungTu
+@idtk INT
+AS
+	SELECT SUM(mycount) as SoTuKhacNhau
+	FROM  (
+		SELECT COUNT(DISTINCT TiengAnh) AS mycount
+		FROM LichSuTraTu
+		WHERE IDTK = @idtk
+		GROUP BY TiengAnh
+	) as R;
+go
+EXEC KiemTraTRungTu 1
+go
+SELECT * FROM Tu
