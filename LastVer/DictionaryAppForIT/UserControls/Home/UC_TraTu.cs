@@ -505,12 +505,18 @@ namespace DictionaryAppForIT.UserControls
 
         private void btnTuTruoc_Click(object sender, EventArgs e)
         {
-            RJMessageBox.Show("Chức năng đang phát triển!");
+            RJMessageBox.Show("Chức năng đang phát triển!",
+                "Xin lỗi",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
         private void btnTuSau_Click(object sender, EventArgs e)
         {
-            RJMessageBox.Show("Chức năng đang phát triển!");
+            RJMessageBox.Show("Chức năng đang phát triển!",
+                "Xin lỗi",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
     }
 }

@@ -179,7 +179,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             // them dap an dung vao list
             ClassDanhSachCauHoi._list[index].DapAnRandom.Add(ClassDanhSachCauHoi._list[index].DapAnDung);
             // 4 dap an
-
             btnA.Text = ClassDanhSachCauHoi._list[index].DapAnRandom[numbers[0]];
             HienThiCauTraLoi(btnA, ClassDanhSachCauHoi._list[index].CauTraLoi);
             btnB.Text = ClassDanhSachCauHoi._list[index].DapAnRandom[numbers[1]];
@@ -191,8 +190,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             lblDapAnDung.Text = ClassDanhSachCauHoi._list[index].DapAnDung;
 
         }
-
-
 
         private void HienThiCauTraLoi(Guna2Button btn, string cauTraLoi)
         {

@@ -254,24 +254,24 @@ namespace DictionaryAppForIT.Private
             switch (icon)
             {
                 case MessageBoxIcon.Error: //Error
-                    this.pictureBoxIcon.Image = Properties.Resources.error;
+                    this.pictureBoxIcon.Image = Image.FromFile(Application.StartupPath + "\\Resources\\error.png");
                     PrimaryColor = Color.FromArgb(224, 79, 95);
                     this.btnClose.FlatAppearance.MouseOverBackColor = Color.Crimson;
                     break;
                 case MessageBoxIcon.Information: //Information
-                    this.pictureBoxIcon.Image = Properties.Resources.information;
+                    this.pictureBoxIcon.Image = Image.FromFile(Application.StartupPath + "\\Resources\\information.png");
                     PrimaryColor = Color.FromArgb(38, 191, 166);
                     break;
                 case MessageBoxIcon.Question://Question
-                    this.pictureBoxIcon.Image = Properties.Resources.question;
+                    this.pictureBoxIcon.Image = Image.FromFile(Application.StartupPath + "\\Resources\\question.png");
                     PrimaryColor = Color.FromArgb(10, 119, 232);
                     break;
                 case MessageBoxIcon.Exclamation://Exclamation
-                    this.pictureBoxIcon.Image = Properties.Resources.exclamation;
+                    this.pictureBoxIcon.Image = Image.FromFile(Application.StartupPath + "\\Resources\\exclamation.png");
                     PrimaryColor = Color.FromArgb(255, 140, 0);
                     break;
                 case MessageBoxIcon.None: //None
-                    this.pictureBoxIcon.Image = Properties.Resources.chat;
+                    this.pictureBoxIcon.Image = Image.FromFile(Application.StartupPath + "\\Resources\\chat.png");
                     PrimaryColor = Color.CornflowerBlue;
                     break;
             }

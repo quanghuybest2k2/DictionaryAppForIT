@@ -87,7 +87,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             {
                 if (txtGhiChu.Text.Length > 115)
                 {
-                    RJMessageBox.Show("Vượt quá số ký tự nhập! Vui lòng thử lại.");
+                    RJMessageBox.Show("Vượt quá số ký tự nhập! Vui lòng thử lại.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else
@@ -104,12 +104,12 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 int num = DataProvider.Instance.ExecuteNonQuery($"UPDATE YeuThichTuVung SET GhiChu = N'{txtGhiChu.Text.Trim()}' WHERE ID = {lblIndex.Text} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
                 if (num > 0)
                 {
-                    RJMessageBox.Show("Ghi chú thành công!");
+                    RJMessageBox.Show("Ghi chú thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtGhiChu.Enabled = false;
                 }
                 else
                 {
-                    RJMessageBox.Show("Thất bại!");
+                    RJMessageBox.Show("Không thành công!!!", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -117,12 +117,12 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 int num = DataProvider.Instance.ExecuteNonQuery($"UPDATE YeuThichVanBan SET GhiChu = N'{txtGhiChu.Text.Trim()}' WHERE ID = {lblIndex.Text} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
                 if (num > 0)
                 {
-                    RJMessageBox.Show("Ghi chú thành công!");
+                    RJMessageBox.Show("Ghi chú thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtGhiChu.Enabled = false;
                 }
                 else
                 {
-                    RJMessageBox.Show("Thất bại!");
+                    RJMessageBox.Show("Không thành công!!!", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

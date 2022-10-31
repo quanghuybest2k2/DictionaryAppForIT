@@ -104,7 +104,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         {
             var result = RJMessageBox.Show("Bạn có thực sự muốn xóa tài khoản này vĩnh viễn?",
                 "Xác nhận xóa tài khoản",
-                MessageBoxButtons.YesNo);
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 // xóa tài khoản

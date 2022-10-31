@@ -65,7 +65,6 @@ namespace DictionaryAppForIT.Forms
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnThongTinTacGia = new System.Windows.Forms.Button();
-            this.btnMaximum = new System.Windows.Forms.Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -775,7 +774,6 @@ namespace DictionaryAppForIT.Forms
             this.guna2Panel1.Controls.Add(this.btnMinimize);
             this.guna2Panel1.Controls.Add(this.btnExit);
             this.guna2Panel1.Controls.Add(this.btnThongTinTacGia);
-            this.guna2Panel1.Controls.Add(this.btnMaximum);
             this.guna2Transition1.SetDecoration(this.guna2Panel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Panel1.Location = new System.Drawing.Point(702, 4);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -846,28 +844,6 @@ namespace DictionaryAppForIT.Forms
             this.bunifuToolTip1.SetToolTipTitle(this.btnThongTinTacGia, "");
             this.btnThongTinTacGia.UseVisualStyleBackColor = false;
             this.btnThongTinTacGia.Click += new System.EventHandler(this.btnThongTinTacGia_Click);
-            // 
-            // btnMaximum
-            // 
-            this.btnMaximum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximum.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.btnMaximum, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnMaximum.FlatAppearance.BorderSize = 0;
-            this.btnMaximum.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnMaximum.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnMaximum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximum.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximum.Image")));
-            this.btnMaximum.Location = new System.Drawing.Point(31, 4);
-            this.btnMaximum.Name = "btnMaximum";
-            this.btnMaximum.Size = new System.Drawing.Size(30, 30);
-            this.btnMaximum.TabIndex = 32;
-            this.bunifuToolTip1.SetToolTip(this.btnMaximum, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.btnMaximum, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.btnMaximum, "");
-            this.btnMaximum.UseVisualStyleBackColor = false;
-            this.btnMaximum.Visible = false;
-            this.btnMaximum.Click += new System.EventHandler(this.btnMaximum_Click);
             // 
             // guna2Elipse1
             // 
@@ -1012,7 +988,6 @@ namespace DictionaryAppForIT.Forms
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnMinimize;
-        private System.Windows.Forms.Button btnMaximum;
         private System.Windows.Forms.Button btnThongTinTacGia;
         private Guna.UI2.WinForms.Guna2Button btnTraTu;
         private Guna.UI2.WinForms.Guna2Button btnTVChuyenNganh;

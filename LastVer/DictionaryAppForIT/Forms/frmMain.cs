@@ -1,4 +1,5 @@
 ﻿using DictionaryAppForIT.Class;
+using DictionaryAppForIT.CustomMessageBox;
 using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
 using DictionaryAppForIT.UserControls;
@@ -365,11 +366,9 @@ namespace DictionaryAppForIT.Forms
         {
             //var frm = new frmMSG_DangXuat();
             //frm.Show();
-
-
             var result = RJMessageBox.Show("Bạn có chắc muốn đăng xuất?",
                "Đăng xuất",
-               MessageBoxButtons.YesNo);
+               MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (result == DialogResult.Yes)
             {
                 this.Hide();
@@ -387,9 +386,9 @@ namespace DictionaryAppForIT.Forms
         #region Các nút chính
         private void btnExit_Click(object sender, EventArgs e)
         {
-            //var frm = new frmMSG_Exit();
-            //frm.Show();
-            Application.Exit();
+            var frm = new frmMSG_Exit();
+            frm.Show();
+            //Application.Exit();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)

@@ -165,6 +165,18 @@
     <Compile Include="Class\MucYeuThich.cs" />
     <Compile Include="Class\RandomColor.cs" />
     <Compile Include="Class\RJMessageBox.cs" />
+    <Compile Include="CustomMessageBox\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMessageBox\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomMessageBox\Form_Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMessageBox\Form_Alert.designer.cs">
+      <DependentUpon>Form_Alert.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomMessageBox\frmMSG_DangXuat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -395,6 +407,12 @@
     <Compile Include="UserControls\YeuThich\UC_YT_VanBan.Designer.cs">
       <DependentUpon>UC_YT_VanBan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomMessageBox\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomMessageBox\Form_Alert.resx">
+      <DependentUpon>Form_Alert.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomMessageBox\frmMSG_DangXuat.resx">
       <DependentUpon>frmMSG_DangXuat.cs</DependentUpon>
     </EmbeddedResource>
@@ -554,21 +572,30 @@
     <Content Include="Resources\back-next1.png" />
     <Content Include="Resources\bookminigame.png" />
     <Content Include="Resources\button.png" />
+    <Content Include="Resources\canhBao.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\cat.png" />
     <Content Include="Resources\cat2.png" />
     <Content Include="Resources\cat333.png" />
     <Content Include="Resources\catDongNghia2.png" />
     <Content Include="Resources\catgame.png" />
     <Content Include="Resources\catTraiNghia.png" />
-    <Content Include="Resources\chat.png" />
+    <Content Include="Resources\chat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Close-icon-white.png" />
     <Content Include="Resources\Close-icon.png" />
     <Content Include="Resources\close.png" />
     <Content Include="Resources\close_111152.png" />
     <Content Include="Resources\copy1.png" />
     <Content Include="Resources\copy11.png" />
-    <Content Include="Resources\error.png" />
-    <Content Include="Resources\exclamation.png" />
+    <Content Include="Resources\error.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\exclamation.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\eye.png" />
     <Content Include="Resources\fb.png" />
     <Content Include="Resources\flag22.png" />
@@ -588,7 +615,9 @@
     <Content Include="Resources\icon-search-more-dark.png" />
     <Content Include="Resources\icon.png" />
     <Content Include="Resources\info1.png" />
-    <Content Include="Resources\information.png" />
+    <Content Include="Resources\information.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\lock_icon_148524.ico" />
     <Content Include="Resources\login-bg.png" />
     <Content Include="Resources\login-bg1.png" />
@@ -597,6 +626,9 @@
     <Content Include="Resources\logo1.png" />
     <Content Include="Resources\logoDLU.png" />
     <Content Include="Resources\logoITDLU.png" />
+    <Content Include="Resources\loi.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\mail.png" />
     <Content Include="Resources\main-logo.png" />
     <Content Include="Resources\main-logo2.png" />
@@ -608,7 +640,9 @@
     <Content Include="Resources\panel.png" />
     <Content Include="Resources\pannel.png" />
     <Content Include="Resources\pass.png" />
-    <Content Include="Resources\question.png" />
+    <Content Include="Resources\question.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\setting_1.png" />
     <Content Include="Resources\setting_11.png" />
     <Content Include="Resources\share.png" />
@@ -642,6 +676,12 @@
     <Content Include="Resources\star_11.png" />
     <Content Include="Resources\study.png" />
     <Content Include="Resources\tab1.png" />
+    <Content Include="Resources\thanhCong.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\thongTin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\twocirclingarrows1_120592.png" />
     <Content Include="Resources\user-img.png" />
     <Content Include="Resources\user.png" />

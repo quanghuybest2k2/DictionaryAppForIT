@@ -365,7 +365,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.txtPhienAm.Name = "txtPhienAm";
             this.txtPhienAm.PasswordChar = '\0';
             this.txtPhienAm.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtPhienAm.PlaceholderText = "Ví dụ: kəm´pəʊ.nənt";
+            this.txtPhienAm.PlaceholderText = "Ví dụ: /kəm´pəʊ.nənt/";
             this.txtPhienAm.SelectedText = "";
             this.txtPhienAm.Size = new System.Drawing.Size(222, 41);
             this.txtPhienAm.TabIndex = 101;

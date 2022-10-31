@@ -70,7 +70,10 @@ namespace DictionaryAppForIT.UserControls.CaiDat
             //    this.BackColor = Color.White;
             //    this.ForeColor = Color.DimGray;
             //}
-            RJMessageBox.Show("Chức năng đang phát triển");
+            RJMessageBox.Show("Chức năng đang phát triển!",
+             "Xin lỗi",
+             MessageBoxButtons.OK,
+             MessageBoxIcon.Information);
         }
 
         // tự động cập nhật

@@ -161,9 +161,16 @@ namespace DictionaryAppForIT.UserControls.GanDay
                   $"delete from LichSuDich where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
                 if (num > 0)
                 {
-                    RJMessageBox.Show("Đã xóa tất cả lịch sử!");
+                    RJMessageBox.Show("Đã xóa tất cả lịch sử!", "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 }
-                else { RJMessageBox.Show("Xóa không thành công!"); }
+                else
+                {
+                    RJMessageBox.Show("Xóa không thành công!", "Thông báo",
+                     MessageBoxButtons.OK,
+                     MessageBoxIcon.Information);
+                }
                 _listUCLSTV.Clear();
             }
         }
@@ -347,7 +354,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
             }
             var dates = Enumerable.Range(0, 7).Select(days => monday.AddDays(days)).ToList();
 
-            
+
 
             string loai = (sender as Guna2Button).Name;
             switch (loai)

@@ -213,9 +213,16 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 if (num > 0)
                 {
                     lblSoMucYeuThich.Text = "0";
-                    RJMessageBox.Show("Đã xóa tất cả mục yêu thích!");
+                    RJMessageBox.Show("Đã xóa tất cả mục yêu thích!", "Thông báo",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
                 }
-                else { RJMessageBox.Show("Xóa không thành công!"); }
+                else
+                {
+                    RJMessageBox.Show("Xóa không thành công!", "Thông báo",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Information);
+                }
                 _listTuVung.Clear();
             }
         }

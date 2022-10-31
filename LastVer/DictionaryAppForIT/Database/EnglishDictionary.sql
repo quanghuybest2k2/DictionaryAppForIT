@@ -562,6 +562,19 @@ Select * from LichSuTraTu where IDTK = 1 or IDTK = 0
 -- n, adj
 -- random tu_vung
 select top 1 TiengAnh from LichSuTraTu where IDTK = 1 ORDER  BY NEWID()
+go
+-- Random không trùng
+CREATE PROC RandomCauHoivaTraLoi
+@idtk INT
+AS
+	select top 10 tienganh, TiengViet
+	from
+	(
+		select distinct tienganh, TiengViet from LichSuTraTu where IDTK = @idtk
+	) as random
+	order by newid()
+EXEC RandomCauHoivaTraLoi 1
+select * from LichSuTraTu
 -- lay nghia tu_vung
 select top 1 TiengViet from LichSuTraTu where TiengAnh = 'Component'and IDTK = 1 ORDER  BY NEWID()
 go
@@ -606,5 +619,13 @@ AS
 	) as R;
 go
 EXEC KiemTraTRungTu 1
+EXEC RandomCauHoivaTraLoi 1
 go
 SELECT * FROM Tu
+go
+select top 10 TiengAnh, TenLoai,TiengViet
+	from
+	(
+		select distinct lstt.TiengAnh, tl.TenLoai,TiengViet from LichSuTraTu lstt, TuLoai tl, Tu t, Nghia n where lstt.IDTK = 1 and lstt.TiengAnh = t.TenTu and t.ID = n.IDTu and n.IDTuLoai = tl.ID and lstt.TiengViet = n.Nghia
+	) as random
+	order by newid()

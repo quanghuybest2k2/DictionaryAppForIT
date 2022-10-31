@@ -123,7 +123,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 cmd.Parameters["@idTu"].Direction = ParameterDirection.Output;
                 //
                 cmd.Parameters["@TenTu"].Value = txtTuVung.Text.Trim();
-                cmd.Parameters["@PhienAm"].Value = $"/{txtPhienAm.Text.Trim()}/";
+                cmd.Parameters["@PhienAm"].Value = $"{txtPhienAm.Text.Trim()}";
                 cmd.Parameters["@ChuyenNganh"].Value = cbbChuyenNganh.SelectedValue;
                 cmd.Parameters["@DongNghia"].Value = txtDongNghia.Text.Trim();
                 cmd.Parameters["@TraiNghia"].Value = txtTraiNghia.Text.Trim();
