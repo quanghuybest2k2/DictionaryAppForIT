@@ -187,8 +187,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             HienThiCauTraLoi(btnC, ClassDanhSachCauHoi._list[index].CauTraLoi);
             btnD.Text = ClassDanhSachCauHoi._list[index].DapAnRandom[numbers[3]];
             HienThiCauTraLoi(btnD, ClassDanhSachCauHoi._list[index].CauTraLoi);
-            lblDapAnDung.Text = ClassDanhSachCauHoi._list[index].DapAnDung;
-
         }
 
         private void HienThiCauTraLoi(Guna2Button btn, string cauTraLoi)
@@ -212,7 +210,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             dapAnDung = (sender as Guna2Button).Text;// gắn text của button chọn
             ClassDanhSachCauHoi._list[index].CauTraLoi = (sender as Guna2Button).Text;// gắn text của button chọn
             ClassDanhSachCauHoi._list[index].DaTraLoi = true;
-            if (dapAnDung == lblDapAnDung.Text)
+            if (dapAnDung == ClassDanhSachCauHoi._list[index].DapAnDung)
             {
                 ClassDanhSachCauHoi._list[index].TraLoiDung = true;
             }

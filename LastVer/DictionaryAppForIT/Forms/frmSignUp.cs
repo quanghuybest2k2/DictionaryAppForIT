@@ -21,11 +21,6 @@ namespace DictionaryAppForIT.Forms
         public frmSignUp()
         {
             InitializeComponent();
-
-            #region Restyle checkbox Agreement
-            chkThoaThuan.Parent = pbLayout;
-            chkThoaThuan.Location = new Point(429, 308);
-            #endregion
         }
 
         #region Main button
@@ -96,7 +91,7 @@ namespace DictionaryAppForIT.Forms
         {
             if (!chkThoaThuan.Checked)
             {
-                RJMessageBox.Show("Bạn phải đồng ý các điều khoản mà chúng tôi đưa ra.");
+                RJMessageBox.Show("Bạn phải đồng ý các điều khoản mà chúng tôi đưa ra.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
@@ -107,10 +102,10 @@ namespace DictionaryAppForIT.Forms
                     string tenDangNhap = txtTenDangNhapDK.Text.Trim();
                     string matkhau = txtMatKhauDK.Text;
                     string nhaplaiMK = txtNhapLaiMatKhauDK.Text;
-                    if (!checkEmail(email)) { RJMessageBox.Show("Emai không đúng định dạng!!!"); return; }
-                    if (!checkUsername(tenDangNhap)) { RJMessageBox.Show("Tên đăng nhập sai format!!!"); return; }
-                    if (!checkMatKhau(matkhau)) { RJMessageBox.Show("Mật khẩu sai format!!!"); return; }
-                    if (matkhau != nhaplaiMK) { RJMessageBox.Show("Mật khẩu không khớp!!!"); return; }
+                    if (!checkEmail(email)) { RJMessageBox.Show("Emai không đúng định dạng!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+                    if (!checkUsername(tenDangNhap)) { RJMessageBox.Show("Tên đăng nhập sai format!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+                    if (!checkMatKhau(matkhau)) { RJMessageBox.Show("Mật khẩu sai format!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+                    if (matkhau != nhaplaiMK) { RJMessageBox.Show("Mật khẩu không khớp!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
                     if (rdNam.Checked) { gioiTinh = "1"; }
                     if (rdNu.Checked) { gioiTinh = "2"; }
                     if (rdKhac.Checked) { gioiTinh = "3"; }
@@ -126,10 +121,14 @@ namespace DictionaryAppForIT.Forms
                         int num = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenDangNhap, matkhau, email, gioiTinh, ngayTao });
                         if (num > 0)
                         {
-                            RJMessageBox.Show("Đăng ký thành công.");
+                            RJMessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                             frmLogin frmLogin = new frmLogin();
                             frmLogin.Show();
+                        }
+                        else
+                        {
+                            RJMessageBox.Show("Đăng ký không thành công!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     catch (SqlException ex)

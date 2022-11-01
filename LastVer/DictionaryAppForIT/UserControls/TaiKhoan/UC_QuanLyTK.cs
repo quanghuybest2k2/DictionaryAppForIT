@@ -114,12 +114,12 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                     int num = DataProvider.Instance.ExecuteNonQuery(query);
                     if (num > 0)
                     {
-                        RJMessageBox.Show("Đã xóa tài khoản vĩnh viễn!");
+                        RJMessageBox.Show("Đã xóa tài khoản vĩnh viễn!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         Application.Exit();
                     }
                     else
                     {
-                        RJMessageBox.Show("Không thể xóa tài khoản!");
+                        RJMessageBox.Show("Không thể xóa tài khoản!", "Lỗi rồi", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                     }
 
                 }
@@ -160,10 +160,10 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             int num = DataProvider.Instance.ExecuteNonQuery(query);
             if (num > 0)
             {
-                RJMessageBox.Show("Cập nhật thiing tin tài khoản thành công!");
+                RJMessageBox.Show("Cập nhật thông tin tài khoản thành công!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             }else
             {
-                RJMessageBox.Show("Không thể cập nhật tài khoản!");
+                RJMessageBox.Show("Không thể cập nhật tài khoản!", "Lỗi rồi", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             }
         }
 

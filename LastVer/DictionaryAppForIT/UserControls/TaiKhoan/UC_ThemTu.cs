@@ -53,7 +53,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             pnNghia.Controls.Add(ucThemNghia);
             _list.Add(ucThemNghia);
             stt++;
-            //MessageBox.Show(ucThemNghia.tx,"");
         }
 
         private void btnXoaNghia_Click(object sender, EventArgs e)
@@ -79,12 +78,12 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             }
             if (soDongThemTu > 0 && soDongThemNghia > 0)
             {
-                RJMessageBox.Show("Thêm từ vựng thành công.");
+                RJMessageBox.Show("Thêm từ vựng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else
             {
-                RJMessageBox.Show("Không thể thêm từ vựng.");
+                RJMessageBox.Show("Không thể thêm từ vựng.", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             btnMacDinh.PerformClick();
         }

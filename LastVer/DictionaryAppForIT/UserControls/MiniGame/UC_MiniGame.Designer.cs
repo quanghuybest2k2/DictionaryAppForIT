@@ -63,7 +63,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblDapAnDung = new System.Windows.Forms.Label();
             this.btnD = new Guna.UI2.WinForms.Guna2Button();
             this.btnC = new Guna.UI2.WinForms.Guna2Button();
             this.btnB = new Guna.UI2.WinForms.Guna2Button();
@@ -740,7 +739,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.guna2Panel2.BorderRadius = 20;
-            this.guna2Panel2.Controls.Add(this.lblDapAnDung);
             this.guna2Panel2.Controls.Add(this.btnD);
             this.guna2Panel2.Controls.Add(this.btnC);
             this.guna2Panel2.Controls.Add(this.btnB);
@@ -759,19 +757,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.bunifuToolTip1.SetToolTip(this.guna2Panel2, "");
             this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel2, null);
             this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel2, "");
-            // 
-            // lblDapAnDung
-            // 
-            this.lblDapAnDung.AutoSize = true;
-            this.lblDapAnDung.Location = new System.Drawing.Point(29, 415);
-            this.lblDapAnDung.Name = "lblDapAnDung";
-            this.lblDapAnDung.Size = new System.Drawing.Size(10, 13);
-            this.lblDapAnDung.TabIndex = 42;
-            this.lblDapAnDung.Text = ".";
-            this.bunifuToolTip1.SetToolTip(this.lblDapAnDung, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblDapAnDung, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblDapAnDung, "");
-            this.lblDapAnDung.Visible = false;
             // 
             // btnD
             // 
@@ -1068,7 +1053,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
         private Guna.UI2.WinForms.Guna2Button btnCauSau;
         private System.Windows.Forms.Timer timerCountDown;
-        private System.Windows.Forms.Label lblDapAnDung;
         private Guna.UI2.WinForms.Guna2Button btnCau1;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;

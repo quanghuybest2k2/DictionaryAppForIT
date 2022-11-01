@@ -18,8 +18,8 @@ namespace DictionaryAppForIT
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new CustomMessageBox.Form1());
-            //Application.Run(new frmLogin());
+            //Application.Run(new CustomMessageBox.Form1());
+            Application.Run(new frmLogin());
 
             //Application.Run(new frmSignUp());
 

@@ -140,13 +140,13 @@ namespace DictionaryAppForIT.UserControls.Home
                 }
                 else
                 {
-                    RJMessageBox.Show("Không thể đưa vào lịch sử dịch!");
+                    RJMessageBox.Show("Không thể đưa vào lịch sử dịch!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception)
             {
                 // khóa chính không thể trùng
-                RJMessageBox.Show("Bản dịch này đã tồn tại.");
+                RJMessageBox.Show("Bản dịch này đã tồn tại.", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void dtgvLichSu_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -164,7 +164,7 @@ namespace DictionaryAppForIT.UserControls.Home
             int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuDich where IDTK = {Class_TaiKhoan.IdTaiKhoan} and TiengAnh = '{ChuMuonXoa}'");
             if (num > 0)
             {
-                RJMessageBox.Show("Xóa thành công.", "Thông báo");
+                RJMessageBox.Show("Xóa thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadLichSu();
             }
             else
@@ -207,7 +207,7 @@ namespace DictionaryAppForIT.UserControls.Home
                 int num = DataProvider.Instance.ExecuteNonQuery($"DELETE FROM LichSuDich where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
                 if (num > 0)
                 {
-                    RJMessageBox.Show("Đã xóa hết lịch sử");
+                    RJMessageBox.Show("Đã xóa hết lịch sử", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadLichSu();
                 }
             }

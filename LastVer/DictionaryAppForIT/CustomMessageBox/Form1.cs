@@ -14,6 +14,7 @@ namespace DictionaryAppForIT.CustomMessageBox
 {
     public partial class Form1 : Form
     {
+        private Timer timer = new Timer();
         public Form1()
         {
             InitializeComponent();
@@ -80,6 +81,20 @@ namespace DictionaryAppForIT.CustomMessageBox
              "Question Icon",
              MessageBoxButtons.OKCancel,
              MessageBoxIcon.Question);
+        }
+        public void Init()
+        {
+            timer.Interval = 5000; // 5s
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Enabled = true;
+        }
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            this.Alert("Component", "/kəmˈpoʊ.nənt/", "Thành phần, bộ phận", Form_Alert.enmType.Success);
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Init();
         }
     }
 }

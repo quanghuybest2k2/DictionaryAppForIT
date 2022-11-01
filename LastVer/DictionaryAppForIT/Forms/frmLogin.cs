@@ -45,8 +45,6 @@ namespace DictionaryAppForIT
 
         private void btnMinimize_Click(object sender, EventArgs e)
         {
-            //Button btn = (Button)sender;
-            //MainBtn.DoMaximize(this, btn);
             this.WindowState = FormWindowState.Minimized;
         }
         #endregion
@@ -96,8 +94,7 @@ namespace DictionaryAppForIT
                 if (code == 1)
                 {
                     this.Hide();
-                    frmMain.Show(); // show form
-                    //this.DialogResult = DialogResult.OK;
+                    frmMain.Show();
 
                 }
                 else if (code == 2)

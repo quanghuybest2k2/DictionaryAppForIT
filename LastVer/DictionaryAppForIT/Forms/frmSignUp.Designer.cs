@@ -49,7 +49,6 @@ namespace DictionaryAppForIT.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSignUp));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.chkThoaThuan = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
@@ -79,6 +78,7 @@ namespace DictionaryAppForIT.Forms
             this.btnEyesClose1 = new System.Windows.Forms.Button();
             this.btnEyesOpen2 = new System.Windows.Forms.Button();
             this.btnEyesClose2 = new System.Windows.Forms.Button();
+            this.chkThoaThuan = new Bunifu.UI.WinForms.BunifuCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLayout)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,59 +97,6 @@ namespace DictionaryAppForIT.Forms
             this.label2.Size = new System.Drawing.Size(157, 17);
             this.label2.TabIndex = 18;
             this.label2.Text = "Tôi đã đọc và đồng ý với";
-            // 
-            // chkThoaThuan
-            // 
-            this.chkThoaThuan.AllowBindingControlAnimation = true;
-            this.chkThoaThuan.AllowBindingControlColorChanges = false;
-            this.chkThoaThuan.AllowBindingControlLocation = true;
-            this.chkThoaThuan.AllowCheckBoxAnimation = false;
-            this.chkThoaThuan.AllowCheckmarkAnimation = true;
-            this.chkThoaThuan.AllowOnHoverStates = true;
-            this.chkThoaThuan.AutoCheck = true;
-            this.chkThoaThuan.BackColor = System.Drawing.Color.Transparent;
-            this.chkThoaThuan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chkThoaThuan.BackgroundImage")));
-            this.chkThoaThuan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.chkThoaThuan.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
-            this.chkThoaThuan.BorderRadius = 5;
-            this.chkThoaThuan.Checked = false;
-            this.chkThoaThuan.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
-            this.chkThoaThuan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkThoaThuan.CustomCheckmarkImage = null;
-            this.chkThoaThuan.Location = new System.Drawing.Point(449, 320);
-            this.chkThoaThuan.MinimumSize = new System.Drawing.Size(17, 17);
-            this.chkThoaThuan.Name = "chkThoaThuan";
-            this.chkThoaThuan.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.chkThoaThuan.OnCheck.BorderRadius = 5;
-            this.chkThoaThuan.OnCheck.BorderThickness = 2;
-            this.chkThoaThuan.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
-            this.chkThoaThuan.OnCheck.CheckmarkColor = System.Drawing.Color.White;
-            this.chkThoaThuan.OnCheck.CheckmarkThickness = 2;
-            this.chkThoaThuan.OnDisable.BorderColor = System.Drawing.Color.LightGray;
-            this.chkThoaThuan.OnDisable.BorderRadius = 5;
-            this.chkThoaThuan.OnDisable.BorderThickness = 2;
-            this.chkThoaThuan.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.chkThoaThuan.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
-            this.chkThoaThuan.OnDisable.CheckmarkThickness = 2;
-            this.chkThoaThuan.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.chkThoaThuan.OnHoverChecked.BorderRadius = 5;
-            this.chkThoaThuan.OnHoverChecked.BorderThickness = 2;
-            this.chkThoaThuan.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.chkThoaThuan.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
-            this.chkThoaThuan.OnHoverChecked.CheckmarkThickness = 2;
-            this.chkThoaThuan.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.chkThoaThuan.OnHoverUnchecked.BorderRadius = 5;
-            this.chkThoaThuan.OnHoverUnchecked.BorderThickness = 1;
-            this.chkThoaThuan.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.chkThoaThuan.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
-            this.chkThoaThuan.OnUncheck.BorderRadius = 5;
-            this.chkThoaThuan.OnUncheck.BorderThickness = 1;
-            this.chkThoaThuan.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.chkThoaThuan.Size = new System.Drawing.Size(17, 17);
-            this.chkThoaThuan.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
-            this.chkThoaThuan.TabIndex = 8;
-            this.chkThoaThuan.ThreeState = false;
-            this.chkThoaThuan.ToolTipText = null;
             // 
             // label1
             // 
@@ -199,7 +146,7 @@ namespace DictionaryAppForIT.Forms
             this.pbLayout.BackColor = System.Drawing.Color.Transparent;
             this.pbLayout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbLayout.BackgroundImage")));
             this.pbLayout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbLayout.Location = new System.Drawing.Point(20, 12);
+            this.pbLayout.Location = new System.Drawing.Point(-25, 12);
             this.pbLayout.Name = "pbLayout";
             this.pbLayout.Size = new System.Drawing.Size(813, 460);
             this.pbLayout.TabIndex = 28;
@@ -783,6 +730,59 @@ namespace DictionaryAppForIT.Forms
             this.btnEyesClose2.UseVisualStyleBackColor = false;
             this.btnEyesClose2.Click += new System.EventHandler(this.btnEyesClose2_Click);
             // 
+            // chkThoaThuan
+            // 
+            this.chkThoaThuan.AllowBindingControlAnimation = true;
+            this.chkThoaThuan.AllowBindingControlColorChanges = false;
+            this.chkThoaThuan.AllowBindingControlLocation = true;
+            this.chkThoaThuan.AllowCheckBoxAnimation = false;
+            this.chkThoaThuan.AllowCheckmarkAnimation = true;
+            this.chkThoaThuan.AllowOnHoverStates = true;
+            this.chkThoaThuan.AutoCheck = true;
+            this.chkThoaThuan.BackColor = System.Drawing.Color.Transparent;
+            this.chkThoaThuan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chkThoaThuan.BackgroundImage")));
+            this.chkThoaThuan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.chkThoaThuan.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.chkThoaThuan.BorderRadius = 5;
+            this.chkThoaThuan.Checked = false;
+            this.chkThoaThuan.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.chkThoaThuan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkThoaThuan.CustomCheckmarkImage = null;
+            this.chkThoaThuan.Location = new System.Drawing.Point(449, 320);
+            this.chkThoaThuan.MinimumSize = new System.Drawing.Size(17, 17);
+            this.chkThoaThuan.Name = "chkThoaThuan";
+            this.chkThoaThuan.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.chkThoaThuan.OnCheck.BorderRadius = 5;
+            this.chkThoaThuan.OnCheck.BorderThickness = 2;
+            this.chkThoaThuan.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
+            this.chkThoaThuan.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.chkThoaThuan.OnCheck.CheckmarkThickness = 2;
+            this.chkThoaThuan.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.chkThoaThuan.OnDisable.BorderRadius = 5;
+            this.chkThoaThuan.OnDisable.BorderThickness = 2;
+            this.chkThoaThuan.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.chkThoaThuan.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.chkThoaThuan.OnDisable.CheckmarkThickness = 2;
+            this.chkThoaThuan.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.chkThoaThuan.OnHoverChecked.BorderRadius = 5;
+            this.chkThoaThuan.OnHoverChecked.BorderThickness = 2;
+            this.chkThoaThuan.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.chkThoaThuan.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.chkThoaThuan.OnHoverChecked.CheckmarkThickness = 2;
+            this.chkThoaThuan.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.chkThoaThuan.OnHoverUnchecked.BorderRadius = 5;
+            this.chkThoaThuan.OnHoverUnchecked.BorderThickness = 1;
+            this.chkThoaThuan.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.chkThoaThuan.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.chkThoaThuan.OnUncheck.BorderRadius = 5;
+            this.chkThoaThuan.OnUncheck.BorderThickness = 1;
+            this.chkThoaThuan.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.chkThoaThuan.Size = new System.Drawing.Size(17, 17);
+            this.chkThoaThuan.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.chkThoaThuan.TabIndex = 55;
+            this.chkThoaThuan.ThreeState = false;
+            this.chkThoaThuan.ToolTipText = null;
+            // 
             // frmSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -791,6 +791,7 @@ namespace DictionaryAppForIT.Forms
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(853, 480);
+            this.Controls.Add(this.chkThoaThuan);
             this.Controls.Add(this.btnEyesClose2);
             this.Controls.Add(this.btnEyesOpen2);
             this.Controls.Add(this.btnEyesClose1);
@@ -818,7 +819,6 @@ namespace DictionaryAppForIT.Forms
             this.Controls.Add(this.txtTenDangNhapDK);
             this.Controls.Add(this.txtMatKhauDK);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.chkThoaThuan);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbLayout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -836,7 +836,6 @@ namespace DictionaryAppForIT.Forms
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Label label2;
-        private Bunifu.UI.WinForms.BunifuCheckBox chkThoaThuan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnMinimize;
@@ -866,5 +865,6 @@ namespace DictionaryAppForIT.Forms
         private System.Windows.Forms.Button btnEyesClose1;
         private System.Windows.Forms.Button btnEyesClose2;
         private System.Windows.Forms.Button btnEyesOpen2;
+        private Bunifu.UI.WinForms.BunifuCheckBox chkThoaThuan;
     }
 }
