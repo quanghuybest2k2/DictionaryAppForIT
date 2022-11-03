@@ -105,7 +105,7 @@ namespace DictionaryAppForIT.UserControls
                 SqlConnection Conn = new SqlConnection(connString);
                 Conn.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = $"select TenTu from Tu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' or IDTK = 0";
+                cmd.CommandText = $"select TenTu from Tu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' or IDTK = '0'";
                 cmd.Connection = Conn;
                 SqlDataReader rdr = cmd.ExecuteReader();
                 AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
@@ -124,7 +124,7 @@ namespace DictionaryAppForIT.UserControls
         }
         private void KiemTraTonTaiYeuThich()
         {
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichTuVung where TiengAnh = '{txtTuVung.Text}' and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichTuVung where TiengAnh = '{txtTuVung.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
             if (Convert.ToInt32(num) > 0)
             {
                 btnYeuThich.Checked = true;
@@ -206,7 +206,7 @@ namespace DictionaryAppForIT.UserControls
 
         private void HienThiThongTin()
         {
-            object num = DataProvider.Instance.ExecuteScalar($"SELECT COUNT(TenTu) FROM Tu where TenTu = '{txtTimKiemTu.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}' or IDTK = 0 and TenTu = '{txtTimKiemTu.Text}'");
+            object num = DataProvider.Instance.ExecuteScalar($"SELECT COUNT(TenTu) FROM Tu where TenTu = '{txtTimKiemTu.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}' or IDTK = '0' and TenTu = '{txtTimKiemTu.Text}'");
             if (Convert.ToInt32(num) > 0)
             {
                 _listNghia = new List<UC_Nghia>();
@@ -372,7 +372,7 @@ namespace DictionaryAppForIT.UserControls
                 }
                 else
                 {
-                    string query = $"DELETE FROM YeuThichTuVung WHERE TiengAnh = '{txtTuVung.Text}' AND IDTK = {Class_TaiKhoan.IdTaiKhoan}";
+                    string query = $"DELETE FROM YeuThichTuVung WHERE TiengAnh = '{txtTuVung.Text}' AND IDTK = '{Class_TaiKhoan.IdTaiKhoan}'";
                     int num = DataProvider.Instance.ExecuteNonQuery(query);
                     //if (num > 0)
                     //{

@@ -77,7 +77,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
         {
             this.Name = "Check";
             this.Visible = false;
-            int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuDich where id = {this.Index} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+            int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuDich where id = '{this.Index}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
             //if (num > 0)
             //{
             //    RJMessageBox.Show("Xóa thành công!");

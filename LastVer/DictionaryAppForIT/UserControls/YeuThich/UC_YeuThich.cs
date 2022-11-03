@@ -87,13 +87,13 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             _listTuVung.Clear();
             flpContent.Controls.Clear();
             stt = 1;
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichTuVung where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
             if (Convert.ToInt32(num) > 0)
             {
                 try
                 {
                     SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"select * from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan}", Conn);
+                    SqlCommand cmd = new SqlCommand($"select * from YeuThichTuVung where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
                     Conn.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())
@@ -127,18 +127,17 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         {
             _listVanBan.Clear();
             //flpContent.Controls.Clear();
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichVanBan where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
             if (Convert.ToInt32(num) > 0)
             {
                 try
                 {
                     SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"select * from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan}", Conn);
+                    SqlCommand cmd = new SqlCommand($"select * from YeuThichVanBan where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
                     Conn.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())
                     {
-                        //ThongTinLSTraTu.idTraTuLS = rdr["ID"].ToString();
                         idHienTai = rdr["ID"].ToString();
                         string TVTiengAnh = rdr["TiengAnh"].ToString();
                         string TVTiengViet = rdr["TiengViet"].ToString();
@@ -177,7 +176,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 {
                     xoaTatCaYT = false;
                     flpContent.Controls.Remove(item);
-                    DataProvider.Instance.ExecuteNonQuery($"delete from YeuThichTuVung where id = {item.Index} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+                    DataProvider.Instance.ExecuteNonQuery($"delete from YeuThichTuVung where id = '{item.Index}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
                 }
             }
             _listTuVung.RemoveAll(x => x.Name == "Check");
@@ -191,7 +190,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 {
                     xoaTatCaYT = false;
                     flpContent.Controls.Remove(item);
-                    DataProvider.Instance.ExecuteNonQuery($"delete from YeuThichVanBan where id = {item.Index} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+                    DataProvider.Instance.ExecuteNonQuery($"delete from YeuThichVanBan where id = '{item.Index}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
                 }
             }
             _listVanBan.RemoveAll(x => x.Name == "Check");
@@ -208,8 +207,8 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             {
 
                 flpContent.Controls.Clear();
-                int num = DataProvider.Instance.ExecuteNonQuery($"delete from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan} " +
-                  $"delete from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+                int num = DataProvider.Instance.ExecuteNonQuery($"delete from YeuThichTuVung where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' " +
+                  $"delete from YeuThichVanBan where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
                 if (num > 0)
                 {
                     lblSoMucYeuThich.Text = "0";
@@ -221,7 +220,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 {
                     RJMessageBox.Show("Xóa không thành công!", "Thông báo",
                       MessageBoxButtons.OK,
-                      MessageBoxIcon.Information);
+                      MessageBoxIcon.Error);
                 }
                 _listTuVung.Clear();
             }
@@ -235,7 +234,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 _listTuVung.Clear();
                 flpContent.Controls.Clear();
                 SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC HienThiTimKiemYTTraTu '{txtTimKiemYeuThich.Text.Trim()}', {Class_TaiKhoan.IdTaiKhoan}", Conn);
+                SqlCommand cmd = new SqlCommand($"EXEC HienThiTimKiemYTTraTu '{txtTimKiemYeuThich.Text.Trim()}', '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
                 Conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
@@ -268,7 +267,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             {
                 _listVanBan.Clear();
                 SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC HienThiTimKiemYTVanBan '{txtTimKiemYeuThich.Text.Trim()}', {Class_TaiKhoan.IdTaiKhoan}", Conn);
+                SqlCommand cmd = new SqlCommand($"EXEC HienThiTimKiemYTVanBan '{txtTimKiemYeuThich.Text.Trim()}', '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
                 Conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
@@ -300,8 +299,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 flpContent.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
                 HienThiTimKiemYTTraTu();
                 HienThiTimKiemYTVanBan();
-                // select sum(AllCount) AS Tong_SoMucYeuThich from((select count(*) AS AllCount from YeuThichTuVung where IDTK = 2 and TiengAnh = 'Component') union all (select count(*) AS AllCount from YeuThichVanBan where IDTK = 2 and TiengAnh LIKE '%Component%'))t
-                string query = $"select sum(AllCount) AS Tong_SoMucYeuThich from((select count(*) AS AllCount from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan} and TiengAnh = '{txtTimKiemYeuThich.Text}') union all (select count(*) AS AllCount from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan} and TiengAnh LIKE '%{txtTimKiemYeuThich.Text}%'))t";
+                string query = $"select sum(AllCount) AS Tong_SoMucYeuThich from((select count(*) AS AllCount from YeuThichTuVung where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' and TiengAnh = '{txtTimKiemYeuThich.Text}') union all (select count(*) AS AllCount from YeuThichVanBan where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' and TiengAnh LIKE '%{txtTimKiemYeuThich.Text}%'))t";
                 object soMucTK = DataProvider.Instance.ExecuteScalar(query);
                 lblSoMucYeuThich.Text = soMucTK.ToString();
                 TuHienTai = txtTimKiemYeuThich.Text;//--------------------------------------
@@ -315,13 +313,13 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             _listTuVung.Clear();
             flpContent.Controls.Clear();
             stt = 1;
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichTuVung where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
             if (Convert.ToInt32(num) > 0)
             {
                 try
                 {
                     SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"select * from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan} order by TiengAnh ASC", Conn);
+                    SqlCommand cmd = new SqlCommand($"select * from YeuThichTuVung where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' order by TiengAnh ASC", Conn);
                     Conn.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())
@@ -354,13 +352,13 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         {
             _listVanBan.Clear();
             //flpContent.Controls.Clear();
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichVanBan where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
             if (Convert.ToInt32(num) > 0)
             {
                 try
                 {
                     SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"select * from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan} order by TiengAnh ASC", Conn);
+                    SqlCommand cmd = new SqlCommand($"select * from YeuThichVanBan where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' order by TiengAnh ASC", Conn);
                     Conn.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())

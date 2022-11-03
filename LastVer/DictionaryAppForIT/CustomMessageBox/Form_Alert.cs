@@ -1,4 +1,5 @@
-﻿using DictionaryAppForIT.Properties;
+﻿using DictionaryAppForIT.DTO;
+using DictionaryAppForIT.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,13 @@ namespace DictionaryAppForIT.CustomMessageBox
 {
     public partial class Form_Alert : Form
     {
+        XemTatCaNghia XemNghia;
+        Tu t;
         public Form_Alert()
         {
             InitializeComponent();
+            XemNghia = new XemTatCaNghia();
+            t = new Tu();
         }
 
         public void AlertBackColor(string color)
@@ -44,7 +49,7 @@ namespace DictionaryAppForIT.CustomMessageBox
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            switch(this.action)
+            switch (this.action)
             {
                 case enmAction.wait:
                     timer1.Interval = 5000;
@@ -89,8 +94,15 @@ namespace DictionaryAppForIT.CustomMessageBox
 
         }
 
-        public void showAlert(string tuVung, string phienAm, string nghia, enmType type)
+        public void showAlert(enmType type)
         {
+            XemNghia.HienThiThongTinRandom();
+            foreach (var item in XemNghia._listTu)
+            {
+                lblTuVung.Text = item.TenTu;
+                lblPhienAm.Text = item.PhienAm;
+                lblNghia.Text = item.Nghia;
+            }
             this.Opacity = 0.0;
             this.StartPosition = FormStartPosition.Manual;
             string fname;
@@ -132,11 +144,6 @@ namespace DictionaryAppForIT.CustomMessageBox
             //        this.BackColor = Color.DarkOrange;
             //        break;
             //}
-
-
-            this.lblTuVung.Text = tuVung;
-            this.lblPhienAm.Text = phienAm;
-            this.lblNghia.Text = nghia;
 
             this.Show();
             this.action = enmAction.start;

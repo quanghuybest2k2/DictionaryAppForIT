@@ -47,7 +47,7 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                string query = $"exec LayTheoChuyenNganh {cbbChuyenNganh.SelectedValue} , {Class_TaiKhoan.IdTaiKhoan}";
+                string query = $"exec LayTheoChuyenNganh '{cbbChuyenNganh.SelectedValue}' , '{Class_TaiKhoan.IdTaiKhoan}'";
                 dtgvTuVung.DataSource = DataProvider.Instance.ExecuteQuery(query);//
                 lblSoTuHienCo.Text = dtgvTuVung.Rows.Count.ToString();// hiển thị số từ vựng
             }
@@ -85,7 +85,7 @@ namespace DictionaryAppForIT.UserControls.Home
             {
                 try
                 {
-                    string query = $"EXEC TimTheoChuyenNganh '{txtTimTheoChuyenNganh.Text}', {cbbChuyenNganh.SelectedValue}, {Class_TaiKhoan.IdTaiKhoan}";
+                    string query = $"EXEC TimTheoChuyenNganh '{txtTimTheoChuyenNganh.Text}', '{cbbChuyenNganh.SelectedValue}', '{Class_TaiKhoan.IdTaiKhoan}'";
                     dtgvTuVung.DataSource = DataProvider.Instance.ExecuteQuery(query);
                 }
                 catch (Exception ex)
@@ -101,7 +101,7 @@ namespace DictionaryAppForIT.UserControls.Home
                 SqlConnection Conn = new SqlConnection(connString);
                 Conn.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = $"SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and ChuyenNganh.ID = {cbbChuyenNganh.SelectedValue} and IDTK = {Class_TaiKhoan.IdTaiKhoan} and TenTu like '{txtTimTheoChuyenNganh.Text}%' or tu.ChuyenNganh = ChuyenNganh.ID and IDTK = 0 and TenTu like '{txtTimTheoChuyenNganh.Text}%' and ChuyenNganh.ID = {cbbChuyenNganh.SelectedValue}";
+                cmd.CommandText = $"SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and ChuyenNganh.ID = '{cbbChuyenNganh.SelectedValue}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}' and TenTu like '{txtTimTheoChuyenNganh.Text}%' or tu.ChuyenNganh = ChuyenNganh.ID and IDTK = '0' and TenTu like '{txtTimTheoChuyenNganh.Text}%' and ChuyenNganh.ID = '{cbbChuyenNganh.SelectedValue}'";
                 cmd.Connection = Conn;
                 SqlDataReader rdr = cmd.ExecuteReader();
                 AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();

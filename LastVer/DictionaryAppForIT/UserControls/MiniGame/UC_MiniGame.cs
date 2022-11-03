@@ -30,7 +30,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         public int soCauHoanThanh = 0;
         public string dapAnDung = "";
         public string cauTraLoi = "";
-        //CauHoiVaDapAn ClassCauHoiVaDapAn = new CauHoiVaDapAn();
         DanhSachCauHoi ClassDanhSachCauHoi = new DanhSachCauHoi();
         public static bool XacNhanChoiLai;
         public UC_MiniGame()
@@ -167,12 +166,12 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             var rnd = new Random();
             string[] DangCauHoi =
             {
-                $"Bạn còn nhớ nghĩa của từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()} không?",
-                $"Từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()} có nghĩa là gì?",
-                $"Hãy chọn nghĩa đúng của từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()}",
-                $"Chọn nghĩa tương ứng với từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()}",
-                $"{ClassDanhSachCauHoi._list[index].TuVung.ToUpper()} có nghĩa là:",
-                $"Trong các đáp án bên dưới, đâu là nghĩa của từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()}"
+                $"Bạn còn nhớ nghĩa của từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()} ({ClassDanhSachCauHoi._list[index].TuLoai}) không?",
+                $"Từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()} ({ClassDanhSachCauHoi._list[index].TuLoai}) có nghĩa là gì?",
+                $"Hãy chọn nghĩa đúng của từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()} ({ClassDanhSachCauHoi._list[index].TuLoai})",
+                $"Chọn nghĩa tương ứng với từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()} ({ClassDanhSachCauHoi._list[index].TuLoai})",
+                $"{ClassDanhSachCauHoi._list[index].TuVung.ToUpper()} ({ClassDanhSachCauHoi._list[index].TuLoai}) có nghĩa là:",
+                $"Trong các đáp án bên dưới, đâu là nghĩa của từ {ClassDanhSachCauHoi._list[index].TuVung.ToUpper()} ({ClassDanhSachCauHoi._list[index].TuLoai})"
             };
             var num = Enumerable.Range(0, 6).OrderBy(x => rnd.Next()).Take(1).ToList();
             txtCauHoi.Text = DangCauHoi[num[0]];

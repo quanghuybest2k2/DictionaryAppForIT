@@ -31,7 +31,7 @@ namespace DictionaryAppForIT.UserControls.TuVungHot
         {
             flpContent.Controls.Clear();
             int stt = 1;
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from LichSuTraTu where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from LichSuTraTu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
             if (Convert.ToInt32(num) > 0)
             {
                 try

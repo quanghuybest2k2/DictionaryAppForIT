@@ -101,7 +101,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         {
             if (_loai == 1)
             {
-                int num = DataProvider.Instance.ExecuteNonQuery($"UPDATE YeuThichTuVung SET GhiChu = N'{txtGhiChu.Text.Trim()}' WHERE ID = {lblIndex.Text} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+                int num = DataProvider.Instance.ExecuteNonQuery($"UPDATE YeuThichTuVung SET GhiChu = N'{txtGhiChu.Text.Trim()}' WHERE ID = '{lblIndex.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
                 if (num > 0)
                 {
                     RJMessageBox.Show("Ghi chú thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -114,7 +114,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             }
             else
             {
-                int num = DataProvider.Instance.ExecuteNonQuery($"UPDATE YeuThichVanBan SET GhiChu = N'{txtGhiChu.Text.Trim()}' WHERE ID = {lblIndex.Text} and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+                int num = DataProvider.Instance.ExecuteNonQuery($"UPDATE YeuThichVanBan SET GhiChu = N'{txtGhiChu.Text.Trim()}' WHERE ID = '{lblIndex.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
                 if (num > 0)
                 {
                     RJMessageBox.Show("Ghi chú thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);

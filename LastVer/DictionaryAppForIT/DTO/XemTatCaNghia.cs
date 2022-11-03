@@ -25,7 +25,7 @@ namespace DictionaryAppForIT.DTO
             {
                 _listTu.Clear();
                 SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC HienThiThongTin '{tenTu}', {Class_TaiKhoan.IdTaiKhoan}", Conn);
+                SqlCommand cmd = new SqlCommand($"EXEC HienThiThongTin '{tenTu}', '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
                 Conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
@@ -56,10 +56,10 @@ namespace DictionaryAppForIT.DTO
         {
             try
             {
-                object kqRand = DataProvider.Instance.ExecuteScalar($"SELECT TOP 1 ID FROM Tu where IDTK = {Class_TaiKhoan.IdTaiKhoan} or IDTK = 0 ORDER  BY NEWID()");
+                object kqRand = DataProvider.Instance.ExecuteScalar($"SELECT TOP 1 ID FROM Tu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' or IDTK = '0' ORDER  BY NEWID()");
                 _listTu.Clear();
                 SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC TuNgauNhien {Convert.ToInt32(kqRand)}, {Class_TaiKhoan.IdTaiKhoan}", Conn);
+                SqlCommand cmd = new SqlCommand($"EXEC TuNgauNhien '{Convert.ToInt32(kqRand)}', '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
                 Conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())

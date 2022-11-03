@@ -83,21 +83,21 @@ namespace DictionaryAppForIT.Forms
             //Kiểm tra thông báo
             KiemTraThongBao();
         }
-        public void Alert(string tuVung, string phienAm, string nghia, Form_Alert.enmType type)
+        public void Alert(Form_Alert.enmType type)
         {
             var frmAlert = new Form_Alert();
             frmAlert.AlertBackColor(rd.GetColor());
-            frmAlert.showAlert(tuVung, phienAm, nghia, type);
+            frmAlert.showAlert(type);
         }
         public void Init()
         {
-            timer.Interval = 5000; // 5s
+            timer.Interval = 30000; // 30s
             timer.Tick += new EventHandler(timer_Tick);
             timer.Enabled = true;
         }
         private void timer_Tick(object sender, EventArgs e)
         {
-            this.Alert("Component", "/kəmˈpoʊ.nənt/", "Thành phần, bộ phận", Form_Alert.enmType.Success);
+            this.Alert(Form_Alert.enmType.Success);
         }
         private void frmMain_Load(object sender, EventArgs e)
         {

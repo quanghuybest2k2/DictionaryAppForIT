@@ -121,7 +121,7 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                dtgvLichSu.DataSource = DataProvider.Instance.ExecuteQuery($"select TiengAnh, TiengViet from LichSuDich where idtk = {Class_TaiKhoan.IdTaiKhoan}");
+                dtgvLichSu.DataSource = DataProvider.Instance.ExecuteQuery($"select TiengAnh, TiengViet from LichSuDich where idtk = '{Class_TaiKhoan.IdTaiKhoan}'");
             }
             catch (Exception ex)
             {
@@ -133,7 +133,7 @@ namespace DictionaryAppForIT.UserControls.Home
             try
             {
                 string today = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
-                int num = DataProvider.Instance.ExecuteNonQuery($"insert into LichSuDich values('{txtTop.Text.Trim()}', N'{txtUnder.Text.Trim()}',  '{today}', {Class_TaiKhoan.IdTaiKhoan})");
+                int num = DataProvider.Instance.ExecuteNonQuery($"insert into LichSuDich values('{txtTop.Text.Trim()}', N'{txtUnder.Text.Trim()}',  '{today}', '{Class_TaiKhoan.IdTaiKhoan}')");
                 if (num > 0)
                 {
                     LoadLichSu();
@@ -161,7 +161,7 @@ namespace DictionaryAppForIT.UserControls.Home
         private void tsmiXoa_Click(object sender, EventArgs e)
         {
             string ChuMuonXoa = dtgvLichSu.SelectedCells[0].Value.ToString();
-            int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuDich where IDTK = {Class_TaiKhoan.IdTaiKhoan} and TiengAnh = '{ChuMuonXoa}'");
+            int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuDich where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' and TiengAnh = '{ChuMuonXoa}'");
             if (num > 0)
             {
                 RJMessageBox.Show("Xóa thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -171,14 +171,14 @@ namespace DictionaryAppForIT.UserControls.Home
             {
                 RJMessageBox.Show("Thất bại!",
                 "Thông báo lỗi",
-                MessageBoxButtons.RetryCancel,
+                MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
             }
         }
 
         private void KiemTraTonTaiYeuThich()
         {
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichVanBan where TiengAnh = '{txtTop.Text}' and IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichVanBan where TiengAnh = '{txtTop.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
             if (Convert.ToInt32(num) > 0)
             {
                 btnLuuYeuThich.Checked = true;
@@ -204,7 +204,7 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                int num = DataProvider.Instance.ExecuteNonQuery($"DELETE FROM LichSuDich where IDTK = {Class_TaiKhoan.IdTaiKhoan}");
+                int num = DataProvider.Instance.ExecuteNonQuery($"DELETE FROM LichSuDich where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
                 if (num > 0)
                 {
                     RJMessageBox.Show("Đã xóa hết lịch sử", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -296,7 +296,7 @@ namespace DictionaryAppForIT.UserControls.Home
             }
             else
             {
-                string query = $"DELETE FROM YeuThichVanBan WHERE TiengAnh = '{txtTop.Text.Trim()}' AND IDTK = {Class_TaiKhoan.IdTaiKhoan}";
+                string query = $"DELETE FROM YeuThichVanBan WHERE TiengAnh = '{txtTop.Text.Trim()}' AND IDTK = '{Class_TaiKhoan.IdTaiKhoan}'";
                 int num = DataProvider.Instance.ExecuteNonQuery(query);
                 //if (num > 0)
                 //{

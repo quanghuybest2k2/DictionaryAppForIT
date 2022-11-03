@@ -39,19 +39,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             DapAnDung = dapAnDung;
             DapAnRandom = new List<string>();
         }
-
-        public void LoadCauHoi(int stt)
-        {
-            Stt = stt;
-            // lay tu vung
-            object tv = DataProvider.Instance.ExecuteScalar($"select top 1 TiengAnh from LichSuTraTu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' ORDER  BY NEWID()");
-            TuVung = tv.ToString();
-            // lay nghia
-            object da = DataProvider.Instance.ExecuteScalar($"select top 1 TiengViet from LichSuTraTu where TiengAnh = '{TuVung}'and IDTK = '{Class_TaiKhoan.IdTaiKhoan}' ORDER  BY NEWID()");
-            DapAnDung = da.ToString();
-            //object rdDa = DataProvider.Instance.ExecuteQuery($"EXEC RandomDapAn '{ClassCauHoiVaDapAn.DapAnDung}'");
-            RandomDapAnSai();
-        }
         public void RandomDapAnSai()
         {
             try

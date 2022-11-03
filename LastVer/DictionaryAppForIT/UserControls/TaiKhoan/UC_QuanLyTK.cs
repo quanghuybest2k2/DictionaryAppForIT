@@ -21,7 +21,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
     {
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
 
-        private int tgSuDung = 2;
+        private int tgSuDung = 0;
         public UC_QuanLyTK()
         {
             InitializeComponent();
@@ -60,27 +60,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             rtb1.BackColor = System.Drawing.Color.LemonChiffon;
             panelThoiGianTao.Controls.Add(rtb1);
         }
-        //
-        //public void SoMucYeuThich()
-        //{
-        //    RichTextBox rtxtSoMucYeuThich = new RichTextBox();
-        //    rtxtSoMucYeuThich.Font = new System.Drawing.Font("Segoe UI", 10F);
-        //    rtxtSoMucYeuThich.SelectionColor = Color.Gray;
-        //    rtxtSoMucYeuThich.AppendText(" Hiện tại bạn có tất cả ");
-        //    rtxtSoMucYeuThich.SelectionColor = ColorTranslator.FromHtml("#3776ab");
-        //    //rtxtSoMucYeuThich.AppendText(frmMain.Tong_So_Muc_Yeu_Thich());
-        //    rtxtSoMucYeuThich.AppendText(lblSoMucTest.Text);
-        //    rtxtSoMucYeuThich.SelectionColor = Color.Gray;
-        //    rtxtSoMucYeuThich.AppendText(" mục yêu thích");
-        //    rtxtSoMucYeuThich.Size = new System.Drawing.Size(242, 23);
-        //    rtxtSoMucYeuThich.Location = new Point(69, 29);
-        //    rtxtSoMucYeuThich.Name = "rtxtMucYeuThich";
-        //    rtxtSoMucYeuThich.BorderStyle = BorderStyle.None;
-        //    rtxtSoMucYeuThich.ReadOnly = true;
-        //    rtxtSoMucYeuThich.BackColor = System.Drawing.Color.LemonChiffon;
-        //    rtxtSoMucYeuThich.BringToFront();
-        //    panelSoMucYeuThich.Controls.Add(rtxtSoMucYeuThich);
-        //}
         private void ThoiGianSuDung()
         {
             RichTextBox rtb1 = new RichTextBox();
@@ -110,7 +89,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 // xóa tài khoản
                 try
                 {
-                    string query = $"Delete from TaiKhoan where ID = {Class_TaiKhoan.IdTaiKhoan}";
+                    string query = $"Delete from TaiKhoan where ID = '{Class_TaiKhoan.IdTaiKhoan}'";
                     int num = DataProvider.Instance.ExecuteNonQuery(query);
                     if (num > 0)
                     {
@@ -119,7 +98,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                     }
                     else
                     {
-                        RJMessageBox.Show("Không thể xóa tài khoản!", "Lỗi rồi", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                        RJMessageBox.Show("Không thể xóa tài khoản!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
@@ -160,10 +139,10 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             int num = DataProvider.Instance.ExecuteNonQuery(query);
             if (num > 0)
             {
-                RJMessageBox.Show("Cập nhật thông tin tài khoản thành công!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                RJMessageBox.Show("Cập nhật thông tin tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }else
             {
-                RJMessageBox.Show("Không thể cập nhật tài khoản!", "Lỗi rồi", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                RJMessageBox.Show("Không thể cập nhật tài khoản!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -249,7 +228,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             try
             {
                 SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC HienThiThongTinTaiKhoan {Class_TaiKhoan.IdTaiKhoan}", Conn);
+                SqlCommand cmd = new SqlCommand($"EXEC HienThiThongTinTaiKhoan '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
                 Conn.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())

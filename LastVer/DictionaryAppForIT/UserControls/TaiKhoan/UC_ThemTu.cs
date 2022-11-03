@@ -152,11 +152,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             txtPhienAm.Clear();
             txtDongNghia.Clear();
             txtTraiNghia.Clear();
-            //foreach (var item in _list)
-            //{
-            //    //pnNghia.Controls
-            //    //item.MacDinh();
-            //}
             pnNghia.Controls.Clear();
             _list.Clear();
             stt = 1;
