@@ -18,6 +18,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         public string CauTraLoi { get; set; }
         public int Stt { get; set; }
         public string TuVung { get; set; }
+        public string TuLoai { get; set; }
         public string DapAnDung { get; set; }
         public List<string> DapAnRandom;
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
@@ -30,10 +31,11 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             DaTraLoi = false;
         }
 
-        public CauHoiVaDapAn(int stt, string tuVung, string dapAnDung)
+        public CauHoiVaDapAn(int stt, string tuVung, string tuLoai, string dapAnDung)
         {
             Stt = stt;
             TuVung = tuVung;
+            TuLoai = tuLoai;
             DapAnDung = dapAnDung;
             DapAnRandom = new List<string>();
         }

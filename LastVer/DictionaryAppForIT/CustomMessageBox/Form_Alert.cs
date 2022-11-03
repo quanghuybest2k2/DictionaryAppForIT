@@ -18,6 +18,11 @@ namespace DictionaryAppForIT.CustomMessageBox
             InitializeComponent();
         }
 
+        public void AlertBackColor(string color)
+        {
+            this.BackColor = Color.FromName(color);
+        }
+
         public enum enmAction
         {
             wait,
@@ -108,25 +113,25 @@ namespace DictionaryAppForIT.CustomMessageBox
             }
             this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
 
-            switch(type)
-            {
-                case enmType.Success:
-                    this.pictureBox1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\thanhCong.png");
-                    this.BackColor = Color.SeaGreen;
-                    break;
-                case enmType.Error:
-                    this.pictureBox1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\loi.png");
-                    this.BackColor = Color.DarkRed;
-                    break;
-                case enmType.Info:
-                    this.pictureBox1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\thongTin.png");
-                    this.BackColor = Color.RoyalBlue;
-                    break;
-                case enmType.Warning:
-                    this.pictureBox1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\canhBao.png");
-                    this.BackColor = Color.DarkOrange;
-                    break;
-            }
+            //switch(type)
+            //{
+            //    case enmType.Success:
+            //        this.pictureBox1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\thanhCong.png");
+            //        this.BackColor = Color.SeaGreen;
+            //        break;
+            //    case enmType.Error:
+            //        this.pictureBox1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\loi.png");
+            //        this.BackColor = Color.DarkRed;
+            //        break;
+            //    case enmType.Info:
+            //        this.pictureBox1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\thongTin.png");
+            //        this.BackColor = Color.RoyalBlue;
+            //        break;
+            //    case enmType.Warning:
+            //        this.pictureBox1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\canhBao.png");
+            //        this.BackColor = Color.DarkOrange;
+            //        break;
+            //}
 
 
             this.lblTuVung.Text = tuVung;

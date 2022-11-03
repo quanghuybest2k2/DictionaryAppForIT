@@ -24,22 +24,12 @@ namespace DictionaryAppForIT.UserControls.MiniGame
 
         private void btnBatDau_Click(object sender, EventArgs e)
         {
-            object count = DataProvider.Instance.ExecuteScalar($"EXEC KiemTraTRungTu '{Class_TaiKhoan.IdTaiKhoan}'");
-            if (Convert.ToInt32(count)>=10)
-            {
-                //pnStartMiniGame.Visible = false;
-                pnStartMiniGame.SendToBack();
-                this.Controls.Remove(ucMiniGame);
-                ucMiniGame = new UC_MiniGame();
-                this.Controls.Add(ucMiniGame);
-                ucMiniGame.Dock = DockStyle.Fill;
-                ucMiniGame.BringToFront();
-            }
-            else
-            {
-                RJMessageBox.Show("Bạn cần tra đủ 10 từ vựng khác nhau", "Thông báo");
-                return;
-            }
+            pnStartMiniGame.SendToBack();
+            this.Controls.Remove(ucMiniGame);
+            ucMiniGame = new UC_MiniGame();
+            this.Controls.Add(ucMiniGame);
+            ucMiniGame.Dock = DockStyle.Fill;
+            ucMiniGame.BringToFront();
         }
     }
 }

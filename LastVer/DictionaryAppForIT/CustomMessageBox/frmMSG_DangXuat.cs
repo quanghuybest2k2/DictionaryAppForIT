@@ -16,16 +16,18 @@ namespace DictionaryAppForIT.CustomMessageBox
         public frmMSG_DangXuat()
         {
             InitializeComponent();
+            
         }
 
         private void pbClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult = DialogResult.No;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             //this.Hide();
+            DialogResult = DialogResult.OK;
             frmLogin frmLogin = new frmLogin();
             frmLogin.Show();
         }

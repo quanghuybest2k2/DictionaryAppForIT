@@ -42,6 +42,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         {
             //LoadCauHoi();
             ClassDanhSachCauHoi.LoadDSCauHoi();
+            ClassDanhSachCauHoi.BoSungCauHoiNeuChuaDu(ClassDanhSachCauHoi.demSoTu);
             btnDieuHuong_Click(btnCau1, e);
             btnCau1.Checked = true;
             LoadThoiGian();
@@ -127,6 +128,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             {
                 ClassDanhSachCauHoi = new DanhSachCauHoi();
                 ClassDanhSachCauHoi.LoadDSCauHoi();
+                ClassDanhSachCauHoi.BoSungCauHoiNeuChuaDu(ClassDanhSachCauHoi.demSoTu);
                 HienThiCauHoi(0);
                 lblSoCauHoanThanh.Text = "0/10";
                 btnCau1.Checked = true;

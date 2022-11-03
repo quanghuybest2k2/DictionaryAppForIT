@@ -563,18 +563,6 @@ Select * from LichSuTraTu where IDTK = 1 or IDTK = 0
 -- random tu_vung
 select top 1 TiengAnh from LichSuTraTu where IDTK = 1 ORDER  BY NEWID()
 go
--- Random không trùng
-CREATE PROC RandomCauHoivaTraLoi
-@idtk INT
-AS
-	select top 10 tienganh, TiengViet
-	from
-	(
-		select distinct tienganh, TiengViet from LichSuTraTu where IDTK = @idtk
-	) as random
-	order by newid()
-EXEC RandomCauHoivaTraLoi 1
-select * from LichSuTraTu
 -- lay nghia tu_vung
 select top 1 TiengViet from LichSuTraTu where TiengAnh = 'Component'and IDTK = 1 ORDER  BY NEWID()
 go
@@ -606,26 +594,31 @@ go
 --update LichSuDich set NgayHienTai = '28/08/2022 03:58 PM' where ID = 6 and IDTK = 1
 --update LichSuDich set NgayHienTai = '22/10/2022 03:58 PM' where ID = 7 and IDTK = 1
 go
--- kiểm tra xem lịch sử tra tra từ có đủ 10 từ hay không
-CREATE PROC KiemTraTRungTu
-@idtk INT
+SELECT * FROM LichSuTraTu where IDTK = 5
+go
+CREATE PROC RandomMiniGame
+@idtk int
 AS
-	SELECT SUM(mycount) as SoTuKhacNhau
-	FROM  (
-		SELECT COUNT(DISTINCT TiengAnh) AS mycount
-		FROM LichSuTraTu
-		WHERE IDTK = @idtk
-		GROUP BY TiengAnh
-	) as R;
-go
-EXEC KiemTraTRungTu 1
-EXEC RandomCauHoivaTraLoi 1
-go
-SELECT * FROM Tu
-go
 select top 10 TiengAnh, TenLoai,TiengViet
 	from
 	(
-		select distinct lstt.TiengAnh, tl.TenLoai,TiengViet from LichSuTraTu lstt, TuLoai tl, Tu t, Nghia n where lstt.IDTK = 1 and lstt.TiengAnh = t.TenTu and t.ID = n.IDTu and n.IDTuLoai = tl.ID and lstt.TiengViet = n.Nghia
+		select distinct lstt.TiengAnh, tl.TenLoai,TiengViet from LichSuTraTu lstt, TuLoai tl, Tu t, Nghia n where lstt.IDTK = @idtk and lstt.TiengAnh = t.TenTu and t.ID = n.IDTu and n.IDTuLoai = tl.ID and lstt.TiengViet = n.Nghia
 	) as random
 	order by newid()
+go
+EXEC RandomMiniGame 5
+go
+-- Random bổ sung nếu chưa đủ 10 từ
+CREATE PROC RandomNeuChuaDu
+@soTu INT
+AS
+	select top (@soTu) TenTu, TenLoai, Nghia
+	from
+	(
+		select distinct t.TenTu, tl.TenLoai, n.Nghia from TuLoai tl, Tu t, Nghia n where t.IDTK = 0 and t.ID = n.IDTu and n.IDTuLoai = tl.ID
+	)  as random
+	order by newid()
+go
+EXEC RandomNeuChuaDu 3
+select * from LichSuTraTu
+select * from Tu where IDTK = 0

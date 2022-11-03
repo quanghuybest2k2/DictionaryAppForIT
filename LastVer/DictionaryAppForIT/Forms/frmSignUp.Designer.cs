@@ -92,7 +92,7 @@ namespace DictionaryAppForIT.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(472, 318);
+            this.label2.Location = new System.Drawing.Point(498, 332);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 17);
             this.label2.TabIndex = 18;
@@ -103,7 +103,7 @@ namespace DictionaryAppForIT.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(368, 103);
+            this.label1.Location = new System.Drawing.Point(394, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 37);
             this.label1.TabIndex = 0;
@@ -118,7 +118,7 @@ namespace DictionaryAppForIT.Forms
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(807, 12);
+            this.btnExit.Location = new System.Drawing.Point(850, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(30, 30);
             this.btnExit.TabIndex = 11;
@@ -134,7 +134,7 @@ namespace DictionaryAppForIT.Forms
             this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(771, 12);
+            this.btnMinimize.Location = new System.Drawing.Point(814, 12);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(30, 30);
             this.btnMinimize.TabIndex = 10;
@@ -143,10 +143,13 @@ namespace DictionaryAppForIT.Forms
             // 
             // pbLayout
             // 
+            this.pbLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pbLayout.BackColor = System.Drawing.Color.Transparent;
             this.pbLayout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbLayout.BackgroundImage")));
             this.pbLayout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbLayout.Location = new System.Drawing.Point(-25, 12);
+            this.pbLayout.Location = new System.Drawing.Point(43, 29);
             this.pbLayout.Name = "pbLayout";
             this.pbLayout.Size = new System.Drawing.Size(813, 460);
             this.pbLayout.TabIndex = 28;
@@ -179,7 +182,7 @@ namespace DictionaryAppForIT.Forms
             this.txtMatKhauDK.IconRight = null;
             this.txtMatKhauDK.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMatKhauDK.Lines = new string[0];
-            this.txtMatKhauDK.Location = new System.Drawing.Point(448, 181);
+            this.txtMatKhauDK.Location = new System.Drawing.Point(474, 195);
             this.txtMatKhauDK.MaxLength = 32767;
             this.txtMatKhauDK.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtMatKhauDK.Modified = false;
@@ -253,7 +256,7 @@ namespace DictionaryAppForIT.Forms
             this.txtTenDangNhapDK.IconRight = null;
             this.txtTenDangNhapDK.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTenDangNhapDK.Lines = new string[0];
-            this.txtTenDangNhapDK.Location = new System.Drawing.Point(89, 261);
+            this.txtTenDangNhapDK.Location = new System.Drawing.Point(115, 275);
             this.txtTenDangNhapDK.MaxLength = 32767;
             this.txtTenDangNhapDK.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtTenDangNhapDK.Modified = false;
@@ -327,7 +330,7 @@ namespace DictionaryAppForIT.Forms
             this.txtEmailDK.IconRight = null;
             this.txtEmailDK.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmailDK.Lines = new string[0];
-            this.txtEmailDK.Location = new System.Drawing.Point(89, 181);
+            this.txtEmailDK.Location = new System.Drawing.Point(115, 195);
             this.txtEmailDK.MaxLength = 32767;
             this.txtEmailDK.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtEmailDK.Modified = false;
@@ -380,7 +383,7 @@ namespace DictionaryAppForIT.Forms
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(89, 236);
+            this.label5.Location = new System.Drawing.Point(115, 250);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 20);
             this.label5.TabIndex = 32;
@@ -392,7 +395,7 @@ namespace DictionaryAppForIT.Forms
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(89, 158);
+            this.label4.Location = new System.Drawing.Point(115, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 20);
             this.label4.TabIndex = 33;
@@ -404,7 +407,7 @@ namespace DictionaryAppForIT.Forms
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(89, 319);
+            this.label6.Location = new System.Drawing.Point(115, 333);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 20);
             this.label6.TabIndex = 34;
@@ -417,7 +420,7 @@ namespace DictionaryAppForIT.Forms
             this.rdNam.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
             this.rdNam.BorderThickness = 1;
             this.rdNam.Checked = true;
-            this.rdNam.Location = new System.Drawing.Point(185, 321);
+            this.rdNam.Location = new System.Drawing.Point(211, 335);
             this.rdNam.Name = "rdNam";
             this.rdNam.OutlineColor = System.Drawing.Color.DodgerBlue;
             this.rdNam.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
@@ -435,7 +438,7 @@ namespace DictionaryAppForIT.Forms
             this.rdNu.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
             this.rdNu.BorderThickness = 1;
             this.rdNu.Checked = false;
-            this.rdNu.Location = new System.Drawing.Point(278, 321);
+            this.rdNu.Location = new System.Drawing.Point(304, 335);
             this.rdNu.Name = "rdNu";
             this.rdNu.OutlineColor = System.Drawing.Color.DodgerBlue;
             this.rdNu.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
@@ -453,7 +456,7 @@ namespace DictionaryAppForIT.Forms
             this.rdKhac.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
             this.rdKhac.BorderThickness = 1;
             this.rdKhac.Checked = false;
-            this.rdKhac.Location = new System.Drawing.Point(361, 320);
+            this.rdKhac.Location = new System.Drawing.Point(387, 334);
             this.rdKhac.Name = "rdKhac";
             this.rdKhac.OutlineColor = System.Drawing.Color.DodgerBlue;
             this.rdKhac.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
@@ -469,7 +472,7 @@ namespace DictionaryAppForIT.Forms
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Gray;
-            this.label7.Location = new System.Drawing.Point(206, 320);
+            this.label7.Location = new System.Drawing.Point(232, 334);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 17);
             this.label7.TabIndex = 38;
@@ -480,7 +483,7 @@ namespace DictionaryAppForIT.Forms
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Gray;
-            this.label8.Location = new System.Drawing.Point(299, 320);
+            this.label8.Location = new System.Drawing.Point(325, 334);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(26, 17);
             this.label8.TabIndex = 39;
@@ -491,7 +494,7 @@ namespace DictionaryAppForIT.Forms
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Gray;
-            this.label9.Location = new System.Drawing.Point(382, 320);
+            this.label9.Location = new System.Drawing.Point(408, 334);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 17);
             this.label9.TabIndex = 40;
@@ -503,7 +506,7 @@ namespace DictionaryAppForIT.Forms
             this.lblDieuKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblDieuKhoan.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDieuKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(195)))), ((int)(((byte)(142)))));
-            this.lblDieuKhoan.Location = new System.Drawing.Point(626, 318);
+            this.lblDieuKhoan.Location = new System.Drawing.Point(652, 332);
             this.lblDieuKhoan.Name = "lblDieuKhoan";
             this.lblDieuKhoan.Size = new System.Drawing.Size(132, 17);
             this.lblDieuKhoan.TabIndex = 41;
@@ -514,7 +517,7 @@ namespace DictionaryAppForIT.Forms
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DarkGray;
-            this.label11.Location = new System.Drawing.Point(472, 334);
+            this.label11.Location = new System.Drawing.Point(498, 348);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(22, 17);
             this.label11.TabIndex = 42;
@@ -526,7 +529,7 @@ namespace DictionaryAppForIT.Forms
             this.lblChinhSach.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblChinhSach.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChinhSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(195)))), ((int)(((byte)(142)))));
-            this.lblChinhSach.Location = new System.Drawing.Point(490, 335);
+            this.lblChinhSach.Location = new System.Drawing.Point(516, 349);
             this.lblChinhSach.Name = "lblChinhSach";
             this.lblChinhSach.Size = new System.Drawing.Size(129, 17);
             this.lblChinhSach.TabIndex = 43;
@@ -537,7 +540,7 @@ namespace DictionaryAppForIT.Forms
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DarkGray;
-            this.label13.Location = new System.Drawing.Point(616, 335);
+            this.label13.Location = new System.Drawing.Point(642, 349);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(144, 17);
             this.label13.TabIndex = 44;
@@ -549,7 +552,7 @@ namespace DictionaryAppForIT.Forms
             this.label14.BackColor = System.Drawing.Color.White;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Gray;
-            this.label14.Location = new System.Drawing.Point(450, 156);
+            this.label14.Location = new System.Drawing.Point(476, 170);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(74, 20);
             this.label14.TabIndex = 45;
@@ -561,7 +564,7 @@ namespace DictionaryAppForIT.Forms
             this.label15.BackColor = System.Drawing.Color.White;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Gray;
-            this.label15.Location = new System.Drawing.Point(450, 238);
+            this.label15.Location = new System.Drawing.Point(476, 252);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(135, 20);
             this.label15.TabIndex = 46;
@@ -594,7 +597,7 @@ namespace DictionaryAppForIT.Forms
             this.txtNhapLaiMatKhauDK.IconRight = null;
             this.txtNhapLaiMatKhauDK.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNhapLaiMatKhauDK.Lines = new string[0];
-            this.txtNhapLaiMatKhauDK.Location = new System.Drawing.Point(448, 261);
+            this.txtNhapLaiMatKhauDK.Location = new System.Drawing.Point(474, 275);
             this.txtNhapLaiMatKhauDK.MaxLength = 32767;
             this.txtNhapLaiMatKhauDK.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtNhapLaiMatKhauDK.Modified = false;
@@ -653,7 +656,7 @@ namespace DictionaryAppForIT.Forms
             this.btnDangKy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnDangKy.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnDangKy.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnDangKy.Location = new System.Drawing.Point(261, 384);
+            this.btnDangKy.Location = new System.Drawing.Point(287, 398);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(330, 46);
             this.btnDangKy.TabIndex = 9;
@@ -675,7 +678,7 @@ namespace DictionaryAppForIT.Forms
             this.btnEyesOpen1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnEyesOpen1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEyesOpen1.Image = ((System.Drawing.Image)(resources.GetObject("btnEyesOpen1.Image")));
-            this.btnEyesOpen1.Location = new System.Drawing.Point(724, 192);
+            this.btnEyesOpen1.Location = new System.Drawing.Point(750, 206);
             this.btnEyesOpen1.Name = "btnEyesOpen1";
             this.btnEyesOpen1.Size = new System.Drawing.Size(34, 19);
             this.btnEyesOpen1.TabIndex = 53;
@@ -691,7 +694,7 @@ namespace DictionaryAppForIT.Forms
             this.btnEyesClose1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnEyesClose1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEyesClose1.Image = ((System.Drawing.Image)(resources.GetObject("btnEyesClose1.Image")));
-            this.btnEyesClose1.Location = new System.Drawing.Point(725, 192);
+            this.btnEyesClose1.Location = new System.Drawing.Point(751, 206);
             this.btnEyesClose1.Name = "btnEyesClose1";
             this.btnEyesClose1.Size = new System.Drawing.Size(35, 19);
             this.btnEyesClose1.TabIndex = 54;
@@ -707,7 +710,7 @@ namespace DictionaryAppForIT.Forms
             this.btnEyesOpen2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnEyesOpen2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEyesOpen2.Image = ((System.Drawing.Image)(resources.GetObject("btnEyesOpen2.Image")));
-            this.btnEyesOpen2.Location = new System.Drawing.Point(726, 272);
+            this.btnEyesOpen2.Location = new System.Drawing.Point(752, 286);
             this.btnEyesOpen2.Name = "btnEyesOpen2";
             this.btnEyesOpen2.Size = new System.Drawing.Size(34, 19);
             this.btnEyesOpen2.TabIndex = 53;
@@ -723,7 +726,7 @@ namespace DictionaryAppForIT.Forms
             this.btnEyesClose2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnEyesClose2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEyesClose2.Image = ((System.Drawing.Image)(resources.GetObject("btnEyesClose2.Image")));
-            this.btnEyesClose2.Location = new System.Drawing.Point(726, 272);
+            this.btnEyesClose2.Location = new System.Drawing.Point(752, 286);
             this.btnEyesClose2.Name = "btnEyesClose2";
             this.btnEyesClose2.Size = new System.Drawing.Size(35, 19);
             this.btnEyesClose2.TabIndex = 54;
@@ -739,46 +742,46 @@ namespace DictionaryAppForIT.Forms
             this.chkThoaThuan.AllowCheckmarkAnimation = true;
             this.chkThoaThuan.AllowOnHoverStates = true;
             this.chkThoaThuan.AutoCheck = true;
-            this.chkThoaThuan.BackColor = System.Drawing.Color.Transparent;
+            this.chkThoaThuan.BackColor = System.Drawing.Color.White;
             this.chkThoaThuan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chkThoaThuan.BackgroundImage")));
             this.chkThoaThuan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.chkThoaThuan.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
-            this.chkThoaThuan.BorderRadius = 5;
+            this.chkThoaThuan.BorderRadius = 6;
             this.chkThoaThuan.Checked = false;
             this.chkThoaThuan.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
-            this.chkThoaThuan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkThoaThuan.Cursor = System.Windows.Forms.Cursors.Default;
             this.chkThoaThuan.CustomCheckmarkImage = null;
-            this.chkThoaThuan.Location = new System.Drawing.Point(449, 320);
+            this.chkThoaThuan.Location = new System.Drawing.Point(476, 334);
             this.chkThoaThuan.MinimumSize = new System.Drawing.Size(17, 17);
             this.chkThoaThuan.Name = "chkThoaThuan";
-            this.chkThoaThuan.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.chkThoaThuan.OnCheck.BorderRadius = 5;
-            this.chkThoaThuan.OnCheck.BorderThickness = 2;
+            this.chkThoaThuan.OnCheck.BorderColor = System.Drawing.Color.Azure;
+            this.chkThoaThuan.OnCheck.BorderRadius = 6;
+            this.chkThoaThuan.OnCheck.BorderThickness = 1;
             this.chkThoaThuan.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
-            this.chkThoaThuan.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.chkThoaThuan.OnCheck.CheckmarkColor = System.Drawing.Color.Gray;
             this.chkThoaThuan.OnCheck.CheckmarkThickness = 2;
             this.chkThoaThuan.OnDisable.BorderColor = System.Drawing.Color.LightGray;
-            this.chkThoaThuan.OnDisable.BorderRadius = 5;
-            this.chkThoaThuan.OnDisable.BorderThickness = 2;
+            this.chkThoaThuan.OnDisable.BorderRadius = 6;
+            this.chkThoaThuan.OnDisable.BorderThickness = 1;
             this.chkThoaThuan.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
             this.chkThoaThuan.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
             this.chkThoaThuan.OnDisable.CheckmarkThickness = 2;
             this.chkThoaThuan.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.chkThoaThuan.OnHoverChecked.BorderRadius = 5;
-            this.chkThoaThuan.OnHoverChecked.BorderThickness = 2;
+            this.chkThoaThuan.OnHoverChecked.BorderRadius = 6;
+            this.chkThoaThuan.OnHoverChecked.BorderThickness = 1;
             this.chkThoaThuan.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.chkThoaThuan.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.chkThoaThuan.OnHoverChecked.CheckmarkColor = System.Drawing.Color.DarkOrange;
             this.chkThoaThuan.OnHoverChecked.CheckmarkThickness = 2;
             this.chkThoaThuan.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.chkThoaThuan.OnHoverUnchecked.BorderRadius = 5;
+            this.chkThoaThuan.OnHoverUnchecked.BorderRadius = 6;
             this.chkThoaThuan.OnHoverUnchecked.BorderThickness = 1;
-            this.chkThoaThuan.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.chkThoaThuan.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
-            this.chkThoaThuan.OnUncheck.BorderRadius = 5;
+            this.chkThoaThuan.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.White;
+            this.chkThoaThuan.OnUncheck.BorderColor = System.Drawing.Color.Gray;
+            this.chkThoaThuan.OnUncheck.BorderRadius = 6;
             this.chkThoaThuan.OnUncheck.BorderThickness = 1;
-            this.chkThoaThuan.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.chkThoaThuan.OnUncheck.CheckBoxColor = System.Drawing.Color.White;
             this.chkThoaThuan.Size = new System.Drawing.Size(17, 17);
-            this.chkThoaThuan.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.chkThoaThuan.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Flat;
             this.chkThoaThuan.TabIndex = 55;
             this.chkThoaThuan.ThreeState = false;
             this.chkThoaThuan.ToolTipText = null;
@@ -789,8 +792,8 @@ namespace DictionaryAppForIT.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(853, 480);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(898, 516);
             this.Controls.Add(this.chkThoaThuan);
             this.Controls.Add(this.btnEyesClose2);
             this.Controls.Add(this.btnEyesOpen2);

@@ -27,6 +27,9 @@ namespace DictionaryAppForIT.Forms
 
         // Thông báo
         bool CoThongBao = true;
+        private Timer timer = new Timer();
+        RandomColor rd = new RandomColor();
+
 
         //UserControl
         //--Control hiện hành
@@ -80,15 +83,25 @@ namespace DictionaryAppForIT.Forms
             //Kiểm tra thông báo
             KiemTraThongBao();
         }
+        public void Alert(string tuVung, string phienAm, string nghia, Form_Alert.enmType type)
+        {
+            var frmAlert = new Form_Alert();
+            frmAlert.AlertBackColor(rd.GetColor());
+            frmAlert.showAlert(tuVung, phienAm, nghia, type);
+        }
+        public void Init()
+        {
+            timer.Interval = 5000; // 5s
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Enabled = true;
+        }
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            this.Alert("Component", "/kəmˈpoʊ.nənt/", "Thành phần, bộ phận", Form_Alert.enmType.Success);
+        }
         private void frmMain_Load(object sender, EventArgs e)
         {
-            //this.Show();
-            //frmLogin dlg = new frmLogin();
-            //if (dlg.ShowDialog() != DialogResult.OK)
-            //{
-            //    Application.Exit();
-            //    return;
-            //}
+            Init();
             //Tự động chỉnh lại width của label tên tài khoản
             lblTenTaiKhoan.Text = Class_TaiKhoan.displayUsername;
             // Tối thiểu 7 kí tự
@@ -364,19 +377,36 @@ namespace DictionaryAppForIT.Forms
         //Nút đăng xuất
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            //var frm = new frmMSG_DangXuat();
-            //frm.Show();
-            var result = RJMessageBox.Show("Bạn có chắc muốn đăng xuất?",
-               "Đăng xuất",
-               MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (result == DialogResult.Yes)
+            timer.Stop();
+            var frm = new frmMSG_DangXuat();
+
+            //var result = RJMessageBox.Show("Bạn có chắc muốn đăng xuất?",
+            //   "Đăng xuất",
+            //   MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            //if (result == DialogResult.Yes)
+            //{
+            //    this.Hide();
+            //    frmLogin frmLogin = new frmLogin();
+            //    frmLogin.Show();
+            //}
+            //if (result == DialogResult.No)
+            //{
+            //    return;
+            //}
+
+
+            if (frm.ShowDialog() == DialogResult.OK)
             {
+                
+                frm.Close();
                 this.Hide();
                 frmLogin frmLogin = new frmLogin();
                 frmLogin.Show();
+
             }
-            if (result == DialogResult.No)
+            else
             {
+                frm.Close();
                 return;
             }
         }
@@ -386,9 +416,9 @@ namespace DictionaryAppForIT.Forms
         #region Các nút chính
         private void btnExit_Click(object sender, EventArgs e)
         {
+            timer.Stop();
             var frm = new frmMSG_Exit();
             frm.Show();
-            //Application.Exit();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)

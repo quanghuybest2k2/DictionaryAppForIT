@@ -20095,10 +20095,10 @@
   <data name="chkThoaThuan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACLSURBVDhPY6AqWLlypQcQ7wfi/0Ti/cuXL0+AamdgWLFi
-        RQBU0AEqRBCA1AL1LAfqLQALABnnV61aZQDmkADWr18vANT7HswBOQ/MIAPA9Y4aAgejhmACqhtyH5gX
-        FMAcEsD8+fM5gHq/gzlARgMQ94M5JACgngwgXg7lggXagRhblseHl8+fP58DAD9SulmJCFPwAAAAAElF
-        TkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC/SURBVDhPY6AqqK+vl+jq6tra1tb2uqGh4T8+DFIDVLsP
+        qEcDqh1iQHt7+9vLly//f//+/X9CAKTm+vXr//v6+l7BDQK5AGQAqeDx48f/Ozs7r4MNaW5u/vb9+3eo
+        FGkA5D2wISAGuWDUEEwwXA1pamr6DQRQYdIA3BBg0j1///59qDDxAJSHQJkRbAgwEzlMnTr1/efPn6HS
+        hAEom8ydO/c9MOOGgg0BAaBBHq2trR9BziMGg/Ib0BWxDAwMDACyKImT1VyM3QAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnEyesClose2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

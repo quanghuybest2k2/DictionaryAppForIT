@@ -117,27 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAABGdBTUEAALGPC/xhBQAAAplJREFUaEPt
-        mctq1VAUhk87K9JSbYvWiqCoryBeRtX3KDiwjkSKl4k+g9aBoIOC4tyBIA6cdeD91pHQQZ9BUfGCHL8/
-        WftwekhOVnKSEwL54Kc52Wut/TfsvbOTdFpaWpLpdrtz6By6hG70Sb+X0ZyF1gtGDpmxt+gfGobaFXcd
-        LVmJ8UGnx9Bj9BcV4Q96iI5ayeqgk0mkK/sTlcEPdBVNWBflQuFZ9AxVwVM0Y12VAwUPoi1Vr5BPaNG6
-        HA0KHUDbqjoG1M9+67oYFNAYfqFqY+Q5mjQL+SFZy1MdrJmFfJB4BGl218F3dNis+CHpUZReHxtmxQcJ
-        Wi1+R6n18Qv5JyXB16K0atlBt+1vGlfMUjYEv4pzKkNr/oL1dSI6k8xmZCgLAqdR0T2Fh55hwfHx6Gwy
-        2qPssdB0CDobhVfDoOEFOzeMUxaeDkEX4tjS+YzyGhYrlpIOQdp1lc1rNGtdqI9F9EUNDrJvNATdimMz
-        0WR9Fx8ORVd43sqrvp5wtDnyctNS0yHIc6WfWOwE0rKVRpLhj2rIgetKe8b0uoUH43eis7vR1ew3vA/l
-        NSxcY9qzemhPcsZSgvF1NRhJht+roQCu1cO7Tn9Dg8bvokHDe1FRw751WhDovSPK+GlLC8an7Wcw7Jms
-        afjuiILgtTjHhYbKsqX24Nw80kQchctWLhuC8+7yvqLe2ONYD8Fv1DAC+XZ5goSNKNWPjK+g82iUIRF4
-        YFb8kNS8JxdBYrOeEQXJzXsaFxSYQR9UbQxoPS/nTROFmvWGKUDBZr3LC1BYY1wPvZrdZaA7qm5k1bw1
-        7YdOltB9pL1BEXTjuofKHQ4e6DR8CXiJsv4BtSuuni8BSWBkCp1Eqyh8b5EuIp2fstCWlpZddDr/AacU
-        AKu26rujAAAAAElFTkSuQmCC
-</value>
-  </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pbClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAYpJREFUSEvl
@@ -150,4 +133,7 @@
         tRgMFkziPmqIWSi/hxO2dHhY/Hv/8X+MXO4bPpREAqgFv3YAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>141, 17</value>
+  </metadata>
 </root>
