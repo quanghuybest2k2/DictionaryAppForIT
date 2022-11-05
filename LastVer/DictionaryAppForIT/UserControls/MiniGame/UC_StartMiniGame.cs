@@ -24,12 +24,19 @@ namespace DictionaryAppForIT.UserControls.MiniGame
 
         private void btnBatDau_Click(object sender, EventArgs e)
         {
-            pnStartMiniGame.SendToBack();
-            this.Controls.Remove(ucMiniGame);
-            ucMiniGame = new UC_MiniGame();
-            this.Controls.Add(ucMiniGame);
-            ucMiniGame.Dock = DockStyle.Fill;
-            ucMiniGame.BringToFront();
+            try
+            {
+                pnStartMiniGame.SendToBack();
+                this.Controls.Remove(ucMiniGame);
+                ucMiniGame = new UC_MiniGame();
+                this.Controls.Add(ucMiniGame);
+                ucMiniGame.Dock = DockStyle.Fill;
+                ucMiniGame.BringToFront();
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show("Bạn cần tra đủ 10 từ vựng mới sử dụng được tính năng này!", "Xin lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

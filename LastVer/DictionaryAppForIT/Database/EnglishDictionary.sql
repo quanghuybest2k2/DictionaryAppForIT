@@ -111,15 +111,7 @@ AS
 go
 select  * from LichSuTraTu
 EXEC HienThiTuVungHot
----
---SELECT DISTINCT T1.TiengAnh, T1.PhienAm, T2.COUNTER
---FROM LichSuTraTu T1
---INNER JOIN (SELECT TiengAnh, PhienAm, COUNT(1) AS COUNTER
---            FROM LichSuTraTu
---            GROUP BY TiengAnh, PhienAm) AS T2
---ON T1.TiengAnh = T2.TiengAnh
-----------------------------------------------------------------------------------------------
--- INSERT INTO YeuThichVanBan VALUES('', '', 10)
+go
 SELECT * FROM YeuThichVanBan
 -- go
 -- delete from LichSuTraTu where id = 56 or id = 60 and IDTK = 2
@@ -192,12 +184,7 @@ as
 			return @idTu
 		END
 go
-INSERT INTO Tu values ('Variable', N'/`veə.ri.ə.bəl/', 2, 'Varying', 'Constant', '')
-INSERT INTO Tu values ('Constant', N'/`kɒn.stənt/', 1, 'InConstant', 'Variable', '')
-INSERT INTO Tu values ('Component', N'/kəm`pəʊ.nənt/', 2, 'Element', 'Whole', '')
-INSERT INTO Tu values ('Firewall', N'/´faiəwɔ:l/', 1, '', 'Cyber threat', '')
-INSERT INTO Tu values ('back', N'/´ba:ck/', 1, 'ggg', 'aat', 2)
-INSERT INTO Tu values ('huy', N'/´huy:y/', 1, 'huy best', 'best', 1)
+-- INSERT INTO Tu values ('Variable', N'/`veə.ri.ə.bəl/', 2, 'Varying', 'Constant', '')
 select * from Tu
 go
 -------- Nghĩa
@@ -220,15 +207,8 @@ as
 	ELSE
 		PRINT N'Thêm nghĩa không thành công.'
 go
-exec ThemNghia  1, 1, N'Biến', N'Biến là giá trị có thể thay đổi trong chương trình, nó thường được gắn liền với các địa điểm lưu trữ dữ liệu.', 'A variable is any letter or symbol that represents some unknown value.'
-exec ThemNghia  1, 3, N'Có thể thay đổi', N'Đây là mô tả của Variable.', 'Đây là ví dụ của Variable'
-exec ThemNghia  2, 1, N'Hằng', N'Hằng số là giá trị không đổi xuyên suốt chương trình.', 'Constants can be marked as public, private, protected, internal, protected internal or private protected.'
-exec ThemNghia  3, 1, N'Thành phần', N'Đây là hệ thống của một quá trình, chương trình, tiện ích, hoặc bất kỳ phần nào của hệ điều hành.', 'An example of a component is an ingredient in a recipe.'
-exec ThemNghia  4, 1, N'Tường lửa', N'tường lửa làm màn chắn điều khiển luồng lưu thông giữa các mạng, thường là giữa mạng và Internet, và giữa các mạng con trong công ty.', 'The firewall traces back to an early period in the modern internet era when systems.'
-exec ThemNghia  6, 1, N'adasd', N'asdsad.', 'asdsadasd'
-exec ThemNghia  14, 1, N'grwgw', N'wgwg.', 'wgwgwg'
-
---
+-- exec ThemNghia  1, 1, N'Biến', N'Biến là giá trị có thể thay đổi trong chương trình, nó thường được gắn liền với các địa điểm lưu trữ dữ liệu.', 'A variable is any letter or symbol that represents some unknown value.'
+go
 select TenTu from Tu where IDTK = 1 or IDTK = 0
 go
 select * from Tu
@@ -348,7 +328,6 @@ as
 	where tl.ID = n.IDTuLoai and t.ID = n.IDTu and TenTu = @TenTu
 go
 exec XemTatCaNghiaCuaTu 'Variable'
-EXEC HienThiThongTin 'Variable'
 go
 -------- Lay all tu loai
 create proc LayTuLoai
@@ -622,3 +601,84 @@ go
 EXEC RandomNeuChuaDu 3
 select * from LichSuTraTu
 select * from Tu where IDTK = 0
+-------------------------------------- Thêm từ vựng mặc định ------------------------------------
+-- Thêm từ và nghĩa
+-- INSERT INTO Tu values ('TenTu', N'PhienAm', 'ChuyenNganh', 'DongNghia', 'TraiNghia', '')-- idtk = 0
+-- INSERT INTO Nghia values ('IDTu', 'IDTuLoai', N'Nghia', N'MoTa', 'ViDu')
+INSERT INTO Tu values ('Variable', N'/ˈver.i.ə.bəl/', '2', 'Varying', 'Invariable', '')-- idtk = 0
+INSERT INTO Nghia values ('1', '1', N'Biến', N'Biến (variable) là một vùng chứa (container) chứa một giá trị (value), chẳng hạn như một đoạn văn bản (text ) hoặc một số (number). Giá trị của nó có thể thay đổi đó là lý do tại sao nó được gọi là biến (variable)', 'int number = 20; // C#')
+INSERT INTO Nghia values ('1', '3', N'Thay đổi', N'Variable khi sử dụng như tính từ mang nghĩa thay đổi (không cố định), nó thường nằm trước danh từ. Ví dụ trong SQL kiểu dữ liệu varchar có độ dài chuỗi ký tự thay đổi (variable length) nghĩa là kích thước không cố định như kiểu dữ liệu char.', 'city VARCHAR(50) -- SQL')
+
+INSERT INTO Tu values ('Constant', N'/ˈkɑːn.stənt/', '2', 'Invariable', 'Inconstant', '')-- idtk = 0
+INSERT INTO Nghia values ('2', '1', N'Hằng số', N'Hằng số (constant) là một số (number), chuỗi văn bản (text string) hoặc ký hiệu (symbol ) không bao giờ thay đổi giá trị trong khi chương trình đang chạy. Các biến (variable) có thể tăng hoặc giảm giá trị nhưng một hằng số (constant) vẫn giữ nguyên giá trị.', 'const int a = 2020; // C#')
+
+INSERT INTO Tu values ('Component', N'/kəmˈpoʊ.nənt/', '2', 'Constituent', 'Whole', '')-- idtk = 0
+INSERT INTO Nghia values ('3', '1', N'Thành phần', N'Đối với phần mềm, là một đoạn mã được thiết kế để thực thi như một phần của chương trình lớn hơn.', 'In programming design, a system is divided into components that in turn are made up of modules.')
+INSERT INTO Nghia values ('3', '1', N'Bộ phận', N'Đối với phần cứng, hay còn gọi là part là một đơn vị phần cứng được thiết kế để kết nối và hoạt động như một phần của hệ thống lớn hơn.', 'An integrated circuit can be thought of as a component of the motherboard and a video card can be thought of as a component of a computer.')
+
+INSERT INTO Tu values ('Firewall', N'/ˈfaɪə.wɔːl/', '1', 'Barricade', 'Firing', '')-- idtk = 0
+INSERT INTO Nghia values ('4', '1', N'Tường lửa', N'Tường lửa là một phần mềm tiện ích (software utility) hoặc thiết bị phần cứng (hardware device) hoạt động như một bộ lọc dữ liệu vào hoặc ra khỏi mạng hoặc máy tính', 'Without a firewall, all your files could be instantly accessible to any competent hacker from anywhere in the world.')
+
+INSERT INTO Tu values ('ISP', N'/ˌaɪ.esˈpiː/', '1', '', '', '')-- idtk = 0
+INSERT INTO Nghia values ('5', '1', N'Nhà phân phối dịch vụ internet', N'Viết tắt của Internet service provider, ngoài ra còn được gọi là access provider hoặc network provider.', 'Some ISPs are free and give you as many email addresses as you want.')
+
+INSERT INTO Tu values ('Download', N'/ˈdaʊn.loʊd/', '1', 'Transfer', 'Upload', '')-- idtk = 0
+INSERT INTO Nghia values ('6', '2', N'Tải xuống', N'Trên các mạng máy tính, download ( tải xuống ) có nghĩa là nhận dữ liệu từ một hệ thống từ xa', 'All of our products are available for download on our website.')
+
+INSERT INTO Tu values ('Web hosting', N'/ˈweb ˌhoʊ.stɪŋ/', '1', 'Hosting services', 'Storage', '')-- idtk = 0
+INSERT INTO Nghia values ('7', '1', N'Dịch vụ lưu trữ website', N'Dịch vụ lưu giữ và quản lý các trang web trên một máy chủ', 'The group supplies web-hosting services to blue-chip firms.')
+
+INSERT INTO Tu values ('Website', N'/ˈweb.saɪt/', '1', 'Internet site', 'Software', '')-- idtk = 0
+INSERT INTO Nghia values ('8', '1', N'Trang web', N'Trang web được xác định bằng một tên miền chung và được xuất bản trên ít nhất một máy chủ web.', 'His fans created a website, giving every detail of his private life.')
+
+INSERT INTO Tu values ('Wi-fi', N'/ˈwaɪ.faɪ/', '1', 'Cellular', 'Wired', '')-- idtk = 0
+INSERT INTO Nghia values ('9', '1', N'Không dây', N'Wifi là viết tắt của Wireless Fidelity được hiểu là sử dụng sóng vô tuyến để truyền tín hiệu.', 'The coffee shop now offers free wi-fi.')
+
+INSERT INTO Tu values ('Network', N'/ˈnet.wɝːk/', '1', 'System', 'Fill', '')-- idtk = 0
+INSERT INTO Nghia values ('10', '1', N'Mạng lưới', N'Là một tập hợp các máy tính, máy chủ (server), máy tính lớn (mainframes), thiết bị mạng, thiết bị ngoại vi,...', 'The stock exchanges have proven to be resourceful in networking these deals')
+
+INSERT INTO Tu values ('Protocol', N'/ˈproʊ.t̬ə.kɑːl/', '1', 'Convention', 'Misconception', '')-- idtk = 0
+INSERT INTO Nghia values ('11', '1', N'Giao thức', N'Giao thức là các quy tắc để trao đổi dữ liệu giữa các máy tính.', 'Protocol is a standardized set of rules for formatting and processing data.')
+
+INSERT INTO Tu values ('Command', N'/kəˈmænd/', '1', 'Enjoin', 'Request', '')-- idtk = 0
+INSERT INTO Nghia values ('12', '2', N'Ra lệnh, lệnh', N'Là một lệnh (command) máy tính phải thực hiện.', 'Commands can have several formats.')
+
+INSERT INTO Tu values ('Application', N'/ˌæp.ləˈkeɪ.ʃən/', '1', 'Function', 'Misuse', '')-- idtk = 0
+INSERT INTO Nghia values ('13', '1', N'Phần mềm ứng dụng, ứng dụng', N'Một chương trình máy tính được thiết kế để giúp con người thực hiện một kiểu công việc nào đó', 'Spreadsheet applications.')
+
+INSERT INTO Tu values ('Circuit', N'/‘sə:kit/', '1', 'Route', '', '')-- idtk = 0
+INSERT INTO Nghia values ('14', '1', N'Mạch', N'Trong điện tử, mạch điện (circuit) là một đường dẫn kín cho phép dòng điện chạy từ điểm này sang điểm khác.', 'Big electronic circuits can carry huge amounts of data.')
+
+INSERT INTO Tu values ('Convert', N'/kən’və:t/', '1', 'Change', 'Remain', '')-- idtk = 0
+INSERT INTO Nghia values ('15', '2', N'Chuyển đổi', N'Chuyển đổi (convert) có nghĩa thay đổi một thứ này thành thứ khác.', 'Best way to convert your PNG to ICO file in seconds.')
+
+INSERT INTO Tu values ('Bandwidth', N'/ˈbænd.wɪtθ/', '1', 'Radio bandwidth', 'Handful of', '')-- idtk = 0
+INSERT INTO Nghia values ('16', '1', N'Băng thông', N'Băng thông hay còn gọi là băng thông mạng, băng thông dữ liệu, hoặc băng thông kỹ thuật số là tốc độ truyền dữ liệu tối đa trên một đường dẫn nhất định.', 'Was he referring to the auction of digital bandwidths?')
+
+INSERT INTO Tu values ('Packet', N'/ˈpæk.ɪt/', '1', 'Bundle', 'Separate', '')-- idtk = 0
+INSERT INTO Nghia values ('17', '1', N'Gói tin', N'Trong mạng, một gói tin là một đoạn nhỏ của một bản tin lớn hơn.', 'Every Web page that you receive comes as a series of packets')
+
+INSERT INTO Tu values ('Password', N'/ˈpæs.wɝːd/', '1', 'Countersign', 'Request', '')-- idtk = 0
+INSERT INTO Nghia values ('18', '1', N'Mật khẩu', N'Mật khẩu thường là một xâu, chuỗi, loạt các ký tự mà dịch vụ internet phần mềm hệ thống máy tính.', 'Setting a password for the database file is optional.')
+
+INSERT INTO Tu values ('Update', N'/ʌpˈdeɪt/', '1', 'Upgrade', 'Break', '')-- idtk = 0
+INSERT INTO Nghia values ('19', '1', N'Sự cập nhật', N'Chúng ta có thể hiểu đơn giản nghĩa của nó là cập nhật một cái gì đó mới, hoặc sửa lỗi một phần mềm, phiên bản game…', 'The latest version is a much improved update of the original program.')
+INSERT INTO Nghia values ('19', '2', N'Làm cho cập nhật', N'Động từ update là hành động khiến thứ gì đó hiện đại hoặc dễ dàng sử dụng hơn.', 'I just updated the specialized English dictionary.')
+
+INSERT INTO Tu values ('LAN', N'/læn/', '1', '', '', '')-- idtk = 0
+INSERT INTO Nghia values ('20', '1', N'Mạng cục bộ', N'LAN (Local Area Network) tạm dịch là mạng máy tính nội bộ, giao tiếp này cho phép các máy tính kết nối với nhau để cùng làm việc và chia sẻ dữ liệu.', 'The computers keep everything talking to everything else over the wireless LAN network.')
+
+INSERT INTO Tu values ('WAN', N'/wɑːn/', '1', 'DongNghia', 'TraiNghia', '')-- idtk = 0
+INSERT INTO Nghia values ('21', '1', N'Mạng diện rộng', N'Mạng diện rộng (WAN) là công nghệ kết nối các văn phòng, trung tâm dữ liệu, ứng dụng đám mây và bộ nhớ đám mây của bạn với nhau.', 'High speed broadband has made real-time WAN communications possible.')
+
+INSERT INTO Tu values ('VPN', N'/ˌviː.piːˈen/', '1', '', '', '')-- idtk = 0
+INSERT INTO Nghia values ('22', '1', N'Mạng riêng ảo', N'VPN là (Virtual Private Network) là một công nghệ mạng giúp tạo kết nối mạng an toàn khi tham gia vào mạng công cộng như Internet.', 'Traditional VPN setups can act as a conduit for worms and viruses.')
+
+INSERT INTO Tu values ('DNS', N'/ˌdiː.enˈes/', '1', '', '', '')-- idtk = 0
+INSERT INTO Nghia values ('23', '1', N'Hệ thống phân giải tên miền', N'Hệ thống phân giải tên miền là một hệ thống cho phép thiết lập tương ứng giữa địa chỉ IP và tên miền trên Internet.', 'The router does a DNS lookup, and stores the IP address in the configuration.')
+
+INSERT INTO Tu values ('Server', N' /ˈsɝː.vɚ/', '1', 'Host', '', '')-- idtk = 0
+INSERT INTO Nghia values ('24', '1', N'Máy chủ, máy phục vụ', N'Máy chủ (Server) là một máy tính được kết nối với mạng máy tính hoặc Internet, có IP tĩnh, có năng lực xử lý cao.', 'All your e-mails are saved on the internet provider`s server.')
+
+--INSERT INTO Tu values ('TenTu', N'PhienAm', 'ChuyenNganh', 'DongNghia', 'TraiNghia', '')-- idtk = 0
+--INSERT INTO Nghia values ('IDTu', 'IDTuLoai', N'Nghia', N'MoTa', 'ViDu')
