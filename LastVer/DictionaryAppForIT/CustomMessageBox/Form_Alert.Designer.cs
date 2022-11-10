@@ -37,10 +37,10 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTuVung = new System.Windows.Forms.Label();
-            this.guna2PictureBox17 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pbAvt = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvt)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -104,24 +104,24 @@
             this.lblTuVung.TabIndex = 1;
             this.lblTuVung.Text = "Application";
             // 
-            // guna2PictureBox17
+            // pbAvt
             // 
-            this.guna2PictureBox17.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox17.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2PictureBox17.ImageRotate = 0F;
-            this.guna2PictureBox17.Location = new System.Drawing.Point(0, 0);
-            this.guna2PictureBox17.Name = "guna2PictureBox17";
-            this.guna2PictureBox17.Size = new System.Drawing.Size(80, 88);
-            this.guna2PictureBox17.TabIndex = 42;
-            this.guna2PictureBox17.TabStop = false;
-            this.guna2PictureBox17.UseTransparentBackground = true;
+            this.pbAvt.BackColor = System.Drawing.Color.Transparent;
+            this.pbAvt.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbAvt.ImageRotate = 0F;
+            this.pbAvt.Location = new System.Drawing.Point(0, 0);
+            this.pbAvt.Name = "pbAvt";
+            this.pbAvt.Size = new System.Drawing.Size(80, 88);
+            this.pbAvt.TabIndex = 42;
+            this.pbAvt.TabStop = false;
+            this.pbAvt.UseTransparentBackground = true;
             // 
             // Form_Alert
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Salmon;
             this.ClientSize = new System.Drawing.Size(388, 88);
-            this.Controls.Add(this.guna2PictureBox17);
+            this.Controls.Add(this.pbAvt);
             this.Controls.Add(this.pbClose);
             this.Controls.Add(this.lblNghia);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -133,7 +133,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,6 +147,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label lblTuVung;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox17;
+        private Guna.UI2.WinForms.Guna2PictureBox pbAvt;
     }
 }

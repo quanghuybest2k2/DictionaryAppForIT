@@ -15,12 +15,10 @@ namespace DictionaryAppForIT.CustomMessageBox
     public partial class Form_Alert : Form
     {
         XemTatCaNghia XemNghia;
-        Tu t;
         public Form_Alert()
         {
             InitializeComponent();
             XemNghia = new XemTatCaNghia();
-            t = new Tu();
         }
 
         public void AlertBackColor(string color)
@@ -94,7 +92,7 @@ namespace DictionaryAppForIT.CustomMessageBox
 
         }
 
-        public void showAlert(enmType type)
+        public void showAlert(int type)
         {
             XemNghia.HienThiThongTinRandom();
             foreach (var item in XemNghia._listTu)
@@ -125,25 +123,21 @@ namespace DictionaryAppForIT.CustomMessageBox
             }
             this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
 
-            //switch(type)
-            //{
-            //    case enmType.Success:
-            //        this.pictureBox1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\thanhCong.png");
-            //        this.BackColor = Color.SeaGreen;
-            //        break;
-            //    case enmType.Error:
-            //        this.pictureBox1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\loi.png");
-            //        this.BackColor = Color.DarkRed;
-            //        break;
-            //    case enmType.Info:
-            //        this.pictureBox1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\thongTin.png");
-            //        this.BackColor = Color.RoyalBlue;
-            //        break;
-            //    case enmType.Warning:
-            //        this.pictureBox1.Image = Image.FromFile(Application.StartupPath + "\\Resources\\canhBao.png");
-            //        this.BackColor = Color.DarkOrange;
-            //        break;
-            //}
+            switch (type)
+            {
+                case 1:
+                    this.pbAvt.Image = Image.FromFile(Application.StartupPath + "\\Resources\\Cat\\cat1.png");
+                    break;
+                case 2:
+                    this.pbAvt.Image = Image.FromFile(Application.StartupPath + "\\Resources\\Cat\\cat2.png");
+                    break;
+                case 3:
+                    this.pbAvt.Image = Image.FromFile(Application.StartupPath + "\\Resources\\Cat\\cat3.png");
+                    break;
+                case 4:
+                    this.pbAvt.Image = Image.FromFile(Application.StartupPath + "\\Resources\\Cat\\cat4.png");
+                    break;
+            }
 
             this.Show();
             this.action = enmAction.start;

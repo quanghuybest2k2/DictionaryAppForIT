@@ -83,7 +83,7 @@ namespace DictionaryAppForIT.Forms
             //Kiểm tra thông báo
             KiemTraThongBao();
         }
-        public void Alert(Form_Alert.enmType type)
+        public void Alert(int type)
         {
             var frmAlert = new Form_Alert();
             frmAlert.AlertBackColor(rd.GetColor());
@@ -97,7 +97,12 @@ namespace DictionaryAppForIT.Forms
         }
         private void timer_Tick(object sender, EventArgs e)
         {
-            this.Alert(Form_Alert.enmType.Success);
+            Random rand = new Random();
+            var kqRand = rand.Next(1, 4);
+            this.Alert(kqRand);
+            //int[] listRandNum = { 1, 2, 3, 4 };
+            //var kqRand = Enumerable.Range(0, 4).OrderBy(x => rand.Next()).Take(1).ToList();
+            //this.Alert(listRandNum[kqRand[0]]);
         }
         private void frmMain_Load(object sender, EventArgs e)
         {

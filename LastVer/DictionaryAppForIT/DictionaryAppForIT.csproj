@@ -165,12 +165,6 @@
     <Compile Include="Class\MucYeuThich.cs" />
     <Compile Include="Class\RandomColor.cs" />
     <Compile Include="Class\RJMessageBox.cs" />
-    <Compile Include="CustomMessageBox\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomMessageBox\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="CustomMessageBox\Form_Alert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,12 +229,6 @@
     <Compile Include="DTO\Class_TaiKhoan.cs" />
     <Compile Include="DTO\Tu.cs" />
     <Compile Include="DTO\XemTatCaNghia.cs" />
-    <Compile Include="Forms\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form1.designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -407,9 +395,6 @@
     <Compile Include="UserControls\YeuThich\UC_YT_VanBan.Designer.cs">
       <DependentUpon>UC_YT_VanBan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CustomMessageBox\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CustomMessageBox\Form_Alert.resx">
       <DependentUpon>Form_Alert.cs</DependentUpon>
     </EmbeddedResource>
@@ -439,9 +424,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomMessageBox\UC_PbThanhTich\UC_TT_Hang4.resx">
       <DependentUpon>UC_TT_Hang4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMessageBox.resx">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
@@ -581,6 +563,18 @@
     <Content Include="Resources\catDongNghia2.png" />
     <Content Include="Resources\catgame.png" />
     <Content Include="Resources\catTraiNghia.png" />
+    <Content Include="Resources\Cat\cat1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cat\cat2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cat\cat3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cat\cat4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\chat.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
