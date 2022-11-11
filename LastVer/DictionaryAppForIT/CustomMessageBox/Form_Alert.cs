@@ -126,16 +126,34 @@ namespace DictionaryAppForIT.CustomMessageBox
             switch (type)
             {
                 case 1:
-                    this.pbAvt.Image = Image.FromFile(Application.StartupPath + "\\Resources\\Cat\\cat1.png");
+                    this.pbCat.Image = DictionaryAppForIT.Properties.Resources.random111;
                     break;
                 case 2:
-                    this.pbAvt.Image = Image.FromFile(Application.StartupPath + "\\Resources\\Cat\\cat2.png");
+                    this.pbCat.Image = DictionaryAppForIT.Properties.Resources.random112;
                     break;
                 case 3:
-                    this.pbAvt.Image = Image.FromFile(Application.StartupPath + "\\Resources\\Cat\\cat3.png");
+                    this.pbCat.Image = DictionaryAppForIT.Properties.Resources.random113;
                     break;
                 case 4:
-                    this.pbAvt.Image = Image.FromFile(Application.StartupPath + "\\Resources\\Cat\\cat4.png");
+                    this.pbCat.Image = DictionaryAppForIT.Properties.Resources.random114;
+                    break;
+                case 5:
+                    this.pbCat.Image = DictionaryAppForIT.Properties.Resources.random115;
+                    break;
+                case 6:
+                    this.pbCat.Image = DictionaryAppForIT.Properties.Resources.random116;
+                    break;
+                case 7:
+                    this.pbCat.Image = DictionaryAppForIT.Properties.Resources.random117;
+                    break;
+                case 8:
+                    this.pbCat.Image = DictionaryAppForIT.Properties.Resources.random118;
+                    break;
+                case 9:
+                    this.pbCat.Image = DictionaryAppForIT.Properties.Resources.random119;
+                    break;
+                case 10:
+                    this.pbCat.Image = DictionaryAppForIT.Properties.Resources.random110;
                     break;
             }
 

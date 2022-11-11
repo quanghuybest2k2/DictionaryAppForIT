@@ -35,110 +35,110 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Licensing">
-      <HintPath>ImportALL\Bunifu.Licensing.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.Licensing.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.1.5.3">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPages">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuRating">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSeparator">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuShapes">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuToolTip">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.Deprecated">
-      <HintPath>ImportALL\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.3.5\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="ReaLTaiizor">
-      <HintPath>ImportALL\ReaLTaiizor.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\ReaLTaiizor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -158,7 +158,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="XanderUI">
-      <HintPath>ImportALL\XanderUI.dll</HintPath>
+      <HintPath>..\..\..\ThuVienUI\ImportALL\XanderUI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -449,6 +449,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UserControls\CaiDat\UC_CaiDat.resx">
       <DependentUpon>UC_CaiDat.cs</DependentUpon>
@@ -637,6 +638,16 @@
     <Content Include="Resources\question.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\random110.png" />
+    <Content Include="Resources\random111.png" />
+    <Content Include="Resources\random112.png" />
+    <Content Include="Resources\random113.png" />
+    <Content Include="Resources\random114.png" />
+    <Content Include="Resources\random115.png" />
+    <Content Include="Resources\random116.png" />
+    <Content Include="Resources\random117.png" />
+    <Content Include="Resources\random118.png" />
+    <Content Include="Resources\random119.png" />
     <Content Include="Resources\setting_1.png" />
     <Content Include="Resources\setting_11.png" />
     <Content Include="Resources\share.png" />
