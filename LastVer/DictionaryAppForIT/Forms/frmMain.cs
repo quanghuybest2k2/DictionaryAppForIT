@@ -98,7 +98,7 @@ namespace DictionaryAppForIT.Forms
         private void timer_Tick(object sender, EventArgs e)
         {
             Random rand = new Random();
-            var kqRand = rand.Next(1, 4);
+            var kqRand = rand.Next(1, 10);
             this.Alert(kqRand);
             //int[] listRandNum = { 1, 2, 3, 4 };
             //var kqRand = Enumerable.Range(0, 4).OrderBy(x => rand.Next()).Take(1).ToList();

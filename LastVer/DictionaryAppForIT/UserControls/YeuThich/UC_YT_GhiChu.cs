@@ -69,7 +69,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             txtGhiChu.Enabled = true;
             txtGhiChu.Clear();
             txtGhiChu.Enabled = false;
-            CapNhatGhiChu();
+            CapNhatGhiChu("Làm sạch thành công!");
         }
 
         public void KTGhiChu()
@@ -92,19 +92,19 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 }
                 else
                 {
-                    CapNhatGhiChu();
+                    CapNhatGhiChu("Cập nhật ghi chú thành công!");
                 }
             }
         }
 
-        private void CapNhatGhiChu()
+        private void CapNhatGhiChu(string xoaThanhCong)
         {
             if (_loai == 1)
             {
                 int num = DataProvider.Instance.ExecuteNonQuery($"UPDATE YeuThichTuVung SET GhiChu = N'{txtGhiChu.Text.Trim()}' WHERE ID = '{lblIndex.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
                 if (num > 0)
                 {
-                    RJMessageBox.Show("Ghi chú thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RJMessageBox.Show($"{xoaThanhCong}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtGhiChu.Enabled = false;
                 }
                 else
@@ -117,7 +117,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 int num = DataProvider.Instance.ExecuteNonQuery($"UPDATE YeuThichVanBan SET GhiChu = N'{txtGhiChu.Text.Trim()}' WHERE ID = '{lblIndex.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
                 if (num > 0)
                 {
-                    RJMessageBox.Show("Ghi chú thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RJMessageBox.Show($"{xoaThanhCong}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtGhiChu.Enabled = false;
                 }
                 else
