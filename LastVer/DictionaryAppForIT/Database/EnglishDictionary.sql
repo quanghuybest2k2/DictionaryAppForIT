@@ -49,7 +49,15 @@ create table TaiKhoan
 	NgayTaoTK varchar(30) NOT NULL
 )
 go
-select * from TaiKhoan
+--select * from TaiKhoan
+---- 
+--Delete from LichSuDich where IDTK = '4'
+--Delete from LichSuTraTu where IDTK = '4'
+--Delete from YeuThichTuVung where IDTK = '4'
+--Delete from YeuThichVanBan where IDTK = '4'
+--Delete from TaiKhoan where ID = '4'
+--select * from YeuThichTuVung
+--select * from YeuThichVanBan
 go
 create table LichSuDich
 (

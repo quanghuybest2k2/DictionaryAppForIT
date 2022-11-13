@@ -89,11 +89,21 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 // xóa tài khoản
                 try
                 {
-                    string query = $"Delete from TaiKhoan where ID = '{Class_TaiKhoan.IdTaiKhoan}'";
-                    int num = DataProvider.Instance.ExecuteNonQuery(query);
-                    if (num > 0)
+                    string queryXoaLSDich = $"Delete from LichSuDich where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'";
+                    string queryXoaLSTraTu = $"Delete from LichSuTraTu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'";
+                    string queryXoaYTTuVung = $"Delete from YeuThichTuVung where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'";
+                    string queryXoaYTVanBan = $"Delete from YeuThichVanBan where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'";
+                    string queryXoaTK = $"Delete from TaiKhoan where ID = '{Class_TaiKhoan.IdTaiKhoan}'";
+
+                    int num1 = DataProvider.Instance.ExecuteNonQuery(queryXoaLSDich);
+                    int num2 = DataProvider.Instance.ExecuteNonQuery(queryXoaLSTraTu);
+                    int num3 = DataProvider.Instance.ExecuteNonQuery(queryXoaYTTuVung);
+                    int num4 = DataProvider.Instance.ExecuteNonQuery(queryXoaYTVanBan);
+                    int num5 = DataProvider.Instance.ExecuteNonQuery(queryXoaTK);
+
+                    if (num5 > 0)
                     {
-                        RJMessageBox.Show("Đã xóa tài khoản vĩnh viễn!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        RJMessageBox.Show("Đã xóa tài khoản vĩnh viễn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Application.Exit();
                     }
                     else
@@ -140,7 +150,8 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             if (num > 0)
             {
                 RJMessageBox.Show("Cập nhật thông tin tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }else
+            }
+            else
             {
                 RJMessageBox.Show("Không thể cập nhật tài khoản!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -163,7 +174,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 pbNenEmail1.FillColor = Color.Tomato;
                 pbNenEmail2.FillColor = Color.Tomato;
             }
-            
+
         }
 
         private void btnSuaTenDangNhap_Click(object sender, EventArgs e)
