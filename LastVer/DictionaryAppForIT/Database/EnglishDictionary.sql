@@ -562,16 +562,16 @@ select * from LichSuTraTu where IDTK = 1  and NgayHienTai like '%29/10/2022%'
 go
 select * from LichSuDich where IDTK = 1  and NgayHienTai like '%29/10/2022%'
 go
+select * from LichSuTraTu
+Insert into LichSuTraTu values('Binary', N' /ˈbaɪ.ner.i/', N'Nhị phân, thuộc về nhị phân', '12/11/2022 09:05 PM', '1')
+Insert into LichSuTraTu values('Binary', N' /ˈbaɪ.ner.i/', N'Nhị phân, thuộc về nhị phân', '10/10/2022 09:05 PM', '1')
+Insert into LichSuTraTu values('Binary', N' /ˈbaɪ.ner.i/', N'Nhị phân, thuộc về nhị phân', '10/9/2022 09:05 PM', '1')
+Insert into LichSuTraTu values('Binary', N' /ˈbaɪ.ner.i/', N'Nhị phân, thuộc về nhị phân', '10/8/2022 09:05 PM', '1')
+select * from LichSuDich
+Insert into LichSuDich values('JSON stands for JavaScript Object Notation, and is a syntax for storing and exchanging data.', N'JSON là viết tắt của JavaScript Object Notation, và là một cú pháp để lưu trữ và trao đổi dữ liệu.', '12/11/2022 09:05 PM', '1')
+Insert into LichSuDich values('A constant is a number or value that does not change.', N'Hằng số là một số hoặc giá trị không thay đổi.', '13/10/2022 09:05 PM', '1')
+
 --update LichSuTraTu set NgayHienTai = '28/10/2022 03:58 PM' where ID = 1 and IDTK = 1
---update LichSuTraTu set NgayHienTai = '28/09/2022 03:58 PM' where ID = 3 and IDTK = 1
---update LichSuTraTu set NgayHienTai = '28/08/2022 03:58 PM' where ID = 4 and IDTK = 1
---update LichSuTraTu set NgayHienTai = '31/10/2022 03:58 PM' where ID = 6 and IDTK = 1
---update LichSuTraTu set NgayHienTai = '05/11/2022 03:58 PM' where ID = 7 and IDTK = 1
---update LichSuTraTu set NgayHienTai = '22/10/2022 03:58 PM' where ID = 8 and IDTK = 1
---update LichSuDich set NgayHienTai = '28/10/2022 03:58 PM' where ID = 4 and IDTK = 1
---update LichSuDich set NgayHienTai = '28/09/2022 03:58 PM' where ID = 5 and IDTK = 1
---update LichSuDich set NgayHienTai = '28/08/2022 03:58 PM' where ID = 6 and IDTK = 1
---update LichSuDich set NgayHienTai = '22/10/2022 03:58 PM' where ID = 7 and IDTK = 1
 go
 SELECT * FROM LichSuTraTu where IDTK = 5
 go

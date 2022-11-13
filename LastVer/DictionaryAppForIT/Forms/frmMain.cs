@@ -458,7 +458,7 @@ namespace DictionaryAppForIT.Forms
 
         private void btnThongTinTacGia_Click(object sender, EventArgs e)
         {
-            Process.Start("https://quanghuybest2k2.github.io/TimEmailGiangVien.github.io/");
+            Process.Start("https://quanghuybest2k2.github.io/SH_Team/");
         }
     }
 }
