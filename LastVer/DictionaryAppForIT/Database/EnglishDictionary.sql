@@ -462,10 +462,10 @@ as
 		END
 go
 --  1: Nam, 2: Nữ, 3: Khác
-EXEC DangKyTaiKhoan 'quanghuybest2k2', '123456', 'quanghuybest@gmail.com',1, '27/09/2022'
-EXEC DangKyTaiKhoan 'sangvlog', 'sangsos', 'sangvlog@gmail.com', 1, '25/09/2022'
-EXEC DangKyTaiKhoan 'bocute', 'bocute123', 'bocute@gmail.com', 3, '25/09/2022'
-EXEC DangKyTaiKhoan 'virusday','123456','test@gmail.com', 2, '26/09/2022'
+EXEC DangKyTaiKhoan 'quanghuybest2k2', '123456', 'quanghuybest@gmail.com','1', '27/09/2022'
+EXEC DangKyTaiKhoan 'sangvlog', 'sangsos', 'sangvlog@gmail.com', '1', '25/09/2022'
+EXEC DangKyTaiKhoan 'bocute', 'bocute123', 'bocute@gmail.com', '3', '25/09/2022'
+EXEC DangKyTaiKhoan 'virusday','123456','test@gmail.com', '2', '26/09/2022'
 go
 select * from TaiKhoan
 go
@@ -570,8 +570,9 @@ select * from LichSuTraTu where IDTK = 1  and NgayHienTai like '%29/10/2022%'
 go
 select * from LichSuDich where IDTK = 1  and NgayHienTai like '%29/10/2022%'
 go
+-- Sorry!!! thêm lịch sử để test ứng dụng
 select * from LichSuTraTu
-Insert into LichSuTraTu values('Binary', N' /ˈbaɪ.ner.i/', N'Nhị phân, thuộc về nhị phân', '12/11/2022 09:05 PM', '1')
+Insert into LichSuTraTu values('Binary', N' /ˈbaɪ.ner.i/', N'Nhị phân, thuộc về nhị phân', '14/11/2022 09:05 PM', '1')
 Insert into LichSuTraTu values('Binary', N' /ˈbaɪ.ner.i/', N'Nhị phân, thuộc về nhị phân', '10/10/2022 09:05 PM', '1')
 Insert into LichSuTraTu values('Binary', N' /ˈbaɪ.ner.i/', N'Nhị phân, thuộc về nhị phân', '10/9/2022 09:05 PM', '1')
 Insert into LichSuTraTu values('Binary', N' /ˈbaɪ.ner.i/', N'Nhị phân, thuộc về nhị phân', '10/8/2022 09:05 PM', '1')
@@ -818,140 +819,131 @@ INSERT INTO Tu values ('Report',N'/rɪˈpɔːrt/','2','record','','')
 INSERT INTO Nghia values ('65','1',N'Bản báo cáo',N'Bản báo cáo là một loại văn bản dùng để trình bày một sự việc hoặc các kết quả hoạt động','I gave/made/submitted a report of the theft to the insurance company.')
 INSERT INTO Nghia values ('65','2',N'Báo cáo, tường trình',N'Báo cáo là việc trình bày một sự việc hoặc các kết quả hoạt động','I report for work at 8 a.m. every morning.')
 
-INSERT INTO Tu values ('Base',N'/beɪs/','2','','','')
-INSERT INTO Nghia values ('66','1',N'Cơ sở, nền tảng',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','The company, which has its base in California, plans to set up an office in Beijing.')
-INSERT INTO Nghia values ('66','1',N'Hệ đếm',N'Hệ đếm là một tập các ký hiệu (chữ số, chữ cái) để biểu diễn các số và xác định giá trị của các biểu diễn số','A binary number is a number written in base 2, using the two numbers 0 and 1.')
-INSERT INTO Nghia values ('66','2',N'Dựa vào, căn cứ vào',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Where is your company based?')
-
 INSERT INTO Tu values ('Work',N'/wɝːk/','2','task','','')
-INSERT INTO Nghia values ('67','1',N'Công việc',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','What time do you start/finish work?')
-INSERT INTO Nghia values ('67','2',N'Làm việc, hoạt động',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','The tablets will start to work in a few minutes.')
+INSERT INTO Nghia values ('66','1',N'Công việc',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','What time do you start/finish work?')
+INSERT INTO Nghia values ('66','2',N'Làm việc, hoạt động',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','The tablets will start to work in a few minutes.')
 go
 ----------------------- Chuyên ngành khoa học dữ liệu
-INSERT INTO Tu values ('Block',N'/blɑːk/','3','group','unit','')
-INSERT INTO Nghia values ('68','1',N'Khối',N'Khối là tập hợp các mã nguồn được nhóm lại với nhau','In coding theory, block codes are a large and important family of error-correcting codes that encode data in blocks.')
-INSERT INTO Nghia values ('68','2',N'Chặn',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','The new phone allows users to block messages from particular senders.')
-
 INSERT INTO Tu values ('Migration',N'/maɪˈɡreɪ.ʃən/','3','relocation','immigration','')
-INSERT INTO Nghia values ('69','1',N'Quá trình chuyển đổi',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','The processes must include accurate data migration.')
+INSERT INTO Nghia values ('67','1',N'Quá trình chuyển đổi',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','The processes must include accurate data migration.')
 
 INSERT INTO Tu values ('Model',N'/ˈmɑː.dəl/','3','figure','','')
-INSERT INTO Nghia values ('70','1',N'Mô hình',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','The architect showed us a model of the planned company.')
+INSERT INTO Nghia values ('68','1',N'Mô hình',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','The architect showed us a model of the planned company.')
 
 INSERT INTO Tu values ('Field',N'/fiːld/','3','area','','')
-INSERT INTO Nghia values ('71','1',N'Trường',N'Trong khoa học máy tính, dữ liệu có nhiều phần, còn được gọi là một bản ghi, có thể được chia thành các trường','Field is a division of a database that contains a particular type of information.')
+INSERT INTO Nghia values ('69','1',N'Trường',N'Trong khoa học máy tính, dữ liệu có nhiều phần, còn được gọi là một bản ghi, có thể được chia thành các trường','Field is a division of a database that contains a particular type of information.')
 
 INSERT INTO Tu values ('Administration',N'/ədˌmɪn.əˈstreɪ.ʃən/','3','management','','')
-INSERT INTO Nghia values ('72','1',N'Sự quản trị',N'Quản trị là quá trình tổ chức, điều khiển và kiểm soát công việc','Administration of the scheme is costly in terms of time.')
+INSERT INTO Nghia values ('70','1',N'Sự quản trị',N'Quản trị là quá trình tổ chức, điều khiển và kiểm soát công việc','Administration of the scheme is costly in terms of time.')
 
 INSERT INTO Tu values ('Traffic',N'/ˈtræf.ɪk/','3','','','')
-INSERT INTO Nghia values ('73','1',N'Lưu lượng',N'Lưu lượng là tốc độ truyền tải dữ liệu trong một giây','We can give you advice on how to improve your site traffic and generate sales.')
+INSERT INTO Nghia values ('71','1',N'Lưu lượng',N'Lưu lượng là tốc độ truyền tải dữ liệu trong một giây','We can give you advice on how to improve your site traffic and generate sales.')
 
 INSERT INTO Tu values ('Metadata',N'/ˈmet̬.əˌdeɪ.t̬ə/','3','','','')
-INSERT INTO Nghia values ('74','1',N'Siêu dữ liệu',N'Siêu dữ liệu là những tóm tắt đặc tính cơ bản của dữ liệu. Từ đó hỗ trợ sử dụng và tái sử dụng dữ liệu một cách thuận lợi hơn.','Digital cameras can tag images with useful metadata.')
+INSERT INTO Nghia values ('72','1',N'Siêu dữ liệu',N'Siêu dữ liệu là những tóm tắt đặc tính cơ bản của dữ liệu. Từ đó hỗ trợ sử dụng và tái sử dụng dữ liệu một cách thuận lợi hơn.','Digital cameras can tag images with useful metadata.')
 
 INSERT INTO Tu values ('Persistence',N'/pɚˈsɪs.təns/','3','','','')
-INSERT INTO Nghia values ('75','1',N'Sự lưu, độ lưu',N'Tính chất của một đối tượng được lưu trữ vẫn tồn tại sau khi chương trình kết thúc','Persistence refers to the characteristic of state of a system that outlives the process that created it.')
+INSERT INTO Nghia values ('73','1',N'Sự lưu, độ lưu',N'Tính chất của một đối tượng được lưu trữ vẫn tồn tại sau khi chương trình kết thúc','Persistence refers to the characteristic of state of a system that outlives the process that created it.')
 
 INSERT INTO Tu values ('Queue',N'/kjuː/','3','','','')
-INSERT INTO Nghia values ('76','1',N'Hàng đợi',N' Hàng đợi (queue) là một cấu trúc dữ liệu hoạt động theo cơ chế FIFO (First In First Out), tạm dịch là “vào trước ra trước”.','The speed of the total process requires a large number of parts to be queued between stages.')
+INSERT INTO Nghia values ('74','1',N'Hàng đợi',N' Hàng đợi (queue) là một cấu trúc dữ liệu hoạt động theo cơ chế FIFO (First In First Out), tạm dịch là “vào trước ra trước”.','The speed of the total process requires a large number of parts to be queued between stages.')
 
 INSERT INTO Tu values ('Random',N'/ˈræn.dəm/','3','arbitrary','orderly','')
-INSERT INTO Nghia values ('77','3',N'Ngẫu nhiên',N'Ngẫu nhiên là việc chọn một cách ngẫu nhiên một trong số các đối tượng,  trong đó mỗi đối tượng đều có cơ hội được lựa chọn','The winning entry will be the first correct answer drawn at random.')
+INSERT INTO Nghia values ('75','3',N'Ngẫu nhiên',N'Ngẫu nhiên là việc chọn một cách ngẫu nhiên một trong số các đối tượng,  trong đó mỗi đối tượng đều có cơ hội được lựa chọn','The winning entry will be the first correct answer drawn at random.')
 
 INSERT INTO Tu values ('Recovery',N'/rɪˈkʌv.ɚ.i/','3','rehabilitation','loss','')
-INSERT INTO Nghia values ('78','1',N'Khôi phục',N'Khôi phục dữ liệu là quá trình sử dụng các thiết bị, phần mềm lấy lại các dữ liệu bị hư hỏng ','Use a recovery drive to restore or recover your PC')
+INSERT INTO Nghia values ('76','1',N'Khôi phục',N'Khôi phục dữ liệu là quá trình sử dụng các thiết bị, phần mềm lấy lại các dữ liệu bị hư hỏng ','Use a recovery drive to restore or recover your PC')
 
 INSERT INTO Tu values ('Relation',N'/rɪˈleɪ.ʃən/','3','relationship','','')
-INSERT INTO Nghia values ('79','1',N'Quan hệ',N'Quan hệ tạo ra mối liên kết giữa hai bảng nhằm xác định mối liên quan giữa các trường dữ liệu của hai bảng','A relational database is a type of database that stores and provides access to data points that are related to one another.')
+INSERT INTO Nghia values ('77','1',N'Quan hệ',N'Quan hệ tạo ra mối liên kết giữa hai bảng nhằm xác định mối liên quan giữa các trường dữ liệu của hai bảng','A relational database is a type of database that stores and provides access to data points that are related to one another.')
 
 INSERT INTO Tu values ('Reverse',N'/rɪˈvɝːs/','3','invert','','')
-INSERT INTO Nghia values ('80','2',N'Đảo ngược',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','There is no built-in reverse function in Python''s str object.')
+INSERT INTO Nghia values ('78','2',N'Đảo ngược',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','There is no built-in reverse function in Python''s str object.')
 
 INSERT INTO Tu values ('Secure',N'/səˈkjʊr/','3','protect','','')
-INSERT INTO Nghia values ('81','3',N'Bảo vệ',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Brave is arguably the most secure browser with simple, out-of-the-box privacy.')
+INSERT INTO Nghia values ('79','3',N'Bảo vệ',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Brave is arguably the most secure browser with simple, out-of-the-box privacy.')
 
 INSERT INTO Tu values ('Snapshot',N'/ˈsnæp.ʃɑːt/','3','','','')
-INSERT INTO Nghia values ('82','1',N'Trạng thái hệ thống ở một thời điểm nào đó',N'Snapshot cơ sở dữ liệu là một ảnh chụp nhanh dạng tĩnh, chỉ đọc (read-only) của một cơ sở dữ liệu SQL Server (cơ sở dữ liệu nguồn).','A snapshot preserves the state and data of a virtual machine at a specific point in time.')
+INSERT INTO Nghia values ('80','1',N'Trạng thái hệ thống ở một thời điểm nào đó',N'Snapshot cơ sở dữ liệu là một ảnh chụp nhanh dạng tĩnh, chỉ đọc (read-only) của một cơ sở dữ liệu SQL Server (cơ sở dữ liệu nguồn).','A snapshot preserves the state and data of a virtual machine at a specific point in time.')
 
 INSERT INTO Tu values ('Stack',N'/stæk/','3','','','')
-INSERT INTO Nghia values ('83','1',N'Ngăn xếp',N'Ngăn xếp là 1 dạng đặc biệt của danh sách liên kết mà việc bổ sung hay loại bỏ 1 phần tử đều thực hiện ở 1 đầu của danh sách gọi là đỉnh.','Stack is a container of objects that are inserted and removed according to the last-in first-out (LIFO) principle.')
+INSERT INTO Nghia values ('81','1',N'Ngăn xếp',N'Ngăn xếp là 1 dạng đặc biệt của danh sách liên kết mà việc bổ sung hay loại bỏ 1 phần tử đều thực hiện ở 1 đầu của danh sách gọi là đỉnh.','Stack is a container of objects that are inserted and removed according to the last-in first-out (LIFO) principle.')
 
 INSERT INTO Tu values ('Trigger',N'/ˈtrɪɡ.ɚ/','3','activate','deactivate','')
-INSERT INTO Nghia values ('84','1',N'Kích hoạt',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','A trigger is a special type of stored procedure that automatically runs when an event occurs.')
+INSERT INTO Nghia values ('82','1',N'Kích hoạt',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','A trigger is a special type of stored procedure that automatically runs when an event occurs.')
 
 INSERT INTO Tu values ('Vulnerability',N'/ˌvʌl.nɚ.əˈbɪl.ə.t̬i/','3','weakness','invulnerability','')
-INSERT INTO Nghia values ('85','1',N'Lỗ hổng bảo mật',N'Lỗ hổng bảo mật là khuyết điểm trong quá trình lập trình hoặc việc cấu hình sai hệ thống mà qua đó tạo ra sơ hở cho các kẻ tấn công mạng','Old approaches to vulnerability assessment no longer work.')
+INSERT INTO Nghia values ('83','1',N'Lỗ hổng bảo mật',N'Lỗ hổng bảo mật là khuyết điểm trong quá trình lập trình hoặc việc cấu hình sai hệ thống mà qua đó tạo ra sơ hở cho các kẻ tấn công mạng','Old approaches to vulnerability assessment no longer work.')
 
 INSERT INTO Tu values ('Signal',N'/ˈsɪɡ.nəl/','3','','','')
-INSERT INTO Nghia values ('86','1',N'Dấu hiệu',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Signal processing is involved in picking up sounds in the environment, and processing them to enhance and amplify.')
+INSERT INTO Nghia values ('84','1',N'Dấu hiệu',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Signal processing is involved in picking up sounds in the environment, and processing them to enhance and amplify.')
 
 INSERT INTO Tu values ('Chain',N'/tʃeɪn/','3','sequence','','')
-INSERT INTO Nghia values ('87','1',N'Chuỗi',N'Chuỗi là một tập hợp các ký tự (char) được lưu trữ trên các ô nhớ liên tiếp và luôn luôn có 1 ký tự null là \0 báo hiệu kết thúc','A chain code is a lossless compression based image segmentation method for binary images.')
+INSERT INTO Nghia values ('85','1',N'Chuỗi',N'Chuỗi là một tập hợp các ký tự (char) được lưu trữ trên các ô nhớ liên tiếp và luôn luôn có 1 ký tự null là \0 báo hiệu kết thúc','A chain code is a lossless compression based image segmentation method for binary images.')
 
 INSERT INTO Tu values ('Dimension',N'/ˌdaɪˈmen.ʃən/','3','','','')
-INSERT INTO Nghia values ('88','1',N'Hướng',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Dimensions describe data qualitatively, meaning they use words and characters.')
+INSERT INTO Nghia values ('86','1',N'Hướng',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Dimensions describe data qualitatively, meaning they use words and characters.')
 
 INSERT INTO Tu values ('Guarantee',N'/ˌɡer.ənˈtiː/','3','ensure','undermine','')
-INSERT INTO Nghia values ('89','1',N'Bảo đảm',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','A guarantee is the promise included in the formal (and legal) warranty.')
+INSERT INTO Nghia values ('87','1',N'Bảo đảm',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','A guarantee is the promise included in the formal (and legal) warranty.')
 
 INSERT INTO Tu values ('Individual ',N'/ˌɪn.dəˈvɪdʒ.u.əl/','3','personal','general','')
-INSERT INTO Nghia values ('90','1',N'Cá nhân, cá thể',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Individual means relating to one person or thing, rather than to a large group.')
+INSERT INTO Nghia values ('88','1',N'Cá nhân, cá thể',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Individual means relating to one person or thing, rather than to a large group.')
 
 INSERT INTO Tu values ('Establish ',N'/ɪˈstæb.lɪʃ/','3','found','terminate','')
-INSERT INTO Nghia values ('91','2',N'Thiết lập',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Learn what it means to establish data excellence and how it affects everyone in an organization')
+INSERT INTO Nghia values ('89','2',N'Thiết lập',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Learn what it means to establish data excellence and how it affects everyone in an organization')
 
 INSERT INTO Tu values ('Permanent ',N'/ˈpɝː.mə.nənt/','3','eternal','Temporary','')
-INSERT INTO Nghia values ('92','3',N'Vĩnh viễn',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Permanent is computer data storage device that retains its data when the device is unpowered')
+INSERT INTO Nghia values ('90','3',N'Vĩnh viễn',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Permanent is computer data storage device that retains its data when the device is unpowered')
 
 INSERT INTO Tu values ('Temporary',N'/ˈtem.pə.rer.i/','3','interim','Permanent ','')
-INSERT INTO Nghia values ('93','3',N'Tạm thời',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','The term temporary storage area in a computer typically refers to a computer''s RAM.')
+INSERT INTO Nghia values ('91','3',N'Tạm thời',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','The term temporary storage area in a computer typically refers to a computer''s RAM.')
 
 INSERT INTO Tu values ('Diverse',N'/dɪˈvɝːs/','3','varied','identical','')
-INSERT INTO Nghia values ('94','3',N'Nhiều, đa dạng',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Since identity itself is fluid and diverse, so too must be the range of support options on offer.')
+INSERT INTO Nghia values ('92','3',N'Nhiều, đa dạng',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Since identity itself is fluid and diverse, so too must be the range of support options on offer.')
 
 INSERT INTO Tu values ('Sophisticated',N'/səˈfɪs.tə.keɪ.t̬ɪd/','3','Complex','simple','')
-INSERT INTO Nghia values ('95','3',N'Phức tạp',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','I don''t think I have any books that would suit your sophisticated tastes.')
+INSERT INTO Nghia values ('93','3',N'Phức tạp',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','I don''t think I have any books that would suit your sophisticated tastes.')
 
 INSERT INTO Tu values ('Virtual',N'/ˈvɝː.tʃu.əl/','3','','real','')
-INSERT INTO Nghia values ('96','3',N'Ảo',N'Ảo là không có thực, một tượng trưng máy tính của một thực thể nào đó.','In the game players simulate real life in a virtual world.')
+INSERT INTO Nghia values ('94','3',N'Ảo',N'Ảo là không có thực, một tượng trưng máy tính của một thực thể nào đó.','In the game players simulate real life in a virtual world.')
 
 INSERT INTO Tu values ('Compatible',N'/kəmˈpæt̬.ə.bəl/','3','cooperative','incompatible','')
-INSERT INTO Nghia values ('97','3',N'Tương thích',N'Khả năng tương thích là khả năng để hai hệ thống làm việc cùng nhau mà không cần phải thay đổi.','Cross-browser compatibility is a commonly overlooked step when creating a new website.')
+INSERT INTO Nghia values ('95','3',N'Tương thích',N'Khả năng tương thích là khả năng để hai hệ thống làm việc cùng nhau mà không cần phải thay đổi.','Cross-browser compatibility is a commonly overlooked step when creating a new website.')
 
 INSERT INTO Tu values ('Multiuser',N'/ˈmʌltiˌjuːzər/','3','','','')
-INSERT INTO Nghia values ('98','1',N'Đa người dùng',N'Trong một hệ thống đa nhiệm người dùng, một người dùng có thể thực hiện nhiều tác vụ cùng một lúc.','Android supports multiuser on a single Android device.')
+INSERT INTO Nghia values ('96','1',N'Đa người dùng',N'Trong một hệ thống đa nhiệm người dùng, một người dùng có thể thực hiện nhiều tác vụ cùng một lúc.','Android supports multiuser on a single Android device.')
 
 INSERT INTO Tu values ('Node',N'/noʊd/','3','','','')
-INSERT INTO Nghia values ('99','1',N'Nút',N' Node là các nút giúp lưu trữ, truyền tải dữ liệu trong hệ thống các nút được liên kết với nhau.','A Node stores a value that can be of any data type and has a pointer to another node.')
+INSERT INTO Nghia values ('97','1',N'Nút',N' Node là các nút giúp lưu trữ, truyền tải dữ liệu trong hệ thống các nút được liên kết với nhau.','A Node stores a value that can be of any data type and has a pointer to another node.')
 
 INSERT INTO Tu values ('Research',N'/rɪˈsɝːtʃ/','3','investigation','','')
-INSERT INTO Nghia values ('100','1',N'Nghiên cứu',N'Nghiên cứu là một quá trình thử nghiệm và trí tuệ bao gồm một tập hợp các phương pháp được áp dụng một cách có hệ thống.','The US government has funded some research on high-speed trains.')
+INSERT INTO Nghia values ('98','1',N'Nghiên cứu',N'Nghiên cứu là một quá trình thử nghiệm và trí tuệ bao gồm một tập hợp các phương pháp được áp dụng một cách có hệ thống.','The US government has funded some research on high-speed trains.')
 
 INSERT INTO Tu values ('Irregularity',N'/ɪˌreɡ.jəˈler.ə.t̬i/','3','imperfection','','')
-INSERT INTO Nghia values ('101','1',N'Bất thường, không theo quy tắc',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','The irregularity of English spelling means that it is easy to make mistakes')
+INSERT INTO Nghia values ('99','1',N'Bất thường, không theo quy tắc',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','The irregularity of English spelling means that it is easy to make mistakes')
 
 INSERT INTO Tu values ('Algorithm',N'/ˈæl.ɡə.rɪ.ðəm/','3','','','')
-INSERT INTO Nghia values ('102','1',N'Thuật toán',N'Thuật toán bao gồm các vấn đề về quy tắc, các chỉ thị, phương thức nhằm hoàn thành những tiêu chí, trạng thái ban đầu.','Music apps use algorithms to predict the probability that fans of one particular band will like another.')
+INSERT INTO Nghia values ('100','1',N'Thuật toán',N'Thuật toán bao gồm các vấn đề về quy tắc, các chỉ thị, phương thức nhằm hoàn thành những tiêu chí, trạng thái ban đầu.','Music apps use algorithms to predict the probability that fans of one particular band will like another.')
 
 INSERT INTO Tu values ('AI',N'/ˌeɪˈaɪ/','3','','','')
-INSERT INTO Nghia values ('103','1',N'Trí tuệ được tăng cường',N'AI (Artificial intelligence) là trí thông minh được thể hiện bằng máy móc, trái ngược với trí thông minh tự nhiên của con người','The techniques of AI are becoming more important, both in industry and in pure research')
+INSERT INTO Nghia values ('101','1',N'Trí tuệ được tăng cường',N'AI (Artificial intelligence) là trí thông minh được thể hiện bằng máy móc, trái ngược với trí thông minh tự nhiên của con người','The techniques of AI are becoming more important, both in industry and in pure research')
 
 INSERT INTO Tu values ('Cloud computing',N'/ˌklaʊd kəmˈpjuː.t̬ɪŋ/','3','','','')
-INSERT INTO Nghia values ('104','1',N'Điện toán đám mây',N'Điện toán đám mây cung cấp các công nghệ, tài nguyên máy tính liên kết với mạng Internet.','Google offers free word-processing and spreadsheet software over a browser.')
+INSERT INTO Nghia values ('102','1',N'Điện toán đám mây',N'Điện toán đám mây cung cấp các công nghệ, tài nguyên máy tính liên kết với mạng Internet.','Google offers free word-processing and spreadsheet software over a browser.')
 
 INSERT INTO Tu values ('Architecture',N'/ˈɑːr.kə.tek.tʃɚ/','3','structure','','')
-INSERT INTO Nghia values ('105','1',N'Kiến trúc',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Their software architecture is good and they continue to show good growth.')
+INSERT INTO Nghia values ('103','1',N'Kiến trúc',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','Their software architecture is good and they continue to show good growth.')
 
 INSERT INTO Tu values ('Data science',N'/ˈdeɪ.t̬ə ˌsaɪ.əns/','3','','','')
-INSERT INTO Nghia values ('106','1',N'Khoa học dữ liệu',N'Khoa học dữ liệu là ngành khoa học về việc khai phá, quản trị và phân tích dữ liệu để dự đoán các xu hướng trong tương lai.','Political parties have started showing an interest in data science.')
+INSERT INTO Nghia values ('104','1',N'Khoa học dữ liệu',N'Khoa học dữ liệu là ngành khoa học về việc khai phá, quản trị và phân tích dữ liệu để dự đoán các xu hướng trong tương lai.','Political parties have started showing an interest in data science.')
 
 INSERT INTO Tu values ('Analyse',N'/ˈæn.əl.aɪz/','3','investigate','','')
-INSERT INTO Nghia values ('107','2',N'Phân tích',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','We are trying to analyse what went wrong in this program.')
+INSERT INTO Nghia values ('105','2',N'Phân tích',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','We are trying to analyse what went wrong in this program.')
 
 INSERT INTO Tu values ('Database',N'/ˈdeɪ.t̬ə.beɪs/','3','','','')
-INSERT INTO Nghia values ('108','1',N'Cơ sở dữ liệu',N'Cơ sở dữ liệu là một tập hợp các dữ liệu có tổ chức liên quan đến nhau, thường được lưu trữ và truy cập từ hệ thống máy tính.','It was his job to enter the information into the database.')
+INSERT INTO Nghia values ('106','1',N'Cơ sở dữ liệu',N'Cơ sở dữ liệu là một tập hợp các dữ liệu có tổ chức liên quan đến nhau, thường được lưu trữ và truy cập từ hệ thống máy tính.','It was his job to enter the information into the database.')
 
 INSERT INTO Tu values ('Complex',N'/kɑːmˈpleks/','3','Sophisticated','simple','')
-INSERT INTO Nghia values ('109','3',N'Phức tạp',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','A complex process is a system of separate series of events or relationships.')
+INSERT INTO Nghia values ('107','3',N'Phức tạp',N'(Hiện tại phần mềm từ điển tiếng Anh chuyên ngành của SHTeam chưa có mô tả về từ này)','A complex process is a system of separate series of events or relationships.')
 -------------------------------------------------------------------------------------------------

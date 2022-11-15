@@ -50,7 +50,7 @@ namespace DictionaryAppForIT.CustomMessageBox
             switch (this.action)
             {
                 case enmAction.wait:
-                    timer1.Interval = 5000;
+                    timer1.Interval = 10000;
                     action = enmAction.close;
                     break;
                 case Form_Alert.enmAction.start:

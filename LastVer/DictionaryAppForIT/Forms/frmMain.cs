@@ -91,7 +91,7 @@ namespace DictionaryAppForIT.Forms
         }
         public void Init()
         {
-            timer.Interval = 30000; // 30s
+            timer.Interval = 45000; // 45s
             timer.Tick += new EventHandler(timer_Tick);
             timer.Enabled = true;
         }

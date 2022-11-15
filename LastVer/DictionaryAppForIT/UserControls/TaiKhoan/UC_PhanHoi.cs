@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DictionaryAppForIT.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
 
 namespace DictionaryAppForIT.UserControls.TaiKhoan
 {
@@ -35,6 +37,16 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private void guna2PictureBox12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDanhGia(object sender, EventArgs e)
+        {
+            var getText = (sender as Guna2Button).Text;
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            RJMessageBox.Show("Cảm ơn bạn đã đánh giá ứng dụng", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
