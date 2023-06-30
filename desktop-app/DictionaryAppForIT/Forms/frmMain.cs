@@ -385,28 +385,11 @@ namespace DictionaryAppForIT.Forms
             timer.Stop();
             var frm = new frmMSG_DangXuat();
 
-            //var result = RJMessageBox.Show("Bạn có chắc muốn đăng xuất?",
-            //   "Đăng xuất",
-            //   MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            //if (result == DialogResult.Yes)
-            //{
-            //    this.Hide();
-            //    frmLogin frmLogin = new frmLogin();
-            //    frmLogin.Show();
-            //}
-            //if (result == DialogResult.No)
-            //{
-            //    return;
-            //}
-
-
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 
                 frm.Close();
                 this.Hide();
-                frmLogin frmLogin = new frmLogin();
-                frmLogin.Show();
 
             }
             else

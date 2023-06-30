@@ -91,9 +91,9 @@ namespace DictionaryAppForIT
             {
                 var loginResponse = Newtonsoft.Json.JsonConvert.DeserializeObject<LoginResponse>(responseContent);
 
-                var username = loginResponse.Username;
+                Class_TaiKhoan.displayUsername = loginResponse.Username;
                 Class_TaiKhoan.Token = loginResponse.Token;
-                var role = loginResponse.Role;
+                Class_TaiKhoan.Role = loginResponse.Role;
                 Class_TaiKhoan.IdTaiKhoan = loginResponse.userId;
                 Class_TaiKhoan.ngayTaoTK = loginResponse.created_at;
 

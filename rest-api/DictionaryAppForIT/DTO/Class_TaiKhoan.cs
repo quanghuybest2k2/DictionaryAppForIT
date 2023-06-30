@@ -14,6 +14,7 @@ namespace DictionaryAppForIT.DTO
         public static string IdTaiKhoan;
         public static string ngayTaoTK;
         public static string Token;
+        public static string Role;
 
         public Class_TaiKhoan()
         {

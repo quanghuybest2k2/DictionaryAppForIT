@@ -408,8 +408,7 @@ namespace DictionaryAppForIT.Forms
                         if (response.IsSuccessStatusCode)
                         {
                             this.Hide();
-                            frmLogin frmLogin = new frmLogin();
-                            frmLogin.Close();
+                            // bên form đăng xuất show login rồi
                         }
                         else
                         {
