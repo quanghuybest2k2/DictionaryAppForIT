@@ -197,14 +197,13 @@ namespace DictionaryAppForIT.UserControls
             }
         }
 
-        private void HienThiThongTin()
+        private async void HienThiThongTin()
         {
-            object num = DataProvider.Instance.ExecuteScalar($"SELECT COUNT(TenTu) FROM Tu where TenTu = '{txtTimKiemTu.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}' or IDTK = '0' and TenTu = '{txtTimKiemTu.Text}'");
-            if (Convert.ToInt32(num) > 0)
+            if (await XemNghia.HienThiThongTinTimKiem(txtTimKiemTu.Text))
             {
+
                 _listNghia = new List<UC_Nghia>();
                 pnTitle.Visible = true;
-                XemNghia.HienThiThongTinTimKiem(txtTimKiemTu.Text);
                 foreach (var item in XemNghia._listTu)
                 {
                     txtTuVung.Text = item.TenTu;
