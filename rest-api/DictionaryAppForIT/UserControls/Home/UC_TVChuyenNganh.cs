@@ -1,23 +1,25 @@
-﻿using System;
+﻿using DictionaryAppForIT.API;
+using DictionaryAppForIT.Class;
+using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Net.Http;
+using System.Speech.Synthesis;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DictionaryAppForIT.DAL;
-using System.Speech.Synthesis;
-using System.Data.SqlClient;
-using System.Configuration;
 
 namespace DictionaryAppForIT.UserControls.Home
 {
     public partial class UC_TVChuyenNganh : UserControl
     {
-        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
+        private readonly string apiUrl = BaseUrl.base_url;
+        HttpClient client = new HttpClient();
+
+        //private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         SpeechSynthesizer speech;
         public bool thayDoiTocDo = false;
         public int tocDo = 0;
@@ -26,39 +28,79 @@ namespace DictionaryAppForIT.UserControls.Home
             InitializeComponent();
             speech = new SpeechSynthesizer();
             dtgvTuVung.AutoGenerateColumns = false;
-            //dtgvTuVung.ScrollBars = ScrollBars.Both;
         }
-        private void loadChuyenNganh()
+        private async Task loadChuyenNganhAsync()
         {
             try
             {
-                string query = "select * from ChuyenNganh";
-                cbbChuyenNganh.DataSource = DataProvider.Instance.ExecuteQuery(query);
-                cbbChuyenNganh.DisplayMember = "TenChuyenNganh";
-                cbbChuyenNganh.ValueMember = "ID";
-                HienThiTheoChuyenNganh(); // hiển thị lúc load lên
+                HttpResponseMessage response = await client.GetAsync(apiUrl + "get-all-specialization");
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonString = await response.Content.ReadAsStringAsync();
+                    JObject jsonObject = JObject.Parse(jsonString);
+
+                    if (jsonObject.ContainsKey("specialization"))
+                    {
+                        JArray specializationArray = (JArray)jsonObject["specialization"];
+                        List<Specialization> specializations = specializationArray.ToObject<List<Specialization>>();
+
+                        cbbChuyenNganh.DataSource = specializations;
+                        cbbChuyenNganh.ValueMember = "id";
+                        cbbChuyenNganh.DisplayMember = "specialization_name";
+                    }
+                    else
+                    {
+                        RJMessageBox.Show("Không tìm thấy dữ liệu chuyên ngành!");
+                    }
+                }
+                else
+                {
+                    RJMessageBox.Show("Mã lỗi >> " + response.StatusCode);
+                }
+                //HienThiTheoChuyenNganh(); // hiển thị lúc load lên
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RJMessageBox.Show(ex.Message);
             }
         }
-        private void HienThiTheoChuyenNganh()
+        private async Task HienThiTheoChuyenNganhAsync()
         {
             try
             {
-                string query = $"exec LayTheoChuyenNganh '{cbbChuyenNganh.SelectedValue}' , '{Class_TaiKhoan.IdTaiKhoan}'";
-                dtgvTuVung.DataSource = DataProvider.Instance.ExecuteQuery(query);//
-                lblSoTuHienCo.Text = dtgvTuVung.Rows.Count.ToString();// hiển thị số từ vựng
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"display-by-specialization?specialization_id={cbbChuyenNganh.SelectedValue}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonString = await response.Content.ReadAsStringAsync();
+                    JObject jsonObject = JObject.Parse(jsonString);
+
+                    if (jsonObject.ContainsKey("specializations"))
+                    {
+                        JArray specializationArray = (JArray)jsonObject["specializations"];
+                        List<WordBySpecialization> specializations = specializationArray.ToObject<List<WordBySpecialization>>();
+
+                        dtgvTuVung.DataSource = specializations;
+                        lblSoTuHienCo.Text = dtgvTuVung.Rows.Count.ToString();
+                    }
+                    else
+                    {
+                        RJMessageBox.Show("Không tìm thấy dữ liệu chuyên ngành!");
+                    }
+                }
+                else
+                {
+                    RJMessageBox.Show("Mã lỗi >> " + response.StatusCode);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RJMessageBox.Show(ex.Message);
             }
         }
         private void btnTimTheoCN_Click(object sender, EventArgs e)
         {
-            
+
         }
         private void TocDoNoi()
         {
@@ -94,30 +136,30 @@ namespace DictionaryAppForIT.UserControls.Home
                 }
             }
         }
-        private void GoiYTimKiem()
-        {
-            try
-            {
-                SqlConnection Conn = new SqlConnection(connString);
-                Conn.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = $"SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and ChuyenNganh.ID = '{cbbChuyenNganh.SelectedValue}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}' and TenTu like '{txtTimTheoChuyenNganh.Text}%' or tu.ChuyenNganh = ChuyenNganh.ID and IDTK = '0' and TenTu like '{txtTimTheoChuyenNganh.Text}%' and ChuyenNganh.ID = '{cbbChuyenNganh.SelectedValue}'";
-                cmd.Connection = Conn;
-                SqlDataReader rdr = cmd.ExecuteReader();
-                AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-                while (rdr.Read())
-                {
-                    autoComplete.Add(rdr.GetString(0));
-                }
-                txtTimTheoChuyenNganh.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                txtTimTheoChuyenNganh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                txtTimTheoChuyenNganh.AutoCompleteCustomSource = autoComplete;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //private void GoiYTimKiem()
+        //{
+        //    try
+        //    {
+        //        SqlConnection Conn = new SqlConnection(connString);
+        //        Conn.Open();
+        //        SqlCommand cmd = new SqlCommand();
+        //        cmd.CommandText = $"SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and ChuyenNganh.ID = '{cbbChuyenNganh.SelectedValue}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}' and TenTu like '{txtTimTheoChuyenNganh.Text}%' or tu.ChuyenNganh = ChuyenNganh.ID and IDTK = '0' and TenTu like '{txtTimTheoChuyenNganh.Text}%' and ChuyenNganh.ID = '{cbbChuyenNganh.SelectedValue}'";
+        //        cmd.Connection = Conn;
+        //        SqlDataReader rdr = cmd.ExecuteReader();
+        //        AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+        //        while (rdr.Read())
+        //        {
+        //            autoComplete.Add(rdr.GetString(0));
+        //        }
+        //        txtTimTheoChuyenNganh.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        //        txtTimTheoChuyenNganh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+        //        txtTimTheoChuyenNganh.AutoCompleteCustomSource = autoComplete;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
         private void txtTimTheoChuyenNganh_TextChanged(object sender, EventArgs e)
         {
@@ -125,21 +167,21 @@ namespace DictionaryAppForIT.UserControls.Home
             {
                 //cái nào cũng được
                 //btnTimTheoCN.PerformClick();
-                HienThiTheoChuyenNganh();
+                HienThiTheoChuyenNganhAsync();
             }
         }
 
         private void UC_TVChuyenNganh_Load(object sender, EventArgs e)
         {
             cbbChuyenNganh.SelectedIndexChanged -= CbbChuyenNganh_SelectedIndexChanged;// tách sự kiện
-            loadChuyenNganh();
+            loadChuyenNganhAsync();
             cbbChuyenNganh.SelectedIndexChanged += CbbChuyenNganh_SelectedIndexChanged;//tạo lại
         }
 
         private void CbbChuyenNganh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HienThiTheoChuyenNganh();
-            GoiYTimKiem();
+            HienThiTheoChuyenNganhAsync();
+            //GoiYTimKiem();
         }
     }
 }

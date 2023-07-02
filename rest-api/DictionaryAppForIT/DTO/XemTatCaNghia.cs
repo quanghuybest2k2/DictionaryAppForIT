@@ -3,7 +3,6 @@ using DictionaryAppForIT.Class;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -12,7 +11,6 @@ namespace DictionaryAppForIT.DTO
     public class XemTatCaNghia
     {
         private readonly string apiUrl = BaseUrl.base_url;
-        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         public List<Tu> _listTu = new List<Tu>();
         HttpClient client = new HttpClient();
         public XemTatCaNghia()
