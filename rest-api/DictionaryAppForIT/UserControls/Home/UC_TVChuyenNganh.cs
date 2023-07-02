@@ -5,8 +5,6 @@ using DictionaryAppForIT.DTO;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.Net.Http;
 using System.Speech.Synthesis;
 using System.Threading.Tasks;
@@ -19,7 +17,6 @@ namespace DictionaryAppForIT.UserControls.Home
         private readonly string apiUrl = BaseUrl.base_url;
         HttpClient client = new HttpClient();
 
-        //private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         SpeechSynthesizer speech;
         public bool thayDoiTocDo = false;
         public int tocDo = 0;
@@ -57,7 +54,7 @@ namespace DictionaryAppForIT.UserControls.Home
                 {
                     RJMessageBox.Show("Mã lỗi >> " + response.StatusCode);
                 }
-                //HienThiTheoChuyenNganh(); // hiển thị lúc load lên
+                HienThiTheoChuyenNganhAsync(); // hiển thị lúc load lên
             }
             catch (Exception ex)
             {
@@ -132,34 +129,39 @@ namespace DictionaryAppForIT.UserControls.Home
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    RJMessageBox.Show(ex.Message);
                 }
             }
         }
-        //private void GoiYTimKiem()
-        //{
-        //    try
-        //    {
-        //        SqlConnection Conn = new SqlConnection(connString);
-        //        Conn.Open();
-        //        SqlCommand cmd = new SqlCommand();
-        //        cmd.CommandText = $"SELECT TenTu FROM Tu, ChuyenNganh WHERE tu.ChuyenNganh = ChuyenNganh.ID and ChuyenNganh.ID = '{cbbChuyenNganh.SelectedValue}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}' and TenTu like '{txtTimTheoChuyenNganh.Text}%' or tu.ChuyenNganh = ChuyenNganh.ID and IDTK = '0' and TenTu like '{txtTimTheoChuyenNganh.Text}%' and ChuyenNganh.ID = '{cbbChuyenNganh.SelectedValue}'";
-        //        cmd.Connection = Conn;
-        //        SqlDataReader rdr = cmd.ExecuteReader();
-        //        AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-        //        while (rdr.Read())
-        //        {
-        //            autoComplete.Add(rdr.GetString(0));
-        //        }
-        //        txtTimTheoChuyenNganh.AutoCompleteSource = AutoCompleteSource.CustomSource;
-        //        txtTimTheoChuyenNganh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-        //        txtTimTheoChuyenNganh.AutoCompleteCustomSource = autoComplete;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
+        private async void GoiYTimKiem()
+        {
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(apiUrl + "get-suggest");
+                string json = await response.Content.ReadAsStringAsync();
+
+                // Phân tích cú pháp JSON để lấy danh sách từ gợi ý
+                JObject data = JObject.Parse(json);
+                JArray suggestNames = (JArray)data["suggest_name"];
+
+                // Tạo một AutoCompleteStringCollection và thêm các từ gợi ý vào đó
+                AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+                foreach (string suggestName in suggestNames)
+                {
+                    autoComplete.Add(suggestName);
+                }
+
+                // Cài đặt thuộc tính AutoComplete của TextBox
+                txtTimTheoChuyenNganh.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                txtTimTheoChuyenNganh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtTimTheoChuyenNganh.AutoCompleteCustomSource = autoComplete;
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show(ex.Message);
+            }
+        }
+
 
         private void txtTimTheoChuyenNganh_TextChanged(object sender, EventArgs e)
         {
@@ -181,7 +183,7 @@ namespace DictionaryAppForIT.UserControls.Home
         private void CbbChuyenNganh_SelectedIndexChanged(object sender, EventArgs e)
         {
             HienThiTheoChuyenNganhAsync();
-            //GoiYTimKiem();
+            GoiYTimKiem();
         }
     }
 }
