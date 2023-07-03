@@ -1,6 +1,5 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
-using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
 using Newtonsoft.Json.Linq;
 using System;
@@ -17,6 +16,7 @@ namespace DictionaryAppForIT.UserControls.Home
         private readonly string apiUrl = BaseUrl.base_url;
         HttpClient client = new HttpClient();
 
+        private bool isComboboxLoaded = false;// biến cờ để kiển tra cbb load lên chưa
         SpeechSynthesizer speech;
         public bool thayDoiTocDo = false;
         public int tocDo = 0;
@@ -44,6 +44,7 @@ namespace DictionaryAppForIT.UserControls.Home
                         cbbChuyenNganh.DataSource = specializations;
                         cbbChuyenNganh.ValueMember = "id";
                         cbbChuyenNganh.DisplayMember = "specialization_name";
+                        isComboboxLoaded = true;
                     }
                     else
                     {
@@ -54,7 +55,7 @@ namespace DictionaryAppForIT.UserControls.Home
                 {
                     RJMessageBox.Show("Mã lỗi >> " + response.StatusCode);
                 }
-                HienThiTheoChuyenNganhAsync(); // hiển thị lúc load lên
+                await HienThiTheoChuyenNganhAsync(); // hiển thị lúc load lên
             }
             catch (Exception ex)
             {
@@ -87,17 +88,13 @@ namespace DictionaryAppForIT.UserControls.Home
                 }
                 else
                 {
-                    RJMessageBox.Show("Mã lỗi >> " + response.StatusCode);
+                    RJMessageBox.Show("Lỗi rồi! Mã lỗi >> " + response.StatusCode);
                 }
             }
             catch (Exception ex)
             {
                 RJMessageBox.Show(ex.Message);
             }
-        }
-        private void btnTimTheoCN_Click(object sender, EventArgs e)
-        {
-
         }
         private void TocDoNoi()
         {
@@ -118,14 +115,36 @@ namespace DictionaryAppForIT.UserControls.Home
             }
         }
 
-        private void txtTimTheoChuyenNganh_KeyDown(object sender, KeyEventArgs e)
+        private async void txtTimTheoChuyenNganh_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 try
                 {
-                    string query = $"EXEC TimTheoChuyenNganh '{txtTimTheoChuyenNganh.Text}', '{cbbChuyenNganh.SelectedValue}', '{Class_TaiKhoan.IdTaiKhoan}'";
-                    dtgvTuVung.DataSource = DataProvider.Instance.ExecuteQuery(query);
+                    HttpResponseMessage response = await client.GetAsync($"{apiUrl}search-by-specialty?searched_word={txtTimTheoChuyenNganh.Text}&specialization_id={cbbChuyenNganh.SelectedValue}");
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string jsonString = await response.Content.ReadAsStringAsync();
+                        JObject jsonObject = JObject.Parse(jsonString);
+
+                        if (jsonObject.ContainsKey("word_by_specialty"))
+                        {
+                            JArray specializationArray = (JArray)jsonObject["word_by_specialty"];
+                            List<WordBySpecialization> specializations = specializationArray.ToObject<List<WordBySpecialization>>();
+
+                            dtgvTuVung.DataSource = specializations;
+                            lblSoTuHienCo.Text = dtgvTuVung.Rows.Count.ToString();
+                        }
+                        else
+                        {
+                            RJMessageBox.Show("Không tìm thấy dữ liệu chuyên ngành!");
+                        }
+                    }
+                    else
+                    {
+                        RJMessageBox.Show($"Không tìm thấy từ {txtTimTheoChuyenNganh.Text} trong này!");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -137,24 +156,27 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync(apiUrl + "get-suggest");
-                string json = await response.Content.ReadAsStringAsync();
-
-                // Phân tích cú pháp JSON để lấy danh sách từ gợi ý
-                JObject data = JObject.Parse(json);
-                JArray suggestNames = (JArray)data["suggest_name"];
-
-                // Tạo một AutoCompleteStringCollection và thêm các từ gợi ý vào đó
-                AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-                foreach (string suggestName in suggestNames)
+                if (isComboboxLoaded && cbbChuyenNganh.SelectedValue != null)
                 {
-                    autoComplete.Add(suggestName);
-                }
+                    HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-suggest?specialization_id={cbbChuyenNganh.SelectedValue}");
+                    string json = await response.Content.ReadAsStringAsync();
 
-                // Cài đặt thuộc tính AutoComplete của TextBox
-                txtTimTheoChuyenNganh.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                txtTimTheoChuyenNganh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                txtTimTheoChuyenNganh.AutoCompleteCustomSource = autoComplete;
+                    // Phân tích cú pháp JSON để lấy danh sách từ gợi ý
+                    JObject data = JObject.Parse(json);
+                    JArray suggestNames = (JArray)data["suggest_name"];
+
+                    // Tạo một AutoCompleteStringCollection và thêm các từ gợi ý vào đó
+                    AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+                    foreach (string suggestName in suggestNames)
+                    {
+                        autoComplete.Add(suggestName);
+                    }
+
+                    // Cài đặt thuộc tính AutoComplete của TextBox
+                    txtTimTheoChuyenNganh.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    txtTimTheoChuyenNganh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    txtTimTheoChuyenNganh.AutoCompleteCustomSource = autoComplete;
+                }
             }
             catch (Exception ex)
             {
@@ -162,28 +184,29 @@ namespace DictionaryAppForIT.UserControls.Home
             }
         }
 
-
-        private void txtTimTheoChuyenNganh_TextChanged(object sender, EventArgs e)
+        private async void txtTimTheoChuyenNganh_TextChanged(object sender, EventArgs e)
         {
             if (txtTimTheoChuyenNganh.Text == "")
             {
-                //cái nào cũng được
-                //btnTimTheoCN.PerformClick();
-                HienThiTheoChuyenNganhAsync();
+                await HienThiTheoChuyenNganhAsync();
             }
         }
 
-        private void UC_TVChuyenNganh_Load(object sender, EventArgs e)
+        private async void UC_TVChuyenNganh_Load(object sender, EventArgs e)
         {
             cbbChuyenNganh.SelectedIndexChanged -= CbbChuyenNganh_SelectedIndexChanged;// tách sự kiện
-            loadChuyenNganhAsync();
+            await loadChuyenNganhAsync();
             cbbChuyenNganh.SelectedIndexChanged += CbbChuyenNganh_SelectedIndexChanged;//tạo lại
+            GoiYTimKiem();
         }
 
-        private void CbbChuyenNganh_SelectedIndexChanged(object sender, EventArgs e)
+        private async void CbbChuyenNganh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HienThiTheoChuyenNganhAsync();
-            GoiYTimKiem();
+            if (isComboboxLoaded)
+            {
+                await HienThiTheoChuyenNganhAsync();
+                GoiYTimKiem();
+            }
         }
     }
 }
