@@ -1,20 +1,26 @@
-﻿using DictionaryAppForIT.Class;
+﻿using DictionaryAppForIT.API;
+using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
 using DictionaryAppForIT.UserControls.Home;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Net.Http;
 using System.Speech.Synthesis;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls
 {
     public partial class UC_TraTu : UserControl
     {
+        private readonly string apiUrl = BaseUrl.base_url;
+        HttpClient client = new HttpClient();
         // toc do phat am
         public bool thayDoiTocDo = false;
         public int tocDo = 0;
@@ -41,7 +47,7 @@ namespace DictionaryAppForIT.UserControls
             //Tự động chỉnh lại width của label từ vựng
             //txtTuVung.Text = "Variable (fix xong bug)";
             ChinhLaiTuLoai();
-            GoiYTimKiem();
+            GoiYTimKiemAsync();
         }
 
         private void ChinhLaiTuLoai()
@@ -61,7 +67,7 @@ namespace DictionaryAppForIT.UserControls
 
         private void UC_TraTu_Load(object sender, EventArgs e)
         {
-            GoiYTimKiem();
+            GoiYTimKiemAsync();
             pnTitle.Visible = false;
             txtDongNghia.Visible = false;
             txtTraiNghia.Visible = false;
@@ -91,28 +97,33 @@ namespace DictionaryAppForIT.UserControls
             }
         }
         #region xử lý tìm kiếm
-        public void GoiYTimKiem()
+        public async void GoiYTimKiemAsync()
         {
             try
             {
-                SqlConnection Conn = new SqlConnection(connString);
-                Conn.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = $"select TenTu from Tu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' or IDTK = '0'";
-                cmd.Connection = Conn;
-                SqlDataReader rdr = cmd.ExecuteReader();
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-suggest-all");
+                string json = await response.Content.ReadAsStringAsync();
+
+                // Phân tích cú pháp JSON để lấy danh sách từ gợi ý
+                JObject data = JObject.Parse(json);
+                JArray suggestNames = (JArray)data["suggest_all"];
+
+                // Tạo một AutoCompleteStringCollection và thêm các từ gợi ý vào đó
                 AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-                while (rdr.Read())
+                foreach (string suggestName in suggestNames)
                 {
-                    autoComplete.Add(rdr.GetString(0));
+                    autoComplete.Add(suggestName);
                 }
+
+                // Cài đặt thuộc tính AutoComplete của TextBox
                 txtTimKiemTu.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 txtTimKiemTu.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 txtTimKiemTu.AutoCompleteCustomSource = autoComplete;
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RJMessageBox.Show(ex.Message);
             }
         }
         private void KiemTraTonTaiYeuThich()

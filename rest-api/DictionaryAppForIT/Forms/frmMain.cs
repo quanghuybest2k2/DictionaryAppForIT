@@ -310,7 +310,7 @@ namespace DictionaryAppForIT.Forms
         private void btnTraTu_Click(object sender, EventArgs e)
         {
             ucTraTu.ThayDoiMauGiaoDien(ucCaiDat.ButtonCheDoBanDem);
-            ucTraTu.GoiYTimKiem();
+            ucTraTu.GoiYTimKiemAsync();
             KiemTraThayDoiTocDoTraTu();
             // Nhấn tự động phát âm
             ucTraTu.tocDoPhatAm = ucCaiDat.tuDongPhatAm;
