@@ -26,20 +26,23 @@ namespace DictionaryAppForIT.DTO
                 dynamic data = JsonConvert.DeserializeObject(json);
                 if (response.IsSuccessStatusCode)
                 {
-
-                    Tu tu = new Tu();
-                    tu.TenTu = data.word_name;
-                    tu.TenLoai = data.type_name;
-                    tu.PhienAm = data.pronunciations;
-                    tu.TenChuyenNganh = data.specialization_name;
-                    tu.Nghia = data.means;
-                    tu.MoTa = data.description;
-                    tu.ViDu = data.example;
-                    tu.DongNghia = data.synonymous;
-                    tu.TraiNghia = data.antonyms;
-
                     _listTu.Clear();
-                    _listTu.Add(tu);
+
+                    foreach (var word in data.word)
+                    {
+                        Tu tu = new Tu();
+                        tu.TenTu = word.word_name;
+                        tu.TenLoai = word.type_name;
+                        tu.PhienAm = word.pronunciations;
+                        tu.TenChuyenNganh = word.specialization_name;
+                        tu.Nghia = word.means;
+                        tu.MoTa = word.description;
+                        tu.ViDu = word.example;
+                        tu.DongNghia = word.synonymous;
+                        tu.TraiNghia = word.antonyms;
+
+                        _listTu.Add(tu);
+                    }
                     return true;
                 }
                 else
@@ -58,6 +61,7 @@ namespace DictionaryAppForIT.DTO
                 return false;
             }
         }
+
         public async void HienThiThongTinRandom()
         {
             try
@@ -68,16 +72,17 @@ namespace DictionaryAppForIT.DTO
 
                 if (response.IsSuccessStatusCode)
                 {
+                    var word = data.randomWord;
                     Tu tu = new Tu();
-                    tu.TenTu = data.word_name;
-                    tu.TenLoai = data.type_name;
-                    tu.PhienAm = data.pronunciations;
-                    tu.TenChuyenNganh = data.specialization_name;
-                    tu.Nghia = data.means;
-                    tu.MoTa = data.description;
-                    tu.ViDu = data.example;
-                    tu.DongNghia = data.synonymous;
-                    tu.TraiNghia = data.antonyms;
+                    tu.TenTu = word.word_name;
+                    tu.TenLoai = word.type_name;
+                    tu.PhienAm = word.pronunciations;
+                    tu.TenChuyenNganh = word.specialization_name;
+                    tu.Nghia = word.means;
+                    tu.MoTa = word.description;
+                    tu.ViDu = word.example;
+                    tu.DongNghia = word.synonymous;
+                    tu.TraiNghia = word.antonyms;
 
                     _listTu.Clear();
                     _listTu.Add(tu);
