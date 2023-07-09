@@ -197,7 +197,7 @@ namespace DictionaryAppForIT.UserControls
                 //gửi request
                 var response = await client.PostAsync(apiUrl + "save-word-lookup-history", new FormUrlEncodedContent(requestData));
 
-                // Luôn luôn thành công
+                // Đảm bảo luôn luôn thành công nhé :))
                 response.EnsureSuccessStatusCode();
 
                 var responseContent = await response.Content.ReadAsStringAsync();
@@ -369,8 +369,8 @@ namespace DictionaryAppForIT.UserControls
         }
         #endregion
 
-
-        private void btnYeuThich_Click(object sender, EventArgs e)
+        #region Xử lý yêu thích
+        private async void btnYeuThich_Click(object sender, EventArgs e)
         {
             foreach (var item in XemNghia._listTu)
             {
@@ -380,67 +380,59 @@ namespace DictionaryAppForIT.UserControls
                 }
                 else
                 {
-                    string query = $"DELETE FROM YeuThichTuVung WHERE TiengAnh = '{txtTuVung.Text}' AND IDTK = '{Class_TaiKhoan.IdTaiKhoan}'";
-                    int num = DataProvider.Instance.ExecuteNonQuery(query);
-                    //if (num > 0)
-                    //{
-                    //    RJMessageBox.Show("Xóa thành công!");
-                    //}
-                    //else
-                    //    RJMessageBox.Show("Thất bại");
+                    try
+                    {
+                        HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-love_vocabulary/{txtTuVung.Text}/{Class_TaiKhoan.IdTaiKhoan}");
+                        //if (response.IsSuccessStatusCode)
+                        //{
+                        //    RJMessageBox.Show("Xóa thành công.");
+                        //}
+                        //else
+                        //{
+                        //    RJMessageBox.Show("Lỗi rồi hi hi!");
+                        //}
+                    }
+                    catch (Exception ex)
+                    {
+                        RJMessageBox.Show("Lỗi >> " + ex.Message);
+                    }
                 }
             }
-
         }
 
-        private void LuuTuYeuThich(Tu tu)
+        private async void LuuTuYeuThich(Tu tu)
         {
             try
             {
-                // them tu vao lich su
-                SqlConnection conn = new SqlConnection(connString);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "EXEC LuuTuYeuThich @IDYT output, @TiengAnh, @PhienAm, @TiengViet, @GhiChu, @IDTK";
-                cmd.Parameters.Add("@IDYT", SqlDbType.Int);
-                cmd.Parameters.Add("@TiengAnh", SqlDbType.VarChar, 400);
-                cmd.Parameters.Add("@PhienAm", SqlDbType.NVarChar, 400);
-                cmd.Parameters.Add("@TiengViet", SqlDbType.NVarChar, 400);
-                cmd.Parameters.Add("@GhiChu", SqlDbType.NVarChar, 400);
-                cmd.Parameters.Add("@IDTK", SqlDbType.Int);
-                //Lấy id vừa thêm vào bảng LichSuTraTu
-                cmd.Parameters["@IDYT"].Direction = ParameterDirection.Output;
-                cmd.Parameters["@TiengAnh"].Value = tu.TenTu;
-                cmd.Parameters["@PhienAm"].Value = tu.PhienAm;
+                //@TiengAnh, @PhienAm, @TiengViet, @GhiChu,@IDTK
+                var requestData = new Dictionary<string, string>
+                {
+                    { "english", tu.TenTu },
+                    { "pronunciations", tu.PhienAm },
+                    { "vietnamese", tu.Nghia },
+                    // "note" => có thể null nên khỏi điền
+                    { "user_id", Class_TaiKhoan.IdTaiKhoan }
+                };
+                //gửi request
+                var response = await client.PostAsync(apiUrl + "save-love_vocabulary", new FormUrlEncodedContent(requestData));
 
-                cmd.Parameters["@TiengViet"].Value = tu.Nghia;
-                cmd.Parameters["@GhiChu"].Value = "";
-                cmd.Parameters["@IDTK"].Value = Class_TaiKhoan.IdTaiKhoan;
+                // Đảm bảo luôn luôn thành công nhé :))
+                response.EnsureSuccessStatusCode();
 
-                conn.Open();
-                int soDongThemTu = cmd.ExecuteNonQuery();
-                idYeuThichVuaChon = cmd.Parameters["@IDYT"].Value.ToString(); // id từ vừa tra
-                //if (soDongThemTu > 0)
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                //if (responseContent != null)
                 //{
-                //    RJMessageBox.Show("Thêm Yêu thích thành công.");
+                //    RJMessageBox.Show("Phản hồi từ API: " + responseContent);
                 //}
-                //else
-                //{
-                //    RJMessageBox.Show("Lỗi xảy ra!");
-                //}
-
-                conn.Close();
-                conn.Dispose();
             }
             catch (Exception ex)
             {
-                RJMessageBox.Show(ex.Message);
+                RJMessageBox.Show("Lỗi: " + ex.Message);
             }
         }
+        #endregion
 
-        private void btnVietAnh_Click(object sender, EventArgs e)
-        {
-            RJMessageBox.Show("Chức năng đang phát triển!");
-        }
 
         #region Xử lý giao diện sáng tối
 
@@ -511,6 +503,7 @@ namespace DictionaryAppForIT.UserControls
 
         #endregion
 
+        #region đang phát triển
         private void btnTuTruoc_Click(object sender, EventArgs e)
         {
             RJMessageBox.Show("Chức năng đang phát triển!",
@@ -526,5 +519,10 @@ namespace DictionaryAppForIT.UserControls
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
+        private void btnVietAnh_Click(object sender, EventArgs e)
+        {
+            RJMessageBox.Show("Chức năng đang phát triển!");
+        }
+        #endregion
     }
 }
