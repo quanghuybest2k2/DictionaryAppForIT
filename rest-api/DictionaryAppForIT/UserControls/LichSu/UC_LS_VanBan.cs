@@ -1,14 +1,6 @@
-﻿using DictionaryAppForIT.Class;
-using DictionaryAppForIT.DAL;
+﻿using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.LichSu
@@ -17,7 +9,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
     {
         public UC_LS_VanBan()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
         public UC_LS_VanBan(string index, string thoiGian, string ngayThang, string tiengAnh, string tiengViet)

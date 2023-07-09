@@ -1,21 +1,16 @@
-﻿using Bunifu.UI.WinForms;
-using DictionaryAppForIT.Class;
+﻿using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
 using DictionaryAppForIT.UserControls.LichSu;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Speech.Synthesis;
-using Guna.UI2.WinForms;
+using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.GanDay
 {
@@ -76,6 +71,10 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 {
                     RJMessageBox.Show(ex.Message);
                 }
+            }
+            else
+            {
+                RJMessageBox.Show("Bạn chưa có lịch sử tra từ!");
             }
         }
 
@@ -247,7 +246,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
             }
             catch (Exception ex)
             {
-                    RJMessageBox.Show(ex.Message);
+                RJMessageBox.Show(ex.Message);
             }
         }
 

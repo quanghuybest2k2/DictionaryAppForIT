@@ -126,10 +126,29 @@ namespace DictionaryAppForIT.UserControls
                 RJMessageBox.Show(ex.Message);
             }
         }
-        private void KiemTraTonTaiYeuThich()
+        private async Task<bool> CheckIfWordExistsAsync(string word)
         {
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichTuVung where TiengAnh = '{txtTuVung.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-            if (Convert.ToInt32(num) > 0)
+            HttpResponseMessage response = await client.GetAsync(apiUrl + $"check-if-exist?english={word}&user_id={Class_TaiKhoan.IdTaiKhoan}");
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadAsStringAsync();
+                // giải mã json
+                var status = JObject.Parse(result)["status"].ToObject<int>();
+                var wordExist = JObject.Parse(result)["word"].ToObject<int>();
+                return wordExist > 0 ? true : false;
+            }
+            else
+            {
+                RJMessageBox.Show("Đã có lỗi xảy ra!");
+                return false;
+            }
+        }
+
+        private async void KiemTraTonTaiYeuThich()
+        {
+            string tuVung = txtTuVung.Text;
+            bool wordExists = await CheckIfWordExistsAsync(tuVung);
+            if (wordExists)
             {
                 btnYeuThich.Checked = true;
             }
@@ -138,6 +157,7 @@ namespace DictionaryAppForIT.UserControls
                 btnYeuThich.Checked = false;
             }
         }
+
         private void txtTimKiemTu_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && TuHienTai != txtTimKiemTu.Text)//--------------------------------------
@@ -163,48 +183,33 @@ namespace DictionaryAppForIT.UserControls
             }
         }
 
-        private void LuuLichSuTraTu(Tu tu)
+        private async void LuuLichSuTraTu(Tu tu)
         {
             try
             {
-                // them tu vao lich su
-                SqlConnection conn = new SqlConnection(connString);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "EXEC ThemLSTraTu @IDLS output, @TiengAnh, @PhienAm, @TiengViet, @NgayHienTai, @IDTK";
-                cmd.Parameters.Add("@IDLS", SqlDbType.Int);
-                cmd.Parameters.Add("@TiengAnh", SqlDbType.VarChar, 400);
-                cmd.Parameters.Add("@PhienAm", SqlDbType.NVarChar, 400);
-                cmd.Parameters.Add("@TiengViet", SqlDbType.NVarChar, 400);
-                cmd.Parameters.Add("@NgayHienTai", SqlDbType.VarChar, 30);
-                cmd.Parameters.Add("@IDTK", SqlDbType.Int);
-                //Lấy id vừa thêm vào bảng LichSuTraTu
-                cmd.Parameters["@IDLS"].Direction = ParameterDirection.Output;
-                cmd.Parameters["@TiengAnh"].Value = tu.TenTu;
-                cmd.Parameters["@PhienAm"].Value = tu.PhienAm;
+                var requestData = new Dictionary<string, string>
+                {
+                    { "english", tu.TenTu },
+                    { "pronunciations", tu.PhienAm },
+                    { "vietnamese", tu.Nghia },
+                    { "user_id", Class_TaiKhoan.IdTaiKhoan }
+                };
+                //gửi request
+                var response = await client.PostAsync(apiUrl + "save-word-lookup-history", new FormUrlEncodedContent(requestData));
 
-                cmd.Parameters["@TiengViet"].Value = tu.Nghia;
-                string today = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
-                cmd.Parameters["@NgayHienTai"].Value = today;
-                cmd.Parameters["@IDTK"].Value = Class_TaiKhoan.IdTaiKhoan;
+                // Luôn luôn thành công
+                response.EnsureSuccessStatusCode();
 
-                conn.Open();
-                int soDongThemTu = cmd.ExecuteNonQuery();
-                idLSVuaTra = cmd.Parameters["@IDLS"].Value.ToString(); // id từ vừa tra
-                //if (soDongThemTu > 0)
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                //if (responseContent != null)
                 //{
-                //    RJMessageBox.Show("Thêm từ vựng thành công.");
+                //    RJMessageBox.Show("Phản hồi từ API: " + responseContent);
                 //}
-                //else
-                //{
-                //    RJMessageBox.Show("Lỗi xảy ra!");
-                //}
-
-                conn.Close();
-                conn.Dispose();
             }
             catch (Exception ex)
             {
-                RJMessageBox.Show(ex.Message);
+                RJMessageBox.Show("Lỗi: " + ex.Message);
             }
         }
 

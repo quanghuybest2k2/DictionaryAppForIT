@@ -1,19 +1,10 @@
 ﻿using Bunifu.UI.WinForms;
-using Guna.UI2.WinForms;
 using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
+using Guna.UI2.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Speech.Synthesis;
-using DictionaryAppForIT.Class;
-using DictionaryAppForIT.UserControls.GanDay;
+using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.LichSu
 {
