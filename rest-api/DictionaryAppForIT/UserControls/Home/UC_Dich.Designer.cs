@@ -74,8 +74,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
             this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
-            this.ColTiengViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTiengAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -553,9 +551,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.dtgvLichSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvLichSu.ColumnHeadersHeight = 21;
             this.dtgvLichSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dtgvLichSu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColTiengAnh,
-            this.ColTiengViet});
             this.dtgvLichSu.ContextMenuStrip = this.ctxtChucNang;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -818,20 +813,6 @@ namespace DictionaryAppForIT.UserControls.Home
             this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
             this.bunifuToolTip1.ToolTipTitle = null;
             // 
-            // ColTiengViet
-            // 
-            this.ColTiengViet.DataPropertyName = "TiengViet";
-            this.ColTiengViet.HeaderText = "Tiếng Việt";
-            this.ColTiengViet.Name = "ColTiengViet";
-            this.ColTiengViet.ReadOnly = true;
-            // 
-            // ColTiengAnh
-            // 
-            this.ColTiengAnh.DataPropertyName = "TiengAnh";
-            this.ColTiengAnh.HeaderText = "Tiếng Anh";
-            this.ColTiengAnh.Name = "ColTiengAnh";
-            this.ColTiengAnh.ReadOnly = true;
-            // 
             // UC_Dich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -913,7 +894,5 @@ namespace DictionaryAppForIT.UserControls.Home
         private ReaLTaiizor.Controls.MaterialToolStripMenuItem tsmiXoa;
         private Guna.UI2.WinForms.Guna2Button btnXoaLichSu;
         private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColTiengAnh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColTiengViet;
     }
 }

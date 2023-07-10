@@ -2,6 +2,7 @@
 using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -124,36 +125,67 @@ namespace DictionaryAppForIT.UserControls.Home
             KiemTraTonTaiYeuThich();
         }
         #region Xử lý lịch sử
-        private void LoadLichSu()
+        private async void LoadLichSu()
         {
             try
             {
-                dtgvLichSu.DataSource = DataProvider.Instance.ExecuteQuery($"select TiengAnh, TiengViet from LichSuDich where idtk = '{Class_TaiKhoan.IdTaiKhoan}'");
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"load-translate-history-by-user?user_id={Class_TaiKhoan.IdTaiKhoan}");
+                if (response.IsSuccessStatusCode)
+                {
+                    //dtgvLichSu.DataSource = 
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
+                    // hiển thị hết
+                    //var translateHistoryList = result.translateHistory.ToObject<List<TranslateHistory>>();
+                    //dtgvLichSu.DataSource = translateHistoryList;
+
+                    var translateHistoryList = result.translateHistory.ToObject<List<TranslateHistory>>();
+                    // ghi đè table
+                    DataTable dataTable = new DataTable();
+                    dataTable.Columns.Add("English", typeof(string));
+                    dataTable.Columns.Add("Vietnamese", typeof(string));
+                    // thêm data vào table
+                    foreach (var history in translateHistoryList)
+                    {
+                        dataTable.Rows.Add(history.English, history.Vietnamese);
+                    }
+
+                    dtgvLichSu.DataSource = dataTable;
+                }
             }
             catch (Exception ex)
             {
                 RJMessageBox.Show(ex.Message);
             }
         }
-        private void LuuLichSuTu()
+        private async void LuuLichDich()
         {
             try
             {
-                string today = DateTime.Now.ToString("dd/MM/yyyy hh:mm");
-                int num = DataProvider.Instance.ExecuteNonQuery($"insert into LichSuDich values('{txtTop.Text.Trim()}', N'{txtUnder.Text.Trim()}',  '{today}', '{Class_TaiKhoan.IdTaiKhoan}')");
-                if (num > 0)
+                var requestData = new Dictionary<string, string>
                 {
+                    { "english", txtTop.Text.Trim() },
+                    { "vietnamese", txtUnder.Text.Trim() },
+                    { "user_id", Class_TaiKhoan.IdTaiKhoan }
+                    // created_at tự sinh
+                };
+
+                //gửi request
+                var response = await client.PostAsync(apiUrl + "save-translate-history", new FormUrlEncodedContent(requestData));
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
                     LoadLichSu();
                 }
                 else
                 {
-                    RJMessageBox.Show("Không thể đưa vào lịch sử dịch!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    RJMessageBox.Show("Không thể thêm vào lịch sử dịch!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception)
             {
-                // khóa chính không thể trùng
-                RJMessageBox.Show("Bản dịch này đã tồn tại.", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                RJMessageBox.Show("Đã có lỗi xảy ra!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void dtgvLichSu_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -202,7 +234,7 @@ namespace DictionaryAppForIT.UserControls.Home
 
             if (txtTop.Text.Trim() != "")
             {
-                LuuLichSuTu();// lưu lịch sử
+                LuuLichDich();// lưu lịch sử
             }
             txtTop.Clear();
             txtUnder.Clear();
