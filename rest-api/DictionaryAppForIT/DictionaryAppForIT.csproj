@@ -227,6 +227,7 @@
       <DependentUpon>UC_TT_Hang4.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\DataProvider.cs" />
+    <Compile Include="DTO\CheckIfExist.cs" />
     <Compile Include="DTO\Class_TaiKhoan.cs" />
     <Compile Include="DTO\LoginResponse.cs" />
     <Compile Include="DTO\Specialization.cs" />

@@ -1,14 +1,10 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
-using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
 using DictionaryAppForIT.UserControls.Home;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Net.Http;
 using System.Speech.Synthesis;
@@ -27,7 +23,6 @@ namespace DictionaryAppForIT.UserControls
         // tu dong phat am
         public bool tocDoPhatAm = false;
         string TuHienTai = ""; //-------------------------------------- Tạo thêm cái này vì nếu người ta gõ 1 từ xong rồi enter nhiều lần thì nó add lặp lại vô cái _listTu
-        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         XemTatCaNghia XemNghia;
         UC_Nghia ucNghia;
         SpeechSynthesizer speech;
@@ -35,6 +30,7 @@ namespace DictionaryAppForIT.UserControls
         public static string idLSVuaTra;
         public static string idYeuThichVuaChon;
         private List<UC_Nghia> _listNghia;
+        private CheckIfExist checkIfExist;
 
         public UC_TraTu()
         {
@@ -48,6 +44,7 @@ namespace DictionaryAppForIT.UserControls
             //txtTuVung.Text = "Variable (fix xong bug)";
             ChinhLaiTuLoai();
             GoiYTimKiemAsync();
+            checkIfExist = new CheckIfExist(); // đảm bảo khi chạy UC_TraTu mới chạy CheckIfExist()
         }
 
         private void ChinhLaiTuLoai()
@@ -126,28 +123,11 @@ namespace DictionaryAppForIT.UserControls
                 RJMessageBox.Show(ex.Message);
             }
         }
-        private async Task<bool> CheckIfWordExistsAsync(string word)
-        {
-            HttpResponseMessage response = await client.GetAsync(apiUrl + $"check-if-exist?english={word}&user_id={Class_TaiKhoan.IdTaiKhoan}");
-            if (response.IsSuccessStatusCode)
-            {
-                var result = await response.Content.ReadAsStringAsync();
-                // giải mã json
-                var status = JObject.Parse(result)["status"].ToObject<int>();
-                var wordExist = JObject.Parse(result)["word"].ToObject<int>();
-                return wordExist > 0 ? true : false;
-            }
-            else
-            {
-                RJMessageBox.Show("Đã có lỗi xảy ra!");
-                return false;
-            }
-        }
 
         private async void KiemTraTonTaiYeuThich()
         {
             string tuVung = txtTuVung.Text;
-            bool wordExists = await CheckIfWordExistsAsync(tuVung);
+            bool wordExists = await checkIfExist.CheckIfWordExistsAsync(tuVung, "word");
             if (wordExists)
             {
                 btnYeuThich.Checked = true;

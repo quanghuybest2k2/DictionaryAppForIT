@@ -1,4 +1,5 @@
-﻿using DictionaryAppForIT.Class;
+﻿using DictionaryAppForIT.API;
+using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
 using System;
@@ -18,16 +19,22 @@ namespace DictionaryAppForIT.UserControls.Home
 {
     public partial class UC_Dich : UserControl
     {
+        private readonly string apiUrl = BaseUrl.base_url;
+        HttpClient client = new HttpClient();
+
         SpeechSynthesizer speech;
         SoundPlayer soundPlayer;
         public bool thayDoiTocDo = false;
         public string idYeuThichVBVuaChon;
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         public int tocDo = 0;
+        private CheckIfExist checkIfExist;
+
         public UC_Dich()
         {
             InitializeComponent();
             speech = new SpeechSynthesizer();
+            checkIfExist = new CheckIfExist();
         }
         private string TranslateText(string input)
         {
@@ -132,7 +139,7 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                string today = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
+                string today = DateTime.Now.ToString("dd/MM/yyyy hh:mm");
                 int num = DataProvider.Instance.ExecuteNonQuery($"insert into LichSuDich values('{txtTop.Text.Trim()}', N'{txtUnder.Text.Trim()}',  '{today}', '{Class_TaiKhoan.IdTaiKhoan}')");
                 if (num > 0)
                 {
@@ -176,10 +183,11 @@ namespace DictionaryAppForIT.UserControls.Home
             }
         }
 
-        private void KiemTraTonTaiYeuThich()
+        private async void KiemTraTonTaiYeuThich()
         {
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichVanBan where TiengAnh = '{txtTop.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-            if (Convert.ToInt32(num) > 0)
+            string banDich = txtTop.Text;
+            bool translateExists = await checkIfExist.CheckIfWordExistsAsync(banDich, "translateHistory");
+            if (translateExists)
             {
                 btnLuuYeuThich.Checked = true;
             }
