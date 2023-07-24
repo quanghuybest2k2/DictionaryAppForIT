@@ -3,6 +3,7 @@ using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ using System.Media;
 using System.Net.Http;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
+using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
@@ -140,17 +142,22 @@ namespace DictionaryAppForIT.UserControls.Home
                     //dtgvLichSu.DataSource = translateHistoryList;
 
                     var translateHistoryList = result.translateHistory.ToObject<List<TranslateHistory>>();
+
                     // ghi đè table
                     DataTable dataTable = new DataTable();
+                    //dataTable.Columns.Add("Id", typeof(string)).ColumnMapping = MappingType.Hidden;
+                    dataTable.Columns.Add("Id", typeof(string));
                     dataTable.Columns.Add("English", typeof(string));
                     dataTable.Columns.Add("Vietnamese", typeof(string));
                     // thêm data vào table
                     foreach (var history in translateHistoryList)
                     {
-                        dataTable.Rows.Add(history.English, history.Vietnamese);
+                        dataTable.Rows.Add(history.Id, history.English, history.Vietnamese);
                     }
 
                     dtgvLichSu.DataSource = dataTable;
+                    // ẩn thân chi thuật :))
+                    dtgvLichSu.Columns["Id"].Visible = false;
                 }
             }
             catch (Exception ex)
@@ -193,28 +200,41 @@ namespace DictionaryAppForIT.UserControls.Home
             if (dtgvLichSu.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dtgvLichSu.Rows[e.RowIndex];
-                txtTop.Text = row.Cells[0].Value.ToString();
-                txtUnder.Text = row.Cells[1].Value.ToString();
+                txtTop.Text = row.Cells["English"].Value.ToString();
+                txtUnder.Text = row.Cells["Vietnamese"].Value.ToString();
             }
         }
-        private void tsmiXoa_Click(object sender, EventArgs e)
+        private async void tsmiXoa_Click(object sender, EventArgs e)
         {
-            string ChuMuonXoa = dtgvLichSu.SelectedCells[0].Value.ToString();
-            int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuDich where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' and TiengAnh = '{ChuMuonXoa}'");
-            if (num > 0)
+            try
             {
-                RJMessageBox.Show("Xóa thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadLichSu();
+                int rowIndex = dtgvLichSu.CurrentRow.Index;
+                string idValue = dtgvLichSu.Rows[rowIndex].Cells["Id"].Value.ToString();
+                //RJMessageBox.Show(idValue);
+
+                HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-translate-by-id/{Class_TaiKhoan.IdTaiKhoan}/{idValue}");
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+                JObject responseObject = JObject.Parse(responseContent);
+                string message = responseObject["message"].ToString();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    txtTop.Clear();
+                    txtUnder.Clear();
+                    LoadLichSu();
+                    RJMessageBox.Show(message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    RJMessageBox.Show(message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                RJMessageBox.Show("Thất bại!",
-                "Thông báo lỗi",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
+                RJMessageBox.Show(ex.Message);
             }
         }
-
         private async void KiemTraTonTaiYeuThich()
         {
             string banDich = txtTop.Text;
@@ -240,20 +260,29 @@ namespace DictionaryAppForIT.UserControls.Home
             txtUnder.Clear();
 
         }
-        private void btnXoaLichSu_Click(object sender, EventArgs e)
+        private async void btnXoaLichSu_ClickAsync(object sender, EventArgs e)
         {
             try
             {
-                int num = DataProvider.Instance.ExecuteNonQuery($"DELETE FROM LichSuDich where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-                if (num > 0)
+                HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-translate-history/{Class_TaiKhoan.IdTaiKhoan}");
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+                JObject responseObject = JObject.Parse(responseContent);
+                string message = responseObject["message"].ToString();
+
+                if (response.IsSuccessStatusCode)
                 {
-                    RJMessageBox.Show("Đã xóa hết lịch sử", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RJMessageBox.Show(message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadLichSu();
+                }
+                else
+                {
+                    RJMessageBox.Show(message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                RJMessageBox.Show(ex.Message);
+                RJMessageBox.Show("Lỗi >> " + ex.Message);
             }
         }
         #endregion
@@ -292,7 +321,6 @@ namespace DictionaryAppForIT.UserControls.Home
         private void UC_Dich_Load(object sender, EventArgs e)
         {
             LoadLichSu();
-
         }
 
         private void btnLuuYeuThich_Click(object sender, EventArgs e)

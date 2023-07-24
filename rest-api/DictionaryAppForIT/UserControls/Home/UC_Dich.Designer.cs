@@ -720,7 +720,7 @@ namespace DictionaryAppForIT.UserControls.Home
             this.bunifuToolTip1.SetToolTipIcon(this.btnXoaLichSu, null);
             this.bunifuToolTip1.SetToolTipTitle(this.btnXoaLichSu, "");
             this.btnXoaLichSu.UseTransparentBackground = true;
-            this.btnXoaLichSu.Click += new System.EventHandler(this.btnXoaLichSu_Click);
+            this.btnXoaLichSu.Click += new System.EventHandler(this.btnXoaLichSu_ClickAsync);
             // 
             // btnLichSu
             // 

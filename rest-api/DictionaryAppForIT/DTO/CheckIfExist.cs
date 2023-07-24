@@ -36,7 +36,6 @@ namespace DictionaryAppForIT.DTO
                     default:
                         return false;
                 }
-
             }
             else
             {
