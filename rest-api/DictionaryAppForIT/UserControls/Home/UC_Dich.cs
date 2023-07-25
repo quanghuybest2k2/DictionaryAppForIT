@@ -1,20 +1,16 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
-using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
 using System.Media;
 using System.Net.Http;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
-using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
@@ -29,7 +25,6 @@ namespace DictionaryAppForIT.UserControls.Home
         SoundPlayer soundPlayer;
         public bool thayDoiTocDo = false;
         public string idYeuThichVBVuaChon;
-        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         public int tocDo = 0;
         private CheckIfExist checkIfExist;
 
@@ -237,8 +232,8 @@ namespace DictionaryAppForIT.UserControls.Home
         }
         private async void KiemTraTonTaiYeuThich()
         {
-            string banDich = txtTop.Text;
-            bool translateExists = await checkIfExist.CheckIfWordExistsAsync(banDich, "translateHistory");
+            string banDich = txtTop.Text.Trim();
+            bool translateExists = await checkIfExist.CheckIfWordExistsAsync(banDich, "loveText");
             if (translateExists)
             {
                 btnLuuYeuThich.Checked = true;
@@ -272,8 +267,10 @@ namespace DictionaryAppForIT.UserControls.Home
 
                 if (response.IsSuccessStatusCode)
                 {
-                    RJMessageBox.Show(message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtTop.Clear();
+                    txtUnder.Clear();
                     LoadLichSu();
+                    RJMessageBox.Show(message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -327,52 +324,49 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             LuuVanBanYeuThich();
         }
-        private void LuuVanBanYeuThich()
+        private async void LuuVanBanYeuThich()
         {
             if (btnLuuYeuThich.Checked)
             {
-                //int num = DataProvider.Instance.ExecuteNonQuery($"INSERT INTO YeuThichVanBan VALUES('{txtTop.Text.Trim()}', N'{txtUnder.Text.Trim()}', {Class_TaiKhoan.IdTaiKhoan})");
-                SqlConnection conn = new SqlConnection(connString);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "EXEC LuuVanBanYeuThich @IDYT output, @TiengAnh, @TiengViet, @GhiChu, @IDTK";
-                cmd.Parameters.Add("@IDYT", SqlDbType.Int);
-                cmd.Parameters.Add("@TiengAnh", SqlDbType.VarChar, 400);
-                cmd.Parameters.Add("@TiengViet", SqlDbType.NVarChar, 400);
-                cmd.Parameters.Add("@GhiChu", SqlDbType.NVarChar, 400);
-                cmd.Parameters.Add("@IDTK", SqlDbType.Int);
-                //Lấy id vừa thêm vào bảng LichSuTraTu
-                cmd.Parameters["@IDYT"].Direction = ParameterDirection.Output;
-                cmd.Parameters["@TiengAnh"].Value = txtTop.Text.Trim();
-                cmd.Parameters["@TiengViet"].Value = txtUnder.Text.Trim();
-                cmd.Parameters["@GhiChu"].Value = "";
-                cmd.Parameters["@IDTK"].Value = Class_TaiKhoan.IdTaiKhoan;
+                var requestData = new Dictionary<string, string>
+                {
+                    { "english", txtTop.Text.Trim() },
+                    { "vietnamese", txtUnder.Text.Trim()},
+                    // "note" => có thể null nên khỏi điền
+                    { "user_id", Class_TaiKhoan.IdTaiKhoan }
+                };
+                //gửi request
+                var response = await client.PostAsync(apiUrl + "save-love_text", new FormUrlEncodedContent(requestData));
 
-                conn.Open();
-                int soDongThemTu = cmd.ExecuteNonQuery();
-                idYeuThichVBVuaChon = cmd.Parameters["@IDYT"].Value.ToString(); // id từ vừa tra
-                //if (soDongThemTu > 0)
-                //{
-                //    RJMessageBox.Show("Thêm bản dịch thành công.");
-                //}
-                //else
-                //{
-                //    RJMessageBox.Show("Lỗi xảy ra!");
-                //}
+                // Đảm bảo luôn luôn thành công nhé :))
+                response.EnsureSuccessStatusCode();
 
-                conn.Close();
-                conn.Dispose();
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                //if (responseContent != null)
+                //{
+                //    RJMessageBox.Show("Phản hồi từ API: " + responseContent);
+                //}
             }
             else
             {
-                string query = $"DELETE FROM YeuThichVanBan WHERE TiengAnh = '{txtTop.Text.Trim()}' AND IDTK = '{Class_TaiKhoan.IdTaiKhoan}'";
-                int num = DataProvider.Instance.ExecuteNonQuery(query);
-                //if (num > 0)
-                //{
-                //    RJMessageBox.Show("Xóa thành công!");
-                //    LoadLichSu();
-                //}
-                //else
-                //    RJMessageBox.Show("Thất bại");
+                try
+                {
+                    HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-love_text?english={txtTop.Text.Trim()}&user_id={Class_TaiKhoan.IdTaiKhoan}");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        RJMessageBox.Show("Xóa thành công.");
+                        LoadLichSu();
+                    }
+                    else
+                    {
+                        RJMessageBox.Show("Thất bại!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    RJMessageBox.Show("Lỗi >> " + ex.Message);
+                }
             }
         }
     }

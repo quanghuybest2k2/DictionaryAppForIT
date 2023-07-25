@@ -29,8 +29,8 @@ namespace DictionaryAppForIT.DTO
                         var wordExist = JObject.Parse(result)["word"].ToObject<int>();
                         return wordExist > 0;
 
-                    case "translateHistory":
-                        var translateExist = JObject.Parse(result)["translateHistory"].ToObject<int>();
+                    case "loveText":
+                        var translateExist = JObject.Parse(result)["loveText"].ToObject<int>();
                         return translateExist > 0;
 
                     default:
