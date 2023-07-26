@@ -30,6 +30,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         UC_YT_TuVung ucYTTuVung;
         UC_YT_VanBan ucYTVanBan;
         int stt = 1;
+
         public UC_YeuThich()
         {
             InitializeComponent();
@@ -165,7 +166,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         {
             _listTuVung = new List<UC_YT_TuVung>();
             _listVanBan = new List<UC_YT_VanBan>();
-            lblSoMucYeuThich.Text = frmMain.Tong_So_Muc_Yeu_Thich();
+            //lblSoMucYeuThich.Text = await frmMain.Tong_So_Muc_Yeu_Thich();
         }
         // xoa tra tu yeu thich
         private void XoaUCYeuThichTuVung()
@@ -182,7 +183,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             _listTuVung.RemoveAll(x => x.Name == "Check");
         }
         //xoa van ban yeu thich
-        private void XoaUCYeuThichVanBan()
+        private void XoaUCYeuThichVanBanAsync()
         {
             foreach (var item in _listVanBan)
             {
@@ -194,14 +195,14 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 }
             }
             _listVanBan.RemoveAll(x => x.Name == "Check");
-            lblSoMucYeuThich.Text = frmMain.Tong_So_Muc_Yeu_Thich();
+            //lblSoMucYeuThich.Text = await frmMain.Tong_So_Muc_Yeu_Thich();
         }
         // xoa muc yeu thich
         private void btnXoaMucYeuThich_Click(object sender, EventArgs e)
         {
             xoaTatCaYT = true;
             XoaUCYeuThichTuVung();
-            XoaUCYeuThichVanBan();
+            XoaUCYeuThichVanBanAsync();
 
             if (xoaTatCaYT)
             {

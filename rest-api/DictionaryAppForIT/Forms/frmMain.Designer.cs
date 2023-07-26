@@ -579,7 +579,7 @@ namespace DictionaryAppForIT.Forms
             this.bunifuToolTip1.SetToolTipTitle(this.btnQuanLyTK, "");
             this.btnQuanLyTK.UseTransparentBackground = true;
             this.btnQuanLyTK.CheckedChanged += new System.EventHandler(this.btnTab_CheckedChanged);
-            this.btnQuanLyTK.Click += new System.EventHandler(this.btnQuanLyTK_Click);
+            this.btnQuanLyTK.Click += new System.EventHandler(this.btnQuanLyTK_ClickAsync);
             // 
             // btnPhanHoi
             // 

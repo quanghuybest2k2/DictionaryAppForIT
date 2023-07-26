@@ -1,7 +1,6 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
 using DictionaryAppForIT.CustomMessageBox;
-using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
 using DictionaryAppForIT.UserControls;
 using DictionaryAppForIT.UserControls.CaiDat;
@@ -12,19 +11,21 @@ using DictionaryAppForIT.UserControls.TaiKhoan;
 using DictionaryAppForIT.UserControls.TuVungHot;
 using DictionaryAppForIT.UserControls.YeuThich;
 using Guna.UI2.WinForms;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.Forms
 {
     public partial class frmMain : Form
     {
-        private readonly string apiUrl = BaseUrl.base_url + "logout";
+        private readonly string apiUrl = BaseUrl.base_url;
         private readonly HttpClient client = new HttpClient();
         //public string soMucYeuThich;
         //pnTaiKhoan
@@ -274,12 +275,12 @@ namespace DictionaryAppForIT.Forms
             ucLichSu.HienThiLSDich();
         }
 
-        private void btnYeuThich_Click(object sender, EventArgs e)
+        private async void btnYeuThich_Click(object sender, EventArgs e)
         {
             ShowUC(ucYeuThich);
             ucYeuThich.HienThiYTTraTu();
             ucYeuThich.HienThiYTVanBan();
-            ucYeuThich.SoMuc = Tong_So_Muc_Yeu_Thich();
+            ucYeuThich.SoMuc = await Tong_So_Muc_Yeu_Thich();
         }
 
         private void btnMiniGame_Click(object sender, EventArgs e)
@@ -362,15 +363,35 @@ namespace DictionaryAppForIT.Forms
         #region TaiKhoan button tab click event
 
         //--Tab đầu tiên
-        public static string Tong_So_Muc_Yeu_Thich()
+        public async Task<string> Tong_So_Muc_Yeu_Thich()
         {
-            string query = $"select sum(AllCount) AS Tong_SoMucYeuThich from((select count(*) AS AllCount from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan}) union all (select count(*) AS AllCount from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan}))t";
-            object soMuc = DataProvider.Instance.ExecuteScalar(query);
-            return soMuc.ToString();
+            string result = "";
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"total-love-vocabulary/{Class_TaiKhoan.IdTaiKhoan}");
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+                JObject responseObject = JObject.Parse(responseContent);
+                string totalVocabulary = responseObject["totalVocabulary"].ToString();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    result = totalVocabulary;
+                }
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show(ex.Message);
+            }
+            return result;
+            //string query = $"select sum(AllCount) AS Tong_SoMucYeuThich from((select count(*) AS AllCount from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan}) union all (select count(*) AS AllCount from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan}))t";
+            //object soMuc = DataProvider.Instance.ExecuteScalar(query);
+            //return soMuc.ToString();
+
         }
-        private void btnQuanLyTK_Click(object sender, EventArgs e)
+        private async void btnQuanLyTK_ClickAsync(object sender, EventArgs e)
         {
-            ucQuanLyTK.SoMuc = Tong_So_Muc_Yeu_Thich();
+            ucQuanLyTK.SoMuc = await Tong_So_Muc_Yeu_Thich();
             ShowUC(ucQuanLyTK);
         }
 
@@ -403,7 +424,7 @@ namespace DictionaryAppForIT.Forms
                         // header Authorization chứa token
                         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-                        HttpResponseMessage response = await client.PostAsync(apiUrl, null);
+                        HttpResponseMessage response = await client.PostAsync(apiUrl + "logout", null);
                         // 200 ok
                         if (response.IsSuccessStatusCode)
                         {

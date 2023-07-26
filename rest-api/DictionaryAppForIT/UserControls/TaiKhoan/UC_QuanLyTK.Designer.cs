@@ -74,7 +74,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.panelSoMucYeuThich = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.lblSoMucTest = new System.Windows.Forms.Label();
+            this.lblSoMuc = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.guna2PictureBox11 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox10 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -94,12 +94,12 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label11 = new System.Windows.Forms.Label();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.pbNenPassword2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnSuaMatKhau = new Guna.UI2.WinForms.Guna2Button();
             this.btnSuaEmail = new Guna.UI2.WinForms.Guna2Button();
             this.btnSuaTenDangNhap = new Guna.UI2.WinForms.Guna2Button();
             this.btnSuaAvt = new Guna.UI2.WinForms.Guna2Button();
             this.pbNenUsername1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
+            this.btnSuaMatKhau = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -745,9 +745,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label12.ForeColor = System.Drawing.Color.Gray;
             this.label12.Location = new System.Drawing.Point(69, 6);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(167, 20);
+            this.label12.Size = new System.Drawing.Size(140, 20);
             this.label12.TabIndex = 80;
-            this.label12.Text = "Thời gian tạo tài khoản";
+            this.label12.Text = "Ngày tạo tài khoản";
             this.bunifuToolTip1.SetToolTip(this.label12, "");
             this.bunifuToolTip1.SetToolTipIcon(this.label12, null);
             this.bunifuToolTip1.SetToolTipTitle(this.label12, "");
@@ -810,7 +810,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             // 
             this.guna2Panel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel8.Controls.Add(this.label14);
-            this.guna2Panel8.Controls.Add(this.lblSoMucTest);
+            this.guna2Panel8.Controls.Add(this.lblSoMuc);
             this.guna2Panel8.Controls.Add(this.label10);
             this.guna2Panel8.Location = new System.Drawing.Point(71, 30);
             this.guna2Panel8.Name = "guna2Panel8";
@@ -837,22 +837,22 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.bunifuToolTip1.SetToolTipTitle(this.label14, "");
             this.label14.UseCompatibleTextRendering = true;
             // 
-            // lblSoMucTest
+            // lblSoMuc
             // 
-            this.lblSoMucTest.AutoSize = true;
-            this.lblSoMucTest.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblSoMucTest.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoMucTest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(118)))), ((int)(((byte)(171)))));
-            this.lblSoMucTest.Location = new System.Drawing.Point(130, 0);
-            this.lblSoMucTest.Margin = new System.Windows.Forms.Padding(0);
-            this.lblSoMucTest.Name = "lblSoMucTest";
-            this.lblSoMucTest.Size = new System.Drawing.Size(12, 22);
-            this.lblSoMucTest.TabIndex = 106;
-            this.lblSoMucTest.Text = "9";
-            this.bunifuToolTip1.SetToolTip(this.lblSoMucTest, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblSoMucTest, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblSoMucTest, "");
-            this.lblSoMucTest.UseCompatibleTextRendering = true;
+            this.lblSoMuc.AutoSize = true;
+            this.lblSoMuc.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblSoMuc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoMuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(118)))), ((int)(((byte)(171)))));
+            this.lblSoMuc.Location = new System.Drawing.Point(130, 0);
+            this.lblSoMuc.Margin = new System.Windows.Forms.Padding(0);
+            this.lblSoMuc.Name = "lblSoMuc";
+            this.lblSoMuc.Size = new System.Drawing.Size(12, 22);
+            this.lblSoMuc.TabIndex = 106;
+            this.lblSoMuc.Text = "9";
+            this.bunifuToolTip1.SetToolTip(this.lblSoMuc, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblSoMuc, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblSoMuc, "");
+            this.lblSoMuc.UseCompatibleTextRendering = true;
             // 
             // label10
             // 
@@ -1153,29 +1153,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.bunifuToolTip1.SetToolTipIcon(this.pbNenPassword2, null);
             this.bunifuToolTip1.SetToolTipTitle(this.pbNenPassword2, "");
             // 
-            // btnSuaMatKhau
-            // 
-            this.btnSuaMatKhau.BackColor = System.Drawing.Color.Transparent;
-            this.btnSuaMatKhau.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.btnSuaMatKhau.CheckedState.FillColor = System.Drawing.Color.MediumSpringGreen;
-            this.btnSuaMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSuaMatKhau.FillColor = System.Drawing.Color.Empty;
-            this.btnSuaMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSuaMatKhau.ForeColor = System.Drawing.Color.White;
-            this.btnSuaMatKhau.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnSuaMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaMatKhau.Image")));
-            this.btnSuaMatKhau.ImageSize = new System.Drawing.Size(16, 16);
-            this.btnSuaMatKhau.Location = new System.Drawing.Point(785, 308);
-            this.btnSuaMatKhau.Name = "btnSuaMatKhau";
-            this.btnSuaMatKhau.PressedDepth = 0;
-            this.btnSuaMatKhau.Size = new System.Drawing.Size(43, 31);
-            this.btnSuaMatKhau.TabIndex = 9;
-            this.bunifuToolTip1.SetToolTip(this.btnSuaMatKhau, "Sửa mật khẩu");
-            this.bunifuToolTip1.SetToolTipIcon(this.btnSuaMatKhau, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.btnSuaMatKhau, "");
-            this.btnSuaMatKhau.UseTransparentBackground = true;
-            this.btnSuaMatKhau.Click += new System.EventHandler(this.btnSuaMatKhau_Click);
-            // 
             // btnSuaEmail
             // 
             this.btnSuaEmail.BackColor = System.Drawing.Color.Transparent;
@@ -1294,15 +1271,38 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
             this.bunifuToolTip1.ToolTipTitle = null;
             // 
+            // btnSuaMatKhau
+            // 
+            this.btnSuaMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.btnSuaMatKhau.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.btnSuaMatKhau.CheckedState.FillColor = System.Drawing.Color.MediumSpringGreen;
+            this.btnSuaMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSuaMatKhau.FillColor = System.Drawing.Color.Empty;
+            this.btnSuaMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSuaMatKhau.ForeColor = System.Drawing.Color.White;
+            this.btnSuaMatKhau.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnSuaMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaMatKhau.Image")));
+            this.btnSuaMatKhau.ImageSize = new System.Drawing.Size(16, 16);
+            this.btnSuaMatKhau.Location = new System.Drawing.Point(785, 304);
+            this.btnSuaMatKhau.Name = "btnSuaMatKhau";
+            this.btnSuaMatKhau.PressedDepth = 0;
+            this.btnSuaMatKhau.Size = new System.Drawing.Size(43, 40);
+            this.btnSuaMatKhau.TabIndex = 106;
+            this.bunifuToolTip1.SetToolTip(this.btnSuaMatKhau, "Sửa Email");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnSuaMatKhau, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnSuaMatKhau, "");
+            this.btnSuaMatKhau.UseTransparentBackground = true;
+            this.btnSuaMatKhau.Click += new System.EventHandler(this.btnSuaMatKhau_Click);
+            // 
             // UC_QuanLyTK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnSuaMatKhau);
             this.Controls.Add(this.btnSuaAvt);
             this.Controls.Add(this.btnSuaTenDangNhap);
             this.Controls.Add(this.btnSuaEmail);
-            this.Controls.Add(this.btnSuaMatKhau);
             this.Controls.Add(this.guna2CircleButton1);
             this.Controls.Add(this.pbNenPassword1);
             this.Controls.Add(this.pbNenPassword2);
@@ -1421,12 +1421,12 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private Guna.UI2.WinForms.Guna2Button btnSuaAvt;
         private Guna.UI2.WinForms.Guna2Button btnSuaTenDangNhap;
         private Guna.UI2.WinForms.Guna2Button btnSuaEmail;
-        private Guna.UI2.WinForms.Guna2Button btnSuaMatKhau;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblSoMucTest;
+        private System.Windows.Forms.Label lblSoMuc;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2PictureBox pbNenUsername1;
         private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
+        private Guna.UI2.WinForms.Guna2Button btnSuaMatKhau;
     }
 }

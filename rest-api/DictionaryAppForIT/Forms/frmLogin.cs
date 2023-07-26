@@ -1,6 +1,5 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
-using DictionaryAppForIT.CustomMessageBox;
 using DictionaryAppForIT.DTO;
 using DictionaryAppForIT.Forms;
 using System;
@@ -20,6 +19,7 @@ namespace DictionaryAppForIT
         public frmLogin()
         {
             InitializeComponent();
+            this.AcceptButton = btnDangNhap;
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -133,7 +133,7 @@ namespace DictionaryAppForIT
                 }
             }
         }
-        
+
         private async void btnDangNhap_Click(object sender, EventArgs e)
         {
             try
@@ -159,11 +159,19 @@ namespace DictionaryAppForIT
             frmSign.Show();
         }
 
+        private void txtTaiKhoanDN_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
         private void txtMatKhauDN_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnDangNhap.PerformClick();
+                e.SuppressKeyPress = true;
             }
         }
     }

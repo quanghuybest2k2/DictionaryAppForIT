@@ -19,7 +19,7 @@ namespace DictionaryAppForIT.UserControls.Home
     public partial class UC_Dich : UserControl
     {
         private readonly string apiUrl = BaseUrl.base_url;
-        HttpClient client = new HttpClient();
+        HttpClient client;
 
         SpeechSynthesizer speech;
         SoundPlayer soundPlayer;
@@ -33,6 +33,7 @@ namespace DictionaryAppForIT.UserControls.Home
             InitializeComponent();
             speech = new SpeechSynthesizer();
             checkIfExist = new CheckIfExist();
+            client = new HttpClient();
         }
         private string TranslateText(string input)
         {

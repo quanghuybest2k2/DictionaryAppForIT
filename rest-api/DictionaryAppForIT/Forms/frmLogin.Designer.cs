@@ -212,6 +212,7 @@ namespace DictionaryAppForIT
             this.txtTaiKhoanDN.TextPlaceholder = "Nhập gmail hoặc username";
             this.txtTaiKhoanDN.UseSystemPasswordChar = false;
             this.txtTaiKhoanDN.WordWrap = true;
+            this.txtTaiKhoanDN.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTaiKhoanDN_KeyDown);
             // 
             // txtMatKhauDN
             // 

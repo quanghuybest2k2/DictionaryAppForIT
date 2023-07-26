@@ -1,57 +1,57 @@
-﻿using Guna;
+﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
-using DictionaryAppForIT.Forms;
 using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Configuration;
 using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
-using System.Data.SqlClient;
 
 namespace DictionaryAppForIT.UserControls.TaiKhoan
 {
     public partial class UC_QuanLyTK : UserControl
     {
         private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
-
+        private readonly string apiUrl = BaseUrl.base_url;
         private int tgSuDung = 0;
+        HttpClient client;
+
         public UC_QuanLyTK()
         {
             InitializeComponent();
+            client = new HttpClient();
         }
         #region Xử lý richtextbox đổi màu chữ
 
         public string SoMuc
         {
-            get { return lblSoMucTest.Text; }
-            set { lblSoMucTest.Text = value; }
+            get { return lblSoMuc.Text; }
+            set { lblSoMuc.Text = value; }
         }
+        private string ConvertToDateFormat(string input, string format)
+        {
+            DateTime dateTime = DateTime.Parse(input);
 
-
+            string formattedDate = dateTime.ToString(format);
+            return formattedDate;
+        }
         private void ThoiGianTaoTaiKhoan()
         {
-            DateTime hienTai = DateTime.Now;
-            DateTime end = new DateTime(2021, 09, 10);
-
             RichTextBox rtb1 = new RichTextBox();
             rtb1.Font = new System.Drawing.Font("Segoe UI", 10F);
             rtb1.SelectionColor = Color.Gray;
-            rtb1.AppendText(" Bạn đã tạo tài khoản được ");
+            rtb1.AppendText(" Bạn đã tạo tài khoản ngày ");
             rtb1.SelectionColor = ColorTranslator.FromHtml("#3776ab");
             // tinh toan ngay tao tai khoan
             string ngayTao = Class_TaiKhoan.ngayTaoTK;
-            DateTime date = DateTime.ParseExact(ngayTao, "dd/MM/yyyy", null);
-            TimeSpan soNgayTaoTK = hienTai - date; // số ngày tạo tài khoản
-            rtb1.AppendText(soNgayTaoTK.ToString(@"dd"));
+            string date = ConvertToDateFormat(ngayTao, "dd/MM/yyyy");
+
+            rtb1.AppendText(date);
             rtb1.SelectionColor = Color.Gray;
-            rtb1.AppendText(" ngày");
             rtb1.Size = new System.Drawing.Size(242, 23);
             rtb1.Location = new Point(69, 29);
             rtb1.Name = "rtxtThoiGianTaoTK";
@@ -60,6 +60,30 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             rtb1.BackColor = System.Drawing.Color.LemonChiffon;
             panelThoiGianTao.Controls.Add(rtb1);
         }
+        //private async Task SoMucYeuThichAsync()
+        //{
+        //    try
+        //    {
+        //        HttpResponseMessage response = await client.GetAsync(apiUrl + $"total-love-vocabulary/{Class_TaiKhoan.IdTaiKhoan}");
+
+        //        string responseContent = await response.Content.ReadAsStringAsync();
+        //        JObject responseObject = JObject.Parse(responseContent);
+        //        string totalVocabulary = responseObject["totalVocabulary"].ToString();
+
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            lblSoMuc.Text = totalVocabulary;
+        //        }
+        //        else
+        //        {
+        //            RJMessageBox.Show("Đã có lỗi xảy ra!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        RJMessageBox.Show(ex.Message);
+        //    }
+        //}
         private void ThoiGianSuDung()
         {
             RichTextBox rtb1 = new RichTextBox();
@@ -79,7 +103,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             panelThoiGianSuDung.Controls.Add(rtb1);
         }
         #endregion
-        private void btnXoaTaiKhoan_Click(object sender, EventArgs e)
+        private async void btnXoaTaiKhoan_Click(object sender, EventArgs e)
         {
             var result = RJMessageBox.Show("Bạn có thực sự muốn xóa tài khoản này vĩnh viễn?",
                 "Xác nhận xóa tài khoản",
@@ -89,28 +113,21 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 // xóa tài khoản
                 try
                 {
-                    string queryXoaLSDich = $"Delete from LichSuDich where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'";
-                    string queryXoaLSTraTu = $"Delete from LichSuTraTu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'";
-                    string queryXoaYTTuVung = $"Delete from YeuThichTuVung where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'";
-                    string queryXoaYTVanBan = $"Delete from YeuThichVanBan where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'";
-                    string queryXoaTK = $"Delete from TaiKhoan where ID = '{Class_TaiKhoan.IdTaiKhoan}'";
+                    HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-user/{Class_TaiKhoan.IdTaiKhoan}");
 
-                    int num1 = DataProvider.Instance.ExecuteNonQuery(queryXoaLSDich);
-                    int num2 = DataProvider.Instance.ExecuteNonQuery(queryXoaLSTraTu);
-                    int num3 = DataProvider.Instance.ExecuteNonQuery(queryXoaYTTuVung);
-                    int num4 = DataProvider.Instance.ExecuteNonQuery(queryXoaYTVanBan);
-                    int num5 = DataProvider.Instance.ExecuteNonQuery(queryXoaTK);
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    JObject responseObject = JObject.Parse(responseContent);
+                    string message = responseObject["message"].ToString();
 
-                    if (num5 > 0)
+                    if (response.IsSuccessStatusCode)
                     {
-                        RJMessageBox.Show("Đã xóa tài khoản vĩnh viễn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RJMessageBox.Show(message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Application.Exit();
                     }
                     else
                     {
-                        RJMessageBox.Show("Không thể xóa tài khoản!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        RJMessageBox.Show(message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                 }
                 catch (Exception ex)
                 {
@@ -124,22 +141,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 
         }
 
-        private string KTGioiTinh()
+        private int KTGioiTinh()
         {
-            string gt = "";
-            if (rdNam.Checked)
-            {
-                gt = "1";
-            }
-            else if (rdNu.Checked)
-            {
-                gt = "2";
-
-            }
-            else
-            {
-                gt = "3";
-            }
+            int gt = rdNam.Checked ? 1 : rdNu.Checked ? 2 : 3;
             return gt;
         }
 
@@ -196,79 +200,55 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             }
 
         }
-
         private void btnSuaMatKhau_Click(object sender, EventArgs e)
         {
-            if (btnSuaMatKhau.Checked)
-            {
-                txtPassword.ReadOnly = false;
-                txtPassword.FillColor = Color.White;
-                pbNenPassword1.FillColor = Color.MediumSpringGreen;
-                pbNenPassword2.FillColor = Color.MediumSpringGreen;
-                ///
-                if (txtPassword.PasswordChar == '●')
-                {
-                    txtPassword.PasswordChar = '\0';
-                }
-                btnLuuThayDoiTK.Enabled = true;
-
-            }
-            else
-            {
-                txtPassword.ReadOnly = true;
-                txtPassword.FillColor = Color.FromArgb(251, 251, 251);
-                pbNenPassword1.FillColor = Color.Tomato;
-                pbNenPassword2.FillColor = Color.Tomato;
-                ///
-                if (txtPassword.PasswordChar == '\0')
-                {
-                    txtPassword.PasswordChar = '●';
-                }
-            }
+            RJMessageBox.Show("hello");
         }
-
         private void UC_QuanLyTK_Load(object sender, EventArgs e)
         {
             ThoiGianTaoTaiKhoan();
-            //SoMucYeuThich();
+            //SoMucYeuThichAsync();
             ThoiGianSuDung();
             HienThiThongTinTaiKhoan(); // Hiển thị thông tin tài khoản
         }
-        private void HienThiThongTinTaiKhoan()
+        private async void HienThiThongTinTaiKhoan()
         {
             try
             {
-                SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC HienThiThongTinTaiKhoan '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
-                Conn.Open();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-user/{Class_TaiKhoan.IdTaiKhoan}");
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+                dynamic data = JsonConvert.DeserializeObject(responseContent);
+
+                if (response.IsSuccessStatusCode)
                 {
-                    txtUsername.Text = rdr["TenDangNhap"].ToString();
-                    txtPassword.Text = rdr["MatKhau"].ToString();
-                    txtEmail.Text = rdr["Email"].ToString();
-                    object gioiTinh = rdr["GioiTinh"].ToString();
-                    if (gioiTinh.ToString() == "1")
+                    txtUsername.Text = data.user.name.ToString();
+                    txtEmail.Text = data.user.email.ToString();
+                    int gioiTinh = Convert.ToInt32(data.user.gender);
+
+                    if (gioiTinh == 1)
                     {
                         rdNam.Checked = true;
                         rdNu.Checked = false;
                         rdKhac.Checked = false;
                     }
-                    if (gioiTinh.ToString() == "2")
+                    if (gioiTinh == 2)
                     {
                         rdNu.Checked = true;
                         rdNam.Checked = false;
                         rdKhac.Checked = false;
                     }
-                    if (gioiTinh.ToString() == "3")
+                    if (gioiTinh == 3)
                     {
                         rdKhac.Checked = true;
                         rdNam.Checked = false;
                         rdNu.Checked = false;
                     }
                 }
-                Conn.Close();
-                Conn.Dispose();
+                else
+                {
+                    RJMessageBox.Show("Không tìm thấy người dùng!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
