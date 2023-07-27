@@ -1,16 +1,7 @@
-﻿using DictionaryAppForIT.Class;
-using DictionaryAppForIT.DAL;
-using DictionaryAppForIT.DTO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DictionaryAppForIT.API;
+using DictionaryAppForIT.Class;
+using Newtonsoft.Json;
+using System.Net.Http;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.TuVungHot
@@ -19,46 +10,57 @@ namespace DictionaryAppForIT.UserControls.TuVungHot
     {
         RandomColor rd = new RandomColor();
         UC_TVH_Item uc;
-        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
+        private readonly string apiUrl = BaseUrl.base_url;
 
         public UC_TVHot()
         {
             uc = new UC_TVH_Item();
             InitializeComponent();
         }
-
-        public void HienThiTuVungHot()
+        /*
+            SELECT english, pronunciations, vietnamese, COUNT(user_id) AS soLanXuatHien
+            FROM word_lookup_histories
+            GROUP BY english, pronunciations, vietnamese
+            ORDER BY COUNT(user_id) DESC
+            LIMIT 8
+         */
+        public async void HienThiTuVungHotAsync()
         {
             flpContent.Controls.Clear();
             int stt = 1;
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from LichSuTraTu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-            if (Convert.ToInt32(num) > 0)
+            using (HttpClient httpClient = new HttpClient())
             {
                 try
                 {
-                    SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"EXEC HienThiTuVungHot", Conn);
-                    Conn.Open();
-                    SqlDataReader rdr = cmd.ExecuteReader();
-                    while (rdr.Read())
-                    {
-                        //ThongTinLSTraTu.idTraTuLS = rdr["ID"].ToString();
-                        string TiengAnh = rdr["TiengAnh"].ToString();
-                        string PhienAm = rdr["PhienAm"].ToString();
-                        string TiengViet = rdr["TiengViet"].ToString();
-                        string soLuotXem = rdr["soLanXuatHien"].ToString();
-                        uc = new UC_TVH_Item(stt.ToString(), TiengAnh, PhienAm, TiengViet, soLuotXem);
-                        uc.TVHBackColor(rd.GetColor());
-                        flpContent.Controls.Add(uc);
-                        stt++;
-                    }
+                    HttpResponseMessage response = await httpClient.GetAsync(apiUrl + "get-hot-vocabulary");
+                    response.EnsureSuccessStatusCode();
 
-                    Conn.Close();
-                    Conn.Dispose();
+                    string json = await response.Content.ReadAsStringAsync();
+                    dynamic data = JsonConvert.DeserializeObject(json);
+
+                    if (data != null && data.hotVocabulary != null)
+                    {
+                        foreach (var item in data.hotVocabulary)
+                        {
+                            string english = item.english;
+                            string pronunciation = item.pronunciations;
+                            string vietnamese = item.vietnamese;
+                            int numberOfOccurrences = item.NumberOfOccurrences;
+
+                            uc = new UC_TVH_Item(stt.ToString(), english, pronunciation, vietnamese, numberOfOccurrences.ToString());
+                            uc.TVHBackColor(rd.GetColor());
+                            flpContent.Controls.Add(uc);
+                            stt++;
+                        }
+                    }
                 }
-                catch (Exception ex)
+                catch (HttpRequestException ex)
                 {
-                    RJMessageBox.Show(ex.Message);
+                    MessageBox.Show("Lỗi khi gọi API: " + ex.Message);
+                }
+                catch (JsonException ex)
+                {
+                    MessageBox.Show("JSON sai format: " + ex.Message);
                 }
             }
         }

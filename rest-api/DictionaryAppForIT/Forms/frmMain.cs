@@ -484,7 +484,7 @@ namespace DictionaryAppForIT.Forms
         private void btnTVHot_Click(object sender, EventArgs e)
         {
             ShowUC(ucTVHot);
-            ucTVHot.HienThiTuVungHot();
+            ucTVHot.HienThiTuVungHotAsync();
         }
 
         private void btnThongTinTacGia_Click(object sender, EventArgs e)

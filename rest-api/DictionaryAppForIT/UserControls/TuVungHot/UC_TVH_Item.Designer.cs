@@ -32,15 +32,15 @@ namespace DictionaryAppForIT.UserControls.TuVungHot
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_TVH_Item));
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.pnNen = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblPhienAm = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLuotXem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblPhienAm = new System.Windows.Forms.Label();
             this.lblTiengViet = new System.Windows.Forms.Label();
             this.lblTiengAnh = new System.Windows.Forms.Label();
             this.lblSo = new System.Windows.Forms.Label();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel5.SuspendLayout();
             this.pnNen.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -77,6 +77,18 @@ namespace DictionaryAppForIT.UserControls.TuVungHot
             this.pnNen.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.pnNen.Size = new System.Drawing.Size(148, 187);
             this.pnNen.TabIndex = 1;
+            // 
+            // lblPhienAm
+            // 
+            this.lblPhienAm.AutoEllipsis = true;
+            this.lblPhienAm.BackColor = System.Drawing.Color.Tomato;
+            this.lblPhienAm.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.lblPhienAm.ForeColor = System.Drawing.Color.White;
+            this.lblPhienAm.Location = new System.Drawing.Point(11, 136);
+            this.lblPhienAm.Name = "lblPhienAm";
+            this.lblPhienAm.Size = new System.Drawing.Size(125, 20);
+            this.lblPhienAm.TabIndex = 28;
+            this.lblPhienAm.Text = "[ˈrɛʤɪstə]";
             // 
             // guna2Panel1
             // 
@@ -156,29 +168,6 @@ namespace DictionaryAppForIT.UserControls.TuVungHot
             this.guna2PictureBox1.TabIndex = 24;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(0, 17);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(148, 70);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 26;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.UseTransparentBackground = true;
-            // 
-            // lblPhienAm
-            // 
-            this.lblPhienAm.AutoEllipsis = true;
-            this.lblPhienAm.BackColor = System.Drawing.Color.Tomato;
-            this.lblPhienAm.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
-            this.lblPhienAm.ForeColor = System.Drawing.Color.White;
-            this.lblPhienAm.Location = new System.Drawing.Point(11, 136);
-            this.lblPhienAm.Name = "lblPhienAm";
-            this.lblPhienAm.Size = new System.Drawing.Size(125, 20);
-            this.lblPhienAm.TabIndex = 28;
-            this.lblPhienAm.Text = "[ˈrɛʤɪstə]";
-            // 
             // lblTiengViet
             // 
             this.lblTiengViet.AutoEllipsis = true;
@@ -215,6 +204,17 @@ namespace DictionaryAppForIT.UserControls.TuVungHot
             this.lblSo.Size = new System.Drawing.Size(32, 13);
             this.lblSo.TabIndex = 25;
             this.lblSo.Text = "No.1";
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(0, 17);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(148, 70);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 26;
+            this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.UseTransparentBackground = true;
             // 
             // UC_TVH_Item
             // 
