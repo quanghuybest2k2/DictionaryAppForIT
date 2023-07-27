@@ -16,21 +16,33 @@ namespace DictionaryAppForIT.DTO
         {
 
         }
-
+        /*
+        MYSQL: 
+       SELECT SUM(AllCount) AS Tong_SoMucYeuThich
+           FROM (
+               SELECT COUNT(*) AS AllCount
+               FROM love_vocabularies
+               WHERE user_id = 1
+               UNION ALL
+               SELECT COUNT(*) AS AllCount
+               FROM love_texts
+               WHERE user_id = 1
+           ) AS t;
+        */
         public static async Task<string> Tong_So_Muc_Yeu_Thich()
         {
             string result = "";
             try
             {
-                HttpResponseMessage response = await client.GetAsync(apiUrl + $"total-love-vocabulary/{Class_TaiKhoan.IdTaiKhoan}");
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"total-love-item/{Class_TaiKhoan.IdTaiKhoan}");
 
                 string responseContent = await response.Content.ReadAsStringAsync();
                 JObject responseObject = JObject.Parse(responseContent);
-                string totalVocabulary = responseObject["totalVocabulary"].ToString();
+                string totalLoveItem = responseObject["totalLoveItem"].ToString();
 
                 if (response.IsSuccessStatusCode)
                 {
-                    result = totalVocabulary;
+                    result = totalLoveItem;
                 }
             }
             catch (Exception ex)
@@ -39,5 +51,6 @@ namespace DictionaryAppForIT.DTO
             }
             return result;
         }
+
     }
 }
