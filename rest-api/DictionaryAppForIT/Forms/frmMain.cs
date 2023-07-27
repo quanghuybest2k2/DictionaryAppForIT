@@ -280,7 +280,7 @@ namespace DictionaryAppForIT.Forms
             ShowUC(ucYeuThich);
             ucYeuThich.HienThiYTTraTu();
             ucYeuThich.HienThiYTVanBan();
-            ucYeuThich.SoMuc = await Tong_So_Muc_Yeu_Thich();
+            ucYeuThich.SoMuc = await LoveVocabulary.Tong_So_Muc_Yeu_Thich();
         }
 
         private void btnMiniGame_Click(object sender, EventArgs e)
@@ -363,35 +363,31 @@ namespace DictionaryAppForIT.Forms
         #region TaiKhoan button tab click event
 
         //--Tab đầu tiên
-        public async Task<string> Tong_So_Muc_Yeu_Thich()
-        {
-            string result = "";
-            try
-            {
-                HttpResponseMessage response = await client.GetAsync(apiUrl + $"total-love-vocabulary/{Class_TaiKhoan.IdTaiKhoan}");
+        //public async Task<string> Tong_So_Muc_Yeu_Thich()
+        //{
+        //    string result = "";
+        //    try
+        //    {
+        //        HttpResponseMessage response = await client.GetAsync(apiUrl + $"total-love-vocabulary/{Class_TaiKhoan.IdTaiKhoan}");
 
-                string responseContent = await response.Content.ReadAsStringAsync();
-                JObject responseObject = JObject.Parse(responseContent);
-                string totalVocabulary = responseObject["totalVocabulary"].ToString();
+        //        string responseContent = await response.Content.ReadAsStringAsync();
+        //        JObject responseObject = JObject.Parse(responseContent);
+        //        string totalVocabulary = responseObject["totalVocabulary"].ToString();
 
-                if (response.IsSuccessStatusCode)
-                {
-                    result = totalVocabulary;
-                }
-            }
-            catch (Exception ex)
-            {
-                RJMessageBox.Show(ex.Message);
-            }
-            return result;
-            //string query = $"select sum(AllCount) AS Tong_SoMucYeuThich from((select count(*) AS AllCount from YeuThichTuVung where IDTK = {Class_TaiKhoan.IdTaiKhoan}) union all (select count(*) AS AllCount from YeuThichVanBan where IDTK = {Class_TaiKhoan.IdTaiKhoan}))t";
-            //object soMuc = DataProvider.Instance.ExecuteScalar(query);
-            //return soMuc.ToString();
-
-        }
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            result = totalVocabulary;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        RJMessageBox.Show(ex.Message);
+        //    }
+        //    return result;
+        //}
         private async void btnQuanLyTK_ClickAsync(object sender, EventArgs e)
         {
-            ucQuanLyTK.SoMuc = await Tong_So_Muc_Yeu_Thich();
+            ucQuanLyTK.SoMuc = await LoveVocabulary.Tong_So_Muc_Yeu_Thich();
             ShowUC(ucQuanLyTK);
         }
 

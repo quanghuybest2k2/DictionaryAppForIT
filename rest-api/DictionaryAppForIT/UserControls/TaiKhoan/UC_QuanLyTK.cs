@@ -60,30 +60,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             rtb1.BackColor = System.Drawing.Color.LemonChiffon;
             panelThoiGianTao.Controls.Add(rtb1);
         }
-        //private async Task SoMucYeuThichAsync()
-        //{
-        //    try
-        //    {
-        //        HttpResponseMessage response = await client.GetAsync(apiUrl + $"total-love-vocabulary/{Class_TaiKhoan.IdTaiKhoan}");
-
-        //        string responseContent = await response.Content.ReadAsStringAsync();
-        //        JObject responseObject = JObject.Parse(responseContent);
-        //        string totalVocabulary = responseObject["totalVocabulary"].ToString();
-
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            lblSoMuc.Text = totalVocabulary;
-        //        }
-        //        else
-        //        {
-        //            RJMessageBox.Show("Đã có lỗi xảy ra!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        RJMessageBox.Show(ex.Message);
-        //    }
-        //}
         private void ThoiGianSuDung()
         {
             RichTextBox rtb1 = new RichTextBox();
@@ -207,7 +183,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private void UC_QuanLyTK_Load(object sender, EventArgs e)
         {
             ThoiGianTaoTaiKhoan();
-            //SoMucYeuThichAsync();
             ThoiGianSuDung();
             HienThiThongTinTaiKhoan(); // Hiển thị thông tin tài khoản
         }

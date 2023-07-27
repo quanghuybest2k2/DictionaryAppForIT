@@ -230,6 +230,7 @@
     <Compile Include="DTO\CheckIfExist.cs" />
     <Compile Include="DTO\Class_TaiKhoan.cs" />
     <Compile Include="DTO\LoginResponse.cs" />
+    <Compile Include="DTO\LoveVocabulary.cs" />
     <Compile Include="DTO\Specialization.cs" />
     <Compile Include="DTO\TranslateHistory.cs" />
     <Compile Include="DTO\Tu.cs" />

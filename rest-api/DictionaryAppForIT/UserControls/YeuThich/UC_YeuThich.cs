@@ -162,11 +162,11 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             }
         }
 
-        private void UC_YeuThich_Load(object sender, EventArgs e)
+        private async void UC_YeuThich_Load(object sender, EventArgs e)
         {
             _listTuVung = new List<UC_YT_TuVung>();
             _listVanBan = new List<UC_YT_VanBan>();
-            //lblSoMucYeuThich.Text = await frmMain.Tong_So_Muc_Yeu_Thich();
+            lblSoMucYeuThich.Text = await LoveVocabulary.Tong_So_Muc_Yeu_Thich();
         }
         // xoa tra tu yeu thich
         private void XoaUCYeuThichTuVung()
@@ -183,7 +183,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             _listTuVung.RemoveAll(x => x.Name == "Check");
         }
         //xoa van ban yeu thich
-        private void XoaUCYeuThichVanBanAsync()
+        private async void XoaUCYeuThichVanBanAsync()
         {
             foreach (var item in _listVanBan)
             {
@@ -195,7 +195,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 }
             }
             _listVanBan.RemoveAll(x => x.Name == "Check");
-            //lblSoMucYeuThich.Text = await frmMain.Tong_So_Muc_Yeu_Thich();
+            lblSoMucYeuThich.Text = await LoveVocabulary.Tong_So_Muc_Yeu_Thich();
         }
         // xoa muc yeu thich
         private void btnXoaMucYeuThich_Click(object sender, EventArgs e)
