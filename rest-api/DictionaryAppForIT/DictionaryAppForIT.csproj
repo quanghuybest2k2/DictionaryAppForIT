@@ -233,8 +233,11 @@
     <Compile Include="DTO\LoveVocabulary.cs" />
     <Compile Include="DTO\Specialization.cs" />
     <Compile Include="DTO\TranslateHistory.cs" />
+    <Compile Include="DTO\TranslateHistoryService.cs" />
     <Compile Include="DTO\Tu.cs" />
     <Compile Include="DTO\WordBySpecialization.cs" />
+    <Compile Include="DTO\WordHistoryService.cs" />
+    <Compile Include="DTO\WordLookupHistory.cs" />
     <Compile Include="DTO\XemTatCaNghia.cs" />
     <Compile Include="Forms\FormMessageBox.cs">
       <SubType>Form</SubType>

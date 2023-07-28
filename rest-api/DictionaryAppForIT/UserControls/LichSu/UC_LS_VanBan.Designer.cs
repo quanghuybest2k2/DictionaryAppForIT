@@ -42,7 +42,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnVocabulary = new Guna.UI2.WinForms.Guna2Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnXoaLSVanBan = new Guna.UI2.WinForms.Guna2Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -211,7 +211,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.guna2Button3);
+            this.panel7.Controls.Add(this.btnVocabulary);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 36);
             this.panel7.Name = "panel7";
@@ -222,24 +222,24 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.bunifuToolTip1.SetToolTipIcon(this.panel7, null);
             this.bunifuToolTip1.SetToolTipTitle(this.panel7, "");
             // 
-            // guna2Button3
+            // btnVocabulary
             // 
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.Location = new System.Drawing.Point(13, 8);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.PressedDepth = 0;
-            this.guna2Button3.Size = new System.Drawing.Size(29, 20);
-            this.guna2Button3.TabIndex = 16;
-            this.bunifuToolTip1.SetToolTip(this.guna2Button3, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2Button3, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2Button3, "");
-            this.guna2Button3.UseTransparentBackground = true;
+            this.btnVocabulary.BackColor = System.Drawing.Color.Transparent;
+            this.btnVocabulary.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVocabulary.FillColor = System.Drawing.Color.Transparent;
+            this.btnVocabulary.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnVocabulary.ForeColor = System.Drawing.Color.White;
+            this.btnVocabulary.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnVocabulary.Image = ((System.Drawing.Image)(resources.GetObject("btnVocabulary.Image")));
+            this.btnVocabulary.Location = new System.Drawing.Point(13, 8);
+            this.btnVocabulary.Name = "btnVocabulary";
+            this.btnVocabulary.PressedDepth = 0;
+            this.btnVocabulary.Size = new System.Drawing.Size(29, 20);
+            this.btnVocabulary.TabIndex = 16;
+            this.bunifuToolTip1.SetToolTip(this.btnVocabulary, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnVocabulary, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnVocabulary, "");
+            this.btnVocabulary.UseTransparentBackground = true;
             // 
             // panel6
             // 
@@ -454,7 +454,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel7;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnVocabulary;
         private System.Windows.Forms.Panel panel6;
         private Guna.UI2.WinForms.Guna2Button btnXoaLSVanBan;
         private System.Windows.Forms.Panel panel5;

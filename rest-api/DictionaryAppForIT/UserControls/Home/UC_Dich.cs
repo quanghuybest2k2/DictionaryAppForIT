@@ -1,6 +1,7 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DTO;
+using Guna.UI2.WinForms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -127,26 +128,19 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync(apiUrl + $"load-translate-history-by-user?user_id={Class_TaiKhoan.IdTaiKhoan}");
-                if (response.IsSuccessStatusCode)
+                // ghi đè table
+                DataTable dataTable = new DataTable();
+                //dataTable.Columns.Add("Id", typeof(string)).ColumnMapping = MappingType.Hidden;
+                dataTable.Columns.Add("Id", typeof(string));
+                dataTable.Columns.Add("English", typeof(string));
+                dataTable.Columns.Add("Vietnamese", typeof(string));
+
+                var translateHistoryList = TranslateHistoryService.LoadLichSu();
+
+                if (translateHistoryList != null)
                 {
-                    //dtgvLichSu.DataSource = 
-                    string jsonResponse = await response.Content.ReadAsStringAsync();
-                    var result = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
-                    // hiển thị hết
-                    //var translateHistoryList = result.translateHistory.ToObject<List<TranslateHistory>>();
-                    //dtgvLichSu.DataSource = translateHistoryList;
-
-                    var translateHistoryList = result.translateHistory.ToObject<List<TranslateHistory>>();
-
-                    // ghi đè table
-                    DataTable dataTable = new DataTable();
-                    //dataTable.Columns.Add("Id", typeof(string)).ColumnMapping = MappingType.Hidden;
-                    dataTable.Columns.Add("Id", typeof(string));
-                    dataTable.Columns.Add("English", typeof(string));
-                    dataTable.Columns.Add("Vietnamese", typeof(string));
                     // thêm data vào table
-                    foreach (var history in translateHistoryList)
+                    foreach (var history in await translateHistoryList)
                     {
                         dataTable.Rows.Add(history.Id, history.English, history.Vietnamese);
                     }
@@ -154,6 +148,10 @@ namespace DictionaryAppForIT.UserControls.Home
                     dtgvLichSu.DataSource = dataTable;
                     // ẩn thân chi thuật :))
                     dtgvLichSu.Columns["Id"].Visible = false;
+                }
+                else
+                {
+                    dtgvLichSu.DataSource = null;
                 }
             }
             catch (Exception ex)

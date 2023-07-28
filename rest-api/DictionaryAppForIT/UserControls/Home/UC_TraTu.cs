@@ -126,7 +126,7 @@ namespace DictionaryAppForIT.UserControls
 
         private async void KiemTraTonTaiYeuThich()
         {
-            string tuVung = txtTuVung.Text;
+            string tuVung = txtTuVung.Text.Trim();
             bool wordExists = await checkIfExist.CheckIfWordExistsAsync(tuVung, "word");
             if (wordExists)
             {
@@ -140,26 +140,23 @@ namespace DictionaryAppForIT.UserControls
 
         private void txtTimKiemTu_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && TuHienTai != txtTimKiemTu.Text)//--------------------------------------
+            if (e.KeyCode == Keys.Enter && TuHienTai != txtTimKiemTu.Text && txtTimKiemTu.Text != "")//--------------------------------------
             {
                 //btnYeuThich.Checked = false;
                 flpMeaning.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
                 HienThiThongTin();
                 TuHienTai = txtTimKiemTu.Text;//--------------------------------------
 
-                if (txtTimKiemTu.Text != "")
+                foreach (var item in XemNghia._listTu)
                 {
-                    foreach (var item in XemNghia._listTu)
-                    {
-                        LuuLichSuTraTu(item);
-                    }
+                    LuuLichSuTraTu(item);
                 }
                 KiemTraTonTaiYeuThich(); // kiểm tra xem từ yêu thích đã có chưa
 
                 if (tocDoPhatAm == true)
                 {
                     btnUS.PerformClick(); // tự động phát âm sau khi tra từ
-                }
+                } 
             }
         }
 

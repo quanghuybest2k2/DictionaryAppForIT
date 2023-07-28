@@ -35,82 +35,73 @@ namespace DictionaryAppForIT.UserControls.GanDay
             _listUCLSVB = new List<UC_LS_VanBan>();
         }
 
-        public void HienThiLSTraTu()
+        public async void HienThiLSTraTu()
         {
             _listUCLSTV.Clear();
             flpContent.Controls.Clear();
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from LichSuTraTu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-            if (Convert.ToInt32(num) > 0)
+            try
             {
-                try
+                var wordLookUpList = WordHistoryService.LoadWordLookupHistory();
+
+                if (wordLookUpList != null)
                 {
-                    SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"select * from LichSuTraTu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
-                    Conn.Open();
-                    SqlDataReader rdr = cmd.ExecuteReader();
-                    while (rdr.Read())
+                    foreach (var history in await wordLookUpList)
                     {
-                        idHienTai = rdr["ID"].ToString();
-                        string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
-                        string ThoiGian = arrThoiGian[1] + " " + arrThoiGian[2];
-                        string NgayThang = arrThoiGian[0];
-                        string TVTiengAnh = rdr["TiengAnh"].ToString();
-                        string TVPhienAm = rdr["PhienAm"].ToString();
-                        string TVTiengViet = rdr["TiengViet"].ToString();
+                        idHienTai = history.Id.ToString();
+                        string NgayThang = DateTime.Parse(history.Created_At).ToLocalTime().ToString("dd/MM/yyyy");
+                        string ThoiGian = DateTime.Parse(history.Created_At).ToLocalTime().ToString("HH:mm:ss");
+                        string TVTiengAnh = history.English;
+                        string TVPhienAm = history.Pronunciation;
+                        string TVTiengViet = history.Vietnamese;
                         ucLSTuVung = new UC_LS_TuVung(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVPhienAm, TVTiengViet);
 
                         flpContent.Controls.Add(ucLSTuVung);
                         _listUCLSTV.Add(ucLSTuVung);
                         ucLSTuVung.Name = "unCheck";
                     }
-
-                    Conn.Close();
-                    Conn.Dispose();
                 }
-                catch (Exception ex)
+                else
                 {
-                    RJMessageBox.Show(ex.Message);
+                    ucLSTuVung = new UC_LS_TuVung(null, null, null, null, null, null);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                RJMessageBox.Show("Bạn chưa có lịch sử tra từ!");
+                RJMessageBox.Show(ex.Message);
             }
         }
 
-        public void HienThiLSDich()
+        public async void HienThiLSDich()
         {
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from LichSuDich where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-            if (Convert.ToInt32(num) > 0)
+            try
             {
-                try
+                var TextLookUpList = TranslateHistoryService.LoadLichSu();
+
+                if (TextLookUpList != null)
                 {
-                    SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"SELECT * FROM LichSuDich where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
-                    Conn.Open();
-                    SqlDataReader rdr = cmd.ExecuteReader();
-                    while (rdr.Read())
+                    foreach (var history in await TextLookUpList)
                     {
-                        idHienTai = rdr["ID"].ToString();
-                        string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
-                        string ThoiGian = arrThoiGian[1] + " " + arrThoiGian[2];
-                        string NgayThang = arrThoiGian[0];
-                        string TVTiengAnh = rdr["TiengAnh"].ToString();
-                        string TVTiengViet = rdr["TiengViet"].ToString();
+                        idHienTai = history.Id.ToString();
+                        string NgayThang = DateTime.Parse(history.Created_At).ToLocalTime().ToString("dd/MM/yyyy");
+                        string ThoiGian = DateTime.Parse(history.Created_At).ToLocalTime().ToString("HH:mm:ss");
+                        string TVTiengAnh = history.English;
+                        string TVTiengViet = history.Vietnamese;
+
                         ucLSVanBan = new UC_LS_VanBan(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVTiengViet);
                         flpContent.Controls.Add(ucLSVanBan);
 
                         _listUCLSVB.Add(ucLSVanBan);
                         ucLSVanBan.Name = "unCheck";
                     }
-                    Conn.Close();
-                    Conn.Dispose();
-
                 }
-                catch (Exception ex)
+                else
                 {
-                    RJMessageBox.Show(ex.Message);
+                    ucLSTuVung = new UC_LS_TuVung(null, null, null, null, null, null);
                 }
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show(ex.Message);
             }
         }
 

@@ -61,11 +61,6 @@ namespace DictionaryAppForIT.UserControls.LichSu
             set { lblTiengViet.Text = value; }
 
         }
-        public Guna2Button ButtonPhatAm
-        {
-            get { return btnDieuHuongLS; }
-            set { btnDieuHuongLS = value; }
-        }
 
         private void chkChonLSTraTu_CheckedChanged(object sender, BunifuCheckBox.CheckedChangedEventArgs e)
         {

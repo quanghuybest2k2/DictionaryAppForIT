@@ -32,13 +32,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             get { return lblSoMuc.Text; }
             set { lblSoMuc.Text = value; }
         }
-        private string ConvertToDateFormat(string input, string format)
-        {
-            DateTime dateTime = DateTime.Parse(input);
-
-            string formattedDate = dateTime.ToString(format);
-            return formattedDate;
-        }
         private void ThoiGianTaoTaiKhoan()
         {
             RichTextBox rtb1 = new RichTextBox();
@@ -46,9 +39,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             rtb1.SelectionColor = Color.Gray;
             rtb1.AppendText(" Bạn đã tạo tài khoản ngày ");
             rtb1.SelectionColor = ColorTranslator.FromHtml("#3776ab");
-            // tinh toan ngay tao tai khoan
+
             string ngayTao = Class_TaiKhoan.ngayTaoTK;
-            string date = ConvertToDateFormat(ngayTao, "dd/MM/yyyy");
+            string date = DateTime.Parse(ngayTao).ToLocalTime().ToString("dd/MM/yyyy");
 
             rtb1.AppendText(date);
             rtb1.SelectionColor = Color.Gray;

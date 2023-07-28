@@ -44,7 +44,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.btnDieuHuongLS = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDich = new Guna.UI2.WinForms.Guna2Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnXoaLSTraTu = new Guna.UI2.WinForms.Guna2Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -208,7 +208,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.lblThoiGian.Name = "lblThoiGian";
             this.lblThoiGian.Size = new System.Drawing.Size(60, 22);
             this.lblThoiGian.TabIndex = 12;
-            this.lblThoiGian.Text = "00:39 AM";
+            this.lblThoiGian.Text = "05:39 PM";
             this.bunifuToolTip1.SetToolTip(this.lblThoiGian, "");
             this.bunifuToolTip1.SetToolTipIcon(this.lblThoiGian, null);
             this.bunifuToolTip1.SetToolTipTitle(this.lblThoiGian, "");
@@ -242,7 +242,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.btnDieuHuongLS);
+            this.panel7.Controls.Add(this.btnDich);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 36);
             this.panel7.Name = "panel7";
@@ -253,25 +253,24 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.bunifuToolTip1.SetToolTipIcon(this.panel7, null);
             this.bunifuToolTip1.SetToolTipTitle(this.panel7, "");
             // 
-            // btnDieuHuongLS
+            // btnDich
             // 
-            this.btnDieuHuongLS.BackColor = System.Drawing.Color.Transparent;
-            this.btnDieuHuongLS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDieuHuongLS.FillColor = System.Drawing.Color.Transparent;
-            this.btnDieuHuongLS.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDieuHuongLS.ForeColor = System.Drawing.Color.White;
-            this.btnDieuHuongLS.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnDieuHuongLS.Image = ((System.Drawing.Image)(resources.GetObject("btnDieuHuongLS.Image")));
-            this.btnDieuHuongLS.Location = new System.Drawing.Point(13, 8);
-            this.btnDieuHuongLS.Name = "btnDieuHuongLS";
-            this.btnDieuHuongLS.PressedDepth = 0;
-            this.btnDieuHuongLS.Size = new System.Drawing.Size(29, 20);
-            this.btnDieuHuongLS.TabIndex = 16;
-            this.bunifuToolTip1.SetToolTip(this.btnDieuHuongLS, "Chuyển đến Tra từ");
-            this.bunifuToolTip1.SetToolTipIcon(this.btnDieuHuongLS, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.btnDieuHuongLS, "");
-            this.btnDieuHuongLS.UseTransparentBackground = true;
-            this.btnDieuHuongLS.Click += new System.EventHandler(this.btnDieuHuongLS_Click);
+            this.btnDich.BackColor = System.Drawing.Color.Transparent;
+            this.btnDich.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDich.FillColor = System.Drawing.Color.Transparent;
+            this.btnDich.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDich.ForeColor = System.Drawing.Color.White;
+            this.btnDich.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnDich.Image = ((System.Drawing.Image)(resources.GetObject("btnDich.Image")));
+            this.btnDich.Location = new System.Drawing.Point(13, 8);
+            this.btnDich.Name = "btnDich";
+            this.btnDich.PressedDepth = 0;
+            this.btnDich.Size = new System.Drawing.Size(29, 20);
+            this.btnDich.TabIndex = 16;
+            this.bunifuToolTip1.SetToolTip(this.btnDich, "Chuyển đến Tra từ");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnDich, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnDich, "");
+            this.btnDich.UseTransparentBackground = true;
             // 
             // panel6
             // 
@@ -490,7 +489,6 @@ namespace DictionaryAppForIT.UserControls.LichSu
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel7;
-        private Guna.UI2.WinForms.Guna2Button btnDieuHuongLS;
         private System.Windows.Forms.Panel panel6;
         private Guna.UI2.WinForms.Guna2Button btnXoaLSTraTu;
         private System.Windows.Forms.Panel panel5;
@@ -499,5 +497,6 @@ namespace DictionaryAppForIT.UserControls.LichSu
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblIndex;
         private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
+        private Guna.UI2.WinForms.Guna2Button btnDich;
     }
 }
