@@ -236,7 +236,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.btnVocabulary.PressedDepth = 0;
             this.btnVocabulary.Size = new System.Drawing.Size(29, 20);
             this.btnVocabulary.TabIndex = 16;
-            this.bunifuToolTip1.SetToolTip(this.btnVocabulary, "");
+            this.bunifuToolTip1.SetToolTip(this.btnVocabulary, "Chuyển đến bản dịch");
             this.bunifuToolTip1.SetToolTipIcon(this.btnVocabulary, null);
             this.bunifuToolTip1.SetToolTipTitle(this.btnVocabulary, "");
             this.btnVocabulary.UseTransparentBackground = true;
@@ -330,7 +330,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.chkChonLSVanBan.BorderRadius = 12;
             this.chkChonLSVanBan.Checked = false;
             this.chkChonLSVanBan.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
-            this.chkChonLSVanBan.Cursor = System.Windows.Forms.Cursors.Default;
+            this.chkChonLSVanBan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkChonLSVanBan.CustomCheckmarkImage = null;
             this.chkChonLSVanBan.Location = new System.Drawing.Point(19, 34);
             this.chkChonLSVanBan.MinimumSize = new System.Drawing.Size(17, 17);

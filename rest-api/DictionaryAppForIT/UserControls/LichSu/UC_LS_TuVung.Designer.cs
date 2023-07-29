@@ -361,7 +361,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             this.chkChonLSTraTu.BorderRadius = 12;
             this.chkChonLSTraTu.Checked = false;
             this.chkChonLSTraTu.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
-            this.chkChonLSTraTu.Cursor = System.Windows.Forms.Cursors.Default;
+            this.chkChonLSTraTu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkChonLSTraTu.CustomCheckmarkImage = null;
             this.chkChonLSTraTu.Location = new System.Drawing.Point(19, 34);
             this.chkChonLSTraTu.MinimumSize = new System.Drawing.Size(17, 17);

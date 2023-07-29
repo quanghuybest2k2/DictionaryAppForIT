@@ -1,21 +1,19 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
-using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Configuration;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Net.Http;
-using System.Threading.Tasks;
+using System.Text;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.TaiKhoan
 {
     public partial class UC_QuanLyTK : UserControl
     {
-        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         private readonly string apiUrl = BaseUrl.base_url;
         private int tgSuDung = 0;
         HttpClient client;
@@ -75,39 +73,33 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private async void btnXoaTaiKhoan_Click(object sender, EventArgs e)
         {
             var result = RJMessageBox.Show("Bạn có thực sự muốn xóa tài khoản này vĩnh viễn?",
-                "Xác nhận xóa tài khoản",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            "Xác nhận xóa tài khoản",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 // xóa tài khoản
-                try
-                {
-                    HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-user/{Class_TaiKhoan.IdTaiKhoan}");
 
-                    string responseContent = await response.Content.ReadAsStringAsync();
-                    JObject responseObject = JObject.Parse(responseContent);
-                    string message = responseObject["message"].ToString();
+                HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-user/{Class_TaiKhoan.IdTaiKhoan}");
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        RJMessageBox.Show(message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Application.Exit();
-                    }
-                    else
-                    {
-                        RJMessageBox.Show(message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
+                string responseContent = await response.Content.ReadAsStringAsync();
+                JObject responseObject = JObject.Parse(responseContent);
+                string message = responseObject["message"].ToString();
+
+                if (response.IsSuccessStatusCode)
                 {
-                    RJMessageBox.Show(ex.Message);
+                    RJMessageBox.Show(message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
                 }
+                else
+                {
+                    RJMessageBox.Show(message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             if (result == DialogResult.No)
             {
                 return;
             }
-
         }
 
         private int KTGioiTinh()
@@ -116,19 +108,63 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             return gt;
         }
 
-        private void LuuThayDoiTK_Click(object sender, EventArgs e)
+        private async void LuuThayDoiTK_Click(object sender, EventArgs e)
         {
-            string query = $"EXEC CapNhatThongTinTaiKhoan '{Class_TaiKhoan.IdTaiKhoan}', '{txtUsername.Text.Trim()}', '{txtPassword.Text.Trim()}', '{txtEmail.Text.Trim()}', '{KTGioiTinh()}'";
-            int num = DataProvider.Instance.ExecuteNonQuery(query);
-            if (num > 0)
+            try
             {
-                RJMessageBox.Show("Cập nhật thông tin tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Dictionary<string, string> userInput = new Dictionary<string, string>
+                {
+                    { "name", txtUsername.Text.Trim() },
+                    { "email", txtEmail.Text.Trim()},
+                    { "gender", KTGioiTinh().ToString() }
+                };
+                string DataRequest = JsonConvert.SerializeObject(userInput);
+
+                HttpContent content = new StringContent(DataRequest, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PutAsync(apiUrl + $"update-user/{Class_TaiKhoan.IdTaiKhoan}", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    dynamic data = JsonConvert.DeserializeObject(responseContent);
+                    string message = data.message;
+                    RJMessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    dynamic data = JsonConvert.DeserializeObject(responseContent);
+
+                    if (data.validator_errors != null)
+                    {
+                        var errorMessageBuilder = new StringBuilder();
+                        var validatorErrors = data.validator_errors;
+
+                        foreach (var keyValuePair in validatorErrors)
+                        {
+                            var errorMessages = keyValuePair.Value;
+                            errorMessageBuilder.AppendLine($"{errorMessages[0]}");
+                        }
+
+                        RJMessageBox.Show(Environment.NewLine + errorMessageBuilder.ToString());
+                    }
+                    else if (data.message != null)
+                    {
+                        var errorMessage = data.message;
+                        RJMessageBox.Show(errorMessage.ToString());
+                    }
+                    else
+                    {
+                        RJMessageBox.Show("Không thể cập nhật tài khoản!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                RJMessageBox.Show("Không thể cập nhật tài khoản!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                RJMessageBox.Show(ex.Message);
             }
         }
+
 
         private void btnSuaEmail_Click(object sender, EventArgs e)
         {
@@ -168,10 +204,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 pbNenUsername2.FillColor = Color.Tomato;
             }
 
-        }
-        private void btnSuaMatKhau_Click(object sender, EventArgs e)
-        {
-            RJMessageBox.Show("hello");
         }
         private void UC_QuanLyTK_Load(object sender, EventArgs e)
         {
@@ -222,6 +254,11 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             {
                 RJMessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnChangePass_Click_1(object sender, EventArgs e)
+        {
+            RJMessageBox.Show("Hiện form thay đổi mật khẩu");
         }
     }
 }

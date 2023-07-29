@@ -39,10 +39,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.btnLuuThayDoiTK = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoaTaiKhoan = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,7 +56,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label5 = new System.Windows.Forms.Label();
             this.txtEmail = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtUsername = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.txtPassword = new Bunifu.UI.WinForms.BunifuTextBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -90,16 +86,14 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.pbNenUsername2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pbNenEmail2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pbNenEmail1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pbNenPassword1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.pbNenPassword2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnSuaEmail = new Guna.UI2.WinForms.Guna2Button();
             this.btnSuaTenDangNhap = new Guna.UI2.WinForms.Guna2Button();
             this.btnSuaAvt = new Guna.UI2.WinForms.Guna2Button();
             this.pbNenUsername1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
-            this.btnSuaMatKhau = new Guna.UI2.WinForms.Guna2Button();
+            this.btnChangePass = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -123,8 +117,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             ((System.ComponentModel.ISupportInitialize)(this.pbNenUsername2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNenEmail2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNenEmail1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNenPassword1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNenPassword2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNenUsername1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -314,9 +306,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label3.ForeColor = System.Drawing.Color.Gray;
             this.label3.Location = new System.Drawing.Point(492, 277);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 20);
+            this.label3.Size = new System.Drawing.Size(136, 20);
             this.label3.TabIndex = 81;
-            this.label3.Text = "Mật khẩu";
+            this.label3.Text = "Thay đổi mật khẩu";
             this.bunifuToolTip1.SetToolTip(this.label3, "");
             this.bunifuToolTip1.SetToolTipIcon(this.label3, null);
             this.bunifuToolTip1.SetToolTipTitle(this.label3, "");
@@ -359,9 +351,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label5.ForeColor = System.Drawing.Color.Gray;
             this.label5.Location = new System.Drawing.Point(492, 124);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 20);
+            this.label5.Size = new System.Drawing.Size(75, 20);
             this.label5.TabIndex = 76;
-            this.label5.Text = "Tên đăng nhập";
+            this.label5.Text = "Họ và tên";
             this.bunifuToolTip1.SetToolTip(this.label5, "");
             this.bunifuToolTip1.SetToolTipIcon(this.label5, null);
             this.bunifuToolTip1.SetToolTipTitle(this.label5, "");
@@ -523,85 +515,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.bunifuToolTip1.SetToolTipTitle(this.txtUsername, "");
             this.txtUsername.UseSystemPasswordChar = false;
             this.txtUsername.WordWrap = true;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.AcceptsReturn = false;
-            this.txtPassword.AcceptsTab = false;
-            this.txtPassword.AnimationSpeed = 200;
-            this.txtPassword.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtPassword.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtPassword.BackColor = System.Drawing.Color.White;
-            this.txtPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtPassword.BackgroundImage")));
-            this.txtPassword.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txtPassword.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txtPassword.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtPassword.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtPassword.BorderRadius = 15;
-            this.txtPassword.BorderThickness = 1;
-            this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.DefaultFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.DefaultText = "Đây là pass";
-            this.txtPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.txtPassword.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtPassword.HideSelection = true;
-            this.txtPassword.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtPassword.IconLeft")));
-            this.txtPassword.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.IconPadding = 11;
-            this.txtPassword.IconRight = null;
-            this.txtPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.Lines = new string[] {
-        "Đây là pass"};
-            this.txtPassword.Location = new System.Drawing.Point(491, 304);
-            this.txtPassword.MaxLength = 32767;
-            this.txtPassword.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtPassword.Modified = false;
-            this.txtPassword.Multiline = false;
-            this.txtPassword.Name = "txtPassword";
-            stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            stateProperties9.FillColor = System.Drawing.Color.Empty;
-            stateProperties9.ForeColor = System.Drawing.Color.Empty;
-            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPassword.OnActiveState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtPassword.OnDisabledState = stateProperties10;
-            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            stateProperties11.FillColor = System.Drawing.Color.Empty;
-            stateProperties11.ForeColor = System.Drawing.Color.Empty;
-            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPassword.OnHoverState = stateProperties11;
-            stateProperties12.BorderColor = System.Drawing.Color.Silver;
-            stateProperties12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            stateProperties12.ForeColor = System.Drawing.Color.DarkGray;
-            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPassword.OnIdleState = stateProperties12;
-            this.txtPassword.Padding = new System.Windows.Forms.Padding(3);
-            this.txtPassword.PasswordChar = '●';
-            this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtPassword.PlaceholderText = "";
-            this.txtPassword.ReadOnly = true;
-            this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPassword.SelectedText = "";
-            this.txtPassword.SelectionLength = 0;
-            this.txtPassword.SelectionStart = 11;
-            this.txtPassword.ShortcutsEnabled = true;
-            this.txtPassword.Size = new System.Drawing.Size(341, 40);
-            this.txtPassword.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtPassword.TabIndex = 8;
-            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtPassword.TextMarginBottom = 0;
-            this.txtPassword.TextMarginLeft = 10;
-            this.txtPassword.TextMarginTop = 0;
-            this.txtPassword.TextPlaceholder = "";
-            this.bunifuToolTip1.SetToolTip(this.txtPassword, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.txtPassword, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.txtPassword, "");
-            this.txtPassword.UseSystemPasswordChar = false;
-            this.txtPassword.WordWrap = true;
             // 
             // guna2Elipse1
             // 
@@ -1089,24 +1002,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.bunifuToolTip1.SetToolTipTitle(this.pbNenEmail1, "");
             this.pbNenEmail1.UseTransparentBackground = true;
             // 
-            // pbNenPassword1
-            // 
-            this.pbNenPassword1.AccessibleDescription = "";
-            this.pbNenPassword1.AccessibleName = "";
-            this.pbNenPassword1.BackColor = System.Drawing.Color.Transparent;
-            this.pbNenPassword1.BorderRadius = 8;
-            this.pbNenPassword1.FillColor = System.Drawing.Color.Tomato;
-            this.pbNenPassword1.ImageRotate = 0F;
-            this.pbNenPassword1.Location = new System.Drawing.Point(783, 304);
-            this.pbNenPassword1.Name = "pbNenPassword1";
-            this.pbNenPassword1.Size = new System.Drawing.Size(48, 40);
-            this.pbNenPassword1.TabIndex = 103;
-            this.pbNenPassword1.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.pbNenPassword1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.pbNenPassword1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.pbNenPassword1, "");
-            this.pbNenPassword1.UseTransparentBackground = true;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -1138,20 +1033,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.bunifuToolTip1.SetToolTipIcon(this.guna2CircleButton1, null);
             this.bunifuToolTip1.SetToolTipTitle(this.guna2CircleButton1, "");
             this.guna2CircleButton1.UseTransparentBackground = true;
-            // 
-            // pbNenPassword2
-            // 
-            this.pbNenPassword2.AccessibleName = "";
-            this.pbNenPassword2.FillColor = System.Drawing.Color.Tomato;
-            this.pbNenPassword2.ImageRotate = 0F;
-            this.pbNenPassword2.Location = new System.Drawing.Point(783, 304);
-            this.pbNenPassword2.Name = "pbNenPassword2";
-            this.pbNenPassword2.Size = new System.Drawing.Size(21, 40);
-            this.pbNenPassword2.TabIndex = 104;
-            this.pbNenPassword2.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.pbNenPassword2, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.pbNenPassword2, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.pbNenPassword2, "");
             // 
             // btnSuaEmail
             // 
@@ -1271,41 +1152,109 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
             this.bunifuToolTip1.ToolTipTitle = null;
             // 
-            // btnSuaMatKhau
+            // btnChangePass
             // 
-            this.btnSuaMatKhau.BackColor = System.Drawing.Color.Transparent;
-            this.btnSuaMatKhau.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.btnSuaMatKhau.CheckedState.FillColor = System.Drawing.Color.MediumSpringGreen;
-            this.btnSuaMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSuaMatKhau.FillColor = System.Drawing.Color.Empty;
-            this.btnSuaMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSuaMatKhau.ForeColor = System.Drawing.Color.White;
-            this.btnSuaMatKhau.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnSuaMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaMatKhau.Image")));
-            this.btnSuaMatKhau.ImageSize = new System.Drawing.Size(16, 16);
-            this.btnSuaMatKhau.Location = new System.Drawing.Point(785, 304);
-            this.btnSuaMatKhau.Name = "btnSuaMatKhau";
-            this.btnSuaMatKhau.PressedDepth = 0;
-            this.btnSuaMatKhau.Size = new System.Drawing.Size(43, 40);
-            this.btnSuaMatKhau.TabIndex = 106;
-            this.bunifuToolTip1.SetToolTip(this.btnSuaMatKhau, "Sửa Email");
-            this.bunifuToolTip1.SetToolTipIcon(this.btnSuaMatKhau, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.btnSuaMatKhau, "");
-            this.btnSuaMatKhau.UseTransparentBackground = true;
-            this.btnSuaMatKhau.Click += new System.EventHandler(this.btnSuaMatKhau_Click);
+            this.btnChangePass.AllowAnimations = true;
+            this.btnChangePass.AllowMouseEffects = true;
+            this.btnChangePass.AllowToggling = false;
+            this.btnChangePass.AnimationSpeed = 200;
+            this.btnChangePass.AutoGenerateColors = false;
+            this.btnChangePass.AutoRoundBorders = false;
+            this.btnChangePass.AutoSizeLeftIcon = true;
+            this.btnChangePass.AutoSizeRightIcon = true;
+            this.btnChangePass.BackColor = System.Drawing.Color.Transparent;
+            this.btnChangePass.BackColor1 = System.Drawing.Color.Tomato;
+            this.btnChangePass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnChangePass.BackgroundImage")));
+            this.btnChangePass.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnChangePass.ButtonText = "Đổi Mật Khẩu";
+            this.btnChangePass.ButtonTextMarginLeft = 0;
+            this.btnChangePass.ColorContrastOnClick = 45;
+            this.btnChangePass.ColorContrastOnHover = 45;
+            this.btnChangePass.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnChangePass.CustomizableEdges = borderEdges1;
+            this.btnChangePass.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnChangePass.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnChangePass.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnChangePass.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnChangePass.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnChangePass.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnChangePass.ForeColor = System.Drawing.Color.White;
+            this.btnChangePass.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChangePass.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangePass.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnChangePass.IconMarginLeft = 11;
+            this.btnChangePass.IconPadding = 10;
+            this.btnChangePass.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChangePass.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangePass.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnChangePass.IconSize = 25;
+            this.btnChangePass.IdleBorderColor = System.Drawing.Color.Tomato;
+            this.btnChangePass.IdleBorderRadius = 15;
+            this.btnChangePass.IdleBorderThickness = 1;
+            this.btnChangePass.IdleFillColor = System.Drawing.Color.Tomato;
+            this.btnChangePass.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnChangePass.IdleIconLeftImage")));
+            this.btnChangePass.IdleIconRightImage = null;
+            this.btnChangePass.IndicateFocus = false;
+            this.btnChangePass.Location = new System.Drawing.Point(496, 306);
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnChangePass.OnDisabledState.BorderRadius = 15;
+            this.btnChangePass.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnChangePass.OnDisabledState.BorderThickness = 1;
+            this.btnChangePass.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnChangePass.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnChangePass.OnDisabledState.IconLeftImage = null;
+            this.btnChangePass.OnDisabledState.IconRightImage = null;
+            this.btnChangePass.onHoverState.BorderColor = System.Drawing.Color.Tomato;
+            this.btnChangePass.onHoverState.BorderRadius = 15;
+            this.btnChangePass.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnChangePass.onHoverState.BorderThickness = 1;
+            this.btnChangePass.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnChangePass.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnChangePass.onHoverState.IconLeftImage = null;
+            this.btnChangePass.onHoverState.IconRightImage = null;
+            this.btnChangePass.OnIdleState.BorderColor = System.Drawing.Color.Tomato;
+            this.btnChangePass.OnIdleState.BorderRadius = 15;
+            this.btnChangePass.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnChangePass.OnIdleState.BorderThickness = 1;
+            this.btnChangePass.OnIdleState.FillColor = System.Drawing.Color.Tomato;
+            this.btnChangePass.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnChangePass.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnChangePass.OnIdleState.IconLeftImage")));
+            this.btnChangePass.OnIdleState.IconRightImage = null;
+            this.btnChangePass.OnPressedState.BorderColor = System.Drawing.Color.Tomato;
+            this.btnChangePass.OnPressedState.BorderRadius = 15;
+            this.btnChangePass.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnChangePass.OnPressedState.BorderThickness = 1;
+            this.btnChangePass.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnChangePass.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnChangePass.OnPressedState.IconLeftImage = null;
+            this.btnChangePass.OnPressedState.IconRightImage = null;
+            this.btnChangePass.Size = new System.Drawing.Size(341, 40);
+            this.btnChangePass.TabIndex = 107;
+            this.btnChangePass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnChangePass.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnChangePass.TextMarginLeft = 0;
+            this.btnChangePass.TextPadding = new System.Windows.Forms.Padding(0);
+            this.bunifuToolTip1.SetToolTip(this.btnChangePass, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnChangePass, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnChangePass, "");
+            this.btnChangePass.UseDefaultRadiusAndThickness = true;
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click_1);
             // 
             // UC_QuanLyTK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btnSuaMatKhau);
+            this.Controls.Add(this.btnChangePass);
             this.Controls.Add(this.btnSuaAvt);
             this.Controls.Add(this.btnSuaTenDangNhap);
             this.Controls.Add(this.btnSuaEmail);
             this.Controls.Add(this.guna2CircleButton1);
-            this.Controls.Add(this.pbNenPassword1);
-            this.Controls.Add(this.pbNenPassword2);
             this.Controls.Add(this.pbNenEmail1);
             this.Controls.Add(this.pbNenEmail2);
             this.Controls.Add(this.pbNenUsername1);
@@ -1327,7 +1276,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.txtPassword);
             this.Name = "UC_QuanLyTK";
             this.Size = new System.Drawing.Size(882, 553);
             this.bunifuToolTip1.SetToolTip(this, "");
@@ -1362,8 +1310,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             ((System.ComponentModel.ISupportInitialize)(this.pbNenUsername2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNenEmail2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNenEmail1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNenPassword1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNenPassword2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNenUsername1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1387,7 +1333,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private System.Windows.Forms.Label label5;
         private Bunifu.UI.WinForms.BunifuTextBox txtEmail;
         private Bunifu.UI.WinForms.BunifuTextBox txtUsername;
-        private Bunifu.UI.WinForms.BunifuTextBox txtPassword;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
@@ -1395,7 +1340,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2PictureBox pbNenUsername2;
-        private Guna.UI2.WinForms.Guna2PictureBox pbNenPassword1;
         private Guna.UI2.WinForms.Guna2PictureBox pbNenEmail1;
         private Guna.UI2.WinForms.Guna2PictureBox pbNenEmail2;
         private System.Windows.Forms.Label label11;
@@ -1417,7 +1361,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox10;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox13;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox12;
-        private Guna.UI2.WinForms.Guna2PictureBox pbNenPassword2;
         private Guna.UI2.WinForms.Guna2Button btnSuaAvt;
         private Guna.UI2.WinForms.Guna2Button btnSuaTenDangNhap;
         private Guna.UI2.WinForms.Guna2Button btnSuaEmail;
@@ -1427,6 +1370,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2PictureBox pbNenUsername1;
         private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
-        private Guna.UI2.WinForms.Guna2Button btnSuaMatKhau;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnChangePass;
     }
 }

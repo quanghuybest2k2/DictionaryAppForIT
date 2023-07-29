@@ -70,6 +70,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(882, 553);
             this.panel1.TabIndex = 29;
+            this.bunifuToolTip1.SetToolTip(this.panel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel1, "");
             // 
             // flpContent
             // 
@@ -78,6 +81,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.flpContent.Name = "flpContent";
             this.flpContent.Size = new System.Drawing.Size(640, 450);
             this.flpContent.TabIndex = 27;
+            this.bunifuToolTip1.SetToolTip(this.flpContent, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.flpContent, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.flpContent, "");
             // 
             // panel3
             // 
@@ -86,6 +92,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(11, 27);
             this.panel3.TabIndex = 29;
+            this.bunifuToolTip1.SetToolTip(this.panel3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel3, "");
             // 
             // btnXoaDuLieu
             // 
@@ -104,9 +113,11 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.btnXoaDuLieu.TabIndex = 28;
             this.btnXoaDuLieu.Text = "Xóa dữ liệu";
             this.btnXoaDuLieu.TextOffset = new System.Drawing.Point(3, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnXoaDuLieu, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnXoaDuLieu, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnXoaDuLieu, "");
             this.btnXoaDuLieu.UseTransparentBackground = true;
             this.btnXoaDuLieu.Click += new System.EventHandler(this.btnXoaDuLieu_Click);
-            this.btnXoaDuLieu.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.btnXoaDuLieu_ControlRemoved);
             // 
             // label25
             // 
@@ -118,6 +129,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.label25.Size = new System.Drawing.Size(65, 28);
             this.label25.TabIndex = 25;
             this.label25.Text = "Tất cả";
+            this.bunifuToolTip1.SetToolTip(this.label25, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label25, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label25, "");
             // 
             // panel2
             // 
@@ -197,6 +211,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.txtTimKiemLS.Size = new System.Drawing.Size(174, 36);
             this.txtTimKiemLS.TabIndex = 28;
             this.txtTimKiemLS.TextOffset = new System.Drawing.Point(5, 0);
+            this.bunifuToolTip1.SetToolTip(this.txtTimKiemLS, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.txtTimKiemLS, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.txtTimKiemLS, "");
             this.txtTimKiemLS.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKiemLS_KeyDown);
             // 
             // btnCuHon
@@ -248,6 +265,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.btnThangNay.Text = "Tháng này";
             this.btnThangNay.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThangNay.TextOffset = new System.Drawing.Point(12, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnThangNay, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnThangNay, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnThangNay, "");
             this.btnThangNay.Click += new System.EventHandler(this.btnThoiGian_Click);
             // 
             // btnTuanNay
@@ -272,6 +292,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.btnTuanNay.Text = "Tuần này";
             this.btnTuanNay.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTuanNay.TextOffset = new System.Drawing.Point(12, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnTuanNay, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnTuanNay, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnTuanNay, "");
             this.btnTuanNay.Click += new System.EventHandler(this.btnThoiGian_Click);
             // 
             // btnHomQua
@@ -296,6 +319,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.btnHomQua.Text = "Hôm qua";
             this.btnHomQua.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHomQua.TextOffset = new System.Drawing.Point(12, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnHomQua, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnHomQua, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnHomQua, "");
             this.btnHomQua.Click += new System.EventHandler(this.btnThoiGian_Click);
             // 
             // btnHomNay
@@ -320,6 +346,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.btnHomNay.Text = "Hôm nay";
             this.btnHomNay.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHomNay.TextOffset = new System.Drawing.Point(12, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnHomNay, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnHomNay, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnHomNay, "");
             this.btnHomNay.Click += new System.EventHandler(this.btnThoiGian_Click);
             // 
             // btnTatCa
@@ -345,6 +374,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
             this.btnTatCa.Text = "Tất cả";
             this.btnTatCa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTatCa.TextOffset = new System.Drawing.Point(12, 0);
+            this.bunifuToolTip1.SetToolTip(this.btnTatCa, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.btnTatCa, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.btnTatCa, "");
             this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
             // 
             // bunifuToolTip1

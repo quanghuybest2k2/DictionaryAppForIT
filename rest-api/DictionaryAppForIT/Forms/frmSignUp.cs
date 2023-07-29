@@ -114,28 +114,20 @@ namespace DictionaryAppForIT.Forms
 
                     var content = new FormUrlEncodedContent(requestBody);
 
-                    try
-                    {
-                        var response = await httpClient.PostAsync(apiUrl, content);
-                        var responseContent = await response.Content.ReadAsStringAsync();
+                    var response = await httpClient.PostAsync(apiUrl, content);
+                    var responseContent = await response.Content.ReadAsStringAsync();
 
-                        if (response.IsSuccessStatusCode)
-                        {
-                            RJMessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
-                            frmLogin frmLogin = new frmLogin();
-                            frmLogin.Show();
-                        }
-                        else
-                        {
-                            RJMessageBox.Show("Đăng ký không thành công!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    catch (SqlException ex)
+                    if (response.IsSuccessStatusCode)
                     {
-                        RJMessageBox.Show(ex.Message);
+                        RJMessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                        frmLogin frmLogin = new frmLogin();
+                        frmLogin.Show();
                     }
-
+                    else
+                    {
+                        RJMessageBox.Show("Đăng ký không thành công!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 catch (Exception ex)
                 {

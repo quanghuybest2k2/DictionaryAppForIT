@@ -96,7 +96,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 }
                 else
                 {
-                    ucLSTuVung = new UC_LS_TuVung(null, null, null, null, null, null);
+                    ucLSVanBan = new UC_LS_VanBan(null, null, null, null, null);
                 }
             }
             catch (Exception ex)
@@ -159,11 +159,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 }
                 _listUCLSTV.Clear();
             }
-        }
-
-        private void btnXoaDuLieu_ControlRemoved(object sender, ControlEventArgs e)
-        {
-
         }
 
         private void txtTimKiemLS_KeyDown(object sender, KeyEventArgs e)
