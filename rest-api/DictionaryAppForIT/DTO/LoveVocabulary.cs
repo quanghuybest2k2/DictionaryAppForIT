@@ -1,7 +1,9 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -36,13 +38,26 @@ namespace DictionaryAppForIT.DTO
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"total-love-item/{Class_TaiKhoan.IdTaiKhoan}");
 
-                string responseContent = await response.Content.ReadAsStringAsync();
-                JObject responseObject = JObject.Parse(responseContent);
-                string totalLoveItem = responseObject["totalLoveItem"].ToString();
-
                 if (response.IsSuccessStatusCode)
                 {
-                    result = totalLoveItem;
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    JObject responseObject = JObject.Parse(responseContent);
+                    bool status = (bool)responseObject["status"];
+
+                    if (status)
+                    {
+                        int totalLoveItem = (int)responseObject["data"];
+                        result = totalLoveItem.ToString();
+                    }
+                    else
+                    {
+                        string message = (string)responseObject["message"];
+                        RJMessageBox.Show(message);
+                    }
+                }
+                else
+                {
+                    RJMessageBox.Show("Lỗi khi gọi API");
                 }
             }
             catch (Exception ex)
@@ -51,6 +66,6 @@ namespace DictionaryAppForIT.DTO
             }
             return result;
         }
-
+        //
     }
 }

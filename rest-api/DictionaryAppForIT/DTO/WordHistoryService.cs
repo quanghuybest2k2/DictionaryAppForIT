@@ -1,4 +1,5 @@
 ﻿using DictionaryAppForIT.API;
+using DictionaryAppForIT.Class;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

@@ -1,7 +1,9 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.TuVungHot
@@ -24,7 +26,7 @@ namespace DictionaryAppForIT.UserControls.TuVungHot
             ORDER BY COUNT(user_id) DESC
             LIMIT 8
          */
-        public async void HienThiTuVungHotAsync()
+        public async Task HienThiTuVungHotAsync()
         {
             flpContent.Controls.Clear();
             int stt = 1;
@@ -36,22 +38,30 @@ namespace DictionaryAppForIT.UserControls.TuVungHot
                     response.EnsureSuccessStatusCode();
 
                     string json = await response.Content.ReadAsStringAsync();
-                    dynamic data = JsonConvert.DeserializeObject(json);
+                    JObject data = JObject.Parse(json);
 
-                    if (data != null && data.hotVocabulary != null)
+                    bool status = (bool)data["status"];
+                    if (status)
                     {
-                        foreach (var item in data.hotVocabulary)
-                        {
-                            string english = item.english;
-                            string pronunciation = item.pronunciations;
-                            string vietnamese = item.vietnamese;
-                            int numberOfOccurrences = item.NumberOfOccurrences;
+                        JArray hotVocabulary = (JArray)data["data"];
 
-                            uc = new UC_TVH_Item(stt.ToString(), english, pronunciation, vietnamese, numberOfOccurrences.ToString());
+                        foreach (var item in hotVocabulary)
+                        {
+                            string english = item["english"].ToString();
+                            string pronunciation = item["pronunciations"].ToString();
+                            string vietnamese = item["vietnamese"].ToString();
+                            int numberOfOccurrences = (int)item["NumberOfOccurrences"];
+
+                            UC_TVH_Item uc = new UC_TVH_Item(stt.ToString(), english, pronunciation, vietnamese, numberOfOccurrences.ToString());
                             uc.TVHBackColor(rd.GetColor());
                             flpContent.Controls.Add(uc);
                             stt++;
                         }
+                    }
+                    else
+                    {
+                        string message = data["message"].ToString();
+                        MessageBox.Show(message);
                     }
                 }
                 catch (HttpRequestException ex)
@@ -64,5 +74,6 @@ namespace DictionaryAppForIT.UserControls.TuVungHot
                 }
             }
         }
+        //
     }
 }

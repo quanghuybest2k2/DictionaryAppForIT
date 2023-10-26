@@ -1,5 +1,6 @@
 ﻿using DictionaryAppForIT.API;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -17,17 +18,23 @@ namespace DictionaryAppForIT.DTO
         }
         public static async Task<List<TranslateHistory>> LoadLichSu()
         {
-            HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-translate-history/{Class_TaiKhoan.IdTaiKhoan}");
-            if (response.IsSuccessStatusCode)
+            try
             {
-                string jsonResponse = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-translate-history/{Class_TaiKhoan.IdTaiKhoan}");
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
 
-                var translateHistoryList = result.translateHistory.ToObject<List<TranslateHistory>>();
-
-                return translateHistoryList;
+                    var translateHistoryList = result["data"].ToObject<List<TranslateHistory>>();
+                    return translateHistoryList;
+                }
+                else
+                {
+                    return null;
+                }
             }
-            else
+            catch (Exception ex)
             {
                 return null;
             }
