@@ -1,6 +1,7 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
 using Newtonsoft.Json.Linq;
+using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -17,29 +18,48 @@ namespace DictionaryAppForIT.DTO
         // type translateHistory, word
         public async Task<bool> CheckIfWordExistsAsync(string word, string type)
         {
-            HttpResponseMessage response = await client.GetAsync(apiUrl + $"check-if-exist?english={word}&user_id={Class_TaiKhoan.IdTaiKhoan}");
-            if (response.IsSuccessStatusCode)
+            try
             {
-                var result = await response.Content.ReadAsStringAsync();
-                var status = JObject.Parse(result)["status"].ToObject<int>();
-                // giải mã json
-                switch (type)
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"check-if-exist?english={word}&user_id={Class_TaiKhoan.IdTaiKhoan}");
+
+                if (response.IsSuccessStatusCode)
                 {
-                    case "word":
-                        var wordExist = JObject.Parse(result)["word"].ToObject<int>();
-                        return wordExist > 0;
+                    var result = await response.Content.ReadAsStringAsync();
+                    var responseData = JObject.Parse(result);
+                    var status = responseData["status"].ToObject<bool>();
 
-                    case "loveText":
-                        var translateExist = JObject.Parse(result)["loveText"].ToObject<int>();
-                        return translateExist > 0;
+                    if (status)
+                    {
+                        switch (type)
+                        {
+                            case "word":
+                                var wordExist = responseData["data"]["word"].ToObject<int>();
+                                return wordExist > 0;
 
-                    default:
+                            case "loveText":
+                                var translateExist = responseData["data"]["loveText"].ToObject<int>();
+                                return translateExist > 0;
+
+                            default:
+                                return false;
+                        }
+                    }
+                    else
+                    {
+                        // Xử lý trường hợp status là false nếu cần thiết
+                        RJMessageBox.Show(responseData["message"].ToString());
                         return false;
+                    }
+                }
+                else
+                {
+                    RJMessageBox.Show("Đã có lỗi xảy ra khi kết nối với API!");
+                    return false;
                 }
             }
-            else
+            catch (Exception ex)
             {
-                RJMessageBox.Show("Đã có lỗi xảy ra!");
+                RJMessageBox.Show("Đã có lỗi xảy ra: " + ex.Message);
                 return false;
             }
         }

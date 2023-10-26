@@ -36,9 +36,9 @@ namespace DictionaryAppForIT.UserControls.Home
                     string jsonString = await response.Content.ReadAsStringAsync();
                     JObject jsonObject = JObject.Parse(jsonString);
 
-                    if (jsonObject.ContainsKey("specialization"))
+                    if (jsonObject.ContainsKey("data"))
                     {
-                        JArray specializationArray = (JArray)jsonObject["specialization"];
+                        JArray specializationArray = (JArray)jsonObject["data"];
                         List<Specialization> specializations = specializationArray.ToObject<List<Specialization>>();
 
                         cbbChuyenNganh.DataSource = specializations;
@@ -73,9 +73,9 @@ namespace DictionaryAppForIT.UserControls.Home
                     string jsonString = await response.Content.ReadAsStringAsync();
                     JObject jsonObject = JObject.Parse(jsonString);
 
-                    if (jsonObject.ContainsKey("specializations"))
+                    if (jsonObject.ContainsKey("data"))
                     {
-                        JArray specializationArray = (JArray)jsonObject["specializations"];
+                        JArray specializationArray = (JArray)jsonObject["data"];
                         List<WordBySpecialization> specializations = specializationArray.ToObject<List<WordBySpecialization>>();
 
                         dtgvTuVung.DataSource = specializations;
@@ -128,9 +128,9 @@ namespace DictionaryAppForIT.UserControls.Home
                         string jsonString = await response.Content.ReadAsStringAsync();
                         JObject jsonObject = JObject.Parse(jsonString);
 
-                        if (jsonObject.ContainsKey("word_by_specialty"))
+                        if (jsonObject.ContainsKey("data"))
                         {
-                            JArray specializationArray = (JArray)jsonObject["word_by_specialty"];
+                            JArray specializationArray = (JArray)jsonObject["data"];
                             List<WordBySpecialization> specializations = specializationArray.ToObject<List<WordBySpecialization>>();
 
                             dtgvTuVung.DataSource = specializations;

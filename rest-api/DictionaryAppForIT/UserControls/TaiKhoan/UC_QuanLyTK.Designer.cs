@@ -1199,7 +1199,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.btnChangePass.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnChangePass.IdleIconLeftImage")));
             this.btnChangePass.IdleIconRightImage = null;
             this.btnChangePass.IndicateFocus = false;
-            this.btnChangePass.Location = new System.Drawing.Point(496, 306);
+            this.btnChangePass.Location = new System.Drawing.Point(491, 305);
             this.btnChangePass.Name = "btnChangePass";
             this.btnChangePass.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnChangePass.OnDisabledState.BorderRadius = 15;

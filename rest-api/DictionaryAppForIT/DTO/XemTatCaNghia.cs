@@ -24,11 +24,12 @@ namespace DictionaryAppForIT.DTO
                 HttpResponseMessage response = await client.GetAsync(apiUrl + "search-word?keyword=" + tenTu);
                 string json = await response.Content.ReadAsStringAsync();
                 dynamic data = JsonConvert.DeserializeObject(json);
-                if (response.IsSuccessStatusCode)
+
+                if (response.IsSuccessStatusCode && data.status == true)
                 {
                     _listTu.Clear();
 
-                    foreach (var word in data.word)
+                    foreach (var word in data.data)
                     {
                         Tu tu = new Tu();
                         tu.TenTu = word.word_name;
@@ -47,10 +48,9 @@ namespace DictionaryAppForIT.DTO
                 }
                 else
                 {
-                    if (data.error != null)
+                    if (data.message != null)
                     {
-                        var errorMessage = data.error;
-                        RJMessageBox.Show(errorMessage.ToString());
+                        RJMessageBox.Show(data.message.ToString());
                     }
                     return false;
                 }
@@ -70,9 +70,9 @@ namespace DictionaryAppForIT.DTO
                 string json = await response.Content.ReadAsStringAsync();
                 dynamic data = JsonConvert.DeserializeObject(json);
 
-                if (response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode && data.status == true)
                 {
-                    var word = data.randomWord;
+                    dynamic word = data.data;
                     Tu tu = new Tu();
                     tu.TenTu = word.word_name;
                     tu.TenLoai = word.type_name;

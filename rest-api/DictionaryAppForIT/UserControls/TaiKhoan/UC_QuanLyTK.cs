@@ -164,8 +164,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 RJMessageBox.Show(ex.Message);
             }
         }
-
-
+        #region Event sửa tên đăng nhập, sửa email
         private void btnSuaEmail_Click(object sender, EventArgs e)
         {
             if (btnSuaEmail.Checked)
@@ -185,7 +184,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             }
 
         }
-
         private void btnSuaTenDangNhap_Click(object sender, EventArgs e)
         {
             if (btnSuaTenDangNhap.Checked)
@@ -205,6 +203,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             }
 
         }
+        #endregion
         private void UC_QuanLyTK_Load(object sender, EventArgs e)
         {
             ThoiGianTaoTaiKhoan();
@@ -217,42 +216,52 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-user/{Class_TaiKhoan.IdTaiKhoan}");
 
-                string responseContent = await response.Content.ReadAsStringAsync();
-                dynamic data = JsonConvert.DeserializeObject(responseContent);
-
                 if (response.IsSuccessStatusCode)
                 {
-                    txtUsername.Text = data.user.name.ToString();
-                    txtEmail.Text = data.user.email.ToString();
-                    int gioiTinh = Convert.ToInt32(data.user.gender);
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    dynamic data = JsonConvert.DeserializeObject(responseContent);
 
-                    if (gioiTinh == 1)
+                    if (data.status == true)
                     {
-                        rdNam.Checked = true;
-                        rdNu.Checked = false;
-                        rdKhac.Checked = false;
+                        dynamic user = data.data;
+
+                        txtUsername.Text = user.name.ToString();
+                        txtEmail.Text = user.email.ToString();
+
+                        int gioiTinh = Convert.ToInt32(user.gender);
+
+                        if (gioiTinh == 1)
+                        {
+                            rdNam.Checked = true;
+                            rdNu.Checked = false;
+                            rdKhac.Checked = false;
+                        }
+                        else if (gioiTinh == 2)
+                        {
+                            rdNu.Checked = true;
+                            rdNam.Checked = false;
+                            rdKhac.Checked = false;
+                        }
+                        else if (gioiTinh == 3)
+                        {
+                            rdKhac.Checked = true;
+                            rdNam.Checked = false;
+                            rdNu.Checked = false;
+                        }
                     }
-                    if (gioiTinh == 2)
+                    else
                     {
-                        rdNu.Checked = true;
-                        rdNam.Checked = false;
-                        rdKhac.Checked = false;
-                    }
-                    if (gioiTinh == 3)
-                    {
-                        rdKhac.Checked = true;
-                        rdNam.Checked = false;
-                        rdNu.Checked = false;
+                        RJMessageBox.Show("Không tìm thấy người dùng!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    RJMessageBox.Show("Không tìm thấy người dùng!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    RJMessageBox.Show("Lỗi rồi! Mã lỗi >> " + response.StatusCode, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                RJMessageBox.Show(ex.Message);
+                RJMessageBox.Show(ex.Message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

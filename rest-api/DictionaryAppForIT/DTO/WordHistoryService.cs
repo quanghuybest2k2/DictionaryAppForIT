@@ -16,24 +16,31 @@ namespace DictionaryAppForIT.DTO
 
         public WordHistoryService()
         {
-            
+
         }
-        public static async Task<List<WordLookupHistory>> LoadWordLookupHistory ()
+        public static async Task<List<WordLookupHistory>> LoadWordLookupHistory()
         {
-            HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-word-lookup-history/{Class_TaiKhoan.IdTaiKhoan}");
-            if (response.IsSuccessStatusCode)
+            try
             {
-                string jsonResponse = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-word-lookup-history/{Class_TaiKhoan.IdTaiKhoan}");
 
-                var wordHistoryList = result.WordLookupHistory.ToObject<List<WordLookupHistory>>();
-
-                return wordHistoryList;
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
+                    var historyData = result["data"].ToObject<List<WordLookupHistory>>();
+                    return historyData;
+                }
+                else
+                {
+                    return null;
+                }
             }
-            else
+            catch (Exception ex)
             {
                 return null;
             }
         }
+
     }
 }
