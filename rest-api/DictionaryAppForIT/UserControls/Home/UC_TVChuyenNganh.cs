@@ -159,31 +159,46 @@ namespace DictionaryAppForIT.UserControls.Home
                 if (isComboboxLoaded && cbbChuyenNganh.SelectedValue != null)
                 {
                     HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-suggest?specialization_id={cbbChuyenNganh.SelectedValue}");
+                    response.EnsureSuccessStatusCode(); // Đảm bảo request thành công
+
                     string json = await response.Content.ReadAsStringAsync();
 
                     // Phân tích cú pháp JSON để lấy danh sách từ gợi ý
                     JObject data = JObject.Parse(json);
-                    JArray suggestNames = (JArray)data["suggest_name"];
+                    bool status = (bool)data["status"];
 
-                    // Tạo một AutoCompleteStringCollection và thêm các từ gợi ý vào đó
-                    AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-                    foreach (string suggestName in suggestNames)
+                    if (status) // Kiểm tra trạng thái của API
                     {
-                        autoComplete.Add(suggestName);
-                    }
+                        JArray suggestNames = (JArray)data["data"];
 
-                    // Cài đặt thuộc tính AutoComplete của TextBox
-                    txtTimTheoChuyenNganh.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                    txtTimTheoChuyenNganh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                    txtTimTheoChuyenNganh.AutoCompleteCustomSource = autoComplete;
+                        // Tạo một AutoCompleteStringCollection và thêm các từ gợi ý vào đó
+                        AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+                        foreach (string suggestName in suggestNames)
+                        {
+                            autoComplete.Add(suggestName);
+                        }
+
+                        // Cài đặt thuộc tính AutoComplete của TextBox
+                        txtTimTheoChuyenNganh.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                        txtTimTheoChuyenNganh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                        txtTimTheoChuyenNganh.AutoCompleteCustomSource = autoComplete;
+                    }
+                    else
+                    {
+                        string message = (string)data["message"];
+                        RJMessageBox.Show(message); // Hiển thị thông báo nếu API trả về lỗi
+                    }
                 }
+            }
+            catch (HttpRequestException ex)
+            {
+                RJMessageBox.Show($"Lỗi khi gửi yêu cầu tới API: {ex.Message}");
             }
             catch (Exception ex)
             {
-                RJMessageBox.Show(ex.Message);
+                RJMessageBox.Show($"Lỗi: {ex.Message}");
             }
         }
-
         private async void txtTimTheoChuyenNganh_TextChanged(object sender, EventArgs e)
         {
             if (txtTimTheoChuyenNganh.Text == "")
