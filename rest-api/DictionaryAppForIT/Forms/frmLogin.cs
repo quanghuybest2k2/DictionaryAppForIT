@@ -1,7 +1,9 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DTO;
+using DictionaryAppForIT.DTO.Account;
 using DictionaryAppForIT.Forms;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -43,6 +45,7 @@ namespace DictionaryAppForIT
         }
         #endregion
 
+        #region xử lý con mắt ở mật khẩu
         private void btnEyesOpen_Click(object sender, EventArgs e)
         {
             if (txtMatKhauDN.PasswordChar == '\0')
@@ -60,6 +63,8 @@ namespace DictionaryAppForIT
                 txtMatKhauDN.PasswordChar = '\0';
             }
         }
+        #endregion
+
         private void LuuMatKhau()
         {
             if (cbLuuDangNhap.Checked == true)
@@ -76,6 +81,7 @@ namespace DictionaryAppForIT
             }
         }
 
+        #region Xử lý đăng nhập
         private async Task Login(string email, string password)
         {
             var formContent = new FormUrlEncodedContent(new[]
@@ -86,10 +92,11 @@ namespace DictionaryAppForIT
 
             var response = await client.PostAsync(apiUrl, formContent);
             var responseContent = await response.Content.ReadAsStringAsync();
+            var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoginResponse>>(responseContent);
 
             if (response.IsSuccessStatusCode)
             {
-                var loginResponse = Newtonsoft.Json.JsonConvert.DeserializeObject<LoginResponse>(responseContent);
+                var loginResponse = apiResponse.Data;
 
                 Class_TaiKhoan.displayUsername = loginResponse.Username;
                 Class_TaiKhoan.Token = loginResponse.Token;
@@ -152,6 +159,9 @@ namespace DictionaryAppForIT
             }
             LuuMatKhau();
         }
+
+        #endregion
+
         private void lblDangKyNgay_Click(object sender, EventArgs e)
         {
             this.Hide();

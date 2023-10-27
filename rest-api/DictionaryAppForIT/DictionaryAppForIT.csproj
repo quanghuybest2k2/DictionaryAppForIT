@@ -227,9 +227,12 @@
       <DependentUpon>UC_TT_Hang4.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\DataProvider.cs" />
+    <Compile Include="DTO\Account\AccountResponse.cs" />
+    <Compile Include="DTO\Account\LoginResponse.cs" />
+    <Compile Include="DTO\ApiResponse.cs" />
     <Compile Include="DTO\CheckIfExist.cs" />
     <Compile Include="DTO\Class_TaiKhoan.cs" />
-    <Compile Include="DTO\LoginResponse.cs" />
+    <Compile Include="DTO\Home\SuggestAllResponse.cs" />
     <Compile Include="DTO\LoveVocabulary.cs" />
     <Compile Include="DTO\Specialization.cs" />
     <Compile Include="DTO\TranslateHistory.cs" />

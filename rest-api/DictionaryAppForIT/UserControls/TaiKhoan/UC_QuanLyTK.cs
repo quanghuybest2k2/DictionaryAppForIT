@@ -1,6 +1,7 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DTO;
+using DictionaryAppForIT.DTO.Account;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -216,48 +217,42 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-user/{Class_TaiKhoan.IdTaiKhoan}");
 
-                if (response.IsSuccessStatusCode)
+                string responseContent = await response.Content.ReadAsStringAsync();
+                var data = JsonConvert.DeserializeObject<ApiResponse<AccountResponse>>(responseContent);
+
+                if (data.Status == true)
                 {
-                    string responseContent = await response.Content.ReadAsStringAsync();
-                    dynamic data = JsonConvert.DeserializeObject(responseContent);
+                    var user = data.Data;
 
-                    if (data.status == true)
+                    txtUsername.Text = user.name.ToString();
+                    txtEmail.Text = user.email.ToString();
+
+                    int gioiTinh = Convert.ToInt32(user.gender);
+
+                    if (gioiTinh == 1)
                     {
-                        dynamic user = data.data;
-
-                        txtUsername.Text = user.name.ToString();
-                        txtEmail.Text = user.email.ToString();
-
-                        int gioiTinh = Convert.ToInt32(user.gender);
-
-                        if (gioiTinh == 1)
-                        {
-                            rdNam.Checked = true;
-                            rdNu.Checked = false;
-                            rdKhac.Checked = false;
-                        }
-                        else if (gioiTinh == 2)
-                        {
-                            rdNu.Checked = true;
-                            rdNam.Checked = false;
-                            rdKhac.Checked = false;
-                        }
-                        else if (gioiTinh == 3)
-                        {
-                            rdKhac.Checked = true;
-                            rdNam.Checked = false;
-                            rdNu.Checked = false;
-                        }
+                        rdNam.Checked = true;
+                        rdNu.Checked = false;
+                        rdKhac.Checked = false;
                     }
-                    else
+                    else if (gioiTinh == 2)
                     {
-                        RJMessageBox.Show("Không tìm thấy người dùng!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        rdNu.Checked = true;
+                        rdNam.Checked = false;
+                        rdKhac.Checked = false;
+                    }
+                    else if (gioiTinh == 3)
+                    {
+                        rdKhac.Checked = true;
+                        rdNam.Checked = false;
+                        rdNu.Checked = false;
                     }
                 }
                 else
                 {
-                    RJMessageBox.Show("Lỗi rồi! Mã lỗi >> " + response.StatusCode, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    RJMessageBox.Show("Không tìm thấy người dùng!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
             }
             catch (Exception ex)
             {
