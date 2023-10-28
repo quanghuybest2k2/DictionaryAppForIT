@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace DictionaryAppForIT.DTO
+﻿namespace DictionaryAppForIT.DTO
 {
     public class ApiResponse<T>
     {

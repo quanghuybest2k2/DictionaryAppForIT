@@ -1,6 +1,8 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DTO;
+using DictionaryAppForIT.DTO.Home;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -161,21 +163,18 @@ namespace DictionaryAppForIT.UserControls.Home
                     HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-suggest?specialization_id={cbbChuyenNganh.SelectedValue}");
                     response.EnsureSuccessStatusCode(); // Đảm bảo request thành công
 
-                    string json = await response.Content.ReadAsStringAsync();
+                    string responseContent = await response.Content.ReadAsStringAsync();
 
-                    // Phân tích cú pháp JSON để lấy danh sách từ gợi ý
-                    JObject data = JObject.Parse(json);
-                    bool status = (bool)data["status"];
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<SuggestAllResponse[]>>(responseContent);
 
-                    if (status) // Kiểm tra trạng thái của API
+                    if (apiResponse.Status && apiResponse.Data != null) // Kiểm tra trạng thái của API
                     {
-                        JArray suggestNames = (JArray)data["data"];
 
                         // Tạo một AutoCompleteStringCollection và thêm các từ gợi ý vào đó
                         AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-                        foreach (string suggestName in suggestNames)
+                        foreach (var word in apiResponse.Data)
                         {
-                            autoComplete.Add(suggestName);
+                            autoComplete.Add(word.word_name);
                         }
 
                         // Cài đặt thuộc tính AutoComplete của TextBox
@@ -185,14 +184,10 @@ namespace DictionaryAppForIT.UserControls.Home
                     }
                     else
                     {
-                        string message = (string)data["message"];
+                        string message = apiResponse.Message;
                         RJMessageBox.Show(message); // Hiển thị thông báo nếu API trả về lỗi
                     }
                 }
-            }
-            catch (HttpRequestException ex)
-            {
-                RJMessageBox.Show($"Lỗi khi gửi yêu cầu tới API: {ex.Message}");
             }
             catch (Exception ex)
             {

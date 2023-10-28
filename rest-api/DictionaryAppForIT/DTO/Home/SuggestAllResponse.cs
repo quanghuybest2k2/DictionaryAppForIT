@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
-
-namespace DictionaryAppForIT.DTO.Home
+﻿namespace DictionaryAppForIT.DTO.Home
 {
-    public class SuggestAllResponse
+    public class SuggestAllResponse : BaseResponse
     {
-        public List<string> Words { get; set; }
+        public string word_name { get; set; }
+        public string pronunciations { get; set; }
+        public int specialization_id { get; set; }
+        public string synonymous { get; set; }
+        public string antonyms { get; set; }
     }
 }

@@ -1,5 +1,8 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
+using DictionaryAppForIT.DTO.History;
+using DictionaryAppForIT.DTO.Home;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
@@ -21,39 +24,32 @@ namespace DictionaryAppForIT.DTO
             try
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"check-if-exist?english={word}&user_id={Class_TaiKhoan.IdTaiKhoan}");
+                response.EnsureSuccessStatusCode();
 
-                if (response.IsSuccessStatusCode)
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<CheckResponse>>(responseContent);
+
+                if (apiResponse.Status)
                 {
-                    var result = await response.Content.ReadAsStringAsync();
-                    var responseData = JObject.Parse(result);
-                    var status = responseData["status"].ToObject<bool>();
-
-                    if (status)
+                    switch (type)
                     {
-                        switch (type)
-                        {
-                            case "word":
-                                var wordExist = responseData["data"]["word"].ToObject<int>();
-                                return wordExist > 0;
+                        case "word":
+                            var wordExist = apiResponse.Data.word;
+                            return wordExist > 0;
 
-                            case "loveText":
-                                var translateExist = responseData["data"]["loveText"].ToObject<int>();
-                                return translateExist > 0;
+                        case "loveText":
+                            var translateExist = apiResponse.Data.loveText;
+                            return translateExist > 0;
 
-                            default:
-                                return false;
-                        }
-                    }
-                    else
-                    {
-                        // Xử lý trường hợp status là false nếu cần thiết
-                        RJMessageBox.Show(responseData["message"].ToString());
-                        return false;
+                        default:
+                            return false;
                     }
                 }
                 else
                 {
-                    RJMessageBox.Show("Đã có lỗi xảy ra khi kết nối với API!");
+                    string message = apiResponse.Message;
+                    RJMessageBox.Show(message);
                     return false;
                 }
             }

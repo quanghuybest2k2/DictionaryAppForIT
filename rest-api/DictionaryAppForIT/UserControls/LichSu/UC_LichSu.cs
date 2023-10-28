@@ -47,9 +47,9 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 {
                     foreach (var history in await wordLookUpList)
                     {
-                        idHienTai = history.Id.ToString();
-                        string NgayThang = DateTime.Parse(history.Created_At).ToLocalTime().ToString("dd/MM/yyyy");
-                        string ThoiGian = DateTime.Parse(history.Created_At).ToLocalTime().ToString("HH:mm:ss");
+                        idHienTai = history.id.ToString();
+                        string NgayThang = DateTime.Parse(history.created_at).ToLocalTime().ToString("dd/MM/yyyy");
+                        string ThoiGian = DateTime.Parse(history.created_at).ToLocalTime().ToString("HH:mm:ss");
                         string TVTiengAnh = history.English;
                         string TVPhienAm = history.Pronunciation;
                         string TVTiengViet = history.Vietnamese;

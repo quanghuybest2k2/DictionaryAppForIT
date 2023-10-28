@@ -230,8 +230,10 @@
     <Compile Include="DTO\Account\AccountResponse.cs" />
     <Compile Include="DTO\Account\LoginResponse.cs" />
     <Compile Include="DTO\ApiResponse.cs" />
+    <Compile Include="DTO\BaseResponse.cs" />
     <Compile Include="DTO\CheckIfExist.cs" />
     <Compile Include="DTO\Class_TaiKhoan.cs" />
+    <Compile Include="DTO\History\CheckResponse.cs" />
     <Compile Include="DTO\Home\SuggestAllResponse.cs" />
     <Compile Include="DTO\LoveVocabulary.cs" />
     <Compile Include="DTO\Specialization.cs" />

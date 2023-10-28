@@ -1,5 +1,6 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
+using DictionaryAppForIT.DTO.History;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -24,21 +25,27 @@ namespace DictionaryAppForIT.DTO
             try
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-word-lookup-history/{Class_TaiKhoan.IdTaiKhoan}");
+                response.EnsureSuccessStatusCode();
 
-                if (response.IsSuccessStatusCode)
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<List<WordLookupHistory>>>(responseContent);
+
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
-                    string jsonResponse = await response.Content.ReadAsStringAsync();
-                    var result = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
-                    var historyData = result["data"].ToObject<List<WordLookupHistory>>();
+                    var historyData = apiResponse.Data;
                     return historyData;
                 }
                 else
                 {
+                    RJMessageBox.Show(apiResponse.Message);
                     return null;
                 }
             }
             catch (Exception ex)
             {
+                RJMessageBox.Show(ex.Message);
                 return null;
             }
         }

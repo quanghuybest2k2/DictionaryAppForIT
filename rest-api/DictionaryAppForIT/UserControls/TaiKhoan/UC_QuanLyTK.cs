@@ -220,7 +220,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 string responseContent = await response.Content.ReadAsStringAsync();
                 var data = JsonConvert.DeserializeObject<ApiResponse<AccountResponse>>(responseContent);
 
-                if (data.Status == true)
+                if (data.Status == true && data.Data != null)
                 {
                     var user = data.Data;
 
