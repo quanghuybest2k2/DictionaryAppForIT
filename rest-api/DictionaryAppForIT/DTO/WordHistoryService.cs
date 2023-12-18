@@ -1,13 +1,12 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
-using DictionaryAppForIT.DTO.History;
+using DictionaryAppForIT.UserControls.LichSu;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DictionaryAppForIT.DTO
 {
@@ -49,6 +48,55 @@ namespace DictionaryAppForIT.DTO
                 return null;
             }
         }
+        public static async Task XoaLichSuTuVungAsync(UC_LS_TuVung item)
+        {
+            try
+            {
+                HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-by-id-word-lookup-history/{Class_TaiKhoan.IdTaiKhoan}/{item.Index}");
 
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
+                {
+                    RJMessageBox.Show(apiResponse.Message);
+                }
+                else
+                {
+                    string message = apiResponse.Message;
+                    RJMessageBox.Show(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show($"Lỗi: {ex.Message}");
+            }
+        }
+        public static async Task XoaLichSuVanBanAsync(UC_LS_VanBan item)
+        {
+            try
+            {
+                HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-translate-by-id/{Class_TaiKhoan.IdTaiKhoan}/{item.Index}");
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
+                {
+                    RJMessageBox.Show(apiResponse.Message);
+                }
+                else
+                {
+                    string message = apiResponse.Message;
+                    RJMessageBox.Show(message);
+                }
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show($"Lỗi: {ex.Message}");
+            }
+        }
     }
 }

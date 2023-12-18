@@ -1,6 +1,7 @@
 ﻿using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.LichSu
@@ -12,7 +13,7 @@ namespace DictionaryAppForIT.UserControls.LichSu
             InitializeComponent();
         }
 
-        public UC_LS_VanBan(string index, string thoiGian, string ngayThang, string tiengAnh, string tiengViet)
+        public UC_LS_VanBan(string index = null, string thoiGian = null, string ngayThang = null, string tiengAnh = null, string tiengViet = null)
         {
             InitializeComponent();
             this.Index = index;
@@ -65,16 +66,11 @@ namespace DictionaryAppForIT.UserControls.LichSu
             //this.lblNgayThang.Text = this.Name;
         }
 
-        private void btnXoaLSVanBan_Click(object sender, EventArgs e)
+        private async void btnXoaLSVanBan_Click(object sender, EventArgs e)
         {
             this.Name = "Check";
             this.Visible = false;
-            int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuDich where id = '{this.Index}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-            //if (num > 0)
-            //{
-            //    RJMessageBox.Show("Xóa thành công!");
-            //}
-            //else { RJMessageBox.Show("Xóa không thành công!"); }
+            await WordHistoryService.XoaLichSuVanBanAsync(this);
         }
     }
 }

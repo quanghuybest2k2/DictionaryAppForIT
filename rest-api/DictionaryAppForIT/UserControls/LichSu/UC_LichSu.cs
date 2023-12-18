@@ -1,27 +1,30 @@
-﻿using DictionaryAppForIT.Class;
-using DictionaryAppForIT.DAL;
+﻿using DictionaryAppForIT.API;
+using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DTO;
 using DictionaryAppForIT.UserControls.LichSu;
 using Guna.UI2.WinForms;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Http;
 using System.Speech.Synthesis;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.GanDay
 {
     public partial class UC_LichSu : UserControl
     {
+        private readonly string apiUrl = BaseUrl.base_url;
+        HttpClient client = new HttpClient();
+
         UC_LS_TuVung ucLSTuVung;
         UC_LS_VanBan ucLSVanBan;
         SpeechSynthesizer speech;
         public static string idHienTai;
         public string TuHienTai = "";
-        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         List<UC_LS_TuVung> _listUCLSTV;
         List<UC_LS_VanBan> _listUCLSVB;
 
@@ -33,6 +36,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
             speech = new SpeechSynthesizer();
             _listUCLSTV = new List<UC_LS_TuVung>();
             _listUCLSVB = new List<UC_LS_VanBan>();
+
         }
 
         public async void HienThiLSTraTu()
@@ -62,7 +66,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 }
                 else
                 {
-                    ucLSTuVung = new UC_LS_TuVung(null, null, null, null, null, null);
+                    ucLSTuVung = new UC_LS_TuVung();
                 }
             }
             catch (Exception ex)
@@ -96,7 +100,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 }
                 else
                 {
-                    ucLSVanBan = new UC_LS_VanBan(null, null, null, null, null);
+                    ucLSVanBan = new UC_LS_VanBan();
                 }
             }
             catch (Exception ex)
@@ -104,8 +108,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 RJMessageBox.Show(ex.Message);
             }
         }
-
-        private void XoaUCLSTuVung()
+        private async Task XoaUCLSTuVungAsync()
         {
             foreach (var item in _listUCLSTV)
             {
@@ -113,13 +116,13 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 {
                     xoaTatCa = false;
                     flpContent.Controls.Remove(item);
-                    DataProvider.Instance.ExecuteNonQuery($"delete from LichSuTraTu where id = '{item.Index}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
+                   await WordHistoryService.XoaLichSuTuVungAsync(item);
                 }
             }
             _listUCLSTV.RemoveAll(x => x.Name == "Check");
         }
 
-        private void XoaUCLSVanBan()
+        private async Task XoaUCLSVanBanAsync()
         {
             foreach (var item in _listUCLSVB)
             {
@@ -127,112 +130,161 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 {
                     xoaTatCa = false;
                     flpContent.Controls.Remove(item);
-                    DataProvider.Instance.ExecuteNonQuery($"delete from LichSuDich where id = '{item.Index}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
+                   await WordHistoryService.XoaLichSuVanBanAsync(item);
                 }
             }
             _listUCLSVB.RemoveAll(x => x.Name == "Check");
         }
-
-        private void btnXoaDuLieu_Click(object sender, EventArgs e)
+        private async void btnXoaDuLieu_Click(object sender, EventArgs e)
         {
             xoaTatCa = true;
-            XoaUCLSTuVung();
-            XoaUCLSVanBan();
+            await XoaUCLSTuVungAsync();
+            await XoaUCLSVanBanAsync();
 
             if (xoaTatCa)
             {
 
                 flpContent.Controls.Clear();
-                int num = DataProvider.Instance.ExecuteNonQuery($"delete from LichSuTraTu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' " +
-                  $"delete from LichSuDich where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-                if (num > 0)
+                try
                 {
-                    RJMessageBox.Show("Đã xóa tất cả lịch sử!", "Thông báo",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                    HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-all-history/{Class_TaiKhoan.IdTaiKhoan}");
+
+                    string responseContent = await response.Content.ReadAsStringAsync();
+
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        RJMessageBox.Show(apiResponse.Message, "Thông báo",
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        string message = apiResponse.Message;
+                        RJMessageBox.Show(message, "Thông báo",
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Warning);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    RJMessageBox.Show("Xóa không thành công!", "Thông báo",
-                     MessageBoxButtons.OK,
-                     MessageBoxIcon.Error);
+                    RJMessageBox.Show($"Lỗi: {ex.Message}", "Lỗi",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 }
                 _listUCLSTV.Clear();
             }
         }
 
-        private void txtTimKiemLS_KeyDown(object sender, KeyEventArgs e)
+        private async void txtTimKiemLS_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && TuHienTai != txtTimKiemLS.Text)//--------------------------------------
             {
                 flpContent.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
-                HienThiTimKiemLSTT();
-                HienThiTimKiemLSD();
+                await HienThiTimKiemLSTTAsync();
+                await HienThiTimKiemLSDAsync();
                 TuHienTai = txtTimKiemLS.Text;//--------------------------------------
 
             }
         }
-        private void HienThiTimKiemLSTT()
+        private async Task<List<WordLookupHistory>> HienThiTimKiemLSTTAsync()
         {
             try
             {
-                SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC HienThiTimKiemLSTT '{txtTimKiemLS.Text.Trim()}', '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
-                Conn.Open();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"search-word-lookup-history?english={txtTimKiemLS.Text.Trim()}&user_id={Class_TaiKhoan.IdTaiKhoan}");
+                response.EnsureSuccessStatusCode();
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<List<WordLookupHistory>>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
-                    idHienTai = rdr["ID"].ToString();
-                    string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
-                    string ThoiGian = arrThoiGian[1] + " " + arrThoiGian[2];
-                    string NgayThang = arrThoiGian[0];
-                    string TVTiengAnh = rdr["TiengAnh"].ToString();
-                    string TVPhienAm = rdr["PhienAm"].ToString();
-                    string TVTiengViet = rdr["TiengViet"].ToString();
-                    ucLSTuVung = new UC_LS_TuVung(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVPhienAm, TVTiengViet);
+                    var historyData = apiResponse.Data;
 
-                    flpContent.Controls.Add(ucLSTuVung);
-                    _listUCLSTV.Add(ucLSTuVung);
-                    ucLSTuVung.Name = "unCheck";
+                    foreach (var historyItem in historyData)
+                    {
+                        idHienTai = historyItem.id.ToString();
+
+                        DateTime createdAtDateTime = DateTime.Parse(historyItem.created_at);
+                        string ngay = createdAtDateTime.ToString("dd/MM/yyyy");
+                        string gio = createdAtDateTime.ToString("HH:mm tt");
+
+                        string NgayThang = ngay;
+                        string ThoiGian = gio;
+                        string TVTiengAnh = historyItem.English;
+                        string TVPhienAm = historyItem.Pronunciation;
+                        string TVTiengViet = historyItem.Vietnamese;
+
+                        ucLSTuVung = new UC_LS_TuVung(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVPhienAm, TVTiengViet);
+
+                        flpContent.Controls.Add(ucLSTuVung);
+                        _listUCLSTV.Add(ucLSTuVung);
+                        ucLSTuVung.Name = "unCheck";
+                    }
+                    return historyData;
                 }
-                Conn.Close();
-                Conn.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void HienThiTimKiemLSD()
-        {
-            try
-            {
-                SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC HienThiTimKiemLSD '{txtTimKiemLS.Text.Trim()}', '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
-                Conn.Open();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
+                else
                 {
-                    idHienTai = rdr["ID"].ToString();
-                    string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
-                    string ThoiGian = arrThoiGian[1] + " " + arrThoiGian[2];
-                    string NgayThang = arrThoiGian[0];
-
-                    string TVTiengAnh = rdr["TiengAnh"].ToString();
-                    string TVTiengViet = rdr["TiengViet"].ToString();
-                    ucLSVanBan = new UC_LS_VanBan(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVTiengViet);
-                    flpContent.Controls.Add(ucLSVanBan);
-
-                    _listUCLSVB.Add(ucLSVanBan);
-                    ucLSVanBan.Name = "unCheck";
+                    RJMessageBox.Show(apiResponse.Message);
+                    return null;
                 }
-                Conn.Close();
-                Conn.Dispose();
             }
             catch (Exception ex)
             {
                 RJMessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
+        private async Task<List<WordLookupHistory>> HienThiTimKiemLSDAsync()
+        {
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"search-translate-history?english={txtTimKiemLS.Text.Trim()}&user_id={Class_TaiKhoan.IdTaiKhoan}");
+                response.EnsureSuccessStatusCode();
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<List<WordLookupHistory>>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
+                {
+                    var historyData = apiResponse.Data;
+
+                    foreach (var historyItem in historyData)
+                    {
+                        idHienTai = historyItem.id.ToString();
+
+                        DateTime createdAtDateTime = DateTime.Parse(historyItem.created_at);
+                        string ngay = createdAtDateTime.ToString("dd/MM/yyyy");
+                        string gio = createdAtDateTime.ToString("HH:mm tt");
+
+                        string NgayThang = ngay;
+                        string ThoiGian = gio;
+                        string TVTiengAnh = historyItem.English;
+                        string TVPhienAm = historyItem.Pronunciation;
+                        string TVTiengViet = historyItem.Vietnamese;
+
+                        ucLSVanBan = new UC_LS_VanBan(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVTiengViet);
+                        flpContent.Controls.Add(ucLSVanBan);
+
+                        _listUCLSVB.Add(ucLSVanBan);
+                        ucLSVanBan.Name = "unCheck";
+                    }
+                    return historyData;
+                }
+                else
+                {
+                    RJMessageBox.Show(apiResponse.Message);
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show(ex.Message);
+                return null;
             }
         }
 
@@ -240,77 +292,103 @@ namespace DictionaryAppForIT.UserControls.GanDay
         {
 
         }
-
-        public void HienThiLSDichTheoThoiGian(string thoiGian)
+        public async Task<List<WordLookupHistory>> HienThiLSTraTuTheoThoiGianAsync(string thoiGian)
         {
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from LichSuDich where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-            if (Convert.ToInt32(num) > 0)
+            try
             {
-                try
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"display-by-time-word-lookup-history?user_id={Class_TaiKhoan.IdTaiKhoan}&time={thoiGian}");
+                response.EnsureSuccessStatusCode();
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<List<WordLookupHistory>>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
-                    SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"select * from LichSuDich where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'  and NgayHienTai like '%{thoiGian}%'", Conn);
-                    Conn.Open();
-                    SqlDataReader rdr = cmd.ExecuteReader();
-                    while (rdr.Read())
+                    var historyData = apiResponse.Data;
+
+                    foreach (var historyItem in historyData)
                     {
-                        idHienTai = rdr["ID"].ToString();
-                        string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
-                        string ThoiGian = arrThoiGian[1] + " " + arrThoiGian[2];
-                        string NgayThang = arrThoiGian[0];
-                        string TVTiengAnh = rdr["TiengAnh"].ToString();
-                        string TVTiengViet = rdr["TiengViet"].ToString();
-                        ucLSVanBan = new UC_LS_VanBan(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVTiengViet);
-                        flpContent.Controls.Add(ucLSVanBan);
-                        _listUCLSVB.Add(ucLSVanBan);
-                        ucLSVanBan.Name = "unCheck";
-                    }
-                    Conn.Close();
-                    Conn.Dispose();
+                        idHienTai = historyItem.id.ToString();
 
-                }
-                catch (Exception ex)
-                {
-                    RJMessageBox.Show(ex.Message);
-                }
-            }
-        }
+                        DateTime createdAtDateTime = DateTime.Parse(historyItem.created_at);
+                        string ngay = createdAtDateTime.ToString("dd/MM/yyyy");
+                        string gio = createdAtDateTime.ToString("HH:mm tt");
 
+                        string NgayThang = ngay;
+                        string ThoiGian = gio;
+                        string TVTiengAnh = historyItem.English;
+                        string TVPhienAm = historyItem.Pronunciation;
+                        string TVTiengViet = historyItem.Vietnamese;
 
-        public void HienThiLSTraTuTheoThoiGian(string thoiGian)
-        {
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from LichSuTraTu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-            if (Convert.ToInt32(num) > 0)
-            {
-                try
-                {
-                    SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"select * from LichSuTraTu where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'  and NgayHienTai like '%{thoiGian}%'", Conn);
-                    Conn.Open();
-                    SqlDataReader rdr = cmd.ExecuteReader();
-                    while (rdr.Read())
-                    {
-                        idHienTai = rdr["ID"].ToString();
-                        string[] arrThoiGian = rdr["NgayHienTai"].ToString().Trim().Split(' ');
-                        string ThoiGian = arrThoiGian[1] + " " + arrThoiGian[2];
-                        string NgayThang = arrThoiGian[0];
-                        string TVTiengAnh = rdr["TiengAnh"].ToString();
-                        string TVPhienAm = rdr["PhienAm"].ToString();
-                        string TVTiengViet = rdr["TiengViet"].ToString();
                         ucLSTuVung = new UC_LS_TuVung(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVPhienAm, TVTiengViet);
 
                         flpContent.Controls.Add(ucLSTuVung);
                         _listUCLSTV.Add(ucLSTuVung);
                         ucLSTuVung.Name = "unCheck";
                     }
-
-                    Conn.Close();
-                    Conn.Dispose();
+                    return historyData;
                 }
-                catch (Exception ex)
+                else
                 {
-                    RJMessageBox.Show(ex.Message);
+                    RJMessageBox.Show(apiResponse.Message);
+                    return null;
                 }
+
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+        public async Task<List<WordLookupHistory>> HienThiLSDichTheoThoiGianAsync(string thoiGian)
+        {
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"display-by-time-translate-history?user_id={Class_TaiKhoan.IdTaiKhoan}&time={thoiGian}");
+                response.EnsureSuccessStatusCode();
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<List<WordLookupHistory>>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
+                {
+                    var historyData = apiResponse.Data;
+
+                    foreach (var historyItem in historyData)
+                    {
+                        idHienTai = historyItem.id.ToString();
+
+                        DateTime createdAtDateTime = DateTime.Parse(historyItem.created_at);
+                        string ngay = createdAtDateTime.ToString("dd/MM/yyyy");
+                        string gio = createdAtDateTime.ToString("HH:mm tt");
+
+                        string NgayThang = ngay;
+                        string ThoiGian = gio;
+                        string TVTiengAnh = historyItem.English;
+                        string TVPhienAm = historyItem.Pronunciation;
+                        string TVTiengViet = historyItem.Vietnamese;
+
+                        ucLSVanBan = new UC_LS_VanBan(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVTiengViet);
+                        flpContent.Controls.Add(ucLSVanBan);
+
+                        _listUCLSVB.Add(ucLSVanBan);
+                        ucLSVanBan.Name = "unCheck";
+                    }
+                    return historyData;
+                }
+                else
+                {
+                    RJMessageBox.Show(apiResponse.Message);
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show(ex.Message);
+                return null;
             }
         }
         private void btnTatCa_Click(object sender, EventArgs e)
@@ -319,7 +397,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
             HienThiLSDich();
         }
 
-        private void btnThoiGian_Click(object sender, EventArgs e)
+        private async void btnThoiGian_Click(object sender, EventArgs e)
         {
             DateTime today = DateTime.Today;
             int currentDayOfWeek = (int)today.DayOfWeek;
@@ -332,51 +410,49 @@ namespace DictionaryAppForIT.UserControls.GanDay
             }
             var dates = Enumerable.Range(0, 7).Select(days => monday.AddDays(days)).ToList();
 
-
-
             string loai = (sender as Guna2Button).Name;
             switch (loai)
             {
                 case "btnHomNay":
                     _listUCLSTV.Clear();
                     flpContent.Controls.Clear();
-                    HienThiLSTraTuTheoThoiGian(DateTime.Today.ToString("dd/MM/yyyy"));
-                    HienThiLSDichTheoThoiGian(DateTime.Today.ToString("dd/MM/yyyy"));
+                    await HienThiLSTraTuTheoThoiGianAsync(DateTime.Today.ToString("dd/MM/yyyy"));
+                    await HienThiLSDichTheoThoiGianAsync(DateTime.Today.ToString("dd/MM/yyyy"));
                     break;
                 case "btnHomQua":
                     _listUCLSTV.Clear();
                     flpContent.Controls.Clear();
-                    HienThiLSTraTuTheoThoiGian(DateTime.Today.AddDays(-1).ToString("dd/MM/yyyy"));
-                    HienThiLSDichTheoThoiGian(DateTime.Today.AddDays(-1).ToString("dd/MM/yyyy"));
+                    await HienThiLSTraTuTheoThoiGianAsync(DateTime.Today.AddDays(-1).ToString("dd/MM/yyyy"));
+                    await HienThiLSDichTheoThoiGianAsync(DateTime.Today.AddDays(-1).ToString("dd/MM/yyyy"));
                     break;
                 case "btnTuanNay":
                     _listUCLSTV.Clear();
                     flpContent.Controls.Clear();
                     foreach (var item in dates)
                     {
-                        HienThiLSTraTuTheoThoiGian(item.ToString("dd/MM/yyyy"));
-                        HienThiLSDichTheoThoiGian(item.ToString("dd/MM/yyyy"));
+                        await HienThiLSTraTuTheoThoiGianAsync(item.ToString("dd/MM/yyyy"));
+                        await HienThiLSDichTheoThoiGianAsync(item.ToString("dd/MM/yyyy"));
                     }
                     break;
                 case "btnThangNay":
                     _listUCLSTV.Clear();
                     flpContent.Controls.Clear();
-                    HienThiLSTraTuTheoThoiGian(DateTime.Today.ToString("MM/yyyy"));
-                    HienThiLSDichTheoThoiGian(DateTime.Today.ToString("MM/yyyy"));
+                    await HienThiLSTraTuTheoThoiGianAsync(DateTime.Today.ToString("MM/yyyy"));
+                    await HienThiLSDichTheoThoiGianAsync(DateTime.Today.ToString("MM/yyyy"));
                     break;
                 case "btnCuHon":
                     _listUCLSTV.Clear();
                     flpContent.Controls.Clear();
                     //tra tu
-                    HienThiLSTraTuTheoThoiGian(DateTime.Today.AddMonths(-1).ToString("MM/yyyy"));
-                    HienThiLSTraTuTheoThoiGian(DateTime.Today.AddMonths(-2).ToString("MM/yyyy"));
-                    HienThiLSTraTuTheoThoiGian(DateTime.Today.AddMonths(-3).ToString("MM/yyyy"));
-                    HienThiLSTraTuTheoThoiGian(DateTime.Today.AddMonths(-4).ToString("MM/yyyy"));
+                    await HienThiLSTraTuTheoThoiGianAsync(DateTime.Today.AddMonths(-1).ToString("MM/yyyy"));
+                    await HienThiLSTraTuTheoThoiGianAsync(DateTime.Today.AddMonths(-2).ToString("MM/yyyy"));
+                    await HienThiLSTraTuTheoThoiGianAsync(DateTime.Today.AddMonths(-3).ToString("MM/yyyy"));
+                    await HienThiLSTraTuTheoThoiGianAsync(DateTime.Today.AddMonths(-4).ToString("MM/yyyy"));
                     // dich
-                    HienThiLSDichTheoThoiGian(DateTime.Today.AddMonths(-1).ToString("MM/yyyy"));
-                    HienThiLSDichTheoThoiGian(DateTime.Today.AddMonths(-2).ToString("MM/yyyy"));
-                    HienThiLSDichTheoThoiGian(DateTime.Today.AddMonths(-3).ToString("MM/yyyy"));
-                    HienThiLSDichTheoThoiGian(DateTime.Today.AddMonths(-4).ToString("MM/yyyy"));
+                    await HienThiLSDichTheoThoiGianAsync(DateTime.Today.AddMonths(-1).ToString("MM/yyyy"));
+                    await HienThiLSDichTheoThoiGianAsync(DateTime.Today.AddMonths(-2).ToString("MM/yyyy"));
+                    await HienThiLSDichTheoThoiGianAsync(DateTime.Today.AddMonths(-3).ToString("MM/yyyy"));
+                    await HienThiLSDichTheoThoiGianAsync(DateTime.Today.AddMonths(-4).ToString("MM/yyyy"));
                     break;
             }
         }
