@@ -2,6 +2,7 @@
 using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DTO;
 using DictionaryAppForIT.DTO.Home;
+using DictionaryAppForIT.DTO.Love;
 using DictionaryAppForIT.UserControls.Home;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -101,7 +102,6 @@ namespace DictionaryAppForIT.UserControls
             try
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-suggest-all");
-                response.EnsureSuccessStatusCode(); // Đảm bảo request thành công
 
                 string responseContent = await response.Content.ReadAsStringAsync();
 
@@ -183,9 +183,6 @@ namespace DictionaryAppForIT.UserControls
                 };
                 //gửi request
                 var response = await client.PostAsync(apiUrl + "save-word-lookup-history", new FormUrlEncodedContent(requestData));
-
-                // Đảm bảo luôn luôn thành công nhé :))
-                response.EnsureSuccessStatusCode();
 
                 var responseContent = await response.Content.ReadAsStringAsync();
 
@@ -369,15 +366,20 @@ namespace DictionaryAppForIT.UserControls
                 {
                     try
                     {
-                        HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-love_vocabulary/{txtTuVung.Text}/{Class_TaiKhoan.IdTaiKhoan}");
-                        //if (response.IsSuccessStatusCode)
-                        //{
-                        //    RJMessageBox.Show("Xóa thành công.");
-                        //}
-                        //else
-                        //{
-                        //    RJMessageBox.Show("Lỗi rồi hi hi!");
-                        //}
+                        HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-love-vocabulary/{txtTuVung.Text}/{Class_TaiKhoan.IdTaiKhoan}");
+
+                        string responseContent = await response.Content.ReadAsStringAsync();
+
+                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse<int>>(responseContent);
+
+                        if (apiResponse.Status && apiResponse.Data > 0)
+                        {
+                            RJMessageBox.Show(apiResponse.Message);
+                        }
+                        else
+                        {
+                            RJMessageBox.Show(apiResponse.Message);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -401,17 +403,20 @@ namespace DictionaryAppForIT.UserControls
                     { "user_id", Class_TaiKhoan.IdTaiKhoan }
                 };
                 //gửi request
-                var response = await client.PostAsync(apiUrl + "save-love_vocabulary", new FormUrlEncodedContent(requestData));
-
-                // Đảm bảo luôn luôn thành công nhé :))
-                response.EnsureSuccessStatusCode();
+                var response = await client.PostAsync(apiUrl + "save-love-vocabulary", new FormUrlEncodedContent(requestData));
 
                 var responseContent = await response.Content.ReadAsStringAsync();
 
-                //if (responseContent != null)
-                //{
-                //    RJMessageBox.Show("Phản hồi từ API: " + responseContent);
-                //}
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoveResponse>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
+                {
+                    RJMessageBox.Show(apiResponse.Message);
+                }
+                else
+                {
+                    RJMessageBox.Show(apiResponse.Message);
+                }
             }
             catch (Exception ex)
             {

@@ -24,7 +24,6 @@ namespace DictionaryAppForIT.DTO
             try
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-word-lookup-history/{Class_TaiKhoan.IdTaiKhoan}");
-                response.EnsureSuccessStatusCode();
 
                 string responseContent = await response.Content.ReadAsStringAsync();
 

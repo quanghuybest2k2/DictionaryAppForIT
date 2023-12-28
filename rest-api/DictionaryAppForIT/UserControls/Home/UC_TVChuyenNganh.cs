@@ -161,7 +161,6 @@ namespace DictionaryAppForIT.UserControls.Home
                 if (isComboboxLoaded && cbbChuyenNganh.SelectedValue != null)
                 {
                     HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-suggest?specialization_id={cbbChuyenNganh.SelectedValue}");
-                    response.EnsureSuccessStatusCode(); // Đảm bảo request thành công
 
                     string responseContent = await response.Content.ReadAsStringAsync();
 

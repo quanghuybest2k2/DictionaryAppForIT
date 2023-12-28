@@ -35,7 +35,6 @@ namespace DictionaryAppForIT.UserControls.TuVungHot
                 try
                 {
                     HttpResponseMessage response = await httpClient.GetAsync(apiUrl + "get-hot-vocabulary");
-                    response.EnsureSuccessStatusCode();
 
                     string json = await response.Content.ReadAsStringAsync();
                     JObject data = JObject.Parse(json);

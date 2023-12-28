@@ -1,7 +1,7 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DTO;
-using Guna.UI2.WinForms;
+using DictionaryAppForIT.DTO.Love;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -335,36 +335,37 @@ namespace DictionaryAppForIT.UserControls.Home
                     { "user_id", Class_TaiKhoan.IdTaiKhoan }
                 };
                 //gửi request
-                var response = await client.PostAsync(apiUrl + "save-love_text", new FormUrlEncodedContent(requestData));
-
+                var response = await client.PostAsync(apiUrl + "save-love-text", new FormUrlEncodedContent(requestData));
                 // Đảm bảo luôn luôn thành công nhé :))
-                response.EnsureSuccessStatusCode();
 
                 var responseContent = await response.Content.ReadAsStringAsync();
 
-                //if (responseContent != null)
-                //{
-                //    RJMessageBox.Show("Phản hồi từ API: " + responseContent);
-                //}
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoveResponse>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
+                {
+                    RJMessageBox.Show(apiResponse.Message);
+                }
+                else
+                {
+                    RJMessageBox.Show(apiResponse.Message);
+                }
             }
             else
             {
-                try
+
+                HttpResponseMessage response = await client.DeleteAsync($"{apiUrl}delete-love-text?english={Uri.EscapeDataString(txtTop.Text.Trim())}&user_id={Uri.EscapeDataString(Class_TaiKhoan.IdTaiKhoan)}");
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<int>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data > 0)
                 {
-                    HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-love_text?english={txtTop.Text.Trim()}&user_id={Class_TaiKhoan.IdTaiKhoan}");
-                    if (response.IsSuccessStatusCode)
-                    {
-                        RJMessageBox.Show("Xóa thành công.");
-                        LoadLichSu();
-                    }
-                    else
-                    {
-                        RJMessageBox.Show("Thất bại!");
-                    }
+                    RJMessageBox.Show(apiResponse.Message);
                 }
-                catch (Exception ex)
+                else
                 {
-                    RJMessageBox.Show("Lỗi >> " + ex.Message);
+                    RJMessageBox.Show(apiResponse.Message);
                 }
             }
         }

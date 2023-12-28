@@ -1,9 +1,7 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -18,19 +16,6 @@ namespace DictionaryAppForIT.DTO
         {
 
         }
-        /*
-        MYSQL: 
-       SELECT SUM(AllCount) AS Tong_SoMucYeuThich
-           FROM (
-               SELECT COUNT(*) AS AllCount
-               FROM love_vocabularies
-               WHERE user_id = 1
-               UNION ALL
-               SELECT COUNT(*) AS AllCount
-               FROM love_texts
-               WHERE user_id = 1
-           ) AS t;
-        */
         public static async Task<string> Tong_So_Muc_Yeu_Thich()
         {
             string result = "";
@@ -38,26 +23,17 @@ namespace DictionaryAppForIT.DTO
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"total-love-item/{Class_TaiKhoan.IdTaiKhoan}");
 
-                if (response.IsSuccessStatusCode)
-                {
-                    string responseContent = await response.Content.ReadAsStringAsync();
-                    JObject responseObject = JObject.Parse(responseContent);
-                    bool status = (bool)responseObject["status"];
+                string responseContent = await response.Content.ReadAsStringAsync();
 
-                    if (status)
-                    {
-                        int totalLoveItem = (int)responseObject["data"];
-                        result = totalLoveItem.ToString();
-                    }
-                    else
-                    {
-                        string message = (string)responseObject["message"];
-                        RJMessageBox.Show(message);
-                    }
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<string>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
+                {
+                    result = apiResponse.Data;
                 }
                 else
                 {
-                    RJMessageBox.Show("Lỗi khi gọi API");
+                 RJMessageBox.Show(apiResponse.Message);
                 }
             }
             catch (Exception ex)

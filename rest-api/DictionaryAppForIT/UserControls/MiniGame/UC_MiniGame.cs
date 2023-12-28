@@ -1,20 +1,11 @@
-﻿using DictionaryAppForIT.Class;
-using DictionaryAppForIT.DAL;
-using DictionaryAppForIT.DTO;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Media; // thư viện âm thanh
-using DictionaryAppForIT.CustomMessageBox;
-using System.Data.SqlClient;
-using System.Configuration;
+﻿using DictionaryAppForIT.CustomMessageBox;
 using Guna.UI2.WinForms;
+using System;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Media; // thư viện âm thanh
+using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.MiniGame
 {

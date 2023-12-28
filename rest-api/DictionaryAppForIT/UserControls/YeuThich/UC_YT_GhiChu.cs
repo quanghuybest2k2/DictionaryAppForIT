@@ -1,20 +1,22 @@
-﻿using System;
+﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
+using DictionaryAppForIT.DTO.Love;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DictionaryAppForIT.UserControls.YeuThich
 {
     public partial class UC_YT_GhiChu : UserControl
     {
+        private static readonly HttpClient client = new HttpClient();
+        private static readonly string apiUrl = BaseUrl.base_url;
+
         string maxKiTuNhap = "115";
         public bool isClose;
         public int _loai; // 1 là từ vựng, 2 là văn bản
@@ -97,12 +99,22 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             }
         }
 
-        private void CapNhatGhiChu(string xoaThanhCong)
+        private async void CapNhatGhiChu(string xoaThanhCong)
         {
             if (_loai == 1)
             {
-                int num = DataProvider.Instance.ExecuteNonQuery($"UPDATE YeuThichTuVung SET GhiChu = N'{txtGhiChu.Text.Trim()}' WHERE ID = '{lblIndex.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-                if (num > 0)
+                var input = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("Note", txtGhiChu.Text.Trim())
+                });
+
+                HttpResponseMessage response = await client.PutAsync(apiUrl + $"update-favorite-vocabulary/{lblIndex.Text}/{Class_TaiKhoan.IdTaiKhoan}", input);
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
                     RJMessageBox.Show($"{xoaThanhCong}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtGhiChu.Enabled = false;
@@ -114,8 +126,18 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             }
             else
             {
-                int num = DataProvider.Instance.ExecuteNonQuery($"UPDATE YeuThichVanBan SET GhiChu = N'{txtGhiChu.Text.Trim()}' WHERE ID = '{lblIndex.Text}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-                if (num > 0)
+                var input = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("Note", txtGhiChu.Text.Trim())
+                });
+
+                HttpResponseMessage response = await client.PutAsync(apiUrl + $"update-favorite-text/{lblIndex.Text}/{Class_TaiKhoan.IdTaiKhoan}", input);
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
                     RJMessageBox.Show($"{xoaThanhCong}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtGhiChu.Enabled = false;

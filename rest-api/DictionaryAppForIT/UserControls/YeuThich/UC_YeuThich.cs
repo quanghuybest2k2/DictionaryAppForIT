@@ -1,18 +1,11 @@
-﻿using DictionaryAppForIT.Class;
-using DictionaryAppForIT.DAL;
+﻿using DictionaryAppForIT.API;
+using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DTO;
-using DictionaryAppForIT.Forms;
-using DictionaryAppForIT.UserControls.LichSu;
+using DictionaryAppForIT.DTO.Love;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net.Http;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.YeuThich
@@ -22,7 +15,6 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         RandomColor rd = new RandomColor();
         List<UC_YT_TuVung> _listTuVung;
         List<UC_YT_VanBan> _listVanBan;
-        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         //bool xoaTatCa;
         bool xoaTatCaYT;
         public string TuHienTai = "";
@@ -30,6 +22,8 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         UC_YT_TuVung ucYTTuVung;
         UC_YT_VanBan ucYTVanBan;
         int stt = 1;
+        private static readonly HttpClient client = new HttpClient();
+        private static readonly string apiUrl = BaseUrl.base_url;
 
         public UC_YeuThich()
         {
@@ -82,29 +76,29 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             get { return lblSoMucYeuThich.Text; }
             set { lblSoMucYeuThich.Text = value; }
         }
-
-        public void HienThiYTTraTu()
+        public async void HienThiYTTraTu()
         {
             _listTuVung.Clear();
             flpContent.Controls.Clear();
             stt = 1;
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichTuVung where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-            if (Convert.ToInt32(num) > 0)
+            try
             {
-                try
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"show-love-vocabulary/{Class_TaiKhoan.IdTaiKhoan}");
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoveResponse[]>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
-                    SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"select * from YeuThichTuVung where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
-                    Conn.Open();
-                    SqlDataReader rdr = cmd.ExecuteReader();
-                    while (rdr.Read())
+                    foreach (var item in apiResponse.Data)
                     {
-                        //ThongTinLSTraTu.idTraTuLS = rdr["ID"].ToString();
-                        idHienTai = rdr["ID"].ToString();
-                        string TVTiengAnh = rdr["TiengAnh"].ToString();
-                        string TVPhienAm = rdr["PhienAm"].ToString();
-                        string TVTiengViet = rdr["TiengViet"].ToString();
-                        string GhiChu = rdr["GhiChu"].ToString();
+                        idHienTai = item.id.ToString();
+                        string TVTiengAnh = item.english;
+                        string TVPhienAm = item.pronunciations;
+                        string TVTiengViet = item.vietnamese;
+                        string GhiChu = item.Note;
+
                         ucYTTuVung = new UC_YT_TuVung(stt.ToString(), idHienTai, TVTiengAnh, TVPhienAm, TVTiengViet);
                         ucYTTuVung.TVBackColor(rd.GetColor());
                         flpContent.Controls.Add(ucYTTuVung);
@@ -113,36 +107,39 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                         ucYTTuVung.ThemGhiChu(idHienTai, GhiChu, 1);
                         stt++;
                     }
-
-                    Conn.Close();
-                    Conn.Dispose();
                 }
-                catch (Exception ex)
+                else
                 {
-                    RJMessageBox.Show(ex.Message);
+                    RJMessageBox.Show(apiResponse.Message);
                 }
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show(ex.Message);
             }
         }
 
-        public void HienThiYTVanBan()
+        public async void HienThiYTVanBan()
         {
             _listVanBan.Clear();
             //flpContent.Controls.Clear();
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichVanBan where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-            if (Convert.ToInt32(num) > 0)
+            try
             {
-                try
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"show-love-text/{Class_TaiKhoan.IdTaiKhoan}");
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoveResponse[]>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
-                    SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"select * from YeuThichVanBan where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
-                    Conn.Open();
-                    SqlDataReader rdr = cmd.ExecuteReader();
-                    while (rdr.Read())
+                    foreach (var item in apiResponse.Data)
                     {
-                        idHienTai = rdr["ID"].ToString();
-                        string TVTiengAnh = rdr["TiengAnh"].ToString();
-                        string TVTiengViet = rdr["TiengViet"].ToString();
-                        string GhiChu = rdr["GhiChu"].ToString();
+                        idHienTai = item.id.ToString();
+                        string TVTiengAnh = item.english;
+                        string TVTiengViet = item.vietnamese;
+                        string GhiChu = item.Note;
+
                         ucYTVanBan = new UC_YT_VanBan(stt.ToString(), idHienTai, TVTiengAnh, TVTiengViet);
                         ucYTVanBan.VBBackColor(rd.GetColor());
                         flpContent.Controls.Add(ucYTVanBan);
@@ -151,14 +148,15 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                         ucYTVanBan.ThemGhiChu(idHienTai, GhiChu, 2);
                         stt++;
                     }
-
-                    Conn.Close();
-                    Conn.Dispose();
                 }
-                catch (Exception ex)
+                else
                 {
-                    RJMessageBox.Show(ex.Message);
+                    RJMessageBox.Show(apiResponse.Message);
                 }
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show(ex.Message);
             }
         }
 
@@ -167,9 +165,11 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             _listTuVung = new List<UC_YT_TuVung>();
             _listVanBan = new List<UC_YT_VanBan>();
             lblSoMucYeuThich.Text = await LoveVocabulary.Tong_So_Muc_Yeu_Thich();
+            txtTimKiemYeuThich.PlaceholderText = "Tìm kiếm Từ Vựng...";
+            cbbLoaiTimKiem.SelectedIndex = 0;
         }
         // xoa tra tu yeu thich
-        private void XoaUCYeuThichTuVung()
+        private async void XoaUCYeuThichTuVung()
         {
             foreach (var item in _listTuVung)
             {
@@ -177,10 +177,31 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 {
                     xoaTatCaYT = false;
                     flpContent.Controls.Remove(item);
-                    DataProvider.Instance.ExecuteNonQuery($"delete from YeuThichTuVung where id = '{item.Index}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
+                    try
+                    {
+                        HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-love-vocabulary/{item.TVTiengAnh}/{Class_TaiKhoan.IdTaiKhoan}");
+
+                        string responseContent = await response.Content.ReadAsStringAsync();
+
+                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse<int>>(responseContent);
+
+                        if (apiResponse.Status && apiResponse.Data > 0)
+                        {
+                            RJMessageBox.Show(apiResponse.Message);
+                        }
+                        else
+                        {
+                            RJMessageBox.Show(apiResponse.Message);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        RJMessageBox.Show("Lỗi >> " + ex.Message);
+                    }
                 }
             }
             _listTuVung.RemoveAll(x => x.Name == "Check");
+            lblSoMucYeuThich.Text = await LoveVocabulary.Tong_So_Muc_Yeu_Thich();
         }
         //xoa van ban yeu thich
         private async void XoaUCYeuThichVanBanAsync()
@@ -191,14 +212,33 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 {
                     xoaTatCaYT = false;
                     flpContent.Controls.Remove(item);
-                    DataProvider.Instance.ExecuteNonQuery($"delete from YeuThichVanBan where id = '{item.Index}' and IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
+                    try
+                    {
+                        HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-love-text?english={Uri.EscapeDataString(item.VBTiengAnh.Trim())}&user_id={Uri.EscapeDataString(Class_TaiKhoan.IdTaiKhoan)}");
+
+                        string responseContent = await response.Content.ReadAsStringAsync();
+                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse<int>>(responseContent);
+
+                        if (apiResponse.Status && apiResponse.Data > 0)
+                        {
+                            RJMessageBox.Show(apiResponse.Message);
+                        }
+                        else
+                        {
+                            RJMessageBox.Show(apiResponse.Message);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        RJMessageBox.Show("Lỗi >> " + ex.Message);
+                    }
                 }
             }
             _listVanBan.RemoveAll(x => x.Name == "Check");
             lblSoMucYeuThich.Text = await LoveVocabulary.Tong_So_Muc_Yeu_Thich();
         }
         // xoa muc yeu thich
-        private void btnXoaMucYeuThich_Click(object sender, EventArgs e)
+        private async void btnXoaMucYeuThich_Click(object sender, EventArgs e)
         {
             xoaTatCaYT = true;
             XoaUCYeuThichTuVung();
@@ -206,131 +246,58 @@ namespace DictionaryAppForIT.UserControls.YeuThich
 
             if (xoaTatCaYT)
             {
-
                 flpContent.Controls.Clear();
-                int num = DataProvider.Instance.ExecuteNonQuery($"delete from YeuThichTuVung where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' " +
-                  $"delete from YeuThichVanBan where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-                if (num > 0)
+                try
                 {
-                    lblSoMucYeuThich.Text = "0";
-                    RJMessageBox.Show("Đã xóa tất cả mục yêu thích!", "Thông báo",
-                   MessageBoxButtons.OK,
-                   MessageBoxIcon.Information);
+                    HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-all-favorite/{Class_TaiKhoan.IdTaiKhoan}");
+
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<int>>(responseContent);
+
+                    if (apiResponse.Status && apiResponse.Data > 0)
+                    {
+                        lblSoMucYeuThich.Text = "0";
+                        RJMessageBox.Show(apiResponse.Message, "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        RJMessageBox.Show("Xóa không thành công!", "Thông báo",
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Error);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    RJMessageBox.Show("Xóa không thành công!", "Thông báo",
-                      MessageBoxButtons.OK,
-                      MessageBoxIcon.Error);
+                    RJMessageBox.Show("Lỗi >> " + ex.Message);
                 }
                 _listTuVung.Clear();
             }
         }
 
         #region xử lý tìm kiếm yêu thích
-        private void HienThiTimKiemYTTraTu()
-        {
-            try
-            {
-                _listTuVung.Clear();
-                flpContent.Controls.Clear();
-                SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC HienThiTimKiemYTTraTu '{txtTimKiemYeuThich.Text.Trim()}', '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
-                Conn.Open();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    idHienTai = rdr["ID"].ToString();
-                    string TVTiengAnh = rdr["TiengAnh"].ToString();
-                    string TVPhienAm = rdr["PhienAm"].ToString();
-                    string TVTiengViet = rdr["TiengViet"].ToString();
-                    string GhiChu = rdr["GhiChu"].ToString();
-                    ucYTTuVung = new UC_YT_TuVung(stt.ToString(), idHienTai, TVTiengAnh, TVPhienAm, TVTiengViet);
-                    ucYTTuVung.TVBackColor(rd.GetColor());
-                    flpContent.Controls.Add(ucYTTuVung);
-                    _listTuVung.Add(ucYTTuVung);
-                    ucYTTuVung.Name = "unCheck";
-                    ucYTTuVung.ThemGhiChu(idHienTai, GhiChu, 1);
-                    stt++;
-                }
-                Conn.Close();
-                Conn.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void HienThiTimKiemYTVanBan()
-        {
-            try
-            {
-                _listVanBan.Clear();
-                SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC HienThiTimKiemYTVanBan '{txtTimKiemYeuThich.Text.Trim()}', '{Class_TaiKhoan.IdTaiKhoan}'", Conn);
-                Conn.Open();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    idHienTai = rdr["ID"].ToString();
-                    string TVTiengAnh = rdr["TiengAnh"].ToString();
-                    string TVTiengViet = rdr["TiengViet"].ToString();
-                    string GhiChu = rdr["GhiChu"].ToString();
-                    ucYTVanBan = new UC_YT_VanBan(stt.ToString(), idHienTai, TVTiengAnh, TVTiengViet);
-                    ucYTVanBan.VBBackColor(rd.GetColor());
-                    flpContent.Controls.Add(ucYTVanBan);
-                    _listVanBan.Add(ucYTVanBan);
-                    ucYTVanBan.Name = "unCheck";
-                    ucYTVanBan.ThemGhiChu(idHienTai, GhiChu, 2);
-                    stt++;
-                }
-                Conn.Close();
-                Conn.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private void txtTimKiemYeuThich_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter && TuHienTai != txtTimKiemYeuThich.Text)//--------------------------------------
-            {
-                flpContent.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
-                HienThiTimKiemYTTraTu();
-                HienThiTimKiemYTVanBan();
-                string query = $"select sum(AllCount) AS Tong_SoMucYeuThich from((select count(*) AS AllCount from YeuThichTuVung where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' and TiengAnh = '{txtTimKiemYeuThich.Text}') union all (select count(*) AS AllCount from YeuThichVanBan where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' and TiengAnh LIKE '%{txtTimKiemYeuThich.Text}%'))t";
-                object soMucTK = DataProvider.Instance.ExecuteScalar(query);
-                lblSoMucYeuThich.Text = soMucTK.ToString();
-                TuHienTai = txtTimKiemYeuThich.Text;//--------------------------------------
-
-            }
-        }
-        #endregion
-
-        public void SapXepYTTraTu()
+        private async void HienThiTimKiemYTTraTu()
         {
             _listTuVung.Clear();
             flpContent.Controls.Clear();
-            stt = 1;
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichTuVung where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-            if (Convert.ToInt32(num) > 0)
+            try
             {
-                try
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"search-love-vocabulary-by-word?english={txtTimKiemYeuThich.Text.Trim()}&user_id={Class_TaiKhoan.IdTaiKhoan}");
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoveResponse[]>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
-                    SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"select * from YeuThichTuVung where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' order by TiengAnh ASC", Conn);
-                    Conn.Open();
-                    SqlDataReader rdr = cmd.ExecuteReader();
-                    while (rdr.Read())
+                    foreach (var item in apiResponse.Data)
                     {
-                        //ThongTinLSTraTu.idTraTuLS = rdr["ID"].ToString();
-                        idHienTai = rdr["ID"].ToString();
-                        string TVTiengAnh = rdr["TiengAnh"].ToString();
-                        string TVPhienAm = rdr["PhienAm"].ToString();
-                        string TVTiengViet = rdr["TiengViet"].ToString();
-                        string GhiChu = rdr["GhiChu"].ToString();
+                        idHienTai = item.id.ToString();
+                        string TVTiengAnh = item.english;
+                        string TVPhienAm = item.pronunciations;
+                        string TVTiengViet = item.vietnamese;
+                        string GhiChu = item.Note;
+
                         ucYTTuVung = new UC_YT_TuVung(stt.ToString(), idHienTai, TVTiengAnh, TVPhienAm, TVTiengViet);
                         ucYTTuVung.TVBackColor(rd.GetColor());
                         flpContent.Controls.Add(ucYTTuVung);
@@ -339,36 +306,39 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                         ucYTTuVung.ThemGhiChu(idHienTai, GhiChu, 1);
                         stt++;
                     }
-
-                    Conn.Close();
-                    Conn.Dispose();
                 }
-                catch (Exception ex)
+                else
                 {
-                    RJMessageBox.Show(ex.Message);
+                    RJMessageBox.Show(apiResponse.Message, "Thông báo",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Error);
                 }
             }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show("Lỗi >> " + ex.Message);
+            }
         }
-        public void SapXepYTVanBan()
+
+        private async void HienThiTimKiemYTVanBan()
         {
             _listVanBan.Clear();
-            //flpContent.Controls.Clear();
-            object num = DataProvider.Instance.ExecuteScalar($"select COUNT(ID) from YeuThichVanBan where IDTK = '{Class_TaiKhoan.IdTaiKhoan}'");
-            if (Convert.ToInt32(num) > 0)
+            try
             {
-                try
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"search-love-text-by-word?english={txtTimKiemYeuThich.Text.Trim()}&user_id={Class_TaiKhoan.IdTaiKhoan}");
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoveResponse[]>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
-                    SqlConnection Conn = new SqlConnection(connString);
-                    SqlCommand cmd = new SqlCommand($"select * from YeuThichVanBan where IDTK = '{Class_TaiKhoan.IdTaiKhoan}' order by TiengAnh ASC", Conn);
-                    Conn.Open();
-                    SqlDataReader rdr = cmd.ExecuteReader();
-                    while (rdr.Read())
+                    foreach (var item in apiResponse.Data)
                     {
-                        //ThongTinLSTraTu.idTraTuLS = rdr["ID"].ToString();
-                        idHienTai = rdr["ID"].ToString();
-                        string TVTiengAnh = rdr["TiengAnh"].ToString();
-                        string TVTiengViet = rdr["TiengViet"].ToString();
-                        string GhiChu = rdr["GhiChu"].ToString();
+                        idHienTai = item.id.ToString();
+                        string TVTiengAnh = item.english;
+                        string TVTiengViet = item.vietnamese;
+                        string GhiChu = item.Note;
+
                         ucYTVanBan = new UC_YT_VanBan(stt.ToString(), idHienTai, TVTiengAnh, TVTiengViet);
                         ucYTVanBan.VBBackColor(rd.GetColor());
                         flpContent.Controls.Add(ucYTVanBan);
@@ -377,21 +347,157 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                         ucYTVanBan.ThemGhiChu(idHienTai, GhiChu, 2);
                         stt++;
                     }
-
-                    Conn.Close();
-                    Conn.Dispose();
                 }
-                catch (Exception ex)
+                else
                 {
-                    RJMessageBox.Show(ex.Message);
+                    RJMessageBox.Show(apiResponse.Message, "Thông báo",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Error);
                 }
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show("Lỗi >> " + ex.Message);
             }
         }
 
+        private async void txtTimKiemYeuThich_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && TuHienTai != txtTimKiemYeuThich.Text)//--------------------------------------
+            {
+                flpContent.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
+                if (cbbLoaiTimKiem.SelectedIndex == 0)
+                {
+                    HienThiTimKiemYTTraTu();
+                }
+                else
+                {
+                    HienThiTimKiemYTVanBan();
+                }
+                try
+                {
+                    HttpResponseMessage response = await client.GetAsync(apiUrl + $"find-love-by-word-and-english?english={txtTimKiemYeuThich.Text.Trim()}&user_id={Class_TaiKhoan.IdTaiKhoan}");
+
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        lblSoMucYeuThich.Text = apiResponse.Data.ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    RJMessageBox.Show("Lỗi >> " + ex.Message);
+                }
+                TuHienTai = txtTimKiemYeuThich.Text;//--------------------------------------
+            }
+        }
+        #endregion
+
+        public async void SapXepYTTraTu()
+        {
+            _listTuVung.Clear();
+            flpContent.Controls.Clear();
+            stt = 1;
+
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"sort-by-favorite-word-lookup/{Class_TaiKhoan.IdTaiKhoan}");
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoveResponse[]>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
+                {
+                    foreach (var item in apiResponse.Data)
+                    {
+                        idHienTai = item.id.ToString();
+                        string TVTiengAnh = item.english;
+                        string TVPhienAm = item.pronunciations;
+                        string TVTiengViet = item.vietnamese;
+                        string GhiChu = item.Note;
+
+                        ucYTTuVung = new UC_YT_TuVung(stt.ToString(), idHienTai, TVTiengAnh, TVPhienAm, TVTiengViet);
+                        ucYTTuVung.TVBackColor(rd.GetColor());
+                        flpContent.Controls.Add(ucYTTuVung);
+                        _listTuVung.Add(ucYTTuVung);
+                        ucYTTuVung.Name = "unCheck";
+                        ucYTTuVung.ThemGhiChu(idHienTai, GhiChu, 1);
+                        stt++;
+                    }
+                }
+                else
+                {
+                    RJMessageBox.Show(apiResponse.Message, "Thông báo",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show("Lỗi >> " + ex.Message);
+            }
+        }
+        public async void SapXepYTVanBan()
+        {
+            _listVanBan.Clear();
+            //flpContent.Controls.Clear();
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"sort-by-favorite-text/{Class_TaiKhoan.IdTaiKhoan}");
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoveResponse[]>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
+                {
+                    foreach (var item in apiResponse.Data)
+                    {
+                        //ThongTinLSTraTu.idTraTuLS = rdr["ID"].ToString();
+                        idHienTai = item.id.ToString();
+                        string TVTiengAnh = item.english;
+                        string TVTiengViet = item.vietnamese;
+                        string GhiChu = item.Note;
+
+                        ucYTVanBan = new UC_YT_VanBan(stt.ToString(), idHienTai, TVTiengAnh, TVTiengViet);
+                        ucYTVanBan.VBBackColor(rd.GetColor());
+                        flpContent.Controls.Add(ucYTVanBan);
+                        _listVanBan.Add(ucYTVanBan);
+                        ucYTVanBan.Name = "unCheck";
+                        ucYTVanBan.ThemGhiChu(idHienTai, GhiChu, 2);
+                        stt++;
+                    }
+                }
+                else
+                {
+                    RJMessageBox.Show(apiResponse.Message, "Thông báo",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show("Lỗi >> " + ex.Message);
+            }
+
+        }
         private void btnSapXepYeuThich_Click(object sender, EventArgs e)
         {
             SapXepYTTraTu();
             SapXepYTVanBan();
+        }
+
+        private void cbbLoaiTimKiem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbLoaiTimKiem.SelectedIndex == 0)// Từ vựng
+            {
+                txtTimKiemYeuThich.PlaceholderText = "Tìm kiếm Từ Vựng...";
+            }
+            else
+            {
+                txtTimKiemYeuThich.PlaceholderText = "Tìm kiếm Văn Bản...";
+            }
         }
     }
 }

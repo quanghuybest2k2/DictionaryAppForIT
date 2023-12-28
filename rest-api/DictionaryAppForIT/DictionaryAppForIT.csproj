@@ -236,6 +236,7 @@
     <Compile Include="DTO\History\CheckResponse.cs" />
     <Compile Include="DTO\Home\SuggestAllResponse.cs" />
     <Compile Include="DTO\LoveVocabulary.cs" />
+    <Compile Include="DTO\Love\LoveResponse.cs" />
     <Compile Include="DTO\Specialization.cs" />
     <Compile Include="DTO\TranslateHistory.cs" />
     <Compile Include="DTO\TranslateHistoryService.cs" />

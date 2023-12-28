@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DictionaryAppForIT.Class;
+using System;
 using System.Windows.Forms;
-using DictionaryAppForIT.DAL;
-using DictionaryAppForIT.DTO;
-using DictionaryAppForIT.Class;
 
 namespace DictionaryAppForIT.UserControls.MiniGame
 {

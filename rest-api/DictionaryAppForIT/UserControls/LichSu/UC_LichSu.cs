@@ -193,7 +193,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             try
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"search-word-lookup-history?english={txtTimKiemLS.Text.Trim()}&user_id={Class_TaiKhoan.IdTaiKhoan}");
-                response.EnsureSuccessStatusCode();
 
                 string responseContent = await response.Content.ReadAsStringAsync();
 
@@ -243,7 +242,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             try
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"search-translate-history?english={txtTimKiemLS.Text.Trim()}&user_id={Class_TaiKhoan.IdTaiKhoan}");
-                response.EnsureSuccessStatusCode();
 
                 string responseContent = await response.Content.ReadAsStringAsync();
 
@@ -297,7 +295,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             try
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"display-by-time-word-lookup-history?user_id={Class_TaiKhoan.IdTaiKhoan}&time={thoiGian}");
-                response.EnsureSuccessStatusCode();
 
                 string responseContent = await response.Content.ReadAsStringAsync();
 
@@ -347,7 +344,6 @@ namespace DictionaryAppForIT.UserControls.GanDay
             try
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"display-by-time-translate-history?user_id={Class_TaiKhoan.IdTaiKhoan}&time={thoiGian}");
-                response.EnsureSuccessStatusCode();
 
                 string responseContent = await response.Content.ReadAsStringAsync();
 
