@@ -1,13 +1,19 @@
-﻿using System;
+﻿using DictionaryAppForIT.API;
+using DictionaryAppForIT.Class;
+using DictionaryAppForIT.DTO;
+using DictionaryAppForIT.DTO.MiniGame;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data.SqlClient;
-using System.Windows.Forms;
+using System.Net.Http;
 
 namespace DictionaryAppForIT.UserControls.MiniGame
 {
     public class CauHoiVaDapAn
     {
+        private static readonly HttpClient client = new HttpClient();
+        private static readonly string apiUrl = BaseUrl.base_url;
+
         public bool DaTraLoi;
         public bool TraLoiDung;
         public string CauTraLoi { get; set; }
@@ -16,8 +22,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
         public string TuLoai { get; set; }
         public string DapAnDung { get; set; }
         public List<string> DapAnRandom;
-        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
-
         public CauHoiVaDapAn()
         {
             DapAnRandom = new List<string>();
@@ -34,26 +38,35 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             DapAnDung = dapAnDung;
             DapAnRandom = new List<string>();
         }
-        public void RandomDapAnSai()
+        public async void RandomDapAnSai()
         {
+            // số lượng record trả về ngoại trừ {TuVung}
+            int soLuong = 3;
+            string dapAn;
             try
             {
-                SqlConnection Conn = new SqlConnection(connString);
-                SqlCommand cmd = new SqlCommand($"EXEC RandomDapAn '{TuVung}'", Conn);
-                Conn.Open();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                string dapAn;
-                while (rdr.Read())
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-random-wrong-answers/{TuVung}/{soLuong}");
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<MiniGameResponse[]>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
-                    dapAn = rdr["TiengViet"].ToString();
-                    DapAnRandom.Add(dapAn);
+                    foreach (var item in apiResponse.Data)
+                    {
+                        dapAn = item.vietnamese;
+                        DapAnRandom.Add(dapAn);
+                    }
                 }
-                Conn.Close();
-                Conn.Dispose();
+                else
+                {
+                    RJMessageBox.Show(apiResponse.Message);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RJMessageBox.Show(ex.Message);
             }
         }
     }

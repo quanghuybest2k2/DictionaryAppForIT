@@ -1,7 +1,6 @@
 ﻿using DictionaryAppForIT.CustomMessageBox;
 using Guna.UI2.WinForms;
 using System;
-using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Media; // thư viện âm thanh
@@ -11,7 +10,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
 {
     public partial class UC_MiniGame : UserControl
     {
-        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         private int toTalSecond;
         //SoundPlayer nhacNen;
         SoundPlayer nhacTraLoi;

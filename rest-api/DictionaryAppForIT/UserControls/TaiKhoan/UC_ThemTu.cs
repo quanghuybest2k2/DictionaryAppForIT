@@ -1,23 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DictionaryAppForIT.Class;
+﻿using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DAL;
-using DictionaryAppForIT.DTO;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.TaiKhoan
 {
     public partial class UC_ThemTu : UserControl
     {
-        private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
+        //private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         private string idTuMoi;
 
         UC_TT_ThemNghia ucThemNghia;
@@ -94,8 +85,8 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             try
             {
                 // them nghia
-                string themNghia = "EXEC ThemNghia @IdTuMoi , @IdTuLoai , @Nghia , @MoTa , @ViDu";
-                soDongThemNghia = DataProvider.Instance.ExecuteNonQuery(themNghia, new object[] { idTuMoi, arr[0], arr[1], arr[2], arr[3] });
+                //string themNghia = "EXEC ThemNghia @IdTuMoi , @IdTuLoai , @Nghia , @MoTa , @ViDu";
+                //soDongThemNghia = DataProvider.Instance.ExecuteNonQuery(themNghia, new object[] { idTuMoi, arr[0], arr[1], arr[2], arr[3] });
             }
             catch (Exception ex)
             {
@@ -107,32 +98,32 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         {
             try
             {
-                SqlConnection conn = new SqlConnection(connString);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "EXEC ThemTu @idTu output, @TenTu, @PhienAm, @ChuyenNganh, @DongNghia, @TraiNghia, @IDTK";
-                cmd.Parameters.Add("@idTu", SqlDbType.Int);
+                //SqlConnection conn = new SqlConnection(connString);
+                //SqlCommand cmd = conn.CreateCommand();
+                //cmd.CommandText = "EXEC ThemTu @idTu output, @TenTu, @PhienAm, @ChuyenNganh, @DongNghia, @TraiNghia, @IDTK";
+                //cmd.Parameters.Add("@idTu", SqlDbType.Int);
 
-                cmd.Parameters.Add("@TenTu", SqlDbType.VarChar, 100);
-                cmd.Parameters.Add("@PhienAm", SqlDbType.NVarChar, 100);
-                cmd.Parameters.Add("@ChuyenNganh", SqlDbType.Int);
-                cmd.Parameters.Add("@DongNghia", SqlDbType.VarChar, 1000);
-                cmd.Parameters.Add("@TraiNghia", SqlDbType.VarChar, 1000);
-                cmd.Parameters.Add("@IDTK", SqlDbType.Int);
+                //cmd.Parameters.Add("@TenTu", SqlDbType.VarChar, 100);
+                //cmd.Parameters.Add("@PhienAm", SqlDbType.NVarChar, 100);
+                //cmd.Parameters.Add("@ChuyenNganh", SqlDbType.Int);
+                //cmd.Parameters.Add("@DongNghia", SqlDbType.VarChar, 1000);
+                //cmd.Parameters.Add("@TraiNghia", SqlDbType.VarChar, 1000);
+                //cmd.Parameters.Add("@IDTK", SqlDbType.Int);
 
-                cmd.Parameters["@idTu"].Direction = ParameterDirection.Output;
-                //
-                cmd.Parameters["@TenTu"].Value = txtTuVung.Text.Trim();
-                cmd.Parameters["@PhienAm"].Value = $"{txtPhienAm.Text.Trim()}";
-                cmd.Parameters["@ChuyenNganh"].Value = cbbChuyenNganh.SelectedValue;
-                cmd.Parameters["@DongNghia"].Value = txtDongNghia.Text.Trim();
-                cmd.Parameters["@TraiNghia"].Value = txtTraiNghia.Text.Trim();
-                cmd.Parameters["@IDTK"].Value = Class_TaiKhoan.IdTaiKhoan;
+                //cmd.Parameters["@idTu"].Direction = ParameterDirection.Output;
+                ////
+                //cmd.Parameters["@TenTu"].Value = txtTuVung.Text.Trim();
+                //cmd.Parameters["@PhienAm"].Value = $"{txtPhienAm.Text.Trim()}";
+                //cmd.Parameters["@ChuyenNganh"].Value = cbbChuyenNganh.SelectedValue;
+                //cmd.Parameters["@DongNghia"].Value = txtDongNghia.Text.Trim();
+                //cmd.Parameters["@TraiNghia"].Value = txtTraiNghia.Text.Trim();
+                //cmd.Parameters["@IDTK"].Value = Class_TaiKhoan.IdTaiKhoan;
 
-                conn.Open();
-                soDongThemTu = cmd.ExecuteNonQuery();
-                idTuMoi = cmd.Parameters["@idTu"].Value.ToString();
-                conn.Close();
-                conn.Dispose();
+                //conn.Open();
+                //soDongThemTu = cmd.ExecuteNonQuery();
+                //idTuMoi = cmd.Parameters["@idTu"].Value.ToString();
+                //conn.Close();
+                //conn.Dispose();
             }
             catch (Exception ex)
             {

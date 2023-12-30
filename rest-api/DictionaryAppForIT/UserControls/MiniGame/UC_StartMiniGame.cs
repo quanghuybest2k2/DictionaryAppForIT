@@ -26,7 +26,8 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             }
             catch (Exception ex)
             {
-                RJMessageBox.Show("Bạn cần tra đủ 10 từ vựng mới sử dụng được tính năng này!", "Xin lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //RJMessageBox.Show("Bạn cần tra đủ 10 từ vựng mới sử dụng được tính năng này!", "Xin lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                RJMessageBox.Show(ex.Message);
             }
         }
     }
