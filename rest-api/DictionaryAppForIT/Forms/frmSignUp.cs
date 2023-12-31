@@ -1,14 +1,10 @@
-﻿using DictionaryAppForIT.Class;
-using DictionaryAppForIT.DAL;
-using DictionaryAppForIT.DTO;
+﻿using DictionaryAppForIT.API;
+using DictionaryAppForIT.Class;
 using System;
-using System.Data.SqlClient;
+using System.Collections.Generic;
+using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using DictionaryAppForIT.API;
 
 namespace DictionaryAppForIT.Forms
 {

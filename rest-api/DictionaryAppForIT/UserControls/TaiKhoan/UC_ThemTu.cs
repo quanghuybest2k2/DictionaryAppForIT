@@ -1,5 +1,4 @@
 ﻿using DictionaryAppForIT.Class;
-using DictionaryAppForIT.DAL;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -8,7 +7,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 {
     public partial class UC_ThemTu : UserControl
     {
-        //private string connString = ConfigurationManager.ConnectionStrings["DictionaryApp"].ConnectionString;
         private string idTuMoi;
 
         UC_TT_ThemNghia ucThemNghia;
@@ -27,7 +25,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             try
             {
                 string query = "select * from ChuyenNganh";
-                cbbChuyenNganh.DataSource = DataProvider.Instance.ExecuteQuery(query);
+                //cbbChuyenNganh.DataSource = DataProvider.Instance.ExecuteQuery(query);
                 cbbChuyenNganh.DisplayMember = "TenChuyenNganh";
                 cbbChuyenNganh.ValueMember = "ID";
             }

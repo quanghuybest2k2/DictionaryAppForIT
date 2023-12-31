@@ -1,14 +1,11 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
-using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
-using DictionaryAppForIT.DTO.Love;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DictionaryAppForIT.UserControls.YeuThich
 {

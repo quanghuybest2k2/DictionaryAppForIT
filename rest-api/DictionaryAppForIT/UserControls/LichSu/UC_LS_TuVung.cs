@@ -1,10 +1,7 @@
 ﻿using Bunifu.UI.WinForms;
-using DictionaryAppForIT.DAL;
 using DictionaryAppForIT.DTO;
-using Guna.UI2.WinForms;
 using System;
 using System.Speech.Synthesis;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.LichSu

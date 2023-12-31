@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace DictionaryAppForIT.UserControls.MiniGame
 {
@@ -23,15 +24,15 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             _item = new CauHoiVaDapAn();
         }
 
-        public async void LoadDSCauHoi()
+        public async Task LoadDSCauHoi()
         {
-            // lấy 10 từ để làm 10 câu hỏi
-            int soLuong = 10;
-            string TiengAnh;
-            string TenLoai;
-            string TiengViet;
             try
             {
+                // lấy 10 từ để làm 10 câu hỏi
+                int soLuong = 10;
+                string TiengAnh;
+                string TenLoai;
+                string TiengViet;
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-questions/{soLuong}/{Class_TaiKhoan.IdTaiKhoan}");
 
                 string responseContent = await response.Content.ReadAsStringAsync();
@@ -47,7 +48,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
                         TenLoai = item.type_name;
                         TiengViet = item.vietnamese;
                         _item = new CauHoiVaDapAn(demSoTu, TiengAnh, TenLoai, TiengViet);
-                        _item.RandomDapAnSai();
+                        await _item.RandomDapAnSai();
                         _list.Add(_item);
                     }
                 }
@@ -61,12 +62,12 @@ namespace DictionaryAppForIT.UserControls.MiniGame
                 RJMessageBox.Show(ex.Message);
             }
         }
-        public async void BoSungCauHoiNeuChuaDu(int index)
+        public async Task BoSungCauHoiNeuChuaDu(int i)
         {
-            if (index < 10)
+            if (i < 10)
             {
-                int num = 10 - index;
-               
+                int num = 10 - i;
+
                 try
                 {
                     string TiengAnh;
@@ -88,7 +89,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
                             TenLoai = item.type_name;
                             TiengViet = item.means;// nghĩa
                             _item = new CauHoiVaDapAn(demSoTu, TiengAnh, TenLoai, TiengViet);
-                            _item.RandomDapAnSai();
+                            await _item.RandomDapAnSai();
                             _list.Add(_item);
                         }
                     }

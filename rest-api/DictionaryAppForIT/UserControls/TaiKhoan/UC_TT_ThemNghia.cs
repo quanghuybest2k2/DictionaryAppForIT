@@ -1,12 +1,4 @@
-﻿using DictionaryAppForIT.DAL;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.TaiKhoan
@@ -51,7 +43,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 
         public string[] LayGiaTriControl()
         {
-            string[] arr = {TuLoai, Nghia, MoTa, ViDu };
+            string[] arr = { TuLoai, Nghia, MoTa, ViDu };
             return arr;
         }
 
@@ -74,7 +66,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             try
             {
                 string query = "select * from TuLoai";
-                cbbTuLoai.DataSource = DataProvider.Instance.ExecuteQuery(query);
+                //cbbTuLoai.DataSource = DataProvider.Instance.ExecuteQuery(query);
                 cbbTuLoai.DisplayMember = "TenLoai";
                 cbbTuLoai.ValueMember = "ID";
             }

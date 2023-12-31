@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace DictionaryAppForIT.UserControls.MiniGame
 {
@@ -38,7 +39,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             DapAnDung = dapAnDung;
             DapAnRandom = new List<string>();
         }
-        public async void RandomDapAnSai()
+        public async Task RandomDapAnSai()
         {
             // số lượng record trả về ngoại trừ {TuVung}
             int soLuong = 3;

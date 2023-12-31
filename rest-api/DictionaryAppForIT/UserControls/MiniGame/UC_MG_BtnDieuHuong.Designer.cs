@@ -45,7 +45,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.guna2PictureBox1.Size = new System.Drawing.Size(37, 10);
             this.guna2PictureBox1.TabIndex = 9;
             this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // pnNen
             // 
@@ -59,7 +58,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.pnNen.Padding = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.pnNen.Size = new System.Drawing.Size(37, 36);
             this.pnNen.TabIndex = 8;
-            this.pnNen.Paint += new System.Windows.Forms.PaintEventHandler(this.pnNen_Paint);
             // 
             // lblSo
             // 
@@ -74,7 +72,6 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             this.lblSo.TabIndex = 0;
             this.lblSo.Text = "01";
             this.lblSo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSo.Click += new System.EventHandler(this.lblSo_Click);
             // 
             // UC_MG_BtnDieuHuong
             // 

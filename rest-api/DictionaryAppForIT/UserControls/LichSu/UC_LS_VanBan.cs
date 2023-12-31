@@ -1,7 +1,5 @@
-﻿using DictionaryAppForIT.DAL;
-using DictionaryAppForIT.DTO;
+﻿using DictionaryAppForIT.DTO;
 using System;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.LichSu

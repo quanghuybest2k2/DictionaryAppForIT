@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Media; // thư viện âm thanh
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.MiniGame
@@ -26,16 +27,16 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             InitializeComponent();
             XacNhanChoiLai = false;
         }
-        private void UC_MiniGame_Load(object sender, EventArgs e)
+        private async void UC_MiniGame_Load(object sender, EventArgs e)
         {
-            //LoadCauHoi();
-            ClassDanhSachCauHoi.LoadDSCauHoi();
-            ClassDanhSachCauHoi.BoSungCauHoiNeuChuaDu(ClassDanhSachCauHoi.demSoTu);
+            await ClassDanhSachCauHoi.LoadDSCauHoi();
+            await ClassDanhSachCauHoi.BoSungCauHoiNeuChuaDu(ClassDanhSachCauHoi.demSoTu);
             btnDieuHuong_Click(btnCau1, e);
             btnCau1.Checked = true;
-            LoadThoiGian();
+            await LoadThoiGian();
         }
-        private void LoadThoiGian()
+
+        private async Task LoadThoiGian()
         {
             int m = 1;// phut
             int s = 0;// giay
@@ -45,7 +46,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             nhacTraLoi.PlayLooping();
         }
 
-        private void timerCountDown_Tick(object sender, EventArgs e)
+        private async void timerCountDown_Tick(object sender, EventArgs e)
         {
             //Application.StartupPath: đường dẫn vào bin\\debug
             //property của tệp phải ở chế độ Copy if newer
@@ -67,18 +68,18 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             {
                 this.timerCountDown.Stop();
                 NhacHetGio.Play();
-                var frm = new frmMSG_HoanThanh("Bạn đã hết thời gian!", TongDiem(), SoCauChuaLam(), "1 phút 0 giây");
+                var frm = new frmMSG_HoanThanh("Bạn đã hết thời gian!", await TongDiem(), await SoCauChuaLam(), "1 phút 0 giây");
                 frm.GameOver = true;
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     frm.Close();
-                    ChoiLai(XacNhanChoiLai);
+                    await ChoiLai(XacNhanChoiLai);
                 }
 
             }
         }
 
-        private string ThoiGianHoanThanh()
+        private async Task<string> ThoiGianHoanThanh()
         {
             string[] kq = new string[2];
             string[] arr = lblThoiGian.Text.Split(':');
@@ -91,36 +92,36 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             return kq[0] + kq[1];
         }
 
-        private void btnHoanThanh_Click(object sender, EventArgs e)
+        private async void btnHoanThanh_Click(object sender, EventArgs e)
         {
-            var frmXacNhan = new frmMSG_XacNhan("Bạn có chắc chắn là muốn hoàn thành lượt chơi không?", ThoiGianHoanThanh());
+            var frmXacNhan = new frmMSG_XacNhan("Bạn có chắc chắn là muốn hoàn thành lượt chơi không?", await ThoiGianHoanThanh());
             if (frmXacNhan.ShowDialog() == DialogResult.OK)
             {
                 this.timerCountDown.Stop();
                 DemNguoc15s.Stop();
                 frmXacNhan.Close();
-                var frmHoanThanh = new frmMSG_HoanThanh("Bạn đã hoàn thành lượt chơi!", TongDiem(), SoCauChuaLam(), ThoiGianHoanThanh());
+                var frmHoanThanh = new frmMSG_HoanThanh("Bạn đã hoàn thành lượt chơi!", await TongDiem(), await SoCauChuaLam(), await ThoiGianHoanThanh());
                 frmHoanThanh.HoanThanh = true;
                 if (frmHoanThanh.ShowDialog() == DialogResult.OK)
                 {
                     frmHoanThanh.Close();
-                    ChoiLai(XacNhanChoiLai);
+                    await ChoiLai(XacNhanChoiLai);
                 }
 
             }
         }
 
-        public void ChoiLai(bool xacNhanChoiLai)
+        public async Task ChoiLai(bool xacNhanChoiLai)
         {
             if (xacNhanChoiLai)
             {
                 ClassDanhSachCauHoi = new DanhSachCauHoi();
-                ClassDanhSachCauHoi.LoadDSCauHoi();
-                ClassDanhSachCauHoi.BoSungCauHoiNeuChuaDu(ClassDanhSachCauHoi.demSoTu);
-                HienThiCauHoi(0);
+                await ClassDanhSachCauHoi.LoadDSCauHoi();
+                await ClassDanhSachCauHoi.BoSungCauHoiNeuChuaDu(ClassDanhSachCauHoi.demSoTu);
+                await HienThiCauHoi(0);
                 lblSoCauHoanThanh.Text = "0/10";
                 btnCau1.Checked = true;
-                LoadThoiGian();
+                await LoadThoiGian();
                 btnHoanThanh.Visible = true;
             }
             else
@@ -141,7 +142,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             }
         }
 
-        private void HienThiCauHoi(int index)
+        private async Task HienThiCauHoi(int index)
         {
             if (ClassDanhSachCauHoi._list[index].Stt < 10)
             {
@@ -170,16 +171,16 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             ClassDanhSachCauHoi._list[index].DapAnRandom.Add(ClassDanhSachCauHoi._list[index].DapAnDung);
             // 4 dap an
             btnA.Text = ClassDanhSachCauHoi._list[index].DapAnRandom[numbers[0]];
-            HienThiCauTraLoi(btnA, ClassDanhSachCauHoi._list[index].CauTraLoi);
+            await HienThiCauTraLoi(btnA, ClassDanhSachCauHoi._list[index].CauTraLoi);
             btnB.Text = ClassDanhSachCauHoi._list[index].DapAnRandom[numbers[1]];
-            HienThiCauTraLoi(btnB, ClassDanhSachCauHoi._list[index].CauTraLoi);
+            await HienThiCauTraLoi(btnB, ClassDanhSachCauHoi._list[index].CauTraLoi);
             btnC.Text = ClassDanhSachCauHoi._list[index].DapAnRandom[numbers[2]];
-            HienThiCauTraLoi(btnC, ClassDanhSachCauHoi._list[index].CauTraLoi);
+            await HienThiCauTraLoi(btnC, ClassDanhSachCauHoi._list[index].CauTraLoi);
             btnD.Text = ClassDanhSachCauHoi._list[index].DapAnRandom[numbers[3]];
-            HienThiCauTraLoi(btnD, ClassDanhSachCauHoi._list[index].CauTraLoi);
+            await HienThiCauTraLoi(btnD, ClassDanhSachCauHoi._list[index].CauTraLoi);
         }
 
-        private void HienThiCauTraLoi(Guna2Button btn, string cauTraLoi)
+        private async Task HienThiCauTraLoi(Guna2Button btn, string cauTraLoi)
         {
             if (btn.Text == cauTraLoi)
             {
@@ -191,9 +192,8 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             }
         }
 
-        private void traloi_click(object sender, EventArgs e)
+        private async void traloi_click(object sender, EventArgs e)
         {
-
             string num = lblStt.Text;
             int index = Convert.ToInt32(num);
             index--;
@@ -208,10 +208,10 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             {
                 ClassDanhSachCauHoi._list[index].TraLoiDung = false;
             }
-            lblSoCauHoanThanh.Text = SoCauHoanThanh() + "/10";
+            lblSoCauHoanThanh.Text = await SoCauHoanThanh() + "/10";
         }
 
-        public string TongDiem()
+        public async Task<string> TongDiem()
         {
             int sum = 0;
             foreach (var item in ClassDanhSachCauHoi._list)
@@ -224,7 +224,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             return sum.ToString();
         }
 
-        public string SoCauChuaLam()
+        public async Task<string> SoCauChuaLam()
         {
             int sum = 0;
             foreach (var item in ClassDanhSachCauHoi._list)
@@ -236,9 +236,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             }
             return sum.ToString();
         }
-
-
-        private string SoCauHoanThanh()
+        private async Task<string> SoCauHoanThanh()
         {
             int sum = 0;
             foreach (var item in ClassDanhSachCauHoi._list)
@@ -251,25 +249,25 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             return sum.ToString();
         }
 
-        private void btnDieuHuong_Click(object sender, EventArgs e)
+        private async void btnDieuHuong_Click(object sender, EventArgs e)
         {
             int num = Convert.ToInt32((sender as Guna2Button).Text);
-            HienThiCauHoi(--num);
+            await HienThiCauHoi(--num);
         }
-        private void btnCauTruoc_Click(object sender, EventArgs e)
+        private async void btnCauTruoc_Click(object sender, EventArgs e)
         {
             int num = Convert.ToInt32(lblStt.Text);
             if (num >= 2)
             {
-                HienThiCauHoi(num - 2);
+                await HienThiCauHoi(num - 2);
             }
         }
-        private void btnCauSau_Click(object sender, EventArgs e)
+        private async void btnCauSau_Click(object sender, EventArgs e)
         {
             int num = Convert.ToInt32(lblStt.Text);
             if (num < 10)
             {
-                HienThiCauHoi(num);
+                await HienThiCauHoi(num);
             }
         }
     }
