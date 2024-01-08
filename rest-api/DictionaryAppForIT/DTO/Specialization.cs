@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DictionaryAppForIT.DTO
+﻿namespace DictionaryAppForIT.DTO
 {
-    public class Specialization
+    public class Specialization : BaseResponse
     {
-        public string id { get; set; }
         public string specialization_name { get; set; }
     }
 

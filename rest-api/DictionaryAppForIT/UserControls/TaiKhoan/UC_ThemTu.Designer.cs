@@ -54,6 +54,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.pnBottom.SuspendLayout();
@@ -181,7 +182,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(120)))));
-            this.panel3.Location = new System.Drawing.Point(55, 23);
+            this.panel3.Location = new System.Drawing.Point(55, 13);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(11, 27);
             this.panel3.TabIndex = 111;
@@ -191,11 +192,11 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
             this.label25.ForeColor = System.Drawing.Color.Gray;
-            this.label25.Location = new System.Drawing.Point(71, 21);
+            this.label25.Location = new System.Drawing.Point(71, 11);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(141, 28);
+            this.label25.Size = new System.Drawing.Size(181, 28);
             this.label25.TabIndex = 110;
-            this.label25.Text = "Thêm từ vựng";
+            this.label25.Text = "Đóng góp từ vựng";
             // 
             // btnThemNghia
             // 
@@ -334,10 +335,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.cbbChuyenNganh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.cbbChuyenNganh.FormattingEnabled = true;
             this.cbbChuyenNganh.ItemHeight = 34;
-            this.cbbChuyenNganh.Items.AddRange(new object[] {
-            "Khoa học dữ liệu",
-            "Kỹ thuật phần mềm",
-            "Mạng máy tính"});
             this.cbbChuyenNganh.Location = new System.Drawing.Point(567, 103);
             this.cbbChuyenNganh.Name = "cbbChuyenNganh";
             this.cbbChuyenNganh.Size = new System.Drawing.Size(240, 40);
@@ -439,12 +436,25 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2Elipse1.BorderRadius = 26;
             this.guna2Elipse1.TargetControl = this;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.No;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(51, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(275, 16);
+            this.label2.TabIndex = 112;
+            this.label2.Text = "Đóng góp của bạn sẽ được chúng tôi xem xét.";
+            // 
             // UC_ThemTu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.btnThemNghia);
@@ -499,5 +509,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -116,7 +116,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 {
                     xoaTatCa = false;
                     flpContent.Controls.Remove(item);
-                   await WordHistoryService.XoaLichSuTuVungAsync(item);
+                    await WordHistoryService.XoaLichSuTuVungAsync(item);
                 }
             }
             _listUCLSTV.RemoveAll(x => x.Name == "Check");
@@ -130,7 +130,7 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 {
                     xoaTatCa = false;
                     flpContent.Controls.Remove(item);
-                   await WordHistoryService.XoaLichSuVanBanAsync(item);
+                    await WordHistoryService.XoaLichSuVanBanAsync(item);
                 }
             }
             _listUCLSVB.RemoveAll(x => x.Name == "Check");

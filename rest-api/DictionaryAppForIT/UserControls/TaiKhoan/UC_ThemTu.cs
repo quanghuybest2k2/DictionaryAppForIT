@@ -1,4 +1,6 @@
 ﻿using DictionaryAppForIT.Class;
+using DictionaryAppForIT.DAL;
+using DictionaryAppForIT.DTO;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -19,20 +21,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             InitializeComponent();
             _list = new List<UC_TT_ThemNghia>();
             btnThemNghia.PerformClick();
-        }
-        private void LoadChuyenNganh()
-        {
-            try
-            {
-                string query = "select * from ChuyenNganh";
-                //cbbChuyenNganh.DataSource = DataProvider.Instance.ExecuteQuery(query);
-                cbbChuyenNganh.DisplayMember = "TenChuyenNganh";
-                cbbChuyenNganh.ValueMember = "ID";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
         private void btnThemNghia_Click(object sender, EventArgs e)
         {
@@ -129,9 +117,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             }
         }
 
-        private void UC_ThemTu_Load(object sender, EventArgs e)
+        private async void UC_ThemTu_Load(object sender, EventArgs e)
         {
-            LoadChuyenNganh();
+            await SpecializationService.LoadSpecializationAsync(cbbChuyenNganh);
             cbbChuyenNganh.SelectedIndex = 0;
         }
 

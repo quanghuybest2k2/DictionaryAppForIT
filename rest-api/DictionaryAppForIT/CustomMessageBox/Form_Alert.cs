@@ -92,9 +92,9 @@ namespace DictionaryAppForIT.CustomMessageBox
 
         }
 
-        public void showAlert(int type)
+        public async void showAlert(int type)
         {
-            XemNghia.HienThiThongTinRandom();
+           await XemNghia.HienThiThongTinRandom();
             foreach (var item in XemNghia._listTu)
             {
                 lblTuVung.Text = item.TenTu;

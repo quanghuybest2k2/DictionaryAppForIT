@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DictionaryAppForIT.DAL;
+using DictionaryAppForIT.DTO;
+using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.TaiKhoan
@@ -61,23 +64,27 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             else
                 XacNhanXoa = false;
         }
-        private void LoadTuLoai()
+        private async Task LoadTuLoai()
         {
             try
             {
-                string query = "select * from TuLoai";
-                //cbbTuLoai.DataSource = DataProvider.Instance.ExecuteQuery(query);
-                cbbTuLoai.DisplayMember = "TenLoai";
-                cbbTuLoai.ValueMember = "ID";
+                object result = await DataProvider.Instance.GetMethod<WordTypeResponse>("get-all-word-type");
+
+                if (result != null)
+                {
+                    cbbTuLoai.DataSource = result;
+                    cbbTuLoai.DisplayMember = "type_name";
+                    cbbTuLoai.ValueMember = "id";
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        private void UC_TT_ThemNghia_Load(object sender, EventArgs e)
+        private async void UC_TT_ThemNghia_Load(object sender, EventArgs e)
         {
-            LoadTuLoai();
+            await LoadTuLoai();
             cbbTuLoai.SelectedIndex = 0;
         }
     }

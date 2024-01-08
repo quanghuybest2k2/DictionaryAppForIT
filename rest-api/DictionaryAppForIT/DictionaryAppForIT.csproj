@@ -226,6 +226,7 @@
     <Compile Include="CustomMessageBox\UC_PbThanhTich\UC_TT_Hang4.designer.cs">
       <DependentUpon>UC_TT_Hang4.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DTO\Account\AccountResponse.cs" />
     <Compile Include="DTO\Account\LoginResponse.cs" />
     <Compile Include="DTO\ApiResponse.cs" />
@@ -234,16 +235,19 @@
     <Compile Include="DTO\Class_TaiKhoan.cs" />
     <Compile Include="DTO\History\CheckResponse.cs" />
     <Compile Include="DTO\Home\SuggestAllResponse.cs" />
+    <Compile Include="DTO\Home\WordResponse.cs" />
     <Compile Include="DTO\LoveVocabulary.cs" />
     <Compile Include="DTO\Love\LoveResponse.cs" />
     <Compile Include="DTO\MiniGame\MiniGameResponse.cs" />
     <Compile Include="DTO\Specialization.cs" />
+    <Compile Include="DTO\SpecializationService.cs" />
     <Compile Include="DTO\TranslateHistory.cs" />
     <Compile Include="DTO\TranslateHistoryService.cs" />
     <Compile Include="DTO\Tu.cs" />
     <Compile Include="DTO\WordBySpecialization.cs" />
     <Compile Include="DTO\WordHistoryService.cs" />
     <Compile Include="DTO\WordLookupHistory.cs" />
+    <Compile Include="DTO\WordTypeResponse.cs" />
     <Compile Include="DTO\XemTatCaNghia.cs" />
     <Compile Include="Forms\FormMessageBox.cs">
       <SubType>Form</SubType>

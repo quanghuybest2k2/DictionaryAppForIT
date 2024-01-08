@@ -9,6 +9,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Net.Http;
 using System.Speech.Synthesis;
 using System.Threading.Tasks;
@@ -201,7 +202,6 @@ namespace DictionaryAppForIT.UserControls
         {
             if (await XemNghia.HienThiThongTinTimKiem(txtTimKiemTu.Text))
             {
-
                 _listNghia = new List<UC_Nghia>();
                 pnTitle.Visible = true;
                 foreach (var item in XemNghia._listTu)
@@ -270,13 +270,18 @@ namespace DictionaryAppForIT.UserControls
             TocDoNoi();
             speech.SpeakAsync(txtTuVung.Text);
         }
-
         private void btnUK_Click(object sender, EventArgs e)
         {
-            speech.SelectVoice("Microsoft Hazel Desktop"); // giong anh
-            TocDoNoi();
-            speech.SpeakAsync(txtTuVung.Text);
-
+            if (speech.GetInstalledVoices().Any(v => v.VoiceInfo.Name == "Microsoft Hazel Desktop"))
+            {
+                speech.SelectVoice("Microsoft Hazel Desktop"); // Chọn giọng Anh Anh
+                TocDoNoi();
+                speech.SpeakAsync(txtTuVung.Text);
+            }
+            else
+            {
+                RJMessageBox.Show("Thiết bị của bạn không có giọng Anh Anh!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnSaoChep_Click(object sender, EventArgs e)
@@ -287,9 +292,9 @@ namespace DictionaryAppForIT.UserControls
         #endregion
 
         #region xử lý tìm ngẫu nhiên
-        private void HienThiKqRandom()
+        private async void HienThiKqRandom()
         {
-            XemNghia.HienThiThongTinRandom();
+           await XemNghia.HienThiThongTinRandom();
 
             foreach (var item in XemNghia._listTu)
             {

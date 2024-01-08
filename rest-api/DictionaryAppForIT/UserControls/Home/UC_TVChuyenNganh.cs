@@ -32,31 +32,8 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync(apiUrl + "get-all-specialization");
-                if (response.IsSuccessStatusCode)
-                {
-                    string jsonString = await response.Content.ReadAsStringAsync();
-                    JObject jsonObject = JObject.Parse(jsonString);
-
-                    if (jsonObject.ContainsKey("data"))
-                    {
-                        JArray specializationArray = (JArray)jsonObject["data"];
-                        List<Specialization> specializations = specializationArray.ToObject<List<Specialization>>();
-
-                        cbbChuyenNganh.DataSource = specializations;
-                        cbbChuyenNganh.ValueMember = "id";
-                        cbbChuyenNganh.DisplayMember = "specialization_name";
-                        isComboboxLoaded = true;
-                    }
-                    else
-                    {
-                        RJMessageBox.Show("Không tìm thấy dữ liệu chuyên ngành!");
-                    }
-                }
-                else
-                {
-                    RJMessageBox.Show("Mã lỗi >> " + response.StatusCode);
-                }
+                await SpecializationService.LoadSpecializationAsync(cbbChuyenNganh);
+                isComboboxLoaded = true;
                 await HienThiTheoChuyenNganhAsync(); // hiển thị lúc load lên
             }
             catch (Exception ex)
@@ -70,28 +47,22 @@ namespace DictionaryAppForIT.UserControls.Home
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"display-by-specialization?specialization_id={cbbChuyenNganh.SelectedValue}");
 
-                if (response.IsSuccessStatusCode)
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<WordBySpecialization[]>>(responseContent);
+                var data = apiResponse.Data;
+
+                if (apiResponse.Status && data != null)
                 {
-                    string jsonString = await response.Content.ReadAsStringAsync();
-                    JObject jsonObject = JObject.Parse(jsonString);
 
-                    if (jsonObject.ContainsKey("data"))
-                    {
-                        JArray specializationArray = (JArray)jsonObject["data"];
-                        List<WordBySpecialization> specializations = specializationArray.ToObject<List<WordBySpecialization>>();
-
-                        dtgvTuVung.DataSource = specializations;
-                        lblSoTuHienCo.Text = dtgvTuVung.Rows.Count.ToString();
-                    }
-                    else
-                    {
-                        RJMessageBox.Show("Không tìm thấy dữ liệu chuyên ngành!");
-                    }
+                    dtgvTuVung.DataSource = data;
+                    lblSoTuHienCo.Text = dtgvTuVung.Rows.Count.ToString();
                 }
                 else
                 {
-                    RJMessageBox.Show("Lỗi rồi! Mã lỗi >> " + response.StatusCode);
+                    RJMessageBox.Show("Không tìm thấy dữ liệu chuyên ngành!");
                 }
+
             }
             catch (Exception ex)
             {

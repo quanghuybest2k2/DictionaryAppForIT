@@ -1,5 +1,6 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
+using DictionaryAppForIT.DTO.Home;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -21,15 +22,16 @@ namespace DictionaryAppForIT.DTO
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync(apiUrl + "search-word?keyword=" + tenTu);
-                string json = await response.Content.ReadAsStringAsync();
-                dynamic data = JsonConvert.DeserializeObject(json);
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"search-word?keyword={tenTu}");
 
-                if (response.IsSuccessStatusCode && data.status == true)
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<WordResponse[]>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
                     _listTu.Clear();
-
-                    foreach (var word in data.data)
+                    foreach (var word in apiResponse.Data)
                     {
                         Tu tu = new Tu();
                         tu.TenTu = word.word_name;
@@ -48,10 +50,7 @@ namespace DictionaryAppForIT.DTO
                 }
                 else
                 {
-                    if (data.message != null)
-                    {
-                        RJMessageBox.Show(data.message.ToString());
-                    }
+                    RJMessageBox.Show(apiResponse.Message);
                     return false;
                 }
             }
@@ -62,27 +61,29 @@ namespace DictionaryAppForIT.DTO
             }
         }
 
-        public async void HienThiThongTinRandom()
+        public async Task HienThiThongTinRandom()
         {
             try
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + "random-word");
-                string json = await response.Content.ReadAsStringAsync();
-                dynamic data = JsonConvert.DeserializeObject(json);
 
-                if (response.IsSuccessStatusCode && data.status == true)
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<WordResponse>>(responseContent);
+                var data = apiResponse.Data;
+
+                if (apiResponse.Status && data != null)
                 {
-                    dynamic word = data.data;
                     Tu tu = new Tu();
-                    tu.TenTu = word.word_name;
-                    tu.TenLoai = word.type_name;
-                    tu.PhienAm = word.pronunciations;
-                    tu.TenChuyenNganh = word.specialization_name;
-                    tu.Nghia = word.means;
-                    tu.MoTa = word.description;
-                    tu.ViDu = word.example;
-                    tu.DongNghia = word.synonymous;
-                    tu.TraiNghia = word.antonyms;
+                    tu.TenTu = data.word_name;
+                    tu.TenLoai = data.type_name;
+                    tu.PhienAm = data.pronunciations;
+                    tu.TenChuyenNganh = data.specialization_name;
+                    tu.Nghia = data.means;
+                    tu.MoTa = data.description;
+                    tu.ViDu = data.example;
+                    tu.DongNghia = data.synonymous;
+                    tu.TraiNghia = data.antonyms;
 
                     _listTu.Clear();
                     _listTu.Add(tu);
