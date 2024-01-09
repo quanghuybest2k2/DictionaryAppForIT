@@ -48,8 +48,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.rdNu = new Bunifu.UI.WinForms.BunifuRadioButton();
             this.rdNam = new Bunifu.UI.WinForms.BunifuRadioButton();
             this.cbbChuyenNganh = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtPhienAm = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtTuVung = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -341,45 +339,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.cbbChuyenNganh.TabIndex = 103;
             this.cbbChuyenNganh.TextOffset = new System.Drawing.Point(10, 0);
             // 
-            // txtPhienAm
-            // 
-            this.txtPhienAm.BorderColor = System.Drawing.Color.Silver;
-            this.txtPhienAm.BorderRadius = 8;
-            this.txtPhienAm.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhienAm.DefaultText = "";
-            this.txtPhienAm.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPhienAm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPhienAm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPhienAm.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPhienAm.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhienAm.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtPhienAm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhienAm.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtPhienAm.IconLeft")));
-            this.txtPhienAm.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.txtPhienAm.IconLeftSize = new System.Drawing.Size(18, 18);
-            this.txtPhienAm.Location = new System.Drawing.Point(310, 102);
-            this.txtPhienAm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtPhienAm.Name = "txtPhienAm";
-            this.txtPhienAm.PasswordChar = '\0';
-            this.txtPhienAm.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtPhienAm.PlaceholderText = "Ví dụ: /kəm´pəʊ.nənt/";
-            this.txtPhienAm.SelectedText = "";
-            this.txtPhienAm.Size = new System.Drawing.Size(222, 41);
-            this.txtPhienAm.TabIndex = 101;
-            this.txtPhienAm.TextOffset = new System.Drawing.Point(5, 0);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(308, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 20);
-            this.label1.TabIndex = 98;
-            this.label1.Text = "Phiên âm";
-            // 
             // txtTuVung
             // 
             this.txtTuVung.BorderColor = System.Drawing.Color.Silver;
@@ -464,8 +423,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.Controls.Add(this.rdNu);
             this.Controls.Add(this.rdNam);
             this.Controls.Add(this.cbbChuyenNganh);
-            this.Controls.Add(this.txtPhienAm);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTuVung);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -503,8 +460,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private Bunifu.UI.WinForms.BunifuRadioButton rdNu;
         private Bunifu.UI.WinForms.BunifuRadioButton rdNam;
         private Guna.UI2.WinForms.Guna2ComboBox cbbChuyenNganh;
-        private Guna.UI2.WinForms.Guna2TextBox txtPhienAm;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtTuVung;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

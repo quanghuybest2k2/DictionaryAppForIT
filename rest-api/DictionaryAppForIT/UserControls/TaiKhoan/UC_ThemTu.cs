@@ -1,21 +1,28 @@
-﻿using DictionaryAppForIT.Class;
-using DictionaryAppForIT.DAL;
+﻿using DictionaryAppForIT.API;
+using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DTO;
+using DictionaryAppForIT.DTO.Home;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.TaiKhoan
 {
     public partial class UC_ThemTu : UserControl
     {
+        private static readonly HttpClient client = new HttpClient();
+        private static readonly string apiUrl = BaseUrl.base_url;
+
         private string idTuMoi;
 
         UC_TT_ThemNghia ucThemNghia;
         int stt = 1;
         List<UC_TT_ThemNghia> _list;
-        private int soDongThemTu;
-        private int soDongThemNghia;
+        private bool soDongThemTu;
+        private bool soDongThemNghia;
         public UC_ThemTu()
         {
             InitializeComponent();
@@ -43,73 +50,90 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             }
         }
 
-        private void btnThemTuMoi_Click(object sender, EventArgs e)
+        private async void btnThemTuMoi_Click(object sender, EventArgs e)
         {
-            ThemTu();
+            await ThemTu();
             foreach (var item in _list)
             {
                 if (!item.XacNhanXoa)
                 {
-                    ThemNghia(item);
+                    await ThemNghia(item);
                 }
             }
-            if (soDongThemTu > 0 && soDongThemNghia > 0)
+            if (soDongThemTu && soDongThemNghia)
             {
-                RJMessageBox.Show("Thêm từ vựng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                RJMessageBox.Show("Đóng góp từ vựng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else
             {
-                RJMessageBox.Show("Không thể thêm từ vựng.", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                RJMessageBox.Show("Đã có lỗi xảy ra!.", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             btnMacDinh.PerformClick();
         }
-
-        private void ThemNghia(UC_TT_ThemNghia uc)
+        // Thêm nhĩa
+        private async Task ThemNghia(UC_TT_ThemNghia uc)
         {
             string[] arr = uc.LayGiaTriControl();
             try
             {
-                // them nghia
-                //string themNghia = "EXEC ThemNghia @IdTuMoi , @IdTuLoai , @Nghia , @MoTa , @ViDu";
-                //soDongThemNghia = DataProvider.Instance.ExecuteNonQuery(themNghia, new object[] { idTuMoi, arr[0], arr[1], arr[2], arr[3] });
+                var requestData = new Dictionary<string, string>
+                {
+                    { "word_id", idTuMoi },
+                    { "word_type_id", arr[0] },
+                    { "means", arr[1]},
+                    { "description", arr[2]},
+                    { "example", arr[3]}
+                };
+                //gửi request
+                var response = await client.PostAsync(apiUrl + "store-mean", new FormUrlEncodedContent(requestData));
+
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<WordResponse>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
+                {
+                    soDongThemNghia = true;
+                }
+                else
+                {
+                    RJMessageBox.Show(apiResponse.Message);
+                }
             }
             catch (Exception ex)
             {
                 RJMessageBox.Show(ex.Message);
             }
         }
-
-        private void ThemTu()
+        // Thêm từ
+        private async Task ThemTu()
         {
             try
             {
-                //SqlConnection conn = new SqlConnection(connString);
-                //SqlCommand cmd = conn.CreateCommand();
-                //cmd.CommandText = "EXEC ThemTu @idTu output, @TenTu, @PhienAm, @ChuyenNganh, @DongNghia, @TraiNghia, @IDTK";
-                //cmd.Parameters.Add("@idTu", SqlDbType.Int);
+                var requestData = new Dictionary<string, string>
+                {
+                    { "word_name", txtTuVung.Text.Trim() },
+                    { "specialization_id", cbbChuyenNganh.SelectedValue.ToString() },
+                    { "synonymous", txtDongNghia.Text.Trim()},
+                    { "antonyms", txtTraiNghia.Text.Trim()}
+                };
+                //gửi request
+                var response = await client.PostAsync(apiUrl + "store-word", new FormUrlEncodedContent(requestData));
 
-                //cmd.Parameters.Add("@TenTu", SqlDbType.VarChar, 100);
-                //cmd.Parameters.Add("@PhienAm", SqlDbType.NVarChar, 100);
-                //cmd.Parameters.Add("@ChuyenNganh", SqlDbType.Int);
-                //cmd.Parameters.Add("@DongNghia", SqlDbType.VarChar, 1000);
-                //cmd.Parameters.Add("@TraiNghia", SqlDbType.VarChar, 1000);
-                //cmd.Parameters.Add("@IDTK", SqlDbType.Int);
+                var responseContent = await response.Content.ReadAsStringAsync();
 
-                //cmd.Parameters["@idTu"].Direction = ParameterDirection.Output;
-                ////
-                //cmd.Parameters["@TenTu"].Value = txtTuVung.Text.Trim();
-                //cmd.Parameters["@PhienAm"].Value = $"{txtPhienAm.Text.Trim()}";
-                //cmd.Parameters["@ChuyenNganh"].Value = cbbChuyenNganh.SelectedValue;
-                //cmd.Parameters["@DongNghia"].Value = txtDongNghia.Text.Trim();
-                //cmd.Parameters["@TraiNghia"].Value = txtTraiNghia.Text.Trim();
-                //cmd.Parameters["@IDTK"].Value = Class_TaiKhoan.IdTaiKhoan;
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<WordResponse>>(responseContent);
 
-                //conn.Open();
-                //soDongThemTu = cmd.ExecuteNonQuery();
-                //idTuMoi = cmd.Parameters["@idTu"].Value.ToString();
-                //conn.Close();
-                //conn.Dispose();
+                if (apiResponse.Status && apiResponse.Data != null)
+                {
+                    idTuMoi = apiResponse.Data.id;
+                    soDongThemTu = true;
+                }
+                else
+                {
+                    RJMessageBox.Show(apiResponse.Message);
+                }
             }
             catch (Exception ex)
             {
@@ -126,14 +150,12 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private void btnMacDinh_Click(object sender, EventArgs e)
         {
             txtTuVung.Clear();
-            txtPhienAm.Clear();
             txtDongNghia.Clear();
             txtTraiNghia.Clear();
             pnNghia.Controls.Clear();
             _list.Clear();
             stt = 1;
             btnThemNghia.PerformClick();
-
         }
     }
 }

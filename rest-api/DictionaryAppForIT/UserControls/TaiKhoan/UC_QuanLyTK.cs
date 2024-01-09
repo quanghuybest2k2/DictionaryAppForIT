@@ -34,7 +34,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private void ThoiGianTaoTaiKhoan()
         {
             RichTextBox rtb1 = new RichTextBox();
-            rtb1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            rtb1.Font = new Font("Segoe UI", 10F);
             rtb1.SelectionColor = Color.Gray;
             rtb1.AppendText(" Bạn đã tạo tài khoản ngày ");
             rtb1.SelectionColor = ColorTranslator.FromHtml("#3776ab");
@@ -44,30 +44,30 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 
             rtb1.AppendText(date);
             rtb1.SelectionColor = Color.Gray;
-            rtb1.Size = new System.Drawing.Size(242, 23);
+            rtb1.Size = new Size(242, 23);
             rtb1.Location = new Point(69, 29);
             rtb1.Name = "rtxtThoiGianTaoTK";
             rtb1.BorderStyle = BorderStyle.None;
             rtb1.ReadOnly = true;
-            rtb1.BackColor = System.Drawing.Color.LemonChiffon;
+            rtb1.BackColor = Color.LemonChiffon;
             panelThoiGianTao.Controls.Add(rtb1);
         }
         private void ThoiGianSuDung()
         {
             RichTextBox rtb1 = new RichTextBox();
-            rtb1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            rtb1.Font = new Font("Segoe UI", 10F);
             rtb1.SelectionColor = Color.Gray;
             rtb1.AppendText("Hôm nay bạn đã sử dụng từ điển trong ");
             rtb1.SelectionColor = ColorTranslator.FromHtml("#3776ab");
             rtb1.AppendText(tgSuDung.ToString());
             rtb1.SelectionColor = Color.Gray;
             rtb1.AppendText(" tiếng đồng hồ");
-            rtb1.Size = new System.Drawing.Size(242, 43);
+            rtb1.Size = new Size(242, 43);
             rtb1.Location = new Point(72, 26);
             rtb1.Name = "rtxtThoiGianSuDung";
             rtb1.BorderStyle = BorderStyle.None;
             rtb1.ReadOnly = true;
-            rtb1.BackColor = System.Drawing.Color.LemonChiffon;
+            rtb1.BackColor = Color.LemonChiffon;
             panelThoiGianSuDung.Controls.Add(rtb1);
         }
         #endregion
