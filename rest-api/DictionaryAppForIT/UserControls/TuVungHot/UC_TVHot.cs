@@ -1,7 +1,8 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
+using DictionaryAppForIT.DTO;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace DictionaryAppForIT.UserControls.TuVungHot
         RandomColor rd = new RandomColor();
         UC_TVH_Item uc;
         private readonly string apiUrl = BaseUrl.base_url;
+        private readonly HttpClient client = new HttpClient();
 
         public UC_TVHot()
         {
@@ -30,47 +32,38 @@ namespace DictionaryAppForIT.UserControls.TuVungHot
         {
             flpContent.Controls.Clear();
             int stt = 1;
-            using (HttpClient httpClient = new HttpClient())
+            try
             {
-                try
+                HttpResponseMessage response = await client.GetAsync(apiUrl + "get-hot-vocabulary");
+
+
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<HotVocabularyResponse[]>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
-                    HttpResponseMessage response = await httpClient.GetAsync(apiUrl + "get-hot-vocabulary");
-
-                    string json = await response.Content.ReadAsStringAsync();
-                    JObject data = JObject.Parse(json);
-
-                    bool status = (bool)data["status"];
-                    if (status)
+                    foreach (var item in apiResponse.Data)
                     {
-                        JArray hotVocabulary = (JArray)data["data"];
+                        string english = item.english;
+                        string pronunciation = item.pronunciations;
+                        string vietnamese = item.vietnamese;
+                        string numberOfOccurrences = item.NumberOfOccurrences;
 
-                        foreach (var item in hotVocabulary)
-                        {
-                            string english = item["english"].ToString();
-                            string pronunciation = item["pronunciations"].ToString();
-                            string vietnamese = item["vietnamese"].ToString();
-                            int numberOfOccurrences = (int)item["NumberOfOccurrences"];
-
-                            UC_TVH_Item uc = new UC_TVH_Item(stt.ToString(), english, pronunciation, vietnamese, numberOfOccurrences.ToString());
-                            uc.TVHBackColor(rd.GetColor());
-                            flpContent.Controls.Add(uc);
-                            stt++;
-                        }
-                    }
-                    else
-                    {
-                        string message = data["message"].ToString();
-                        MessageBox.Show(message);
+                        UC_TVH_Item uc = new UC_TVH_Item(stt.ToString(), english, pronunciation, vietnamese, numberOfOccurrences);
+                        uc.TVHBackColor(rd.GetColor());
+                        flpContent.Controls.Add(uc);
+                        stt++;
                     }
                 }
-                catch (HttpRequestException ex)
+                else
                 {
-                    MessageBox.Show("Lỗi khi gọi API: " + ex.Message);
+                    RJMessageBox.Show(apiResponse.Message);
                 }
-                catch (JsonException ex)
-                {
-                    MessageBox.Show("JSON sai format: " + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show(ex.Message);
             }
         }
         //

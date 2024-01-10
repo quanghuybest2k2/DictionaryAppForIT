@@ -39,17 +39,17 @@ namespace DictionaryAppForIT.UserControls.GanDay
 
         }
 
-        public async void HienThiLSTraTu()
+        public async Task HienThiLSTraTu()
         {
             _listUCLSTV.Clear();
             flpContent.Controls.Clear();
             try
             {
-                var wordLookUpList = WordHistoryService.LoadWordLookupHistory();
+                var wordLookUpList = await WordHistoryService.LoadWordLookupHistory();
 
                 if (wordLookUpList != null)
                 {
-                    foreach (var history in await wordLookUpList)
+                    foreach (var history in wordLookUpList)
                     {
                         idHienTai = history.id.ToString();
                         string NgayThang = DateTime.Parse(history.created_at).ToLocalTime().ToString("dd/MM/yyyy");
@@ -75,19 +75,19 @@ namespace DictionaryAppForIT.UserControls.GanDay
             }
         }
 
-        public async void HienThiLSDich()
+        public async Task HienThiLSDich()
         {
             try
             {
-                var TextLookUpList = TranslateHistoryService.LoadLichSu();
+                var TextLookUpList = await TranslateHistoryService.LoadLichSu();
 
                 if (TextLookUpList != null)
                 {
-                    foreach (var history in await TextLookUpList)
+                    foreach (var history in TextLookUpList)
                     {
-                        idHienTai = history.Id.ToString();
-                        string NgayThang = DateTime.Parse(history.Created_At).ToLocalTime().ToString("dd/MM/yyyy");
-                        string ThoiGian = DateTime.Parse(history.Created_At).ToLocalTime().ToString("HH:mm:ss");
+                        idHienTai = history.id.ToString();
+                        string NgayThang = DateTime.Parse(history.created_at).ToLocalTime().ToString("dd/MM/yyyy");
+                        string ThoiGian = DateTime.Parse(history.created_at).ToLocalTime().ToString("HH:mm:ss");
                         string TVTiengAnh = history.English;
                         string TVTiengViet = history.Vietnamese;
 
@@ -387,10 +387,10 @@ namespace DictionaryAppForIT.UserControls.GanDay
                 return null;
             }
         }
-        private void btnTatCa_Click(object sender, EventArgs e)
+        private async void btnTatCa_Click(object sender, EventArgs e)
         {
-            HienThiLSTraTu();
-            HienThiLSDich();
+            await HienThiLSTraTu();
+            await HienThiLSDich();
         }
 
         private async void btnThoiGian_Click(object sender, EventArgs e)

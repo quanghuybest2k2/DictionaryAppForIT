@@ -1,11 +1,11 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DTO;
+using DictionaryAppForIT.DTO.History;
 using DictionaryAppForIT.DTO.Home;
 using DictionaryAppForIT.DTO.Love;
 using DictionaryAppForIT.UserControls.Home;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -34,7 +34,6 @@ namespace DictionaryAppForIT.UserControls
         public static string idLSVuaTra;
         public static string idYeuThichVuaChon;
         private List<UC_Nghia> _listNghia;
-        private CheckIfExist checkIfExist;
 
         public UC_TraTu()
         {
@@ -48,7 +47,6 @@ namespace DictionaryAppForIT.UserControls
             //txtTuVung.Text = "Variable (fix xong bug)";
             ChinhLaiTuLoai();
             GoiYTimKiemAsync();
-            checkIfExist = new CheckIfExist(); // đảm bảo khi chạy UC_TraTu mới chạy CheckIfExist()
         }
 
         private void ChinhLaiTuLoai()
@@ -135,10 +133,10 @@ namespace DictionaryAppForIT.UserControls
         }
 
 
-        private async void KiemTraTonTaiYeuThich()
+        private async Task KiemTraTonTaiYeuThich()
         {
             string tuVung = txtTuVung.Text.Trim();
-            bool wordExists = await checkIfExist.CheckIfWordExistsAsync(tuVung, "word");
+            bool wordExists = await CheckIfExist.CheckIfWordExistsAsync(tuVung, "word");
             if (wordExists)
             {
                 btnYeuThich.Checked = true;
@@ -149,7 +147,7 @@ namespace DictionaryAppForIT.UserControls
             }
         }
 
-        private void txtTimKiemTu_KeyDown(object sender, KeyEventArgs e)
+        private async void txtTimKiemTu_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && TuHienTai != txtTimKiemTu.Text && txtTimKiemTu.Text != "")//--------------------------------------
             {
@@ -162,7 +160,7 @@ namespace DictionaryAppForIT.UserControls
                 {
                     LuuLichSuTraTu(item);
                 }
-                KiemTraTonTaiYeuThich(); // kiểm tra xem từ yêu thích đã có chưa
+                await KiemTraTonTaiYeuThich(); // kiểm tra xem từ yêu thích đã có chưa
 
                 if (tocDoPhatAm == true)
                 {
@@ -191,6 +189,17 @@ namespace DictionaryAppForIT.UserControls
                 //{
                 //    RJMessageBox.Show("Phản hồi từ API: " + responseContent);
                 //}
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<HistoryResponse>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
+                {
+                    RJMessageBox.Show(apiResponse.Message);
+                }
+                else
+                {
+                    RJMessageBox.Show(apiResponse.Message);
+                }
             }
             catch (Exception ex)
             {
@@ -292,9 +301,9 @@ namespace DictionaryAppForIT.UserControls
         #endregion
 
         #region xử lý tìm ngẫu nhiên
-        private async void HienThiKqRandom()
+        private async Task HienThiKqRandom()
         {
-           await XemNghia.HienThiThongTinRandom();
+            await XemNghia.HienThiThongTinRandom();
 
             foreach (var item in XemNghia._listTu)
             {
@@ -332,16 +341,16 @@ namespace DictionaryAppForIT.UserControls
 
                 flpMeaning.Controls.Add(ucNghia);
                 ucNghia.Dock = DockStyle.Top;
-                KiemTraTonTaiYeuThich();
+                await KiemTraTonTaiYeuThich();
             }
         }
-        private void btnTuNgauNhien_Click(object sender, EventArgs e)
+        private async void btnTuNgauNhien_Click(object sender, EventArgs e)
         {
             try
             {
                 pnTitle.Visible = true;
                 flpMeaning.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
-                HienThiKqRandom();
+                await HienThiKqRandom();
                 foreach (var item in XemNghia._listTu)
                 {
                     LuuLichSuTraTu(item);
@@ -375,9 +384,9 @@ namespace DictionaryAppForIT.UserControls
 
                         string responseContent = await response.Content.ReadAsStringAsync();
 
-                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse<int>>(responseContent);
+                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
 
-                        if (apiResponse.Status && apiResponse.Data > 0)
+                        if (apiResponse.Status && apiResponse.Data != null)
                         {
                             RJMessageBox.Show(apiResponse.Message);
                         }

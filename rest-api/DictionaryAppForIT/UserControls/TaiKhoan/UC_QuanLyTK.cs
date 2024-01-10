@@ -3,7 +3,6 @@ using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DTO;
 using DictionaryAppForIT.DTO.Account;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -79,23 +78,21 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             if (result == DialogResult.Yes)
             {
                 // xóa tài khoản
-
                 HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-user/{Class_TaiKhoan.IdTaiKhoan}");
 
                 string responseContent = await response.Content.ReadAsStringAsync();
-                JObject responseObject = JObject.Parse(responseContent);
-                string message = responseObject["message"].ToString();
 
-                if (response.IsSuccessStatusCode)
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
-                    RJMessageBox.Show(message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RJMessageBox.Show(apiResponse.Message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Application.Exit();
                 }
                 else
                 {
-                    RJMessageBox.Show(message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    RJMessageBox.Show(apiResponse.Message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
             if (result == DialogResult.No)
             {
@@ -113,7 +110,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         {
             try
             {
-                Dictionary<string, string> userInput = new Dictionary<string, string>
+                var userInput = new Dictionary<string, string>
                 {
                     { "name", txtUsername.Text.Trim() },
                     { "email", txtEmail.Text.Trim()},
@@ -122,42 +119,20 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                 string DataRequest = JsonConvert.SerializeObject(userInput);
 
                 HttpContent content = new StringContent(DataRequest, Encoding.UTF8, "application/json");
+
                 HttpResponseMessage response = await client.PutAsync(apiUrl + $"update-user/{Class_TaiKhoan.IdTaiKhoan}", content);
 
-                if (response.IsSuccessStatusCode)
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
-                    string responseContent = await response.Content.ReadAsStringAsync();
-                    dynamic data = JsonConvert.DeserializeObject(responseContent);
-                    string message = data.message;
-                    RJMessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RJMessageBox.Show(apiResponse.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    string responseContent = await response.Content.ReadAsStringAsync();
-                    dynamic data = JsonConvert.DeserializeObject(responseContent);
-
-                    if (data.validator_errors != null)
-                    {
-                        var errorMessageBuilder = new StringBuilder();
-                        var validatorErrors = data.validator_errors;
-
-                        foreach (var keyValuePair in validatorErrors)
-                        {
-                            var errorMessages = keyValuePair.Value;
-                            errorMessageBuilder.AppendLine($"{errorMessages[0]}");
-                        }
-
-                        RJMessageBox.Show(Environment.NewLine + errorMessageBuilder.ToString());
-                    }
-                    else if (data.message != null)
-                    {
-                        var errorMessage = data.message;
-                        RJMessageBox.Show(errorMessage.ToString());
-                    }
-                    else
-                    {
-                        RJMessageBox.Show("Không thể cập nhật tài khoản!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    RJMessageBox.Show(apiResponse.Message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)

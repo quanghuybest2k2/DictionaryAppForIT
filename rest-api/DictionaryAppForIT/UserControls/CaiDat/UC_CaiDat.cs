@@ -1,17 +1,7 @@
-﻿using Bunifu.UI.WinForms;
-using Guna.UI2.WinForms;
-using DictionaryAppForIT.Class;
+﻿using DictionaryAppForIT.Class;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using DictionaryAppForIT.Properties;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DictionaryAppForIT.Forms;
 
 namespace DictionaryAppForIT.UserControls.CaiDat
 {

@@ -234,8 +234,10 @@
     <Compile Include="DTO\CheckIfExist.cs" />
     <Compile Include="DTO\Class_TaiKhoan.cs" />
     <Compile Include="DTO\History\CheckResponse.cs" />
+    <Compile Include="DTO\History\HistoryResponse.cs" />
     <Compile Include="DTO\Home\SuggestAllResponse.cs" />
     <Compile Include="DTO\Home\WordResponse.cs" />
+    <Compile Include="DTO\HotVocabularyResponse.cs" />
     <Compile Include="DTO\LoveVocabulary.cs" />
     <Compile Include="DTO\Love\LoveResponse.cs" />
     <Compile Include="DTO\MiniGame\MiniGameResponse.cs" />

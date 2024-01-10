@@ -10,14 +10,14 @@ namespace DictionaryAppForIT.DTO
 {
     public class CheckIfExist
     {
-        private readonly string apiUrl = BaseUrl.base_url;
-        HttpClient client = new HttpClient();
+        private static readonly string apiUrl = BaseUrl.base_url;
+        private static readonly HttpClient client = new HttpClient();
         public CheckIfExist()
         {
 
         }
         // type translateHistory, word
-        public async Task<bool> CheckIfWordExistsAsync(string word, string type)
+        public static async Task<bool> CheckIfWordExistsAsync(string word, string type)
         {
             try
             {
@@ -45,8 +45,7 @@ namespace DictionaryAppForIT.DTO
                 }
                 else
                 {
-                    string message = apiResponse.Message;
-                    RJMessageBox.Show(message);
+                    RJMessageBox.Show(apiResponse.Message);
                     return false;
                 }
             }

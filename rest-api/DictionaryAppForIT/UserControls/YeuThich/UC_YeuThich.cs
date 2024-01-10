@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.YeuThich
@@ -76,7 +77,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             get { return lblSoMucYeuThich.Text; }
             set { lblSoMucYeuThich.Text = value; }
         }
-        public async void HienThiYTTraTu()
+        public async Task HienThiYTTraTu()
         {
             _listTuVung.Clear();
             flpContent.Controls.Clear();
@@ -119,7 +120,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             }
         }
 
-        public async void HienThiYTVanBan()
+        public async Task HienThiYTVanBan()
         {
             _listVanBan.Clear();
             //flpContent.Controls.Clear();
@@ -183,9 +184,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
 
                         string responseContent = await response.Content.ReadAsStringAsync();
 
-                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse<int>>(responseContent);
+                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
 
-                        if (apiResponse.Status && apiResponse.Data > 0)
+                        if (apiResponse.Status && apiResponse.Data != null)
                         {
                             RJMessageBox.Show(apiResponse.Message);
                         }
@@ -217,9 +218,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                         HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-love-text?english={Uri.EscapeDataString(item.VBTiengAnh.Trim())}&user_id={Uri.EscapeDataString(Class_TaiKhoan.IdTaiKhoan)}");
 
                         string responseContent = await response.Content.ReadAsStringAsync();
-                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse<int>>(responseContent);
+                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
 
-                        if (apiResponse.Status && apiResponse.Data > 0)
+                        if (apiResponse.Status && apiResponse.Data != null)
                         {
                             RJMessageBox.Show(apiResponse.Message);
                         }
@@ -252,9 +253,9 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                     HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-all-favorite/{Class_TaiKhoan.IdTaiKhoan}");
 
                     string responseContent = await response.Content.ReadAsStringAsync();
-                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<int>>(responseContent);
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
 
-                    if (apiResponse.Status && apiResponse.Data > 0)
+                    if (apiResponse.Status && apiResponse.Data != null)
                     {
                         lblSoMucYeuThich.Text = "0";
                         RJMessageBox.Show(apiResponse.Message, "Thông báo",

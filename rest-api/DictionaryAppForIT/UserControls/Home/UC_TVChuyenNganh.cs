@@ -3,9 +3,7 @@ using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DTO;
 using DictionaryAppForIT.DTO.Home;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Speech.Synthesis;
 using System.Threading.Tasks;
@@ -96,27 +94,18 @@ namespace DictionaryAppForIT.UserControls.Home
                 {
                     HttpResponseMessage response = await client.GetAsync($"{apiUrl}search-by-specialty?searched_word={txtTimTheoChuyenNganh.Text}&specialization_id={cbbChuyenNganh.SelectedValue}");
 
-                    if (response.IsSuccessStatusCode)
+                    string responseContent = await response.Content.ReadAsStringAsync();
+
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<WordBySpecialization[]>>(responseContent);
+
+                    if (apiResponse.Status && apiResponse.Data != null)
                     {
-                        string jsonString = await response.Content.ReadAsStringAsync();
-                        JObject jsonObject = JObject.Parse(jsonString);
-
-                        if (jsonObject.ContainsKey("data"))
-                        {
-                            JArray specializationArray = (JArray)jsonObject["data"];
-                            List<WordBySpecialization> specializations = specializationArray.ToObject<List<WordBySpecialization>>();
-
-                            dtgvTuVung.DataSource = specializations;
-                            lblSoTuHienCo.Text = dtgvTuVung.Rows.Count.ToString();
-                        }
-                        else
-                        {
-                            RJMessageBox.Show("Không tìm thấy dữ liệu chuyên ngành!");
-                        }
+                        dtgvTuVung.DataSource = apiResponse.Data;
+                        lblSoTuHienCo.Text = dtgvTuVung.Rows.Count.ToString();
                     }
                     else
                     {
-                        RJMessageBox.Show($"Không tìm thấy từ {txtTimTheoChuyenNganh.Text} trong này!");
+                        RJMessageBox.Show(apiResponse.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception ex)
@@ -154,14 +143,13 @@ namespace DictionaryAppForIT.UserControls.Home
                     }
                     else
                     {
-                        string message = apiResponse.Message;
-                        RJMessageBox.Show(message); // Hiển thị thông báo nếu API trả về lỗi
+                        RJMessageBox.Show(apiResponse.Message);
                     }
                 }
             }
             catch (Exception ex)
             {
-                RJMessageBox.Show($"Lỗi: {ex.Message}");
+                RJMessageBox.Show(ex.Message);
             }
         }
         private async void txtTimTheoChuyenNganh_TextChanged(object sender, EventArgs e)

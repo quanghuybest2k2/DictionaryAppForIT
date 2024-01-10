@@ -1,9 +1,9 @@
 ﻿using DictionaryAppForIT.API;
 using DictionaryAppForIT.Class;
 using DictionaryAppForIT.DTO;
+using DictionaryAppForIT.DTO.History;
 using DictionaryAppForIT.DTO.Love;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,6 +12,7 @@ using System.Media;
 using System.Net.Http;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
+using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
@@ -27,13 +28,11 @@ namespace DictionaryAppForIT.UserControls.Home
         public bool thayDoiTocDo = false;
         public string idYeuThichVBVuaChon;
         public int tocDo = 0;
-        private CheckIfExist checkIfExist;
 
         public UC_Dich()
         {
             InitializeComponent();
             speech = new SpeechSynthesizer();
-            checkIfExist = new CheckIfExist();
             client = new HttpClient();
         }
         private string TranslateText(string input)
@@ -99,7 +98,7 @@ namespace DictionaryAppForIT.UserControls.Home
 
         }
 
-        private void txtTop_TextChanged(object sender, EventArgs e)
+        private async void txtTop_TextChanged(object sender, EventArgs e)
         {
             //
             if (txtTop.Text == "")
@@ -121,10 +120,10 @@ namespace DictionaryAppForIT.UserControls.Home
             {
                 txtUnder.Text = TranslateText(txtTop.Text.Trim());
             }
-            KiemTraTonTaiYeuThich();
+            await KiemTraTonTaiYeuThich();
         }
         #region Xử lý lịch sử
-        private async void LoadLichSu()
+        private async Task LoadLichSu()
         {
             try
             {
@@ -135,16 +134,23 @@ namespace DictionaryAppForIT.UserControls.Home
                 dataTable.Columns.Add("English", typeof(string));
                 dataTable.Columns.Add("Vietnamese", typeof(string));
 
-                var translateHistoryList = TranslateHistoryService.LoadLichSu();
+                var translateHistoryList = await TranslateHistoryService.LoadLichSu();
+                // khóa row => readonly
+                dtgvLichSu.DataBindingComplete += (sender, e) =>
+                {
+                    foreach (DataGridViewRow row in dtgvLichSu.Rows)
+                    {
+                        row.ReadOnly = true;
+                    }
+                };
 
                 if (translateHistoryList != null)
                 {
                     // thêm data vào table
-                    foreach (var history in await translateHistoryList)
+                    foreach (var history in translateHistoryList)
                     {
-                        dataTable.Rows.Add(history.Id, history.English, history.Vietnamese);
+                        dataTable.Rows.Add(history.id, history.English, history.Vietnamese);
                     }
-
                     dtgvLichSu.DataSource = dataTable;
                     // ẩn thân chi thuật :))
                     dtgvLichSu.Columns["Id"].Visible = false;
@@ -159,7 +165,7 @@ namespace DictionaryAppForIT.UserControls.Home
                 RJMessageBox.Show(ex.Message);
             }
         }
-        private async void LuuLichDich()
+        private async Task LuuLichDich()
         {
             try
             {
@@ -173,20 +179,22 @@ namespace DictionaryAppForIT.UserControls.Home
 
                 //gửi request
                 var response = await client.PostAsync(apiUrl + "save-translate-history", new FormUrlEncodedContent(requestData));
+                var responseContent = await response.Content.ReadAsStringAsync();
 
-                if (response.IsSuccessStatusCode)
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<HistoryResponse>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
-                    var responseContent = await response.Content.ReadAsStringAsync();
-                    LoadLichSu();
+                    await LoadLichSu();
                 }
                 else
                 {
-                    RJMessageBox.Show("Không thể thêm vào lịch sử dịch!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    RJMessageBox.Show(apiResponse.Message);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                RJMessageBox.Show("Đã có lỗi xảy ra!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                RJMessageBox.Show(ex.Message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void dtgvLichSu_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -204,35 +212,35 @@ namespace DictionaryAppForIT.UserControls.Home
             {
                 int rowIndex = dtgvLichSu.CurrentRow.Index;
                 string idValue = dtgvLichSu.Rows[rowIndex].Cells["Id"].Value.ToString();
-                //RJMessageBox.Show(idValue);
-
+                ////RJMessageBox.Show(idValue);
                 HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-translate-by-id/{Class_TaiKhoan.IdTaiKhoan}/{idValue}");
 
                 string responseContent = await response.Content.ReadAsStringAsync();
-                JObject responseObject = JObject.Parse(responseContent);
-                string message = responseObject["message"].ToString();
 
-                if (response.IsSuccessStatusCode)
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
                     txtTop.Clear();
                     txtUnder.Clear();
-                    LoadLichSu();
-                    RJMessageBox.Show(message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await LoadLichSu();
+                    //RJMessageBox.Show(apiResponse.Message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 else
                 {
-                    RJMessageBox.Show(message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RJMessageBox.Show(apiResponse.Message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                RJMessageBox.Show(ex.Message);
+                RJMessageBox.Show("Lỗi >> " + ex.Message);
             }
         }
-        private async void KiemTraTonTaiYeuThich()
+        private async Task KiemTraTonTaiYeuThich()
         {
             string banDich = txtTop.Text.Trim();
-            bool translateExists = await checkIfExist.CheckIfWordExistsAsync(banDich, "loveText");
+            bool translateExists = await CheckIfExist.CheckIfWordExistsAsync(banDich, "loveText");
             if (translateExists)
             {
                 btnLuuYeuThich.Checked = true;
@@ -243,16 +251,14 @@ namespace DictionaryAppForIT.UserControls.Home
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private async void btnClear_Click(object sender, EventArgs e)
         {
-
-            if (txtTop.Text.Trim() != "")
+            if (!string.IsNullOrWhiteSpace(txtTop.Text.Trim()))
             {
-                LuuLichDich();// lưu lịch sử
+                await LuuLichDich();// lưu lịch sử
             }
             txtTop.Clear();
             txtUnder.Clear();
-
         }
         private async void btnXoaLichSu_ClickAsync(object sender, EventArgs e)
         {
@@ -261,19 +267,19 @@ namespace DictionaryAppForIT.UserControls.Home
                 HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-translate-history/{Class_TaiKhoan.IdTaiKhoan}");
 
                 string responseContent = await response.Content.ReadAsStringAsync();
-                JObject responseObject = JObject.Parse(responseContent);
-                string message = responseObject["message"].ToString();
 
-                if (response.IsSuccessStatusCode)
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
                 {
                     txtTop.Clear();
                     txtUnder.Clear();
-                    LoadLichSu();
-                    RJMessageBox.Show(message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await LoadLichSu();
+                    //RJMessageBox.Show(apiResponse.Message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    RJMessageBox.Show(message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RJMessageBox.Show(apiResponse.Message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -314,16 +320,16 @@ namespace DictionaryAppForIT.UserControls.Home
             }
         }
 
-        private void UC_Dich_Load(object sender, EventArgs e)
+        private async void UC_Dich_Load(object sender, EventArgs e)
         {
-            LoadLichSu();
+            await LoadLichSu();
         }
 
-        private void btnLuuYeuThich_Click(object sender, EventArgs e)
+        private async void btnLuuYeuThich_Click(object sender, EventArgs e)
         {
-            LuuVanBanYeuThich();
+            await LuuVanBanYeuThich();
         }
-        private async void LuuVanBanYeuThich()
+        private async Task LuuVanBanYeuThich()
         {
             if (btnLuuYeuThich.Checked)
             {
@@ -368,6 +374,11 @@ namespace DictionaryAppForIT.UserControls.Home
                     RJMessageBox.Show(apiResponse.Message);
                 }
             }
+        }
+
+        private async void btnLichSu_Click(object sender, EventArgs e)
+        {
+            await LoadLichSu();
         }
     }
 }

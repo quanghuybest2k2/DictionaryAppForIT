@@ -1,4 +1,5 @@
 ﻿using DictionaryAppForIT.API;
+using DictionaryAppForIT.Class;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -21,13 +22,14 @@ namespace DictionaryAppForIT.DTO
             try
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-translate-history/{Class_TaiKhoan.IdTaiKhoan}");
-                if (response.IsSuccessStatusCode)
-                {
-                    string jsonResponse = await response.Content.ReadAsStringAsync();
-                    var result = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
 
-                    var translateHistoryList = result["data"].ToObject<List<TranslateHistory>>();
-                    return translateHistoryList;
+                string responseContent = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<List<TranslateHistory>>>(responseContent);
+
+                if (apiResponse.Status && apiResponse.Data != null)
+                {
+                    return apiResponse.Data;
                 }
                 else
                 {
@@ -36,6 +38,7 @@ namespace DictionaryAppForIT.DTO
             }
             catch (Exception ex)
             {
+                RJMessageBox.Show(ex.Message);
                 return null;
             }
         }

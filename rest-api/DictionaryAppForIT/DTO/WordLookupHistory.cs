@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DictionaryAppForIT.DTO
+﻿namespace DictionaryAppForIT.DTO
 {
     public class WordLookupHistory : BaseResponse
     {
@@ -8,10 +6,5 @@ namespace DictionaryAppForIT.DTO
         public string Pronunciation { get; set; }
         public string Vietnamese { get; set; }
         public int User_Id { get; set; }
-
-        public WordLookupHistory()
-        {
-
-        }
     }
 }

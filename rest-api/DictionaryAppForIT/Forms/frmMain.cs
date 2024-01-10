@@ -11,14 +11,12 @@ using DictionaryAppForIT.UserControls.TaiKhoan;
 using DictionaryAppForIT.UserControls.TuVungHot;
 using DictionaryAppForIT.UserControls.YeuThich;
 using Guna.UI2.WinForms;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.Forms
@@ -30,7 +28,6 @@ namespace DictionaryAppForIT.Forms
         //public string soMucYeuThich;
         //pnTaiKhoan
         int width_pnTaiKhoan;
-
         // Thông báo
         bool CoThongBao = true;
         private Timer timer = new Timer();
@@ -267,19 +264,19 @@ namespace DictionaryAppForIT.Forms
             btnTraTu.PerformClick();
         }
 
-        private void btnLichSu_Click(object sender, EventArgs e)
+        private async void btnLichSu_Click(object sender, EventArgs e)
         {
             ShowUC(ucLichSu);
             ucLichSu.TuHienTai = "";
-            ucLichSu.HienThiLSTraTu();
-            ucLichSu.HienThiLSDich();
+            await ucLichSu.HienThiLSTraTu();
+            await ucLichSu.HienThiLSDich();
         }
 
         private async void btnYeuThich_Click(object sender, EventArgs e)
         {
             ShowUC(ucYeuThich);
-            ucYeuThich.HienThiYTTraTu();
-            ucYeuThich.HienThiYTVanBan();
+            await ucYeuThich.HienThiYTTraTu();
+            await ucYeuThich.HienThiYTVanBan();
             ucYeuThich.SoMuc = await LoveVocabulary.Tong_So_Muc_Yeu_Thich();
         }
 
@@ -363,28 +360,6 @@ namespace DictionaryAppForIT.Forms
         #region TaiKhoan button tab click event
 
         //--Tab đầu tiên
-        //public async Task<string> Tong_So_Muc_Yeu_Thich()
-        //{
-        //    string result = "";
-        //    try
-        //    {
-        //        HttpResponseMessage response = await client.GetAsync(apiUrl + $"total-love-vocabulary/{Class_TaiKhoan.IdTaiKhoan}");
-
-        //        string responseContent = await response.Content.ReadAsStringAsync();
-        //        JObject responseObject = JObject.Parse(responseContent);
-        //        string totalVocabulary = responseObject["totalVocabulary"].ToString();
-
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            result = totalVocabulary;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        RJMessageBox.Show(ex.Message);
-        //    }
-        //    return result;
-        //}
         private async void btnQuanLyTK_ClickAsync(object sender, EventArgs e)
         {
             ucQuanLyTK.SoMuc = await LoveVocabulary.Tong_So_Muc_Yeu_Thich();
@@ -434,7 +409,7 @@ namespace DictionaryAppForIT.Forms
                     }
                     else
                     {
-                        RJMessageBox.Show("Không tìm thấy token. Vui lòng đăng nhập.");
+                        RJMessageBox.Show("Vui lòng đăng nhập!");
                     }
                 }
                 else
@@ -481,10 +456,10 @@ namespace DictionaryAppForIT.Forms
             btnThemTu.PerformClick();
         }
 
-        private void btnTVHot_Click(object sender, EventArgs e)
+        private async void btnTVHot_Click(object sender, EventArgs e)
         {
             ShowUC(ucTVHot);
-            ucTVHot.HienThiTuVungHotAsync();
+            await ucTVHot.HienThiTuVungHotAsync();
         }
 
         private void btnThongTinTacGia_Click(object sender, EventArgs e)
