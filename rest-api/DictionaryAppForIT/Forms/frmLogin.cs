@@ -7,7 +7,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +15,7 @@ namespace DictionaryAppForIT
     public partial class frmLogin : Form
     {
         private readonly HttpClient client = new HttpClient();
-        private readonly string apiUrl = BaseUrl.base_url + "login";
+        private readonly string apiUrl = BaseUrl.base_url;
 
         public frmLogin()
         {
@@ -84,24 +83,26 @@ namespace DictionaryAppForIT
         #region Xử lý đăng nhập
         private async Task Login(string email, string password)
         {
-            var formContent = new FormUrlEncodedContent(new[]
-            {
-                new KeyValuePair<string, string>("email", email),
-                new KeyValuePair<string, string>("password", password)
-            });
+            var requestData = new Dictionary<string, string>
+                {
+                        { "email", email },
+                        { "password", password }
+                };
 
-            var response = await client.PostAsync(apiUrl, formContent);
+            //gửi request
+            var response = await client.PostAsync(apiUrl + "login", new FormUrlEncodedContent(requestData));
             var responseContent = await response.Content.ReadAsStringAsync();
+
             var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoginResponse>>(responseContent);
 
-            if (response.IsSuccessStatusCode)
+            if (apiResponse.Status && apiResponse.Data != null)
             {
                 var loginResponse = apiResponse.Data;
 
-                Class_TaiKhoan.displayUsername = loginResponse.Username;
-                Class_TaiKhoan.Token = loginResponse.Token;
-                Class_TaiKhoan.Role = loginResponse.Role;
-                Class_TaiKhoan.IdTaiKhoan = loginResponse.userId;
+                Class_TaiKhoan.displayUsername = loginResponse.username;
+                Class_TaiKhoan.Token = loginResponse.token;
+                Class_TaiKhoan.Role = loginResponse.role;
+                Class_TaiKhoan.IdTaiKhoan = loginResponse.user_id;
                 Class_TaiKhoan.ngayTaoTK = loginResponse.created_at;
 
                 frmMain frmMain = new frmMain();
@@ -110,34 +111,22 @@ namespace DictionaryAppForIT
             }
             else
             {
-                // Xử lý lỗi
-                //RJMessageBox.Show("Đăng nhập thất bại. Mã lỗi HTTP: " + (int)response.StatusCode);
-                //RJMessageBox.Show("Nội dung lỗi: " + responseContent);
-                var errorResponse = JsonConvert.DeserializeObject<dynamic>(responseContent);
+                ErrorResponse.HandleErrors(apiResponse);
+                //if (apiResponse.Errors != null)
+                //{
+                //    var errors = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(apiResponse.Errors.ToString());
+                //    string errorMessage = "";
+                //    foreach (KeyValuePair<string, List<string>> errorPair in errors)
+                //    {
+                //        errorMessage += errorPair.Value[0] + "\n";
+                //    }
 
-                if (errorResponse.validator_errors != null)
-                {
-                    var errorMessageBuilder = new StringBuilder();
-                    var validatorErrors = errorResponse.validator_errors;
-
-                    foreach (var keyValuePair in validatorErrors)
-                    {
-                        var errorMessages = keyValuePair.Value;
-
-                        errorMessageBuilder.AppendLine($"{errorMessages[0]}");
-                    }
-
-                    RJMessageBox.Show(Environment.NewLine + errorMessageBuilder.ToString());
-                }
-                else if (errorResponse.message != null)
-                {
-                    var errorMessage = errorResponse.message;
-                    RJMessageBox.Show(errorMessage.ToString());
-                }
-                else
-                {
-                    RJMessageBox.Show("Đăng nhập thất bại. status code: " + (int)response.StatusCode);
-                }
+                //    RJMessageBox.Show(errorMessage, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //}
+                //else
+                //{
+                //    RJMessageBox.Show(apiResponse.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //}
             }
         }
 
@@ -159,9 +148,9 @@ namespace DictionaryAppForIT
             }
             LuuMatKhau();
         }
-
         #endregion
 
+        #region Xử lý các sự kiện
         private void lblDangKyNgay_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -184,5 +173,6 @@ namespace DictionaryAppForIT
                 e.SuppressKeyPress = true;
             }
         }
+        #endregion
     }
 }

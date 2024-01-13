@@ -40,8 +40,8 @@ namespace DictionaryAppForIT.UserControls
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTenDangNhap = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.lblXinChao = new System.Windows.Forms.Label();
+            this.pbUser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
@@ -82,7 +82,7 @@ namespace DictionaryAppForIT.UserControls
             this.pnXinChao.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnNen2.SuspendLayout();
@@ -181,12 +181,12 @@ namespace DictionaryAppForIT.UserControls
             this.pnXinChao.BackColor = System.Drawing.Color.Transparent;
             this.pnXinChao.Controls.Add(this.guna2Panel6);
             this.pnXinChao.Controls.Add(this.guna2Panel7);
-            this.pnXinChao.Controls.Add(this.guna2CirclePictureBox1);
+            this.pnXinChao.Controls.Add(this.pbUser);
             this.pnXinChao.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnXinChao.Location = new System.Drawing.Point(191, 0);
+            this.pnXinChao.Location = new System.Drawing.Point(193, 0);
             this.pnXinChao.MinimumSize = new System.Drawing.Size(46, 35);
             this.pnXinChao.Name = "pnXinChao";
-            this.pnXinChao.Size = new System.Drawing.Size(112, 35);
+            this.pnXinChao.Size = new System.Drawing.Size(110, 35);
             this.pnXinChao.TabIndex = 8;
             this.bunifuToolTip1.SetToolTip(this.pnXinChao, "");
             this.bunifuToolTip1.SetToolTipIcon(this.pnXinChao, null);
@@ -199,7 +199,7 @@ namespace DictionaryAppForIT.UserControls
             this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel6.Location = new System.Drawing.Point(43, 15);
             this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(69, 20);
+            this.guna2Panel6.Size = new System.Drawing.Size(67, 20);
             this.guna2Panel6.TabIndex = 10;
             this.bunifuToolTip1.SetToolTip(this.guna2Panel6, "");
             this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel6, null);
@@ -222,48 +222,48 @@ namespace DictionaryAppForIT.UserControls
             // 
             // guna2Panel7
             // 
-            this.guna2Panel7.Controls.Add(this.label1);
+            this.guna2Panel7.Controls.Add(this.lblXinChao);
             this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel7.Location = new System.Drawing.Point(43, 0);
             this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(69, 15);
+            this.guna2Panel7.Size = new System.Drawing.Size(67, 15);
             this.guna2Panel7.TabIndex = 9;
             this.bunifuToolTip1.SetToolTip(this.guna2Panel7, "");
             this.bunifuToolTip1.SetToolTipIcon(this.guna2Panel7, null);
             this.bunifuToolTip1.SetToolTipTitle(this.guna2Panel7, "");
             // 
-            // label1
+            // lblXinChao
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Xin chào";
-            this.bunifuToolTip1.SetToolTip(this.label1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.label1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.label1, "");
+            this.lblXinChao.AutoSize = true;
+            this.lblXinChao.BackColor = System.Drawing.Color.Transparent;
+            this.lblXinChao.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblXinChao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXinChao.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblXinChao.Location = new System.Drawing.Point(0, 0);
+            this.lblXinChao.Name = "lblXinChao";
+            this.lblXinChao.Size = new System.Drawing.Size(54, 15);
+            this.lblXinChao.TabIndex = 2;
+            this.lblXinChao.Text = "Xin chào";
+            this.bunifuToolTip1.SetToolTip(this.lblXinChao, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblXinChao, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblXinChao, "");
             // 
-            // guna2CirclePictureBox1
+            // pbUser
             // 
-            this.guna2CirclePictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(43, 35);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 1;
-            this.guna2CirclePictureBox1.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.guna2CirclePictureBox1, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.guna2CirclePictureBox1, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.guna2CirclePictureBox1, "");
+            this.pbUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pbUser.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbUser.Image = ((System.Drawing.Image)(resources.GetObject("pbUser.Image")));
+            this.pbUser.ImageRotate = 0F;
+            this.pbUser.Location = new System.Drawing.Point(0, 0);
+            this.pbUser.Name = "pbUser";
+            this.pbUser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbUser.Size = new System.Drawing.Size(43, 35);
+            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUser.TabIndex = 1;
+            this.pbUser.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pbUser, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pbUser, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pbUser, "");
             // 
             // guna2Panel8
             // 
@@ -303,9 +303,9 @@ namespace DictionaryAppForIT.UserControls
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-17, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(-7, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 62);
+            this.pictureBox1.Size = new System.Drawing.Size(55, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -942,7 +942,7 @@ namespace DictionaryAppForIT.UserControls
             this.guna2Panel6.PerformLayout();
             this.guna2Panel7.ResumeLayout(false);
             this.guna2Panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             this.guna2Panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnNen2.ResumeLayout(false);
@@ -992,8 +992,8 @@ namespace DictionaryAppForIT.UserControls
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private System.Windows.Forms.Label lblTenDangNhap;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private System.Windows.Forms.Label lblXinChao;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pbUser;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;

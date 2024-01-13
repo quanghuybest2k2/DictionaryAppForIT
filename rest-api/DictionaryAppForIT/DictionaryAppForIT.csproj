@@ -233,6 +233,7 @@
     <Compile Include="DTO\BaseResponse.cs" />
     <Compile Include="DTO\CheckIfExist.cs" />
     <Compile Include="DTO\Class_TaiKhoan.cs" />
+    <Compile Include="DTO\ErrorResponse.cs" />
     <Compile Include="DTO\History\CheckResponse.cs" />
     <Compile Include="DTO\History\HistoryResponse.cs" />
     <Compile Include="DTO\Home\SuggestAllResponse.cs" />

@@ -14,7 +14,6 @@ namespace DictionaryAppForIT.DAL
         private static DataProvider _instance;
         private static readonly HttpClient client = new HttpClient();
         private static readonly string apiUrl = BaseUrl.base_url;
-        string token = Class_TaiKhoan.Token;
         public static DataProvider Instance
         {
             get

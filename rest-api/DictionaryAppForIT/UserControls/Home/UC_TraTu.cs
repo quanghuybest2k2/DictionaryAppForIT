@@ -74,9 +74,7 @@ namespace DictionaryAppForIT.UserControls
             pbTraiNghiaError.Visible = true;
             //Tự động chỉnh lại width của label tên Đăng nhập
             lblTenDangNhap.Text = Class_TaiKhoan.displayUsername; // Hello Sang Đỗ
-            // Tối thiểu 7 kí tự
-            // Tối đa 15 kí tự
-            pnXinChao.Width = pnXinChao.MinimumSize.Width + lblTenDangNhap.Width;
+            pnXinChao.Width = pnXinChao.Width + lblTenDangNhap.Width;
             btnAnhViet.FillColor = Color.FromArgb(223, 10, 10);
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
