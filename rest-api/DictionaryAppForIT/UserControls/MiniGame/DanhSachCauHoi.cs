@@ -33,28 +33,32 @@ namespace DictionaryAppForIT.UserControls.MiniGame
                 string TiengAnh;
                 string TenLoai;
                 string TiengViet;
-                HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-questions/{soLuong}/{Class_TaiKhoan.IdTaiKhoan}");
 
-                string responseContent = await response.Content.ReadAsStringAsync();
-
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<MiniGameResponse[]>>(responseContent);
-
-                if (apiResponse.Status && apiResponse.Data != null)
+                if (Class_TaiKhoan.authentication(client))
                 {
-                    foreach (var item in apiResponse.Data)
+                    HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-questions/{soLuong}/{Class_TaiKhoan.IdTaiKhoan}");
+
+                    string responseContent = await response.Content.ReadAsStringAsync();
+
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<MiniGameResponse[]>>(responseContent);
+
+                    if (apiResponse.Status && apiResponse.Data != null)
                     {
-                        demSoTu++;
-                        TiengAnh = item.english;
-                        TenLoai = item.type_name;
-                        TiengViet = item.vietnamese;
-                        _item = new CauHoiVaDapAn(demSoTu, TiengAnh, TenLoai, TiengViet);
-                        await _item.RandomDapAnSai();
-                        _list.Add(_item);
+                        foreach (var item in apiResponse.Data)
+                        {
+                            demSoTu++;
+                            TiengAnh = item.english;
+                            TenLoai = item.type_name;
+                            TiengViet = item.vietnamese;
+                            _item = new CauHoiVaDapAn(demSoTu, TiengAnh, TenLoai, TiengViet);
+                            await _item.RandomDapAnSai();
+                            _list.Add(_item);
+                        }
                     }
-                }
-                else
-                {
-                    RJMessageBox.Show(apiResponse.Message);
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                    }
                 }
             }
             catch (Exception ex)
@@ -74,28 +78,31 @@ namespace DictionaryAppForIT.UserControls.MiniGame
                     string TenLoai;
                     string TiengViet;
 
-                    HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-more-questions-mini-game/{num}");
-
-                    string responseContent = await response.Content.ReadAsStringAsync();
-
-                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<MiniGameResponse[]>>(responseContent);
-
-                    if (apiResponse.Status && apiResponse.Data != null)
+                    if (Class_TaiKhoan.authentication(client))
                     {
-                        foreach (var item in apiResponse.Data)
+                        HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-more-questions-mini-game/{num}");
+
+                        string responseContent = await response.Content.ReadAsStringAsync();
+
+                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse<MiniGameResponse[]>>(responseContent);
+
+                        if (apiResponse.Status && apiResponse.Data != null)
                         {
-                            demSoTu++;
-                            TiengAnh = item.word_name;
-                            TenLoai = item.type_name;
-                            TiengViet = item.means;// nghĩa
-                            _item = new CauHoiVaDapAn(demSoTu, TiengAnh, TenLoai, TiengViet);
-                            await _item.RandomDapAnSai();
-                            _list.Add(_item);
+                            foreach (var item in apiResponse.Data)
+                            {
+                                demSoTu++;
+                                TiengAnh = item.word_name;
+                                TenLoai = item.type_name;
+                                TiengViet = item.means;// nghĩa
+                                _item = new CauHoiVaDapAn(demSoTu, TiengAnh, TenLoai, TiengViet);
+                                await _item.RandomDapAnSai();
+                                _list.Add(_item);
+                            }
                         }
-                    }
-                    else
-                    {
-                        RJMessageBox.Show(apiResponse.Message);
+                        else
+                        {
+                            RJMessageBox.Show(apiResponse.Message);
+                        }
                     }
                 }
                 catch (Exception ex)

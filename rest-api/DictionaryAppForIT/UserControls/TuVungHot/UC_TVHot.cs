@@ -12,13 +12,11 @@ namespace DictionaryAppForIT.UserControls.TuVungHot
     public partial class UC_TVHot : UserControl
     {
         RandomColor rd = new RandomColor();
-        UC_TVH_Item uc;
         private readonly string apiUrl = BaseUrl.base_url;
         private readonly HttpClient client = new HttpClient();
 
         public UC_TVHot()
         {
-            uc = new UC_TVH_Item();
             InitializeComponent();
         }
         /*
@@ -35,7 +33,6 @@ namespace DictionaryAppForIT.UserControls.TuVungHot
             try
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl + "get-hot-vocabulary");
-
 
                 string responseContent = await response.Content.ReadAsStringAsync();
 

@@ -169,7 +169,9 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                var requestData = new Dictionary<string, string>
+                if (Class_TaiKhoan.authentication(client))
+                {
+                    var requestData = new Dictionary<string, string>
                 {
                     { "english", txtTop.Text.Trim() },
                     { "vietnamese", txtUnder.Text.Trim() },
@@ -177,19 +179,20 @@ namespace DictionaryAppForIT.UserControls.Home
                     // created_at tự sinh
                 };
 
-                //gửi request
-                var response = await client.PostAsync(apiUrl + "save-translate-history", new FormUrlEncodedContent(requestData));
-                var responseContent = await response.Content.ReadAsStringAsync();
+                    //gửi request
+                    var response = await client.PostAsync(apiUrl + "save-translate-history", new FormUrlEncodedContent(requestData));
+                    var responseContent = await response.Content.ReadAsStringAsync();
 
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<HistoryResponse>>(responseContent);
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<HistoryResponse>>(responseContent);
 
-                if (apiResponse.Status && apiResponse.Data != null)
-                {
-                    await LoadLichSu();
-                }
-                else
-                {
-                    RJMessageBox.Show(apiResponse.Message);
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        await LoadLichSu();
+                    }
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                    }
                 }
             }
             catch (Exception ex)
@@ -210,26 +213,29 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                int rowIndex = dtgvLichSu.CurrentRow.Index;
-                string idValue = dtgvLichSu.Rows[rowIndex].Cells["Id"].Value.ToString();
-                ////RJMessageBox.Show(idValue);
-                HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-translate-by-id/{Class_TaiKhoan.IdTaiKhoan}/{idValue}");
-
-                string responseContent = await response.Content.ReadAsStringAsync();
-
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
-
-                if (apiResponse.Status && apiResponse.Data != null)
+                if (Class_TaiKhoan.authentication(client))
                 {
-                    txtTop.Clear();
-                    txtUnder.Clear();
-                    await LoadLichSu();
-                    //RJMessageBox.Show(apiResponse.Message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int rowIndex = dtgvLichSu.CurrentRow.Index;
+                    string idValue = dtgvLichSu.Rows[rowIndex].Cells["Id"].Value.ToString();
+                    ////RJMessageBox.Show(idValue);
+                    HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-translate-by-id/{Class_TaiKhoan.IdTaiKhoan}/{idValue}");
 
-                }
-                else
-                {
-                    RJMessageBox.Show(apiResponse.Message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string responseContent = await response.Content.ReadAsStringAsync();
+
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        txtTop.Clear();
+                        txtUnder.Clear();
+                        await LoadLichSu();
+                        //RJMessageBox.Show(apiResponse.Message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)
@@ -264,22 +270,25 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             try
             {
-                HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-translate-history/{Class_TaiKhoan.IdTaiKhoan}");
-
-                string responseContent = await response.Content.ReadAsStringAsync();
-
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
-
-                if (apiResponse.Status && apiResponse.Data != null)
+                if (Class_TaiKhoan.authentication(client))
                 {
-                    txtTop.Clear();
-                    txtUnder.Clear();
-                    await LoadLichSu();
-                    //RJMessageBox.Show(apiResponse.Message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    RJMessageBox.Show(apiResponse.Message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-translate-history/{Class_TaiKhoan.IdTaiKhoan}");
+
+                    string responseContent = await response.Content.ReadAsStringAsync();
+
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        txtTop.Clear();
+                        txtUnder.Clear();
+                        await LoadLichSu();
+                        //RJMessageBox.Show(apiResponse.Message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)
@@ -333,45 +342,50 @@ namespace DictionaryAppForIT.UserControls.Home
         {
             if (btnLuuYeuThich.Checked)
             {
-                var requestData = new Dictionary<string, string>
+                if (Class_TaiKhoan.authentication(client))
+                {
+                    var requestData = new Dictionary<string, string>
                 {
                     { "english", txtTop.Text.Trim() },
                     { "vietnamese", txtUnder.Text.Trim()},
                     // "note" => có thể null nên khỏi điền
                     { "user_id", Class_TaiKhoan.IdTaiKhoan }
                 };
-                //gửi request
-                var response = await client.PostAsync(apiUrl + "save-love-text", new FormUrlEncodedContent(requestData));
-                // Đảm bảo luôn luôn thành công nhé :))
+                    //gửi request
+                    var response = await client.PostAsync(apiUrl + "save-love-text", new FormUrlEncodedContent(requestData));
+                    // Đảm bảo luôn luôn thành công nhé :))
 
-                var responseContent = await response.Content.ReadAsStringAsync();
+                    var responseContent = await response.Content.ReadAsStringAsync();
 
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoveResponse>>(responseContent);
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoveResponse>>(responseContent);
 
-                if (apiResponse.Status && apiResponse.Data != null)
-                {
-                    RJMessageBox.Show(apiResponse.Message);
-                }
-                else
-                {
-                    RJMessageBox.Show(apiResponse.Message);
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                    }
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                    }
                 }
             }
             else
             {
-
-                HttpResponseMessage response = await client.DeleteAsync($"{apiUrl}delete-love-text?english={Uri.EscapeDataString(txtTop.Text.Trim())}&user_id={Uri.EscapeDataString(Class_TaiKhoan.IdTaiKhoan)}");
-
-                string responseContent = await response.Content.ReadAsStringAsync();
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<int>>(responseContent);
-
-                if (apiResponse.Status && apiResponse.Data > 0)
+                if (Class_TaiKhoan.authentication(client))
                 {
-                    RJMessageBox.Show(apiResponse.Message);
-                }
-                else
-                {
-                    RJMessageBox.Show(apiResponse.Message);
+                    HttpResponseMessage response = await client.DeleteAsync($"{apiUrl}delete-love-text?english={Uri.EscapeDataString(txtTop.Text.Trim())}&user_id={Uri.EscapeDataString(Class_TaiKhoan.IdTaiKhoan)}");
+
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<int>>(responseContent);
+
+                    if (apiResponse.Status && apiResponse.Data > 0)
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                    }
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                    }
                 }
             }
         }

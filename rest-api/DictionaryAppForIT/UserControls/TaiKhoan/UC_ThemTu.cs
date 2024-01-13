@@ -77,7 +77,9 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             string[] arr = uc.LayGiaTriControl();
             try
             {
-                var requestData = new Dictionary<string, string>
+                if (Class_TaiKhoan.authentication(client))
+                {
+                    var requestData = new Dictionary<string, string>
                 {
                     { "word_id", idTuMoi },
                     { "word_type_id", arr[0] },
@@ -85,20 +87,21 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
                     { "description", arr[2]},
                     { "example", arr[3]}
                 };
-                //gửi request
-                var response = await client.PostAsync(apiUrl + "store-mean", new FormUrlEncodedContent(requestData));
+                    //gửi request
+                    var response = await client.PostAsync(apiUrl + "store-mean", new FormUrlEncodedContent(requestData));
 
-                var responseContent = await response.Content.ReadAsStringAsync();
+                    var responseContent = await response.Content.ReadAsStringAsync();
 
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<WordResponse>>(responseContent);
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<WordResponse>>(responseContent);
 
-                if (apiResponse.Status && apiResponse.Data != null)
-                {
-                    soDongThemNghia = true;
-                }
-                else
-                {
-                    RJMessageBox.Show(apiResponse.Message);
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        soDongThemNghia = true;
+                    }
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                    }
                 }
             }
             catch (Exception ex)
@@ -111,28 +114,31 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         {
             try
             {
-                var requestData = new Dictionary<string, string>
+                if (Class_TaiKhoan.authentication(client))
+                {
+                    var requestData = new Dictionary<string, string>
                 {
                     { "word_name", txtTuVung.Text.Trim() },
                     { "specialization_id", cbbChuyenNganh.SelectedValue.ToString() },
                     { "synonymous", txtDongNghia.Text.Trim()},
                     { "antonyms", txtTraiNghia.Text.Trim()}
                 };
-                //gửi request
-                var response = await client.PostAsync(apiUrl + "store-word", new FormUrlEncodedContent(requestData));
+                    //gửi request
+                    var response = await client.PostAsync(apiUrl + "store-word", new FormUrlEncodedContent(requestData));
 
-                var responseContent = await response.Content.ReadAsStringAsync();
+                    var responseContent = await response.Content.ReadAsStringAsync();
 
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<WordResponse>>(responseContent);
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<WordResponse>>(responseContent);
 
-                if (apiResponse.Status && apiResponse.Data != null)
-                {
-                    idTuMoi = apiResponse.Data.id;
-                    soDongThemTu = true;
-                }
-                else
-                {
-                    RJMessageBox.Show(apiResponse.Message);
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        idTuMoi = apiResponse.Data.id;
+                        soDongThemTu = true;
+                    }
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                    }
                 }
             }
             catch (Exception ex)

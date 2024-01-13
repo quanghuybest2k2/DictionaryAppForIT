@@ -143,28 +143,30 @@ namespace DictionaryAppForIT.UserControls.GanDay
 
             if (xoaTatCa)
             {
-
                 flpContent.Controls.Clear();
                 try
                 {
-                    HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-all-history/{Class_TaiKhoan.IdTaiKhoan}");
-
-                    string responseContent = await response.Content.ReadAsStringAsync();
-
-                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
-
-                    if (apiResponse.Status && apiResponse.Data != null)
+                    if (Class_TaiKhoan.authentication(client))
                     {
-                        RJMessageBox.Show(apiResponse.Message, "Thông báo",
-                         MessageBoxButtons.OK,
-                         MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        string message = apiResponse.Message;
-                        RJMessageBox.Show(message, "Thông báo",
-                         MessageBoxButtons.OK,
-                         MessageBoxIcon.Warning);
+                        HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-all-history/{Class_TaiKhoan.IdTaiKhoan}");
+
+                        string responseContent = await response.Content.ReadAsStringAsync();
+
+                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                        if (apiResponse.Status && apiResponse.Data != null)
+                        {
+                            RJMessageBox.Show(apiResponse.Message, "Thông báo",
+                             MessageBoxButtons.OK,
+                             MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            string message = apiResponse.Message;
+                            RJMessageBox.Show(message, "Thông báo",
+                             MessageBoxButtons.OK,
+                             MessageBoxIcon.Warning);
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -294,44 +296,50 @@ namespace DictionaryAppForIT.UserControls.GanDay
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync(apiUrl + $"display-by-time-word-lookup-history?user_id={Class_TaiKhoan.IdTaiKhoan}&time={thoiGian}");
-
-                string responseContent = await response.Content.ReadAsStringAsync();
-
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<List<WordLookupHistory>>>(responseContent);
-
-                if (apiResponse.Status && apiResponse.Data != null)
+                if (Class_TaiKhoan.authentication(client))
                 {
-                    var historyData = apiResponse.Data;
+                    HttpResponseMessage response = await client.GetAsync(apiUrl + $"display-by-time-word-lookup-history?user_id={Class_TaiKhoan.IdTaiKhoan}&time={thoiGian}");
 
-                    foreach (var historyItem in historyData)
+                    string responseContent = await response.Content.ReadAsStringAsync();
+
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<List<WordLookupHistory>>>(responseContent);
+
+                    if (apiResponse.Status && apiResponse.Data != null)
                     {
-                        idHienTai = historyItem.id.ToString();
+                        var historyData = apiResponse.Data;
 
-                        DateTime createdAtDateTime = DateTime.Parse(historyItem.created_at);
-                        string ngay = createdAtDateTime.ToString("dd/MM/yyyy");
-                        string gio = createdAtDateTime.ToString("HH:mm tt");
+                        foreach (var historyItem in historyData)
+                        {
+                            idHienTai = historyItem.id.ToString();
 
-                        string NgayThang = ngay;
-                        string ThoiGian = gio;
-                        string TVTiengAnh = historyItem.English;
-                        string TVPhienAm = historyItem.Pronunciation;
-                        string TVTiengViet = historyItem.Vietnamese;
+                            DateTime createdAtDateTime = DateTime.Parse(historyItem.created_at);
+                            string ngay = createdAtDateTime.ToString("dd/MM/yyyy");
+                            string gio = createdAtDateTime.ToString("HH:mm tt");
 
-                        ucLSTuVung = new UC_LS_TuVung(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVPhienAm, TVTiengViet);
+                            string NgayThang = ngay;
+                            string ThoiGian = gio;
+                            string TVTiengAnh = historyItem.English;
+                            string TVPhienAm = historyItem.Pronunciation;
+                            string TVTiengViet = historyItem.Vietnamese;
 
-                        flpContent.Controls.Add(ucLSTuVung);
-                        _listUCLSTV.Add(ucLSTuVung);
-                        ucLSTuVung.Name = "unCheck";
+                            ucLSTuVung = new UC_LS_TuVung(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVPhienAm, TVTiengViet);
+
+                            flpContent.Controls.Add(ucLSTuVung);
+                            _listUCLSTV.Add(ucLSTuVung);
+                            ucLSTuVung.Name = "unCheck";
+                        }
+                        return historyData;
                     }
-                    return historyData;
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                        return null;
+                    }
                 }
                 else
                 {
-                    RJMessageBox.Show(apiResponse.Message);
                     return null;
                 }
-
             }
             catch (Exception ex)
             {
@@ -343,41 +351,48 @@ namespace DictionaryAppForIT.UserControls.GanDay
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync(apiUrl + $"display-by-time-translate-history?user_id={Class_TaiKhoan.IdTaiKhoan}&time={thoiGian}");
-
-                string responseContent = await response.Content.ReadAsStringAsync();
-
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<List<WordLookupHistory>>>(responseContent);
-
-                if (apiResponse.Status && apiResponse.Data != null)
+                if (Class_TaiKhoan.authentication(client))
                 {
-                    var historyData = apiResponse.Data;
+                    HttpResponseMessage response = await client.GetAsync(apiUrl + $"display-by-time-translate-history?user_id={Class_TaiKhoan.IdTaiKhoan}&time={thoiGian}");
 
-                    foreach (var historyItem in historyData)
+                    string responseContent = await response.Content.ReadAsStringAsync();
+
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<List<WordLookupHistory>>>(responseContent);
+
+                    if (apiResponse.Status && apiResponse.Data != null)
                     {
-                        idHienTai = historyItem.id.ToString();
+                        var historyData = apiResponse.Data;
 
-                        DateTime createdAtDateTime = DateTime.Parse(historyItem.created_at);
-                        string ngay = createdAtDateTime.ToString("dd/MM/yyyy");
-                        string gio = createdAtDateTime.ToString("HH:mm tt");
+                        foreach (var historyItem in historyData)
+                        {
+                            idHienTai = historyItem.id.ToString();
 
-                        string NgayThang = ngay;
-                        string ThoiGian = gio;
-                        string TVTiengAnh = historyItem.English;
-                        string TVPhienAm = historyItem.Pronunciation;
-                        string TVTiengViet = historyItem.Vietnamese;
+                            DateTime createdAtDateTime = DateTime.Parse(historyItem.created_at);
+                            string ngay = createdAtDateTime.ToString("dd/MM/yyyy");
+                            string gio = createdAtDateTime.ToString("HH:mm tt");
 
-                        ucLSVanBan = new UC_LS_VanBan(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVTiengViet);
-                        flpContent.Controls.Add(ucLSVanBan);
+                            string NgayThang = ngay;
+                            string ThoiGian = gio;
+                            string TVTiengAnh = historyItem.English;
+                            string TVPhienAm = historyItem.Pronunciation;
+                            string TVTiengViet = historyItem.Vietnamese;
 
-                        _listUCLSVB.Add(ucLSVanBan);
-                        ucLSVanBan.Name = "unCheck";
+                            ucLSVanBan = new UC_LS_VanBan(idHienTai, ThoiGian, NgayThang, TVTiengAnh, TVTiengViet);
+                            flpContent.Controls.Add(ucLSVanBan);
+
+                            _listUCLSVB.Add(ucLSVanBan);
+                            ucLSVanBan.Name = "unCheck";
+                        }
+                        return historyData;
                     }
-                    return historyData;
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                        return null;
+                    }
                 }
                 else
                 {
-                    RJMessageBox.Show(apiResponse.Message);
                     return null;
                 }
             }

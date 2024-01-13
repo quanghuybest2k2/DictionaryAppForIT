@@ -16,7 +16,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.Forms
@@ -380,7 +379,6 @@ namespace DictionaryAppForIT.Forms
         //Nút đăng xuất
         private async void btnDangXuat_Click(object sender, EventArgs e)
         {
-            var token = Class_TaiKhoan.Token;
             try
             {
                 timer.Stop();
@@ -390,11 +388,8 @@ namespace DictionaryAppForIT.Forms
                 {
                     frm.Close();
                     // Kiểm tra xem có tồn tại token hay không
-                    if (!string.IsNullOrWhiteSpace(token))
+                    if (Class_TaiKhoan.authentication(client))
                     {
-                        // header Authorization chứa token
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
                         HttpResponseMessage response = await client.PostAsync(apiUrl + "logout", null);
                         // 200 ok
                         if (response.IsSuccessStatusCode)
@@ -406,10 +401,6 @@ namespace DictionaryAppForIT.Forms
                         {
                             RJMessageBox.Show("Lỗi >> status code: " + response.StatusCode);
                         }
-                    }
-                    else
-                    {
-                        RJMessageBox.Show("Vui lòng đăng nhập!");
                     }
                 }
                 else

@@ -14,7 +14,7 @@ namespace DictionaryAppForIT.DAL
         private static DataProvider _instance;
         private static readonly HttpClient client = new HttpClient();
         private static readonly string apiUrl = BaseUrl.base_url;
-
+        string token = Class_TaiKhoan.Token;
         public static DataProvider Instance
         {
             get
@@ -32,10 +32,16 @@ namespace DictionaryAppForIT.DAL
 
         }
         // object result = await DataProvider.Instance.GetMethod<ResponseType>("endpoint", 2, 5, 6);
-        public async Task<object> GetMethod<TApiResponse>(string endpoint, params object[] parameters)
+        public async Task<object> GetMethod<TApiResponse>(string endpoint, bool authentication = false, params object[] parameters)
         {
             try
             {
+                bool isAuthenticated = authentication && Class_TaiKhoan.authentication(client);
+
+                if (!isAuthenticated)
+                {
+                    return null;
+                }
                 string parameterString = parameters != null ? string.Join("/", parameters) : string.Empty;
                 // loại bỏ dấu "/" cuối cùng và thêm dấu "/" 1 lần ở trước
                 if (!string.IsNullOrEmpty(parameterString))

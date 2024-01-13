@@ -21,15 +21,22 @@ namespace DictionaryAppForIT.DTO
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-translate-history/{Class_TaiKhoan.IdTaiKhoan}");
-
-                string responseContent = await response.Content.ReadAsStringAsync();
-
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<List<TranslateHistory>>>(responseContent);
-
-                if (apiResponse.Status && apiResponse.Data != null)
+                if (Class_TaiKhoan.authentication(client))
                 {
-                    return apiResponse.Data;
+                    HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-translate-history/{Class_TaiKhoan.IdTaiKhoan}");
+
+                    string responseContent = await response.Content.ReadAsStringAsync();
+
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<List<TranslateHistory>>>(responseContent);
+
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        return apiResponse.Data;
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
                 else
                 {

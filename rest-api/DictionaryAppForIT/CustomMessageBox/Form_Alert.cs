@@ -1,13 +1,6 @@
 ﻿using DictionaryAppForIT.DTO;
-using DictionaryAppForIT.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.CustomMessageBox
@@ -94,7 +87,7 @@ namespace DictionaryAppForIT.CustomMessageBox
 
         public async void showAlert(int type)
         {
-           await XemNghia.HienThiThongTinRandom();
+            await XemNghia.HienThiThongTinRandom();
             foreach (var item in XemNghia._listTu)
             {
                 lblTuVung.Text = item.TenTu;

@@ -100,48 +100,54 @@ namespace DictionaryAppForIT.UserControls.YeuThich
         {
             if (_loai == 1)
             {
-                var input = new FormUrlEncodedContent(new[]
+                if (Class_TaiKhoan.authentication(client))
+                {
+                    var input = new FormUrlEncodedContent(new[]
                 {
                     new KeyValuePair<string, string>("Note", txtGhiChu.Text.Trim())
                 });
 
-                HttpResponseMessage response = await client.PutAsync(apiUrl + $"update-favorite-vocabulary/{lblIndex.Text}/{Class_TaiKhoan.IdTaiKhoan}", input);
+                    HttpResponseMessage response = await client.PutAsync(apiUrl + $"update-favorite-vocabulary/{lblIndex.Text}/{Class_TaiKhoan.IdTaiKhoan}", input);
 
-                string responseContent = await response.Content.ReadAsStringAsync();
+                    string responseContent = await response.Content.ReadAsStringAsync();
 
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
 
-                if (apiResponse.Status && apiResponse.Data != null)
-                {
-                    RJMessageBox.Show($"{xoaThanhCong}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtGhiChu.Enabled = false;
-                }
-                else
-                {
-                    RJMessageBox.Show("Không thành công!!!", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        RJMessageBox.Show($"{xoaThanhCong}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtGhiChu.Enabled = false;
+                    }
+                    else
+                    {
+                        RJMessageBox.Show("Không thành công!!!", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
             {
-                var input = new FormUrlEncodedContent(new[]
+                if (Class_TaiKhoan.authentication(client))
+                {
+                    var input = new FormUrlEncodedContent(new[]
                 {
                     new KeyValuePair<string, string>("Note", txtGhiChu.Text.Trim())
                 });
 
-                HttpResponseMessage response = await client.PutAsync(apiUrl + $"update-favorite-text/{lblIndex.Text}/{Class_TaiKhoan.IdTaiKhoan}", input);
+                    HttpResponseMessage response = await client.PutAsync(apiUrl + $"update-favorite-text/{lblIndex.Text}/{Class_TaiKhoan.IdTaiKhoan}", input);
 
-                string responseContent = await response.Content.ReadAsStringAsync();
+                    string responseContent = await response.Content.ReadAsStringAsync();
 
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
 
-                if (apiResponse.Status && apiResponse.Data != null)
-                {
-                    RJMessageBox.Show($"{xoaThanhCong}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtGhiChu.Enabled = false;
-                }
-                else
-                {
-                    RJMessageBox.Show("Không thành công!!!", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        RJMessageBox.Show($"{xoaThanhCong}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtGhiChu.Enabled = false;
+                    }
+                    else
+                    {
+                        RJMessageBox.Show("Không thành công!!!", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }

@@ -21,6 +21,10 @@ namespace DictionaryAppForIT.DTO
         {
             try
             {
+                if (!Class_TaiKhoan.authentication(client))
+                {
+                    return false;
+                }
                 HttpResponseMessage response = await client.GetAsync(apiUrl + $"check-if-exist?english={word}&user_id={Class_TaiKhoan.IdTaiKhoan}");
 
                 string responseContent = await response.Content.ReadAsStringAsync();
@@ -48,6 +52,7 @@ namespace DictionaryAppForIT.DTO
                     RJMessageBox.Show(apiResponse.Message);
                     return false;
                 }
+
             }
             catch (Exception ex)
             {

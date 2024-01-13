@@ -46,23 +46,26 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             string dapAn;
             try
             {
-                HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-random-wrong-answers/{TuVung}/{soLuong}");
-
-                string responseContent = await response.Content.ReadAsStringAsync();
-
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<MiniGameResponse[]>>(responseContent);
-
-                if (apiResponse.Status && apiResponse.Data != null)
+                if (Class_TaiKhoan.authentication(client))
                 {
-                    foreach (var item in apiResponse.Data)
+                    HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-random-wrong-answers/{TuVung}/{soLuong}");
+
+                    string responseContent = await response.Content.ReadAsStringAsync();
+
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<MiniGameResponse[]>>(responseContent);
+
+                    if (apiResponse.Status && apiResponse.Data != null)
                     {
-                        dapAn = item.vietnamese;
-                        DapAnRandom.Add(dapAn);
+                        foreach (var item in apiResponse.Data)
+                        {
+                            dapAn = item.vietnamese;
+                            DapAnRandom.Add(dapAn);
+                        }
                     }
-                }
-                else
-                {
-                    RJMessageBox.Show(apiResponse.Message);
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                    }
                 }
             }
             catch (Exception ex)

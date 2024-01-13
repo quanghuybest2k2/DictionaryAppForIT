@@ -65,32 +65,35 @@ namespace DictionaryAppForIT.DTO
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync(apiUrl + "random-word");
-
-                string responseContent = await response.Content.ReadAsStringAsync();
-
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<WordResponse>>(responseContent);
-                var data = apiResponse.Data;
-
-                if (apiResponse.Status && data != null)
+                if (Class_TaiKhoan.authentication(client))
                 {
-                    Tu tu = new Tu();
-                    tu.TenTu = data.word_name;
-                    tu.TenLoai = data.type_name;
-                    tu.PhienAm = data.pronunciations;
-                    tu.TenChuyenNganh = data.specialization_name;
-                    tu.Nghia = data.means;
-                    tu.MoTa = data.description;
-                    tu.ViDu = data.example;
-                    tu.DongNghia = data.synonymous;
-                    tu.TraiNghia = data.antonyms;
+                    HttpResponseMessage response = await client.GetAsync(apiUrl + "random-word");
 
-                    _listTu.Clear();
-                    _listTu.Add(tu);
-                }
-                else
-                {
-                    RJMessageBox.Show("Lỗi khi tìm từ ngẫu nhiên!");
+                    string responseContent = await response.Content.ReadAsStringAsync();
+
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<WordResponse>>(responseContent);
+                    var data = apiResponse.Data;
+
+                    if (apiResponse.Status && data != null)
+                    {
+                        Tu tu = new Tu();
+                        tu.TenTu = data.word_name;
+                        tu.TenLoai = data.type_name;
+                        tu.PhienAm = data.pronunciations;
+                        tu.TenChuyenNganh = data.specialization_name;
+                        tu.Nghia = data.means;
+                        tu.MoTa = data.description;
+                        tu.ViDu = data.example;
+                        tu.DongNghia = data.synonymous;
+                        tu.TraiNghia = data.antonyms;
+
+                        _listTu.Clear();
+                        _listTu.Add(tu);
+                    }
+                    else
+                    {
+                        RJMessageBox.Show("Lỗi khi tìm từ ngẫu nhiên!");
+                    }
                 }
             }
             catch (Exception ex)

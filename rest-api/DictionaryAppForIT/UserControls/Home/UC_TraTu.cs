@@ -153,7 +153,7 @@ namespace DictionaryAppForIT.UserControls
             {
                 //btnYeuThich.Checked = false;
                 flpMeaning.Controls.Clear();  //-------------------------------------- Khi người ta enter mới xóa flpMeaning
-                HienThiThongTin();
+                await HienThiThongTin();
                 TuHienTai = txtTimKiemTu.Text;//--------------------------------------
 
                 foreach (var item in XemNghia._listTu)
@@ -173,32 +173,35 @@ namespace DictionaryAppForIT.UserControls
         {
             try
             {
-                var requestData = new Dictionary<string, string>
+                if (Class_TaiKhoan.authentication(client))
+                {
+                    var requestData = new Dictionary<string, string>
                 {
                     { "english", tu.TenTu },
                     { "pronunciations", tu.PhienAm },
                     { "vietnamese", tu.Nghia },
                     { "user_id", Class_TaiKhoan.IdTaiKhoan }
                 };
-                //gửi request
-                var response = await client.PostAsync(apiUrl + "save-word-lookup-history", new FormUrlEncodedContent(requestData));
+                    //gửi request
+                    var response = await client.PostAsync(apiUrl + "save-word-lookup-history", new FormUrlEncodedContent(requestData));
 
-                var responseContent = await response.Content.ReadAsStringAsync();
+                    var responseContent = await response.Content.ReadAsStringAsync();
 
-                //if (responseContent != null)
-                //{
-                //    RJMessageBox.Show("Phản hồi từ API: " + responseContent);
-                //}
+                    //if (responseContent != null)
+                    //{
+                    //    RJMessageBox.Show("Phản hồi từ API: " + responseContent);
+                    //}
 
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<HistoryResponse>>(responseContent);
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<HistoryResponse>>(responseContent);
 
-                if (apiResponse.Status && apiResponse.Data != null)
-                {
-                    RJMessageBox.Show(apiResponse.Message);
-                }
-                else
-                {
-                    RJMessageBox.Show(apiResponse.Message);
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                    }
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                    }
                 }
             }
             catch (Exception ex)
@@ -207,7 +210,7 @@ namespace DictionaryAppForIT.UserControls
             }
         }
 
-        private async void HienThiThongTin()
+        private async Task HienThiThongTin()
         {
             if (await XemNghia.HienThiThongTinTimKiem(txtTimKiemTu.Text))
             {
@@ -380,19 +383,22 @@ namespace DictionaryAppForIT.UserControls
                 {
                     try
                     {
-                        HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-love-vocabulary/{txtTuVung.Text}/{Class_TaiKhoan.IdTaiKhoan}");
-
-                        string responseContent = await response.Content.ReadAsStringAsync();
-
-                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
-
-                        if (apiResponse.Status && apiResponse.Data != null)
+                        if (Class_TaiKhoan.authentication(client))
                         {
-                            RJMessageBox.Show(apiResponse.Message);
-                        }
-                        else
-                        {
-                            RJMessageBox.Show(apiResponse.Message);
+                            HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-love-vocabulary/{txtTuVung.Text}/{Class_TaiKhoan.IdTaiKhoan}");
+
+                            string responseContent = await response.Content.ReadAsStringAsync();
+
+                            var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                            if (apiResponse.Status && apiResponse.Data != null)
+                            {
+                                RJMessageBox.Show(apiResponse.Message);
+                            }
+                            else
+                            {
+                                RJMessageBox.Show(apiResponse.Message);
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -407,8 +413,10 @@ namespace DictionaryAppForIT.UserControls
         {
             try
             {
-                //@TiengAnh, @PhienAm, @TiengViet, @GhiChu,@IDTK
-                var requestData = new Dictionary<string, string>
+                if (Class_TaiKhoan.authentication(client))
+                {
+                    //@TiengAnh, @PhienAm, @TiengViet, @GhiChu,@IDTK
+                    var requestData = new Dictionary<string, string>
                 {
                     { "english", tu.TenTu },
                     { "pronunciations", tu.PhienAm },
@@ -416,20 +424,21 @@ namespace DictionaryAppForIT.UserControls
                     // "note" => có thể null nên khỏi điền
                     { "user_id", Class_TaiKhoan.IdTaiKhoan }
                 };
-                //gửi request
-                var response = await client.PostAsync(apiUrl + "save-love-vocabulary", new FormUrlEncodedContent(requestData));
+                    //gửi request
+                    var response = await client.PostAsync(apiUrl + "save-love-vocabulary", new FormUrlEncodedContent(requestData));
 
-                var responseContent = await response.Content.ReadAsStringAsync();
+                    var responseContent = await response.Content.ReadAsStringAsync();
 
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoveResponse>>(responseContent);
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoveResponse>>(responseContent);
 
-                if (apiResponse.Status && apiResponse.Data != null)
-                {
-                    RJMessageBox.Show(apiResponse.Message);
-                }
-                else
-                {
-                    RJMessageBox.Show(apiResponse.Message);
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                    }
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message);
+                    }
                 }
             }
             catch (Exception ex)

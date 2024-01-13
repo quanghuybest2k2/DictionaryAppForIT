@@ -11,7 +11,7 @@ namespace DictionaryAppForIT.DTO
         }
         public static async Task<string> Tong_So_Muc_Yeu_Thich()
         {
-            object query = await DataProvider.Instance.GetMethod<string>("total-love-item", Class_TaiKhoan.IdTaiKhoan);
+            object query = await DataProvider.Instance.GetMethod<string>("total-love-item", true, Class_TaiKhoan.IdTaiKhoan);
 
             string result = query?.ToString();
 

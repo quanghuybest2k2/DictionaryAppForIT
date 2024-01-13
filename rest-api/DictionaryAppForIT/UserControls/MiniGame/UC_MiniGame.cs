@@ -68,7 +68,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             {
                 this.timerCountDown.Stop();
                 NhacHetGio.Play();
-                var frm = new frmMSG_HoanThanh("Bạn đã hết thời gian!", await TongDiem(), await SoCauChuaLam(), "1 phút 0 giây");
+                var frm = new frmMSG_HoanThanh("Bạn đã hết thời gian!", TongDiem(), SoCauChuaLam(), "1 phút 0 giây");
                 frm.GameOver = true;
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
@@ -79,7 +79,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             }
         }
 
-        private async Task<string> ThoiGianHoanThanh()
+        private string ThoiGianHoanThanh()
         {
             string[] kq = new string[2];
             string[] arr = lblThoiGian.Text.Split(':');
@@ -94,13 +94,13 @@ namespace DictionaryAppForIT.UserControls.MiniGame
 
         private async void btnHoanThanh_Click(object sender, EventArgs e)
         {
-            var frmXacNhan = new frmMSG_XacNhan("Bạn có chắc chắn là muốn hoàn thành lượt chơi không?", await ThoiGianHoanThanh());
+            var frmXacNhan = new frmMSG_XacNhan("Bạn có chắc chắn là muốn hoàn thành lượt chơi không?", ThoiGianHoanThanh());
             if (frmXacNhan.ShowDialog() == DialogResult.OK)
             {
                 this.timerCountDown.Stop();
                 DemNguoc15s.Stop();
                 frmXacNhan.Close();
-                var frmHoanThanh = new frmMSG_HoanThanh("Bạn đã hoàn thành lượt chơi!", await TongDiem(), await SoCauChuaLam(), await ThoiGianHoanThanh());
+                var frmHoanThanh = new frmMSG_HoanThanh("Bạn đã hoàn thành lượt chơi!", TongDiem(), SoCauChuaLam(), ThoiGianHoanThanh());
                 frmHoanThanh.HoanThanh = true;
                 if (frmHoanThanh.ShowDialog() == DialogResult.OK)
                 {
@@ -208,10 +208,10 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             {
                 ClassDanhSachCauHoi._list[index].TraLoiDung = false;
             }
-            lblSoCauHoanThanh.Text = await SoCauHoanThanh() + "/10";
+            lblSoCauHoanThanh.Text = SoCauHoanThanh() + "/10";
         }
 
-        public async Task<string> TongDiem()
+        public string TongDiem()
         {
             int sum = 0;
             foreach (var item in ClassDanhSachCauHoi._list)
@@ -224,7 +224,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             return sum.ToString();
         }
 
-        public async Task<string> SoCauChuaLam()
+        public string SoCauChuaLam()
         {
             int sum = 0;
             foreach (var item in ClassDanhSachCauHoi._list)
@@ -236,7 +236,7 @@ namespace DictionaryAppForIT.UserControls.MiniGame
             }
             return sum.ToString();
         }
-        private async Task<string> SoCauHoanThanh()
+        private string SoCauHoanThanh()
         {
             int sum = 0;
             foreach (var item in ClassDanhSachCauHoi._list)

@@ -1,4 +1,8 @@
-﻿namespace DictionaryAppForIT.DTO
+﻿using DictionaryAppForIT.Class;
+using System.Net.Http;
+using System.Net.Http.Headers;
+
+namespace DictionaryAppForIT.DTO
 {
     public class Class_TaiKhoan
     {
@@ -10,8 +14,21 @@
 
         public Class_TaiKhoan()
         {
-
         }
-
+        public static bool authentication(HttpClient client)
+        {
+            // Kiểm tra tồn tại của token
+            if (!string.IsNullOrWhiteSpace(Token))
+            {
+                // header Authorization chứa token
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Token);
+                return true;
+            }
+            else
+            {
+                RJMessageBox.Show("Vui lòng đăng nhập!");
+                return false;
+            }
+        }
     }
 }

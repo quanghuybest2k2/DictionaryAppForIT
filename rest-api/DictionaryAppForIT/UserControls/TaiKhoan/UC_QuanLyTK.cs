@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.UserControls.TaiKhoan
@@ -72,31 +73,34 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         #endregion
         private async void btnXoaTaiKhoan_Click(object sender, EventArgs e)
         {
-            var result = RJMessageBox.Show("Bạn có thực sự muốn xóa tài khoản này vĩnh viễn?",
-            "Xác nhận xóa tài khoản",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (Class_TaiKhoan.authentication(client))
             {
-                // xóa tài khoản
-                HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-user/{Class_TaiKhoan.IdTaiKhoan}");
-
-                string responseContent = await response.Content.ReadAsStringAsync();
-
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
-
-                if (apiResponse.Status && apiResponse.Data != null)
+                var result = RJMessageBox.Show("Bạn có thực sự muốn xóa tài khoản này vĩnh viễn?",
+           "Xác nhận xóa tài khoản",
+           MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
                 {
-                    RJMessageBox.Show(apiResponse.Message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Application.Exit();
+                    // xóa tài khoản
+                    HttpResponseMessage response = await client.DeleteAsync(apiUrl + $"delete-user/{Class_TaiKhoan.IdTaiKhoan}");
+
+                    string responseContent = await response.Content.ReadAsStringAsync();
+
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        RJMessageBox.Show(apiResponse.Message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Application.Exit();
+                    }
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                if (result == DialogResult.No)
                 {
-                    RJMessageBox.Show(apiResponse.Message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-            }
-            if (result == DialogResult.No)
-            {
-                return;
             }
         }
 
@@ -110,29 +114,32 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         {
             try
             {
-                var userInput = new Dictionary<string, string>
+                if (Class_TaiKhoan.authentication(client))
+                {
+                    var userInput = new Dictionary<string, string>
                 {
                     { "name", txtUsername.Text.Trim() },
                     { "email", txtEmail.Text.Trim()},
                     { "gender", KTGioiTinh().ToString() }
                 };
-                string DataRequest = JsonConvert.SerializeObject(userInput);
+                    string DataRequest = JsonConvert.SerializeObject(userInput);
 
-                HttpContent content = new StringContent(DataRequest, Encoding.UTF8, "application/json");
+                    HttpContent content = new StringContent(DataRequest, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await client.PutAsync(apiUrl + $"update-user/{Class_TaiKhoan.IdTaiKhoan}", content);
+                    HttpResponseMessage response = await client.PutAsync(apiUrl + $"update-user/{Class_TaiKhoan.IdTaiKhoan}", content);
 
-                string responseContent = await response.Content.ReadAsStringAsync();
+                    string responseContent = await response.Content.ReadAsStringAsync();
 
-                var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
+                    var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
 
-                if (apiResponse.Status && apiResponse.Data != null)
-                {
-                    RJMessageBox.Show(apiResponse.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    RJMessageBox.Show(apiResponse.Message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (apiResponse.Status && apiResponse.Data != null)
+                    {
+                        RJMessageBox.Show(apiResponse.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        RJMessageBox.Show(apiResponse.Message, "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)
@@ -180,54 +187,56 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 
         }
         #endregion
-        private void UC_QuanLyTK_Load(object sender, EventArgs e)
+        private async void UC_QuanLyTK_Load(object sender, EventArgs e)
         {
             ThoiGianTaoTaiKhoan();
             ThoiGianSuDung();
-            HienThiThongTinTaiKhoan(); // Hiển thị thông tin tài khoản
+            await HienThiThongTinTaiKhoan(); // Hiển thị thông tin tài khoản
         }
-        private async void HienThiThongTinTaiKhoan()
+        private async Task HienThiThongTinTaiKhoan()
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-user/{Class_TaiKhoan.IdTaiKhoan}");
-
-                string responseContent = await response.Content.ReadAsStringAsync();
-                var data = JsonConvert.DeserializeObject<ApiResponse<AccountResponse>>(responseContent);
-
-                if (data.Status == true && data.Data != null)
+                if (Class_TaiKhoan.authentication(client))
                 {
-                    var user = data.Data;
+                    HttpResponseMessage response = await client.GetAsync(apiUrl + $"get-user/{Class_TaiKhoan.IdTaiKhoan}");
 
-                    txtUsername.Text = user.name.ToString();
-                    txtEmail.Text = user.email.ToString();
+                    string responseContent = await response.Content.ReadAsStringAsync();
+                    var data = JsonConvert.DeserializeObject<ApiResponse<AccountResponse>>(responseContent);
 
-                    int gioiTinh = Convert.ToInt32(user.gender);
-
-                    if (gioiTinh == 1)
+                    if (data.Status == true && data.Data != null)
                     {
-                        rdNam.Checked = true;
-                        rdNu.Checked = false;
-                        rdKhac.Checked = false;
+                        var user = data.Data;
+
+                        txtUsername.Text = user.name.ToString();
+                        txtEmail.Text = user.email.ToString();
+
+                        int gioiTinh = Convert.ToInt32(user.gender);
+
+                        if (gioiTinh == 1)
+                        {
+                            rdNam.Checked = true;
+                            rdNu.Checked = false;
+                            rdKhac.Checked = false;
+                        }
+                        else if (gioiTinh == 2)
+                        {
+                            rdNu.Checked = true;
+                            rdNam.Checked = false;
+                            rdKhac.Checked = false;
+                        }
+                        else if (gioiTinh == 3)
+                        {
+                            rdKhac.Checked = true;
+                            rdNam.Checked = false;
+                            rdNu.Checked = false;
+                        }
                     }
-                    else if (gioiTinh == 2)
+                    else
                     {
-                        rdNu.Checked = true;
-                        rdNam.Checked = false;
-                        rdKhac.Checked = false;
-                    }
-                    else if (gioiTinh == 3)
-                    {
-                        rdKhac.Checked = true;
-                        rdNam.Checked = false;
-                        rdNu.Checked = false;
+                        RJMessageBox.Show("Không tìm thấy người dùng!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
-                {
-                    RJMessageBox.Show("Không tìm thấy người dùng!", "Lỗi rồi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
             }
             catch (Exception ex)
             {

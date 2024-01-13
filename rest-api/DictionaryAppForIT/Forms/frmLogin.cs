@@ -113,7 +113,7 @@ namespace DictionaryAppForIT
                 // Xử lý lỗi
                 //RJMessageBox.Show("Đăng nhập thất bại. Mã lỗi HTTP: " + (int)response.StatusCode);
                 //RJMessageBox.Show("Nội dung lỗi: " + responseContent);
-                var errorResponse = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(responseContent);
+                var errorResponse = JsonConvert.DeserializeObject<dynamic>(responseContent);
 
                 if (errorResponse.validator_errors != null)
                 {
