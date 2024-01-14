@@ -372,9 +372,9 @@ namespace DictionaryAppForIT
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
             this.label2.Location = new System.Drawing.Point(495, 285);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 17);
+            this.label2.Size = new System.Drawing.Size(92, 17);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Lưu đăng nhập";
+            this.label2.Text = "Lưu mật khẩu";
             // 
             // label3
             // 

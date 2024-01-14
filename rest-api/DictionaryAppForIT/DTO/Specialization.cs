@@ -4,5 +4,4 @@
     {
         public string specialization_name { get; set; }
     }
-
 }

@@ -352,12 +352,6 @@
     <Compile Include="UserControls\MiniGame\UC_StartMiniGame.Designer.cs">
       <DependentUpon>UC_StartMiniGame.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\SpinnerControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\SpinnerControl.Designer.cs">
-      <DependentUpon>SpinnerControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\TaiKhoan\UC_PhanHoi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -512,9 +506,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MiniGame\UC_StartMiniGame.resx">
       <DependentUpon>UC_StartMiniGame.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\SpinnerControl.resx">
-      <DependentUpon>SpinnerControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TaiKhoan\UC_PhanHoi.resx">
       <DependentUpon>UC_PhanHoi.cs</DependentUpon>

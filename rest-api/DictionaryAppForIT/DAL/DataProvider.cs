@@ -35,12 +35,6 @@ namespace DictionaryAppForIT.DAL
         {
             try
             {
-                bool isAuthenticated = authentication && Class_TaiKhoan.authentication(client);
-
-                if (!isAuthenticated)
-                {
-                    return null;
-                }
                 string parameterString = parameters != null ? string.Join("/", parameters) : string.Empty;
                 // loại bỏ dấu "/" cuối cùng và thêm dấu "/" 1 lần ở trước
                 if (!string.IsNullOrEmpty(parameterString))
@@ -51,8 +45,13 @@ namespace DictionaryAppForIT.DAL
 
                 string requestUrl = apiUrl + $"{endpoint}{parameterString}";
 
-                HttpResponseMessage response = await client.GetAsync(requestUrl);
+                if (authentication && !Class_TaiKhoan.authentication(client))
+                {
+                    ShowErrorMessage("Chưa đăng nhập!");
+                    return null;
+                }
 
+                HttpResponseMessage response = await client.GetAsync(requestUrl);
                 string responseContent = await response.Content.ReadAsStringAsync();
 
                 var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
@@ -63,20 +62,22 @@ namespace DictionaryAppForIT.DAL
                 }
                 else
                 {
-                    string message = apiResponse.Message;
-                    RJMessageBox.Show(message, "Thông báo",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                    ShowErrorMessage(apiResponse.Message);
                     return null;
                 }
             }
             catch (Exception ex)
             {
-                RJMessageBox.Show(ex.Message, "Lỗi",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                ShowErrorMessage(ex.Message);
                 return null;
             }
+        }
+
+        private void ShowErrorMessage(string message)
+        {
+            RJMessageBox.Show(message, "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
         }
         //
     }

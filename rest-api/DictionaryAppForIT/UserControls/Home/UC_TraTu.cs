@@ -129,8 +129,6 @@ namespace DictionaryAppForIT.UserControls
                 RJMessageBox.Show($"Lỗi: {ex.Message}");
             }
         }
-
-
         private async Task KiemTraTonTaiYeuThich()
         {
             string tuVung = txtTuVung.Text.Trim();
@@ -192,14 +190,14 @@ namespace DictionaryAppForIT.UserControls
 
                     var apiResponse = JsonConvert.DeserializeObject<ApiResponse<HistoryResponse>>(responseContent);
 
-                    if (apiResponse.Status && apiResponse.Data != null)
-                    {
-                        RJMessageBox.Show(apiResponse.Message);
-                    }
-                    else
-                    {
-                        RJMessageBox.Show(apiResponse.Message);
-                    }
+                    //if (apiResponse.Status && apiResponse.Data != null)
+                    //{
+                    //    RJMessageBox.Show(apiResponse.Message);
+                    //}
+                    //else
+                    //{
+                    //    RJMessageBox.Show(apiResponse.Message);
+                    //}
                 }
             }
             catch (Exception ex)
@@ -389,14 +387,14 @@ namespace DictionaryAppForIT.UserControls
 
                             var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
 
-                            if (apiResponse.Status && apiResponse.Data != null)
-                            {
-                                RJMessageBox.Show(apiResponse.Message);
-                            }
-                            else
-                            {
-                                RJMessageBox.Show(apiResponse.Message);
-                            }
+                            //if (apiResponse.Status && apiResponse.Data != null)
+                            //{
+                            //    RJMessageBox.Show(apiResponse.Message);
+                            //}
+                            //else
+                            //{
+                            //    RJMessageBox.Show(apiResponse.Message);
+                            //}
                         }
                     }
                     catch (Exception ex)
@@ -429,14 +427,14 @@ namespace DictionaryAppForIT.UserControls
 
                     var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoveResponse>>(responseContent);
 
-                    if (apiResponse.Status && apiResponse.Data != null)
-                    {
-                        RJMessageBox.Show(apiResponse.Message);
-                    }
-                    else
-                    {
-                        RJMessageBox.Show(apiResponse.Message);
-                    }
+                    //if (apiResponse.Status && apiResponse.Data != null)
+                    //{
+                    //    RJMessageBox.Show(apiResponse.Message);
+                    //}
+                    //else
+                    //{
+                    //    RJMessageBox.Show(apiResponse.Message);
+                    //}
                 }
             }
             catch (Exception ex)

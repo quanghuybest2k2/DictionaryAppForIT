@@ -52,7 +52,6 @@ namespace DictionaryAppForIT.UserControls.Home
 
                 if (apiResponse.Status && data != null)
                 {
-
                     dtgvTuVung.DataSource = data;
                     lblSoTuHienCo.Text = dtgvTuVung.Rows.Count.ToString();
                 }

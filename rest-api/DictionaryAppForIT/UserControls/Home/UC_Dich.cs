@@ -359,14 +359,14 @@ namespace DictionaryAppForIT.UserControls.Home
 
                     var apiResponse = JsonConvert.DeserializeObject<ApiResponse<LoveResponse>>(responseContent);
 
-                    if (apiResponse.Status && apiResponse.Data != null)
-                    {
-                        RJMessageBox.Show(apiResponse.Message);
-                    }
-                    else
-                    {
-                        RJMessageBox.Show(apiResponse.Message);
-                    }
+                    //if (apiResponse.Status && apiResponse.Data != null)
+                    //{
+                    //    RJMessageBox.Show(apiResponse.Message);
+                    //}
+                    //else
+                    //{
+                    //    RJMessageBox.Show(apiResponse.Message);
+                    //}
                 }
             }
             else
@@ -378,14 +378,14 @@ namespace DictionaryAppForIT.UserControls.Home
                     string responseContent = await response.Content.ReadAsStringAsync();
                     var apiResponse = JsonConvert.DeserializeObject<ApiResponse<int>>(responseContent);
 
-                    if (apiResponse.Status && apiResponse.Data > 0)
-                    {
-                        RJMessageBox.Show(apiResponse.Message);
-                    }
-                    else
-                    {
-                        RJMessageBox.Show(apiResponse.Message);
-                    }
+                    //if (apiResponse.Status && apiResponse.Data > 0)
+                    //{
+                    //    RJMessageBox.Show(apiResponse.Message);
+                    //}
+                    //else
+                    //{
+                    //    RJMessageBox.Show(apiResponse.Message);
+                    //}
                 }
             }
         }

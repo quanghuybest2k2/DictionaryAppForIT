@@ -194,14 +194,14 @@ namespace DictionaryAppForIT.UserControls.YeuThich
 
                             var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
 
-                            if (apiResponse.Status && apiResponse.Data != null)
-                            {
-                                RJMessageBox.Show(apiResponse.Message);
-                            }
-                            else
-                            {
-                                RJMessageBox.Show(apiResponse.Message);
-                            }
+                            //if (apiResponse.Status && apiResponse.Data != null)
+                            //{
+                            //    RJMessageBox.Show(apiResponse.Message);
+                            //}
+                            //else
+                            //{
+                            //    RJMessageBox.Show(apiResponse.Message);
+                            //}
                         }
                     }
                     catch (Exception ex)
@@ -231,14 +231,14 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                             string responseContent = await response.Content.ReadAsStringAsync();
                             var apiResponse = JsonConvert.DeserializeObject<ApiResponse<object>>(responseContent);
 
-                            if (apiResponse.Status && apiResponse.Data != null)
-                            {
-                                RJMessageBox.Show(apiResponse.Message);
-                            }
-                            else
-                            {
-                                RJMessageBox.Show(apiResponse.Message);
-                            }
+                            //if (apiResponse.Status && apiResponse.Data != null)
+                            //{
+                            //    RJMessageBox.Show(apiResponse.Message);
+                            //}
+                            //else
+                            //{
+                            //    RJMessageBox.Show(apiResponse.Message);
+                            //}
                         }
                     }
                     catch (Exception ex)

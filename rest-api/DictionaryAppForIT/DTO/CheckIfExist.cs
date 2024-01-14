@@ -25,7 +25,7 @@ namespace DictionaryAppForIT.DTO
                 {
                     return false;
                 }
-                HttpResponseMessage response = await client.GetAsync(apiUrl + $"check-if-exist?english={word}&user_id={Class_TaiKhoan.IdTaiKhoan}");
+                HttpResponseMessage response = await client.GetAsync(apiUrl + $"check-if-exist-by-type?english={word}&user_id={Class_TaiKhoan.IdTaiKhoan}");
 
                 string responseContent = await response.Content.ReadAsStringAsync();
 

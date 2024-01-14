@@ -68,7 +68,7 @@ namespace DictionaryAppForIT.UserControls.YeuThich
             txtGhiChu.Enabled = true;
             txtGhiChu.Clear();
             txtGhiChu.Enabled = false;
-            CapNhatGhiChu("Làm sạch thành công!");
+            CapNhatGhiChu();
         }
 
         public void KTGhiChu()
@@ -91,12 +91,12 @@ namespace DictionaryAppForIT.UserControls.YeuThich
                 }
                 else
                 {
-                    CapNhatGhiChu("Cập nhật ghi chú thành công!");
+                    CapNhatGhiChu();
                 }
             }
         }
 
-        private async void CapNhatGhiChu(string xoaThanhCong)
+        private async void CapNhatGhiChu()
         {
             if (_loai == 1)
             {
@@ -115,7 +115,6 @@ namespace DictionaryAppForIT.UserControls.YeuThich
 
                     if (apiResponse.Status && apiResponse.Data != null)
                     {
-                        RJMessageBox.Show($"{xoaThanhCong}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtGhiChu.Enabled = false;
                     }
                     else
@@ -141,7 +140,6 @@ namespace DictionaryAppForIT.UserControls.YeuThich
 
                     if (apiResponse.Status && apiResponse.Data != null)
                     {
-                        RJMessageBox.Show($"{xoaThanhCong}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtGhiChu.Enabled = false;
                     }
                     else
