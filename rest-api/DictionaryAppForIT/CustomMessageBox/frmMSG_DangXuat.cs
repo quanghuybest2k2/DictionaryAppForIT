@@ -22,8 +22,8 @@ namespace DictionaryAppForIT.CustomMessageBox
             UserData.RemoveUserDataSetting();
             //this.Hide();
             DialogResult = DialogResult.OK;
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.Show();
+            //frmLogin frmLogin = new frmLogin();
+            //frmLogin.Show();
         }
     }
 }

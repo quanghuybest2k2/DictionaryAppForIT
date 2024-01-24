@@ -22,25 +22,12 @@ namespace DictionaryAppForIT
             InitializeComponent();
             this.AcceptButton = btnDangNhap;
         }
-        private bool checkUserData()
-        {
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.displayUsername) &&
-             !string.IsNullOrEmpty(Properties.Settings.Default.IdTaiKhoan) &&
-             !string.IsNullOrEmpty(Properties.Settings.Default.ngayTaoTK) &&
-             !string.IsNullOrEmpty(Properties.Settings.Default.Token) &&
-             !string.IsNullOrEmpty(Properties.Settings.Default.Role))
-            {
-                // có tồn tại
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            if (checkUserData())
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.username) &&
+            !string.IsNullOrEmpty(Properties.Settings.Default.user_id) &&
+            !string.IsNullOrEmpty(Properties.Settings.Default.creared_at) &&
+            !string.IsNullOrEmpty(Properties.Settings.Default.token))
             {
                 frmMain mainForm = new frmMain();
                 mainForm.ShowDialog();
@@ -99,8 +86,9 @@ namespace DictionaryAppForIT
             {
                 var loginResponse = apiResponse.Data;
                 // lưu dữ liệu của user
-                UserData.SaveUserDataSetting(loginResponse.username,
-                   loginResponse.user_id,
+                UserData.SaveUserDataSetting(loginResponse.name,
+                   loginResponse.gender,
+                   loginResponse.id,
                    loginResponse.created_at,
                    loginResponse.token,
                    loginResponse.role

@@ -26,60 +26,84 @@ namespace DictionaryAppForIT.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string displayUsername {
+        public string username {
             get {
-                return ((string)(this["displayUsername"]));
+                return ((string)(this["username"]));
             }
             set {
-                this["displayUsername"] = value;
+                this["username"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string IdTaiKhoan {
+        public string user_id {
             get {
-                return ((string)(this["IdTaiKhoan"]));
+                return ((string)(this["user_id"]));
             }
             set {
-                this["IdTaiKhoan"] = value;
+                this["user_id"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ngayTaoTK {
+        public string creared_at {
             get {
-                return ((string)(this["ngayTaoTK"]));
+                return ((string)(this["creared_at"]));
             }
             set {
-                this["ngayTaoTK"] = value;
+                this["creared_at"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Token {
+        public string token {
             get {
-                return ((string)(this["Token"]));
+                return ((string)(this["token"]));
             }
             set {
-                this["Token"] = value;
+                this["token"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Role {
+        public string role {
             get {
-                return ((string)(this["Role"]));
+                return ((string)(this["role"]));
             }
             set {
-                this["Role"] = value;
+                this["role"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string gender {
+            get {
+                return ((string)(this["gender"]));
+            }
+            set {
+                this["gender"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string email {
+            get {
+                return ((string)(this["email"]));
+            }
+            set {
+                this["email"] = value;
             }
         }
     }

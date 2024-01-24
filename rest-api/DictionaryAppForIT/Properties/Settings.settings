@@ -2,19 +2,25 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DictionaryAppForIT.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="displayUsername" Type="System.String" Scope="User">
+    <Setting Name="username" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="IdTaiKhoan" Type="System.String" Scope="User">
+    <Setting Name="user_id" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ngayTaoTK" Type="System.String" Scope="User">
+    <Setting Name="creared_at" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Token" Type="System.String" Scope="User">
+    <Setting Name="token" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Role" Type="System.String" Scope="User">
+    <Setting Name="role" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="gender" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="email" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

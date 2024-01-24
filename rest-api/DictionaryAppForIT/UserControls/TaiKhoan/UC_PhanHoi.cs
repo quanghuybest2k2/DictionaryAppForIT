@@ -15,6 +15,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private void btnDanhGia(object sender, EventArgs e)
         {
             var getText = (sender as Guna2Button).Text;
+            RJMessageBox.Show(getText);
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

@@ -135,6 +135,14 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 
                     if (apiResponse.Status && apiResponse.Data != null)
                     {
+                        UserData.SaveUserDataSetting(txtUsername.Text,
+                            KTGioiTinh().ToString(),
+                            Class_TaiKhoan.IdTaiKhoan,
+                            Class_TaiKhoan.ngayTaoTK,
+                            Class_TaiKhoan.Token,
+                            Class_TaiKhoan.Role,
+                            txtEmail.Text);
+
                         RJMessageBox.Show(apiResponse.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
