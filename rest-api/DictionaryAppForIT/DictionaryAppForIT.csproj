@@ -247,6 +247,7 @@
     <Compile Include="DTO\TranslateHistory.cs" />
     <Compile Include="DTO\TranslateHistoryService.cs" />
     <Compile Include="DTO\Tu.cs" />
+    <Compile Include="DTO\UserData.cs" />
     <Compile Include="DTO\WordBySpecialization.cs" />
     <Compile Include="DTO\WordHistoryService.cs" />
     <Compile Include="DTO\WordLookupHistory.cs" />

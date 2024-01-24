@@ -48,8 +48,6 @@ namespace DictionaryAppForIT
             this.txtMatKhauDN = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbLuuDangNhap = new Bunifu.UI.WinForms.BunifuCheckBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -312,70 +310,6 @@ namespace DictionaryAppForIT
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // cbLuuDangNhap
-            // 
-            this.cbLuuDangNhap.AllowBindingControlAnimation = true;
-            this.cbLuuDangNhap.AllowBindingControlColorChanges = false;
-            this.cbLuuDangNhap.AllowBindingControlLocation = true;
-            this.cbLuuDangNhap.AllowCheckBoxAnimation = false;
-            this.cbLuuDangNhap.AllowCheckmarkAnimation = true;
-            this.cbLuuDangNhap.AllowOnHoverStates = true;
-            this.cbLuuDangNhap.AutoCheck = true;
-            this.cbLuuDangNhap.BackColor = System.Drawing.Color.Transparent;
-            this.cbLuuDangNhap.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cbLuuDangNhap.BackgroundImage")));
-            this.cbLuuDangNhap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cbLuuDangNhap.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
-            this.cbLuuDangNhap.BorderRadius = 5;
-            this.cbLuuDangNhap.Checked = false;
-            this.cbLuuDangNhap.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
-            this.cbLuuDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbLuuDangNhap.CustomCheckmarkImage = null;
-            this.cbLuuDangNhap.Location = new System.Drawing.Point(472, 285);
-            this.cbLuuDangNhap.MinimumSize = new System.Drawing.Size(17, 17);
-            this.cbLuuDangNhap.Name = "cbLuuDangNhap";
-            this.cbLuuDangNhap.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.cbLuuDangNhap.OnCheck.BorderRadius = 5;
-            this.cbLuuDangNhap.OnCheck.BorderThickness = 2;
-            this.cbLuuDangNhap.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue;
-            this.cbLuuDangNhap.OnCheck.CheckmarkColor = System.Drawing.Color.White;
-            this.cbLuuDangNhap.OnCheck.CheckmarkThickness = 2;
-            this.cbLuuDangNhap.OnDisable.BorderColor = System.Drawing.Color.LightGray;
-            this.cbLuuDangNhap.OnDisable.BorderRadius = 5;
-            this.cbLuuDangNhap.OnDisable.BorderThickness = 2;
-            this.cbLuuDangNhap.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.cbLuuDangNhap.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
-            this.cbLuuDangNhap.OnDisable.CheckmarkThickness = 2;
-            this.cbLuuDangNhap.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.cbLuuDangNhap.OnHoverChecked.BorderRadius = 5;
-            this.cbLuuDangNhap.OnHoverChecked.BorderThickness = 2;
-            this.cbLuuDangNhap.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.cbLuuDangNhap.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
-            this.cbLuuDangNhap.OnHoverChecked.CheckmarkThickness = 2;
-            this.cbLuuDangNhap.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.cbLuuDangNhap.OnHoverUnchecked.BorderRadius = 5;
-            this.cbLuuDangNhap.OnHoverUnchecked.BorderThickness = 1;
-            this.cbLuuDangNhap.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.cbLuuDangNhap.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
-            this.cbLuuDangNhap.OnUncheck.BorderRadius = 5;
-            this.cbLuuDangNhap.OnUncheck.BorderThickness = 1;
-            this.cbLuuDangNhap.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.cbLuuDangNhap.Size = new System.Drawing.Size(17, 17);
-            this.cbLuuDangNhap.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
-            this.cbLuuDangNhap.TabIndex = 3;
-            this.cbLuuDangNhap.ThreeState = false;
-            this.cbLuuDangNhap.ToolTipText = null;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(495, 285);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 17);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Lưu mật khẩu";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -569,9 +503,9 @@ namespace DictionaryAppForIT
             // 
             this.lblQuenMK.AutoSize = true;
             this.lblQuenMK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblQuenMK.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuenMK.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblQuenMK.Location = new System.Drawing.Point(691, 285);
+            this.lblQuenMK.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuenMK.ForeColor = System.Drawing.Color.Gray;
+            this.lblQuenMK.Location = new System.Drawing.Point(583, 285);
             this.lblQuenMK.Name = "lblQuenMK";
             this.lblQuenMK.Size = new System.Drawing.Size(109, 17);
             this.lblQuenMK.TabIndex = 4;
@@ -675,8 +609,6 @@ namespace DictionaryAppForIT
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbLuuDangNhap);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtMatKhauDN);
@@ -710,10 +642,8 @@ namespace DictionaryAppForIT
         private System.Windows.Forms.PictureBox pbLogo;
         private Bunifu.UI.WinForms.BunifuTextBox txtMatKhauDN;
         private Bunifu.UI.WinForms.BunifuTextBox txtTaiKhoanDN;
-        private Bunifu.UI.WinForms.BunifuCheckBox cbLuuDangNhap;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;

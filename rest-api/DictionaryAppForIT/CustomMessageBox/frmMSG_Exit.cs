@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.CustomMessageBox
@@ -19,6 +12,8 @@ namespace DictionaryAppForIT.CustomMessageBox
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            // này là để xóa setting để test thôi, đặt đây là không đúng
+            //UserData.RemoveUserDataSetting();
             Application.Exit();
         }
 

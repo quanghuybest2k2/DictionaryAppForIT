@@ -89,6 +89,7 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
 
                     if (apiResponse.Status && apiResponse.Data != null)
                     {
+                        UserData.RemoveUserDataSetting();
                         RJMessageBox.Show(apiResponse.Message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Application.Exit();
                     }

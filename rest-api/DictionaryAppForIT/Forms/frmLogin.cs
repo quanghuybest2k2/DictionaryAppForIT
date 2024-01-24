@@ -25,10 +25,12 @@ namespace DictionaryAppForIT
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.TenDangNhap != string.Empty)
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.TenDangNhap) &&
+            !string.IsNullOrEmpty(Properties.Settings.Default.MatKhau))
             {
-                txtTaiKhoanDN.Text = Properties.Settings.Default.TenDangNhap;
-                txtMatKhauDN.Text = Properties.Settings.Default.MatKhau;
+                frmMain mainForm = new frmMain();
+                mainForm.ShowDialog();
+                this.Hide();
             }
         }
 
@@ -63,22 +65,6 @@ namespace DictionaryAppForIT
             }
         }
         #endregion
-
-        private void LuuMatKhau()
-        {
-            if (cbLuuDangNhap.Checked == true)
-            {
-                Properties.Settings.Default.TenDangNhap = txtTaiKhoanDN.Text;
-                Properties.Settings.Default.MatKhau = txtMatKhauDN.Text;
-                Properties.Settings.Default.Save();
-            }
-            if (cbLuuDangNhap.Checked == false)
-            {
-                Properties.Settings.Default.TenDangNhap = "";
-                Properties.Settings.Default.MatKhau = "";
-                Properties.Settings.Default.Save();
-            }
-        }
 
         #region Xử lý đăng nhập
         private async Task Login(string email, string password)
@@ -141,12 +127,13 @@ namespace DictionaryAppForIT
                 //    RJMessageBox.Show("Bạn phải điền email và mật khẩu!");
                 //}
                 await Login(email, password);
+                // lưu tk và mk
+                UserData.SaveUserDataSetting(email, password);
             }
             catch (Exception ex)
             {
                 RJMessageBox.Show(ex.Message);
             }
-            LuuMatKhau();
         }
         #endregion
 

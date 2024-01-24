@@ -1,12 +1,5 @@
-﻿using System;
-using DictionaryAppForIT.Forms;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DictionaryAppForIT.DTO;
+using System;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.CustomMessageBox
@@ -16,7 +9,7 @@ namespace DictionaryAppForIT.CustomMessageBox
         public frmMSG_DangXuat()
         {
             InitializeComponent();
-            
+
         }
 
         private void pbClose_Click(object sender, EventArgs e)
@@ -26,6 +19,7 @@ namespace DictionaryAppForIT.CustomMessageBox
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            UserData.RemoveUserDataSetting();
             //this.Hide();
             DialogResult = DialogResult.OK;
             frmLogin frmLogin = new frmLogin();
