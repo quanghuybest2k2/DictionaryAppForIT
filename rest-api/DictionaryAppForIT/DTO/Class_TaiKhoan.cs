@@ -6,11 +6,11 @@ namespace DictionaryAppForIT.DTO
 {
     public class Class_TaiKhoan
     {
-        public static string displayUsername;
-        public static string IdTaiKhoan;
-        public static string ngayTaoTK;
-        public static string Token;
-        public static string Role;
+        public static string displayUsername = Properties.Settings.Default.displayUsername;
+        public static string IdTaiKhoan = Properties.Settings.Default.IdTaiKhoan;
+        public static string ngayTaoTK = Properties.Settings.Default.ngayTaoTK;
+        public static string Token = Properties.Settings.Default.Token;
+        public static string Role = Properties.Settings.Default.Role;
 
         public Class_TaiKhoan()
         {

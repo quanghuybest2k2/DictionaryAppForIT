@@ -2,10 +2,19 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DictionaryAppForIT.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="TenDangNhap" Type="System.String" Scope="User">
+    <Setting Name="displayUsername" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="MatKhau" Type="System.String" Scope="User">
+    <Setting Name="IdTaiKhoan" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ngayTaoTK" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Token" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Role" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

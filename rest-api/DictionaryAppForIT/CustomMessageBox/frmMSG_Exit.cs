@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DictionaryAppForIT.DTO;
+using System;
 using System.Windows.Forms;
 
 namespace DictionaryAppForIT.CustomMessageBox

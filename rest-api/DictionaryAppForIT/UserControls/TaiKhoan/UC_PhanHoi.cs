@@ -12,26 +12,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             InitializeComponent();
         }
 
-        private void guna2Panel9_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox12_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDanhGia(object sender, EventArgs e)
         {
             var getText = (sender as Guna2Button).Text;

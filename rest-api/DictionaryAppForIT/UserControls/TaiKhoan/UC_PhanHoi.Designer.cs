@@ -49,11 +49,11 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnVeryGood = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGood = new Guna.UI2.WinForms.Guna2Button();
+            this.btnNormal = new Guna.UI2.WinForms.Guna2Button();
+            this.btnBad = new Guna.UI2.WinForms.Guna2Button();
+            this.btnVeryBad = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtComment = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -103,11 +103,11 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2Panel1.Controls.Add(this.guna2PictureBox3);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
-            this.guna2Panel1.Controls.Add(this.guna2Button6);
-            this.guna2Panel1.Controls.Add(this.guna2Button5);
-            this.guna2Panel1.Controls.Add(this.guna2Button4);
-            this.guna2Panel1.Controls.Add(this.guna2Button3);
-            this.guna2Panel1.Controls.Add(this.guna2Button2);
+            this.guna2Panel1.Controls.Add(this.btnVeryGood);
+            this.guna2Panel1.Controls.Add(this.btnGood);
+            this.guna2Panel1.Controls.Add(this.btnNormal);
+            this.guna2Panel1.Controls.Add(this.btnBad);
+            this.guna2Panel1.Controls.Add(this.btnVeryBad);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.label2);
@@ -201,7 +201,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox10.Size = new System.Drawing.Size(93, 18);
             this.guna2PictureBox10.TabIndex = 104;
             this.guna2PictureBox10.TabStop = false;
-            this.guna2PictureBox10.Click += new System.EventHandler(this.guna2PictureBox4_Click);
             // 
             // guna2PictureBox8
             // 
@@ -212,7 +211,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox8.Size = new System.Drawing.Size(93, 18);
             this.guna2PictureBox8.TabIndex = 104;
             this.guna2PictureBox8.TabStop = false;
-            this.guna2PictureBox8.Click += new System.EventHandler(this.guna2PictureBox4_Click);
             // 
             // guna2PictureBox9
             // 
@@ -225,7 +223,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox9.TabIndex = 104;
             this.guna2PictureBox9.TabStop = false;
             this.guna2PictureBox9.UseTransparentBackground = true;
-            this.guna2PictureBox9.Click += new System.EventHandler(this.guna2PictureBox3_Click);
             // 
             // guna2PictureBox6
             // 
@@ -236,7 +233,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox6.Size = new System.Drawing.Size(93, 18);
             this.guna2PictureBox6.TabIndex = 104;
             this.guna2PictureBox6.TabStop = false;
-            this.guna2PictureBox6.Click += new System.EventHandler(this.guna2PictureBox4_Click);
             // 
             // guna2PictureBox7
             // 
@@ -249,7 +245,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox7.TabIndex = 104;
             this.guna2PictureBox7.TabStop = false;
             this.guna2PictureBox7.UseTransparentBackground = true;
-            this.guna2PictureBox7.Click += new System.EventHandler(this.guna2PictureBox3_Click);
             // 
             // guna2PictureBox4
             // 
@@ -260,7 +255,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox4.Size = new System.Drawing.Size(93, 18);
             this.guna2PictureBox4.TabIndex = 104;
             this.guna2PictureBox4.TabStop = false;
-            this.guna2PictureBox4.Click += new System.EventHandler(this.guna2PictureBox4_Click);
             // 
             // guna2PictureBox5
             // 
@@ -273,7 +267,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox5.TabIndex = 104;
             this.guna2PictureBox5.TabStop = false;
             this.guna2PictureBox5.UseTransparentBackground = true;
-            this.guna2PictureBox5.Click += new System.EventHandler(this.guna2PictureBox3_Click);
             // 
             // lblBinhThuong
             // 
@@ -298,7 +291,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox3.TabIndex = 104;
             this.guna2PictureBox3.TabStop = false;
             this.guna2PictureBox3.UseTransparentBackground = true;
-            this.guna2PictureBox3.Click += new System.EventHandler(this.guna2PictureBox3_Click);
             // 
             // guna2PictureBox1
             // 
@@ -322,155 +314,155 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox2.TabStop = false;
             this.guna2PictureBox2.UseTransparentBackground = true;
             // 
-            // guna2Button6
+            // btnVeryGood
             // 
-            this.guna2Button6.Animated = true;
-            this.guna2Button6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button6.BorderColor = System.Drawing.Color.White;
-            this.guna2Button6.BorderRadius = 15;
-            this.guna2Button6.BorderThickness = 5;
-            this.guna2Button6.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button6.CheckedState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button6.CheckedState.FillColor = System.Drawing.Color.Tomato;
-            this.guna2Button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button6.FillColor = System.Drawing.Color.NavajoWhite;
-            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.HoverState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button6.HoverState.FillColor = System.Drawing.Color.SandyBrown;
-            this.guna2Button6.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button6.Image")));
-            this.guna2Button6.ImageOffset = new System.Drawing.Point(0, -5);
-            this.guna2Button6.ImageSize = new System.Drawing.Size(55, 55);
-            this.guna2Button6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.guna2Button6.Location = new System.Drawing.Point(471, 131);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.ShadowDecoration.BorderRadius = 15;
-            this.guna2Button6.ShadowDecoration.Color = System.Drawing.Color.Silver;
-            this.guna2Button6.ShadowDecoration.Enabled = true;
-            this.guna2Button6.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.guna2Button6.Size = new System.Drawing.Size(93, 88);
-            this.guna2Button6.TabIndex = 81;
-            this.guna2Button6.Click += new System.EventHandler(this.btnDanhGia);
+            this.btnVeryGood.Animated = true;
+            this.btnVeryGood.BackColor = System.Drawing.Color.Transparent;
+            this.btnVeryGood.BorderColor = System.Drawing.Color.White;
+            this.btnVeryGood.BorderRadius = 15;
+            this.btnVeryGood.BorderThickness = 5;
+            this.btnVeryGood.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnVeryGood.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.btnVeryGood.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.btnVeryGood.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVeryGood.FillColor = System.Drawing.Color.NavajoWhite;
+            this.btnVeryGood.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnVeryGood.ForeColor = System.Drawing.Color.White;
+            this.btnVeryGood.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btnVeryGood.HoverState.FillColor = System.Drawing.Color.SandyBrown;
+            this.btnVeryGood.Image = ((System.Drawing.Image)(resources.GetObject("btnVeryGood.Image")));
+            this.btnVeryGood.ImageOffset = new System.Drawing.Point(0, -5);
+            this.btnVeryGood.ImageSize = new System.Drawing.Size(55, 55);
+            this.btnVeryGood.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnVeryGood.Location = new System.Drawing.Point(471, 131);
+            this.btnVeryGood.Name = "btnVeryGood";
+            this.btnVeryGood.ShadowDecoration.BorderRadius = 15;
+            this.btnVeryGood.ShadowDecoration.Color = System.Drawing.Color.Silver;
+            this.btnVeryGood.ShadowDecoration.Enabled = true;
+            this.btnVeryGood.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.btnVeryGood.Size = new System.Drawing.Size(93, 88);
+            this.btnVeryGood.TabIndex = 81;
+            this.btnVeryGood.Click += new System.EventHandler(this.btnDanhGia);
             // 
-            // guna2Button5
+            // btnGood
             // 
-            this.guna2Button5.Animated = true;
-            this.guna2Button5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button5.BorderColor = System.Drawing.Color.White;
-            this.guna2Button5.BorderRadius = 15;
-            this.guna2Button5.BorderThickness = 5;
-            this.guna2Button5.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button5.CheckedState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button5.CheckedState.FillColor = System.Drawing.Color.Tomato;
-            this.guna2Button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button5.FillColor = System.Drawing.Color.NavajoWhite;
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.HoverState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button5.HoverState.FillColor = System.Drawing.Color.SandyBrown;
-            this.guna2Button5.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button5.Image")));
-            this.guna2Button5.ImageOffset = new System.Drawing.Point(0, -5);
-            this.guna2Button5.ImageSize = new System.Drawing.Size(55, 55);
-            this.guna2Button5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.guna2Button5.Location = new System.Drawing.Point(358, 131);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.ShadowDecoration.BorderRadius = 15;
-            this.guna2Button5.ShadowDecoration.Color = System.Drawing.Color.Silver;
-            this.guna2Button5.ShadowDecoration.Enabled = true;
-            this.guna2Button5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.guna2Button5.Size = new System.Drawing.Size(93, 88);
-            this.guna2Button5.TabIndex = 81;
-            this.guna2Button5.Click += new System.EventHandler(this.btnDanhGia);
+            this.btnGood.Animated = true;
+            this.btnGood.BackColor = System.Drawing.Color.Transparent;
+            this.btnGood.BorderColor = System.Drawing.Color.White;
+            this.btnGood.BorderRadius = 15;
+            this.btnGood.BorderThickness = 5;
+            this.btnGood.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnGood.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.btnGood.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.btnGood.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGood.FillColor = System.Drawing.Color.NavajoWhite;
+            this.btnGood.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnGood.ForeColor = System.Drawing.Color.White;
+            this.btnGood.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btnGood.HoverState.FillColor = System.Drawing.Color.SandyBrown;
+            this.btnGood.Image = ((System.Drawing.Image)(resources.GetObject("btnGood.Image")));
+            this.btnGood.ImageOffset = new System.Drawing.Point(0, -5);
+            this.btnGood.ImageSize = new System.Drawing.Size(55, 55);
+            this.btnGood.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGood.Location = new System.Drawing.Point(358, 131);
+            this.btnGood.Name = "btnGood";
+            this.btnGood.ShadowDecoration.BorderRadius = 15;
+            this.btnGood.ShadowDecoration.Color = System.Drawing.Color.Silver;
+            this.btnGood.ShadowDecoration.Enabled = true;
+            this.btnGood.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.btnGood.Size = new System.Drawing.Size(93, 88);
+            this.btnGood.TabIndex = 81;
+            this.btnGood.Click += new System.EventHandler(this.btnDanhGia);
             // 
-            // guna2Button4
+            // btnNormal
             // 
-            this.guna2Button4.Animated = true;
-            this.guna2Button4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.BorderColor = System.Drawing.Color.White;
-            this.guna2Button4.BorderRadius = 15;
-            this.guna2Button4.BorderThickness = 5;
-            this.guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button4.CheckedState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button4.CheckedState.FillColor = System.Drawing.Color.Tomato;
-            this.guna2Button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button4.FillColor = System.Drawing.Color.NavajoWhite;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.HoverState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button4.HoverState.FillColor = System.Drawing.Color.SandyBrown;
-            this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
-            this.guna2Button4.ImageOffset = new System.Drawing.Point(0, -5);
-            this.guna2Button4.ImageSize = new System.Drawing.Size(55, 55);
-            this.guna2Button4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.guna2Button4.Location = new System.Drawing.Point(247, 131);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.BorderRadius = 15;
-            this.guna2Button4.ShadowDecoration.Color = System.Drawing.Color.Silver;
-            this.guna2Button4.ShadowDecoration.Enabled = true;
-            this.guna2Button4.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.guna2Button4.Size = new System.Drawing.Size(93, 88);
-            this.guna2Button4.TabIndex = 81;
-            this.guna2Button4.Click += new System.EventHandler(this.btnDanhGia);
+            this.btnNormal.Animated = true;
+            this.btnNormal.BackColor = System.Drawing.Color.Transparent;
+            this.btnNormal.BorderColor = System.Drawing.Color.White;
+            this.btnNormal.BorderRadius = 15;
+            this.btnNormal.BorderThickness = 5;
+            this.btnNormal.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnNormal.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.btnNormal.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNormal.FillColor = System.Drawing.Color.NavajoWhite;
+            this.btnNormal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnNormal.ForeColor = System.Drawing.Color.White;
+            this.btnNormal.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btnNormal.HoverState.FillColor = System.Drawing.Color.SandyBrown;
+            this.btnNormal.Image = ((System.Drawing.Image)(resources.GetObject("btnNormal.Image")));
+            this.btnNormal.ImageOffset = new System.Drawing.Point(0, -5);
+            this.btnNormal.ImageSize = new System.Drawing.Size(55, 55);
+            this.btnNormal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnNormal.Location = new System.Drawing.Point(247, 131);
+            this.btnNormal.Name = "btnNormal";
+            this.btnNormal.ShadowDecoration.BorderRadius = 15;
+            this.btnNormal.ShadowDecoration.Color = System.Drawing.Color.Silver;
+            this.btnNormal.ShadowDecoration.Enabled = true;
+            this.btnNormal.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.btnNormal.Size = new System.Drawing.Size(93, 88);
+            this.btnNormal.TabIndex = 81;
+            this.btnNormal.Click += new System.EventHandler(this.btnDanhGia);
             // 
-            // guna2Button3
+            // btnBad
             // 
-            this.guna2Button3.Animated = true;
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.BorderColor = System.Drawing.Color.White;
-            this.guna2Button3.BorderRadius = 15;
-            this.guna2Button3.BorderThickness = 5;
-            this.guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button3.CheckedState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button3.CheckedState.FillColor = System.Drawing.Color.Tomato;
-            this.guna2Button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button3.FillColor = System.Drawing.Color.NavajoWhite;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.SandyBrown;
-            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.ImageOffset = new System.Drawing.Point(0, -5);
-            this.guna2Button3.ImageSize = new System.Drawing.Size(55, 55);
-            this.guna2Button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.guna2Button3.Location = new System.Drawing.Point(137, 131);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.BorderRadius = 15;
-            this.guna2Button3.ShadowDecoration.Color = System.Drawing.Color.Silver;
-            this.guna2Button3.ShadowDecoration.Enabled = true;
-            this.guna2Button3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.guna2Button3.Size = new System.Drawing.Size(93, 88);
-            this.guna2Button3.TabIndex = 81;
-            this.guna2Button3.Click += new System.EventHandler(this.btnDanhGia);
+            this.btnBad.Animated = true;
+            this.btnBad.BackColor = System.Drawing.Color.Transparent;
+            this.btnBad.BorderColor = System.Drawing.Color.White;
+            this.btnBad.BorderRadius = 15;
+            this.btnBad.BorderThickness = 5;
+            this.btnBad.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnBad.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.btnBad.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.btnBad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBad.FillColor = System.Drawing.Color.NavajoWhite;
+            this.btnBad.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBad.ForeColor = System.Drawing.Color.White;
+            this.btnBad.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btnBad.HoverState.FillColor = System.Drawing.Color.SandyBrown;
+            this.btnBad.Image = ((System.Drawing.Image)(resources.GetObject("btnBad.Image")));
+            this.btnBad.ImageOffset = new System.Drawing.Point(0, -5);
+            this.btnBad.ImageSize = new System.Drawing.Size(55, 55);
+            this.btnBad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnBad.Location = new System.Drawing.Point(137, 131);
+            this.btnBad.Name = "btnBad";
+            this.btnBad.ShadowDecoration.BorderRadius = 15;
+            this.btnBad.ShadowDecoration.Color = System.Drawing.Color.Silver;
+            this.btnBad.ShadowDecoration.Enabled = true;
+            this.btnBad.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.btnBad.Size = new System.Drawing.Size(93, 88);
+            this.btnBad.TabIndex = 81;
+            this.btnBad.Click += new System.EventHandler(this.btnDanhGia);
             // 
-            // guna2Button2
+            // btnVeryBad
             // 
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderColor = System.Drawing.Color.White;
-            this.guna2Button2.BorderRadius = 15;
-            this.guna2Button2.BorderThickness = 5;
-            this.guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button2.CheckedState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button2.CheckedState.FillColor = System.Drawing.Color.Tomato;
-            this.guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button2.FillColor = System.Drawing.Color.NavajoWhite;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.SandyBrown;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.ImageOffset = new System.Drawing.Point(0, -5);
-            this.guna2Button2.ImageSize = new System.Drawing.Size(55, 55);
-            this.guna2Button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.guna2Button2.Location = new System.Drawing.Point(28, 131);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.BorderRadius = 15;
-            this.guna2Button2.ShadowDecoration.Color = System.Drawing.Color.Silver;
-            this.guna2Button2.ShadowDecoration.Enabled = true;
-            this.guna2Button2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.guna2Button2.Size = new System.Drawing.Size(93, 88);
-            this.guna2Button2.TabIndex = 81;
-            this.guna2Button2.Click += new System.EventHandler(this.btnDanhGia);
+            this.btnVeryBad.Animated = true;
+            this.btnVeryBad.BackColor = System.Drawing.Color.Transparent;
+            this.btnVeryBad.BorderColor = System.Drawing.Color.White;
+            this.btnVeryBad.BorderRadius = 15;
+            this.btnVeryBad.BorderThickness = 5;
+            this.btnVeryBad.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnVeryBad.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.btnVeryBad.CheckedState.FillColor = System.Drawing.Color.Tomato;
+            this.btnVeryBad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVeryBad.FillColor = System.Drawing.Color.NavajoWhite;
+            this.btnVeryBad.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnVeryBad.ForeColor = System.Drawing.Color.White;
+            this.btnVeryBad.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btnVeryBad.HoverState.FillColor = System.Drawing.Color.SandyBrown;
+            this.btnVeryBad.Image = ((System.Drawing.Image)(resources.GetObject("btnVeryBad.Image")));
+            this.btnVeryBad.ImageOffset = new System.Drawing.Point(0, -5);
+            this.btnVeryBad.ImageSize = new System.Drawing.Size(55, 55);
+            this.btnVeryBad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnVeryBad.Location = new System.Drawing.Point(28, 131);
+            this.btnVeryBad.Name = "btnVeryBad";
+            this.btnVeryBad.ShadowDecoration.BorderRadius = 15;
+            this.btnVeryBad.ShadowDecoration.Color = System.Drawing.Color.Silver;
+            this.btnVeryBad.ShadowDecoration.Enabled = true;
+            this.btnVeryBad.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.btnVeryBad.Size = new System.Drawing.Size(93, 88);
+            this.btnVeryBad.TabIndex = 81;
+            this.btnVeryBad.Click += new System.EventHandler(this.btnDanhGia);
             // 
             // guna2Panel2
             // 
@@ -522,11 +514,11 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(231, 15);
+            this.label2.Location = new System.Drawing.Point(195, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 28);
+            this.label2.Size = new System.Drawing.Size(223, 28);
             this.label2.TabIndex = 80;
-            this.label2.Text = "Gửi phản hồi";
+            this.label2.Text = "Gửi phản hồi đánh giá";
             // 
             // label12
             // 
@@ -559,7 +551,6 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
             this.guna2PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox12.TabIndex = 104;
             this.guna2PictureBox12.TabStop = false;
-            this.guna2PictureBox12.Click += new System.EventHandler(this.guna2PictureBox12_Click);
             // 
             // UC_PhanHoi
             // 
@@ -596,16 +587,16 @@ namespace DictionaryAppForIT.UserControls.TaiKhoan
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Button btnSubmit;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnVeryBad;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2TextBox txtComment;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label12;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnVeryGood;
+        private Guna.UI2.WinForms.Guna2Button btnGood;
+        private Guna.UI2.WinForms.Guna2Button btnNormal;
+        private Guna.UI2.WinForms.Guna2Button btnBad;
         private System.Windows.Forms.Label lblRatTe;
         private System.Windows.Forms.Label lblRatTot;
         private System.Windows.Forms.Label lblTot;

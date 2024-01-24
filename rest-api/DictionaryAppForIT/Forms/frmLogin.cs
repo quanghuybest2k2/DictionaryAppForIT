@@ -22,11 +22,25 @@ namespace DictionaryAppForIT
             InitializeComponent();
             this.AcceptButton = btnDangNhap;
         }
-
+        private bool checkUserData()
+        {
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.displayUsername) &&
+             !string.IsNullOrEmpty(Properties.Settings.Default.IdTaiKhoan) &&
+             !string.IsNullOrEmpty(Properties.Settings.Default.ngayTaoTK) &&
+             !string.IsNullOrEmpty(Properties.Settings.Default.Token) &&
+             !string.IsNullOrEmpty(Properties.Settings.Default.Role))
+            {
+                // có tồn tại
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.TenDangNhap) &&
-            !string.IsNullOrEmpty(Properties.Settings.Default.MatKhau))
+            if (checkUserData())
             {
                 frmMain mainForm = new frmMain();
                 mainForm.ShowDialog();
@@ -84,12 +98,13 @@ namespace DictionaryAppForIT
             if (apiResponse.Status && apiResponse.Data != null)
             {
                 var loginResponse = apiResponse.Data;
-
-                Class_TaiKhoan.displayUsername = loginResponse.username;
-                Class_TaiKhoan.Token = loginResponse.token;
-                Class_TaiKhoan.Role = loginResponse.role;
-                Class_TaiKhoan.IdTaiKhoan = loginResponse.user_id;
-                Class_TaiKhoan.ngayTaoTK = loginResponse.created_at;
+                // lưu dữ liệu của user
+                UserData.SaveUserDataSetting(loginResponse.username,
+                   loginResponse.user_id,
+                   loginResponse.created_at,
+                   loginResponse.token,
+                   loginResponse.role
+                    );
 
                 frmMain frmMain = new frmMain();
                 this.Hide();
@@ -127,8 +142,8 @@ namespace DictionaryAppForIT
                 //    RJMessageBox.Show("Bạn phải điền email và mật khẩu!");
                 //}
                 await Login(email, password);
-                // lưu tk và mk
-                UserData.SaveUserDataSetting(email, password);
+                // lưu user data
+                //UserData.SaveUserDataSetting();
             }
             catch (Exception ex)
             {
