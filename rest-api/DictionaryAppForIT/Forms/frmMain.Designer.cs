@@ -628,9 +628,9 @@ namespace DictionaryAppForIT.Forms
             this.btnThemTu.Location = new System.Drawing.Point(272, 3);
             this.btnThemTu.Name = "btnThemTu";
             this.btnThemTu.PressedDepth = 0;
-            this.btnThemTu.Size = new System.Drawing.Size(104, 53);
+            this.btnThemTu.Size = new System.Drawing.Size(144, 53);
             this.btnThemTu.TabIndex = 34;
-            this.btnThemTu.Text = "Thêm từ";
+            this.btnThemTu.Text = "Đóng góp từ vựng";
             this.btnThemTu.TextOffset = new System.Drawing.Point(0, -10);
             this.bunifuToolTip1.SetToolTip(this.btnThemTu, "");
             this.bunifuToolTip1.SetToolTipIcon(this.btnThemTu, null);
