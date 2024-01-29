@@ -13,6 +13,8 @@ Xây dựng từ điển tiếng anh chuyên ngành công nghệ thông tin
 
 ## Phiên bản ổn định: rest-api/DictionaryAppForIT
 
+[Link giới thiệu](https://quanghuybest2k2.github.io/SH_Team/)
+
 ## Demo
 
 ### Đăng ký
@@ -78,5 +80,11 @@ Xây dựng từ điển tiếng anh chuyên ngành công nghệ thông tin
 ## Link server
 
 [dictionary-server](https://github.com/quanghuybest2k2/dictionary-web/tree/main/dictionary-server)
+
+## Cài đặt ứng dụng (DictionaryAppForIT.msi):
+
+```shell
+https://github.com/quanghuybest2k2/DictionaryAppForIT/releases/tag/v1.0.0
+```
 
 <center> copyright &copy; 2022 - 2024 Đoàn Quang Huy </center>
